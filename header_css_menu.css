@@ -15,6 +15,7 @@
   opacity: 0; /* Inicialmente, los elementos secundarios son transparentes */
   transition: opacity 0.3s; /* Agregar transición de opacidad para un efecto suave */
 }
+/* Hay si esta todo bien */
 
 /* Mostrar los elementos secundarios al hacer hover en los elementos principales */
 .parent-nav > .lst-item:hover .child-nav {
