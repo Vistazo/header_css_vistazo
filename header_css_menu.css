@@ -1,0 +1,36 @@
+/* Estilos para los elementos principales (nivel 1) */
+.parent-nav > .lst-item {
+  display: inline-block;
+  margin-right: 10px; /* Espacio entre los elementos principales */
+  position: relative; /* Agregar posición relativa para alinear los elementos secundarios */
+}
+
+/* Ocultar los elementos secundarios (nivel 2) por defecto */
+.child-nav {
+  display: none;
+  position: absolute;
+  background-color: #fff; /* Cambia el color de fondo según tu diseño */
+  border: 1px solid #ccc; /* Añade un borde para el submenú */
+  z-index: 1;
+  opacity: 0; /* Inicialmente, los elementos secundarios son transparentes */
+  transition: opacity 0.3s; /* Agregar transición de opacidad para un efecto suave */
+}
+
+/* Mostrar los elementos secundarios al hacer hover en los elementos principales */
+.parent-nav > .lst-item:hover .child-nav {
+  display: block;
+  opacity: 1; /* Hacer que los elementos secundarios sean completamente visibles */
+}
+
+/* Estilos para los elementos secundarios (nivel 2) */
+.lst-std {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos para los elementos de nivel 2 */
+.lst-item {
+  padding: 8px;
+  /* Otros estilos para los elementos del submenú */
+}
