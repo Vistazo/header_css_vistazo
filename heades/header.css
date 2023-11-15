@@ -4,6 +4,10 @@
 .navbar-nav li a::after {
     display: none;
 }
+.lst-item a::after {
+    display: none;
+}
+
 
 .child-nav.cf{
     position: absolute;
@@ -17,7 +21,6 @@
 }
 
 ul div li{
-    /* quitar los stilo del li */
     display: block;
 }
 
@@ -71,20 +74,43 @@ ul div li{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    /* align-items: center; */
     text-align: center;
     float: right;
     width: 250px;
-    /* border: #fff solid 1px; */
 }
-.menu_header_bm{
-
-}
-
-.login{
-
+.login_menu_bm div{
+    cursor: pointer;
 }
 
+.login_menu_bm div div:hover{
+    background: #B00;
+}
+
+.login_menu_bm div div{
+    background: #eee;
+    width: 80px;
+    height: 35px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.login {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 300;
+    cursor: pointer;
+}
+.login:hover {
+    color: #B00;
+}
+
+.child-nav ul{
+    padding: 0px;
+}
 
 
 .linearoja{
@@ -114,7 +140,7 @@ ul div li{
     position: relative;
     width: 150px;
     top: 20px;
-    left: -60px;
+    left: -70px;
 }
 .hamburg_bm svg{
     cursor: pointer;
@@ -142,7 +168,13 @@ ul div li{
     background: #000;
     padding-left: 0px;
     margin-top: 20px;
+    display: none;
+    transition: all 0.5s ease;
+    z-index: 1;
 }
+
+
+
 
 .login_menu_bm ul li{
     list-style: none;
