@@ -40,3 +40,29 @@ ul div li{
     /* la letra en la etiqueta a cambia a negra */
     color: #000;
 }
+.logo_header{
+    float: left;
+    min-width: 150px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+}
+
+.logo_header div a.site-logo {
+    width: 142px;
+    height: 30px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-top: 15px;
+    margin-left: 15px;
+    background-position: center;
+    padding-top: 160px;
+}
+
+.site-logo{
+    background-image: url("https://www.vistazo.com/base-portlet/webrsrc/ctxvar/09cf4574-37e5-4ec5-a696-d723bcb7a274.png");
+}
