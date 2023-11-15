@@ -54,7 +54,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-        childnavcf = document.querySelectorAll(".child-nav.cf")
+
+
+
         ahref = document.querySelectorAll(".tab-item.lnk")
         ahref.forEach(function(a){
             // obtener el valor del atributo title 
@@ -66,6 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
             a.setAttribute("aria-expanded","false")
             a.style.color="#fff"
             a.style.fontWeight="normal"
+            // a.style.padding="0px"
             // a.style.fontSize="19px"
             a.style.fontFamily="Crete Round"
             a.style.transition="transform 0.2s ease-in-out"
@@ -79,16 +82,22 @@ document.addEventListener("DOMContentLoaded", function () {
             // hacer un hover que al pasar el mouse por encima se mostrar el contenido childnavcf del elemento por el cual se esta pasando el mouse
             a.addEventListener("mouseover",function(e){
                 console.log("e: ",e)
-                // acceder al primer hijo de a que es el elemento childnavcf y mostrarlo
-                a.firstChild.style.display="flex"
+                // como
 
             })
             // y cuando se quite el mouse vuelva al color original
             a.addEventListener("mouseout",function(){
                 a.firstChild.style.display="none"
+                a.style.alignItems="center"
             })
 
 
+        })
+
+        childnavcf = document.querySelectorAll(".child-nav.cf")
+        childnavcf.forEach(function(c){
+            // c.style.display="none"
+            c.style.padding="0px"
         })
 
         menu_burguer_bm = document.querySelector(".menu_burguer_bm")
@@ -108,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
         login_menu.innerHTML=`<div class="login_menu_bm">
         <div class="registro_bm">
         <div class="login">
-            <a class="rounded-pill btn btn-outline-light btn-sm bg-light border-1 "
+            <a class=" "
                 href="https://suscripciones.vistazo.com/id/login/?continue=https%3A%2F%2Fwww.vistazo.com%2F">
                 <img src="https://suscripciones.vistazo.com/img/id/ic-user.svg" 
                 width=20"
@@ -127,68 +136,6 @@ document.addEventListener("DOMContentLoaded", function () {
             ${login_menuPotcap.innerHTML}
         </div>
         </div>`
-     
-
-
-
-        // childnavcf = document.querySelectorAll(".child-nav.cf")
-        // childnavcf.forEach(function(c){
-        //     c.style.background="#000"
-        //     c.style.position="absolute"
-        //     c.style.width="100%"
-        //     c.style.height="100%"
-        //     c.style.padding="10px"
-        //     c.style.paddingLeft="15px"
-        //     c.style.paddingRight="15px"
-        //     c.style.display="flex"
-        //     c.style.flexDirection="column"
-        //     c.style.justifyContent="center"
-        //     c.style.alignItems="center"
-        //     // display: none; y cuando se haga click en el elemento que se muestre
-        //     c.style.display="none"
-        //     c.style.transition="transform 0.2s ease-in-out"
-        //     // cuando se aga hover que se muestre el contenido
-        //     c.addEventListener("mouseover",function(){
-        //         c.style.display="flex"
-        //     })
-        //     // cuando se quite el mouse que se oculte el contenido
-        //     c.addEventListener("mouseout",function(){
-        //         c.style.display="none"
-        //     })
-        // })
-
-
-
-
-        // childnavcfli = document.querySelectorAll(".child-nav.cf ul div li")
-        // childnavcfli.forEach(function(c){
-        //     // c tiene como hijo un a aceder a los stilos de a
-        //     // quitar el punto  a li
-        //     c.style.listStyle="none"
-        //     // cuando pase el mouse por encima del elemento que cambie de color
-        //     c.addEventListener("mouseover",function(){
-        //         c.style.background="#B00000"
-        //         c.style.width="100%"
-        //     })
-        //     // cuando quite el mouse que vuelva al color original
-        //     c.addEventListener("mouseout",function(){
-        //         c.style.background="#000"
-        //     })
-
-        //     ancho = c.querySelector("a")
-        //     ancho.style.textDecoration="none"
-        //     ancho.style.color="#fff"
-        //     ancho.style.fontWeight="normal"
-
-        // })
-        
-
-
-        // hacer que todas li que esta dentro de ul se vean en linea horizontal 
-        // y de color blanco
-        
-
-
     }
 
     var actualidad1 = document.querySelector("#collapseWidthExample")
@@ -339,18 +286,24 @@ document.addEventListener("DOMContentLoaded", function () {
         basic_search.style.display="none"
     }
 
-    inviciblePotCap = document.querySelector(".hamburg_bm ul")
-    cliPotCap = document.querySelector(".hamburg_bm svg")
-    cliPotCap.addEventListener("click",function(){
-        if(inviciblePotCap.style.display=="none"){
-            inviciblePotCap.style.display="flex"
+    menuHambu = document.querySelector(".hamburg_bm svg")
+    menuHambuActiva = document.querySelector(".login_menu_bm ul")
+    menuHambu.addEventListener("click",function(){
+        console.log("menuHambuActiva: ",menuHambuActiva.style.display)
+        if(menuHambuActiva.style.display=="none" || menuHambuActiva.style.display==""){
+                menuHambuActiva.style.display="block"
         }else{
-            inviciblePotCap.style.display="none"
+            menuHambuActiva.style.display="none"
         }
     })
-    // si
 
-    // buildHeader();
+    // cuando aga click en cualquier parte de la pagina que no sea el menu hamburguesa se cierre el menu hamburguesa
+    document.addEventListener("click",function(e){
+        if(e.target != menuHambu){
+            menuHambuActiva.style.display="none"
+        }
+    })
+
 })
 // clip-path: polygon(38% 0, 100% 0, 100% 100%, 0% 100%);
 function buildHeader() {
@@ -364,6 +317,8 @@ function buildHeader() {
     chilContainer.innerHTML = chil
 
 }
+
+
 
 
 
