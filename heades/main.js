@@ -20,8 +20,9 @@ document.addEventListener("DOMContentLoaded", function () {
     var col100 = document.querySelector(".col-100-top-one-col.col-xs-12.portlet-column.nopadding")
     if(col100){
         col100.classList.add("d-flex","align-items-center","justify-content-between",)
-        // col100.style.position="absolute"
         col100.style.width="100%"
+        col100.style.height="60px"
+        col100.style.padding="0px"
     }
 
     var conteFlui = document.querySelector("#col-100-top-one-col")
@@ -32,8 +33,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // //class="collapse navbar-collapse" id="navbarSupportedContent">
     var collapse = document.querySelector(".portlet-boundary.portlet-static-end.menu-portlet.menu_header_bm")
     if(collapse){
-        collapse.classList.add("collapse","navbar-collapse")
-        collapse.id="navbarSupportedContent"
+        // collapse.classList.add("collapse","navbar-collapse")
+        // collapse.id="navbarSupportedContent"
+        // collapse.style.width="60%"
     }
 
     var extraUl = document.querySelector(".menu_header_bm div div").innerHTML
@@ -91,9 +93,42 @@ document.addEventListener("DOMContentLoaded", function () {
 
         menu_burguer_bm = document.querySelector(".menu_burguer_bm")
         // hacer que apareza el menu de hamburguesa
+        // anadirle un svg al menu de hamburguesa
+
+        
+        
+
         if(menu_burguer_bm){
-            menu_burguer_bm.style.display="none"
+            // menu_burguer_bm.style.display="none"
         }
+
+        login_menu = document.querySelector(".menu_burguer_bm")
+        login_menuPotcap = document.querySelector(".menu_burguer_bm div div")
+        login_menu.innerHTML=""
+        login_menu.innerHTML=`<div class="login_menu_bm">
+        <div class="registro_bm">
+        <div class="login">
+            <a class="rounded-pill btn btn-outline-light btn-sm bg-light border-1 "
+                href="https://suscripciones.vistazo.com/id/login/?continue=https%3A%2F%2Fwww.vistazo.com%2F">
+                <img src="https://suscripciones.vistazo.com/img/id/ic-user.svg" 
+                width=20"
+                height="auto"
+                alt="icono-vtz"
+                arial-label="Vistazo"
+                title="img-login"
+                loading="lazy">Login
+            </a>
+       </div>
+        </div>
+        <div class="hamburg_bm" style='color: white' id='menu_1'>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+            </svg>
+            ${login_menuPotcap.innerHTML}
+        </div>
+        </div>`
+     
+
 
 
         // childnavcf = document.querySelectorAll(".child-nav.cf")
@@ -268,12 +303,15 @@ document.addEventListener("DOMContentLoaded", function () {
     linearoja = document.querySelector(".linearoja")
     if(header_suscribete){
         header_suscribete.style.background="#fff"
+        header_suscribete.style.position="relative"
         header_suscribete.style.padding="6px"
-        header_suscribete.style.width="250px"
+        header_suscribete.style.width="100px"
         header_suscribete.style.clipPath="polygon(27% 0, 100% 0, 100% 100%, 0% 100%)"
         header_suscribete.style.display="flex"
         header_suscribete.style.alignItems="center"
         header_suscribete.style.justifyContent="center"
+        // hacer que se valla a la derecha
+        header_suscribete.style.marginLeft="auto"
         header_suscribete.style.paddingLeft="15px"
         header_suscribete.style.paddingRight="15px"
         
@@ -286,17 +324,13 @@ document.addEventListener("DOMContentLoaded", function () {
         header_suscribete2.style.height="60px"
         header_suscribete2.style.fontSize="14px"
         header_suscribete2.style.fontFamily="Crete Round"
+
         header_suscribete3.style.color="#000"
         header_suscribete3.style.textDecoration="none"
         header_suscribete3.style.fontWeight="600"
         header_suscribete3.style.bordenButton="2px solid #000"
         header_suscribete3.style.paddingLeft="10px"
         header_suscribete3.style.paddingRight="10px"
-
-        linearoja.style.background="#B00000"
-        linearoja.style.height="5px"
-        linearoja.style.width="100%"
-
     }
 
     // buscador 
@@ -304,6 +338,18 @@ document.addEventListener("DOMContentLoaded", function () {
     if(basic_search){
         basic_search.style.display="none"
     }
+
+    inviciblePotCap = document.querySelector(".hamburg_bm ul")
+    cliPotCap = document.querySelector(".hamburg_bm svg")
+    cliPotCap.addEventListener("click",function(){
+        if(inviciblePotCap.style.display=="none"){
+            inviciblePotCap.style.display="flex"
+        }else{
+            inviciblePotCap.style.display="none"
+        }
+    })
+    // si
+
     // buildHeader();
 })
 // clip-path: polygon(38% 0, 100% 0, 100% 100%, 0% 100%);
