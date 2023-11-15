@@ -64,6 +64,49 @@ header .header_contain_dm .menu_burguer_bm{
     right: 145px
 }
 
+.menu_header_bm li.sect-262e52091545304582cf18882fc67b4f a.tab-item.lnk {
+    /* content:  */
+    background-image: url(https://www.vistazo.com/base-portlet/webrsrc/ctxvar/9e921527-7c01-4ccc-922e-ca6d5b7b2957.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 95px;
+    height: 35px;
+    display: block;
+    background-position: center center;
+}
+
+.menu_header_bm li.sect-0903d1806e4bd8bf290229a78d484445 a.tab-item.lnk {
+    /* content:  */
+    background-image: url(https://www.vistazo.com/base-portlet/webrsrc/theme/d8b88de3cfb5c95f245841155cba993a.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 95px;
+    height: 30px;
+    display: block;
+    background-position: center center;
+}
+
+.menu_header_bm li.sect-74b11848b5e1a47d79fed2bc56e2a9fc a.tab-item.lnk {
+    background-image: url(https://www.vistazo.com/base-portlet/webrsrc/ctxvar/c607a3ce-c67c-44a9-873c-81f2200d1fee.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 95px;
+    height: 30px;
+    display: block;
+    background-position: center center;
+}
+
+
+.menu_header_bm li.sect-a4306ce1cba409d40f6649f40a27a166 a.tab-item.lnk {
+    background-image: url(https://www.vistazo.com/base-portlet/webrsrc/ctxvar/2efe3a01-c41f-40d4-a373-c46a0730f3cb.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 95px;
+    height: 30px;
+    display: block;
+    background-position: center center;
+}
+
 .header_contain_dm .menu_burguer_bm{
     position: absolute;
     top:50px;
@@ -84,7 +127,7 @@ header .header_contain_dm .menu_burguer_bm{
 }
 
 .menu_burguer_bm li:hover{
-    background: #B00;
+    background: #fd0f03;
 }
 
 
@@ -116,4 +159,12 @@ li{
     font-size: 18px;
     cursor: pointer;
     text-decoration: none;
+}
+.header_contain_dm .linearoja {
+    background-color: #fd0f03;
+    position: absolute;
+    top: 39px;
+    left: 18px;
+    width: 84px;
+    height: 5px;
 }
