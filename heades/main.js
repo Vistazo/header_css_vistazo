@@ -1,7 +1,5 @@
 
 document.addEventListener("DOMContentLoaded", function () {
-    var btn = document.createElement("button")
-    var hg_btn= document.querySelector(".logo_header")
 
     document.querySelector(".portlet-boundary.portlet-static-end.menu-portlet.menu_header_bm").remove()
     document.querySelector(".portlet-boundary.portlet-static-end.adcontainer-portlet").remove()
@@ -69,12 +67,12 @@ document.addEventListener("DOMContentLoaded", function () {
             // a.style.fontSize="19px"
             a.style.fontFamily="Crete Round"
             a.style.transition="transform 0.2s ease-in-out"
-            a.style.height="50px"
+            // a.style.height="50px"
             a.style.position="relative"
             // a.style.marginTop="170px"
             // espacio entre cada elemento
-            a.style.marginLeft="10px"
-            a.style.marginRight="10px"
+            a.style.marginLeft="5px"
+            a.style.marginRight="5px"
 
             // hacer un hover que al pasar el mouse por encima se mostrar el contenido childnavcf del elemento por el cual se esta pasando el mouse
             a.addEventListener("mouseover",function(e){
@@ -91,63 +89,63 @@ document.addEventListener("DOMContentLoaded", function () {
 
         })
 
-        hoja = document.styleSheets
-        for (let index = 0; index < hoja.length; index++) {
-            const element = hoja[index];
-            console.log("Element: ",element)
-            
+        menu_burguer_bm = document.querySelector(".menu_burguer_bm")
+        // hacer que apareza el menu de hamburguesa
+        if(menu_burguer_bm){
+            menu_burguer_bm.style.display="none"
         }
 
-        childnavcf = document.querySelectorAll(".child-nav.cf")
-        childnavcf.forEach(function(c){
-            c.style.background="#000"
-            c.style.position="absolute"
-            c.style.width="100%"
-            c.style.height="100%"
-            c.style.padding="10px"
-            c.style.paddingLeft="15px"
-            c.style.paddingRight="15px"
-            c.style.display="flex"
-            c.style.flexDirection="column"
-            c.style.justifyContent="center"
-            c.style.alignItems="center"
-            // display: none; y cuando se haga click en el elemento que se muestre
-            c.style.display="none"
-            c.style.transition="transform 0.2s ease-in-out"
-            // cuando se aga hover que se muestre el contenido
-            c.addEventListener("mouseover",function(){
-                c.style.display="flex"
-            })
-            // cuando se quite el mouse que se oculte el contenido
-            c.addEventListener("mouseout",function(){
-                c.style.display="none"
-            })
-        })
+
+        // childnavcf = document.querySelectorAll(".child-nav.cf")
+        // childnavcf.forEach(function(c){
+        //     c.style.background="#000"
+        //     c.style.position="absolute"
+        //     c.style.width="100%"
+        //     c.style.height="100%"
+        //     c.style.padding="10px"
+        //     c.style.paddingLeft="15px"
+        //     c.style.paddingRight="15px"
+        //     c.style.display="flex"
+        //     c.style.flexDirection="column"
+        //     c.style.justifyContent="center"
+        //     c.style.alignItems="center"
+        //     // display: none; y cuando se haga click en el elemento que se muestre
+        //     c.style.display="none"
+        //     c.style.transition="transform 0.2s ease-in-out"
+        //     // cuando se aga hover que se muestre el contenido
+        //     c.addEventListener("mouseover",function(){
+        //         c.style.display="flex"
+        //     })
+        //     // cuando se quite el mouse que se oculte el contenido
+        //     c.addEventListener("mouseout",function(){
+        //         c.style.display="none"
+        //     })
+        // })
 
 
 
 
-        childnavcfli = document.querySelectorAll(".child-nav.cf ul div li")
-        childnavcfli.forEach(function(c){
-            // c tiene como hijo un a aceder a los stilos de a
-            // quitar el punto  a li
-            c.style.listStyle="none"
-            // cuando pase el mouse por encima del elemento que cambie de color
-            c.addEventListener("mouseover",function(){
-                c.style.background="#B00000"
-                c.style.width="100%"
-            })
-            // cuando quite el mouse que vuelva al color original
-            c.addEventListener("mouseout",function(){
-                c.style.background="#000"
-            })
+        // childnavcfli = document.querySelectorAll(".child-nav.cf ul div li")
+        // childnavcfli.forEach(function(c){
+        //     // c tiene como hijo un a aceder a los stilos de a
+        //     // quitar el punto  a li
+        //     c.style.listStyle="none"
+        //     // cuando pase el mouse por encima del elemento que cambie de color
+        //     c.addEventListener("mouseover",function(){
+        //         c.style.background="#B00000"
+        //         c.style.width="100%"
+        //     })
+        //     // cuando quite el mouse que vuelva al color original
+        //     c.addEventListener("mouseout",function(){
+        //         c.style.background="#000"
+        //     })
 
-            ancho = c.querySelector("a")
-            ancho.style.textDecoration="none"
-            ancho.style.color="#fff"
-            ancho.style.fontWeight="normal"
+        //     ancho = c.querySelector("a")
+        //     ancho.style.textDecoration="none"
+        //     ancho.style.color="#fff"
+        //     ancho.style.fontWeight="normal"
 
-        })
+        // })
         
 
 
@@ -157,38 +155,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     }
-    // console.log("ok: ",document.querySelector(".menu_header_bm ul"))
 
-    // var list = document.querySelector('.lst-items').innerHTML;
-    // listContainer = document.querySelector('.child-nav.cf ul');
-    // listContainer.innerHTML = list
-
-    // if(hg_btn){
-    //     console.log("existe")
-    //     btn.classList.add("navbar-toggler")
-    //     btn.type="button"
-    //     btn.setAttribute("data-bs-toggle","collapse")
-    //     btn.setAttribute("data-bs-target","#navbarSupportedContent")
-    //     btn.setAttribute("aria-controls","navbarSupportedContent")
-    //     btn.setAttribute("aria-expanded","false")
-    //     btn.setAttribute("aria-label","Toggle navigation")
-    //     var span= document.createElement("span")
-    //     span.classList.add("navbar-toggler-icon")
-    //     btn.appendChild(span)
-    //     hg_btn.appendChild(btn)
-    // }
-
-    // tabGrpElements.forEach(function(tabGrp) {
-    //     var childNavDiv = tabGrp.querySelector('.child-nav.cf');
-
-    //     if (childNavDiv) {
-    //         var nuevoDiv = document.createElement('div');
-    //         while (childNavDiv.firstChild) {
-    //             nuevoDiv.appendChild(childNavDiv.firstChild);
-    //         }
-    //         tabGrp.appendChild(nuevoDiv);
-    //     }
-    // })
     var actualidad1 = document.querySelector("#collapseWidthExample")
     // hacer que cuando se haga click en el boton de actualidad se abra el menu
     if(actualidad1){
@@ -231,7 +198,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var opinion = document.querySelector('.tab-item[title="Opinión"]');
     if(opinion){
         opinion.style.color="#fff"
-        opinion.style.fontWeight="bold"
+        opinion.style.fontWeight="normal"
         opinion.style.fontSize="19px"
         opinion.style.fontFamily="Crete Round"
     }
@@ -356,12 +323,12 @@ function buildHeader() {
 
 
 // creación de scripts con vanilla   
-	const script = document.createElement('script');
-	script.src = 'script.js'; // si el archivo es local escribir directamente el archivo
-	script.src = 'https://vzheaders.netlify.app/heades/main.js'; // si es cdn usar todo el protocolo
-	script.async = true; // habilitamos el atributo async
-	script.type = 'module';// hace que el script sea tratado como si fuera un módulo de JavaScript
-	script.onload = () => { console.log('Script loaded successfuly'); }; //mensaje en caso de exito (consola)
-	script.onerror = () => { console.log('ha ocurrido un error'); }; //mensaje en caso de error (consola)
-	document.body.appendChild(script);
+	// const script = document.createElement('script');
+	// script.src = 'script.js'; // si el archivo es local escribir directamente el archivo
+	// script.src = 'https://vzheaders.netlify.app/heades/main.js'; // si es cdn usar todo el protocolo
+	// script.async = true; // habilitamos el atributo async
+	// script.type = 'module';// hace que el script sea tratado como si fuera un módulo de JavaScript
+	// script.onload = () => { console.log('Script loaded successfuly'); }; //mensaje en caso de exito (consola)
+	// script.onerror = () => { console.log('ha ocurrido un error'); }; //mensaje en caso de error (consola)
+	// document.body.appendChild(script);
 // fin de creación de scripts con vanilla
