@@ -1,0 +1,6 @@
+
+/* quitar a todad a el ::after */
+
+.navbar-nav li a::after {
+    display: none;
+}
