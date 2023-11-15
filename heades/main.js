@@ -11,22 +11,24 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector(".portlet-boundary.portlet-static-end.menu-portlet.menu_burguer_mobile_bm").remove()
     document.querySelector(".portlet-boundary.portlet-static-end.adcontainer-portlet").remove()
 
-    // buscar todo esta clase col-100-top-one-col col-xs-12 portlet-column nopadding y agregarle d-flex align-items-center justify-content-between
-    var col100 = document.querySelector(".col-100-top-one-col.col-xs-12.portlet-column.nopadding")
-    if(col100){
-        col100.classList.add("d-flex","align-items-center","justify-content-between")
-        // col100.style.height="60px"
-    }
+
     var navbar = document.querySelector(".portlet-boundary.portlet-static-end.portlet-nested-portlets.header_contain_dm")
     if(navbar){
         navbar.style.height="60px"
         navbar.style.background="#000"
         navbar.classList.add("navbar", "navbar-expand-lg", "navbar-dark", "d-flex", "row", "align-items-center", "justify-content-between")
     }
+    // buscar todo esta clase col-100-top-one-col col-xs-12 portlet-column nopadding y agregarle d-flex align-items-center justify-content-between
+    var col100 = document.querySelector(".col-100-top-one-col.col-xs-12.portlet-column.nopadding")
+    if(col100){
+        col100.classList.add("d-flex","align-items-center","justify-content-between",)
+        // col100.style.position="absolute"
+        col100.style.width="100%"
+    }
 
     var conteFlui = document.querySelector("#col-100-top-one-col")
     if(conteFlui){
-        conteFlui.classList.add("container-fluid")
+        // conteFlui.classList.add("container-fluid")
     }
 
     // //class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -52,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-        
+        childnavcf = document.querySelectorAll(".child-nav.cf")
         ahref = document.querySelectorAll(".tab-item.lnk")
         ahref.forEach(function(a){
             // obtener el valor del atributo title 
@@ -64,21 +66,29 @@ document.addEventListener("DOMContentLoaded", function () {
             a.setAttribute("aria-expanded","false")
             a.style.color="#fff"
             a.style.fontWeight="normal"
-            a.style.fontSize="19px"
+            // a.style.fontSize="19px"
             a.style.fontFamily="Crete Round"
             a.style.transition="transform 0.2s ease-in-out"
-            a.style.width="100px"
             a.style.height="50px"
-            a.style.marginTop="170px"
+            a.style.position="relative"
+            // a.style.marginTop="170px"
             // espacio entre cada elemento
             a.style.marginLeft="10px"
             a.style.marginRight="10px"
-            
 
-            // a tiene como hijo un ::after removerlo
+            // hacer un hover que al pasar el mouse por encima se mostrar el contenido childnavcf del elemento por el cual se esta pasando el mouse
+            a.addEventListener("mouseover",function(e){
+                console.log("e: ",e)
+                // acceder al primer hijo de a que es el elemento childnavcf y mostrarlo
+                a.firstChild.style.display="flex"
 
-            
-            
+            })
+            // y cuando se quite el mouse vuelva al color original
+            a.addEventListener("mouseout",function(){
+                a.firstChild.style.display="none"
+            })
+
+
         })
 
         hoja = document.styleSheets
@@ -87,6 +97,59 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log("Element: ",element)
             
         }
+
+        childnavcf = document.querySelectorAll(".child-nav.cf")
+        childnavcf.forEach(function(c){
+            c.style.background="#000"
+            c.style.position="absolute"
+            c.style.width="100%"
+            c.style.height="100%"
+            c.style.padding="10px"
+            c.style.paddingLeft="15px"
+            c.style.paddingRight="15px"
+            c.style.display="flex"
+            c.style.flexDirection="column"
+            c.style.justifyContent="center"
+            c.style.alignItems="center"
+            // display: none; y cuando se haga click en el elemento que se muestre
+            c.style.display="none"
+            c.style.transition="transform 0.2s ease-in-out"
+            // cuando se aga hover que se muestre el contenido
+            c.addEventListener("mouseover",function(){
+                c.style.display="flex"
+            })
+            // cuando se quite el mouse que se oculte el contenido
+            c.addEventListener("mouseout",function(){
+                c.style.display="none"
+            })
+        })
+
+
+
+
+        childnavcfli = document.querySelectorAll(".child-nav.cf ul div li")
+        childnavcfli.forEach(function(c){
+            // c tiene como hijo un a aceder a los stilos de a
+            // quitar el punto  a li
+            c.style.listStyle="none"
+            // cuando pase el mouse por encima del elemento que cambie de color
+            c.addEventListener("mouseover",function(){
+                c.style.background="#B00000"
+                c.style.width="100%"
+            })
+            // cuando quite el mouse que vuelva al color original
+            c.addEventListener("mouseout",function(){
+                c.style.background="#000"
+            })
+
+            ancho = c.querySelector("a")
+            ancho.style.textDecoration="none"
+            ancho.style.color="#fff"
+            ancho.style.fontWeight="normal"
+
+        })
+        
+
 
         // hacer que todas li que esta dentro de ul se vean en linea horizontal 
         // y de color blanco
@@ -292,3 +355,13 @@ function buildHeader() {
 
 
 
+// creación de scripts con vanilla   
+	const script = document.createElement('script');
+	script.src = 'script.js'; // si el archivo es local escribir directamente el archivo
+	script.src = 'https://vzheaders.netlify.app/heades/main.js'; // si es cdn usar todo el protocolo
+	script.async = true; // habilitamos el atributo async
+	script.type = 'module';// hace que el script sea tratado como si fuera un módulo de JavaScript
+	script.onload = () => { console.log('Script loaded successfuly'); }; //mensaje en caso de exito (consola)
+	script.onerror = () => { console.log('ha ocurrido un error'); }; //mensaje en caso de error (consola)
+	document.body.appendChild(script);
+// fin de creación de scripts con vanilla
