@@ -1,185 +1,119 @@
+/* todo tiene que ser response */
+.header_contain_dm{
+    background: black;
+    box-shadow: 1px 2px 5px #555;
+    position: fixed;
+    width: 100%;
+    top:0px;
+    left: 0px;
+    z-index: 1000;
 
-/* quitar a todad a el ::after */
-
-.navbar-nav li a::after {
-    display: none;
 }
-.lst-item a::after {
-    display: none;
-}
-
-
-.child-nav.cf{
-    position: absolute;
-    background: #000;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.5s ease;
-}
-
-ul div li{
-    display: block;
-}
-
-.child-nav.cf li a{
-    color: #fff;
-    font-size: 1.2em;
-    text-decoration: none;
-    padding: 10px;
-    transition: all 0.5s ease;
-    font-weight: 400;
-    font-family: 'Crete Round';
-}
-
-.child-nav.cf li:hover{
-    /* la letra en la etiqueta a cambia a negra */
-    background: #fff;
-}
-
-.child-nav.cf li:hover a{
-    /* la letra en la etiqueta a cambia a negra */
-    color: #000;
-}
-.logo_header{
-    float: left;
-    min-width: 150px;
+header .container {
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    text-align: center;
 }
-
-.logo_header div a.site-logo {
-    width: 142px;
-    height: 30px;
-    display: inline-block;
-    background-repeat: no-repeat;
-    background-size: contain;
-    margin-top: 15px;
-    margin-left: 15px;
-    background-position: center;
-    padding-top: 160px;
-}
-
-.site-logo{
-    background-image: url("https://www.vistazo.com/base-portlet/webrsrc/ctxvar/09cf4574-37e5-4ec5-a696-d723bcb7a274.png");
-}
-
-.login_menu_bm{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    text-align: center;
-    float: right;
-    width: 250px;
-}
-.login_menu_bm div{
-    cursor: pointer;
-}
-
-.login_menu_bm div div:hover{
-    background: #B00;
-}
-
-.login_menu_bm div div{
-    background: #eee;
-    width: 80px;
-    height: 35px;
-    border-radius: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
-
-.login {
-    color: #fff;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 300;
-    cursor: pointer;
-}
-.login:hover {
-    color: #B00;
-}
-
-.child-nav ul{
+.container{
     padding: 0px;
 }
 
-
-.linearoja{
-    background: #B00;
-    height: 5px;
-    width: 100%;
+.menu_header_bm .nopadding{
+    padding: 0px;
 }
 
-.mega_menu{
+.header_contain_dm .menu_header_bm{
+    float: left;
+}
+.nav {
     display: flex;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    float: right;
-    position: relative;
-    background-color: #000;
-    margin-top: 190px;
-}
-
-#menu_1{
-    margin-top: -10px;
-}
-
-
-.hamburg_bm{
-    position: relative;
-    width: 150px;
-    top: 20px;
-    left: -70px;
-}
-.hamburg_bm svg{
-    cursor: pointer;
-}
-
-.registro_bm{
-    position: relative;
-    width: 100px;
-    height: 40px;
-    top: 10px;
-}
-.registro_bm .login a{
-    color: #000;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 400;
-}
-
-.login_menu_bm {
-    position: absolute;
-    top: 0px;
-}
-
-.login_menu_bm ul{
-    background: #000;
-    padding-left: 0px;
-    margin-top: 20px;
-    display: none;
-    transition: all 0.5s ease;
-    z-index: 1;
-}
-
-
-
-
-.login_menu_bm ul li{
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
     list-style: none;
 }
-.login_menu_bm ul li:hover{
+
+ul, li, ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menu_header_bm li{
+    float: left;
+    padding: 0 6px 22px;
+    font-size: 19px;
+    font-family: 'Crete Round', serif;
+    height: 60px;
+    padding-top: 17px;
+}
+.menu_header_bm li a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.menu_header_bm li .child-nav{
+    position: fixed;
+    top: 60px;
+    left: 0px;
+    background: #000;
+    width: 100%;
+    border-top: 1px solid #fff;
+    text-align: center;
+}
+
+header .header_contain_dm .menu_burguer_bm{
+    right: 145px
+}
+
+.header_contain_dm .menu_burguer_bm{
+    position: absolute;
+    top:50px;
+    background: #000;
+}
+.menu_burguer_bm ul {
+    padding: 0px;
+    /* margin: 0px 10px; */
+}
+.menu_burguer_bm li {
+    font-size: 19px;
+    font-family: 'Crete Round', serif;
+    min-width: 90px;
+    width: 100%;
+    /* border-bottom: 1px solid #fff; */
+    min-height: 30px;
+    padding: 0 10px;
+}
+
+.menu_burguer_bm li:hover{
     background: #B00;
 }
 
+
+
+.menu_burguer_bm li a{
+    list-style-type: none;
+    text-decoration: none;
+    color: #fff;
+    margin: 0px;
+    padding: 0px;
+}
+
+li{
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+.header_contain_dm .header_suscribete_bm{
+    float:  right;
+    position: relative;
+}
+.header_contain_dm .susbribe{
+    background-color: white;
+    padding: 35px 20px 20px 17px;
+    line-height: 58px;
+    color: black;
+    font-family: 'Crete Round',serif;
+    clip-path: polygon(31.5% -25.13%,96.5% -24%,95.81% 115.07%,0% 100%);
+    font-size: 18px;
+    cursor: pointer;
+    text-decoration: none;
+}
