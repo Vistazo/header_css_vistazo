@@ -111,11 +111,19 @@ header .header_contain_dm .menu_burguer_bm{
     position: absolute;
     top:50px;
     background: #000;
+    display: none;
 }
+
+.menu_burguer_bm .activate{
+    display: block;
+}
+
 .menu_burguer_bm ul {
     padding: 0px;
     /* margin: 0px 10px; */
 }
+
+/* Podcst Vistazo */
 .menu_burguer_bm li {
     font-size: 19px;
     font-family: 'Crete Round', serif;
@@ -130,8 +138,6 @@ header .header_contain_dm .menu_burguer_bm{
     background: #fd0f03;
 }
 
-
-
 .menu_burguer_bm li a{
     list-style-type: none;
     text-decoration: none;
@@ -139,6 +145,7 @@ header .header_contain_dm .menu_burguer_bm{
     margin: 0px;
     padding: 0px;
 }
+/* Fin de PodCast */
 
 li{
     display: list-item;
