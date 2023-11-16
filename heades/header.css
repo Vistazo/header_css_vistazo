@@ -407,7 +407,7 @@ li{
         padding: 5px 0;
         min-width: 194px;
     }
-    .menu_burguer_mobile .lst-items li {
+    .menu_burguer_mobile .lst-items-movil li {
         padding-left: 0px;
     }
     .menu_burguer_mobile ul li a {
@@ -419,7 +419,7 @@ li{
         display: block;
         font-family: 'Crete Round',serif;
     }
-    ul.level-2 .lst-items li.sect-619 .lnk .sectionName, ul.level-2 .lst-items li.sect-1741 .lnk .sectionName {
+    ul.level-2 .lst-items-movil li.sect-619 .lnk .sectionName, ul.level-2 .lst-items-movil li.sect-1741 .lnk .sectionName {
         color: #37b72f!important;
     }
 }
