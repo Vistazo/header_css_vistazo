@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('load', function() {
     register = document.querySelector(".registro_bm")
     register.innerHTML=""
     register.innerHTML=`<div class="login_menu_bm">
@@ -137,6 +137,5 @@ document.addEventListener('DOMContentLoaded', function() {
     // }
 
     register2 = document.querySelector(".registro")
-    register2.innerHTML=""
+    register2.style.display = "none";
 });
-
