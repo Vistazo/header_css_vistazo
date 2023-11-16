@@ -5,9 +5,12 @@ document.addEventListener('DOMContentLoaded', function() {
         register = document.querySelector(".nav-dropdown.nav.noSubNav")
         if(register){
             copi = register.innerHTML
-            
+            logo = `<div> <a class="site-logo" href="/" aria-label="Vistazo">vistazo</a> <style> a.site-logo {
+                color: transparent;
+            }
+            </style> </div>`
             register.innerHTML=""
-            register.innerHTML=`${copi}<div class="login_menu_bm">
+            register.innerHTML=`${logo}${copi}<div class="login_menu_bm">
                     <div class="login">
                         <a class=""
                             href="https://suscripciones.vistazo.com/id/login/?continue=https%3A%2F%2Fwww.vistazo.com%2F">
