@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     register2 = document.querySelector(".registro")
     if(register2){
-        register2.style.display = "none";
+        register2.style.innerHTML=""
     }
 
 });
