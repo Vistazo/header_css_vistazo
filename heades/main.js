@@ -18,7 +18,21 @@ document.addEventListener('DOMContentLoaded', function() {
         }else{
             ver.style.display = "none";
         }
-
+    });
+    open_burguer = document.querySelector(".open_burguer");
+    open_burguer.addEventListener("click", function() {
+        ver = document.querySelector(".menu_burguer_bm")
+        if (ver.style.display == "none" || ver.style.display == "") {
+            ver.style.display = "block";
+        }else{
+            ver.style.display = "none";
+        }
+    });
+    // para que tambien se cierre el menu cuando se haga click en cualquier parte de la pantalla
+    window.addEventListener("click", function(event) {
+        if (event.target == document.querySelector(".menu_burguer_bm")) {
+            document.querySelector(".menu_burguer_bm").style.display = "none";
+        }
     });
 });
 
