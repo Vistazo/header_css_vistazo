@@ -30,6 +30,9 @@ a.site-logo {
     background-image: url(https://www.vistazo.com/base-portlet/webrsrc/ctxvar/09cf4574-37e5-4ec5-a696-d723bcb7a274.png);
 }
 
+ol, ul {
+    padding-left: 0;
+}
 
 header .container {
     position: relative;
@@ -345,4 +348,37 @@ li{
 }
 .lupin{
     cursor: pointer;
+}
+
+
+/* media para tamano telefono */
+/* cuando el tamano de la pagina sea 400 */
+@media (max-width: 400px){
+    .portlet-boundary.portlet-static-end.htmlcontainer-portlet{
+        display: none;
+    }
+    .parent-nav.lst.cf{
+        display: none;
+    }
+    .menu_header_bm{
+        width: 100%;
+    }
+    .login_menu_bm{
+        padding: 0px;
+        margin: 0px;
+    }
+    .hamburg_bm{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 33%;
+        /* hacer el contenido se separe  */
+        flex-wrap: wrap;
+    }
+    .burger{
+        margin: 0px 3px;
+    }
+    .lupin{
+        margin: 0px 3px;
+    }
 }
