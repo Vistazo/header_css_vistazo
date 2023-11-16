@@ -107,16 +107,23 @@ header .header_contain_dm .menu_burguer_bm{
     background-position: center center;
 }
 
+/* SubMenu */
+.child-nav.cf{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .header_contain_dm .menu_burguer_bm{
     position: absolute;
     top:50px;
     background: #000;
     display: none;
+    /* Activa Potcst */
 }
 
-.menu_burguer_bm .activate{
-    display: block;
-}
+
+
 
 .menu_burguer_bm ul {
     padding: 0px;
@@ -176,7 +183,7 @@ li{
     height: 5px;
 }
 
-/* buecador */
+/* buscador */
 .header_contain_dm .basic_search_bm {
     float: left;
     margin-top: 10px;
@@ -187,6 +194,7 @@ li{
     box-shadow: 0 2px 6px rgb(0 0 0 / 18%);
     border-top: 2px solid #fd0f03;
     padding: 10px;
+    display: none;
 }
 .basic_search_bm input[type="text"] {
     width: 235px;
@@ -222,4 +230,55 @@ li{
     color: #fff;
     border: none;
     font-weight: 500;
+}
+
+
+
+
+
+/* Login menu y buscador */
+.login_menu_bm{
+    position: relative;
+    right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    /* border: 1px solid #fff; */
+}
+.registro_bm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.registro_bm .login{
+    width: 60%;
+    background: #fff;
+    text-decoration: none;
+    height: 35px;
+    cursor: pointer;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 10px;
+}
+.registro_bm .login a{
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.registro_bm .login:hover{
+    background: #fd0f03;
+}
+.burger{
+    cursor: pointer;
+}
+.lupin{
+    cursor: pointer;
 }
