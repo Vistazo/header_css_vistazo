@@ -54,7 +54,7 @@ ul, li, ol {
     font-size: 19px;
     font-family: 'Crete Round', serif;
     height: 60px;
-    width: 120px;
+    width: 110px;
     font-size: 16px;
     display: block;
     /* padding-top: 17px; */
@@ -150,6 +150,7 @@ header .header_contain_dm .menu_burguer_bm{
 
 .menu_burguer_bm ul {
     padding: 0px;
+    background: #000;
     /* margin: 0px 10px; */
 }
 
@@ -208,9 +209,9 @@ li{
 
 /* buscador */
 .header_contain_dm .basic_search_bm {
-    float: left;
     margin-top: 10px;
-    position: relative;
+    position: absolute;
+    right: 45px;
     /* width: 100px; */
     top: 55px;
     background: #fff;
@@ -260,24 +261,35 @@ li{
 
 
 /* Login menu y buscador */
-.login_menu_bm{
+
+.portlet-boundary.portlet-static-end.htmlcontainer-portlet {
     position: relative;
-    right: 20px;
+
+}
+
+
+.login_menu_bm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    width: 200px;
+    height: 60px;
+}
+
+
+.registro_bm{
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 200px;
-    /* border: 1px solid #fff; */
-}
-.registro_bm{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+    top: 0px;
+    height: 60px;
 }
 
 .registro_bm .login{
-    width: 60%;
+    width: 50%;
     background: #fff;
     text-decoration: none;
     height: 35px;
@@ -299,6 +311,11 @@ li{
 .registro_bm .login:hover{
     background: #fd0f03;
 }
+
+.hamburg_bm{
+    width: 50%;
+}
+
 .burger{
     cursor: pointer;
 }
@@ -306,11 +323,9 @@ li{
     cursor: pointer;
 }
 
-
-header .registro {
-    display: flex;
-    align-items: flex-start;
-    position: absolute;
-    right: 100px;
-    top: 15px;
-  }
+/* .hamburg_bm{
+    width: 150px;
+}
+.hamburg_bm svg{
+    cursor: pointer;
+} */
