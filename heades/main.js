@@ -8,4 +8,13 @@ document.addEventListener('DOMContentLoaded', function() {
     enfoque.innerHTML = "";
     estadio = document.querySelector(".lst-item.tabnav.sect-246.sect-a4306ce1cba409d40f6649f40a27a166 a");
     estadio.innerHTML = "";
+
+
+    close_burguer = document.querySelector(".close_burguer");
+    close_burguer.addEventListener("click", function() {
+        document.querySelector(".menu_burguer").classList.remove("active");
+        document.querySelector(".menu_burguer").classList.add("desactive");
+        document.querySelector(".menu_burguer").classList.remove("desactive");
+    });
 });
+
