@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    register = document.querySelector(".registro")
+    register = document.querySelector(".registro_bm")
     register.innerHTML=""
     register.innerHTML=`<div class="login_menu_bm">
         <div class="registro_bm">
@@ -136,6 +136,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     // }
 
-
+    register2 = document.querySelector(".registro")
+    register2.innerHTML=""
 });
 
