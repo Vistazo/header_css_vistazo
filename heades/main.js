@@ -160,7 +160,9 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log("Error: ",error);
     }
 
-    // register2 = document.querySelector(".registro")
-    // register2.style.display = "none";
+    register2 = document.querySelector(".registro")
+    if(register2){
+        register2.style.display = "none";
+    }
 
 });
