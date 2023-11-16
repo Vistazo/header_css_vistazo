@@ -80,13 +80,13 @@ document.addEventListener('DOMContentLoaded', function() {
             menu = `${menuMovil.innerHTML}
             <div
             id="189309249"
-            class="portlet-boundary portlet-static-end menu-portlet menu_burguer_mobile"
+            class="menu_burguer_mobile"
            >
-            <div id="menu_189309249" class="menu_secc">
+            <div id="menu_189309249" class="">
               <div class="nav-dropdown nav noSubNav">
                 <ul class="parent-nav lst cf">
                   <li
-                    class="lst-item tabnav sect-1732 sect-79fb641b523c20025e6a8dac39895323"
+                    class="lst-item-movil tabnav sect-1732 sect-79fb641b523c20025e6a8dac39895323"
                   >
                     <div class="tab-grp">
                       <a href="/actualidad" class="tab-item lnk" title="">
@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
                       <span class="hasChildsIcon"></span>
                       <div class="child-nav cf">
                         <ul class="lst-std lst level-2">
-                          <div class="lst-items">
+                          <div class="lst-items-movil-movil">
                             <li
                               class="lst-item sect-1733 sect-f81fd82d0bd4db455e47e7121837c9cb"
                             >
@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function() {
                       <span class="hasChildsIcon"></span>
                       <div class="child-nav cf">
                         <ul class="lst-std lst level-2">
-                          <div class="lst-items">
+                          <div class="lst-items-movil">
                             <li
                               class="lst-item sect-1736 sect-3f156675ba59e009173db6540b30ca45 selected"
                             >
@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', function() {
                       <span class="hasChildsIcon"></span>
                       <div class="child-nav cf">
                         <ul class="lst-std lst level-2">
-                          <div class="lst-items">
+                          <div class="lst-items-movil">
                             <li
                               class="lst-item sect-1740 sect-b8ebd1498285e82ac5b1e7c2ad2dccd9"
                             >
@@ -324,7 +324,7 @@ document.addEventListener('DOMContentLoaded', function() {
                       <span class="hasChildsIcon"></span>
                       <div class="child-nav cf">
                         <ul class="lst-std lst level-2">
-                          <div class="lst-items">
+                          <div class="lst-items-movil">
                             <li
                               class="lst-item sect-2832 sect-3ea0bf98ae29bb60d96f2e0983aab3e6"
                             >
