@@ -74,6 +74,304 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
             </div>`
         e5.innerHTML = div5;
+
+        menuMovil = document.querySelector(".headres_bm_ts");
+        if(menuMovil){
+            menu = `${menuMovil.innerHTML}
+            <div
+            id="189309249"
+            class="portlet-boundary portlet-static-end menu-portlet menu_burguer_mobile"
+           >
+            <div id="menu_189309249" class="menu_secc">
+              <div class="nav-dropdown nav noSubNav">
+                <ul class="parent-nav lst cf">
+                  <li
+                    class="lst-item tabnav sect-1732 sect-79fb641b523c20025e6a8dac39895323"
+                  >
+                    <div class="tab-grp">
+                      <a href="/actualidad" class="tab-item lnk" title="">
+                        <span class="iconBefore"></span>
+                        <strong class="sectionName">Actualidad</strong>
+                        <span class="iconAfter"></span>
+                      </a>
+                      <span class="hasChildsIcon"></span>
+                      <div class="child-nav cf">
+                        <ul class="lst-std lst level-2">
+                          <div class="lst-items">
+                            <li
+                              class="lst-item sect-1733 sect-f81fd82d0bd4db455e47e7121837c9cb"
+                            >
+                              <a href="/actualidad/nacional" class="lnk" title="">
+                                <span class="iconBefore"></span>
+                                <span class="sectionName">Nacional</span>
+                                <span class="iconAfter"></span>
+                              </a>
+                            </li>
+                            <li
+                              class="lst-item sect-1734 sect-f805fc3f687a103080279383e7b5b962"
+                            >
+                              <a href="/actualidad/internacional" class="lnk" title="">
+                                <span class="iconBefore"></span>
+                                <span class="sectionName">Internacional</span>
+                                <span class="iconAfter"></span>
+                              </a>
+                            </li>
+                          </div>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    class="lst-item tabnav sect-1735 sect-5e3a3383803afb7eaaa222e1db4b0547"
+                  >
+                    <div class="tab-grp">
+                      <a href="/politica" class="tab-item lnk" title="">
+                        <span class="iconBefore"></span>
+                        <strong class="sectionName">Política</strong>
+                        <span class="iconAfter"></span>
+                      </a>
+                      <span class="hasChildsIcon"></span>
+                      <div class="child-nav cf">
+                        <ul class="lst-std lst level-2">
+                          <div class="lst-items">
+                            <li
+                              class="lst-item sect-1736 sect-3f156675ba59e009173db6540b30ca45 selected"
+                            >
+                              <a href="/politica/nacional" class="lnk" title="">
+                                <span class="iconBefore"></span>
+                                <span class="sectionName">Nacional</span>
+                                <span class="iconAfter"></span>
+                              </a>
+                            </li>
+                            <li
+                              class="lst-item sect-1737 sect-5b9e05c46c38a9d40dad478d8ab14cb6"
+                            >
+                              <a href="/politica/internacional" class="lnk" title="">
+                                <span class="iconBefore"></span>
+                                <span class="sectionName">Internacional</span>
+                                <span class="iconAfter"></span>
+                              </a>
+                            </li>
+                          </div>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    class="lst-item tabnav sect-1749 sect-af66e17754b1a82f345799be1acd98b1"
+                  >
+                    <a
+                      href="https://suscripciones.vistazo.com/"
+                      rel="nofollow noopener noreferrer"
+                      class="tab-item lnk"
+                      target="_blank"
+                      title=""
+                    >
+                      <span class="iconBefore"></span>
+                      <span class="sectionName">Suscríbete</span>
+                      <span class="iconAfter"></span>
+                    </a>
+                  </li>
+                  <li
+                    class="lst-item tabnav sect-1738 sect-73e47026e609fbb586f2bc13ec34cc00"
+                  >
+                    <a href="/opinion" class="tab-item lnk" title="">
+                      <span class="iconBefore"></span>
+                      <span class="sectionName">Opinión</span>
+                      <span class="iconAfter"></span>
+                    </a>
+                  </li>
+                  <li
+                    class="lst-item tabnav sect-1739 sect-c52d895261ce5bce5e45efd7189ee863"
+                  >
+                    <div class="tab-grp">
+                      <a href="/estilo-de-vida" class="tab-item lnk" title="">
+                        <span class="iconBefore"></span>
+                        <strong class="sectionName">Estilo de vida</strong>
+                        <span class="iconAfter"></span>
+                      </a>
+                      <span class="hasChildsIcon"></span>
+                      <div class="child-nav cf">
+                        <ul class="lst-std lst level-2">
+                          <div class="lst-items">
+                            <li
+                              class="lst-item sect-1740 sect-b8ebd1498285e82ac5b1e7c2ad2dccd9"
+                            >
+                              <a href="/estilo-de-vida/salud" class="lnk" title="">
+                                <span class="iconBefore"></span>
+                                <span class="sectionName">Salud</span>
+                                <span class="iconAfter"></span>
+                              </a>
+                            </li>
+                            <li
+                              class="lst-item sect-1741 sect-4d701365fced03f47696c9a1f6b8b89e"
+                            >
+                              <a
+                                href="/estilo-de-vida/sostenibilidad"
+                                class="lnk"
+                                title=""
+                              >
+                                <span class="iconBefore"></span>
+                                <span class="sectionName">Sostenibilidad</span>
+                                <span class="iconAfter"></span>
+                              </a>
+                            </li>
+                            <li
+                              class="lst-item sect-1742 sect-e6d605dcd25aca85cbdd17e0fba1256c"
+                            >
+                              <a href="/estilo-de-vida/ciencia" class="lnk" title="">
+                                <span class="iconBefore"></span>
+                                <span class="sectionName">Ciencia</span>
+                                <span class="iconAfter"></span>
+                              </a>
+                            </li>
+                            <li
+                              class="lst-item sect-1743 sect-d3cad84025daf4d582448db940277308"
+                            >
+                              <a href="/estilo-de-vida/tecnologia" class="lnk" title="">
+                                <span class="iconBefore"></span>
+                                <span class="sectionName">Tecnología</span>
+                                <span class="iconAfter"></span>
+                              </a>
+                            </li>
+                            <li
+                              class="lst-item sect-2831 sect-3aa2ec143e4d6c32cc09bba35152e3ac"
+                            >
+                              <a href="/estilo-de-vida/tendencias" class="lnk" title="">
+                                <span class="iconBefore"></span>
+                                <span class="sectionName">Tendencias</span>
+                                <span class="iconAfter"></span>
+                              </a>
+                            </li>
+                          </div>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    class="lst-item tabnav sect-1744 sect-b9980f56b677f8e269b30e61d191af47"
+                  >
+                    <a href="/deportes" class="tab-item lnk" title="">
+                      <span class="iconBefore"></span>
+                      <span class="sectionName">Estadio</span>
+                      <span class="iconAfter"></span>
+                    </a>
+                  </li>
+                  <li
+                    class="lst-item tabnav sect-1745 sect-c9f0c56283c0327e88a8dc57b5c41b5e"
+                  >
+                    <a href="/enfoque" class="tab-item lnk" title="">
+                      <span class="iconBefore"></span>
+                      <span class="sectionName">Enfoque</span>
+                      <span class="iconAfter"></span>
+                    </a>
+                  </li>
+                  <li
+                    class="lst-item tabnav sect-1746 sect-446817676877dd51d20d7ae38d1cb123"
+                  >
+                    <a href="/hogar" class="tab-item lnk" target="_blank" title="">
+                      <span class="iconBefore"></span>
+                      <span class="sectionName">Hogar</span>
+                      <span class="iconAfter"></span>
+                    </a>
+                  </li>
+                  <li
+                    class="lst-item tabnav sect-1748 sect-c40be6be8c335e8cf991f6b5a6f73d0e"
+                  >
+                    <a href="/podcast" class="tab-item lnk" title="">
+                      <span class="iconBefore"></span>
+                      <span class="sectionName">Podcast</span>
+                      <span class="iconAfter"></span>
+                    </a>
+                  </li>
+                  <li
+                    class="lst-item tabnav sect-2206 sect-741e1b9e1eda38b70605f3cf49942c8d"
+                  >
+                    <a
+                      href="https://www.vistazo.com/replica/disculpas-publicas-al-proyecto-inmobiliario-torres-elit-por-utilizar-una-imagen-suya-sin-autorizacion-FY6098623"
+                      rel="nofollow"
+                      class="tab-item lnk"
+                      title=""
+                    >
+                      <span class="iconBefore"></span>
+                      <span class="sectionName">Réplicas</span>
+                      <span class="iconAfter"></span>
+                    </a>
+                  </li>
+                  <li
+                    class="lst-item tabnav sect-2211 sect-624cfcd128cc6dcc5e0ad6abb48357ba"
+                  >
+                    <a
+                      href="https://suscripciones.vistazo.com/"
+                      rel="nofollow"
+                      class="tab-item lnk"
+                      title=""
+                    >
+                      <span class="iconBefore"></span>
+                      <span class="sectionName">SUSCRÍBETE</span>
+                      <span class="iconAfter"></span>
+                    </a>
+                  </li>
+                  <li
+                    class="lst-item tabnav sect-2830 sect-8aa58032e14c734353b36057fffa8be1"
+                  >
+                    <div class="tab-grp">
+                      <a href="/portafolio" class="tab-item lnk" title="">
+                        <span class="iconBefore"></span>
+                        <strong class="sectionName">Portafolio</strong>
+                        <span class="iconAfter"></span>
+                      </a>
+                      <span class="hasChildsIcon"></span>
+                      <div class="child-nav cf">
+                        <ul class="lst-std lst level-2">
+                          <div class="lst-items">
+                            <li
+                              class="lst-item sect-2832 sect-3ea0bf98ae29bb60d96f2e0983aab3e6"
+                            >
+                              <a href="/portafolio/economia" class="lnk" title="">
+                                <span class="iconBefore"></span>
+                                <span class="sectionName">Economía</span>
+                                <span class="iconAfter"></span>
+                              </a>
+                            </li>
+                            <li
+                              class="lst-item sect-2833 sect-198d041e6485a86936af9e6863711229"
+                            >
+                              <a href="/portafolio/empresas" class="lnk" title="">
+                                <span class="iconBefore"></span>
+                                <span class="sectionName">Empresas</span>
+                                <span class="iconAfter"></span>
+                              </a>
+                            </li>
+                            <li
+                              class="lst-item sect-2834 sect-e81de47fdbf9a9ec0fc028edd508608b"
+                            >
+                              <a href="/portafolio/emprendimiento" class="lnk" title="">
+                                <span class="iconBefore"></span>
+                                <span class="sectionName">Emprendimiento</span>
+                                <span class="iconAfter"></span>
+                              </a>
+                            </li>
+                            <li
+                              class="lst-item sect-2835 sect-335610bdd061e39ce2649113dfec87b1"
+                            >
+                              <a href="/portafolio/provincias" class="lnk" title="">
+                                <span class="iconBefore"></span>
+                                <span class="sectionName">Provincias</span>
+                                <span class="iconAfter"></span>
+                              </a>
+                            </li>
+                          </div>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+              </div>`
+            menuMovil.innerHTML = menu;
+        }
     
         var elems = document.querySelector('.lst-item.tabnav.sect-1824.sect-262e52091545304582cf18882fc67b4f div a strong');
         elems.innerHTML = "";
@@ -88,25 +386,35 @@ document.addEventListener('DOMContentLoaded', function() {
     
         close_burguer = document.querySelector(".burger");
         if(close_burguer){
+            // ver de cuanto es el tamaño de la pantalla si es igual o meno a 900px activar el menu movil
             close_burguer.addEventListener("click", function() {
                 ver = document.querySelector(".menu_burguer_bm")
-                if (ver.style.display == "none" || ver.style.display == "") {
-                    ver.style.display = "block";
+                movil = window.matchMedia("(max-width: 900px)");
+                if(movil.matches){
+                    m = document.querySelector(".menu_burguer_mobile")
+                    console.log("m: ",m);
+                    if (m.style.display == "none" || m.style.display == "") {
+                        m.style.display = "block";
+                    }else{
+                        m.style.display = "none";
+                    }
                 }else{
-                    ver.style.display = "none";
+                    if (ver.style.display == "none" || ver.style.display == "") {
+                        ver.style.display = "block";
+                    }else{
+                        ver.style.display = "none";
+                    }
                 }
             });
         }
     
         // para que tambien se cierre el menu cuando se haga click en cualquier parte de la pantalla
-        window.addEventListener("click", function(event) {
-            if (event.target == document.querySelector(".menu_burguer_bm")) {
-                document.querySelector(".menu_burguer_bm").style.display = "none";
-            }
-        });
+ 
     
         buecador = document.querySelector(".lupin");
         if(buecador){
+            movil = window.matchMedia("(max-width: 900px)");
+            if(movil.matches)return;
             buecador.addEventListener("click", function() {
                 ver = document.querySelector(".basic_search_bm")
                 if (ver.style.display == "none" || ver.style.display == "") {
@@ -119,9 +427,13 @@ document.addEventListener('DOMContentLoaded', function() {
     
         // para que tambien se cierre el menu cuando se haga click en cualquier parte de la pantalla
         window.addEventListener("click", function(event) {
-            if (event.target == document.querySelector(".basic_search_bm")) {
-                document.querySelector(".basic_search_bm").style.display = "none";
-            }
+                console.log("click", event);
+                console.log(event.target.className.baseVal);
+                if(event.target.className.baseVal == "lupin"){
+                    document.querySelector(".menu_burguer_bm").style.display = "none";
+                }else if(event.target.className.baseVal == "burger"){
+                    document.querySelector(".basic_search_bm").style.display = "none";
+                }
         });
     
         tabgrp = document.querySelectorAll(".tab-grp");
