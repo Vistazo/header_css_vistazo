@@ -1,4 +1,14 @@
+document.addEventListener('DOMContentLoaded', function() {
+    linkElement = document.createElement('link');
+    inkElement.rel = "stylesheet";
+    linkElement.href = "https://vzheaders.netlify.app/heades/header.css";
+    var headElement = document.head || document.getElementsByTagName("head")[0];
+    headElement.appendChild(linkElement);
+
+});
+
 document.addEventListener('load', function() {
+
     register = document.querySelector(".registro_bm")
     register.innerHTML=""
     register.innerHTML=`<div class="login_menu_bm">
