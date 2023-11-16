@@ -12,9 +12,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     close_burguer = document.querySelector(".close_burguer");
     close_burguer.addEventListener("click", function() {
-        document.querySelector(".menu_burguer_bm").classList.remove("active");
-        document.querySelector(".menu_burguer_bm").classList.add("desactive");
-        document.querySelector(".menu_burguer_bm").classList.remove("desactive");
+        ver = document.querySelector(".menu_burguer_bm")
+        if (ver.style.display == "none" || ver.style.display == "") {
+            ver.style.display = "block";
+        }else{
+            ver.style.display = "none";
+        }
+
     });
 });
 
