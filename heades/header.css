@@ -54,7 +54,7 @@ ul, li, ol {
     font-size: 19px;
     font-family: 'Crete Round', serif;
     height: 60px;
-    width: 110px;
+    width: 100px;
     font-size: 16px;
     display: block;
     /* padding-top: 17px; */
@@ -84,7 +84,9 @@ ul, li, ol {
 }
 
 header .header_contain_dm .menu_burguer_bm{
-    right: 145px
+    right: 250px;
+    margin-top: 7px;
+
 }
 
 .menu_header_bm li.sect-262e52091545304582cf18882fc67b4f a.tab-item.lnk {
@@ -151,6 +153,7 @@ header .header_contain_dm .menu_burguer_bm{
 .menu_burguer_bm ul {
     padding: 0px;
     background: #000;
+    margin-right: 0px;
     /* margin: 0px 10px; */
 }
 
@@ -256,15 +259,22 @@ li{
     font-weight: 500;
 }
 
+@media (min-width: 1400px){
+    .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+        max-width: 1400px;
+    }
+}
 
-
+.col-100-top-one-col.col-xs-12.portlet-column.nopadding{
+    position: relative;
+}
 
 
 /* Login menu y buscador */
 
 .portlet-boundary.portlet-static-end.htmlcontainer-portlet {
     position: relative;
-
+    width: 250px;
 }
 
 
@@ -277,18 +287,7 @@ li{
     height: 60px;
 }
 
-
-.registro_bm{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 200px;
-    top: 0px;
-    height: 60px;
-}
-
-.registro_bm .login{
+.login{
     width: 50%;
     background: #fff;
     text-decoration: none;
@@ -300,16 +299,19 @@ li{
     align-items: center;
     margin: 0px 10px;
 }
-.registro_bm .login a{
+
+.login a{
     text-decoration: none;
     color: #000;
     font-size: 14px;
     font-weight: 500;
     cursor: pointer;
+    list-style: none;
 }
 
-.registro_bm .login:hover{
+.login:hover{
     background: #fd0f03;
+    color: #fff;
 }
 
 .hamburg_bm{
@@ -322,10 +324,3 @@ li{
 .lupin{
     cursor: pointer;
 }
-
-/* .hamburg_bm{
-    width: 150px;
-}
-.hamburg_bm svg{
-    cursor: pointer;
-} */
