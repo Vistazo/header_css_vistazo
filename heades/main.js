@@ -5,10 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
         register = document.querySelector(".nav-dropdown.nav.noSubNav")
         if(register){
             copi = register.innerHTML
-            logo = `<div> <a class="site-logo" href="/" aria-label="Vistazo">vistazo</a> <style> a.site-logo {
-                color: transparent;
-            }
-            </style> </div>`
+            logo = `<div><a class="site-logo" href="/" aria-label="Vistazo">vistazo</a></div>`
             register.innerHTML=""
             register.innerHTML=`${logo}${copi}<div class="login_menu_bm">
                     <div class="login">
