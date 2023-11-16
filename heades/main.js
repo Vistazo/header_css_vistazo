@@ -1,22 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
     console.log("DOM fully loaded and parsed");
-    // try {
-    //     linkElement = document.createElement('link');
-    //     linkElement.rel = "stylesheet";
-    //     linkElement.href = "https://vzheaders.netlify.app/heades/header.css";
-    //     var headElement = document.head || document.getElementsByTagName("head")[10]
-    //     headElement.appendChild(linkElement);
-    //     console.log(headElement);
-    // } catch (error) {
-    //     console.log("Error: ",error);
-    // }
 
     try {
-        register = document.querySelector(".registro_bm")
+        register = document.querySelector(".nav-dropdown.nav.noSubNav")
         if(register){
+            copi = register.innerHTML
+            
             register.innerHTML=""
-            register.innerHTML=`<div class="login_menu_bm">
-                <div class="registro_bm">
+            register.innerHTML=`${copi}<div class="login_menu_bm">
                     <div class="login">
                         <a class=""
                             href="https://suscripciones.vistazo.com/id/login/?continue=https%3A%2F%2Fwww.vistazo.com%2F">
@@ -37,9 +28,9 @@ document.addEventListener('DOMContentLoaded', function() {
                             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
                         </svg>
                     </div>
-                </div>
             </div>`
         }
+
         opinion = document.querySelector(".sect-ed616e97416bbb72f2a42fa530435804");
         div= `<div class="tab-grp">
                 ${opinion.innerHTML}
@@ -164,5 +155,4 @@ document.addEventListener('DOMContentLoaded', function() {
     if(register2){
         register2.style.innerHTML=""
     }
-
 });
