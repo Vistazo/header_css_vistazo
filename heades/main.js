@@ -25,6 +25,50 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
         </div>
     </div>`
+    opinion = document.querySelector(".sect-ed616e97416bbb72f2a42fa530435804");
+    div= `<div class="tab-grp">
+            ${opinion.innerHTML}
+            <span class="hasChildsIcon"></span>
+            <div class="child-nav cf">
+            </div>
+        </div>`
+    opinion.innerHTML = div;
+    e2 = document.querySelector(".sect-262e52091545304582cf18882fc67b4f");
+    div2= `<div class="tab-grp">
+            ${e2.innerHTML}
+            <span class="hasChildsIcon"></span>
+            <div class="child-nav cf">
+            </div>
+        </div>`
+    e2.innerHTML = div2;
+
+    e3 = document.querySelector(".sect-0903d1806e4bd8bf290229a78d484445");
+    div3= `<div class="tab-grp">
+            ${e3.innerHTML}
+            <span class="hasChildsIcon"></span>
+            <div class="child-nav cf">
+            </div>
+        </div>`
+    e3.innerHTML = div3;
+
+    e4 = document.querySelector(".sect-74b11848b5e1a47d79fed2bc56e2a9fc");
+    div4= `<div class="tab-grp">
+            ${e4.innerHTML}
+            <span class="hasChildsIcon"></span>
+            <div class="child-nav cf">
+            </div>
+        </div>`
+    e4.innerHTML = div4;
+
+    e5 = document.querySelector(".sect-a4306ce1cba409d40f6649f40a27a166");
+    div5= `<div class="tab-grp">
+            ${e5.innerHTML}
+            <span class="hasChildsIcon"></span>
+            <div class="child-nav cf">
+            </div>
+        </div>`
+    e5.innerHTML = div5;
+
     var elems = document.querySelector('.lst-item.tabnav.sect-1824.sect-262e52091545304582cf18882fc67b4f div a strong');
     elems.innerHTML = "";
     hogar = document.querySelector(".lst-item.tabnav.sect-529.sect-0903d1806e4bd8bf290229a78d484445 a");
@@ -70,6 +114,27 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    tabgrp = document.querySelectorAll(".tab-grp");
+    // if(tabgrp.length > 0){
+        tabgrp.forEach(e => {
+            e.addEventListener("mouseover", function() {
+                e.style.clipPath="polygon(11.5% -25.13%,96.50% -24.00%,88% 100%,0% 100%)";
+                e.style.backgroundColor="#fd0f03";
+                e.style.textAlign="center";
+                e.style.margin="0px"
+                e.style.colo="white"
+                e.style.padding="0px";
+                e.style.height="100%";
+            });
+
+            e.addEventListener("mouseout", function() {
+                e.style.clipPath="polygon(0% 0, 100% 0%, 100% 100%, 0% 100%)";
+                e.style.backgroundColor="#000";
+                e.style.padding="0px";
+            });
+  
+        });
+    // }
 
 
 });
