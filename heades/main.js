@@ -12,9 +12,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     close_burguer = document.querySelector(".close_burguer");
     close_burguer.addEventListener("click", function() {
-        document.querySelector(".menu_burguer").classList.remove("active");
-        document.querySelector(".menu_burguer").classList.add("desactive");
-        document.querySelector(".menu_burguer").classList.remove("desactive");
+        document.querySelector(".menu_burguer_bm").classList.remove("active");
+        document.querySelector(".menu_burguer_bm").classList.add("desactive");
+        document.querySelector(".menu_burguer_bm").classList.remove("desactive");
     });
 });
 
