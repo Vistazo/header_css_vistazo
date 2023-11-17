@@ -118,6 +118,7 @@ ul, li, ol {
     width: 100%;
     background: #000;
     border-top: 2px solid #fff;
+    z-index: 10;
 }
 .estilo_vida_sub .lst_items_sub{
     display: flex;
@@ -155,6 +156,7 @@ ul, li, ol {
     width: 100%;
     background: #000;
     border-top: 2px solid #fff;
+    z-index: 10;
 }
 .politica_sub .lst_items_sub{
     display: flex;
@@ -195,6 +197,7 @@ ul, li, ol {
     width: 100%;
     background: #000;
     border-top: 2px solid #fff;
+    z-index: 10;
 }
 .portafolio_sub .lst_items_sub{
     display: flex;
@@ -232,6 +235,7 @@ ul, li, ol {
     width: 100%;
     background: #000;
     border-top: 2px solid #fff;
+    z-index: 10;
 }
 .actualidad_sub .lst_items_sub{
     display: flex;
