@@ -682,9 +682,15 @@ document.addEventListener('DOMContentLoaded', function() {
       <strong class="sectionName" style="font-size: 1px;">Portafolio</strong>
       <span class="iconAfter"></span>`
       tabgrp = document.querySelectorAll(".tab-grp");
+      var act = document.querySelector(".actualidad_sub .lst_items_sub")
+      var pol = document.querySelector(".politica_sub .lst_items_sub")
+      var est = document.querySelector(".estilo_vida_sub .lst_items_sub")
+      var enf = document.querySelector(".portafolio_sub .lst_items_sub")
           tabgrp.forEach(e => {
               e.addEventListener("mouseover", function(i) {
                 
+                block = i.target.querySelector(".sectionName")
+                // console.log("i: ",i.target);
                 e.style.clipPath="polygon(11.5% -25.13%,96.50% -24.00%,88% 100%,0% 100%)";
                 e.style.backgroundColor="#fd0f03";
                 e.style.textAlign="center";
@@ -692,41 +698,25 @@ document.addEventListener('DOMContentLoaded', function() {
                 e.style.colo="white"
                 e.style.padding="0px";
                 e.style.height="100%";
-                console.log("i: ",i.target);
-                block = i.target.querySelector(".sectionName")
-                console.log("block: ",block.innerHTML);
                 if(block && block.innerHTML){
+                  console.log("block: ",block.innerHTML);
                   if(block.innerHTML == "Actualidad"){
-                      act = document.querySelector(".actualidad_sub .lst_items_sub")
-                      // que se muestre el sub menu pero con una transicion suave
-                      act.style.display="none";
+                      Limpiar()
                       act.style.display="flex";
                   }else if(block.innerHTML == "Política"){
-                      pol = document.querySelector(".politica_sub .lst_items_sub")
-                      // que se muestre el sub menu pero con una transicion suave
-                      pol.style.display="none";
+                      Limpiar()
                       pol.style.display="flex";
                   }else if(block.innerHTML == "Estilo de vida"){
-                      est = document.querySelector(".estilo_vida_sub .lst_items_sub")
-                      // que se muestre el sub menu pero con una transicion suave
-                      est.style.display="none";
+                      Limpiar()
                       est.style.display="flex";
                   }else if(block.innerHTML == "Portafolio"){
-                      enf = document.querySelector(".portafolio_sub .lst_items_sub")
-                      // que se muestre el sub menu pero con una transicion suave
-                      enf.style.display="none";
+                      Limpiar()
                       enf.style.display="flex";
                   }else{
-                      document.querySelector(".actualidad_sub .lst_items_sub").style.display="none";
-                      document.querySelector(".estilo_vida_sub .lst_items_sub").style.display="none";
-                      document.querySelector(".portafolio_sub .lst_items_sub").style.display="none";
+                    Limpiar()
                   }
                 }
               });
-              // activar el menu el sub menu
-              
-
-  
               e.addEventListener("mouseout", function() {
                   e.style.clipPath="polygon(0% 0, 100% 0%, 100% 100%, 0% 100%)";
                   e.style.backgroundColor="#000";
@@ -743,3 +733,10 @@ document.addEventListener('DOMContentLoaded', function() {
       register2.style.innerHTML=""
   }
 });
+
+function Limpiar(){
+  document.querySelector(".actualidad_sub .lst_items_sub").style.display="none";
+  document.querySelector(".estilo_vida_sub .lst_items_sub").style.display="none";
+  document.querySelector(".portafolio_sub .lst_items_sub").style.display="none";
+  document.querySelector(".politica_sub .lst_items_sub").style.display="none";
+}
