@@ -1,4 +1,3 @@
-/* todo tiene que ser response */
 .header_contain_dm{
     background: black;
     box-shadow: 1px 2px 5px #555;
@@ -106,6 +105,168 @@ ul, li, ol {
     width: 100%;
     border-top: 1px solid #fff;
     text-align: center;
+    display: none;
+}
+
+.estilo_vida_sub{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top:60px;
+    position: fixed;
+    width: 100%;
+    background: #000;
+    border-top: 2px solid #fff;
+}
+.estilo_vida_sub .lst_items_sub{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    height: 40px;
+    background: #000;
+    transition: all 0.3s ease;
+    display: none;
+
+}
+.estilo_vida_sub .ulclass{
+    margin: 0px 10px;
+}
+.estilo_vida_sub .lst-item-bm{
+    margin: 0px 10px;
+}
+.estilo_vida_sub .lst-item-bm a{
+    text-decoration: none;
+    list-style: none;
+    color: #FFF;
+    font-family: 'Crete Round',serif;
+    font-weight: 500;
+}
+
+.politica_sub{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top:60px;
+    position: fixed;
+    width: 100%;
+    background: #000;
+    border-top: 2px solid #fff;
+}
+.politica_sub .lst_items_sub{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    height: 40px;
+    background: #000;
+    transition: all 0.3s ease;
+    display: none;
+
+}
+.politica_sub .ulclass{
+    margin: 0px 10px;
+}
+.politica_sub .lst-item-bm{
+    margin: 0px 10px;
+}
+.politica_sub .lst-item-bm a{
+    text-decoration: none;
+    list-style: none;
+    color: #FFF;
+    font-family: 'Crete Round',serif;
+    font-weight: 500;
+}
+
+
+
+
+.portafolio_sub{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top:60px;
+    position: fixed;
+    width: 100%;
+    background: #000;
+    border-top: 2px solid #fff;
+}
+.portafolio_sub .lst_items_sub{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    height: 40px;
+    background: #000;
+    transition: all 0.3s ease;
+    display: none;
+
+}
+.portafolio_sub .ulclass{
+    margin: 0px 10px;
+}
+.portafolio_sub .lst-item-bm{
+    margin: 0px 10px;
+}
+.portafolio_sub .lst-item-bm a{
+    text-decoration: none;
+    list-style: none;
+    color: #FFF;
+    font-family: 'Crete Round',serif;
+    font-weight: 500;
+}
+
+.actualidad_sub{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top:60px;
+    position: fixed;
+    width: 100%;
+    background: #000;
+    border-top: 2px solid #fff;
+}
+.actualidad_sub .lst_items_sub{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    height: 40px;
+    background: #000;
+    transition: all 0.3s ease;
+    display: none;
+
+}
+.actualidad_sub .ulclass{
+    margin: 0px 10px;
+}
+
+.actualidad_sub .lst-item-bm{
+    margin: 0px 10px;
+}
+.actualidad_sub .lst-item-bm a{
+    text-decoration: none;
+    list-style: none;
+    color: #FFF;
+    font-family: 'Crete Round',serif;
+    font-weight: 500;
+}
+
+
+.menu_burguer_bm li .child-nav .lst-std.lst.level-2 .lst-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0px;
 }
 
 header .header_contain_dm .menu_burguer_bm{
@@ -162,6 +323,7 @@ header .header_contain_dm .menu_burguer_bm{
     display: flex;
     justify-content: center;
     align-items: center;
+    top: 140px;
 }
 
 .header_contain_dm .menu_burguer_bm{
@@ -299,7 +461,7 @@ li{
 
 .portlet-boundary.portlet-static-end.htmlcontainer-portlet {
     position: relative;
-    width: 250px;
+    width: 114px;
 }
 
 
@@ -421,5 +583,11 @@ li{
     }
     ul.level-2 .lst-items-movil li.sect-619 .lnk .sectionName, ul.level-2 .lst-items-movil li.sect-1741 .lnk .sectionName {
         color: #37b72f!important;
+    }
+}
+
+@media (min-width: 900px){
+    .menu_burguer_mobile{
+        display: none;
     }
 }
