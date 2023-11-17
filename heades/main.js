@@ -701,6 +701,11 @@ document.addEventListener('DOMContentLoaded', function() {
                       // que se muestre el sub menu pero con una transicion suave
                       act.style.display="none";
                       act.style.display="flex";
+                  }else if(block.innerHTML == "Política"){
+                      pol = document.querySelector(".politica_sub .lst_items_sub")
+                      // que se muestre el sub menu pero con una transicion suave
+                      pol.style.display="none";
+                      pol.style.display="flex";
                   }else if(block.innerHTML == "Estilo de vida"){
                       est = document.querySelector(".estilo_vida_sub .lst_items_sub")
                       // que se muestre el sub menu pero con una transicion suave
