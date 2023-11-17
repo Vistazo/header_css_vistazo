@@ -635,6 +635,7 @@ document.addEventListener('DOMContentLoaded', function() {
                   m = document.querySelector(".menu_burguer_mobile")
                   console.log("m: ",m);
                   if (m.style.display == "none" || m.style.display == "") {
+                      LimpiarBuscadorMenu()
                       m.style.display = "block";
                   }else{
                       m.style.display = "none";
@@ -659,6 +660,7 @@ document.addEventListener('DOMContentLoaded', function() {
           buecador.addEventListener("click", function() {
               ver = document.querySelector(".basic_search_bm")
               if (ver.style.display == "none" || ver.style.display == "") {
+                  LimpiarBuscadorMenu()
                   ver.style.display = "block";
               }else{
                   ver.style.display = "none";
@@ -667,14 +669,15 @@ document.addEventListener('DOMContentLoaded', function() {
       }
   
       // para que tambien se cierre el menu cuando se haga click en cualquier parte de la pantalla
-      window.addEventListener("click", function(event) {
-              console.log("click", event);
-              console.log(event.target.className.baseVal);
-              if(event.target.className.baseVal == "lupin"){
-                  document.querySelector(".menu_burguer_bm").style.display = "none";
-              }else if(event.target.className.baseVal == "burger"){
-                  document.querySelector(".basic_search_bm").style.display = "none";
-              }
+      document.addEventListener("click", function(event) {
+        if(event.target.className.baseVal == "lupin"){
+            document.querySelector(".menu_burguer_bm").style.display = "none";
+        }else if(event.target.className.baseVal == "burger"){
+            document.querySelector(".basic_search_bm").style.display = "none";
+        }else{
+          document.querySelector(".menu_burguer_bm").style.display = "none";
+          document.querySelector(".basic_search_bm").style.display = "none";
+        }
       });
   
       port =`
@@ -686,43 +689,41 @@ document.addEventListener('DOMContentLoaded', function() {
       var pol = document.querySelector(".politica_sub .lst_items_sub")
       var est = document.querySelector(".estilo_vida_sub .lst_items_sub")
       var enf = document.querySelector(".portafolio_sub .lst_items_sub")
-          tabgrp.forEach(e => {
-              e.addEventListener("mouseover", function(i) {
-                
-                block = i.target.querySelector(".sectionName")
-                // console.log("i: ",i.target);
-                e.style.clipPath="polygon(11.5% -25.13%,96.50% -24.00%,88% 100%,0% 100%)";
-                e.style.backgroundColor="#fd0f03";
-                e.style.textAlign="center";
-                e.style.margin="0px"
-                e.style.colo="white"
-                e.style.padding="0px";
-                e.style.height="100%";
-                if(block && block.innerHTML){
-                  console.log("block: ",block.innerHTML);
-                  if(block.innerHTML == "Actualidad"){
-                      Limpiar()
-                      act.style.display="flex";
-                  }else if(block.innerHTML == "Política"){
-                      Limpiar()
-                      pol.style.display="flex";
-                  }else if(block.innerHTML == "Estilo de vida"){
-                      Limpiar()
-                      est.style.display="flex";
-                  }else if(block.innerHTML == "Portafolio"){
-                      Limpiar()
-                      enf.style.display="flex";
-                  }else{
-                    Limpiar()
-                  }
-                }
-              });
-              e.addEventListener("mouseout", function() {
-                  e.style.clipPath="polygon(0% 0, 100% 0%, 100% 100%, 0% 100%)";
-                  e.style.backgroundColor="#000";
-                  e.style.padding="0px";
-              });
-          });
+      tabgrp.forEach(e => {
+        e.addEventListener("mouseover", function(i) {
+          block = i.target.querySelector(".sectionName")
+          e.style.clipPath="polygon(11.5% -25.13%,96.50% -24.00%,88% 100%,0% 100%)";
+          e.style.backgroundColor="#fd0f03";
+          e.style.textAlign="center";
+          e.style.margin="0px"
+          e.style.colo="white"
+          e.style.padding="0px";
+          e.style.height="100%";
+          if(block && block.innerHTML){
+            console.log("block: ",block.innerHTML);
+            if(block.innerHTML == "Actualidad"){
+                Limpiar()
+                act.style.display="flex";
+            }else if(block.innerHTML == "Política"){
+                Limpiar()
+                pol.style.display="flex";
+            }else if(block.innerHTML == "Estilo de vida"){
+                Limpiar()
+                est.style.display="flex";
+            }else if(block.innerHTML == "Portafolio"){
+                Limpiar()
+                enf.style.display="flex";
+            }else{
+              Limpiar()
+            }
+          }
+        });
+        e.addEventListener("mouseout", function() {
+            e.style.clipPath="polygon(0% 0, 100% 0%, 100% 100%, 0% 100%)";
+            e.style.backgroundColor="#000";
+            e.style.padding="0px";
+        });
+      });
   
   } catch (error) {
       console.log("Error: ",error);
@@ -732,7 +733,40 @@ document.addEventListener('DOMContentLoaded', function() {
   if(register2){
       register2.style.innerHTML=""
   }
+
+  document.addEventListener("click", function(){
+    Limpiar()
+  })
+
+  RutaActual()
+
+
+
 });
+
+function RutaActual(){
+  let url = window.location.pathname.split("/")[3]
+  tabgrp = document.querySelectorAll(".sectionName");
+  if(url && url != ""){
+    tabgrp.forEach(e => {
+      if(String(e.innerHTML).toLowerCase() == String(url).toLowerCase()){
+        sal = e.parentElement.parentElement
+        sal.style.clipPath="polygon(11.5% -25.13%,96.50% -24.00%,88% 100%,0% 100%)";
+        sal.style.backgroundColor="#fd0f03";
+        sal.style.textAlign="center";
+        sal.style.margin="0px"
+        sal.style.colo="white"
+        sal.style.padding="0px";
+        sal.style.height="100%";
+      }
+    });
+  }
+}
+
+function LimpiarBuscadorMenu(){
+  document.querySelector(".basic_search_bm").style.display="none";
+  document.querySelector(".menu_burguer_bm").style.display="none";
+}
 
 function Limpiar(){
   document.querySelector(".actualidad_sub .lst_items_sub").style.display="none";
