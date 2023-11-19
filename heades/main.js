@@ -18,13 +18,17 @@ document.addEventListener('DOMContentLoaded', function() {
                           loading="lazy">Login
                       </a>
                   </div>
-                  <div class="hamburg_bm" style='color: white' id='menu_1'>
-                      <svg xmlns="http://www.w3.org/2000/svg" class="burger" width="24" height="25" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-                          <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
-                      </svg>
-                      <svg xmlns="http://www.w3.org/2000/svg" class="lupin" style='color: white' width="25" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                      </svg>
+                  <div class="btn_menu">
+                    <div class="hamburg_bm" style='color: white' id='menu_1'>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="burger" width="24" height="25" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                        </svg>
+                    </div>
+                    <div class="hamburg_bm_lupin" style='color: white' id='menu_2'>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="lupin" style='color: white' width="25" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                        </svg>
+                    </div>
                   </div>
           </div>`
       }
@@ -630,7 +634,7 @@ document.addEventListener('DOMContentLoaded', function() {
           // ver de cuanto es el tamaño de la pantalla si es igual o meno a 900px activar el menu movil
           close_burguer.addEventListener("click", function() {
               ver = document.querySelector(".menu_burguer_bm")
-              movil = window.matchMedia("(max-width: 900px)");
+              movil = window.matchMedia("(min-width: 360px) and (max-width: 1024px)");
               if(movil.matches){
                   m = document.querySelector(".menu_burguer_mobile")
                   console.log("m: ",m);
@@ -653,30 +657,40 @@ document.addEventListener('DOMContentLoaded', function() {
       // para que tambien se cierre el menu cuando se haga click en cualquier parte de la pantalla
 
   
-      buecador = document.querySelector(".lupin");
-      if(buecador){
-          movil = window.matchMedia("(max-width: 900px)");
-          if(movil.matches)return;
-          buecador.addEventListener("click", function() {
-              ver = document.querySelector(".basic_search_bm")
-              if (ver.style.display == "none" || ver.style.display == "") {
-                  LimpiarBuscadorMenu()
-                  ver.style.display = "block";
-              }else{
-                  ver.style.display = "none";
-              }
-          });
+      buscador = document.querySelector(".hamburg_bm_lupin");
+      if(buscador){
+        buscador.addEventListener("click", function() {
+          movil = window.matchMedia("(min-width: 360px) and (max-width: 1024px)");
+          ver = document.querySelector(".basic_search_bm")
+          if(movil.matches){
+            if (ver.style.display == "none" || ver.style.display == "") {
+              LimpiarBuscadorMenu()
+              ver.style.display = "block";
+            }else{
+              ver.style.display = "none";
+            }
+          }else{
+            if (ver.style.display == "none" || ver.style.display == "") {
+              ver.style.display = "block";
+            }else{
+              ver.style.display = "none";
+            }
+          }
+        })
       }
   
       // para que tambien se cierre el menu cuando se haga click en cualquier parte de la pantalla
       document.addEventListener("click", function(event) {
         if(event.target.className.baseVal == "lupin"){
-            document.querySelector(".menu_burguer_bm").style.display = "none";
-        }else if(event.target.className.baseVal == "burger"){
-            document.querySelector(".basic_search_bm").style.display = "none";
-        }else{
           document.querySelector(".menu_burguer_bm").style.display = "none";
+        }else if(event.target.className.baseVal == "burger"){
           document.querySelector(".basic_search_bm").style.display = "none";
+        }else{
+          movil = window.matchMedia("(min-width: 360px) and (max-width: 1024px)");
+          if(!movil.matches){
+            document.querySelector(".menu_burguer_bm").style.display = "none";
+            // document.querySelector(".basic_search_bm").style.display = "none";
+          }
         }
       });
   
