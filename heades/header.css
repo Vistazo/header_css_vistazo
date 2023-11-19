@@ -512,6 +512,13 @@ li{
     align-items: center;
 }
 
+.btn_menu{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 70%;
+    height: 60px;
+}
 .burger{
     cursor: pointer;
 }
@@ -522,9 +529,20 @@ li{
 
 /* media para tamano telefono */
 /* cuando el tamano de la pagina sea 400 */
-@media only screen and (max-width:767px){
+@media only screen and (min-width: 360px) and (max-width: 1024px){
     body{
         font-size: 14px;
+    }
+    .nav-dropdown.nav.noSubNav{
+        height: 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+    .login{
+        width: 100%;
+        margin: 0px;
     }
     .menu_header_bm .menu_secc_unfolded .nav .parent-nav{
         display: none;
@@ -534,6 +552,13 @@ li{
     }
     .header_suscribete_bm{
         display: none;
+    }
+    .btn_menu{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        height: 60px;
     }
     .menu_header_bm{
         width: 100%;
@@ -547,7 +572,6 @@ li{
         justify-content: flex-end;
         align-items: center;
         width: 33%;
-        /* hacer el contenido se separe  */
         flex-wrap: wrap;
     }
     .burger{
@@ -571,7 +595,6 @@ li{
         overflow-y: scroll;
         scrollbar-width: thin;
         display: none;
-        /* left: -10px !important; */
     }
 
     .menu_burguer_mobile ul li{
@@ -597,19 +620,17 @@ li{
 }
 
 @media only screen and (min-width: 900px){
-    .menu_burguer_mobile{
+    /* .menu_burguer_mobile{
         display: none;
-    }
+    } */
 }
 
-/* Para tables */
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
+/* Para tabletas y dispositivos móviles */
+/* @media only screen and (min-width: 768px) and (max-width: 1024px) {
     body {
       font-size: 16px;
-      /* Otros estilos específicos para tabletas */
     }
     .menu_header_bm li.sect-262e52091545304582cf18882fc67b4f a.tab-item.lnk {
-        /* content:  */
         background-image: url(https://www.vistazo.com/base-portlet/webrsrc/ctxvar/9e921527-7c01-4ccc-922e-ca6d5b7b2957.png);
         background-repeat: no-repeat;
         background-size: contain;
@@ -620,7 +641,6 @@ li{
     }
     
     .menu_header_bm li.sect-0903d1806e4bd8bf290229a78d484445 a.tab-item.lnk {
-        /* content:  */
         background-image: url(https://www.vistazo.com/base-portlet/webrsrc/theme/d8b88de3cfb5c95f245841155cba993a.png);
         background-repeat: no-repeat;
         background-size: contain;
@@ -667,9 +687,6 @@ li{
         position: relative;
         height: 60px;
     }
-    /* .header_contain_dm .susbribe { */
-
-    /* } */
     .parent-nav.lst.cf{
         padding-left: 0px;
         margin-bottom: 0px;
@@ -694,7 +711,7 @@ li{
     .tab-grp .lst-std.lst.level-2{
         display: none;
     }
-}
+} */
 
 /* Media query para dispositivos de escritorio */
 @media only screen and (min-width: 1025px) {
