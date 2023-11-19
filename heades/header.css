@@ -30,7 +30,7 @@ a.site-logo {
 }
 
 ol, ul {
-    padding-left: 2rem;
+    padding-left: 2rem
 }
 
 header .container {
@@ -70,8 +70,17 @@ ul, li, ol {
     margin: 0;
     padding: 0;
     list-style: none;
-     padding-left: 2rem;
+    
 }
+
+.nav-dropdown.nav.noSubNav ul, li, ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    padding-left: 2rem;
+    
+}
+
 
 .menu_header_bm li{
     float: left;
@@ -585,14 +594,14 @@ li{
     .menu_burguer_mobile{
         position: fixed;
         background: #FFF;
-        top: 60px !important;
-        padding: 0 !important;
-        width: 60% !important;
-        height: 94% !important;
-        z-index: 2 !important;
+        top: 60px;
+        padding: 0;
+        width: 50% ;
+        height: 94% ;
+        z-index: 2 ;
         -webkit-box-shadow: 10px 10px 10px -4px #292626 ;
         box-shadow: 10px 10px 10px -4px #3f3f3f;
-        transition: all 0.3s ease !important;
+        transition: all 0.3s ease ;
         overflow-y: scroll;
         scrollbar-width: thin;
         display: none;
@@ -616,7 +625,7 @@ li{
         font-family: 'Crete Round',serif;
     }
     ul.level-2 .lst-items-movil li.sect-619 .lnk .sectionName, ul.level-2 .lst-items-movil li.sect-1741 .lnk .sectionName {
-        color: #37b72f!important;
+        color: #37b72f;
     }
 }
 
