@@ -77,8 +77,6 @@ ul, li, ol {
     margin: 0;
     padding: 0;
     list-style: none;
-    padding-left: 2rem;
-    
 }
 
 
@@ -550,6 +548,11 @@ li{
         align-items: center;
         width: 100%;
     }
+
+    .nav-dropdown.nav.noSubNav ul, li, ol {
+        padding-left: 2rem;
+    }
+
     .login{
         width: 100%;
         margin: 0px;
