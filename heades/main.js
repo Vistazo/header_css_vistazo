@@ -1,1 +1,321 @@
-document.addEventListener("DOMContentLoaded",(function(){try{register=document.querySelector(".nav-dropdown.nav.noSubNav");if(register){copi=register.innerHTML;logo=`<div><a class="site-logo" href="/" aria-label="Vistazo">vistazo</a></div>`;register.innerHTML="";register.innerHTML=`${logo}${copi}<div class="login_menu_bm">\n                  <div class="login">\n                      <a class=""\n                          href="https://suscripciones.vistazo.com/id/login/?continue=https%3A%2F%2Fwww.vistazo.com%2F">\n                          <img src="https://suscripciones.vistazo.com/img/id/ic-user.svg"\n                          width=20"\n                          height="auto"\n                          alt="icono-vtz"\n                          arial-label="Vistazo"\n                          title="img-login"\n                          loading="lazy">Login\n                      </a>\n                  </div>\n                  <div class="btn_menu">\n                    <div class="hamburg_bm" style='color: white' id='menu_1'>\n                        <svg xmlns="http://www.w3.org/2000/svg" class="burger" width="24" height="25" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">\n                            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>\n                        </svg>\n                    </div>\n                    <div class="hamburg_bm_lupin" style='color: white' id='menu_2'>\n                        <svg xmlns="http://www.w3.org/2000/svg" class="lupin" style='color: white' width="25" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">\n                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>\n                        </svg>\n                    </div>\n                  </div>\n          </div>`}submenu=document.querySelector(".portlet-boundary.portlet-static-end.htmlcontainer-portlet");if(submenu){newCopi=submenu.innerHTML;submenu.innerHTML="";submenu.innerHTML=`${newCopi}\n          <div class="actualidad_sub">\n          <ul class="ulclass">\n            <div class="lst_items_sub">\n              <li\n                class="lst-item-bm sect-1733 sect-f81fd82d0bd4db455e47e7121837c9cb"\n              >\n                <a href="/actualidad/nacional" class="lnk" title="">\n                  <span class="iconBefore"></span>\n                  <span class="sectionName">Nacional</span>\n                  <span class="iconAfter"></span>\n                </a>\n              </li>\n              <li\n                class="lst-item-bm sect-1734 sect-f805fc3f687a103080279383e7b5b962"\n              >\n                <a href="/actualidad/internacional" class="lnk" title="">\n                  <span class="iconBefore"></span>\n                  <span class="sectionName">Internacional</span>\n                  <span class="iconAfter"></span>\n                </a>\n              </li>\n            </div>\n          </ul>\n        </div>\n        <div class="portafolio_sub">\n        <ul class="ulclass">\n          <div class="lst_items_sub">\n            <li\n              class="lst-item-bm sect-1825 sect-42ff57b163bddcfec0d4cebf6ec53b3a"\n            >\n              <a\n                href="/portafolio/economia"\n                class="lnk"\n                title=""\n              >\n                <span class="iconBefore"></span>\n                <span class="sectionName"\n                  >Economía</span\n                >\n                <span class="iconAfter"></span>\n              </a>\n            </li>\n            <li\n              class="lst-item-bm sect-1826 sect-1e58d33a1702c5a608d3360a1593ad09"\n            >\n              <a\n                href="/portafolio/empresas"\n                class="lnk"\n                title=""\n              >\n                <span class="iconBefore"></span>\n                <span class="sectionName"\n                  >Empresas</span\n                >\n                <span class="iconAfter"></span>\n              </a>\n            </li>\n            <li\n              class="lst-item-bm sect-1827 sect-c8c614fc4dc6e6f35f1ebdd38eeb629d"\n            >\n              <a\n                href="/portafolio/emprendimiento"\n                class="lnk"\n                title=""\n              >\n                <span class="iconBefore"></span>\n                <span class="sectionName"\n                  >Emprendimiento</span\n                >\n                <span class="iconAfter"></span>\n              </a>\n            </li>\n            <li\n              class="lst-item-bm sect-1828 sect-7425b9485880f01379ae396861e33868"\n            >\n              <a\n                href="/portafolio/provincias"\n                class="lnk"\n                title=""\n              >\n                <span class="iconBefore"></span>\n                <span class="sectionName"\n                  >Provincias</span\n                >\n                <span class="iconAfter"></span>\n              </a>\n            </li>\n          </div>\n        </ul>\n      </div>\n      <div class="estilo_vida_sub">\n      <ul class="ulclass">\n        <div class="lst_items_sub">\n          <li\n            class="lst-item-bm sect-471 sect-df2528d78997d90c8d993c7fca162c3b"\n          >\n            <a\n              href="/estilo-de-vida/salud"\n              class="lnk"\n              title=""\n            >\n              <span class="iconBefore"></span>\n              <span class="sectionName">Salud</span>\n              <span class="iconAfter"></span>\n            </a>\n          </li>\n          <li\n            class="lst-item-bm sect-472 sect-64f7dfbe84689d02caae2161c2673005"\n          >\n            <a\n              href="/estilo-de-vida/sostenibilidad"\n              class="lnk"\n              title=""\n            >\n              <span class="iconBefore"></span>\n              <span class="sectionName"\n                >Sostenibilidad</span\n              >\n              <span class="iconAfter"></span>\n            </a>\n          </li>\n          <li\n            class="lst-item-bm sect-473 sect-961037676f5dd44678c8e781dfb48584"\n          >\n            <a\n              href="/estilo-de-vida/ciencia"\n              class="lnk"\n              title=""\n            >\n              <span class="iconBefore"></span>\n              <span class="sectionName"\n                >Ciencia</span\n              >\n              <span class="iconAfter"></span>\n            </a>\n          </li>\n          <li\n            class="lst-item-bm sect-474 sect-48c99c8b72e94e08855a1a347a7513c8"\n          >\n            <a\n              href="/estilo-de-vida/tecnologia"\n              class="lnk"\n              title=""\n            >\n              <span class="iconBefore"></span>\n              <span class="sectionName"\n                >Tecnología</span\n              >\n              <span class="iconAfter"></span>\n            </a>\n          </li>\n          <li\n            class="lst-item-bm sect-1815 sect-9785c3aa25242f04e444023178e1cd9c"\n          >\n            <a\n              href="/estilo-de-vida/cultura"\n              class="lnk"\n              title=""\n            >\n              <span class="iconBefore"></span>\n              <span class="sectionName"\n                >Cultura</span\n              >\n              <span class="iconAfter"></span>\n            </a>\n          </li>\n          <li\n            class="lst-item-bm sect-1823 sect-93f29a99eaa369a6a463338947d672c4"\n          >\n            <a\n              href="/estilo-de-vida/tendencias"\n              class="lnk"\n              title=""\n            >\n              <span class="iconBefore"></span>\n              <span class="sectionName"\n                >Tendencias</span\n              >\n              <span class="iconAfter"></span>\n            </a>\n          </li>\n        </div>\n      </ul>\n    </div>\n    <div class="politica_sub">\n    <ul class="ulclass">\n      <div class="lst_items_sub">\n        <li\n          class="lst-item-bm sect-468 sect-33df33fd383c192b5770220a2d7546d3"\n        >\n          <a\n            href="/politica/nacional"\n            class="lnk"\n            title=""\n          >\n            <span class="iconBefore"></span>\n            <span class="sectionName"\n              >Nacional</span\n            >\n            <span class="iconAfter"></span>\n          </a>\n        </li>\n        <li\n          class="lst-item-bm sect-469 sect-0a39d9c5b883a300fae6f1b919de9817"\n        >\n          <a\n            href="/politica/internacional"\n            class="lnk"\n            title=""\n          >\n            <span class="iconBefore"></span>\n            <span class="sectionName"\n              >Internacional</span\n            >\n            <span class="iconAfter"></span>\n          </a>\n        </li>\n        <li\n          class="lst-item-bm sect-1980 sect-d64a3c244344b0db416675f911d62276"\n        >\n          <a\n            href="https://vistazo.com/elecciones-seleccionales"\n            rel="nofollow"\n            class="lnk"\n            title=""\n          >\n            <span class="iconBefore"></span>\n            <span class="sectionName"\n              >Elecciones</span\n            >\n            <span class="iconAfter"></span>\n          </a>\n        </li>\n      </div>\n    </ul>\n  </div>\n        `}opinion=document.querySelector(".sect-ed616e97416bbb72f2a42fa530435804");div=`<div class="tab-grp">\n              ${opinion.innerHTML}\n              <span class="hasChildsIcon"></span>\n              <div class="child-nav cf">\n              </div>\n          </div>`;opinion.innerHTML=div;e2=document.querySelector(".sect-262e52091545304582cf18882fc67b4f");div2=`<div class="tab-grp">\n              ${e2.innerHTML}\n              <span class="hasChildsIcon"></span>\n              <div class="child-nav cf">\n              </div>\n          </div>`;e2.innerHTML=div2;e3=document.querySelector(".sect-0903d1806e4bd8bf290229a78d484445");div3=`<div class="tab-grp">\n              ${e3.innerHTML}\n              <span class="hasChildsIcon"></span>\n              <div class="child-nav cf">\n              </div>\n          </div>`;e3.innerHTML=div3;e4=document.querySelector(".sect-74b11848b5e1a47d79fed2bc56e2a9fc");div4=`<div class="tab-grp">\n              ${e4.innerHTML}\n              <span class="hasChildsIcon"></span>\n              <div class="child-nav cf">\n              </div>\n          </div>`;e4.innerHTML=div4;e5=document.querySelector(".sect-a4306ce1cba409d40f6649f40a27a166");div5=`<div class="tab-grp">\n              ${e5.innerHTML}\n              <span class="hasChildsIcon"></span>\n              <div class="child-nav cf">\n              </div>\n          </div>`;e5.innerHTML=div5;menuMovil=document.querySelector(".headres_bm_ts");if(menuMovil){menu=`${menuMovil.innerHTML}\n          <div\n          id="189309249"\n          class="menu_burguer_mobile"\n         >\n          <div id="menu_189309249" class="">\n            <div class="nav-dropdown nav noSubNav">\n              <ul class="parent-nav lst cf">\n                <li\n                  class="lst-item-movil tabnav sect-1732 sect-79fb641b523c20025e6a8dac39895323"\n                >\n                  <div class="tab-grp">\n                    <a href="/actualidad" class="tab-item lnk" title="">\n                      <span class="iconBefore"></span>\n                      <strong class="sectionName">Actualidad</strong>\n                      <span class="iconAfter"></span>\n                    </a>\n                    <span class="hasChildsIcon"></span>\n                    <div class="child-nav cf">\n                      <ul class="lst-std lst level-2">\n                        <div class="lst-items-movil-movil">\n                          <li\n                            class="lst-item sect-1733 sect-f81fd82d0bd4db455e47e7121837c9cb"\n                          >\n                            <a href="/actualidad/nacional" class="lnk" title="">\n                              <span class="iconBefore"></span>\n                              <span class="sectionName">Nacional</span>\n                              <span class="iconAfter"></span>\n                            </a>\n                          </li>\n                          <li\n                            class="lst-item sect-1734 sect-f805fc3f687a103080279383e7b5b962"\n                          >\n                            <a href="/actualidad/internacional" class="lnk" title="">\n                              <span class="iconBefore"></span>\n                              <span class="sectionName">Internacional</span>\n                              <span class="iconAfter"></span>\n                            </a>\n                          </li>\n                        </div>\n                      </ul>\n                    </div>\n                  </div>\n                </li>\n                <li\n                  class="lst-item tabnav sect-1735 sect-5e3a3383803afb7eaaa222e1db4b0547"\n                >\n                  <div class="tab-grp">\n                    <a href="/politica" class="tab-item lnk" title="">\n                      <span class="iconBefore"></span>\n                      <strong class="sectionName">Política</strong>\n                      <span class="iconAfter"></span>\n                    </a>\n                    <span class="hasChildsIcon"></span>\n                    <div class="child-nav cf">\n                      <ul class="lst-std lst level-2">\n                        <div class="lst-items-movil">\n                          <li\n                            class="lst-item sect-1736 sect-3f156675ba59e009173db6540b30ca45 selected"\n                          >\n                            <a href="/politica/nacional" class="lnk" title="">\n                              <span class="iconBefore"></span>\n                              <span class="sectionName">Nacional</span>\n                              <span class="iconAfter"></span>\n                            </a>\n                          </li>\n                          <li\n                            class="lst-item sect-1737 sect-5b9e05c46c38a9d40dad478d8ab14cb6"\n                          >\n                            <a href="/politica/internacional" class="lnk" title="">\n                              <span class="iconBefore"></span>\n                              <span class="sectionName">Internacional</span>\n                              <span class="iconAfter"></span>\n                            </a>\n                          </li>\n                        </div>\n                      </ul>\n                    </div>\n                  </div>\n                </li>\n                <li\n                  class="lst-item tabnav sect-1749 sect-af66e17754b1a82f345799be1acd98b1"\n                >\n                  <a\n                    href="https://suscripciones.vistazo.com/"\n                    rel="nofollow noopener noreferrer"\n                    class="tab-item lnk"\n                    target="_blank"\n                    title=""\n                  >\n                    <span class="iconBefore"></span>\n                    <span class="sectionName">Suscríbete</span>\n                    <span class="iconAfter"></span>\n                  </a>\n                </li>\n                <li\n                  class="lst-item tabnav sect-1738 sect-73e47026e609fbb586f2bc13ec34cc00"\n                >\n                  <a href="/opinion" class="tab-item lnk" title="">\n                    <span class="iconBefore"></span>\n                    <span class="sectionName">Opinión</span>\n                    <span class="iconAfter"></span>\n                  </a>\n                </li>\n                <li\n                  class="lst-item tabnav sect-1739 sect-c52d895261ce5bce5e45efd7189ee863"\n                >\n                  <div class="tab-grp">\n                    <a href="/estilo-de-vida" class="tab-item lnk" title="">\n                      <span class="iconBefore"></span>\n                      <strong class="sectionName">Estilo de vida</strong>\n                      <span class="iconAfter"></span>\n                    </a>\n                    <span class="hasChildsIcon"></span>\n                    <div class="child-nav cf">\n                      <ul class="lst-std lst level-2">\n                        <div class="lst-items-movil">\n                          <li\n                            class="lst-item sect-1740 sect-b8ebd1498285e82ac5b1e7c2ad2dccd9"\n                          >\n                            <a href="/estilo-de-vida/salud" class="lnk" title="">\n                              <span class="iconBefore"></span>\n                              <span class="sectionName">Salud</span>\n                              <span class="iconAfter"></span>\n                            </a>\n                          </li>\n                          <li\n                            class="lst-item sect-1741 sect-4d701365fced03f47696c9a1f6b8b89e"\n                          >\n                            <a\n                              href="/estilo-de-vida/sostenibilidad"\n                              class="lnk"\n                              title=""\n                            >\n                              <span class="iconBefore"></span>\n                              <span class="sectionName">Sostenibilidad</span>\n                              <span class="iconAfter"></span>\n                            </a>\n                          </li>\n                          <li\n                            class="lst-item sect-1742 sect-e6d605dcd25aca85cbdd17e0fba1256c"\n                          >\n                            <a href="/estilo-de-vida/ciencia" class="lnk" title="">\n                              <span class="iconBefore"></span>\n                              <span class="sectionName">Ciencia</span>\n                              <span class="iconAfter"></span>\n                            </a>\n                          </li>\n                          <li\n                            class="lst-item sect-1743 sect-d3cad84025daf4d582448db940277308"\n                          >\n                            <a href="/estilo-de-vida/tecnologia" class="lnk" title="">\n                              <span class="iconBefore"></span>\n                              <span class="sectionName">Tecnología</span>\n                              <span class="iconAfter"></span>\n                            </a>\n                          </li>\n                          <li\n                            class="lst-item sect-2831 sect-3aa2ec143e4d6c32cc09bba35152e3ac"\n                          >\n                            <a href="/estilo-de-vida/tendencias" class="lnk" title="">\n                              <span class="iconBefore"></span>\n                              <span class="sectionName">Tendencias</span>\n                              <span class="iconAfter"></span>\n                            </a>\n                          </li>\n                        </div>\n                      </ul>\n                    </div>\n                  </div>\n                </li>\n                <li\n                  class="lst-item tabnav sect-1744 sect-b9980f56b677f8e269b30e61d191af47"\n                >\n                  <a href="/deportes" class="tab-item lnk" title="">\n                    <span class="iconBefore"></span>\n                    <span class="sectionName">Estadio</span>\n                    <span class="iconAfter"></span>\n                  </a>\n                </li>\n                <li\n                  class="lst-item tabnav sect-1745 sect-c9f0c56283c0327e88a8dc57b5c41b5e"\n                >\n                  <a href="/enfoque" class="tab-item lnk" title="">\n                    <span class="iconBefore"></span>\n                    <span class="sectionName">Enfoque</span>\n                    <span class="iconAfter"></span>\n                  </a>\n                </li>\n                <li\n                  class="lst-item tabnav sect-1746 sect-446817676877dd51d20d7ae38d1cb123"\n                >\n                  <a href="/hogar" class="tab-item lnk" target="_blank" title="">\n                    <span class="iconBefore"></span>\n                    <span class="sectionName">Hogar</span>\n                    <span class="iconAfter"></span>\n                  </a>\n                </li>\n                <li\n                  class="lst-item tabnav sect-1748 sect-c40be6be8c335e8cf991f6b5a6f73d0e"\n                >\n                  <a href="/podcast" class="tab-item lnk" title="">\n                    <span class="iconBefore"></span>\n                    <span class="sectionName">Podcast</span>\n                    <span class="iconAfter"></span>\n                  </a>\n                </li>\n                <li\n                  class="lst-item tabnav sect-2206 sect-741e1b9e1eda38b70605f3cf49942c8d"\n                >\n                  <a\n                    href="https://www.vistazo.com/replica/disculpas-publicas-al-proyecto-inmobiliario-torres-elit-por-utilizar-una-imagen-suya-sin-autorizacion-FY6098623"\n                    rel="nofollow"\n                    class="tab-item lnk"\n                    title=""\n                  >\n                    <span class="iconBefore"></span>\n                    <span class="sectionName">Réplicas</span>\n                    <span class="iconAfter"></span>\n                  </a>\n                </li>\n                <li\n                  class="lst-item tabnav sect-2211 sect-624cfcd128cc6dcc5e0ad6abb48357ba"\n                >\n                  <a\n                    href="https://suscripciones.vistazo.com/"\n                    rel="nofollow"\n                    class="tab-item lnk"\n                    title=""\n                  >\n                    <span class="iconBefore"></span>\n                    <span class="sectionName">SUSCRÍBETE</span>\n                    <span class="iconAfter"></span>\n                  </a>\n                </li>\n                <li\n                  class="lst-item tabnav sect-2830 sect-8aa58032e14c734353b36057fffa8be1"\n                >\n                  <div class="tab-grp">\n                    <a href="/portafolio" class="tab-item lnk" title="">\n                      <span class="iconBefore"></span>\n                      <strong class="sectionName">Portafolio</strong>\n                      <span class="iconAfter"></span>\n                    </a>\n                    <span class="hasChildsIcon"></span>\n                    <div class="child-nav cf">\n                      <ul class="lst-std lst level-2">\n                        <div class="lst-items-movil">\n                          <li\n                            class="lst-item sect-2832 sect-3ea0bf98ae29bb60d96f2e0983aab3e6"\n                          >\n                            <a href="/portafolio/economia" class="lnk" title="">\n                              <span class="iconBefore"></span>\n                              <span class="sectionName">Economía</span>\n                              <span class="iconAfter"></span>\n                            </a>\n                          </li>\n                          <li\n                            class="lst-item sect-2833 sect-198d041e6485a86936af9e6863711229"\n                          >\n                            <a href="/portafolio/empresas" class="lnk" title="">\n                              <span class="iconBefore"></span>\n                              <span class="sectionName">Empresas</span>\n                              <span class="iconAfter"></span>\n                            </a>\n                          </li>\n                          <li\n                            class="lst-item sect-2834 sect-e81de47fdbf9a9ec0fc028edd508608b"\n                          >\n                            <a href="/portafolio/emprendimiento" class="lnk" title="">\n                              <span class="iconBefore"></span>\n                              <span class="sectionName">Emprendimiento</span>\n                              <span class="iconAfter"></span>\n                            </a>\n                          </li>\n                          <li\n                            class="lst-item sect-2835 sect-335610bdd061e39ce2649113dfec87b1"\n                          >\n                            <a href="/portafolio/provincias" class="lnk" title="">\n                              <span class="iconBefore"></span>\n                              <span class="sectionName">Provincias</span>\n                              <span class="iconAfter"></span>\n                            </a>\n                          </li>\n                        </div>\n                      </ul>\n                    </div>\n                  </div>\n                </li>\n              </ul>\n            </div>\n          </div>\n            </div>`;menuMovil.innerHTML=menu}var elems=document.querySelector(".lst-item.tabnav.sect-1824.sect-262e52091545304582cf18882fc67b4f div a strong");elems.style.fontSize="1px";hogar=document.querySelector(".lst-item.tabnav.sect-529.sect-0903d1806e4bd8bf290229a78d484445 a");hogar.innerHTML="";console.log(hogar);enfoque=document.querySelector(".lst-item.tabnav.sect-247.sect-74b11848b5e1a47d79fed2bc56e2a9fc a");enfoque.innerHTML="";estadio=document.querySelector(".lst-item.tabnav.sect-246.sect-a4306ce1cba409d40f6649f40a27a166 a");estadio.innerHTML="";close_burguer=document.querySelector(".burger");if(close_burguer){close_burguer.addEventListener("click",(function(){ver=document.querySelector(".menu_burguer_bm");movil=window.matchMedia("(min-width: 360px) and (max-width: 1024px)");if(movil.matches){m=document.querySelector(".menu_burguer_mobile");console.log("m: ",m);if(m.style.display=="none"||m.style.display==""){LimpiarBuscadorMenu();m.style.display="block"}else{m.style.display="none"}}else{if(ver.style.display=="none"||ver.style.display==""){ver.style.display="block"}else{ver.style.display="none"}}}))}buscador=document.querySelector(".hamburg_bm_lupin");if(buscador){buscador.addEventListener("click",(function(){movil=window.matchMedia("(min-width: 360px) and (max-width: 1024px)");ver=document.querySelector(".basic_search_bm");if(movil.matches){if(ver.style.display=="none"||ver.style.display==""){LimpiarBuscadorMenu();ver.style.display="block"}else{ver.style.display="none"}}else{if(ver.style.display=="none"||ver.style.display==""){ver.style.display="block"}else{ver.style.display="none"}}}))}document.addEventListener("click",(function(event){if(event.target.className.baseVal=="lupin"){document.querySelector(".menu_burguer_bm").style.display="none"}else if(event.target.className.baseVal=="burger"){document.querySelector(".basic_search_bm").style.display="none"}else{movil=window.matchMedia("(min-width: 360px) and (max-width: 1024px)");if(!movil.matches){document.querySelector(".menu_burguer_bm").style.display="none"}}}));port=`\n      <span class="iconBefore"></span>\n      <strong class="sectionName" style="font-size: 1px;">Portafolio</strong>\n      <span class="iconAfter"></span>`;tabgrp=document.querySelectorAll(".tab-grp");var act=document.querySelector(".actualidad_sub .lst_items_sub");var pol=document.querySelector(".politica_sub .lst_items_sub");var est=document.querySelector(".estilo_vida_sub .lst_items_sub");var enf=document.querySelector(".portafolio_sub .lst_items_sub");tabgrp.forEach((e=>{e.addEventListener("mouseover",(function(i){block=i.target.querySelector(".sectionName");e.style.clipPath="polygon(11.5% -25.13%,96.50% -24.00%,88% 100%,0% 100%)";e.style.backgroundColor="#fd0f03";e.style.textAlign="center";e.style.margin="0px";e.style.colo="white";e.style.padding="0px";e.style.height="100%";if(block&&block.innerHTML){console.log("block: ",block.innerHTML);if(block.innerHTML=="Actualidad"){Limpiar();act.style.display="flex"}else if(block.innerHTML=="Política"){Limpiar();pol.style.display="flex"}else if(block.innerHTML=="Estilo de vida"){Limpiar();est.style.display="flex"}else if(block.innerHTML=="Portafolio"){Limpiar();enf.style.display="flex"}else{Limpiar()}}}));e.addEventListener("mouseout",(function(){e.style.clipPath="polygon(0% 0, 100% 0%, 100% 100%, 0% 100%)";e.style.backgroundColor="#000";e.style.padding="0px"}))}))}catch(error){console.log("Error: ",error)}register2=document.querySelector(".registro");if(register2){register2.style.innerHTML=""}document.addEventListener("click",(function(){Limpiar()}));RutaActual()}));function RutaActual(){let url=window.location.pathname.split("/")[3];tabgrp=document.querySelectorAll(".sectionName");if(url&&url!=""){tabgrp.forEach((e=>{if(String(e.innerHTML).toLowerCase()==String(url).toLowerCase()){sal=e.parentElement.parentElement;sal.style.clipPath="polygon(11.5% -25.13%,96.50% -24.00%,88% 100%,0% 100%)";sal.style.backgroundColor="#fd0f03";sal.style.textAlign="center";sal.style.margin="0px";sal.style.colo="white";sal.style.padding="0px";sal.style.height="100%"}}))}}function LimpiarBuscadorMenu(){document.querySelector(".basic_search_bm").style.display="none";document.querySelector(".menu_burguer_bm").style.display="none"}function Limpiar(){document.querySelector(".actualidad_sub .lst_items_sub").style.display="none";document.querySelector(".estilo_vida_sub .lst_items_sub").style.display="none";document.querySelector(".portafolio_sub .lst_items_sub").style.display="none";document.querySelector(".politica_sub .lst_items_sub").style.display="none"}
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    document.querySelector(".portlet-boundary.portlet-static-end.menu-portlet.menu_header_bm").remove()
+    document.querySelector(".portlet-boundary.portlet-static-end.adcontainer-portlet").remove()
+    document.querySelector(".portlet-boundary.portlet-static-end.adcontainer-portlet").remove()
+    document.querySelector(".portlet-boundary.portlet-static-end.htmlcontainer-portlet.icon_burguer_mobile_bm").remove()
+    document.querySelector(".portlet-boundary.portlet-static-end.htmlcontainer-portlet.search_icon_mobile_bm").remove()
+    document.querySelector(".portlet-boundary.portlet-static-end.menu-portlet.menu_burguer_mobile_bm").remove()
+    document.querySelector(".portlet-boundary.portlet-static-end.adcontainer-portlet").remove()
+
+
+    var navbar = document.querySelector(".portlet-boundary.portlet-static-end.portlet-nested-portlets.header_contain_dm")
+    if(navbar){
+        navbar.style.height="60px"
+        navbar.style.background="#000"
+        navbar.classList.add("navbar", "navbar-expand-lg", "navbar-dark", "d-flex", "row", "align-items-center", "justify-content-between")
+    }
+    // buscar todo esta clase col-100-top-one-col col-xs-12 portlet-column nopadding y agregarle d-flex align-items-center justify-content-between
+    var col100 = document.querySelector(".col-100-top-one-col.col-xs-12.portlet-column.nopadding")
+    if(col100){
+        col100.classList.add("d-flex","align-items-center","justify-content-between",)
+        col100.style.width="100%"
+        col100.style.height="60px"
+        col100.style.padding="0px"
+    }
+
+    var conteFlui = document.querySelector("#col-100-top-one-col")
+    if(conteFlui){
+        // conteFlui.classList.add("container-fluid")
+    }
+
+    // //class="collapse navbar-collapse" id="navbarSupportedContent">
+    var collapse = document.querySelector(".portlet-boundary.portlet-static-end.menu-portlet.menu_header_bm")
+    if(collapse){
+        // collapse.classList.add("collapse","navbar-collapse")
+        // collapse.id="navbarSupportedContent"
+        // collapse.style.width="60%"
+    }
+
+    var extraUl = document.querySelector(".menu_header_bm div div").innerHTML
+    if(extraUl){
+        menbm = document.querySelector(".menu_header_bm")
+        menbm.innerHTML = extraUl
+        ulclas = document.querySelector(".menu_header_bm ul")
+        ulclas.classList.value=""
+        ulclas.classList.add("navbar-nav","me-auto","mb-2","mb-lg-0")
+        // cada li que este dentro de ul remover la clase y agregarle la clase nav-item
+        var li = document.querySelectorAll(".menu_header_bm ul li")
+        li.forEach(function(l){
+            l.classList.value=""
+            l.classList.add("nav-item", "dropdown")
+        })
+
+
+
+
+
+
+        ahref = document.querySelectorAll(".tab-item.lnk")
+        ahref.forEach(function(a){
+            // obtener el valor del atributo title 
+            var title = a.getAttribute("title")
+            a.setAttribute("id","navbarDropdown"+title.replace(/\s/g, ''))
+            a.classList.add("nav-link", "dropdown-toggle")
+            a.setAttribute("role","button")
+            a.setAttribute("data-bs-toggle","dropdown")
+            a.setAttribute("aria-expanded","false")
+            a.style.color="#fff"
+            a.style.fontWeight="normal"
+            // a.style.padding="0px"
+            // a.style.fontSize="19px"
+            a.style.fontFamily="Crete Round"
+            a.style.transition="transform 0.2s ease-in-out"
+            // a.style.height="50px"
+            a.style.position="relative"
+            // a.style.marginTop="170px"
+            // espacio entre cada elemento
+            a.style.marginLeft="5px"
+            a.style.marginRight="5px"
+
+            // hacer un hover que al pasar el mouse por encima se mostrar el contenido childnavcf del elemento por el cual se esta pasando el mouse
+            a.addEventListener("mouseover",function(e){
+                console.log("e: ",e)
+                // como
+
+            })
+            // y cuando se quite el mouse vuelva al color original
+            a.addEventListener("mouseout",function(){
+                a.firstChild.style.display="none"
+                a.style.alignItems="center"
+            })
+
+
+        })
+
+        childnavcf = document.querySelectorAll(".child-nav.cf")
+        childnavcf.forEach(function(c){
+            // c.style.display="none"
+            c.style.padding="0px"
+        })
+
+        menu_burguer_bm = document.querySelector(".menu_burguer_bm")
+        // hacer que apareza el menu de hamburguesa
+        // anadirle un svg al menu de hamburguesa
+
+        
+        
+
+        if(menu_burguer_bm){
+            // menu_burguer_bm.style.display="none"
+        }
+
+        login_menu = document.querySelector(".menu_burguer_bm")
+        login_menuPotcap = document.querySelector(".menu_burguer_bm div div")
+        login_menu.innerHTML=""
+        login_menu.innerHTML=`<div class="login_menu_bm">
+        <div class="registro_bm">
+        <div class="login">
+            <a class=" "
+                href="https://suscripciones.vistazo.com/id/login/?continue=https%3A%2F%2Fwww.vistazo.com%2F">
+                <img src="https://suscripciones.vistazo.com/img/id/ic-user.svg" 
+                width=20"
+                height="auto"
+                alt="icono-vtz"
+                arial-label="Vistazo"
+                title="img-login"
+                loading="lazy">Login
+            </a>
+       </div>
+        </div>
+        <div class="hamburg_bm" style='color: white' id='menu_1'>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" style='color: white' width="25" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+            </svg>
+        </div>
+        </div>`
+    }
+
+    var actualidad1 = document.querySelector("#collapseWidthExample")
+    // hacer que cuando se haga click en el boton de actualidad se abra el menu
+    if(actualidad1){
+        // z-index: 1000;
+        actualidad1.style.zIndex="1000"
+    }
+
+    var actualidad = document.querySelector("#navbarDropdownActualidad")
+    if(actualidad){
+        actualidad.style.color="#fff"
+        actualidad.style.fontWeight="normal"
+        actualidad.style.fontSize="19px"
+        actualidad.style.fontFamily="Crete Round"
+        actualidad.style.transition="transform 0.2s ease-in-out"
+
+        // hacer un hover que al pasar el mouse por encima cambie el color el contenido
+        // actualidad.addEventListener("mouseover",function(){
+        //     actualidad.style.background="#B00000"
+        //     actualidad.style.transform="skew(-30deg)"
+        // })
+        // y cuando se quite el mouse vuelva al color original
+
+        actualidad.addEventListener("mouseout",function(){
+            actualidad.style.background="none"
+            actualidad.style.transform="none "
+        })
+        // hacer que se los lado sean diagonales algo asi
+        actualidad.style.width="100px"
+        actualidad.style.height="50px"
+
+
+    }
+    var politica = document.querySelector("#navbarDropdownPolitica")
+    if(politica){
+        politica.style.color="#fff"
+        politica.style.fontWeight="normal"
+        politica.style.fontSize="19px"
+        politica.style.fontFamily="Crete Round"
+    }
+    var opinion = document.querySelector('.tab-item[title="Opinión"]');
+    if(opinion){
+        opinion.style.color="#fff"
+        opinion.style.fontWeight="normal"
+        opinion.style.fontSize="19px"
+        opinion.style.fontFamily="Crete Round"
+    }
+    var hogar = document.querySelector('.tab-item[title="Hogar"]')
+    if(hogar){
+        hogar.innerHTML=""
+        hogar.style.textDecoration="none"
+        hogar.style.text="none"
+        hogar.style.backgroundImage="url(https://www.vistazo.com/base-portlet/webrsrc/theme/d8b88de3cfb5c95f245841155cba993a.png)"
+        hogar.style.backgroundRepeat="no-repeat"
+        hogar.style.backgroundSize="contain"
+        hogar.style.width="95px"
+        hogar.style.height="35px"
+        hogar.style.backgroundPosition="center center"
+    }
+
+    var estilo = document.querySelector("#navbarDropdownEstiloDeVida")
+    if(estilo){
+        estilo.style.color="#fff"
+        estilo.style.fontWeight="normal"
+        estilo.style.fontSize="19px"
+        estilo.style.fontFamily="Crete Round"
+    }
+
+    var portafolio = document.querySelector("#navbarDropdownPortafolio")
+    if(portafolio){
+        portafolio.innerHTML=""
+        portafolio.style.textDecoration="none"
+        portafolio.style.text="none"
+        portafolio.style.backgroundImage="url(https://www.vistazo.com/base-portlet/webrsrc/ctxvar/9e921527-7c01-4ccc-922e-ca6d5b7b2957.png)"
+        portafolio.style.backgroundRepeat="no-repeat"
+        portafolio.style.backgroundSize="contain"
+        portafolio.style.width="95px"
+        portafolio.style.height="35px"
+        portafolio.style.backgroundPosition="center center"
+    }
+
+    var estadio = document.querySelector('.tab-item[title="Estadio"]')
+    if(estadio){
+        estadio.innerHTML=""
+        estadio.style.textDecoration="none"
+        estadio.style.text="none"
+        estadio.style.backgroundImage="url(https://www.vistazo.com/base-portlet/webrsrc/ctxvar/2efe3a01-c41f-40d4-a373-c46a0730f3cb.png)"
+        estadio.style.backgroundRepeat="no-repeat"
+        estadio.style.backgroundSize="contain"
+        estadio.style.width="95px"
+        estadio.style.height="35px"
+        estadio.style.backgroundPosition="center center"
+    }
+
+    var enfoque = document.querySelector('.tab-item[title="Enfoque"]')
+    if(enfoque){
+        enfoque.innerHTML=""
+        enfoque.style.textDecoration="none"
+        enfoque.style.text="none"
+        enfoque.style.backgroundImage="url(https://www.vistazo.com/base-portlet/webrsrc/ctxvar/c607a3ce-c67c-44a9-873c-81f2200d1fee.png)"
+        enfoque.style.backgroundRepeat="no-repeat"
+        enfoque.style.backgroundSize="contain"
+        enfoque.style.width="95px"
+        enfoque.style.height="35px"
+        enfoque.style.backgroundPosition="center center"
+    }
+
+    header_suscribete = document.querySelector(".header_suscribete_bm")
+    header_suscribete2 = document.querySelector(".header_suscribete_bm div")
+    header_suscribete3 = document.querySelector(".header_suscribete_bm div a")
+    linearoja = document.querySelector(".linearoja")
+    if(header_suscribete){
+        header_suscribete.style.background="#fff"
+        header_suscribete.style.position="relative"
+        header_suscribete.style.padding="6px"
+        header_suscribete.style.width="100px"
+        header_suscribete.style.clipPath="polygon(27% 0, 100% 0, 100% 100%, 0% 100%)"
+        header_suscribete.style.display="flex"
+        header_suscribete.style.alignItems="center"
+        header_suscribete.style.justifyContent="center"
+        // hacer que se valla a la derecha
+        header_suscribete.style.marginLeft="auto"
+        header_suscribete.style.paddingLeft="15px"
+        header_suscribete.style.paddingRight="15px"
+        
+        header_suscribete2.style.width="100%"
+        header_suscribete2.style.display="flex"
+        header_suscribete2.style.flexDirection="column"
+        header_suscribete2.style.justifyItems="center"
+        header_suscribete2.style.justifyContent="center"
+        header_suscribete2.style.alignItems="center"
+        header_suscribete2.style.height="60px"
+        header_suscribete2.style.fontSize="14px"
+        header_suscribete2.style.fontFamily="Crete Round"
+
+        header_suscribete3.style.color="#000"
+        header_suscribete3.style.textDecoration="none"
+        header_suscribete3.style.fontWeight="600"
+        header_suscribete3.style.bordenButton="2px solid #000"
+        header_suscribete3.style.paddingLeft="10px"
+        header_suscribete3.style.paddingRight="10px"
+    }
+
+    // buscador 
+    basic_search = document.querySelector(".portlet-boundary.portlet-static-end.advanced-search-portlet.basic_search")
+    if(basic_search){
+        basic_search.style.display="none"
+    }
+
+    menuHambu = document.querySelector(".hamburg_bm svg")
+    menuHambuActiva = document.querySelector(".login_menu_bm ul")
+    menuHambu.addEventListener("click",function(){
+        console.log("menuHambuActiva: ",menuHambuActiva.style.display)
+        if(menuHambuActiva.style.display=="none" || menuHambuActiva.style.display==""){
+                menuHambuActiva.style.display="block"
+        }else{
+            menuHambuActiva.style.display="none"
+        }
+    })
+
+    // cuando aga click en cualquier parte de la pagina que no sea el menu hamburguesa se cierre el menu hamburguesa
+    document.addEventListener("click",function(e){
+        if(e.target != menuHambu){
+            menuHambuActiva.style.display="none"
+        }
+    })
+
+})
+// clip-path: polygon(38% 0, 100% 0, 100% 100%, 0% 100%);
+function buildHeader() {
+
+    list = document.querySelector('.lst-items').innerHTML;
+    listContainer = document.querySelector('.child-nav.cf ul');
+    listContainer.innerHTML = list
+
+    chil = document.querySelector('.child-nav.cf').innerHTML;
+    chilContainer = document.querySelector('.tab-grp');
+    chilContainer.innerHTML = chil
+
+}
