@@ -41,11 +41,11 @@ function checkCookie() {
     console.log("DISPLAY 3")
   }
 }
-//checkCookie();
+
 // Crear cookie
 function setCookie(cname, cvalue, exdays) {
   const d = new Date();
-  d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000 * 356);
+  d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
   let expires = "expires=" + d.toUTCString();
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
@@ -53,7 +53,7 @@ function setCookie(cname, cvalue, exdays) {
 // Borrar cookie
 function deleteCookie(cname) {
   const d = new Date();
-  d.setTime(d.getTime() + 24 * 60 * 60 * 1000 * 356);
+  d.setTime(d.getTime() + 24 * 60 * 60 * 1000);
   let expires = "expires=" + d.toUTCString();
   document.cookie = cname + "=;" + expires + ";path=/";
 }
@@ -78,7 +78,7 @@ function getCookie(cname) {
 // Set cookie consent
 function acceptCookieConsent() {
   deleteCookie("user_cookie_consent");
-  setCookie("user_cookie_consent", 1, 365);
+  setCookie("user_cookie_consent", 1, 30);
   document.getElementById("cookieNotice").style.display = "none";
 }
 
