@@ -53,7 +53,7 @@ function setCookie(cname, cvalue, exdays) {
 // Borrar cookie
 function deleteCookie(cname) {
   const d = new Date();
-  d.setTime(d.getTime() + 24 * 60 * 60 * 1000 *356);
+  d.setTime(d.getTime() + 24 * 60 * 60 * 1000 * 356);
   let expires = "expires=" + d.toUTCString();
   document.cookie = cname + "=;" + expires + ";path=/";
 }
@@ -78,7 +78,7 @@ function getCookie(cname) {
 // Set cookie consent
 function acceptCookieConsent() {
   deleteCookie("user_cookie_consent");
-  setCookie("user_cookie_consent", 1, 30);
+  setCookie("user_cookie_consent", 1, 365);
   document.getElementById("cookieNotice").style.display = "none";
 }
 
