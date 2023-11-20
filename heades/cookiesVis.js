@@ -5,8 +5,8 @@ let stringHtml = `
   </div>
   <div class="content-wrap">
       <div class="msg-wrap" >
-          <p> Vistazo utiliza cookies propias y de terceros para fines analÃ­ticos anÃ³nimos, guardar las preferencias que selecciones y para el funcionamiento general de la pÃ¡gina.
-              <br><br>Puedes aceptar todas las cookies pulsando el botÃ³n "Aceptar" o configurarlas o rechazar su uso pulsando el botÃ³n "Configurar".<br>
+          <p> Vistazo utiliza cookies propias y de terceros para fines analíticos anónimos, guardar las preferencias que selecciones y para el funcionamiento general de la página.
+              <br><br>Puedes aceptar todas las cookies pulsando el botón "Aceptar" o configurarlas o rechazar su uso pulsando el botón "Configurar".<br>
               <!--Puedes obtener mÃ¡s informaciÃ³n y volver a configurar tus preferencias en cualquier momento en la</p>
               <p style="margin-top: 10px;"><a style="color:#115cfa;" href="https://www.ecuavisa.com/servicios/politicas-de-privacidad" target="_blank">PolÃ­tica de cookies</a>.</p>-->
 
