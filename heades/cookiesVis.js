@@ -10,8 +10,8 @@ let stringHtml = `
               <!--Puedes obtener mÃ¡s informaciÃ³n y volver a configurar tus preferencias en cualquier momento en la</p>
               <p style="margin-top: 10px;"><a style="color:#115cfa;" href="https://www.ecuavisa.com/servicios/politicas-de-privacidad" target="_blank">PolÃ­tica de cookies</a>.</p>-->
 
-              <p style="margin-top: 10px;"><a style="color:#115cfa;" href="https://www.vistazo.com/politicas-privacidad" target="_blank">PolÃ­ticas de privacidad</a></p>
-              <p style="margin-top: 10px;"><a style="color:#115cfa;" href="https://www.vistazo.com/politicas-de-cookies" target="_blank">PolÃ­ticas de cookies</a></p>
+              <e style="margin-top: 10px;"><a style="color:#115cfa;" href="https://www.vistazo.com/politicas-privacidad" target="_blank">PolÃ­ticas de privacidad</a></e>
+              <e style="margin-top: 10px;"><a style="color:#115cfa;" href="https://www.vistazo.com/politicas-de-cookies" target="_blank">PolÃ­ticas de cookies</a></e>
           
           <div class="btn-wrap ">
               <button class="btnRechazar" id="configurar">Configurar</button>
