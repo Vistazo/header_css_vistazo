@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.querySelector(".portlet-boundary.portlet-static-end.menu-portlet.menu_header_bm").remove()
     document.querySelector(".portlet-boundary.portlet-static-end.adcontainer-portlet").remove()
-    //document.querySelector(".portlet-boundary.portlet-static-end.htmlcontainer-portlet.icon_burguer_mobile_bm").remove()
+    document.querySelector(".portlet-boundary.portlet-static-end.htmlcontainer-portlet.icon_burguer_mobile_bm").remove()
     document.querySelector(".portlet-boundary.portlet-static-end.htmlcontainer-portlet.search_icon_mobile_bm").remove()
     document.querySelector(".portlet-boundary.portlet-static-end.menu-portlet.menu_burguer_mobile_bm").remove()
     document.querySelector(".portlet-boundary.portlet-static-end.adcontainer-portlet").remove()
