@@ -26,7 +26,7 @@ var modalCookieNotice = document.createElement("div");
 modalCookieNotice.innerHTML = stringHtml;
 document.body.appendChild(modalCookieNotice);
 
-//setTimeout(checkCookie(), 150);
+setTimeout(checkCookie(), 150);
 
 function checkCookie() {
   let cookie_consent = getCookie("user_cookie_consent");
@@ -41,7 +41,7 @@ function checkCookie() {
     console.log("DISPLAY 3")
   }
 }
-checkCookie();
+//checkCookie();
 // Crear cookie
 function setCookie(cname, cvalue, exdays) {
   const d = new Date();
