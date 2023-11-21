@@ -444,9 +444,9 @@
 }
 
 @media (min-width: 1400px){
-    .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    /* .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
         max-width: 1400px;
-    }
+    } */
 }
 
 .col-100-top-one-col.col-xs-12.portlet-column.nopadding{
@@ -456,11 +456,21 @@
 
 /* Login menu y buscador */
 
+/* media query que no aparesca  .portlet-boundary.portlet-static-end.htmlcontainer-portlet desde 1025 hasta los 1400px*/
+
+
+
 .portlet-boundary.portlet-static-end.htmlcontainer-portlet {
     position: relative;
-    width: 114px;
+    width: 115px;
+    height: 0px;
 }
 
+@media only screen and (min-width: 1025px) and (max-width: 1400px) {
+    .portlet-boundary.portlet-static-end.htmlcontainer-portlet {
+      display: none; /* Oculta el elemento en este rango de tamaños de pantalla */
+    }
+  }
 
 .login_menu_bm {
     display: flex;
