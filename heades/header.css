@@ -272,12 +272,6 @@
     padding: 0px;
 }
 
-.header_contain_dm .menu_burguer_bm{
-    right: 250px;
-    margin-top: 7px;
-
-}
-
 .menu_header_bm li.sect-262e52091545304582cf18882fc67b4f a.tab-item.lnk {
     /* content:  */
     background-image: url(https://www.vistazo.com/base-portlet/webrsrc/ctxvar/9e921527-7c01-4ccc-922e-ca6d5b7b2957.png);
@@ -334,10 +328,9 @@
     /* top:50px; */
     background: #000;
     display: none;
-    /* Activa Potcst */
+    right: 170px;
+    margin-top: 60px;
 }
-
-
 
 
 .menu_burguer_bm ul {
