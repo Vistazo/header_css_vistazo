@@ -24,7 +24,7 @@
 }
 
 .nav-dropdown.nav.noSubNav, .parent-nav.lst.cf {
-    padding-left: 2rem
+    padding-left: 0rem
 }
 
 .container{
@@ -360,7 +360,7 @@
     text-decoration: none;
     color: #fff;
     margin: 0px;
-    padding: 0px;
+    padding: 9px;
 }
 
 .header_contain_dm .header_suscribete_bm{
