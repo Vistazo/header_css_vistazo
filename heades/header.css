@@ -9,27 +9,21 @@
 
 }
 
-div a.site-logo {
+.site-logo {
+    color: transparent !important;
     width: 140px;
     height: 60px;
     display: inline-block;
     background-repeat: no-repeat;
     background-size: contain;
-    /* margin-top: 15px; */
-    /* margin-left: 15px; */
     background-position: center;
-    /* padding-top: 160px; */
-}
-
-a.site-logo {
-    color: transparent !important;
 }
 
 .site-logo {
     background-image: url(https://www.vistazo.com/base-portlet/webrsrc/ctxvar/09cf4574-37e5-4ec5-a696-d723bcb7a274.png);
 }
 
-ol, ul {
+.nav-dropdown.nav.noSubNav, .parent-nav.lst.cf {
     padding-left: 2rem
 }
 
@@ -235,7 +229,7 @@ ol, ul {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    /* top:60px; */
+    top:60px;
     position: fixed;
     width: 100%;
     background: #000;
@@ -375,12 +369,6 @@ ol, ul {
     margin: 0px;
     padding: 0px;
 }
-/* Fin de PodCast */
-
-/* li{
-    display: list-item;
-    text-align: -webkit-match-parent;
-} */
 
 .header_contain_dm .header_suscribete_bm{
     float:  right;
