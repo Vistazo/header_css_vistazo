@@ -130,7 +130,7 @@
 .estilo_vida_sub .lst-item-bm{
     margin: 0px 10px;
 }
-.estilo_vida_sub .lst-item-bm a{
+.estilo_vida_sub .lst-item-bm .lnk{
     text-decoration: none;
     list-style: none;
     color: #FFF;
@@ -168,7 +168,7 @@
 .politica_sub .lst-item-bm{
     margin: 0px 10px;
 }
-.politica_sub .lst-item-bm a{
+.politica_sub .lst-item-bm .lnk{
     text-decoration: none;
     list-style: none;
     color: #FFF;
@@ -209,7 +209,7 @@
 .portafolio_sub .lst-item-bm{
     margin: 0px 10px;
 }
-.portafolio_sub .lst-item-bm a{
+.portafolio_sub .lst-item-bm .lnk{
     text-decoration: none;
     list-style: none;
     color: #FFF;
@@ -248,7 +248,7 @@
 .actualidad_sub .lst-item-bm{
     margin: 0px 10px;
 }
-.actualidad_sub .lst-item-bm a{
+.actualidad_sub .lst-item-bm .lnk{
     text-decoration: none;
     list-style: none;
     color: #FFF;
