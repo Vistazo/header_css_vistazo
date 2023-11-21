@@ -27,21 +27,21 @@
     padding-left: 0rem
 }
 
-.container{
+/* .container{
     position: relative;
     padding: 0px;
-}
+} */
 
 .menu_header_bm .nopadding{
     padding: 0px;
 }
 
-.menu_header_bm{
+/* .menu_header_bm{
     height: 60px;
 }
 .menu_secc_unfolded{
     height: 60px;
-}
+} */
 
 .nav-dropdown.nav.noSubNav{
     height: 60px;
@@ -436,9 +436,9 @@
     } */
 }
 
-.col-100-top-one-col.col-xs-12.portlet-column.nopadding{
+/* .col-100-top-one-col.col-xs-12.portlet-column.nopadding{
     position: relative;
-}
+} */
 
 
 /* Login menu y buscador */
