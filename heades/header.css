@@ -90,9 +90,8 @@
     color: #fff;
 }
 
-.menu_header_bm li .child-nav{
+.menu_header_bm .lst-item.tabnav .child-nav{
     position: fixed;
-    /* top: 60px; */
     left: 0px;
     background: #000;
     width: 100%;
