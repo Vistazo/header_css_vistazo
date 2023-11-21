@@ -429,7 +429,7 @@
     font-weight: 500;
 }
 
-.portlet-boundary.portlet-static-end.htmlcontainer-portlet {
+.portlet-boundary.portlet-static-end.htmlcontainer-portlet.header_suscribete_bm {
     position: relative;
     width: 115px;
     display: none;
@@ -437,13 +437,13 @@
 }
 
 @media only screen and (min-width: 1025px) and (max-width: 1399px) {
-    .portlet-boundary.portlet-static-end.htmlcontainer-portlet {
+    .portlet-boundary.portlet-static-end.htmlcontainer-portlet.header_suscribete_bm {
       display: none; /* Oculta el elemento en este rango de tamaños de pantalla */
     }
 }
 /* Estilos para pantallas más grandes que 1400px */
 @media only screen and (min-width: 1400px) {
-    .portlet-boundary.portlet-static-end.htmlcontainer-portlet {
+    .portlet-boundary.portlet-static-end.htmlcontainer-portlet.header_suscribete_bm {
       display: block; /* O cualquier estilo que desees para pantallas más grandes */
       width: 100px !important;
     }
