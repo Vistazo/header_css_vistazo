@@ -463,12 +463,18 @@
 .portlet-boundary.portlet-static-end.htmlcontainer-portlet {
     position: relative;
     width: 115px;
-    height: 0px;
+    /* height: 0px; */
 }
 
-@media only screen and (min-width: 1025px) and (max-width: 1400px) {
+@media only screen and (min-width: 1025px) and (max-width: 1399px) {
     .portlet-boundary.portlet-static-end.htmlcontainer-portlet {
       display: none; /* Oculta el elemento en este rango de tamaños de pantalla */
+    }
+}
+/* Estilos para pantallas más grandes que 1400px */
+@media only screen and (min-width: 1400px) {
+    .portlet-boundary.portlet-static-end.htmlcontainer-portlet {
+      display: block; /* O cualquier estilo que desees para pantallas más grandes */
     }
   }
 
