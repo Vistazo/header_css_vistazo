@@ -475,6 +475,7 @@
 @media only screen and (min-width: 1400px) {
     .portlet-boundary.portlet-static-end.htmlcontainer-portlet {
       display: block; /* O cualquier estilo que desees para pantallas más grandes */
+      width: 110px !important;
     }
   }
 
