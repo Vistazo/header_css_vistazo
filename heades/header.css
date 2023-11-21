@@ -71,14 +71,14 @@ ul, li, ol {
     
 }
 
-.nav-dropdown.nav.noSubNav ul, li, ol {
+.nav-dropdown.nav.noSubNav .parent-nav.lst.cf, .lst-item.tabnav {
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
 
-.menu_header_bm li{
+.menu_header_bm .lst-item.tabnav{
     float: left;
     /* padding: 0 6px 22px; */
     font-size: 19px;
@@ -91,14 +91,14 @@ ul, li, ol {
     
 }
 
-.menu_header_bm li div{
+.menu_header_bm .lst-item.tabnav .tab-grp{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 60px;
 }
 
-.menu_header_bm li a{
+.menu_header_bm .lst-item.tabnav .tab-grp .tab-item.lnk{
     text-decoration: none;
     color: #fff;
 }
@@ -119,7 +119,7 @@ ul, li, ol {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    /* top:60px; */
+    top:60px;
     position: fixed;
     width: 100%;
     background: #000;
@@ -157,7 +157,7 @@ ul, li, ol {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    /* top:60px; */
+    top:60px;
     position: fixed;
     width: 100%;
     background: #000;
@@ -198,7 +198,7 @@ ul, li, ol {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    /* top:60px; */
+    top:60px;
     position: fixed;
     width: 100%;
     background: #000;
@@ -279,7 +279,7 @@ ul, li, ol {
     padding: 0px;
 }
 
-header .header_contain_dm .menu_burguer_bm{
+.header_contain_dm .menu_burguer_bm{
     right: 250px;
     margin-top: 7px;
 
