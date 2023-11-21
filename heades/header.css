@@ -429,23 +429,6 @@
     font-weight: 500;
 }
 
-@media (min-width: 1400px){
-    /* .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
-        max-width: 1400px;
-    } */
-}
-
-/* .col-100-top-one-col.col-xs-12.portlet-column.nopadding{
-    position: relative;
-} */
-
-
-/* Login menu y buscador */
-
-/* media query que no aparesca  .portlet-boundary.portlet-static-end.htmlcontainer-portlet desde 1025 hasta los 1400px*/
-
-
-
 .portlet-boundary.portlet-static-end.htmlcontainer-portlet {
     position: relative;
     width: 115px;
@@ -488,7 +471,7 @@
     margin: 0px 10px;
 }
 
-.login a{
+.login .lg_bm{
     text-decoration: none;
     color: #000;
     font-size: 14px;
