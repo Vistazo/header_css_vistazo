@@ -450,6 +450,7 @@
 .portlet-boundary.portlet-static-end.htmlcontainer-portlet {
     position: relative;
     width: 115px;
+    display: none;
     /* height: 0px; */
 }
 
