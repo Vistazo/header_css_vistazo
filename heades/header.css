@@ -275,6 +275,9 @@
     display: block;
     background-position: center center;
 }
+li.sect-262e52091545304582cf18882fc67b4f a.tab-item.lnk .sectionName{
+    font-size: 1px;
+}
 
 .menu_header_bm li.sect-0903d1806e4bd8bf290229a78d484445 a.tab-item.lnk {
     /* content:  */
@@ -285,6 +288,9 @@
     height: 30px;
     display: block;
     background-position: center center;
+}
+li.sect-0903d1806e4bd8bf290229a78d484445 a.tab-item.lnk .sectionName{
+    font-size: 1px;
 }
 
 .menu_header_bm li.sect-74b11848b5e1a47d79fed2bc56e2a9fc a.tab-item.lnk {
@@ -309,6 +315,9 @@ li.sect-74b11848b5e1a47d79fed2bc56e2a9fc a.tab-item.lnk .sectionName{
     height: 30px;
     display: block;
     background-position: center center;
+}
+li.sect-a4306ce1cba409d40f6649f40a27a166 a.tab-item.lnk .sectionName{
+    font-size: 1px;
 }
 
 /* SubMenu */
