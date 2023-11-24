@@ -729,7 +729,6 @@ function EjecutarInit(){
         e.style.height="100%";
         RutaActual()
         if(block && block.innerHTML){
-          console.log("block: ",block.innerHTML);
           if(block.innerHTML == "Actualidad"){
               Limpiar()
               act.style.display="flex";
@@ -755,12 +754,6 @@ function EjecutarInit(){
       });
     });
 
-    // detectar que el usuario aga scroll o click por primera vez para que se ejecute el script
-    // var scroll = localStorage.getItem("scriptsr_scroll");
-    // if(scroll == null || scroll == ""){
-    //   localStorage.setItem("scriptsr_scroll", "1")
-    //   EjecutarScript()
-    // }
     // ejecutar el script de taboola cuando se haga click en la pagina o se haga scroll
     document.addEventListener("click", function(){
       EjecutarScriptTaboola()
@@ -842,26 +835,15 @@ function EjecutarScriptTaboola(){
   var teaser_first=true;
   var n_noticia=1;
   var idart_view=6277236
-  var scriptElement = document.createElement('script');
-  scriptElement.type = 'text/javascript';
-  scriptElement.innerHTML = `
-    var canonicalUrl_art = $("#taboola-right-rail-thumbnails-scroll").closest(".template-infinity").find('.headline.artit').attr("canonicalurl");
-    var taboolaId = "taboola-right-rail-thumbnails-scroll-" + ${id_art_infinity};
-    $('#taboola-right-rail-thumbnails-scroll')[0].id = taboolaId;
-    window._taboola = window._taboola || [];
-    _taboola.push({mode:'thumbnails-a', container: taboolaId, placement: 'Below Article Thumbnails Widget', target_type: 'mix'});
-    _taboola.push({article:'auto', url:canonicalUrl_art });
-    console.log("taboola:00");
-  `;
+  var canonicalUrl_art = $("#taboola-right-rail-thumbnails-scroll").closest(".template-infinity").find('.headline.artit').attr("canonicalurl");
+  var taboolaId = "taboola-right-rail-thumbnails-scroll-" + id_art_infinity;
+  $('#taboola-right-rail-thumbnails-scroll')[0].id = taboolaId;
+  window._taboola = window._taboola || [];
+  _taboola.push({mode:'thumbnails-a', container: taboolaId, placement: 'Below Article Thumbnails Widget', target_type: 'mix'});
+  _taboola.push({article:'auto', url:canonicalUrl_art });
+  console.log("taboola:00");
   
-  var scriptElement2 = document.createElement('script');
-  scriptElement2.type = 'text/javascript';
-  scriptElement2.innerHTML = `
   window._taboola = window._taboola || [];
   _taboola.push({flush: true});
-  `;
-  document.body.appendChild(scriptElement);
-  document.body.appendChild(scriptElement2);
-
   console.log("taboola:01");
 }
