@@ -733,7 +733,6 @@ function EjecutarInit(){
         e.style.colo="white"
         e.style.padding="0px";
         e.style.height="100%";
-        RutaActual()
         if(block && block.innerHTML){
           if(block.innerHTML == "Actualidad"){
               Limpiar()
@@ -756,7 +755,6 @@ function EjecutarInit(){
         e.style.clipPath="polygon(0% 0, 100% 0%, 100% 100%, 0% 100%)";
         e.style.backgroundColor="#000";
         e.style.padding="0px";
-        RutaActual()
       });
     });
 
