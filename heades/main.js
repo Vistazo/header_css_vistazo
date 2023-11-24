@@ -837,6 +837,9 @@ function EjecutarScriptTaboola(){
   var idart_view=6277236
 
   var taboolaContainer = document.getElementById("taboola-right-rail-thumbnails-scroll");
+  if(!taboolaContainer){
+    return null;
+  }
   var closestInfinity = findClosest(taboolaContainer, ".template-infinity");
   var headlineArtit = closestInfinity.querySelector('.headline.artit');
   var canonicalUrl_art = headlineArtit.getAttribute("canonicalurl");
