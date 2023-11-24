@@ -835,13 +835,27 @@ function EjecutarScriptTaboola(){
   var teaser_first=true;
   var n_noticia=1;
   var idart_view=6277236
-  var canonicalUrl_art = $("#taboola-right-rail-thumbnails-scroll").closest(".template-infinity").find('.headline.artit').attr("canonicalurl");
+
+  var taboolaContainer = document.getElementById("taboola-right-rail-thumbnails-scroll");
+  var closestInfinity = findClosest(taboolaContainer, ".template-infinity");
+  var headlineArtit = closestInfinity.querySelector('.headline.artit');
+  var canonicalUrl_art = headlineArtit.getAttribute("canonicalurl");
+  // Renombrar el div
   var taboolaId = "taboola-right-rail-thumbnails-scroll-" + id_art_infinity;
-  $('#taboola-right-rail-thumbnails-scroll')[0].id = taboolaId;
+  taboolaContainer.id = taboolaId;
+  // Llamar a la publicidad
   window._taboola = window._taboola || [];
   _taboola.push({mode:'thumbnails-a', container: taboolaId, placement: 'Below Article Thumbnails Widget', target_type: 'mix'});
-  _taboola.push({article:'auto', url:canonicalUrl_art });
+  _taboola.push({article:'auto', url: canonicalUrl_art});
   console.log("taboola:00");
+
+  
+
+
+  // window._taboola = window._taboola || [];
+  // _taboola.push({mode:'thumbnails-a', container: taboolaId, placement: 'Below Article Thumbnails Widget', target_type: 'mix'});
+  // _taboola.push({article:'auto', url:canonicalUrl_art });
+  // console.log("taboola:00");
   
   window._taboola = window._taboola || [];
   _taboola.push({flush: true});
