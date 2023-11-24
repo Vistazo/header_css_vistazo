@@ -807,6 +807,10 @@ function RutaActual(){
         sal.style.colo="white"
         sal.style.padding="0px";
         sal.style.height="100%";
+      }else{
+        e.parentElement.parentElement.style.clipPath="polygon(0% 0, 100% 0%, 100% 100%, 0% 100%)";
+        e.parentElement.parentElement.style.backgroundColor="#000";
+        e.parentElement.parentElement.style.padding="0px";
       }
     });
   }
