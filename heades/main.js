@@ -793,7 +793,11 @@ function RutaActual(){
     return null;
   }
   let url = window.location.pathname.split("/")
-  url = url[url.length-1]
+  if(url.length > 2){
+    url = url[url.length-2]
+  }else{
+    url = url[url.length-1]
+  }
   console.log("url: ",url);
   tabgrp = document.querySelectorAll(".sectionName");
   if(url && url != ""){
