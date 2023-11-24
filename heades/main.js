@@ -282,7 +282,6 @@ function EjecutarInit(){
     }
 
     opinion = document.querySelector(".sect-ed616e97416bbb72f2a42fa530435804");
-    console.log("opinion: ",opinion);
     if(opinion){
       div= `<div class="tab-grp">
               ${opinion.innerHTML}
@@ -627,7 +626,6 @@ function EjecutarInit(){
     }
 
     var elems = document.querySelector('.lst-item.tabnav.sect-1824.sect-262e52091545304582cf18882fc67b4f div a strong');
-    console.log("elems: ",elems);
     if(elems){
       elems.style.fontSize = "1px";
     }
@@ -796,9 +794,7 @@ function RutaActual(){
     return null;
   }
   let url = window.location.pathname.split("/")
-  console.log("url: ",url);
   url = url[url.length-1]
-  console.log("url: ",url);
   tabgrp = document.querySelectorAll(".sectionName");
   if(url && url != ""){
     tabgrp.forEach(e => {
