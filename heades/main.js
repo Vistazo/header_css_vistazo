@@ -849,8 +849,13 @@ function EjecutarScriptTaboola(){
   _taboola.push({article:'auto', url: canonicalUrl_art});
   console.log("taboola:00");
 
-  
-
+  // Función para encontrar el elemento ascendente más cercano con la clase especificada
+  function findClosest(element, selector) {
+    while (element && !element.matches(selector)) {
+        element = element.parentElement;
+    }
+    return element;
+  }
 
   // window._taboola = window._taboola || [];
   // _taboola.push({mode:'thumbnails-a', container: taboolaId, placement: 'Below Article Thumbnails Widget', target_type: 'mix'});
