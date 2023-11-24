@@ -837,11 +837,16 @@ function Limpiar(){
 }
 
 function EjecutarScriptTaboola(){
+  var group_id=12727;
+  var id_art_infinity=6277236;
+  var teaser_first=true;
+  var n_noticia=1;
+  var idart_view=6277236
   var scriptElement = document.createElement('script');
   scriptElement.type = 'text/javascript';
   scriptElement.innerHTML = `
     var canonicalUrl_art = $("#taboola-right-rail-thumbnails-scroll").closest(".template-infinity").find('.headline.artit').attr("canonicalurl");
-    var taboolaId = "taboola-right-rail-thumbnails-scroll-" + id_art_infinity;
+    var taboolaId = "taboola-right-rail-thumbnails-scroll-" + ${id_art_infinity};
     $('#taboola-right-rail-thumbnails-scroll')[0].id = taboolaId;
     window._taboola = window._taboola || [];
     _taboola.push({mode:'thumbnails-a', container: taboolaId, placement: 'Below Article Thumbnails Widget', target_type: 'mix'});
