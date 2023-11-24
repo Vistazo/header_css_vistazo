@@ -1,4 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
+  // Encuentra el script por tipo y contenido
+  var scripts = document.querySelectorAll('script[type="text/javascript"][src*="taboola"]');
+  // Elimina cada script encontrado
+  scripts.forEach(function(script) {
+      script.parentNode.removeChild(script);
+  });
   localStorage.setItem("scriptsr_scroll", "")
   EjecutarInit();
 });
