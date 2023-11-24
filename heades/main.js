@@ -798,7 +798,11 @@ function RutaActual(){
   if(url && url != ""){
     tabgrp.forEach(e => {
       let tilde = quitarTildes(e.innerHTML)
-      if(String(tilde).toLowerCase() == String(url).toLowerCase() || String(tilde).toLowerCase() == "estilo-de-vida"){
+      if(String(tilde).toLowerCase() == String(url).toLowerCase() || 
+      String(tilde).toLowerCase() == "estilo-de-vida" || 
+      String(tilde).toLowerCase() == "actualidad" || 
+      String(tilde).toLowerCase() == "opinion" || 
+      String(tilde).toLowerCase() == "portafolio"){
         sal = e.parentElement.parentElement
         sal.style.clipPath="polygon(11.5% -25.13%,96.50% -24.00%,88% 100%,0% 100%)";
         sal.style.backgroundColor="#fd0f03";
@@ -807,6 +811,11 @@ function RutaActual(){
         sal.style.colo="white"
         sal.style.padding="0px";
         sal.style.height="100%";
+      }else{
+        sal = e.parentElement.parentElement
+        sal.style.clipPath="polygon(0% 0, 100% 0%, 100% 100%, 0% 100%)";
+        sal.style.backgroundColor="#000";
+        sal.style.padding="0px";
       }
     });
   }
