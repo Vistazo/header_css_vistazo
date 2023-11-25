@@ -808,11 +808,11 @@ function RutaActual(){
         sal.style.colo="white"
         sal.style.padding="0px";
         sal.style.height="100%";
-      }else{
-        sal = e.parentElement.parentElement
-        sal.style.clipPath="polygon(0% 0, 100% 0%, 100% 100%, 0% 100%)";
-        sal.style.backgroundColor="#000";
-        sal.style.padding="0px";
+      // }else{
+      //   sal = e.parentElement.parentElement
+      //   sal.style.clipPath="polygon(0% 0, 100% 0%, 100% 100%, 0% 100%)";
+      //   sal.style.backgroundColor="#000";
+      //   sal.style.padding="0px";
       }
     });
   }
