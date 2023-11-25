@@ -718,7 +718,7 @@ function EjecutarInit(){
     <span class="iconBefore"></span>
     <strong class="sectionName" style="font-size: 1px;">Portafolio</strong>
     <span class="iconAfter"></span>`
-    tabgrp = document.querySelectorAll(".tab-grp");
+    tabgrp = document.querySelectorAll(".menu_header_bm .menu_secc_unfolded .nav .cf .tabnav .tab-grp");
     var act = document.querySelector(".actualidad_sub .lst_items_sub")
     var pol = document.querySelector(".politica_sub .lst_items_sub")
     var est = document.querySelector(".estilo_vida_sub .lst_items_sub")
@@ -852,7 +852,6 @@ function EjecutarScriptTaboola(){
   if(!taboolaContainer){
     return null;
   }
-
   	// recuperamos la url canonica
 	var canonicalUrl_art = $("#taboola-right-rail-thumbnails-scroll").closest(".template-infinity").find('.headline.artit').attr("canonicalurl");
 	// renombramos el div
@@ -863,35 +862,5 @@ function EjecutarScriptTaboola(){
 	_taboola.push({mode:'thumbnails-a', container: taboolaId, placement: 'Below Article Thumbnails Widget', target_type: 'mix'});
 	_taboola.push({article:'auto', url:canonicalUrl_art });
   console.log("taboola:00")
-
   return null;
-
-  var closestInfinity = findClosest(taboolaContainer, ".template-infinity");
-  var headlineArtit = closestInfinity.querySelector('.headline.artit');
-  var canonicalUrl_art = headlineArtit.getAttribute("canonicalurl");
-  // Renombrar el div
-  var taboolaId = "taboola-right-rail-thumbnails-scroll-" + id_art_infinity;
-  taboolaContainer.id = taboolaId;
-  // Llamar a la publicidad
-  window._taboola = window._taboola || [];
-  _taboola.push({mode:'thumbnails-a', container: taboolaId, placement: 'Below Article Thumbnails Widget', target_type: 'mix'});
-  _taboola.push({article:'auto', url: canonicalUrl_art});
-  console.log("taboola:00");
-
-  // Función para encontrar el elemento ascendente más cercano con la clase especificada
-  function findClosest(element, selector) {
-    while (element && !element.matches(selector)) {
-        element = element.parentElement;
-    }
-    return element;
-  }
-
-  // window._taboola = window._taboola || [];
-  // _taboola.push({mode:'thumbnails-a', container: taboolaId, placement: 'Below Article Thumbnails Widget', target_type: 'mix'});
-  // _taboola.push({article:'auto', url:canonicalUrl_art });
-  // console.log("taboola:00");
-  
-  window._taboola = window._taboola || [];
-  _taboola.push({flush: true});
-  console.log("taboola:01");
 }
