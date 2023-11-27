@@ -471,6 +471,8 @@ li.sect-a4306ce1cba409d40f6649f40a27a166 a.tab-item.lnk .sectionName{
     flex-direction: row;
     width: 200px;
     height: 60px;
+    position: absolute;
+    right: 110px;
 }
 
 .login{
@@ -571,6 +573,7 @@ li.sect-a4306ce1cba409d40f6649f40a27a166 a.tab-item.lnk .sectionName{
     .login_menu_bm{
         padding: 0px;
         margin: 0px;
+        right: 0px;
     }
     .hamburg_bm{
         display: flex;
