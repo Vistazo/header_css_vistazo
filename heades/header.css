@@ -581,10 +581,10 @@ li.sect-a4306ce1cba409d40f6649f40a27a166 a.tab-item.lnk .sectionName{
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    width: 200px;
+    width: 185px;
     height: 60px;
     position: absolute;
-    right: 110px;
+    right: 100px;
 }
 
 .login{
@@ -737,12 +737,6 @@ li.sect-a4306ce1cba409d40f6649f40a27a166 a.tab-item.lnk .sectionName{
     ul.level-2 .lst-items-movil li.sect-619 .lnk .sectionName, ul.level-2 .lst-items-movil li.sect-1741 .lnk .sectionName {
         color: #37b72f;
     }
-}
-
-@media only screen and (min-width: 900px){
-    /* .menu_burguer_mobile{
-        display: none;
-    } */
 }
 
 /* Media query para dispositivos de escritorio */
