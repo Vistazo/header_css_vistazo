@@ -864,3 +864,27 @@ function EjecutarScriptTaboola(){
   console.log("taboola:00")
   return null;
 }
+
+function InyectarEnHeader(){
+  // <script async src="https://mowplayer.com/js/player/mM9CsntrQm.js"></script> inyectar en el header para que funcione el video
+  var script = document.createElement('script');
+  script.src = 'https://mowplayer.com/js/player/mM9CsntrQm.js';
+  script.async = true;
+  document.head.appendChild(script);
+  // taboola
+  window._taboola = window._taboola || [];
+  _taboola.push({article:'auto'});
+  !function (e, f, u, i) {
+    if (!document.getElementById(i)){
+      e.async = 1;
+      e.src = u;
+      e.id = i;
+      f.parentNode.insertBefore(e, f);
+    }
+  }(document.createElement('script'),
+  document.getElementsByTagName('script')[0],
+  '//cdn.taboola.com/libtrc/adops-vistazo/loader.js',
+  'tb_loader_script');
+  if(window.performance && typeof window.performance.mark == 'function')
+    {window.performance.mark('tbl_ic');}
+}
