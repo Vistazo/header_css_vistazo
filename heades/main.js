@@ -842,27 +842,32 @@ function Limpiar(){
 }
 
 function EjecutarScriptTaboola(){
-  var group_id=12727;
-  var id_art_infinity=6277236;
-  var teaser_first=true;
-  var n_noticia=1;
-  var idart_view=6277236
-
-  var taboolaContainer = document.getElementById("taboola-right-rail-thumbnails-scroll");
-  if(!taboolaContainer){
+  try {
+    console.log("EjecutarScriptTaboola")
+    var group_id=12727;
+    var id_art_infinity=6277236;
+    var teaser_first=true;
+    var n_noticia=1;
+    var idart_view=6277236
+  
+    var taboolaContainer = document.getElementById("taboola-right-rail-thumbnails-scroll");
+    if(!taboolaContainer){
+      return null;
+    }
+      // recuperamos la url canonica
+    var canonicalUrl_art = $("#taboola-right-rail-thumbnails-scroll").closest(".template-infinity").find('.headline.artit').attr("canonicalurl");
+    // renombramos el div
+    var taboolaId = "taboola-right-rail-thumbnails-scroll-" + id_art_infinity;
+    $('#taboola-right-rail-thumbnails-scroll')[0].id = taboolaId;
+    // llamamos a la publi
+    window._taboola = window._taboola || [];
+    _taboola.push({mode:'thumbnails-a', container: taboolaId, placement: 'Below Article Thumbnails Widget', target_type: 'mix'});
+    _taboola.push({article:'auto', url:canonicalUrl_art });
+    console.log("taboola:00")
     return null;
+  } catch (error) {
+    console.log("error EjecutarScriptTaboola: ",error)    
   }
-  	// recuperamos la url canonica
-	var canonicalUrl_art = $("#taboola-right-rail-thumbnails-scroll").closest(".template-infinity").find('.headline.artit').attr("canonicalurl");
-	// renombramos el div
-	var taboolaId = "taboola-right-rail-thumbnails-scroll-" + id_art_infinity;
-	$('#taboola-right-rail-thumbnails-scroll')[0].id = taboolaId;
-	// llamamos a la publi
-	window._taboola = window._taboola || [];
-	_taboola.push({mode:'thumbnails-a', container: taboolaId, placement: 'Below Article Thumbnails Widget', target_type: 'mix'});
-	_taboola.push({article:'auto', url:canonicalUrl_art });
-  console.log("taboola:00")
-  return null;
 }
 
 function InyectarEnHeader(){
@@ -890,6 +895,6 @@ function InyectarEnHeader(){
     if(window.performance && typeof window.performance.mark == 'function')
       {window.performance.mark('tbl_ic');}
   } catch (error) {
-    console.log("error: ",error)    
+    console.log("error InyectarEnHeader: ",error)    
   }
 }
