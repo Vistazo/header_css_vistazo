@@ -332,10 +332,9 @@ li.sect-a4306ce1cba409d40f6649f40a27a166 a.tab-item.lnk .sectionName{
 
 .header_contain_dm .menu_burguer_bm{
     position: absolute;
-    /* top:50px; */
     background: #000;
     display: none;
-    right: 170px;
+    right: 140px;
     margin-top: 60px;
 }
 
@@ -737,6 +736,12 @@ li.sect-a4306ce1cba409d40f6649f40a27a166 a.tab-item.lnk .sectionName{
     ul.level-2 .lst-items-movil li.sect-619 .lnk .sectionName, ul.level-2 .lst-items-movil li.sect-1741 .lnk .sectionName {
         color: #37b72f;
     }
+}
+
+@media only screen and (min-width: 900px){
+    /* .menu_burguer_mobile{
+        display: none;
+    } */
 }
 
 /* Media query para dispositivos de escritorio */
