@@ -450,7 +450,7 @@ li.sect-a4306ce1cba409d40f6649f40a27a166 a.tab-item.lnk .sectionName{
     margin: 0;
     padding: 0;
     height: 100%;
-    width: 90px;
+    width: 115px;
 }
 .lst-item.tabnav.sect-599.sect-d324dcbae836241c3589b9b80caf600c.selected:hover{
     background: red;
@@ -467,8 +467,30 @@ li.sect-a4306ce1cba409d40f6649f40a27a166 a.tab-item.lnk .sectionName{
 .lst-item.tabnav.sect-610.sect-25c871516621d54188a8eea46dc93433:hover{
     background: red;
 }
-
-
+.lst-item.tabnav.sect-610.sect-25c871516621d54188a8eea46dc93433{
+    clip-path: polygon(11.5% -25.13px, 96.5% -24%, 88% 100%, 0% 100%);
+    background: black;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 90px;
+}
+.lst-item.tabnav.sect-610.sect-25c871516621d54188a8eea46dc93433:hover{
+    background: red;
+}
+.lst-item.tabnav.sect-611.sect-57e75892da6c5a910aa644feb611e20e{
+    clip-path: polygon(11.5% -25.13px, 96.5% -24%, 88% 100%, 0% 100%);
+    background: black;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 120px;
+}
+.lst-item.tabnav.sect-611.sect-57e75892da6c5a910aa644feb611e20e:hover{
+    background: red;
+}
 
 .portlet-boundary.portlet-static-end.htmlcontainer-portlet.header_suscribete_bm {
     position: relative;
