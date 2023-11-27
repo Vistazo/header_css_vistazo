@@ -67,13 +67,12 @@
 
 .menu_header_bm .lst-item.tabnav{
     float: left;
-    /* padding: 0 6px 22px; */
     font-size: 19px;
     font-family: 'Crete Round', serif;
     height: 60px;
-    width: 100px;
+    /* width: 100px; */
     display: block;
-    /* padding-top: 17px; */
+    margin: 0px 6px;
     
 }
 
