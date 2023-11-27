@@ -486,7 +486,7 @@ li.sect-a4306ce1cba409d40f6649f40a27a166 a.tab-item.lnk .sectionName{
     margin: 0;
     padding: 0;
     height: 100%;
-    width: 125px;
+    width: 130px;
 }
 .lst-item.tabnav.sect-611.sect-57e75892da6c5a910aa644feb611e20e:hover{
     background: red;
@@ -504,7 +504,57 @@ li.sect-a4306ce1cba409d40f6649f40a27a166 a.tab-item.lnk .sectionName{
 .lst-item.tabnav.sect-136.sect-ed616e97416bbb72f2a42fa530435804:hover{
     background: red;
 }
+.lst-item.tabnav.sect-378.sect-a4306ce1cba409d40f6649f40a27a166{
+    clip-path: polygon(11.5% -25.13px, 96.5% -24%, 88% 100%, 0% 100%);
+    background: black;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100px;
+}
+.lst-item.tabnav.sect-378.sect-a4306ce1cba409d40f6649f40a27a166:hover{
+    background: red;
+}
 
+.lst-item.tabnav.sect-379.sect-74b11848b5e1a47d79fed2bc56e2a9fc{
+    clip-path: polygon(11.5% -25.13px, 96.5% -24%, 88% 100%, 0% 100%);
+    background: black;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100px;
+}
+.lst-item.tabnav.sect-379.sect-74b11848b5e1a47d79fed2bc56e2a9fc:hover{
+    background: red;
+}
+
+.lst-item.tabnav.sect-723.sect-0903d1806e4bd8bf290229a78d484445{
+    clip-path: polygon(11.5% -25.13px, 96.5% -24%, 88% 100%, 0% 100%);
+    background: black;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100px;
+}
+.lst-item.tabnav.sect-723.sect-0903d1806e4bd8bf290229a78d484445:hover{
+    background: red;
+}
+
+.lst-item.tabnav.sect-2825.sect-262e52091545304582cf18882fc67b4f{
+    clip-path: polygon(11.5% -25.13px, 96.5% -24%, 88% 100%, 0% 100%);
+    background: black;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100px;
+}
+.lst-item.tabnav.sect-2825.sect-262e52091545304582cf18882fc67b4f:hover{
+    background: red;
+}
 
 .portlet-boundary.portlet-static-end.htmlcontainer-portlet.header_suscribete_bm {
     position: relative;
