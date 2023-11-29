@@ -763,12 +763,12 @@ function EjecutarInit(){
     document.addEventListener("click", function(){
       EjecutarScriptTaboola()
       // TagManager();
-      InyectarEnHeader();
+      // InyectarEnHeader();
     })
     document.addEventListener("scroll", function(){
       EjecutarScriptTaboola()
       // TagManager();
-      InyectarEnHeader();
+      // InyectarEnHeader();
     })
 
 
