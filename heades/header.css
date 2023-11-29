@@ -646,13 +646,13 @@ li.sect-a4306ce1cba409d40f6649f40a27a166 a.tab-item.lnk .sectionName{
     .iter-header-wrapper{
         z-index: 10;
     }
-    .nav-dropdown.nav.noSubNav{
+    /* .nav-dropdown.nav.noSubNav{
         height: 60px;
         display: flex;
         justify-content: space-between;
         align-items: center;
         width: 100%;
-    }
+    } */
 
     .nav-dropdown.nav.noSubNav ul, li, ol {
         padding-left: 2rem;
