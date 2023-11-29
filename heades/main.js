@@ -902,7 +902,7 @@ function InyectarEnHeader(){
 
 
     var scripTag = document.createElement('script');
-    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+    // <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
     scripTag.src = 'https://securepubads.g.doubleclick.net/tag/js/gpt.js';
     scripTag.async = true;
     document.head.appendChild(scripTag);
