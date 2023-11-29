@@ -1,0 +1,104 @@
+/*EL PORLET (REVISTA - MOBILE) ESTA OCULTA POR QUE TENEMOS DEFINIDO EL DISPLAY NONE */
+.footer_revistas_mobile,
+.btn-suscribete {
+  display: none;
+}
+
+footer .derechos {
+  margin-top: 25px !important;
+}
+
+.footer_revistas .article {
+  margin: 0 5px !important;
+}
+
+.footer_revistas_mobile .noticias {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 15px;
+  row-gap: 15px;
+}
+.btn-suscribete .susbribe {
+  background-color: white;
+  padding: 4px 20px 10px 20px;
+  line-height: 58px;
+  color: black;
+  font-family: "Crete Round", serif;
+  /*clip-path: polygon(31.5% -25.13%, 96.5% -24%, 95.81% 115.07%, 0% 100%);*/
+  font-size: 18px;
+  cursor: pointer;
+  margin: 20px 110px 0px 110px;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+}
+
+.btn-suscribete .susbribe span {
+  border-bottom: 5px solid #fd0f03;
+}
+
+footer .desarrollo {
+  position: inherit;
+  margin-top: 30px;
+}
+
+@media only screen and (min-width: 300px) and (max-width: 1024px){
+  footer {
+    margin: 0 auto !important;
+  }
+  .footer_revistas {
+    display: none;
+  }
+  .arterojo {
+    display: none;
+  }
+  .footer_revistas_mobile,
+  .btn-suscribete {
+    display: block;
+  }
+  .footer_revistas {
+    display: none;
+  }
+  footer {
+    height: 620px !important;
+  }
+  footer .editor .logoecuavisa {
+    margin-top: 30px;
+  }
+
+  #fancybox-tmp,
+  #fancybox-wrap {
+    background: black;
+    margin-top: -2px;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 1024px) {
+  .footer_revistas {
+    display: none;
+  }
+  .arterojo {
+    display: none;
+  }
+  .footer_revistas_mobile,
+  .btn-suscribete {
+    display: block;
+  }
+  .footer_revistas {
+    display: none;
+  }
+  footer {
+    height: 820px !important;
+  }
+  .footer_revistas {
+    display: none;
+  }
+}
+
+
+#fancybox-left,
+#fancybox-right,
+#fancybox-wrap,
+#fancybox-tmp {
+  color: transparent;
+}
