@@ -762,12 +762,12 @@ function EjecutarInit(){
     // ejecutar el script de taboola cuando se haga click en la pagina o se haga scroll
     document.addEventListener("click", function(){
       EjecutarScriptTaboola()
-      TagManager();
+      // TagManager();
       InyectarEnHeader();
     })
     document.addEventListener("scroll", function(){
       EjecutarScriptTaboola()
-      TagManager();
+      // TagManager();
       InyectarEnHeader();
     })
 
