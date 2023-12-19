@@ -76,6 +76,7 @@
 
 .Autopauta_css .pud_desktop{
     height: auto;
+    display: none;
 }
 .menu_header_bm .lst-item.tabnav .tab-grp .tab-item.lnk{
     text-decoration: none;
