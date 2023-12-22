@@ -76,7 +76,6 @@
 
 .Autopauta_css .pud_desktop{
     height: auto;
-    /*display: none;*/
 }
 .menu_header_bm .lst-item.tabnav .tab-grp .tab-item.lnk{
     text-decoration: none;
@@ -634,6 +633,14 @@ li.sect-a4306ce1cba409d40f6649f40a27a166 a.tab-item.lnk .sectionName{
     cursor: pointer;
 }
 
+@media only screen and (max-width: 767px){
+    .IMGTITINF1_2 .media_block {
+        display: flex;
+    }
+    .media_block .text_block  a h2{
+        font-size: 18px;
+    }
+}
 
 /* media para tamano telefono */
 /* cuando el tamano de la pagina sea 400 */
