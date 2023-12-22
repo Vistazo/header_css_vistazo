@@ -637,8 +637,11 @@ li.sect-a4306ce1cba409d40f6649f40a27a166 a.tab-item.lnk .sectionName{
     .IMGTITINF1_2 .media_block {
         display: flex;
     }
-    .media_block .text_block  a h2{
-        font-size: 18px;
+    .IMGTITINF1_2 h2 {
+        font-size: 19px;
+    }
+    .IMGTITINF1_2 .headline{
+        text-align: start;
     }
 }
 
