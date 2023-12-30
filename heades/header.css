@@ -634,7 +634,7 @@ li.sect-a4306ce1cba409d40f6649f40a27a166 a.tab-item.lnk .sectionName{
 }
 
 .multimediaIconMacroWrapper img{
-    height: 100%;
+    height: 100% !important;
 }
 
 @media only screen and (max-width: 767px){
