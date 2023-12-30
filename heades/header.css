@@ -633,6 +633,10 @@ li.sect-a4306ce1cba409d40f6649f40a27a166 a.tab-item.lnk .sectionName{
     cursor: pointer;
 }
 
+.multimediaIconMacroWrapper img{
+    height: 100%;
+}
+
 @media only screen and (max-width: 767px){
     .IMGTITINF1_2 .media_block {
         display: flex;
