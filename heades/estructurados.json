@@ -1,20 +1,19 @@
-<script type="aplicación/ld+json">
-	{
-		"@context": "http://schema.org",
-		"@type": "PáginaColección",
-		"description": "Portal digital de la primera revista del Ecuador especializada en análisis de temas políticos y periodismo investigativo. | Vistazo",
-		"url": "https://www.vistazo.com/",
-		"inLanguage": "son",
-		"name": "Vistazo",
-		"editor": {
-		"@id": "https://www.vistazo.com"
-		},
-		"titular de derechos de autor": {
-		"@id": "https://www.vistazo.com"
-		},
-		"organización fuente": {
-		"@id": "https://www.vistazo.com"
-		},
-		"copyrightAño": 2024
-	}
-	</script>
+
+{
+	"@context": "http://schema.org",
+	"@type": "PáginaColección",
+	"description": "Portal digital de la primera revista del Ecuador especializada en análisis de temas políticos y periodismo investigativo. | Vistazo",
+	"url": "https://www.vistazo.com/",
+	"inLanguage": "son",
+	"name": "Vistazo",
+	"editor": {
+	"@id": "https://www.vistazo.com"
+	},
+	"titular de derechos de autor": {
+	"@id": "https://www.vistazo.com"
+	},
+	"organización fuente": {
+	"@id": "https://www.vistazo.com"
+	},
+	"copyrightAño": 2024
+}
