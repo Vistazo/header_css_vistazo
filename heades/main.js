@@ -136,6 +136,16 @@ function EjecutarInit(){
               <span class="iconAfter"></span>
             </a>
           </li>
+          <li class="lst-item   sect-2773 sect-e869719b1db25b24b4cdf626a6b907cd"> 
+            <a 
+              href="/portafolio/bolsa-de-empleo" 
+              class=" lnk" 
+              title=""> 
+                <span class="iconBefore"></span> 
+                <span class="sectionName">Bolsa de Empleo</span> 
+                <span class="iconAfter"></span> 
+            </a> 
+          </li>
         </div>
       </ul>
     </div>
