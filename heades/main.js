@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   localStorage.setItem("scriptsr_scroll", "")
   EjecutarInit();
-
+  TagManager();
 });
 
 function EjecutarInit(){
