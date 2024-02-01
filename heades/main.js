@@ -787,12 +787,12 @@ function EjecutarInit(){
     document.addEventListener("click", function(){
       EjecutarScriptTaboola()
       InyectarEnHeader();
-      TagManager();
+      //TagManager();
     })
     document.addEventListener("scroll", function(){
       EjecutarScriptTaboola()
       InyectarEnHeader();
-      TagManager();
+     // TagManager();
     })
 
 
