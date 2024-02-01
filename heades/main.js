@@ -22,6 +22,8 @@ document.addEventListener('DOMContentLoaded', function() {
   localStorage.setItem("scriptsr_scroll", "")
   EjecutarInit();
   TagManager();
+  InyectarEnHeader();
+  EjecutarScriptTaboola();
 });
 
 function EjecutarInit(){
