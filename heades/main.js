@@ -1,17 +1,17 @@
 document.addEventListener('DOMContentLoaded', function() {
 // Crear el elemento script
-var scriptElement = document.createElement('script');
+// var scriptElement = document.createElement('script');
 
   // Establecer los atributos del script
-  scriptElement.setAttribute('charset', 'UTF-8');
-  scriptElement.setAttribute('src', '//web.webpushs.com/js/push/af4643cebabb204fff34ebd1d7822c8b_1.js');
-  scriptElement.setAttribute('async', '');
+  // scriptElement.setAttribute('charset', 'UTF-8');
+  // scriptElement.setAttribute('src', '//web.webpushs.com/js/push/af4643cebabb204fff34ebd1d7822c8b_1.js');
+  // scriptElement.setAttribute('async', '');
   
   // Obtener la referencia al elemento head
-  var headElement = document.head || document.getElementsByTagName('head')[0];
+  //var headElement = document.head || document.getElementsByTagName('head')[0];
   
   // Agregar el nuevo script al head
-  headElement.appendChild(scriptElement);
+  //headElement.appendChild(scriptElement);
   
   // Encuentra el script por tipo y contenido
   var scripts = document.querySelectorAll('script[type="text/javascript"][src*="taboola"]');
