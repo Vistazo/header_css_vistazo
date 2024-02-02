@@ -12,6 +12,16 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Agregar el nuevo script al head
   //headElement.appendChild(scriptElement);
+
+var taboolaExecuted = false; // Variable para controlar si la función ya se ejecutó
+
+function handleScroll() {
+  if (!taboolaExecuted) {
+    EjecutarScriptTaboola();
+    taboolaExecuted = true;
+  }
+ }
+  window.addEventListener("scroll", handleScroll);
   
   // Encuentra el script por tipo y contenido
   var scripts = document.querySelectorAll('script[type="text/javascript"][src*="taboola"]');
