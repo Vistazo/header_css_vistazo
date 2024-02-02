@@ -13,27 +13,16 @@ document.addEventListener('DOMContentLoaded', function() {
   // Agregar el nuevo script al head
   //headElement.appendChild(scriptElement);
 
-var taboolaExecuted = false; // Variable para controlar si la función ya se ejecutó
 
-function handleScroll() {
-  if (!taboolaExecuted) {
-    EjecutarInit();
-    TagManager();
-    InyectarEnHeader();
-    EjecutarScriptTaboola();
-    taboolaExecuted = true;
-  }
- }
-  window.addEventListener("scroll", handleScroll);
   
   // Encuentra el script por tipo y contenido
-  var scripts = document.querySelectorAll('script[type="text/javascript"][src*="taboola"]');
+  // var scripts = document.querySelectorAll('script[type="text/javascript"][src*="taboola"]');
   // Elimina cada script encontrado
-  scripts.forEach(function(script) {
-      script.parentNode.removeChild(script);
-  });
-  localStorage.setItem("scriptsr_scroll", "")
-
+  // scripts.forEach(function(script) {
+  //     script.parentNode.removeChild(script);
+  // });
+  // localStorage.setItem("scriptsr_scroll", "")
+  EjecutarInit();
 });
 
 function EjecutarInit(){
@@ -796,18 +785,18 @@ function EjecutarInit(){
     });
 
     // ejecutar el script de taboola cuando se haga click en la pagina o se haga scroll
-    document.addEventListener("click", function(){
-      //EjecutarScriptTaboola()
-      //InyectarEnHeader();
-      //TagManager();
-    })
-    document.addEventListener("scroll", function(){
-      //EjecutarScriptTaboola()
-      //InyectarEnHeader();
-     // TagManager();
-    })
+    var taboolaExecuted = false; // Variable para controlar si la función ya se ejecutó
 
-
+    function handleScroll() {
+      if (!taboolaExecuted) {
+        TagManager();
+        InyectarEnHeader();
+        EjecutarScriptTaboola();
+        taboolaExecuted = true;
+      }
+    }
+    document.addEventListener("scroll",handleScroll)
+    document.addEventListener("click",handleScroll)
 
   } catch (error) {
   }
