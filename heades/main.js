@@ -896,13 +896,11 @@ function EjecutarScriptTaboola(){
     console.log("taboola:00")
     return null;
   } catch (error) {
-    console.log("error EjecutarScriptTaboola: ",error)    
   }
 }
 
 function InyectarEnHeader(){
   try {
-    console.log("InyectarEnHeader")
     // <scrip async src="https://mowplayer.com/js/player/mM9CsntrQm.js"></script> inyectar en el header para que funcione el video
     var script = document.createElement('script');
     script.src = 'https://mowplayer.com/js/player/mM9CsntrQm.js';
@@ -1077,6 +1075,5 @@ function TagManager(){
         s.parentNode.insertBefore(as, s); 
       })();
   } catch (error) {
-    console.log("error TagManager: ",error)
   }
 }
