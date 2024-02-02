@@ -17,6 +17,9 @@ var taboolaExecuted = false; // Variable para controlar si la función ya se eje
 
 function handleScroll() {
   if (!taboolaExecuted) {
+    EjecutarInit();
+    TagManager();
+    InyectarEnHeader();
     EjecutarScriptTaboola();
     taboolaExecuted = true;
   }
@@ -30,10 +33,7 @@ function handleScroll() {
       script.parentNode.removeChild(script);
   });
   localStorage.setItem("scriptsr_scroll", "")
-  EjecutarInit();
-  TagManager();
-  InyectarEnHeader();
-  EjecutarScriptTaboola();
+
 });
 
 function EjecutarInit(){
