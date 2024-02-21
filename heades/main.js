@@ -410,6 +410,15 @@ function EjecutarInit(){
                             <span class="iconAfter"></span>
                           </a>
                         </li>
+                      <li
+                        class="lst-item sect-1734 sect-f805fc3f687a103080279383e7b5b96"
+                      >
+                        <a href="/actualidad/pueblos-aislados" class="lnk" title="">
+                          <span class="iconBefore"></span>
+                          <span class="sectionName">Pueblos Aislados</span>
+                          <span class="iconAfter"></span>
+                        </a>
+                      </li>
                       </div>
                     </ul>
                   </div>
