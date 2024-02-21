@@ -1,20 +1,20 @@
-document.addEventListener('DOMContentLoaded', function() {
-// Crear el elemento script
-// var scriptElement = document.createElement('script');
+document.addEventListener('DOMContentLoaded', function () {
+  // Crear el elemento script
+  // var scriptElement = document.createElement('script');
 
   // Establecer los atributos del script
   // scriptElement.setAttribute('charset', 'UTF-8');
   // scriptElement.setAttribute('src', '//web.webpushs.com/js/push/af4643cebabb204fff34ebd1d7822c8b_1.js');
   // scriptElement.setAttribute('async', '');
-  
+
   // Obtener la referencia al elemento head
   //var headElement = document.head || document.getElementsByTagName('head')[0];
-  
+
   // Agregar el nuevo script al head
   //headElement.appendChild(scriptElement);
 
 
-  
+
   // Encuentra el script por tipo y contenido
   // var scripts = document.querySelectorAll('script[type="text/javascript"][src*="taboola"]');
   // Elimina cada script encontrado
@@ -26,14 +26,14 @@ document.addEventListener('DOMContentLoaded', function() {
   EjecutarInit();
 });
 
-function EjecutarInit(){
+function EjecutarInit() {
   try {
     register = document.querySelector(".nav-dropdown.nav.noSubNav")
-    if(register){
-        copi = register.innerHTML
-        logo = `<div><a class="site-logo" href="/" aria-label="Vistazo">vistazo</a></div>`
-        register.innerHTML=""
-        register.innerHTML=`${logo}${copi}<div class="login_menu_bm">
+    if (register) {
+      copi = register.innerHTML
+      logo = `<div><a class="site-logo" href="/" aria-label="Vistazo">vistazo</a></div>`
+      register.innerHTML = ""
+      register.innerHTML = `${logo}${copi}<div class="login_menu_bm">
                 <div class="login">
                     <a class="lg_bm"
                         href="https://suscripciones.vistazo.com/id/login/?continue=https%3A%2F%2Fwww.vistazo.com%2F">
@@ -61,10 +61,10 @@ function EjecutarInit(){
         </div>`
     }
     submenu = document.querySelector(".portlet-boundary.portlet-static-end.htmlcontainer-portlet")
-    if(submenu){
-        newCopi = submenu.innerHTML
-        submenu.innerHTML=""
-        submenu.innerHTML=`${newCopi}
+    if (submenu) {
+      newCopi = submenu.innerHTML
+      submenu.innerHTML = ""
+      submenu.innerHTML = `${newCopi}
         <div class="actualidad_sub">
         <ul class="ulclass">
           <div class="lst_items_sub">
@@ -86,15 +86,15 @@ function EjecutarInit(){
                 <span class="iconAfter"></span>
               </a>
             </li>
-                                    <li
-                        class="lst-item sect-1734 sect-f805fc3f687a103080279383e7b5b96"
-                      >
-                        <a href="/actualidad/pueblos-aislados" class="lnk" title="">
-                          <span class="iconBefore"></span>
-                          <span class="sectionName">Pueblos Aislados</span>
-                          <span class="iconAfter"></span>
-                        </a>
-                      </li>
+            <li
+              class="lst-item sect-1734 sect-f805fc3f687a103080279383e7b5b962"
+            >
+              <a href="/actualidad/pueblos-aislados" class="lnk" title="">
+                <span class="iconBefore"></span>
+                <span class="sectionName">Pueblos Aislados</span>
+                <span class="iconAfter"></span>
+              </a>
+            </li>
           </div>
         </ul>
       </div>
@@ -324,8 +324,8 @@ function EjecutarInit(){
     }
 
     opinion = document.querySelector(".sect-ed616e97416bbb72f2a42fa530435804");
-    if(opinion){
-      div= `<div class="tab-grp">
+    if (opinion) {
+      div = `<div class="tab-grp">
               ${opinion.innerHTML}
               <span class="hasChildsIcon"></span>
               <div class="child-nav cf">
@@ -334,7 +334,7 @@ function EjecutarInit(){
       opinion.innerHTML = div;
     }
     e2 = document.querySelector(".sect-262e52091545304582cf18882fc67b4f");
-    div2= `<div class="tab-grp">
+    div2 = `<div class="tab-grp">
             ${e2.innerHTML}
             <span class="hasChildsIcon"></span>
             <div class="child-nav cf">
@@ -343,7 +343,7 @@ function EjecutarInit(){
     e2.innerHTML = div2;
 
     e3 = document.querySelector(".sect-0903d1806e4bd8bf290229a78d484445");
-    div3= `<div class="tab-grp">
+    div3 = `<div class="tab-grp">
             ${e3.innerHTML}
             <span class="hasChildsIcon"></span>
             <div class="child-nav cf">
@@ -352,7 +352,7 @@ function EjecutarInit(){
     e3.innerHTML = div3;
 
     e4 = document.querySelector(".sect-74b11848b5e1a47d79fed2bc56e2a9fc");
-    div4= `<div class="tab-grp">
+    div4 = `<div class="tab-grp">
             ${e4.innerHTML}
             <span class="hasChildsIcon"></span>
             <div class="child-nav cf">
@@ -361,7 +361,7 @@ function EjecutarInit(){
     e4.innerHTML = div4;
 
     e5 = document.querySelector(".sect-a4306ce1cba409d40f6649f40a27a166");
-    div5= `<div class="tab-grp">
+    div5 = `<div class="tab-grp">
             ${e5.innerHTML}
             <span class="hasChildsIcon"></span>
             <div class="child-nav cf">
@@ -370,8 +370,8 @@ function EjecutarInit(){
     e5.innerHTML = div5;
 
     menuMovil = document.querySelector(".headres_bm_ts");
-    if(menuMovil){
-        menu = `${menuMovil.innerHTML}
+    if (menuMovil) {
+      menu = `${menuMovil.innerHTML}
         <div
         id="189309249"
         class="menu_burguer_mobile"
@@ -411,7 +411,7 @@ function EjecutarInit(){
                           </a>
                         </li>
                       <li
-                        class="lst-item sect-1734 sect-f805fc3f687a103080279383e7b5b96"
+                        class="lst-item sect-1734 sect-f805fc3f687a103080279383e7b5b962"
                       >
                         <a href="/actualidad/pueblos-aislados" class="lnk" title="">
                           <span class="iconBefore"></span>
@@ -673,70 +673,70 @@ function EjecutarInit(){
           </div>
         </div>
           </div>`
-        menuMovil.innerHTML = menu;
+      menuMovil.innerHTML = menu;
     }
 
     var elems = document.querySelector('.lst-item.tabnav.sect-1824.sect-262e52091545304582cf18882fc67b4f div a strong');
-    if(elems){
+    if (elems) {
       elems.style.fontSize = "1px";
     }
     hogar = document.querySelector(".lst-item.tabnav.sect-529.sect-0903d1806e4bd8bf290229a78d484445 a");
-    if(hogar){
+    if (hogar) {
       hogar.innerHTML = "";
     }
     enfoque = document.querySelector(".lst-item.tabnav.sect-247.sect-74b11848b5e1a47d79fed2bc56e2a9fc a");
-    if(enfoque){
+    if (enfoque) {
       enfoque.innerHTML = "";
     }
     estadio = document.querySelector(".lst-item.tabnav.sect-246.sect-a4306ce1cba409d40f6649f40a27a166 a");
-    if(estadio){
+    if (estadio) {
       estadio.innerHTML = "";
     }
 
 
     close_burguer = document.querySelector(".burger");
-    if(close_burguer){
-        // ver de cuanto es el tamaño de la pantalla si es igual o meno a 900px activar el menu movil
-        close_burguer.addEventListener("click", function() {
-            ver = document.querySelector(".menu_burguer_bm")
-            movil = window.matchMedia("(min-width: 360px) and (max-width: 1024px)");
-            if(movil.matches){
-                m = document.querySelector(".menu_burguer_mobile")
-                if (m.style.display == "none" || m.style.display == "") {
-                  m.style.display = "block";
-                  LimpiarBuscadorMenu()
-                }else{
-                    m.style.display = "none";
-                }
-            }else{
-                if (ver.style.display == "none" || ver.style.display == "") {
-                    ver.style.display = "block";
-                }else{
-                    ver.style.display = "none";
-                }
-            }
-        });
+    if (close_burguer) {
+      // ver de cuanto es el tamaño de la pantalla si es igual o meno a 900px activar el menu movil
+      close_burguer.addEventListener("click", function () {
+        ver = document.querySelector(".menu_burguer_bm")
+        movil = window.matchMedia("(min-width: 360px) and (max-width: 1024px)");
+        if (movil.matches) {
+          m = document.querySelector(".menu_burguer_mobile")
+          if (m.style.display == "none" || m.style.display == "") {
+            m.style.display = "block";
+            LimpiarBuscadorMenu()
+          } else {
+            m.style.display = "none";
+          }
+        } else {
+          if (ver.style.display == "none" || ver.style.display == "") {
+            ver.style.display = "block";
+          } else {
+            ver.style.display = "none";
+          }
+        }
+      });
     }
 
     // para que tambien se cierre el menu cuando se haga click en cualquier parte de la pantalla
 
 
     buscador = document.querySelector(".hamburg_bm_lupin");
-    if(buscador){
-      buscador.addEventListener("click", function() {
+    if (buscador) {
+      buscador.addEventListener("click", function () {
         movil = window.matchMedia("(min-width: 360px) and (max-width: 1024px)");
         ver = document.querySelector(".basic_search_bm")
-        if(movil.matches){
+        if (movil.matches) {
           if (ver.style.display == "none" || ver.style.display == "") {
             LimpiarBuscadorMenu()
             ver.style.display = "block";
-          }else{
+          } else {
             ver.style.display = "none";
           }
-        }else{
+        } else {
           if (ver.style.display == "none" || ver.style.display == "") {
             ver.style.display = "block";
-          }else{
+          } else {
             ver.style.display = "none";
           }
         }
@@ -744,22 +744,22 @@ function EjecutarInit(){
     }
 
     // para que tambien se cierre el menu cuando se haga click en cualquier parte de la pantalla
-    document.addEventListener("click", function(event) {
-      console.log("event.target.className.baseVal: ",event.target.className.baseVal);
-      if(event.target.className.baseVal == "lupin"){
+    document.addEventListener("click", function (event) {
+      console.log("event.target.className.baseVal: ", event.target.className.baseVal);
+      if (event.target.className.baseVal == "lupin") {
         document.querySelector(".menu_burguer_bm").style.display = "none";
-      }else if(event.target.className.baseVal == "burger"){
+      } else if (event.target.className.baseVal == "burger") {
         document.querySelector(".basic_search_bm").style.display = "none";
-      }else{
+      } else {
         movil = window.matchMedia("(min-width: 360px) and (max-width: 1024px)");
-        if(!movil.matches){
+        if (!movil.matches) {
           document.querySelector(".menu_burguer_bm").style.display = "none";
           // document.querySelector(".basic_search_bm").style.display = "none";
         }
       }
     });
 
-    port =`
+    port = `
     <span class="iconBefore"></span>
     <strong class="sectionName" style="font-size: 1px;">Portafolio</strong>
     <span class="iconAfter"></span>`
@@ -769,37 +769,37 @@ function EjecutarInit(){
     var est = document.querySelector(".estilo_vida_sub .lst_items_sub")
     var enf = document.querySelector(".portafolio_sub .lst_items_sub")
     tabgrp.forEach(e => {
-      e.addEventListener("mouseover", function(i) {
+      e.addEventListener("mouseover", function (i) {
         block = i.target.querySelector(".sectionName")
-        e.style.clipPath="polygon(11.5% -25.13%,96.50% -24.00%,88% 100%,0% 100%)";
-        e.style.backgroundColor="#fd0f03";
-        e.style.textAlign="center";
-        e.style.margin="0px"
-        e.style.colo="white"
-        e.style.padding="0px";
-        e.style.height="100%";
-        if(block && block.innerHTML){
-          if(block.innerHTML == "Actualidad"){
-              Limpiar()
-              act.style.display="flex";
-          }else if(block.innerHTML == "Política"){
-              Limpiar()
-              pol.style.display="flex";
-          }else if(block.innerHTML == "Estilo de vida"){
-              Limpiar()
-              est.style.display="flex";
-          }else if(block.innerHTML == "Portafolio"){
-              Limpiar()
-              enf.style.display="flex";
-          }else{
+        e.style.clipPath = "polygon(11.5% -25.13%,96.50% -24.00%,88% 100%,0% 100%)";
+        e.style.backgroundColor = "#fd0f03";
+        e.style.textAlign = "center";
+        e.style.margin = "0px"
+        e.style.colo = "white"
+        e.style.padding = "0px";
+        e.style.height = "100%";
+        if (block && block.innerHTML) {
+          if (block.innerHTML == "Actualidad") {
+            Limpiar()
+            act.style.display = "flex";
+          } else if (block.innerHTML == "Política") {
+            Limpiar()
+            pol.style.display = "flex";
+          } else if (block.innerHTML == "Estilo de vida") {
+            Limpiar()
+            est.style.display = "flex";
+          } else if (block.innerHTML == "Portafolio") {
+            Limpiar()
+            enf.style.display = "flex";
+          } else {
             Limpiar()
           }
         }
       });
-      e.addEventListener("mouseout", function() {
-        e.style.clipPath="polygon(0% 0, 100% 0%, 100% 100%, 0% 100%)";
-        e.style.backgroundColor="#000";
-        e.style.padding="0px";
+      e.addEventListener("mouseout", function () {
+        e.style.clipPath = "polygon(0% 0, 100% 0%, 100% 100%, 0% 100%)";
+        e.style.backgroundColor = "#000";
+        e.style.padding = "0px";
       });
     });
 
@@ -814,17 +814,17 @@ function EjecutarInit(){
         taboolaExecuted = true;
       }
     }
-    document.addEventListener("scroll",handleScroll)
-    document.addEventListener("click",handleScroll)
+    document.addEventListener("scroll", handleScroll)
+    document.addEventListener("click", handleScroll)
 
   } catch (error) {
   }
 
   register2 = document.querySelector(".registro")
-  if(register2){
-    register2.style.innerHTML=""
+  if (register2) {
+    register2.style.innerHTML = ""
   }
-  document.addEventListener("click", function(){
+  document.addEventListener("click", function () {
     Limpiar()
   })
   // RutaActual()
@@ -834,90 +834,90 @@ function quitarTildes(cadena) {
   return cadena.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 }
 
-function RutaActual(){
+function RutaActual() {
   movil = window.matchMedia("(min-width: 360px) and (max-width: 1024px)");
-  if(movil.matches){
+  if (movil.matches) {
     return null;
   }
   let url = window.location.pathname.split("/")
-  if(url){
+  if (url) {
     url = url[1]
   }
   tabgrp = document.querySelectorAll(".sectionName");
-  if(url && url != ""){
+  if (url && url != "") {
     tabgrp.forEach(e => {
       let tilde = quitarTildes(e.innerHTML)
-      if(String(tilde).toLowerCase() == String(url).toLowerCase() || 
-      String(tilde).toLowerCase() == "estilo-de-vida"){
+      if (String(tilde).toLowerCase() == String(url).toLowerCase() ||
+        String(tilde).toLowerCase() == "estilo-de-vida") {
         sal = e.parentElement.parentElement
-        sal.style.clipPath="polygon(11.5% -25.13%,96.50% -24.00%,88% 100%,0% 100%)";
-        sal.style.backgroundColor="#fd0f03";
-        sal.style.textAlign="center";
-        sal.style.margin="0px"
-        sal.style.colo="white"
-        sal.style.padding="0px";
-        sal.style.height="100%";
-      // }else{
-      //   sal = e.parentElement.parentElement
-      //   sal.style.clipPath="polygon(0% 0, 100% 0%, 100% 100%, 0% 100%)";
-      //   sal.style.backgroundColor="#000";
-      //   sal.style.padding="0px";
+        sal.style.clipPath = "polygon(11.5% -25.13%,96.50% -24.00%,88% 100%,0% 100%)";
+        sal.style.backgroundColor = "#fd0f03";
+        sal.style.textAlign = "center";
+        sal.style.margin = "0px"
+        sal.style.colo = "white"
+        sal.style.padding = "0px";
+        sal.style.height = "100%";
+        // }else{
+        //   sal = e.parentElement.parentElement
+        //   sal.style.clipPath="polygon(0% 0, 100% 0%, 100% 100%, 0% 100%)";
+        //   sal.style.backgroundColor="#000";
+        //   sal.style.padding="0px";
       }
     });
   }
 }
 
-function LimpiarBuscadorMenu(){
+function LimpiarBuscadorMenu() {
   try {
-    b2 = document.querySelector(".basic_search_bm").style.display="none";
-    if(b2){
-      b2.style.display="none";
+    b2 = document.querySelector(".basic_search_bm").style.display = "none";
+    if (b2) {
+      b2.style.display = "none";
     }
     m2 = document.querySelector(".menu_burguer_bm")
-    if(m2){
-      m2.style.display="none";
+    if (m2) {
+      m2.style.display = "none";
     }
   } catch (error) {
-  }finally{
+  } finally {
     return null;
   }
 }
 
-function Limpiar(){
-  document.querySelector(".actualidad_sub .lst_items_sub").style.display="none";
-  document.querySelector(".estilo_vida_sub .lst_items_sub").style.display="none";
-  document.querySelector(".portafolio_sub .lst_items_sub").style.display="none";
-  document.querySelector(".politica_sub .lst_items_sub").style.display="none";
+function Limpiar() {
+  document.querySelector(".actualidad_sub .lst_items_sub").style.display = "none";
+  document.querySelector(".estilo_vida_sub .lst_items_sub").style.display = "none";
+  document.querySelector(".portafolio_sub .lst_items_sub").style.display = "none";
+  document.querySelector(".politica_sub .lst_items_sub").style.display = "none";
 }
 
-function EjecutarScriptTaboola(){
+function EjecutarScriptTaboola() {
   try {
-    var group_id=12727;
-    var id_art_infinity=6277236;
-    var teaser_first=true;
-    var n_noticia=1;
-    var idart_view=6277236
-  
+    var group_id = 12727;
+    var id_art_infinity = 6277236;
+    var teaser_first = true;
+    var n_noticia = 1;
+    var idart_view = 6277236
+
     var taboolaContainer = document.getElementById("taboola-right-rail-thumbnails-scroll");
-    if(!taboolaContainer){
+    if (!taboolaContainer) {
       return null;
     }
-      // recuperamos la url canonica
+    // recuperamos la url canonica
     var canonicalUrl_art = $("#taboola-right-rail-thumbnails-scroll").closest(".template-infinity").find('.headline.artit').attr("canonicalurl");
     // renombramos el div
     var taboolaId = "taboola-right-rail-thumbnails-scroll-" + id_art_infinity;
     $('#taboola-right-rail-thumbnails-scroll')[0].id = taboolaId;
     // llamamos a la publi
     window._taboola = window._taboola || [];
-    _taboola.push({mode:'thumbnails-a', container: taboolaId, placement: 'Below Article Thumbnails Widget', target_type: 'mix'});
-    _taboola.push({article:'auto', url:canonicalUrl_art });
+    _taboola.push({ mode: 'thumbnails-a', container: taboolaId, placement: 'Below Article Thumbnails Widget', target_type: 'mix' });
+    _taboola.push({ article: 'auto', url: canonicalUrl_art });
     console.log("taboola:00")
     return null;
   } catch (error) {
   }
 }
 
-function InyectarEnHeader(){
+function InyectarEnHeader() {
   try {
     // <scrip async src="https://mowplayer.com/js/player/mM9CsntrQm.js"></script> inyectar en el header para que funcione el video
     var script = document.createElement('script');
@@ -926,20 +926,19 @@ function InyectarEnHeader(){
     document.head.appendChild(script);
     // taboola
     window._taboola = window._taboola || [];
-    _taboola.push({article:'auto'});
+    _taboola.push({ article: 'auto' });
     !function (e, f, u, i) {
-      if (!document.getElementById(i)){
+      if (!document.getElementById(i)) {
         e.async = 1;
         e.src = u;
         e.id = i;
         f.parentNode.insertBefore(e, f);
       }
     }(document.createElement('script'),
-    document.getElementsByTagName('script')[0],
-    '//cdn.taboola.com/libtrc/adops-vistazo/loader.js',
-    'tb_loader_script');
-    if(window.performance && typeof window.performance.mark == 'function')
-      {window.performance.mark('tbl_ic');}
+      document.getElementsByTagName('script')[0],
+      '//cdn.taboola.com/libtrc/adops-vistazo/loader.js',
+      'tb_loader_script');
+    if (window.performance && typeof window.performance.mark == 'function') { window.performance.mark('tbl_ic'); }
 
     var scripTag = document.createElement('script');
     // <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
@@ -947,151 +946,151 @@ function InyectarEnHeader(){
     scripTag.async = true;
     document.head.appendChild(scripTag);
   } catch (error) {
-    console.log("error InyectarEnHeader: ",error)
+    console.log("error InyectarEnHeader: ", error)
   }
 }
 
-function TagManager(){
+function TagManager() {
   try {
-    (function(w,d,s,l,i){
-      w[l]=w[l]||[];
-      w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
-      var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),
-        dl=l!='dataLayer'?'&l='+l:'';
-        j.async=true;
-        j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-        f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-MJB87NX');
-      //Captura variables para DFP desde la url
-      var getQueryString = function ( field, url ) {
-        var href = url ? url : window.location.href;
-        var reg = new RegExp( '[?&]' + field + '=([^&#]*)', 'i' );
-        var string = reg.exec(href);
-        return string ? string[1] : null;
-      };
-      dfp_demo = getQueryString("demo");
-      var VI_Seccion = '${secPub}';
-      var VI_Tipo = 'Portada';
-      var VI_Subseccion = '';
-      var VI_Articulo = '';
-      var VI_Tag = '';
-      window.googletag = window.googletag || {cmd: []};
-      googletag.cmd.push(function() {
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-MJB87NX');
+    //Captura variables para DFP desde la url
+    var getQueryString = function (field, url) {
+      var href = url ? url : window.location.href;
+      var reg = new RegExp('[?&]' + field + '=([^&#]*)', 'i');
+      var string = reg.exec(href);
+      return string ? string[1] : null;
+    };
+    dfp_demo = getQueryString("demo");
+    var VI_Seccion = '${secPub}';
+    var VI_Tipo = 'Portada';
+    var VI_Subseccion = '';
+    var VI_Articulo = '';
+    var VI_Tag = '';
+    window.googletag = window.googletag || { cmd: [] };
+    googletag.cmd.push(function () {
       //required variable for refresh
-          var REFRESH_KEY = "refresh";
-          var REFRESH_VALUE = "true";
-      
-          var mappingbill = googletag.sizeMapping()
-          .addSize([992, 0], [[970, 250], [970, 180], [970, 90], [728, 250], [728, 180], [728, 90]]).addSize([768, 0], [[728, 250], [728, 180], [728, 90]]).addSize([320, 0], [[320, 100], [320, 50], [300, 100], [300, 50]]).addSize([0, 0], [[300, 100],[300, 250],[320, 100]]).build();
-          var mappingbox = googletag.sizeMapping()
-          .addSize([992, 0], [[300, 600], [300, 250]]).addSize([768, 0], [[300, 600], [300, 250]]).addSize([320, 0], [[300, 250], [320, 100], [320, 50], [300, 100], [300, 50]]).addSize([0, 0], [[300, 250], [300, 100], [300, 50]]).build();
-          var mappingcenter = googletag.sizeMapping()
-          .addSize([992, 0], [[728, 90], [728, 180], [728, 250]]).addSize([768, 0], [[728, 90], [728, 180], [728, 250]]).addSize([320, 0], [[320, 100], [300, 100], [300, 250]]).addSize([0, 0], [[320, 100], [300, 100], [300, 250]]).build();
-          //adUnits
-          googletag.defineSlot('/21839199781/Vistazo/Vistazo_Top1', [[300,100],[300,250],[320,100],[728,90],[970,90],[970,250]],'Top1').defineSizeMapping(mappingbill).setTargeting(REFRESH_KEY, REFRESH_VALUE).addService(googletag.pubads());
-          googletag.defineSlot('/21839199781/Vistazo/Vistazo_Center1', [[320,100],[300,100],[300,250],[728,90]],'Center1').defineSizeMapping(mappingcenter).setTargeting(REFRESH_KEY, REFRESH_VALUE).addService(googletag.pubads());
-          googletag.defineSlot('/21839199781/Vistazo/Vistazo_Center2', [[320,100],[300,100],[300,250],[728,90]],'Center2').defineSizeMapping(mappingcenter).setTargeting(REFRESH_KEY, REFRESH_VALUE).addService(googletag.pubads());
-          googletag.defineSlot('/21839199781/Vistazo/Vistazo_Center3', [[320,100],[300,100],[300,250],[728,90]],'Center3').defineSizeMapping(mappingcenter).setTargeting(REFRESH_KEY, REFRESH_VALUE).addService(googletag.pubads());
-          //Reemplaza al Box de la home -------
-          googletag.defineSlot('/21839199781/Vistazo/Vistazo_Middle1', [[300,600],[300,250]],'Middle1').defineSizeMapping(mappingbox).setTargeting(REFRESH_KEY, REFRESH_VALUE).addService(googletag.pubads());
-          //-----------------------------------
-          googletag.defineSlot('/21839199781/Vistazo/Vistazo_Middle2', [300,250],'Middle2').defineSizeMapping(mappingbox).setTargeting(REFRESH_KEY, REFRESH_VALUE).addService(googletag.pubads());
-          googletag.defineSlot('/21839199781/Vistazo/Floating', [1, 1],'Floating').addService(googletag.pubads());
-          googletag.defineSlot('/21839199781/Vistazo/Zocalo', [1, 3],'Zocalo').addService(googletag.pubads());
-          //Start refresh
-          var SECONDS_TO_WAIT_AFTER_VIEWABILITY = 30; // 30 seconds
-          googletag.pubads().addEventListener("impressionViewable", function (event) {
-              var slot = event.slot;
-                if (slot.getTargeting(REFRESH_KEY).indexOf(REFRESH_VALUE) > -1) {
-                  setTimeout(function () {
-                     googletag.pubads().refresh([slot]);
-                  }, SECONDS_TO_WAIT_AFTER_VIEWABILITY * 1000);
-                }
-              });
-          //End refresh
-      
-      
-      if(jQryIter.contextIsArticlePage()){
-                  VI_Tipo = 'Artículo';
-                  VI_Subseccion = '${SectionName}';
-                  var urltemp = window.location.href;
-                  var n = urltemp.lastIndexOf("-"); 
-                  VI_Articulo = urltemp.substring(n+3);
-              }
-              // metadatos
-              $("meta[data-voc-name=topic]").each(function(){
-                   if(VI_Tag == ''){
-                      VI_Tag = $(this).attr('content');
-                   }
-                   else{
-                      VI_Tag = VI_Tag + "," + $(this).attr('content');
-                   }
-              });
-      
-          parts=(window.location.href.split("/"));
-          console.log("parts",parts[3]);
-      
-      if(parts[3]=='hogar' && parts.length<=4){
-      VI_Seccion='Home-hogar';
-      }
-      if(parts[3].includes('taller-cocina-colada-morada-guaguas-pan')){
-  
-      VI_Seccion='formulariod4';
-      }
-  
-      if(parts[4] && parts[4]!=""){
-      VI_Seccion='Home-hogar';
-      VI_Subseccion=parts[4]+'-hogar';
-      }
-      
-      console.log('VI_Seccion:'+VI_Seccion);
-                      console.log('VI_Subec:'+VI_Subseccion);
-              console.log('VI_Tipo:'+VI_Tipo);
-              console.log('VI_Articulo:'+VI_Articulo);
-              console.log('VI_Tag:'+VI_Tag);
-              console.log('dfp_demo:'+dfp_demo);
-              googletag.pubads().setTargeting('VI_Seccion',VI_Seccion);
-              googletag.pubads().setTargeting('VI_Subseccion',VI_Subseccion);
-              googletag.pubads().setTargeting('VI_Tipo',VI_Tipo);
-              googletag.pubads().setTargeting('VI_Articulo',VI_Articulo);
-              googletag.pubads().setTargeting('VI_Tag',VI_Tag);
-              googletag.pubads().setTargeting('VI_Demo',dfp_demo);
-              googletag.pubads().setTargeting('censurado','no');
-              googletag.pubads().enableSingleRequest();
-              googletag.pubads().collapseEmptyDivs();
-              googletag.enableServices();
+      var REFRESH_KEY = "refresh";
+      var REFRESH_VALUE = "true";
+
+      var mappingbill = googletag.sizeMapping()
+        .addSize([992, 0], [[970, 250], [970, 180], [970, 90], [728, 250], [728, 180], [728, 90]]).addSize([768, 0], [[728, 250], [728, 180], [728, 90]]).addSize([320, 0], [[320, 100], [320, 50], [300, 100], [300, 50]]).addSize([0, 0], [[300, 100], [300, 250], [320, 100]]).build();
+      var mappingbox = googletag.sizeMapping()
+        .addSize([992, 0], [[300, 600], [300, 250]]).addSize([768, 0], [[300, 600], [300, 250]]).addSize([320, 0], [[300, 250], [320, 100], [320, 50], [300, 100], [300, 50]]).addSize([0, 0], [[300, 250], [300, 100], [300, 50]]).build();
+      var mappingcenter = googletag.sizeMapping()
+        .addSize([992, 0], [[728, 90], [728, 180], [728, 250]]).addSize([768, 0], [[728, 90], [728, 180], [728, 250]]).addSize([320, 0], [[320, 100], [300, 100], [300, 250]]).addSize([0, 0], [[320, 100], [300, 100], [300, 250]]).build();
+      //adUnits
+      googletag.defineSlot('/21839199781/Vistazo/Vistazo_Top1', [[300, 100], [300, 250], [320, 100], [728, 90], [970, 90], [970, 250]], 'Top1').defineSizeMapping(mappingbill).setTargeting(REFRESH_KEY, REFRESH_VALUE).addService(googletag.pubads());
+      googletag.defineSlot('/21839199781/Vistazo/Vistazo_Center1', [[320, 100], [300, 100], [300, 250], [728, 90]], 'Center1').defineSizeMapping(mappingcenter).setTargeting(REFRESH_KEY, REFRESH_VALUE).addService(googletag.pubads());
+      googletag.defineSlot('/21839199781/Vistazo/Vistazo_Center2', [[320, 100], [300, 100], [300, 250], [728, 90]], 'Center2').defineSizeMapping(mappingcenter).setTargeting(REFRESH_KEY, REFRESH_VALUE).addService(googletag.pubads());
+      googletag.defineSlot('/21839199781/Vistazo/Vistazo_Center3', [[320, 100], [300, 100], [300, 250], [728, 90]], 'Center3').defineSizeMapping(mappingcenter).setTargeting(REFRESH_KEY, REFRESH_VALUE).addService(googletag.pubads());
+      //Reemplaza al Box de la home -------
+      googletag.defineSlot('/21839199781/Vistazo/Vistazo_Middle1', [[300, 600], [300, 250]], 'Middle1').defineSizeMapping(mappingbox).setTargeting(REFRESH_KEY, REFRESH_VALUE).addService(googletag.pubads());
+      //-----------------------------------
+      googletag.defineSlot('/21839199781/Vistazo/Vistazo_Middle2', [300, 250], 'Middle2').defineSizeMapping(mappingbox).setTargeting(REFRESH_KEY, REFRESH_VALUE).addService(googletag.pubads());
+      googletag.defineSlot('/21839199781/Vistazo/Floating', [1, 1], 'Floating').addService(googletag.pubads());
+      googletag.defineSlot('/21839199781/Vistazo/Zocalo', [1, 3], 'Zocalo').addService(googletag.pubads());
+      //Start refresh
+      var SECONDS_TO_WAIT_AFTER_VIEWABILITY = 30; // 30 seconds
+      googletag.pubads().addEventListener("impressionViewable", function (event) {
+        var slot = event.slot;
+        if (slot.getTargeting(REFRESH_KEY).indexOf(REFRESH_VALUE) > -1) {
+          setTimeout(function () {
+            googletag.pubads().refresh([slot]);
+          }, SECONDS_TO_WAIT_AFTER_VIEWABILITY * 1000);
+        }
       });
-          console.log('0P');
-      
-      var interstitialSlot, bottomAnchorSlot;
-       googletag.cmd.push(function () {
-       interstitialSlot = googletag.defineOutOfPageSlot(
-       "/21839199781/Vistazo_Web-ITT",
-       googletag.enums.OutOfPageFormat.INTERSTITIAL
-       );
-       interstitialSlot && interstitialSlot.addService(googletag.pubads());
-       bottomAnchorSlot = googletag.defineOutOfPageSlot(
-       "/21839199781/Vistazo_Bottom_Anchor",
-       googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR
-       );
-       bottomAnchorSlot && bottomAnchorSlot.addService(googletag.pubads());
-       });
-       
-       googletag.cmd.push(function () {
-       interstitialSlot && googletag.display(interstitialSlot);
-       bottomAnchorSlot && googletag.display(bottomAnchorSlot);
-       });
-      
-      
-      _atrk_opts = { atrk_acct:"fxUuj1aEsk00aa", domain:"vistazo.com",dynamic: true};
-      (function() { 
-        var as = document.createElement('script'); as.type = 'text/javascript'; 
-        as.async = true; 
-        as.src = "https://certify-js.alexametrics.com/atrk.js"; 
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(as, s); 
-      })();
+      //End refresh
+
+
+      if (jQryIter.contextIsArticlePage()) {
+        VI_Tipo = 'Artículo';
+        VI_Subseccion = '${SectionName}';
+        var urltemp = window.location.href;
+        var n = urltemp.lastIndexOf("-");
+        VI_Articulo = urltemp.substring(n + 3);
+      }
+      // metadatos
+      $("meta[data-voc-name=topic]").each(function () {
+        if (VI_Tag == '') {
+          VI_Tag = $(this).attr('content');
+        }
+        else {
+          VI_Tag = VI_Tag + "," + $(this).attr('content');
+        }
+      });
+
+      parts = (window.location.href.split("/"));
+      console.log("parts", parts[3]);
+
+      if (parts[3] == 'hogar' && parts.length <= 4) {
+        VI_Seccion = 'Home-hogar';
+      }
+      if (parts[3].includes('taller-cocina-colada-morada-guaguas-pan')) {
+
+        VI_Seccion = 'formulariod4';
+      }
+
+      if (parts[4] && parts[4] != "") {
+        VI_Seccion = 'Home-hogar';
+        VI_Subseccion = parts[4] + '-hogar';
+      }
+
+      console.log('VI_Seccion:' + VI_Seccion);
+      console.log('VI_Subec:' + VI_Subseccion);
+      console.log('VI_Tipo:' + VI_Tipo);
+      console.log('VI_Articulo:' + VI_Articulo);
+      console.log('VI_Tag:' + VI_Tag);
+      console.log('dfp_demo:' + dfp_demo);
+      googletag.pubads().setTargeting('VI_Seccion', VI_Seccion);
+      googletag.pubads().setTargeting('VI_Subseccion', VI_Subseccion);
+      googletag.pubads().setTargeting('VI_Tipo', VI_Tipo);
+      googletag.pubads().setTargeting('VI_Articulo', VI_Articulo);
+      googletag.pubads().setTargeting('VI_Tag', VI_Tag);
+      googletag.pubads().setTargeting('VI_Demo', dfp_demo);
+      googletag.pubads().setTargeting('censurado', 'no');
+      googletag.pubads().enableSingleRequest();
+      googletag.pubads().collapseEmptyDivs();
+      googletag.enableServices();
+    });
+    console.log('0P');
+
+    var interstitialSlot, bottomAnchorSlot;
+    googletag.cmd.push(function () {
+      interstitialSlot = googletag.defineOutOfPageSlot(
+        "/21839199781/Vistazo_Web-ITT",
+        googletag.enums.OutOfPageFormat.INTERSTITIAL
+      );
+      interstitialSlot && interstitialSlot.addService(googletag.pubads());
+      bottomAnchorSlot = googletag.defineOutOfPageSlot(
+        "/21839199781/Vistazo_Bottom_Anchor",
+        googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR
+      );
+      bottomAnchorSlot && bottomAnchorSlot.addService(googletag.pubads());
+    });
+
+    googletag.cmd.push(function () {
+      interstitialSlot && googletag.display(interstitialSlot);
+      bottomAnchorSlot && googletag.display(bottomAnchorSlot);
+    });
+
+
+    _atrk_opts = { atrk_acct: "fxUuj1aEsk00aa", domain: "vistazo.com", dynamic: true };
+    (function () {
+      var as = document.createElement('script'); as.type = 'text/javascript';
+      as.async = true;
+      as.src = "https://certify-js.alexametrics.com/atrk.js";
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(as, s);
+    })();
   } catch (error) {
   }
 }
