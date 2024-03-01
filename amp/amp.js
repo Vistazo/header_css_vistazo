@@ -6,15 +6,14 @@ document.addEventListener('DOMContentLoaded', function() {
     for (var i = 0; i < iframes.length; i++) {
         if(ValidarAmp){
             var iframe = iframes[i];
-            // Crear una nueva etiqueta amp-iframe
             var ampIframe = document.createElement('amp-iframe');
-            // Copiar todos los atributos de la etiqueta iframe a la etiqueta amp-iframe
             for (var j = 0; j < iframe.attributes.length; j++) {
                 var attribute = iframe.attributes[j];
                 ampIframe.setAttribute(attribute.name, attribute.value);
             }
-            // Reemplazar la etiqueta iframe con la etiqueta amp-iframe
-            iframe.parentNode.replaceChild(ampIframe, iframe);
+            var noscriptTag = document.createElement('noscript');
+            noscriptTag.appendChild(ampIframe);
+            iframe.parentNode.replaceChild(noscriptTag, iframe);
         }
     }
     
