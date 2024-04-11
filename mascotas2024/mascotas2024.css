@@ -3,9 +3,10 @@
 
 
 /* INICIO - MENU*/
-.col-100-top-one-col{
+.col-100-top-one-col {
   margin-top: 0;
 }
+
 .menuParent {
   display: grid;
   grid-auto-columns: 1fr;
@@ -19,6 +20,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family: "Protest Riot", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .menuParent svg {
@@ -66,7 +70,9 @@
 #menuMobileList .listmen {
   display: flex;
   flex-direction: column;
-
+  font-family: "Protest Riot", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 @media (max-width: 767px) {
@@ -80,7 +86,7 @@
     text-align: start;
   }
 
-  .gr_cen img{
+  .gr_cen img {
     width: 150px;
   }
 
@@ -125,7 +131,7 @@
 
 .bloques_general.snutricion .noticias article .text_block .headline h2 {
   color: #fff;
- 
+
 }
 
 .bloques_general.snutricion .noticias article .text_block {
