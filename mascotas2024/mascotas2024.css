@@ -1,3 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap');
+
+
+/* INICIO - MENU*/
+.menuParent {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-columns: 2fr 1fr 2fr;
+  gap: 0px 0px;
+  padding: 12px 12px;
+  background: #ffffff;
+}
+
+.menuParent .menuItems a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.menuParent svg {
+  width: 50px;
+}
+
+.st0 {
+  fill: #F43A37;
+}
+
+.gr_cen {
+  text-align: center;
+}
+
+.gr_cen img {
+  width: 200px;
+
+}
+
+.gr_iz,
+.gr_der {
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.gr_derMenu {
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  column-gap: 15px;
+}
+
+.menuToggle,
+.menuSearch {
+  display: none;
+}
+
+.menuToggle svg {}
+
+#menuMobileList {
+  padding: 12px;
+}
+
+#menuMobileList .listmen {
+  display: flex;
+  flex-direction: column;
+
+}
+
+@media (max-width: 767px) {
+
+  .menuToggle,
+  .menuSearch {
+    display: block;
+  }
+
+  .gr_cen {
+    text-align: start;
+  }
+
+  .gr_cen img{
+    width: 150px;
+  }
+
+  .gr_iz,
+  .gr_der {
+    display: none;
+  }
+
+  .menuParent {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+/* FIN - MENU*/
+
+
+
 /*inicio - salud y nutricion*/
 
 
@@ -14,15 +112,18 @@
 }
 
 .bloques_general .noticias article .text_block .headline h2 {
-  line-height: 24px;
+  line-height: 34px;
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
   padding: 10px 20px;
+  font-weight: 700;
+  font-family: "Dosis", sans-serif !important;
 }
 
 .bloques_general.snutricion .noticias article .text_block .headline h2 {
   color: #fff;
+ 
 }
 
 .bloques_general.snutricion .noticias article .text_block {
@@ -31,16 +132,22 @@
 
 .vmasSN a {
   margin-bottom: 30px;
-  font-size: 20px;
+  font-size: 24px;
   color: #fff;
-  font-weight: 500;
+  font-weight: 700;
+  font-family: "Dosis", sans-serif;
 }
 
 .t_cin.sn {
   text-align: center;
   margin-bottom: 30px;
-  font-size: 24px;
+  font-size: 34px;
   color: #fff;
+  font-family: "Protest Riot", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
+
 }
 
 /*fin - salud y nutricion*/
@@ -63,15 +170,19 @@
 .t_cin.testim {
   text-align: center;
   margin-bottom: 30px;
-  font-size: 24px;
+  font-size: 34px;
   color: #fff;
+  font-family: "Protest Riot", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .vmasTes a {
   margin-bottom: 30px;
-  font-size: 20px;
+  font-size: 24px;
   color: #fff;
-  font-weight: 500;
+  font-weight: 700;
+  font-family: "Dosis", sans-serif;
 }
 
 
@@ -95,15 +206,19 @@
 .t_cin.testim {
   text-align: center;
   margin-bottom: 30px;
-  font-size: 24px;
+  font-size: 34px;
   color: #fff;
+  font-family: "Protest Riot", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .vmasTes a {
   margin-bottom: 30px;
-  font-size: 20px;
+  font-size: 24px;
   color: #fff;
-  font-weight: 500;
+  font-weight: 700;
+  font-family: "Dosis", sans-serif;
 }
 
 
@@ -128,15 +243,19 @@
 .t_cinPs {
   text-align: center;
   margin-bottom: 30px;
-  font-size: 24px;
+  font-size: 34px;
   color: #9850c8;
+  font-family: "Protest Riot", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .vmasPs a {
   margin-bottom: 30px;
-  font-size: 20px;
+  font-size: 24px;
   color: #9b4ec3;
-  font-weight: 500;
+  font-weight: 700;
+  font-family: "Dosis", sans-serif;
 }
 
 /*fin - Pet school*/
@@ -159,15 +278,19 @@
 .t_cinVi {
   text-align: center;
   margin-bottom: 30px;
-  font-size: 24px;
+  font-size: 34px;
   color: #f33a37;
+  font-family: "Protest Riot", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .vmasVi a {
   margin-bottom: 30px;
-  font-size: 20px;
+  font-size: 24px;
   color: #f33a37;
-  font-weight: 500;
+  font-weight: 700;
+  font-family: "Dosis", sans-serif;
 }
 
 /*fin - virales*/
@@ -189,15 +312,19 @@
 .t_cinCon {
   text-align: center;
   margin-bottom: 30px;
-  font-size: 24px;
+  font-size: 34px;
   color: #fff;
+  font-family: "Protest Riot", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .vmasCon a {
   margin-bottom: 30px;
-  font-size: 20px;
+  font-size: 24px;
   color: #fff;
-  font-weight: 500;
+  font-weight: 700;
+  font-family: "Dosis", sans-serif;
 }
 
 /*fin - concursos*/
