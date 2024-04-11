@@ -29,7 +29,7 @@
   background: #f33a37;
 }
 
-.vmasSN a{
+.vmasSN a {
   margin-bottom: 30px;
   font-size: 20px;
   color: #fff;
@@ -67,7 +67,7 @@
   color: #fff;
 }
 
-.vmasTes a{
+.vmasTes a {
   margin-bottom: 30px;
   font-size: 20px;
   color: #fff;
@@ -99,7 +99,7 @@
   color: #fff;
 }
 
-.vmasTes a{
+.vmasTes a {
   margin-bottom: 30px;
   font-size: 20px;
   color: #fff;
@@ -125,14 +125,14 @@
   color: #974ecb;
 }
 
-.t_cinPs{
+.t_cinPs {
   text-align: center;
   margin-bottom: 30px;
   font-size: 24px;
   color: #9850c8;
 }
 
-.vmasPs a{
+.vmasPs a {
   margin-bottom: 30px;
   font-size: 20px;
   color: #9b4ec3;
@@ -156,14 +156,14 @@
   color: #fff;
 }
 
-.t_cinVi{
+.t_cinVi {
   text-align: center;
   margin-bottom: 30px;
   font-size: 24px;
   color: #f33a37;
 }
 
-.vmasVi a{
+.vmasVi a {
   margin-bottom: 30px;
   font-size: 20px;
   color: #f33a37;
@@ -186,14 +186,14 @@
   color: #113fff;
 }
 
-.t_cinCon{
+.t_cinCon {
   text-align: center;
   margin-bottom: 30px;
   font-size: 24px;
   color: #fff;
 }
 
-.vmasCon a{
+.vmasCon a {
   margin-bottom: 30px;
   font-size: 20px;
   color: #fff;
@@ -208,5 +208,9 @@
 @media (max-width: 767px) {
   .bloques_general .noticias {
     grid-template-columns: 1fr;
+  }
+
+  .container {
+    padding: 0 12px;
   }
 }
