@@ -3,13 +3,15 @@
 
 
 /* INICIO - MENU*/
+.col-100-top-one-col{
+  margin-top: 0;
+}
 .menuParent {
   display: grid;
   grid-auto-columns: 1fr;
   grid-template-columns: 2fr 1fr 2fr;
   gap: 0px 0px;
   padding: 12px 12px;
-  background: #ffffff;
 }
 
 .menuParent .menuItems a {
