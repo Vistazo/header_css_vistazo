@@ -1,5 +1,12 @@
 /*inicio - salud y nutricion*/
 
+
+#bq-002 {
+  background: #1b45f3;
+  padding: 30px 0;
+}
+
+
 .bloques_general .noticias {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -11,13 +18,192 @@
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
-  color: #fff;
   padding: 10px 20px;
+}
+
+.bloques_general.snutricion .noticias article .text_block .headline h2 {
+  color: #fff;
 }
 
 .bloques_general.snutricion .noticias article .text_block {
   background: #f33a37;
 }
+
+.vmasSN a{
+  margin-bottom: 30px;
+  font-size: 20px;
+  color: #fff;
+  font-weight: 500;
+}
+
+.t_cin.sn {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 24px;
+  color: #fff;
+}
+
+/*fin - salud y nutricion*/
+
+/*inicio - testimonios*/
+
+#bq-003 {
+  background: #f33a37;
+  padding: 30px 0;
+}
+
+.bloques_general.testimonios .noticias article .text_block {
+  background: #f3cc29;
+}
+
+.bloques_general.testimonios .noticias article .text_block .headline h2 {
+  color: #974ecb;
+}
+
+.t_cin.testim {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 24px;
+  color: #fff;
+}
+
+.vmasTes a{
+  margin-bottom: 30px;
+  font-size: 20px;
+  color: #fff;
+  font-weight: 500;
+}
+
+
+/*fin - testimonios*/
+
+/*inicio - testimonios*/
+
+#bq-003 {
+  background: #f33a37;
+  padding: 30px 0;
+}
+
+.bloques_general.testimonios .noticias article .text_block {
+  background: #f3cc29;
+}
+
+.bloques_general.testimonios .noticias article .text_block .headline h2 {
+  color: #974ecb;
+}
+
+.t_cin.testim {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 24px;
+  color: #fff;
+}
+
+.vmasTes a{
+  margin-bottom: 30px;
+  font-size: 20px;
+  color: #fff;
+  font-weight: 500;
+}
+
+
+/*fin - testimonios*/
+
+
+
+/*inicio - Pet school*/
+#bq-004 {
+  background: #73f6ce;
+  padding: 30px 0;
+}
+
+.bloques_general.ps .noticias article .text_block {
+  background: #f3cc29;
+}
+
+.bloques_general.ps .noticias article .text_block .headline h2 {
+  color: #974ecb;
+}
+
+.t_cinPs{
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 24px;
+  color: #9850c8;
+}
+
+.vmasPs a{
+  margin-bottom: 30px;
+  font-size: 20px;
+  color: #9b4ec3;
+  font-weight: 500;
+}
+
+/*fin - Pet school*/
+
+
+/*inicio - virales*/
+#bq-005 {
+  background: #f3cc29;
+  padding: 30px 0;
+}
+
+.bloques_general.vi .noticias article .text_block {
+  background: #f33a37;
+}
+
+.bloques_general.vi .noticias article .text_block .headline h2 {
+  color: #fff;
+}
+
+.t_cinVi{
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 24px;
+  color: #f33a37;
+}
+
+.vmasVi a{
+  margin-bottom: 30px;
+  font-size: 20px;
+  color: #f33a37;
+  font-weight: 500;
+}
+
+/*fin - virales*/
+
+/*inicio - concursos*/
+#bq-006 {
+  background: #9a4fc6;
+  padding: 30px 0;
+}
+
+.bloques_general.con .noticias article .text_block {
+  background: #f3cc29;
+}
+
+.bloques_general.con .noticias article .text_block .headline h2 {
+  color: #113fff;
+}
+
+.t_cinCon{
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 24px;
+  color: #fff;
+}
+
+.vmasCon a{
+  margin-bottom: 30px;
+  font-size: 20px;
+  color: #fff;
+  font-weight: 500;
+}
+
+/*fin - concursos*/
+
+
+
 
 @media (max-width: 767px) {
   .bloques_general .noticias {
