@@ -1,0 +1,26 @@
+/*inicio - salud y nutricion*/
+
+.bloques_general .noticias {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+}
+
+.bloques_general .noticias article .text_block .headline h2 {
+  line-height: 24px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+.bloques_general.snutricion .noticias article .text_block {
+  background: #f33a37;
+}
+
+@media (max-width: 767px) {
+  .bloques_general .noticias {
+    grid-template-columns: 1fr;
+  }
+}
