@@ -124,7 +124,7 @@
 }
 
 .bloques_general .noticias article .text_block .headline h2 {
-  line-height: 34px;
+  line-height: 22px;
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
@@ -177,6 +177,10 @@
 #bq-003 {
   background: #f33a37;
   padding: 30px 0;
+  background-image: url('https://estadisticas.ecuavisa.com/sites/gestor/assets-rd%2Ffondotestimonios.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .bloques_general.testimonios .noticias article {
@@ -222,6 +226,10 @@
 #bq-004 {
   background: #73f6ce;
   padding: 30px 0;
+  background-image: url('https://estadisticas.ecuavisa.com/sites/gestor/assets-rd%2Ffondopet-school.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .bloques_general.ps .noticias article {
@@ -268,6 +276,10 @@
 #bq-005 {
   background: #f3cc29;
   padding: 30px 0;
+  background-image: url('https://estadisticas.ecuavisa.com/sites/gestor/assets-rd%2Ffondovirales.png');
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 
@@ -312,6 +324,10 @@
 #bq-006 {
   background: #9a4fc6;
   padding: 30px 0;
+  background-image: url('https://estadisticas.ecuavisa.com/sites/gestor/assets-rd%2Ffondoconcursos.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .bloques_general.con .noticias article {
