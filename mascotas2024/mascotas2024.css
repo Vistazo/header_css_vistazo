@@ -125,24 +125,10 @@
   font-family: "Dosis", sans-serif !important;
 }
 
-.bloques_subseccion .noticias article .text_block .headline h2 {
-  color: #fff;
-}
-
-/* .bloques_subseccion .noticias article {
-  background: #f33a37;
-}
-
-.bloques_subseccion .noticias article .text_block {
-  background: #f33a37;
-} */
-
-
 .t_cin_sub {
-  text-align: center;
+  text-align: start;
   margin: 10px 0;
   font-size: 34px;
-  color: #fff;
   font-family: "Protest Riot", sans-serif;
   font-weight: 400;
   font-style: normal;
