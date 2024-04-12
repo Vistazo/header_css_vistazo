@@ -8,6 +8,7 @@
     .cabecera{
         width: 100%;
         display: flex;
+        flex-direccion: row !importa;
         justify-content: space-between;
         align-items: center;
         border: 1px solid #333;
