@@ -110,6 +110,10 @@
 #bq-002 {
   background: #1b45f3;
   padding: 30px 0;
+  background-image: url('https://estadisticas.ecuavisa.com/sites/gestor/assets-rd%2Ffondosalud.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 
@@ -131,11 +135,19 @@
 
 .bloques_general.snutricion .noticias article .text_block .headline h2 {
   color: #fff;
+}
 
+.bloques_general.snutricion .noticias article {
+  background: #f33a37;
 }
 
 .bloques_general.snutricion .noticias article .text_block {
   background: #f33a37;
+}
+
+
+.vmasSN {
+  margin-top: 15px;
 }
 
 .vmasSN a {
@@ -167,40 +179,8 @@
   padding: 30px 0;
 }
 
-.bloques_general.testimonios .noticias article .text_block {
+.bloques_general.testimonios .noticias article {
   background: #f3cc29;
-}
-
-.bloques_general.testimonios .noticias article .text_block .headline h2 {
-  color: #974ecb;
-}
-
-.t_cin.testim {
-  text-align: center;
-  margin-bottom: 30px;
-  font-size: 34px;
-  color: #fff;
-  font-family: "Protest Riot", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.vmasTes a {
-  margin-bottom: 30px;
-  font-size: 24px;
-  color: #fff;
-  font-weight: 700;
-  font-family: "Dosis", sans-serif;
-}
-
-
-/*fin - testimonios*/
-
-/*inicio - testimonios*/
-
-#bq-003 {
-  background: #f33a37;
-  padding: 30px 0;
 }
 
 .bloques_general.testimonios .noticias article .text_block {
@@ -221,6 +201,11 @@
   font-style: normal;
 }
 
+.vmasTes {
+  margin-top: 15px;
+}
+
+
 .vmasTes a {
   margin-bottom: 30px;
   font-size: 24px;
@@ -231,7 +216,6 @@
 
 
 /*fin - testimonios*/
-
 
 
 /*inicio - Pet school*/
@@ -239,6 +223,11 @@
   background: #73f6ce;
   padding: 30px 0;
 }
+
+.bloques_general.ps .noticias article {
+  background: #f3cc29;
+}
+
 
 .bloques_general.ps .noticias article .text_block {
   background: #f3cc29;
@@ -258,6 +247,12 @@
   font-style: normal;
 }
 
+.vmasPs {
+  margin-top: 15px;
+}
+
+
+
 .vmasPs a {
   margin-bottom: 30px;
   font-size: 24px;
@@ -273,6 +268,11 @@
 #bq-005 {
   background: #f3cc29;
   padding: 30px 0;
+}
+
+
+.bloques_general.vi .noticias article {
+  background: #f33a37;
 }
 
 .bloques_general.vi .noticias article .text_block {
@@ -293,6 +293,11 @@
   font-style: normal;
 }
 
+.vmasVi {
+  margin-top: 15px;
+}
+
+
 .vmasVi a {
   margin-bottom: 30px;
   font-size: 24px;
@@ -307,6 +312,10 @@
 #bq-006 {
   background: #9a4fc6;
   padding: 30px 0;
+}
+
+.bloques_general.con .noticias article {
+  background: #f3cc29;
 }
 
 .bloques_general.con .noticias article .text_block {
@@ -326,6 +335,11 @@
   font-weight: 400;
   font-style: normal;
 }
+
+.vmasCon {
+  margin-top: 15px;
+}
+
 
 .vmasCon a {
   margin-bottom: 30px;
