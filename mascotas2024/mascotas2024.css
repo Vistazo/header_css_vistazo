@@ -107,7 +107,9 @@
 
 /* INICIO - SUBSECCIONES*/
 
-
+.ly-mascotas-sub-2024{
+  padding: 50px 0;
+}
 
 .bloques_subseccion .noticias {
   display: grid !important;
@@ -127,12 +129,20 @@
 
 .t_cin_sub {
   text-align: start;
-  margin: 10px 0;
+  margin: 0 0 10px 0;
   font-size: 34px;
   font-family: "Protest Riot", sans-serif;
   font-weight: 400;
   font-style: normal;
+  line-height: 34px;
 }
+
+@media (max-width: 767px) {
+  .bloques_subseccion .noticias {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 /*INICIO - SUBSECCIONES*/
 
