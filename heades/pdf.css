@@ -6,7 +6,7 @@
         flex-direction: column;
     }
     .cabecera{
-        width: 90%;
+        width: 80%;
         display: flex;
         justify-content: center;
         align-items: center;
