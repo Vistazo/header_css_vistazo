@@ -10,6 +10,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        border: 1px solid #333;
     }
     .logo{
         width: 20%;
