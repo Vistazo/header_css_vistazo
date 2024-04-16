@@ -500,6 +500,14 @@ INICIO - AMPLIADA
   font-family: "Dosis", sans-serif !important;
 }
 
+.ly-ampliada-mascotas .tit_populares{
+  margin-bottom: 10px;
+}
+
+.ly-ampliada-mascotas .iter-tabview-content ul li {
+  display: none;
+}
+
 /**************************
 FIN - AMPLIADA
 ****************************/
