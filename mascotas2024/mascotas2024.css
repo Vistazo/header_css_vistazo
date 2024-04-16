@@ -447,7 +447,7 @@
 INICIO - AMPLIADA
 ****************************/
 
-.ly-ampliada-mascotas .detail_hogar_parent{
+.ly-ampliada-mascotas .detail_hogar_parent {
   margin-top: 60px;
   margin-bottom: 40px;
 }
@@ -463,6 +463,8 @@ INICIO - AMPLIADA
   align-items: center;
   gap: 10px;
   flex-wrap: wrap;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 700;
 }
 
 .ly-ampliada-mascotas .temas .temas_head {
@@ -480,12 +482,16 @@ INICIO - AMPLIADA
   width: max-content;
 }
 
-.ly-ampliada-mascotas .detail_hogar.c_003_018 .element .text_block .headline a{
+.ly-ampliada-mascotas .detail_hogar.c_003_018 .element .text_block .headline a {
   text-decoration: none;
 }
 
+.ly-ampliada-mascotas .detail_hogar.c_003_018 .element .text_block {
+  background: #f3cc2a;
+}
 
 .ly-ampliada-mascotas .detail_hogar.c_003_018 .element .text_block .headline a h2 {
+  color: #9a4fc7;
   line-height: 22px;
   font-style: normal;
   font-size: 18px;
