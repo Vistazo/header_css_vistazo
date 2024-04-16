@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 
 /* INICIO - MENU*/
@@ -107,7 +108,7 @@
 
 /* INICIO - SUBSECCIONES*/
 
-.ly-mascotas-sub-2024{
+.ly-mascotas-sub-2024 {
   padding: 80px 0 50px 0;
 }
 
@@ -439,3 +440,40 @@
     padding: 0 12px;
   }
 }
+
+
+
+/**************************
+INICIO - AMPLIADA
+****************************/
+.ly-ampliada-mascotas .detail_mascotas_titulo h1 {
+  font-weight: 700;
+  font-family: "Dosis", sans-serif !important;
+}
+
+.ly-ampliada-mascotas .temas {
+  display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.ly-ampliada-mascotas .temas .temas_head {
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 700;
+
+}
+
+.ly-ampliada-mascotas .item_tema.t_3.keywords a {
+  background: #9a4fc6;
+  color: #fff;
+  padding: 2px 16px;
+  text-decoration: none;
+  display: block;
+  width: max-content;
+}
+
+
+/**************************
+FIN - AMPLIADA
+****************************/
