@@ -453,9 +453,9 @@ INICIO - AMPLIADA
 
 .ly-ampliada-mascotas .temas {
   display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .ly-ampliada-mascotas .temas .temas_head {
@@ -473,6 +473,19 @@ INICIO - AMPLIADA
   width: max-content;
 }
 
+.ly-ampliada-mascotas .detail_hogar.c_003_018 .element .text_block .headline a{
+  text-decoration: none;
+}
+
+
+.ly-ampliada-mascotas .detail_hogar.c_003_018 .element .text_block .headline a h2 {
+  line-height: 22px;
+  font-style: normal;
+  font-size: 18px;
+  padding: 10px 20px;
+  font-weight: 700;
+  font-family: "Dosis", sans-serif !important;
+}
 
 /**************************
 FIN - AMPLIADA
