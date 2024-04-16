@@ -446,6 +446,13 @@
 /**************************
 INICIO - AMPLIADA
 ****************************/
+
+.ly-ampliada-mascotas .detail_hogar_parent{
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+
+
 .ly-ampliada-mascotas .detail_mascotas_titulo h1 {
   font-weight: 700;
   font-family: "Dosis", sans-serif !important;
