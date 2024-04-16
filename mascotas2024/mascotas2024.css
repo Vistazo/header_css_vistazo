@@ -456,6 +456,7 @@ INICIO - AMPLIADA
 .ly-ampliada-mascotas .detail_mascotas_titulo h1 {
   font-weight: 700;
   font-family: "Dosis", sans-serif !important;
+  color: #9a4fc6;;
 }
 
 .ly-ampliada-mascotas .temas {
@@ -490,6 +491,7 @@ INICIO - AMPLIADA
   background: #f3cc2a;
 }
 
+
 .ly-ampliada-mascotas .detail_hogar.c_003_018 .element .text_block .headline a h2 {
   color: #9a4fc7;
   line-height: 22px;
@@ -500,8 +502,29 @@ INICIO - AMPLIADA
   font-family: "Dosis", sans-serif !important;
 }
 
-.ly-ampliada-mascotas .tit_populares{
+.ly-ampliada-mascotas .tit_populares {
   margin-bottom: 10px;
+}
+
+.ly-ampliada-mascotas .inf2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ly-ampliada-mascotas .partea {
+  display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ly-ampliada-mascotas .partea a{
+  text-decoration: none;
+  color: black;
+} 
+
+.ly-ampliada-mascotas .text_por{
+  margin-right: 5px;
 }
 
 .ly-ampliada-mascotas .iter-tabview-content ul li {
