@@ -6,3 +6,14 @@ function toggleMenu() {
     menu.style.display = "none";
   }
 }
+
+
+
+function searchMenu() {
+  var searchmascotas = document.querySelector(".sb_mascotas");
+  if (searchmascotas.style.display === "none") {
+    searchmascotas.style.display = "block";
+  } else {
+    searchmascotas.style.display = "none";
+  }
+}

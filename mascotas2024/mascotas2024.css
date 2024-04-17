@@ -8,6 +8,61 @@
   margin-top: 0;
 }
 
+.sb_mascotas {
+  margin-top: 10px;
+  position: absolute;
+  right: 45px;
+  top: 55px;
+  background: #fff;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 18%);
+  padding: 10px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  /* display: none; */
+}
+
+.sb_mascotas .iter-button-input-submit {
+  height: 32px;
+  min-width: 67px;
+  line-height: 17px;
+  padding: 7px 15px 8px;
+  text-shadow: none;
+  vertical-align: top;
+  right: 20px;
+  margin: 0 !important;
+  -webkit-transition: background-color .4s;
+  -moz-transition: background-color .4s;
+  -o-transition: background-color .4s;
+  transition: background-color .4s;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  background-color: #222;
+  border-radius: 0;
+  color: #fff;
+  border: none;
+  font-weight: normal;
+  font-weight: 500;
+  font-family: "Dosis", sans-serif !important;
+}
+
+.sb_mascotas .iter-field-input-text {
+  height: 32px;
+  width: 235px;
+  height: 32px;
+  margin: 0;
+  border-right: 0;
+  line-height: 17px;
+  border-color: #eaeaea !important;
+  font-size: 12px;
+  color: #444;
+  border: 1px solid #e1e1e1;
+  max-width: 100%;
+  padding: 3px 9px;
+  outline: none;
+}
+
 .menuParent {
   display: grid;
   grid-auto-columns: 1fr;
@@ -456,7 +511,8 @@ INICIO - AMPLIADA
 .ly-ampliada-mascotas .detail_mascotas_titulo h1 {
   font-weight: 700;
   font-family: "Dosis", sans-serif !important;
-  color: #9a4fc6;;
+  color: #9a4fc6;
+  ;
 }
 
 .ly-ampliada-mascotas .temas {
@@ -514,22 +570,24 @@ INICIO - AMPLIADA
 
 .ly-ampliada-mascotas .partea {
   display: flex;
-    align-items: center;
-    justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
-.ly-ampliada-mascotas .partea a{
+.ly-ampliada-mascotas .partea a {
   text-decoration: none;
   color: black;
-} 
+}
 
-.ly-ampliada-mascotas .text_por{
+.ly-ampliada-mascotas .text_por {
   margin-right: 5px;
 }
 
 .ly-ampliada-mascotas .iter-tabview-content ul li {
   display: none;
 }
+
+
 
 /**************************
 FIN - AMPLIADA
