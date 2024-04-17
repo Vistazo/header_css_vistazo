@@ -547,6 +547,7 @@ INICIO - AMPLIADA
   text-decoration: none;
   display: block;
   width: max-content;
+  font-size: 12px;
 }
 
 .ly-ampliada-mascotas .detail_hogar.c_003_018 .element .text_block .headline a {
