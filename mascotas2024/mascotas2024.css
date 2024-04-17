@@ -20,7 +20,7 @@
   display: flex;
   align-items: center;
   gap: 5px;
-  /* display: none; */
+  display: none;
 }
 
 .sb_mascotas .iter-button-input-submit {
