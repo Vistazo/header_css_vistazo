@@ -235,7 +235,7 @@ html {
 
 .ap_items {
   padding: 0 100px;
-  opacity: 0;
+  display: none;
 }
 
 .swiper-button-next,
@@ -249,12 +249,12 @@ html {
 
 .swiper-button-prev:after,
 .swiper-rtl .swiper-button-next:after {
-  content: url("https://estadisticas.ecuavisa.com/sites/gestor/assets-rd%2Fflecha-izq.png");
+  content: url("https://estadisticas.ecuavisa.com/sites/gestor/assets-rd%2Fflecha-izq.png") !important;
 }
 
 .swiper-button-next:after,
 .swiper-rtl .swiper-button-prev:after {
-  content: url("https://estadisticas.ecuavisa.com/sites/gestor/assets-rd%2Fflecha-der.png");
+  content: url("https://estadisticas.ecuavisa.com/sites/gestor/assets-rd%2Fflecha-der.png") !important;
 
 }
 
@@ -264,11 +264,11 @@ html {
 }
 
 .swiper-button-prev {
-  left: -60px;
+  left: -60px !important;
 }
 
 .swiper-button-next {
-  right: -60px;
+  right: -60px !important;
 }
 
 /* .swiper-button-next, .swiper-button-prev{

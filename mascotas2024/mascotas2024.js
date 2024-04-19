@@ -57,6 +57,6 @@ setTimeout(() => {
 
 setTimeout(() => {
   const apItems = document.querySelector('.ap_items');
-  apItems.style.opacity = "1";
+  apItems.style.display = "block";
   console.log(apItems);
 }, 302);
