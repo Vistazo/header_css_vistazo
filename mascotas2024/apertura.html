@@ -61,6 +61,10 @@
       right: -60px;
     }
 
+    .ap_items {
+      opacity: 0;
+    }
+
     /* .swiper-button-next, .swiper-button-prev{
       top: 100px;
   
@@ -150,14 +154,16 @@
       });
     }
 
-    const apItems = document.querySelector('.ap_items');
-    apItems.style.opacity = "0";
-
+    
     setTimeout(() => {
       swAper();
-      apItems.style.opacity = "1";
-
     }, 300);
+    
+    setTimeout(() => {
+      const apItems = document.querySelector('.ap_items');
+      apItems.style.opacity = "1";
+      console.log(apItems);
+    }, 302);
 
   </script>
 

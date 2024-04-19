@@ -51,13 +51,12 @@ function swAper() {
   });
 }
 
-const apItems = document.querySelector('.ap_items');
-// apItems.style.opacity = "0";
-
-console.log(apItems);
-
 setTimeout(() => {
   swAper();
-  apItems.style.opacity = "1";
-
 }, 300);
+
+setTimeout(() => {
+  const apItems = document.querySelector('.ap_items');
+  apItems.style.opacity = "1";
+  console.log(apItems);
+}, 302);
