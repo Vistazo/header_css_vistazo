@@ -17,3 +17,34 @@ function searchMenu() {
     searchmascotas.style.display = "none";
   }
 }
+
+
+
+var swiperProg = new Swiper(".swiper", {
+  slidesPerView: 2,
+  spaceBetween: 20,
+  cssMode: true,
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  breakpoints: {
+    600: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    768: {
+      slidesPerView: 3,
+      spaceBetween: 30,
+    },
+    1024: {
+      slidesPerView: 4,
+      spaceBetween: 30,
+    },
+    1200: {
+      slidesPerView: 4,
+      spaceBetween: 30,
+    },
+  },
+});
