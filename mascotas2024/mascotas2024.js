@@ -52,7 +52,9 @@ function swAper() {
 }
 
 const apItems = document.querySelector('.ap_items');
-apItems.style.opacity = "0";
+// apItems.style.opacity = "0";
+
+console.log(apItems);
 
 setTimeout(() => {
   swAper();
