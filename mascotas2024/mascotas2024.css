@@ -235,6 +235,7 @@ html {
 
 .ap_items {
   padding: 0 100px;
+  opacity: 0;
 }
 
 .swiper-button-next,
