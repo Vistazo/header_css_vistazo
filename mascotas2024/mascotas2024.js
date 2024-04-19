@@ -20,7 +20,7 @@ function searchMenu() {
 
 
 
-function swAper(){
+function swAper() {
   var swiperProg = new Swiper(".swiper", {
     slidesPerView: 2,
     spaceBetween: 20,
@@ -49,9 +49,13 @@ function swAper(){
       },
     },
   });
-
 }
+
+const apItems = document.querySelector('.ap_items');
+apItems.style.opacity = "0";
 
 setTimeout(() => {
   swAper();
-}, 1000);
+  apItems.style.opacity = "1";
+
+}, 300);

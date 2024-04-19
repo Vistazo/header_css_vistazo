@@ -7,65 +7,65 @@
   <title>Mascotas</title>
   <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"> -->
   <link rel="stylesheet" href="./mascotas2024.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 
 </head>
 
 
-<style>
-  .ap_portada {
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .ap_items {
-    padding: 0 100px;
-  }
-
-  .swiper-button-next,
-  .swiper-button-prev {
-
-    /* --swiper-navigation-size: 44px;
-    --swiper-navigation-top-offset: 50%;
-    --swiper-navigation-sides-offset: -10px;
-    --swiper-navigation-color: var(--swiper-theme-color); */
-  }
-
-  .swiper-button-prev:after,
-  .swiper-rtl .swiper-button-next:after {
-    content: url("https://estadisticas.ecuavisa.com/sites/gestor/assets-rd%2Fflecha-izq.png");
-  }
-
-  .swiper-button-next:after,
-  .swiper-rtl .swiper-button-prev:after {
-    content: url("https://estadisticas.ecuavisa.com/sites/gestor/assets-rd%2Fflecha-der.png");
-
-  }
-
-
-  .swiper {
-    overflow: visible !important;
-  }
-
-  .swiper-button-prev {
-    left: -60px;
-  }
-
-  .swiper-button-next {
-    right: -60px;
-  }
-
-  /* .swiper-button-next, .swiper-button-prev{
-    top: 100px;
-
-  } */
-</style>
-
 <body>
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+  <style>
+    .ap_portada {
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ap_items {
+      padding: 0 100px;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+
+      /* --swiper-navigation-size: 44px;
+      --swiper-navigation-top-offset: 50%;
+      --swiper-navigation-sides-offset: -10px;
+      --swiper-navigation-color: var(--swiper-theme-color); */
+    }
+
+    .swiper-button-prev:after,
+    .swiper-rtl .swiper-button-next:after {
+      content: url("https://estadisticas.ecuavisa.com/sites/gestor/assets-rd%2Fflecha-izq.png");
+    }
+
+    .swiper-button-next:after,
+    .swiper-rtl .swiper-button-prev:after {
+      content: url("https://estadisticas.ecuavisa.com/sites/gestor/assets-rd%2Fflecha-der.png");
+
+    }
+
+
+    .swiper {
+      overflow: visible !important;
+    }
+
+    .swiper-button-prev {
+      left: -60px;
+    }
+
+    .swiper-button-next {
+      right: -60px;
+    }
+
+    /* .swiper-button-next, .swiper-button-prev{
+      top: 100px;
+  
+    } */
+  </style>
   <div class="ap_portada">
     <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/0pRPmhdsFHA?si=gXasbUX3ZOlp-vuL"
       title="YouTube video player" frameborder="0"
@@ -118,38 +118,50 @@
     </div>
   </div>
 
+  <script>
+    function swAper() {
+      var swiperProg = new Swiper(".swiper", {
+        slidesPerView: 2,
+        spaceBetween: 20,
+        cssMode: true,
+        // Navigation arrows
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+          600: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+          1024: {
+            slidesPerView: 4,
+            spaceBetween: 30,
+          },
+          1200: {
+            slidesPerView: 4,
+            spaceBetween: 30,
+          },
+        },
+      });
+    }
+
+    const apItems = document.querySelector('.ap_items');
+    apItems.style.opacity = "0";
+
+    setTimeout(() => {
+      swAper();
+      apItems.style.opacity = "1";
+
+    }, 300);
+
+  </script>
 
 </body>
 
-<script>
-  var swiperProg = new Swiper(".swiper", {
-    slidesPerView: 2,
-    spaceBetween: 20,
-    cssMode: true,
-    // Navigation arrows
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    breakpoints: {
-      600: {
-        slidesPerView: 2,
-        spaceBetween: 20,
-      },
-      768: {
-        slidesPerView: 3,
-        spaceBetween: 30,
-      },
-      1024: {
-        slidesPerView: 4,
-        spaceBetween: 30,
-      },
-      1200: {
-        slidesPerView: 4,
-        spaceBetween: 30,
-      },
-    },
-  });
-</script>
 
 </html>
