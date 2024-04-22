@@ -239,7 +239,7 @@ html {
 }
 
 .ap_items {
-  padding: 0 100px;
+  padding: 0 60px !important;
   display: none;
 }
 
@@ -272,18 +272,28 @@ html {
   overflow: visible !important;
 }
 
-.swiper-button-prev {
+/* .swiper-button-prev {
   left: -60px !important;
 }
 
 .swiper-button-next {
   right: -60px !important;
-}
+} */
 
 /* .swiper-button-next, .swiper-button-prev{
   top: 100px;
 
 } */
+
+
+@media (max-width: 575px) {
+  .swiper-button-prev {
+    left: 30px !important;
+  }
+  .swiper-button-next {
+    right: 30px !important;
+  }
+}
 
 /*fin - apertura*/
 
