@@ -22,7 +22,7 @@ function searchMenu() {
 
 function swAper() {
   var swiperProg = new Swiper(".swiper", {
-    slidesPerView: 2,
+    slidesPerView: 1,
     spaceBetween: 20,
     cssMode: true,
     // Navigation arrows
@@ -32,7 +32,7 @@ function swAper() {
     },
     breakpoints: {
       600: {
-        slidesPerView: 2,
+        slidesPerView: 1,
         spaceBetween: 20,
       },
       768: {
