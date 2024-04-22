@@ -26,23 +26,25 @@ function swAper() {
   const agendaDeskWraper = document.querySelector('.ap_items .noticias');
   const agendaDeskSlider = document.querySelectorAll('.ap_items .noticias .article');
 
-   // Selecciona el elemento con la clase "swiper"
-   var swiperContainer = document.querySelector('.swiper');
-
-   // Crea el botón previo y establece su clase
-   var prevButton = document.createElement('div');
-   prevButton.className = 'swiper-button-prev';
- 
-   // Crea el botón siguiente y establece su clase
-   var nextButton = document.createElement('div');
-   nextButton.className = 'swiper-button-next';
- 
-   // Añade los botones previo y siguiente al contenedor swiper
-   swiperContainer.appendChild(prevButton);
-   swiperContainer.appendChild(nextButton);
 
   agendaDeskSwiper.classList.add('swiper');
   agendaDeskWraper.classList.add('swiper-wrapper');
+
+
+
+
+
+  // Crea el botón previo y establece su clase
+  var prevButton = document.createElement('div');
+  prevButton.className = 'swiper-button-prev';
+
+  // Crea el botón siguiente y establece su clase
+  var nextButton = document.createElement('div');
+  nextButton.className = 'swiper-button-next';
+
+  // Añade los botones previo y siguiente al contenedor swiper
+  agendaDeskSwiper.appendChild(prevButton);
+  agendaDeskSwiper.appendChild(nextButton);
 
   for (const agendaDeskSliders of agendaDeskSlider) {
     agendaDeskSliders.classList.add('swiper-slide');
