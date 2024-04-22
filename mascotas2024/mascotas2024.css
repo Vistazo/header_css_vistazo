@@ -233,6 +233,11 @@ html {
   justify-content: center;
 }
 
+.ap_portada iframe {
+  width: 560px;
+  height: 316px;
+}
+
 .ap_items {
   padding: 0 100px;
   display: none;
