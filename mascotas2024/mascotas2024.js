@@ -20,7 +20,19 @@ function searchMenu() {
 
 
 
+
 function swAper() {
+  const agendaDeskSwiper = document.querySelector('.ap_items');
+  const agendaDeskWraper = document.querySelector('.ap_items .noticias');
+  const agendaDeskSlider = document.querySelectorAll('.ap_items .noticias .article');
+
+  agendaDeskSwiper.classList.add('swiper');
+  agendaDeskWraper.classList.add('swiper-wrapper');
+
+  for (const agendaDeskSliders of agendaDeskSlider) {
+    agendaDeskSliders.classList.add('swiper-slide');
+  }
+
   var swiperProg = new Swiper(".swiper", {
     slidesPerView: 1,
     spaceBetween: 20,
