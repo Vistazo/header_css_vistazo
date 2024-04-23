@@ -357,6 +357,14 @@ html {
   background-repeat: no-repeat;
 }
 
+.tiktok-embed {
+  min-width: 100% !important;
+}
+
+.instagram-media.instagram-media-rendered {
+  min-width: 100% !important;
+}
+
 
 .bloques_general .noticias {
   display: grid;
