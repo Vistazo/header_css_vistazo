@@ -354,15 +354,26 @@ html {
     margin-top: 80px;
   }
 
+  .swiper-button-prev:after,
+  .swiper-rtl .swiper-button-next:after {
+    content: url("https://estadisticas.ecuavisa.com/sites/gestor/assets-rd%2Fmobiledsadas.png") !important;
+  }
+
+  .swiper-button-next:after,
+  .swiper-rtl .swiper-button-prev:after {
+    content: url("https://estadisticas.ecuavisa.com/sites/gestor/assets-rd%2Fmobile.png") !important;
+
+  }
+
 }
 
 @media (max-width: 575px) {
   .swiper-button-prev {
-    left: 30px !important;
+    left: 20px !important;
   }
 
   .swiper-button-next {
-    right: 30px !important;
+    right: 20px !important;
   }
 }
 
