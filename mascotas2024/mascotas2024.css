@@ -323,6 +323,13 @@ html {
     opacity: 0;
   }
 
+  .ap_portada  .noticias article iframe {
+    width: 100%;
+  }
+  .ap_portada {
+    display: block;
+  }
+
 }
 
 @media (max-width: 575px) {
