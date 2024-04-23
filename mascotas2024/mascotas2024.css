@@ -264,9 +264,9 @@ html {
   content: "";
   position: absolute;
   top: 25px;
-  right: -180px;
-  width: 200px;
-  height: 200px;
+  right: -225px;
+  width: 250px;
+  height: 250px;
   background-image: url('https://estadisticas.ecuavisa.com/sites/gestor/assets-rd%2Farturperro.png');
   background-size: contain;
   background-repeat: no-repeat;
@@ -276,9 +276,9 @@ html {
   content: "";
   position: absolute;
   top: 25px;
-  left: -84px;
-  width: 200px;
-  height: 200px;
+  left: -106px;
+  width: 250px;
+  height: 250px;
   background-image: url('https://estadisticas.ecuavisa.com/sites/gestor/assets-rd%2Fkarengata.png');
   background-size: contain;
   background-repeat: no-repeat;
