@@ -90,6 +90,7 @@ html {
   font-family: "Protest Riot", sans-serif;
   font-weight: 400;
   font-style: normal;
+  text-decoration: none;
 }
 
 .menuParent svg {
@@ -233,6 +234,21 @@ html {
   justify-content: center;
 }
 
+
+.personajes_mobile {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  width: 100%;
+
+}
+
+.personajes_mobile img {
+  width: 250px;
+  display: none;
+}
+
 .ap_portada iframe {
   width: 560px;
   height: 316px;
@@ -318,16 +334,24 @@ html {
 
 
 @media (max-width: 767px) {
+
   .ap_portada .noticias::after,
-  .ap_portada .noticias::before  {
+  .ap_portada .noticias::before {
     opacity: 0;
   }
 
-  .ap_portada  .noticias article iframe {
+  .ap_portada .noticias article iframe {
     width: 100%;
   }
+
+  .personajes_mobile img {
+    display: block;
+    margin-bottom: -140px;
+  }
+
   .ap_portada {
     display: block;
+    margin-top: 80px;
   }
 
 }
@@ -336,6 +360,7 @@ html {
   .swiper-button-prev {
     left: 30px !important;
   }
+
   .swiper-button-next {
     right: 30px !important;
   }
