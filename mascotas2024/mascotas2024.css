@@ -337,7 +337,7 @@ html {
 
   .ap_portada .noticias::after,
   .ap_portada .noticias::before {
-    opacity: 0;
+    display: none;
   }
 
   .ap_portada .noticias article iframe {
@@ -353,6 +353,8 @@ html {
     display: block;
     margin-top: 80px;
   }
+
+
 
   .swiper-button-prev:after,
   .swiper-rtl .swiper-button-next:after {
