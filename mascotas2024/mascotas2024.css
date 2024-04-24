@@ -19,12 +19,18 @@ html {
 
 .vmasSN {
     margin-top: 15px;
-    transition: box-shadow 0.3s ease; /* Transición suave */
+    font-size: 16px; /* Tamaño de letra por defecto */
+    transition: font-size 0.3s ease; /* Transición suave */
 }
 
-.vmasSN:hover a{
-    font-size: 26px; /* Aumenta el tamaño del texto al hacer hover */
+.vmasSN a {
+    text-decoration: none; /* Quita el subrayado del enlace */
 }
+
+.vmasSN:hover a {
+    font-size: 18px; /* Aumenta el tamaño del texto al hacer hover */
+}
+
 
 
 .col-100-top-one-col {
