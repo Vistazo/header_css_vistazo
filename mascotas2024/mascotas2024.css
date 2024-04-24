@@ -229,6 +229,7 @@ html {
 
 .ap_portada .noticias {
   position: relative;
+  margin: auto;
   width: 93%;
 }
 
