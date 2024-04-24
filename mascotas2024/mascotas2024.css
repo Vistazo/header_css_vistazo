@@ -464,7 +464,10 @@ html {
   color: #fff;
   font-weight: 700;
   font-family: "Dosis", sans-serif;
+  transition: all 0.1s;
 }
+
+
 
 .t_cin.sn {
   text-align: center;
