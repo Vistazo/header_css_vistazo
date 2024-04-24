@@ -468,6 +468,12 @@ html {
   transition: all 0.1s;
 }
 
+.vmasSN a:hover{
+  border-bottom: 3px solid #fff;
+  transition: all 0.1s;
+}
+
+
 
 
 .t_cin.sn {
@@ -528,7 +534,13 @@ html {
   color: #fff;
   font-weight: 700;
   font-family: "Dosis", sans-serif;
+  transition: all 0.1s;
 }
+
+.vmasTes a:hover{
+  border-bottom: 3px solid #fff;
+}
+
 
 
 /*fin - testimonios*/
@@ -579,7 +591,13 @@ html {
   color: #9b4ec3;
   font-weight: 700;
   font-family: "Dosis", sans-serif;
+  transition: all 0.1s;
 }
+
+.vmasPs a:hover{
+  border-bottom: 3px solid #9b4ec3;
+}
+
 
 /*fin - Pet school*/
 
@@ -628,7 +646,13 @@ html {
   color: #f33a37;
   font-weight: 700;
   font-family: "Dosis", sans-serif;
+  transition: all 0.1s;
 }
+
+.vmasVi a:hover{
+  border-bottom: 3px solid #f33a37;
+}
+
 
 /*fin - virales*/
 
@@ -675,6 +699,11 @@ html {
   color: #fff;
   font-weight: 700;
   font-family: "Dosis", sans-serif;
+  transition: all 0.1s;
+}
+
+.vmasCon a:hover{
+  border-bottom: 3px solid #fff;
 }
 
 /*fin - concursos*/
