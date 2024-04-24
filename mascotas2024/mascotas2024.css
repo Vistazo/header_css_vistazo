@@ -222,6 +222,14 @@ html {
   .bloques_subseccion .noticias {
     grid-template-columns: 1fr;
   }
+  .ap_portada .noticias {
+    width: 80%;
+  }
+}
+
+.ap_portada .noticias {
+  position: relative;
+  width: 93%;
 }
 
 
