@@ -17,21 +17,6 @@ html {
 }
 */
 
-.vmasSN {
-    margin-top: 15px;
-    font-size: 24px; /* Tamaño de letra por defecto */
-    transition: font-size 0.3s ease; /* Transición suave */
-}
-
-.vmasSN a {
-    text-decoration: none; /* Quita el subrayado del enlace */
-}
-
-.vmasSN:hover a {
-    font-size: 25px; /* Aumenta el tamaño del texto al hacer hover */
-}
-
-
 
 .col-100-top-one-col {
   margin-top: 0;
