@@ -279,8 +279,8 @@ html {
   position: absolute;
   top: 25px;
   right: -225px;
-  /*width: 250px;*/
-  width: 1060px;
+  width: 250px;
+  /*width: 1060px;*/
   height: 250px;
   background-image: url('https://estadisticas.ecuavisa.com/sites/gestor/assets-rd%2Farturperro.png');
   background-size: contain;
