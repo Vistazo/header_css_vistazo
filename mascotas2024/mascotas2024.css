@@ -204,9 +204,13 @@ html {
   font-family: "Dosis", sans-serif !important;
 }
 
+.ly-mascotas-sub-2024 .headerparent {
+  align-items: flex-end;
+}
+
 .t_cin_sub {
   text-align: start;
-  margin: 0 0 10px 0;
+  margin: 0 0 30px 0;
   font-size: 34px;
   font-family: "Protest Riot", sans-serif;
   font-weight: 400;
@@ -419,6 +423,7 @@ html {
 
 .tiktok-embed {
   min-width: 100% !important;
+  margin-top: 0;
 }
 
 .instagram-media.instagram-media-rendered {
