@@ -331,11 +331,13 @@ html {
 .swiper-button-prev:after,
 .swiper-rtl .swiper-button-next:after {
   content: url("https://estadisticas.ecuavisa.com/sites/gestor/123flecha-izq.png") !important;
+  margin-right: 30px;
 }
 
 .swiper-button-next:after,
 .swiper-rtl .swiper-button-prev:after {
   content: url("https://estadisticas.ecuavisa.com/sites/gestor/123flecha-der.png") !important;
+  margin-left: 30px;
 
 }
 
