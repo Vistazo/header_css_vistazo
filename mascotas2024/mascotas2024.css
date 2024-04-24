@@ -12,6 +12,9 @@ html {
 .ap_items .noticias article iframe{
    width: 80% !important;
 }
+.embed_txt_mascota .noticias article iframe{
+		width:76% !important;
+}
 
 .col-100-top-one-col {
   margin-top: 0;
