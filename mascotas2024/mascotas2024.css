@@ -271,7 +271,7 @@ html {
 
 .ap_portada .noticias {
   position: relative;
-  width: 1060px;
+  width: 93%;
 }
 
 .ap_portada .noticias::after {
