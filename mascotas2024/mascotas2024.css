@@ -8,6 +8,9 @@
 html {
   overflow-x: hidden;
 }
+iframe{
+  width: 80% !important;
+}
 
 .col-100-top-one-col {
   margin-top: 0;
