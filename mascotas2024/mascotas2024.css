@@ -17,6 +17,16 @@ html {
 }
 */
 
+.vmasSN {
+    margin-top: 15px;
+    transition: box-shadow 0.3s ease; /* Transición suave */
+}
+
+.vmasSN:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Cambia la sombra al hacer hover */
+}
+
+
 .col-100-top-one-col {
   margin-top: 0;
 }
