@@ -19,6 +19,10 @@ html {
   position: absolute;
 }
 
+.bloques_subseccion .noticias article .text_block .headline h2 {
+    color: #000 !important;
+}
+
 .sb_mascotas {
   margin-top: 10px;
   position: absolute;
