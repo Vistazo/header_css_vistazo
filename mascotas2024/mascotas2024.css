@@ -8,19 +8,6 @@
 html {
   overflow-x: hidden;
 }
-/*
-.ap_items .noticias article iframe{
-   width: 80% !important;
-}
-.embed_txt_mascotas .noticias article iframe{
-   width:76% !important;
-}
-*/
-
-.testimonios .IMG_TIT .headline h2{
-  color: #000;
-}
-
 
 .col-100-top-one-col {
   margin-top: 0;
@@ -533,7 +520,8 @@ html {
 }
 
 .bloques_general.testimonios .noticias article .text_block .headline h2 {
-  color: #974ecb;
+  /*color: #974ecb;*/
+  color: #000;
 }
 
 .t_cin.testim {
@@ -589,7 +577,8 @@ html {
 }
 
 .bloques_general.ps .noticias article .text_block .headline h2 {
-  color: #974ecb;
+  /*color: #974ecb;*/
+  color: #000;
 }
 
 .t_cinPs {
@@ -698,7 +687,8 @@ html {
 }
 
 .bloques_general.con .noticias article .text_block .headline h2 {
-  color: #113fff;
+  /*color: #113fff;*/
+  color: #000;
 }
 
 .t_cinCon {
