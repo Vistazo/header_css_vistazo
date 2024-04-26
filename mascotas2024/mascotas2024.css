@@ -111,6 +111,8 @@ html {
 
 .gr_cen img {
   width: 500px;
+  position:relative;
+  top: 20px;
 
 }
 
