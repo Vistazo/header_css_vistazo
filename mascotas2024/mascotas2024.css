@@ -284,11 +284,10 @@ html {
 .ap_portada .noticias::after {
   content: "";
   position: absolute;
-  top: 25px;
+  top: 110px;
   right: -225px;
   width: 250px;
-  /*width: 1060px;*/
-  height: 250px;
+  height: 350px;
   background-image: url('https://estadisticas.ecuavisa.com/sites/gestor/assets-rd%2Farturperro.png');
   background-size: contain;
   background-repeat: no-repeat;
@@ -297,10 +296,10 @@ html {
 .ap_portada .noticias::before {
   content: "";
   position: absolute;
-  top: 25px;
-  left: -106px;
+  top: 110px;
+  left: -146px;
   width: 250px;
-  height: 250px;
+  height: 350px;
   background-image: url('https://estadisticas.ecuavisa.com/sites/gestor/assets-rd%2Fkarengata.png');
   background-size: contain;
   background-repeat: no-repeat;
