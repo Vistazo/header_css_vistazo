@@ -1,27 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
   // Crear el elemento script
-  // var scriptElement = document.createElement('script');
+  document.querySelector(".IMG_PAUTAS_DIGITALES .multimedia img").src = "https://codigomarret.online/upload/img/historias-exitodesktop-(1).jpg";
 
-  // Establecer los atributos del script
-  // scriptElement.setAttribute('charset', 'UTF-8');
-  // scriptElement.setAttribute('src', '//web.webpushs.com/js/push/af4643cebabb204fff34ebd1d7822c8b_1.js');
-  // scriptElement.setAttribute('async', '');
-
-  // Obtener la referencia al elemento head
-  //var headElement = document.head || document.getElementsByTagName('head')[0];
-
-  // Agregar el nuevo script al head
-  //headElement.appendChild(scriptElement);
-
-
-
-  // Encuentra el script por tipo y contenido
-  // var scripts = document.querySelectorAll('script[type="text/javascript"][src*="taboola"]');
-  // Elimina cada script encontrado
-  // scripts.forEach(function(script) {
-  //     script.parentNode.removeChild(script);
-  // });
-  // localStorage.setItem("scriptsr_scroll", "")
+  
+  
   EjecutarScriptTaboola();
   EjecutarInit();
 });
