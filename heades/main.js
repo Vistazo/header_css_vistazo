@@ -1,12 +1,20 @@
+
+
 document.addEventListener('DOMContentLoaded', function () {
   // Crear el elemento script
   document.querySelector(".IMG_PAUTAS_DIGITALES .multimedia img").src = "https://codigomarret.online/upload/img/historias-exitodesktop-(1).jpg";
-
-  
-  
+  window.addEventListener('resize', cambiarImagen);
   EjecutarScriptTaboola();
   EjecutarInit();
+  cambiarImagen();
 });
+function cambiarImagen() {
+    if (window.innerWidth <= 768) {
+      document.querySelector(".IMG_PAUTAS_DIGITALES .multimedia img").src = "https://codigomarret.online/upload/img/crecimiento-mobile-(1).jpg";
+    } else {
+       document.querySelector(".IMG_PAUTAS_DIGITALES .multimedia img").src = "https://codigomarret.online/upload/img/historias-exitodesktop-(1).jpg";
+    }
+}
 
 function EjecutarInit() {
   try {
