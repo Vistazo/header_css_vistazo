@@ -767,6 +767,28 @@ INICIO - AMPLIADA
   margin-bottom: 40px;
 }
 
+.listado_lateral .noticias article .text_block .headline h2 {
+  line-height: 22px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  padding: 10px 20px;
+  font-weight: 700;
+  font-family: "Dosis", sans-serif !important;
+}
+
+.listado_lateral .noticias article .text_block .headline a{
+  text-decoration: none;
+  color: #9a4fc6;
+}
+
+.listado_lateral .noticias article{
+  background: #f3cc2a;
+}
+
+.listado_lateral .noticias article .text_block{
+  background: #f3cc2a;
+}
 
 .ly-ampliada-mascotas .detail_mascotas_titulo h1 {
   font-weight: 700;
