@@ -3,12 +3,16 @@ window.addEventListener('resize', cambiarImagen);
 
 document.addEventListener('DOMContentLoaded', function () {
   // Crear el elemento script
-  document.querySelector(".IMG_PAUTAS_DIGITALES .multimedia img").src = "https://codigomarret.online/upload/img/historias-exitodesktop-(1).jpg";
+  let path = window.location.pathname;
+  
   EjecutarScriptTaboola();
   EjecutarInit();
-  cambiarImagen();
+  if(path == "/"){
+      cambiarImagen();
+  }
 });
 function cambiarImagen() {
+  document.querySelector(".IMG_PAUTAS_DIGITALES .multimedia img").src = "https://codigomarret.online/upload/img/historias-exitodesktop-(1).jpg";
     if (window.innerWidth <= 768) {
       document.querySelector(".IMG_PAUTAS_DIGITALES .multimedia img").src = "https://codigomarret.online/upload/img/crecimiento-mobile-(1).jpg";
     } else {
