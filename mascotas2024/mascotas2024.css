@@ -9,6 +9,11 @@ html {
   overflow-x: hidden;
 }
 
+.portlet-boundary .portlet-static-end .htmlcontainer-portlet{
+  position: relative;
+  top:-1px;
+}
+
 .col-100-top-one-col {
   margin-top: 0;
 }
@@ -111,6 +116,7 @@ p b a{
 
 .gr_cen {
   text-align: center;
+  z-index:10;
 }
 
 .gr_cen img {
@@ -162,6 +168,8 @@ p b a{
 
   .gr_cen {
     text-align: start;
+    position: relative;
+    top: -14px;
   }
 
   .gr_cen img {
@@ -391,7 +399,7 @@ p b a{
 
   .ap_portada {
     display: block;
-    margin-top: 80px;
+    margin-top: 110px;
   }
 
 
