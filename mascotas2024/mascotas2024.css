@@ -106,6 +106,10 @@ p b a{
   text-decoration: none;
 }
 
+.menuItemsfles{
+  display: flex;
+}
+
 .menuParent svg {
   width: 50px;
 }
