@@ -8,15 +8,19 @@ document.addEventListener('DOMContentLoaded', function () {
   EjecutarScriptTaboola();
   EjecutarInit();
   if(path == "/"){
-      cambiarImagen();
+      cambiarImagenPautaHome();
   }
 });
-function cambiarImagen() {
-  document.querySelector(".IMG_PAUTAS_DIGITALES .multimedia img").src = "https://codigomarret.online/upload/img/historias-exitodesktop-(1).jpg";
+
+function cambiarImagenPautaHome() {
+  var enlace = document.querySelector(".IMG_PAUTAS_DIGITALES");
+  var imagen = document.querySelector(".IMG_PAUTAS_DIGITALES img");
     if (window.innerWidth <= 768) {
-      document.querySelector(".IMG_PAUTAS_DIGITALES .multimedia img").src = "https://codigomarret.online/upload/img/crecimiento-mobile-(1).jpg";
+        imagen.src = "https://codigomarret.online/upload/img/banner-mascotas-400x100.jpg";
+        enlace.href = "https://www.vistazo.com/mascotas";
     } else {
-       document.querySelector(".IMG_PAUTAS_DIGITALES .multimedia img").src = "https://codigomarret.online/upload/img/historias-exitodesktop-(1).jpg";
+        imagen.src = "https://codigomarret.online/upload/img/banner-mascotas-1920x200.jpg";
+        enlace.href = "https://www.vistazo.com/mascotas";
     }
 }
 
