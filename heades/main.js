@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function cambiarImagenPautaHome() {
-  var enlace = document.querySelector(".IMG_PAUTAS_DIGITALES a");
-  var imagen = document.querySelector(".IMG_PAUTAS_DIGITALES img");
+  var enlace = document.querySelector(".IMG_PAUTAS_DIGITALES .multimedia a");
+  var imagen = document.querySelector(".IMG_PAUTAS_DIGITALES .multimedia img");
     if (window.innerWidth <= 768) {
         imagen.src = "https://codigomarret.online/upload/img/banner-mascotas-400x100.jpg";
         enlace.href = "https://www.vistazo.com/mascotas";
