@@ -1,5 +1,5 @@
 
-window.addEventListener('resize', cambiarImagen);
+window.addEventListener('resize', cambiarImagenPautaHome);
 
 document.addEventListener('DOMContentLoaded', function () {
   // Crear el elemento script
