@@ -9,6 +9,10 @@ html {
   overflow-x: hidden;
 }
 
+body:{
+  overflow: hidden;
+}
+
 header .portlet-column .portlet-static-end{
   position: relative;
   top:-1px;
