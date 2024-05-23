@@ -163,7 +163,7 @@ p b a{
   font-style: normal;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
 
   .menuToggle,
   .menuSearch {
