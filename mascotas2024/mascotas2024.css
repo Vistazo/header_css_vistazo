@@ -231,7 +231,7 @@ p b a{
   line-height: 34px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .bloques_subseccion .noticias {
     grid-template-columns: 1fr;
   }
@@ -385,7 +385,7 @@ p b a{
 
 
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
 
   .ap_portada .noticias::after,
   .ap_portada .noticias::before {
@@ -762,7 +762,7 @@ p b a{
 /*FIN - FOOTER*/
 
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .bloques_general .noticias {
     grid-template-columns: 1fr;
   }
