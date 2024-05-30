@@ -823,7 +823,7 @@ function EjecutarInit() {
 
     function handleScroll() {
       if (!taboolaExecuted) {
-        TagManager();
+        //TagManager();
         InyectarEnHeader();
         //EjecutarScriptTaboola();
         taboolaExecuted = true;
