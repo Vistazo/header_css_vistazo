@@ -1,5 +1,14 @@
 
 window.addEventListener('resize', cambiarImagenPautaHome);
+document.addEventListener("DOMContentLoaded", function() {
+    var middle1 = document.getElementById("Middle1");
+    if (middle1) {
+        var container = middle1.closest('.adcontainer-portlet');
+        if (container) {
+            container.classList.remove('adcontainer-portlet');
+        }
+    }
+});
 
 document.addEventListener('DOMContentLoaded', function () {
   // Crear el elemento script
