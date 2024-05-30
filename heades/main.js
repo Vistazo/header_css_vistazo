@@ -1,11 +1,5 @@
 
 window.addEventListener('resize', cambiarImagenPautaHome);
-document.addEventListener("DOMContentLoaded", function() {
-    var middle1 = document.getElementById("Middle1");
-    if (middle1) {
-        middle1.remove();
-    }
-});
 
 document.addEventListener('DOMContentLoaded', function () {
   // Crear el elemento script
