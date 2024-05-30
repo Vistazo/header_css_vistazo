@@ -1,12 +1,20 @@
 
 window.addEventListener('resize', cambiarImagenPautaHome);
-document.addEventListener("DOMContentLoaded", function() {
+
+/*document.addEventListener("DOMContentLoaded", function() {
     var middle1 = document.getElementById("Middle3");
     if (middle1) {
         var container = middle1.closest('.adcontainer-portlet');
         if (container) {
             container.classList.remove('adcontainer-portlet');
         }
+    }
+});
+*/
+document.addEventListener("DOMContentLoaded", function() {
+    var middle3 = document.getElementById("Middle3");
+    if (middle3) {
+        middle3.remove();
     }
 });
 
