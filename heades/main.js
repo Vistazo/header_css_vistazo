@@ -1,7 +1,7 @@
 
 window.addEventListener('resize', cambiarImagenPautaHome);
 document.addEventListener("DOMContentLoaded", function() {
-    var middle1 = document.getElementById("Middle1");
+    var middle1 = document.getElementById("Middle3");
     if (middle1) {
         var container = middle1.closest('.adcontainer-portlet');
         if (container) {
