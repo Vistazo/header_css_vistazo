@@ -35,11 +35,9 @@ function cambiarImagenPautaHome() {
     if (window.innerWidth <= 768) {
         imagen.src = "https://codigomarret.online/upload/img/banner-mascotas-400x100.jpg";
         enlace.href = "https://www.vistazo.com/mascotas";
-        imagen.style.height = "110px";
     } else {
         imagen.src = "https://codigomarret.online/upload/img/banner-mascotas-1920x200.jpg";
         enlace.href = "https://www.vistazo.com/mascotas";
-        imagen.style.height = "290px";
     }
 }
 
