@@ -767,7 +767,7 @@ li.sect-a4306ce1cba409d40f6649f40a27a166 a.tab-item.lnk .sectionName{
 /* Estilos generales */
 .IMG_PAUTAS_DIGITALES .multimedia img {
     width: 100%;
-    height: 290px; /* Altura para escritorio */
+    height: auto; /* Altura para escritorio */
 }
 
 /* Estilos para dispositivos móviles */
