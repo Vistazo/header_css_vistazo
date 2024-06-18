@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
+    console.log("Link.js")
     // Obtener todas las etiquetas <a> dentro de la clase .menuIcon
     var links = document.querySelectorAll('.menuIcon a');
     
