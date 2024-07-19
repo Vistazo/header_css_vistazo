@@ -42,8 +42,6 @@ try {
     `;
 
     navContainer.insertAdjacentHTML('afterbegin', tendenciasHTML);
-} catch (error) {
-    console.error(error.message);
 } finally {
     console.log('Script de inyección de tendencias ejecutado.');
 }
