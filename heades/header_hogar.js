@@ -1,4 +1,5 @@
-$(document).ready(function () {
+document.addEventListener("DOMContentLoaded", function() {
+    var navContainer = document.querySelector('#menu_2318300398 .parent-nav');
     var tendenciasHTML = `
         <li class="lst-item tabnav sect-tendencias">
             <div class="tab-grp">
@@ -32,5 +33,5 @@ $(document).ready(function () {
         </li>
     `;
 
-    $('#nav-container .parent-nav').append(tendenciasHTML);
+    navContainer.insertAdjacentHTML('beforeend', tendenciasHTML);
 });
