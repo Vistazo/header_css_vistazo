@@ -1,1 +1,38 @@
 
+#menu_1712675375 .nav-dropdown .tab-grp {
+    position: relative;
+}
+
+#menu_1712675375 .nav-dropdown .child-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+#menu_1712675375 .nav-dropdown .tab-grp:hover .child-nav {
+    display: block;
+}
+
+#menu_1712675375 .nav-dropdown .child-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#menu_1712675375 .nav-dropdown .child-nav ul .lst-item {
+    padding: 8px 16px;
+}
+
+#menu_1712675375 .nav-dropdown .child-nav ul .lst-item a {
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+
+#menu_1712675375 .nav-dropdown .child-nav ul .lst-item a:hover {
+    background-color: #f1f1f1;
+}
