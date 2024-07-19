@@ -13,7 +13,7 @@
     padding: 0;
 }
 
-.nav-dropdown .tab-grp:hover .child-nav {
+.menu_header .nav-dropdown .tab-grp:hover .child-nav {
     display: block;
 }
 
