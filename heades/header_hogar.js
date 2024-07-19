@@ -6,8 +6,9 @@ try {
         throw new Error('El contenedor de navegación no se encontró.');
     }
     // Ocultar las opciones originales de "Moda" y "Belleza"
-    var modaItem = navContainer.querySelector('.sect-1751 .sect-4c8eef10f077d984f42db516026ee9e5"');
-    var bellezaItem = navContainer.querySelector('.sect-1752 .sect-35171bd57250da9c6c11190279144063');
+    var modaItem = navContainer.querySelector('.sect-4c8eef10f077d984f42db516026ee9e5');
+    var bellezaItem = navContainer.querySelector('.sect-35171bd57250da9c6c11190279144063');
+
 
     if (modaItem) modaItem.style.display = 'none';
     if (bellezaItem) bellezaItem.style.display = 'none';
