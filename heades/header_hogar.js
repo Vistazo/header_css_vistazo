@@ -1,11 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     var navContainer = document.querySelector('#menu_2318300398 .parent-nav');
-        // Verificar si navContainer existe
-    if (!navContainer) {
-        console.error('El contenedor de navegación no se encontró.');
-        return;
-    }
-        // Ocultar las opciones originales de "Moda" y "Belleza"
+    // Ocultar las opciones originales de "Moda" y "Belleza"
     var modaItem = navContainer.querySelector('.sect-4c8eef10f077d984f42db516026ee9e5');
     var bellezaItem = navContainer.querySelector('.sect-35171bd57250da9c6c11190279144063');
 
