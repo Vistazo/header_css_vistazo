@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
         var tendenciasHTML = `
             <li class="lst-item tabnav sect-tendencias">
                 <div class="tab-grp">
-                    <a href="#" class="tab-item lnk" title="">
+                    <a href="#" class="tab-item lnk tendencia" title="">
                         <span class="iconBefore"></span>
                         <strong class="sectionName">Tendencias</strong>
                         <span class="iconAfter"></span>
