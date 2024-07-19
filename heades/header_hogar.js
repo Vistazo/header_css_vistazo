@@ -12,6 +12,7 @@ try {
     if (modaItem) modaItem.style.display = 'none';
     if (bellezaItem) bellezaItem.style.display = 'none';
     
+    // Inyectar HTML
     var tendenciasHTML = `
         <li class="lst-item tabnav sect-tendencias">
             <div class="tab-grp">
