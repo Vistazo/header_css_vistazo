@@ -13,7 +13,7 @@
     padding: 0;
 }
 
-.tendencia:hover .child-nav {
+.nav-dropdown .tab-grp:hover .child-nav {
     display: block;
 }
 
