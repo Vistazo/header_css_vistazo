@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     try {
-        var navContainer = document.querySelector('#menu_1712675375 .parent-nav');
+        var navContainer = document.querySelector('.nav-dropdown .parent-nav');
         console.log("navContainer: ", navContainer); // Agregar salida de depuración
 
         // Verificar si navContainer existe
