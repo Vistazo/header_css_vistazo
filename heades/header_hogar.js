@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
 try {
-    var navContainer = document.querySelector('#menu_2318300398 .parent-nav');
-    console.log("navContainer: ", navContainer)
+    var navContainer = document.querySelector('#menu_1712675375 .parent-nav');
     // Ocultar las opciones originales de "Moda" y "Belleza"
     var modaItem = navContainer.querySelector('.sect-1751 .sect-4c8eef10f077d984f42db516026ee9e5"');
     var bellezaItem = navContainer.querySelector('.sect-1752 .sect-35171bd57250da9c6c11190279144063');
