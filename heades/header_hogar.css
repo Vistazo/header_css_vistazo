@@ -1,39 +1,39 @@
 .nav-dropdown .tab-grp {
-position: relative;
+    position: relative;
 }
 
 .nav-dropdown .child-nav {
-display: none;
-position: absolute;
-top: 100%;
-left: 0;
-background-color: white;
-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-z-index: 1;
-padding: 0;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    padding: 0;
 }
 
 .nav-dropdown .tab-grp:hover .child-nav {
-display: block;
+    display: block;
 }
 
 .nav-dropdown .child-nav ul {
-list-style-type: none;
-margin: 0;
-padding: 0;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-dropdown .child-nav ul .lst-item {
-padding: 0;
+    padding: 0;
 }
 
 .nav-dropdown .child-nav ul .lst-item a {
-text-decoration: none;
-color: black;
-display: block;
-padding: 8px 16px;
+    text-decoration: none;
+    color: black;
+    display: block;
+    padding: 8px 16px;
 }
 
 .nav-dropdown .child-nav ul .lst-item a:hover {
-background-color: #f1f1f1;
+    background-color: #f1f1f1;
 }
