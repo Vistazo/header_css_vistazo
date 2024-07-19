@@ -33,5 +33,5 @@ document.addEventListener("DOMContentLoaded", function() {
         </li>
     `;
 
-    navContainer.insertAdjacentHTML('beforeend', tendenciasHTML);
+    navContainer.insertAdjacentHTML('afterbegin', tendenciasHTML);
 });
