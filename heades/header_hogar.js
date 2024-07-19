@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
+try {
     var navContainer = document.querySelector('#menu_2318300398 .parent-nav');
     // Ocultar las opciones originales de "Moda" y "Belleza"
     var modaItem = navContainer.querySelector('.sect-4c8eef10f077d984f42db516026ee9e5');
@@ -41,4 +42,9 @@ document.addEventListener("DOMContentLoaded", function() {
     `;
 
     navContainer.insertAdjacentHTML('afterbegin', tendenciasHTML);
+} catch (error) {
+    console.error(error.message);
+} finally {
+    console.log('Script de inyección de tendencias ejecutado.');
+}
 });
