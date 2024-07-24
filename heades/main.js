@@ -335,6 +335,27 @@ function EjecutarInit() {
     </div>
   </ul>
 </div>
+<div class="estadio_sub">
+  <ul class="ulclass">
+    <div class="lst_items_sub">
+      <li
+        class="lst-item-bm sect-468 sect-33df33fd383c192b5770220a2d7546d3-estado"
+      >
+        <a
+          href="/deportes/jjoo-2024"
+          class="lnk"
+          title=""
+        >
+          <span class="iconBefore"></span>
+          <span class="sectionName"
+            >JJOO 2024</span
+          >
+          <span class="iconAfter"></span>
+        </a>
+      </li>
+    </div>
+  </ul>
+</div>
       `
     }
 
@@ -783,6 +804,7 @@ function EjecutarInit() {
     var pol = document.querySelector(".politica_sub .lst_items_sub")
     var est = document.querySelector(".estilo_vida_sub .lst_items_sub")
     var enf = document.querySelector(".portafolio_sub .lst_items_sub")
+    var estdio = document.querySelector(".estadio_sub .lst_items_sub")
     tabgrp.forEach(e => {
       e.addEventListener("mouseover", function (i) {
         block = i.target.querySelector(".sectionName")
@@ -806,6 +828,9 @@ function EjecutarInit() {
           } else if (block.innerHTML == "Portafolio") {
             Limpiar()
             enf.style.display = "flex";
+          } else if (block.innerHTML == "Estadio"){
+              Limpiar()
+              estdio.style.display = "flex";
           } else {
             Limpiar()
           }
