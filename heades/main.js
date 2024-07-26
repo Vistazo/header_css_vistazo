@@ -331,7 +331,7 @@ function EjecutarInit() {
     <li
       class="lst-item-bm sect-1733 sect-f81fd82d0bd4db455e47e7121837c9cb-estadio"
     >
-      <a href="/desporte/jjoo-2024" class="lnk" title="">
+      <a href="/deportes/jjoo-2024" class="lnk" title="">
         <span class="iconBefore"></span>
         <span class="sectionName">JJOO 2024</span>
         <span class="iconAfter"></span>
