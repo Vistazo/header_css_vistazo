@@ -1,16 +1,6 @@
 
 window.addEventListener('resize', cambiarImagenPautaHome);
-/*
-document.addEventListener("DOMContentLoaded", function() {
-    var middle3 = document.getElementById("Middle3");
-    if (middle3) {
-        var container = middle3.closest('.adcontainer-portlet');
-        if (container) {
-            container.classList.remove('adcontainer-portlet');
-        }
-    }
-});
-*/
+
 document.addEventListener("DOMContentLoaded", function() {
     var middle3 = document.getElementById("Middle3");
     if (middle3) {
@@ -21,7 +11,6 @@ document.addEventListener("DOMContentLoaded", function() {
 document.addEventListener('DOMContentLoaded', function () {
   // Crear el elemento script
   let path = window.location.pathname;
-  
   EjecutarScriptTaboola();
   EjecutarInit();
   if(path == "/"){
@@ -336,6 +325,22 @@ function EjecutarInit() {
   </ul>
 </div>
 
+<div class="estadio_sub">
+<ul class="ulclass">
+  <div class="lst_items_sub">
+    <li
+      class="lst-item-bm sect-1733 sect-f81fd82d0bd4db455e47e7121837c9cb-estadio"
+    >
+      <a href="/desporte/jjoo-2024" class="lnk" title="">
+        <span class="iconBefore"></span>
+        <span class="sectionName">JJOO 2024</span>
+        <span class="iconAfter"></span>
+      </a>
+    </li>
+  </div>
+</ul>
+</div>
+
       `
     }
 
@@ -384,6 +389,7 @@ function EjecutarInit() {
             </div>
         </div>`
     e5.innerHTML = div5;
+
 
     menuMovil = document.querySelector(".headres_bm_ts");
     if (menuMovil) {
@@ -785,6 +791,7 @@ function EjecutarInit() {
     var est = document.querySelector(".estilo_vida_sub .lst_items_sub")
     var enf = document.querySelector(".portafolio_sub .lst_items_sub")
     var estdio = document.querySelector(".estadio_sub .lst_items_sub")
+
     tabgrp.forEach(e => {
       e.addEventListener("mouseover", function (i) {
         block = i.target.querySelector(".sectionName")
@@ -908,6 +915,7 @@ function Limpiar() {
   document.querySelector(".estilo_vida_sub .lst_items_sub").style.display = "none";
   document.querySelector(".portafolio_sub .lst_items_sub").style.display = "none";
   document.querySelector(".politica_sub .lst_items_sub").style.display = "none";
+  document.querySelector(".estadio_sub .lst_items_sub").style.display = "none";
 }
 
 function EjecutarScriptTaboola() {

@@ -1,0 +1,893 @@
+@import url('https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/* INICIO - MENU*/
+
+html {
+  overflow-x: hidden;
+}
+
+header .portlet-column .portlet-static-end{
+  position: relative;
+  top:-1px;
+}
+
+.col-100-top-one-col {
+  margin-top: 0;
+}
+
+p b a{
+  color:#9a4fc6;
+}
+
+.waves-menu-vtz {
+  width: 100.1%;
+  height: auto;
+  position: absolute;
+}
+
+.bloques_subseccion .noticias article .text_block .headline h2 {
+    color: #000 !important;
+}
+
+.sb_mascotas {
+  margin-top: 10px;
+  position: absolute;
+  right: 22px;
+  top: 55px;
+  background: #fff;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 18%);
+  padding: 10px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  display: none;
+}
+
+.sb_mascotas .iter-button-input-submit {
+  height: 32px;
+  min-width: 67px;
+  line-height: 17px;
+  padding: 7px 15px 8px;
+  text-shadow: none;
+  vertical-align: top;
+  right: 20px;
+  margin: 0 !important;
+  -webkit-transition: background-color .4s;
+  -moz-transition: background-color .4s;
+  -o-transition: background-color .4s;
+  transition: background-color .4s;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  background-color: #222;
+  border-radius: 0;
+  color: #fff;
+  border: none;
+  font-weight: normal;
+  font-weight: 500;
+  font-family: "Dosis", sans-serif !important;
+}
+
+.sb_mascotas .iter-field-input-text {
+  height: 32px;
+  width: 140px;
+  height: 32px;
+  margin: 0;
+  border-right: 0;
+  line-height: 17px;
+  border-color: #eaeaea !important;
+  font-size: 12px;
+  color: #444;
+  border: 1px solid #e1e1e1;
+  max-width: 100%;
+  padding: 3px 9px;
+  outline: none;
+}
+
+.menuParent {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-columns: 2fr 1fr 2fr;
+  gap: 0px 0px;
+  padding: 12px 12px;
+}
+
+.menuParent .menuItems a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Protest Riot", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-decoration: none;
+}
+
+.menuItemsfles{
+  display: flex;
+}
+
+.menuParent svg {
+  width: 50px;
+}
+
+/* .st0 {
+  fill: #F43A37;
+} */
+
+.gr_cen {
+  text-align: center;
+  z-index:0;
+}
+
+.gr_cen img {
+  width: 500px;
+  position:relative;
+  top: 20px;
+
+}
+
+.gr_iz,
+.gr_der {
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.gr_derMenu {
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  column-gap: 15px;
+}
+
+.menuToggle,
+.menuSearch {
+  display: none;
+}
+
+.menuToggle svg {}
+
+#menuMobileList {
+  padding: 12px;
+}
+
+#menuMobileList .listmen {
+  display: flex;
+  flex-direction: column;
+  font-family: "Protest Riot", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@media (max-width: 768px) {
+
+  .menuToggle,
+  .menuSearch {
+    display: block;
+  }
+
+  .gr_cen {
+    text-align: start;
+    position: relative;
+    top: -14px;
+  }
+
+  .gr_cen img {
+    width: 150px;
+  }
+
+  .gr_iz,
+  .gr_der {
+    display: none;
+  }
+
+  .menuParent {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+/* FIN - MENU*/
+
+
+
+
+/* INICIO - SUBSECCIONES*/
+
+.ly-mascotas-sub-2024 {
+  padding: 80px 0 50px 0;
+}
+
+.bloques_subseccion .noticias {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.bloques_subseccion .noticias article .text_block .headline h2 {
+  line-height: 22px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  padding: 10px 20px;
+  font-weight: 700;
+  font-family: "Dosis", sans-serif !important;
+}
+
+.ly-mascotas-sub-2024 .headerparent {
+  align-items: flex-end;
+}
+
+.t_cin_sub {
+  text-align: start;
+  margin: 0 0 30px 0;
+  font-size: 34px;
+  font-family: "Protest Riot", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 34px;
+}
+
+@media (max-width: 768px) {
+  .bloques_subseccion .noticias {
+    grid-template-columns: 1fr;
+  }
+  .ap_portada .noticias {
+    width: 80%;
+  }
+}
+
+.ap_portada .noticias {
+  position: relative;
+  margin: auto;
+  width: 93%;
+}
+
+
+/*INICIO - SUBSECCIONES*/
+
+
+
+/*inicio - apertura*/
+
+#bq-001 {
+  background: #974ecb;
+  padding: 80px 0 30px 0;
+  background-image: url('https://estadisticas.ecuavisa.com/sites/gestor/assets-rd%2Ffondosalud.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.ap_portada {
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.personajes_mobile {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  width: 100%;
+
+}
+
+.personajes_mobile img {
+  width: 250px;
+  display: none;
+}
+
+.ap_portada iframe {
+  /*width: 560px;*/
+  /*height: 400px;*/
+  height: 500px;
+  z-index: 999999999;
+  position: relative;
+}
+
+.ap_portada .noticias {
+  position: relative;
+  width: 93%;
+}
+
+.ap_portada .noticias::after {
+  content: "";
+  position: absolute;
+  top: 110px;
+  right: -225px;
+  width: 250px;
+  height: 350px;
+  background-image: url('https://estadisticas.ecuavisa.com/sites/gestor/assets-rd%2Farturperro.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.ap_portada .noticias::before {
+  content: "";
+  position: absolute;
+  top: 110px;
+  left: -146px;
+  width: 250px;
+  height: 350px;
+  background-image: url('https://estadisticas.ecuavisa.com/sites/gestor/assets-rd%2Fkarengata.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+
+.ap_items {
+  padding: 0 40px !important;
+  display: none;
+}
+
+.ap_items .noticias article iframe {
+  height: 316px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+
+  /* --swiper-navigation-size: 44px;
+  --swiper-navigation-top-offset: 50%;
+  --swiper-navigation-sides-offset: -10px;
+  --swiper-navigation-color: var(--swiper-theme-color); */
+}
+
+.swiper-button-prev:after,
+.swiper-rtl .swiper-button-next:after {
+  content: url("https://estadisticas.ecuavisa.com/sites/gestor/123flecha-izq.png") !important;
+  margin-right: 30px;
+}
+
+.swiper-button-next:after,
+.swiper-rtl .swiper-button-prev:after {
+  content: url("https://estadisticas.ecuavisa.com/sites/gestor/123flecha-der.png") !important;
+  margin-left: 30px;
+
+}
+
+
+.swiper {
+  overflow: visible !important;
+}
+
+.swiper-button-prev {
+  left: 0px !important;
+}
+
+.swiper-button-next {
+  right: 0px !important;
+}
+
+/* .swiper-button-next, .swiper-button-prev{
+  top: 100px;
+
+} */
+
+@media (max-width: 1200px) {
+  .ap_items {
+    padding: 0 0px !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .ap_items {
+    padding: 0 40px !important;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+
+  .ap_portada .noticias::after,
+  .ap_portada .noticias::before {
+    display: none;
+  }
+
+  .ap_portada .noticias article iframe {
+    width: 100%;
+  }
+
+  .personajes_mobile img {
+    display: block;
+    margin-bottom: -140px;
+  }
+
+  .ap_portada {
+    display: block;
+    margin-top: 110px;
+  }
+
+
+
+  .swiper-button-prev:after,
+  .swiper-rtl .swiper-button-next:after {
+    content: url("https://estadisticas.ecuavisa.com/sites/gestor/assets-rd%2Fmobiledsadas.png") !important;
+  }
+
+  .swiper-button-next:after,
+  .swiper-rtl .swiper-button-prev:after {
+    content: url("https://estadisticas.ecuavisa.com/sites/gestor/assets-rd%2Fmobile.png") !important;
+
+  }
+
+}
+
+@media (max-width: 575px) {
+  .swiper-button-prev {
+    left: 20px !important;
+  }
+
+  .swiper-button-next {
+    right: 20px !important;
+  }
+}
+
+/*fin - apertura*/
+
+
+
+/*inicio - salud y nutricion*/
+
+
+#bq-002 {
+  background: #1b45f3;
+  padding: 30px 0;
+  background-image: url('https://estadisticas.ecuavisa.com/sites/gestor/assets-rd%2Ffondosalud.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.tiktok-embed {
+  min-width: 100% !important;
+  margin-top: 0;
+}
+
+.instagram-media.instagram-media-rendered {
+  min-width: 100% !important;
+}
+
+
+.bloques_general .noticias {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+}
+
+.bloques_general .noticias article .text_block .headline h2 {
+  line-height: 22px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  padding: 10px 20px;
+  font-weight: 700;
+  font-family: "Dosis", sans-serif !important;
+}
+
+.bloques_general.snutricion .noticias article .text_block .headline h2 {
+  color: #fff;
+}
+
+.bloques_general.snutricion .noticias article {
+  background: #f33a37;
+}
+
+.bloques_general.snutricion .noticias article .text_block {
+  background: #f33a37;
+}
+
+
+.vmasSN {
+  margin-top: 15px;
+}
+
+.vmasSN a {
+  margin-bottom: 30px;
+  font-size: 24px;
+  color: #fff;
+  font-weight: 700;
+  font-family: "Dosis", sans-serif;
+  transition: all 0.1s;
+}
+
+.vmasSN a:hover{
+  border-bottom: 3px solid #fff;
+  transition: all 0.1s;
+}
+
+
+
+
+.t_cin.sn {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 34px;
+  color: #fff;
+  font-family: "Protest Riot", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
+
+}
+
+/*fin - salud y nutricion*/
+
+/*inicio - testimonios*/
+
+#bq-003 {
+  background: #f33a37;
+  padding: 30px 0;
+  background-image: url('https://estadisticas.ecuavisa.com/sites/gestor/assets-rd%2Ffondotestimonios.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.bloques_general.testimonios .noticias article {
+  background: #f3cc29;
+}
+
+.bloques_general.testimonios .noticias article .text_block {
+  background: #f3cc29;
+}
+
+.bloques_general.testimonios .noticias article .text_block .headline h2 {
+  /*color: #974ecb;*/
+  color: #000;
+}
+
+.t_cin.testim {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 34px;
+  color: #fff;
+  font-family: "Protest Riot", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.vmasTes {
+  margin-top: 15px;
+}
+
+
+.vmasTes a {
+  margin-bottom: 30px;
+  font-size: 24px;
+  color: #fff;
+  font-weight: 700;
+  font-family: "Dosis", sans-serif;
+  transition: all 0.1s;
+}
+
+.vmasTes a:hover{
+  border-bottom: 3px solid #fff;
+}
+
+
+
+/*fin - testimonios*/
+
+
+/*inicio - Pet school*/
+#bq-004 {
+  background: #73f6ce;
+  padding: 30px 0;
+  background-image: url('https://estadisticas.ecuavisa.com/sites/gestor/assets-rd%2Ffondopet-school.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.bloques_general.ps .noticias article {
+  background: #f3cc29;
+}
+
+
+.bloques_general.ps .noticias article .text_block {
+  background: #f3cc29;
+}
+
+.bloques_general.ps .noticias article .text_block .headline h2 {
+  /*color: #974ecb;*/
+  color: #000;
+}
+
+.t_cinPs {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 34px;
+  color: #9850c8;
+  font-family: "Protest Riot", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.vmasPs {
+  margin-top: 15px;
+}
+
+
+
+.vmasPs a {
+  margin-bottom: 30px;
+  font-size: 24px;
+  color: #9b4ec3;
+  font-weight: 700;
+  font-family: "Dosis", sans-serif;
+  transition: all 0.1s;
+}
+
+.vmasPs a:hover{
+  border-bottom: 3px solid #9b4ec3;
+}
+
+
+/*fin - Pet school*/
+
+
+/*inicio - virales*/
+#bq-005 {
+  background: #f3cc29;
+  padding: 30px 0;
+  background-image: url('https://estadisticas.ecuavisa.com/sites/gestor/assets-rd%2Ffondovirales.png');
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+.bloques_general.vi .noticias article {
+  background: #f33a37;
+}
+
+.bloques_general.vi .noticias article .text_block {
+  background: #f33a37;
+}
+
+.bloques_general.vi .noticias article .text_block .headline h2 {
+  color: #fff;
+}
+
+.t_cinVi {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 34px;
+  color: #f33a37;
+  font-family: "Protest Riot", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.vmasVi {
+  margin-top: 15px;
+}
+
+
+.vmasVi a {
+  margin-bottom: 30px;
+  font-size: 24px;
+  color: #f33a37;
+  font-weight: 700;
+  font-family: "Dosis", sans-serif;
+  transition: all 0.1s;
+}
+
+.vmasVi a:hover{
+  border-bottom: 3px solid #f33a37;
+}
+
+
+/*fin - virales*/
+
+/*inicio - concursos*/
+#bq-006 {
+  background: #9a4fc6;
+  padding: 30px 0;
+  background-image: url('https://estadisticas.ecuavisa.com/sites/gestor/assets-rd%2Ffondoconcursos.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.bloques_general.con .noticias article {
+  background: #f3cc29;
+}
+
+.bloques_general.con .noticias article .text_block {
+  background: #f3cc29;
+}
+
+.bloques_general.con .noticias article .text_block .headline h2 {
+  /*color: #113fff;*/
+  color: #000;
+}
+
+.t_cinCon {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 34px;
+  color: #fff;
+  font-family: "Protest Riot", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.vmasCon {
+  margin-top: 15px;
+}
+
+
+.vmasCon a {
+  margin-bottom: 30px;
+  font-size: 24px;
+  color: #fff;
+  font-weight: 700;
+  font-family: "Dosis", sans-serif;
+  transition: all 0.1s;
+}
+
+.vmasCon a:hover{
+  border-bottom: 3px solid #fff;
+}
+
+/*fin - concursos*/
+
+
+
+
+/*INICIO - FOOTER*/
+
+.parentFooter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 30px;
+  padding: 30px 0;
+  font-family: "Dosis", sans-serif !important;
+  font-weight: 600;
+  font-size: 16px;
+  color: #113fff;
+}
+
+/*FIN - FOOTER*/
+
+
+@media (max-width: 768px) {
+  .bloques_general .noticias {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    padding: 0 12px;
+  }
+}
+
+
+
+/**************************
+INICIO - AMPLIADA
+****************************/
+
+.ly-ampliada-mascotas .detail_hogar_parent {
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+
+.listado_lateral .noticias article .text_block .headline h2 {
+  line-height: 22px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  padding: 10px 20px;
+  font-weight: 700;
+  font-family: "Dosis", sans-serif !important;
+}
+
+.listado_lateral .noticias article .text_block .headline a{
+  text-decoration: none;
+  color: #9a4fc6;
+}
+
+.listado_lateral .noticias article{
+  background: #f3cc2a;
+}
+
+.listado_lateral .noticias article .text_block{
+  background: #f3cc2a;
+}
+
+.ly-ampliada-mascotas .detail_mascotas_titulo h1 {
+  font-weight: 700;
+  font-family: "Dosis", sans-serif !important;
+  color: #9a4fc6;
+  ;
+}
+
+.ly-ampliada-mascotas .temas {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 700;
+}
+
+.ly-ampliada-mascotas .temas .temas_head {
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 700;
+
+}
+
+.ly-ampliada-mascotas .item_tema.t_3.keywords a {
+  background: #9a4fc6;
+  color: #fff;
+  padding: 2px 16px;
+  text-decoration: none;
+  display: block;
+  width: max-content;
+  font-size: 12px;
+}
+
+.ly-ampliada-mascotas .detail_hogar.c_003_018 .element .text_block .headline a {
+  text-decoration: none;
+}
+
+.ly-ampliada-mascotas .detail_hogar.c_003_018 .element .text_block {
+  background: #f3cc2a;
+}
+
+
+.ly-ampliada-mascotas .detail_hogar.c_003_018 .element .text_block .headline a h2 {
+  color: #9a4fc7;
+  line-height: 22px;
+  font-style: normal;
+  font-size: 18px;
+  padding: 10px 20px;
+  font-weight: 700;
+  font-family: "Dosis", sans-serif !important;
+}
+
+.ly-ampliada-mascotas .tit_populares {
+  margin-bottom: 10px;
+}
+
+.ly-ampliada-mascotas .inf2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ly-ampliada-mascotas .partea {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ly-ampliada-mascotas .partea a {
+  text-decoration: none;
+  color: black;
+}
+
+.ly-ampliada-mascotas .text_por {
+  margin-right: 5px;
+}
+
+.ly-ampliada-mascotas .iter-tabview-content ul li {
+  display: none;
+}
+
+
+
+/**************************
+FIN - AMPLIADA
+****************************/
