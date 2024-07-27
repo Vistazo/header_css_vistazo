@@ -576,11 +576,30 @@ function EjecutarInit() {
               <li
                 class="lst-item tabnav sect-1744 sect-b9980f56b677f8e269b30e61d191af47"
               >
-                <a href="/deportes" class="tab-item lnk" title="">
-                  <span class="iconBefore"></span>
-                  <span class="sectionName">Estadio</span>
-                  <span class="iconAfter"></span>
-                </a>
+                <div class="tab-grp">
+                  <a href="/deportes" class="tab-item lnk" title="">
+                    <span class="iconBefore"></span>
+                    <span class="sectionName">Estadio</span>
+                    <span class="iconAfter"></span>
+                  </a>
+                  <span class="hasChildsIcon"></span>
+                  <div class="child-nav cf">
+                    <ul class="lst-std lst level-2">
+                      <div class="lst-items-movil">
+                        <li
+                          class="lst-item sect-1733 sect-f81fd82d0bd4db455e47e7121837c9cb-estadio"
+                        >
+                          <a href="/deportes/jjoo-2024" class="lnk" title="">
+                            <span class="iconBefore
+                            "></span>
+                            <span class="sectionName">JJOO 2024</span>  
+                            <span class="iconAfter"></span>
+                          </a>
+                        </li>
+                      </div>
+                    </ul>
+                  </div>
+                </div>
               </li>
               <li
                 class="lst-item tabnav sect-1745 sect-c9f0c56283c0327e88a8dc57b5c41b5e"
