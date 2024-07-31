@@ -15,7 +15,8 @@ document.addEventListener('DOMContentLoaded', function () {
   EjecutarInit();
   if(path == "/"){
       cambiarImagenPautaHome();
-  }else if(path == "/deportes" || path == "/" || path == "/deportes/jjoo-2024"){
+  }
+  if(path == "/deportes" || path == "/" || path == "/deportes/jjoo-2024"){
       cambiarImagenPautaEstadio();
   }
 });
