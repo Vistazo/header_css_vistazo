@@ -38,14 +38,17 @@ function cambiarImagenPautaEstadio() {
   try {
     let url = "https://codigomarret.online/upload/img/jjoo-(1920-x-600-px).png";
     var pautaEstadio = document.querySelector('.pauta_estadio_css')
-    pautaEstadio.style.backgroundImage = 'url(' + url + ')';
-    pautaEstadio.style.width = '100%';
-    pautaEstadio.style.height = '400px'; // Proporción de la imagen
-    pautaEstadio.style.backgroundSize = 'contain';
-    pautaEstadio.style.backgroundPosition = 'center';
-    pautaEstadio.style.backgroundRepeat = 'no-repeat';
-    pautaEstadio.style.margin = '0';
-    pautaEstadio.style.padding = '0';
+    // Asegúrate de que el elemento existe antes de aplicar estilos
+    if (pautaEstadio) {
+      pautaEstadio.style.backgroundImage = 'url(' + url + ')';
+      pautaEstadio.style.width = '100%';
+      pautaEstadio.style.height = '400px'; // Proporción de la imagen
+      pautaEstadio.style.backgroundSize = 'contain';
+      pautaEstadio.style.backgroundPosition = 'center';
+      pautaEstadio.style.backgroundRepeat = 'no-repeat';
+      pautaEstadio.style.margin = '0';
+      pautaEstadio.style.padding = '0';
+    }
   } catch (error) {
     console.log(error);
   }
