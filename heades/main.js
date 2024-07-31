@@ -15,9 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
   EjecutarInit();
   if(path == "/"){
       cambiarImagenPautaHome();
-  }else if(path == "/deportes"){
-      cambiarImagenPautaEstadio();
-  }else if(path == "/deportes/jjoo-2024"){
+  }else if(path == "/deportes" || path == "/" || path == "/deportes/jjoo-2024"){
       cambiarImagenPautaEstadio();
   }
 });
@@ -44,7 +42,7 @@ function cambiarImagenPautaEstadio() {
       let img = document.createElement('img');
       img.src = url;
       img.style.width = '100%';
-      img.style.height = '250px'; // Proporción de la imagen
+      img.style.height = '300px'; // Proporción de la imagen
       img.style.display = 'block';
       pautaEstadio.style.width = '100%';
       pautaEstadio.style.overflow = 'hidden';
