@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
   EjecutarScriptTaboola();
   EjecutarInit();
   if(path == "/"){
-      cambiarImagenPautaHome();
+    cambiarImagenPautaHome();
   }
   if(path == "/deportes" || path == "/" || path == "/deportes/jjoo-2024"){
       cambiarImagenPautaEstadio();
@@ -40,17 +40,29 @@ function cambiarImagenPautaEstadio() {
     // Asegúrate de que el elemento existe antes de aplicar estilos
     if (pautaEstadio) {
       // crear etiqueta img y poner la imagen envolver la imagen en a para que sea clickeable y redireccione a la url de estadío
-      let a = document.createElement('a');
-      a.href = "https://www.vistazo.com/deportes/jjoo-2024";
-      let img = document.createElement('img');
-      img.src = url;
-      img.style.width = '100%';
-      img.style.height = 'auto'; // Proporción de la imagen
-      img.style.display = 'block';
-      pautaEstadio.style.width = '100%';
-      pautaEstadio.style.overflow = 'hidden';
-      a.appendChild(img);
-      pautaEstadio.appendChild(a);
+      let path = window.location.pathname;
+      if(path == "/"){
+        let a = document.createElement('a');
+        a.href = "https://www.vistazo.com/deportes/jjoo-2024";
+        let img = document.createElement('img');
+        img.src = url;
+        img.style.width = '100%';
+        img.style.height = 'auto';
+        img.style.display = 'block';
+        pautaEstadio.style.width = '100%';
+        pautaEstadio.style.overflow = 'hidden';
+        a.appendChild(img);
+        pautaEstadio.appendChild(a);
+      }else{
+        let img = document.createElement('img');
+        img.src = url;
+        img.style.width = '100%';
+        img.style.height = 'auto';
+        img.style.display = 'block';
+        pautaEstadio.style.width = '100%';
+        pautaEstadio.style.overflow = 'hidden';
+        pautaEstadio.appendChild(img);
+      }
 
     }
   } catch (error) {
