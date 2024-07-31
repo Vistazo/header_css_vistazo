@@ -40,14 +40,15 @@ function cambiarImagenPautaEstadio() {
     var pautaEstadio = document.querySelector('.pauta_estadio_css')
     // Asegúrate de que el elemento existe antes de aplicar estilos
     if (pautaEstadio) {
-      pautaEstadio.style.backgroundImage = 'url(' + url + ')';
+      // crear etiqueta img y poner la imagen
+      let img = document.createElement('img');
+      img.src = url;
+      img.style.width = '100%';
+      img.style.height = 'auto'; // Proporción de la imagen
+      img.style.display = 'block';
       pautaEstadio.style.width = '100%';
-      pautaEstadio.style.height = '400px'; // Proporción de la imagen
-      pautaEstadio.style.backgroundSize = 'contain';
-      pautaEstadio.style.backgroundPosition = 'center';
-      pautaEstadio.style.backgroundRepeat = 'no-repeat';
-      pautaEstadio.style.margin = '0';
-      pautaEstadio.style.padding = '0';
+      pautaEstadio.style.overflow = 'hidden';
+      pautaEstadio.appendChild(img);
     }
   } catch (error) {
     console.log(error);
