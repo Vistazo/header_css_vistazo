@@ -44,7 +44,7 @@ function cambiarImagenPautaEstadio() {
       let img = document.createElement('img');
       img.src = url;
       img.style.width = '100%';
-      img.style.height = 'auto'; // Proporción de la imagen
+      img.style.height = '250px'; // Proporción de la imagen
       img.style.display = 'block';
       pautaEstadio.style.width = '100%';
       pautaEstadio.style.overflow = 'hidden';
