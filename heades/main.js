@@ -15,6 +15,10 @@ document.addEventListener('DOMContentLoaded', function () {
   EjecutarInit();
   if(path == "/"){
       cambiarImagenPautaHome();
+  }else if(path == "/deportes"){
+      cambiarImagenPautaEstadio();
+  }else if(path == "/deportes/jjoo-2024"){
+      cambiarImagenPautaEstadio();
   }
 });
 
@@ -28,6 +32,23 @@ function cambiarImagenPautaHome() {
         imagen.src = "https://codigomarret.online/upload/img/banner-mascotas-1920x200.jpg";
         enlace.href = "https://www.vistazo.com/mascotas";
     }
+}
+
+function cambiarImagenPautaEstadio() {
+  try {
+    let url = "https://codigomarret.online/upload/img/jjoo-(1920-x-600-px).png";
+    var pautaEstadio = document.querySelector('.pauta_estadio_css')
+    pautaEstadio.style.backgroundImage = 'url(' + url + ')';
+    pautaEstadio.style.width = '100%';
+    pautaEstadio.style.height = '400px'; // Proporción de la imagen
+    pautaEstadio.style.backgroundSize = 'contain';
+    pautaEstadio.style.backgroundPosition = 'center';
+    pautaEstadio.style.backgroundRepeat = 'no-repeat';
+    pautaEstadio.style.margin = '0';
+    pautaEstadio.style.padding = '0';
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 function EjecutarInit() {
