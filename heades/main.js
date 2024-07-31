@@ -35,7 +35,7 @@ function cambiarImagenPautaHome() {
 
 function cambiarImagenPautaEstadio() {
   try {
-    let url = "https://codigomarret.online/upload/img/jjoo-(1920-x-600-px).png";
+    let url = "https://codigomarret.online/upload/img/jjoo-(1920-x-200-px).png";
     var pautaEstadio = document.querySelector('.pauta_estadio_css')
     // Asegúrate de que el elemento existe antes de aplicar estilos
     if (pautaEstadio) {
