@@ -39,7 +39,9 @@ function cambiarImagenPautaEstadio() {
     var pautaEstadio = document.querySelector('.pauta_estadio_css')
     // Asegúrate de que el elemento existe antes de aplicar estilos
     if (pautaEstadio) {
-      // crear etiqueta img y poner la imagen
+      // crear etiqueta img y poner la imagen envolver la imagen en a para que sea clickeable y redireccione a la url de estadío
+      let a = document.createElement('a');
+      a.href = "https://www.vistazo.com/deportes/jjoo-2024";
       let img = document.createElement('img');
       img.src = url;
       img.style.width = '100%';
@@ -47,7 +49,9 @@ function cambiarImagenPautaEstadio() {
       img.style.display = 'block';
       pautaEstadio.style.width = '100%';
       pautaEstadio.style.overflow = 'hidden';
-      pautaEstadio.appendChild(img);
+      a.appendChild(img);
+      pautaEstadio.appendChild(a);
+
     }
   } catch (error) {
     console.log(error);
