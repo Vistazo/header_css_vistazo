@@ -11,10 +11,12 @@ document.addEventListener("DOMContentLoaded", function() {
 document.addEventListener('DOMContentLoaded', function () {
   // Crear el elemento script
   let path = window.location.pathname;
+  console.log(path);
   EjecutarScriptTaboola();
   EjecutarInit();
-  if(path == "/"){
+  if(path == "/" || path == "/tes/index.html"){
     cambiarImagenPautaHome();
+    videoTecarender();
   }
   if(path == "/deportes" || path == "/" || path == "/deportes/jjoo-2024"){
       cambiarImagenPautaEstadio();
@@ -68,6 +70,43 @@ function cambiarImagenPautaEstadio() {
   } catch (error) {
     console.log(error);
   }
+}
+
+function videoTecarender() {
+  try {
+    fetch('https://api.ticketsecuador.ec/letter/videoteca_listar')
+    .then(res => res.json())
+    .then(data => {
+      var videoteca = document.querySelector('.videoteca .noticias');
+      var videoPlayer = document.querySelector('.art-youtube .responsive-video iframe');
+      if (videoteca && data.success) {
+        videoteca.innerHTML = '';
+        // Populate the video list
+        data.data.forEach(video => {
+          const videoItem = document.createElement('div');
+          videoItem.style.cursor = 'pointer';
+          videoItem.innerHTML = `
+          <img src="https://img.youtube.com/vi/${getYouTubeID(video.youtubeVideo)}/0.jpg" alt="${video.titulo}" width="100%">
+          <p style='color: white; font-size: 16px; margin: 0px;'
+          onmouseover="this.style.color='red'"
+          onmouseout="this.style.color='white'"
+          >${video.titulo}</p>`;
+          videoItem.onclick = () => {
+              videoPlayer.src = `//${video.youtubeVideo}`;
+          };
+          console.log(videoItem);
+          videoteca.appendChild(videoItem);
+        });
+      }
+    });
+  } catch (error) {
+    console.log(error);
+  }
+}
+function getYouTubeID(url) {
+  const urlParts = url.split('/');
+  const videoID = urlParts[urlParts.length - 1].split('?')[0];
+  return videoID;
 }
 
 function EjecutarInit() {
