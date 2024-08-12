@@ -816,3 +816,19 @@ li.sect-a4306ce1cba409d40f6649f40a27a166 a.tab-item.lnk .sectionName{
         height: 110px; /* Altura para móvil */
     }
 }
+
+
+/* NOMBRE DE LA SECCION */
+.template-infinity .article-section .section{
+    background: #000;
+    padding: 2px 5px;
+    border-radius: 5px;
+    color: #FFF;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* NOMBRE DE LA SECCION CON HOVER */
+.template-infinity .article-section .section:hover{
+    background: #fd0f03;
+    color: #FFF;
+}
