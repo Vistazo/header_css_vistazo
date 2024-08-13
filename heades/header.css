@@ -832,3 +832,7 @@ li.sect-a4306ce1cba409d40f6649f40a27a166 a.tab-item.lnk .sectionName{
     background: #fd0f03;
     color: #FFF;
 }
+/* SUBTITULOS */
+.subheadline.artit.font-2.medium{
+    font-size: large;
+}
