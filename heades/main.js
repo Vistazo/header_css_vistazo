@@ -15,12 +15,12 @@ document.addEventListener('DOMContentLoaded', function () {
   EjecutarScriptTaboola();
   EjecutarInit();
   if(path == "/" || path == "/tes/index.html"){
-    cambiarImagenPautaHome();
+    // cambiarImagenPautaHome();
     videoTecarender();
   }
-  if(path == "/deportes" || path == "/" || path == "/deportes/jjoo-2024"){
-      cambiarImagenPautaEstadio();
-  }
+  // if(path == "/deportes" || path == "/" || path == "/deportes/jjoo-2024"){
+  //   cambiarImagenPautaEstadio();
+  // }
 });
 
 function cambiarImagenPautaHome() {
