@@ -78,21 +78,24 @@ function videoTecarender() {
     .then(res => res.json())
     .then(data => {
       var videoteca = document.querySelector('.videoteca .noticias');
-      var videoContainer = document.querySelector('.art-youtube .responsive-video');
       var videoPlayer = document.querySelector('.art-youtube .responsive-video iframe');
 
-      // Si el contenedor no existe, crearlo
-      if (!videoContainer) {
-        const artYoutube = document.querySelector('.art-youtube');
-        if (artYoutube) {
-          videoContainer = document.createElement('div');
-          videoContainer.classList.add('responsive-video');
-          artYoutube.appendChild(videoContainer);
-        } else {
-          console.error("No se encontró el contenedor principal '.art-youtube'.");
-          return;
-        }
+      // Si no existe el contenedor principal, crearlo
+      if (!artYoutube) {
+        artYoutube = document.createElement('div');
+        artYoutube.classList.add('art-youtube');
+        document.body.appendChild(artYoutube); // Cambia este punto de inserción según tu estructura de DOM
       }
+
+      var videoContainer = artYoutube.querySelector('.responsive-video');
+      
+      // Si el contenedor de video no existe, crearlo
+      if (!videoContainer) {
+        videoContainer = document.createElement('div');
+        videoContainer.classList.add('responsive-video');
+        artYoutube.appendChild(videoContainer);
+      }
+
 
       // Crear el iframe si no existe
       var videoPlayer = videoContainer.querySelector('iframe');
