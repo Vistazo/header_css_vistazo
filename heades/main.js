@@ -79,6 +79,10 @@ function videoTecarender() {
     .then(data => {
       var videoteca = document.querySelector('.videoteca .noticias');
       var videoPlayer = document.querySelector('.art-youtube .responsive-video iframe');
+      if(!videoPlayer.src || videoPlayer.src == ''){
+        videoPlayer.src = `//${data.data[0].youtubeVideo}`;
+      }
+
       if (videoteca && data.success) {
         videoteca.innerHTML = '';
         // Populate the video list
