@@ -79,6 +79,7 @@ function videoTecarender() {
     .then(data => {
       var videoteca = document.querySelector('.videoteca .noticias');
       var videoPlayer = document.querySelector('.art-youtube .responsive-video iframe');
+      var artYoutube = document.querySelector('.art-youtube');
 
       // Si no existe el contenedor principal, crearlo
       if (!artYoutube) {
