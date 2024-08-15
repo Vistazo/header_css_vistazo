@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
   EjecutarInit();
   if(path == "/" || path == "/tes/index.html"){
     // cambiarImagenPautaHome();
-    // videoTecarender();
+    videoTecarender();
   }
   // if(path == "/deportes" || path == "/" || path == "/deportes/jjoo-2024"){
   //   cambiarImagenPautaEstadio();
