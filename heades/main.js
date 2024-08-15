@@ -78,13 +78,25 @@ function videoTecarender() {
     .then(res => res.json())
     .then(data => {
       var videoteca = document.querySelector('.videoteca .noticias');
+      var videoContainer = document.querySelector('.art-youtube .responsive-video');
       var videoPlayer = document.querySelector('.art-youtube .responsive-video iframe');
 
+      // Si no existe el iframe, crearlo e insertarlo en el contenedor
       if (!videoPlayer) {
-        console.error("Elemento iframe no encontrado");
-        return;
+        if (videoContainer) {
+          videoPlayer = document.createElement('iframe');
+          videoPlayer.setAttribute('width', '100%');
+          videoPlayer.setAttribute('height', '315');
+          videoPlayer.setAttribute('frameborder', '0');
+          videoPlayer.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+          videoPlayer.setAttribute('allowfullscreen', true);
+          videoContainer.appendChild(videoPlayer);
+        } else {
+          console.error("El contenedor de video no se encontró en el DOM.");
+          return;
+        }
       }
-      
+
       if(!videoPlayer.src || videoPlayer.src == ''){
         videoPlayer.src = `//${data.data[0].youtubeVideo}`;
       }
