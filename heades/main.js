@@ -79,41 +79,6 @@ function videoTecarender() {
     .then(data => {
       var videoteca = document.querySelector('.videoteca .noticias');
       var videoPlayer = document.querySelector('.art-youtube .responsive-video iframe');
-      var artYoutube = document.querySelector('.art-youtube');
-
-      // Si no existe el contenedor principal, crearlo
-      if (!artYoutube) {
-        artYoutube = document.createElement('div');
-        artYoutube.classList.add('art-youtube');
-        document.body.appendChild(artYoutube); // Cambia este punto de inserción según tu estructura de DOM
-      }
-
-      var videoContainer = artYoutube.querySelector('.responsive-video');
-      
-      // Si el contenedor de video no existe, crearlo
-      if (!videoContainer) {
-        videoContainer = document.createElement('div');
-        videoContainer.classList.add('responsive-video');
-        artYoutube.appendChild(videoContainer);
-      }
-
-
-      // Crear el iframe si no existe
-      var videoPlayer = videoContainer.querySelector('iframe');
-      if (!videoPlayer) {
-        videoPlayer = document.createElement('iframe');
-        videoPlayer.setAttribute('width', '100%');
-        videoPlayer.setAttribute('height', '315');
-        videoPlayer.setAttribute('frameborder', '0');
-        videoPlayer.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
-        videoPlayer.setAttribute('allowfullscreen', true);
-        videoContainer.appendChild(videoPlayer);
-      }
-
-      if(!videoPlayer.src || videoPlayer.src == ''){
-        videoPlayer.src = `//${data.data[0].youtubeVideo}`;
-      }
-
       if (videoteca && data.success) {
         videoteca.innerHTML = '';
         // Populate the video list
