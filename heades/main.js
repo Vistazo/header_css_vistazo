@@ -81,20 +81,29 @@ function videoTecarender() {
       var videoContainer = document.querySelector('.art-youtube .responsive-video');
       var videoPlayer = document.querySelector('.art-youtube .responsive-video iframe');
 
-      // Si no existe el iframe, crearlo e insertarlo en el contenedor
-      if (!videoPlayer) {
-        if (videoContainer) {
-          videoPlayer = document.createElement('iframe');
-          videoPlayer.setAttribute('width', '100%');
-          videoPlayer.setAttribute('height', '315');
-          videoPlayer.setAttribute('frameborder', '0');
-          videoPlayer.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
-          videoPlayer.setAttribute('allowfullscreen', true);
-          videoContainer.appendChild(videoPlayer);
+      // Si el contenedor no existe, crearlo
+      if (!videoContainer) {
+        const artYoutube = document.querySelector('.art-youtube');
+        if (artYoutube) {
+          videoContainer = document.createElement('div');
+          videoContainer.classList.add('responsive-video');
+          artYoutube.appendChild(videoContainer);
         } else {
-          console.error("El contenedor de video no se encontró en el DOM.");
+          console.error("No se encontró el contenedor principal '.art-youtube'.");
           return;
         }
+      }
+
+      // Crear el iframe si no existe
+      var videoPlayer = videoContainer.querySelector('iframe');
+      if (!videoPlayer) {
+        videoPlayer = document.createElement('iframe');
+        videoPlayer.setAttribute('width', '100%');
+        videoPlayer.setAttribute('height', '315');
+        videoPlayer.setAttribute('frameborder', '0');
+        videoPlayer.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+        videoPlayer.setAttribute('allowfullscreen', true);
+        videoContainer.appendChild(videoPlayer);
       }
 
       if(!videoPlayer.src || videoPlayer.src == ''){
