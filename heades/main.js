@@ -14,9 +14,8 @@ document.addEventListener('DOMContentLoaded', function () {
   console.log(path);
   EjecutarScriptTaboola();
   EjecutarInit();
-  if(path == "/" || path == "/tes/index.html" || path == "/tes/videoteca.html"){
+  if(path == "/" || path == "/tes/index.html"){
     // cambiarImagenPautaHome();
-    videoTecaPrincipal();
     videoTecarender();
   }
   // if(path == "/deportes" || path == "/" || path == "/deportes/jjoo-2024"){
@@ -95,6 +94,7 @@ function videoTecarender() {
           videoItem.onclick = () => {
               videoPlayer.src = `//${video.youtubeVideo}`;
           };
+          console.log(videoItem);
           videoteca.appendChild(videoItem);
         });
       }
@@ -103,57 +103,6 @@ function videoTecarender() {
     console.log(error);
   }
 }
-
-function videoTecaPrincipal() {
-  try {
-    fetch('https://api.ticketsecuador.ec/letter/videoteca_listar')
-      .then(res => res.json())
-      .then(data => {
-        var videoPrincipal = document.querySelector('.videoteca_principal');
-        videoPrincipal.innerHTML = '';
-         videoPrincipal.innerHTML = `                                                                                                        <section
-         class="noticias">
-         <article
-             class=" article element  full-access norestricted"
-             iteridart="YJ7658643">
-             <div
-                 class="IMG odd n1 ">
-                 <div
-                     class="media_block">
-                     <div
-                         class="multimedia">
-                         <div
-                             class="multimediaMacroWrapper">
-                             <ul
-                                 class="bxMultimedia0">
-                                 <li class="contentMedia art-youtube"
-                                     iterhtmlid="idcon=1634782;order=0">
-                                     <div
-                                         class="responsive-video">
-                                         <iframe
-                                             title="iframeYT"
-                                             allowfullscreen
-                                             frameborder="0"
-                                             height="409"
-                                             width="845"
-                                             src="//${data.data[0].youtubeVideo}"></iframe>
-                                             ></iframe>
-                                     </div>
-                                 </li>
-                             </ul>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-         </article>
-     </section>`;       
-      })
-      .catch(error => console.log(error));
-  } catch (error) {
-    console.log(error);
-  }
-}
-
 function getYouTubeID(url) {
   const urlParts = url.split('/');
   const videoID = urlParts[urlParts.length - 1].split('?')[0];
