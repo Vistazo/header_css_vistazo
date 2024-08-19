@@ -711,7 +711,7 @@ function EjecutarInit() {
                 class="lst-item tabnav sect-2206 sect-741e1b9e1eda38b70605f3cf49942c8d"
               >
                 <a
-                  href="https://www.vistazo.com/replica/disculpas-publicas-al-proyecto-inmobiliario-torres-elit-por-utilizar-una-imagen-suya-sin-autorizacion-FY6098623"
+                  href="https://www.vistazo.com/replica/pedido-de-replica-de-xavier-jordan-mendoza-AJ7812637"
                   rel="nofollow"
                   class="tab-item lnk"
                   title=""
