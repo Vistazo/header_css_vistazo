@@ -17,35 +17,27 @@ document.addEventListener('DOMContentLoaded', function () {
   if(path == "/" || path == "/tes/index.html"){
     // cambiarImagenPautaHome();
     videoTecarender();
-    // LiveYoutube();
+    RedirecionEspecial();
   }
   // if(path == "/deportes" || path == "/" || path == "/deportes/jjoo-2024"){
   //   cambiarImagenPautaEstadio();
   // }
 });
 
-
-// live youtube
+// redireccion a youtube
 // https://www.youtube.com/watch?v=UMwzt2_r81E
-function LiveYoutube() {
-    // Identificador del video en vivo de YouTube
-    const videoId = 'UMwzt2_r81E';
-    // Crear un nuevo iframe para el video en vivo
-    const iframe = document.createElement('iframe');
-    iframe.width = '100%';
-    iframe.height = 'auto';
-    iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
-    iframe.title = 'YouTube live stream';
-    iframe.frameBorder = '0';
-    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-    iframe.allowFullscreen = true;
-    iframe.allow = 'autoplay';
+function RedirecionEspecial() {
+  var url = "https://www.youtube.com/watch?v=UMwzt2_r81E"
 
-    // Seleccionar el contenedor con la clase 'bm_especial' y reemplazar el contenido existente con el iframe
-    const container = document.querySelector('.bm_especial');
-    container.innerHTML = ''; // Limpiar el contenido existente
-    container.appendChild(iframe); // Añadir el iframe
+  const a = document.querySelector('.bm_especial a');
+  if (a) {
+    a.href = url;
+  }
+
 }
+
+
+
 
 function cambiarImagenPautaHome() {
   var enlace = document.querySelector(".IMG_PAUTAS_DIGITALES .multimedia a");
