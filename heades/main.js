@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if(path == "/" || path == "/tes/index.html"){
     // cambiarImagenPautaHome();
     videoTecarender();
-    LiveYoutube();
+    // LiveYoutube();
   }
   // if(path == "/deportes" || path == "/" || path == "/deportes/jjoo-2024"){
   //   cambiarImagenPautaEstadio();
@@ -39,6 +39,7 @@ function LiveYoutube() {
     iframe.frameBorder = '0';
     iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
     iframe.allowFullscreen = true;
+    iframe.allow = 'autoplay';
 
     // Seleccionar el contenedor con la clase 'bm_especial' y reemplazar el contenido existente con el iframe
     const container = document.querySelector('.bm_especial');
