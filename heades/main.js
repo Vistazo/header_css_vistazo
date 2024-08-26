@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if(path == "/" || path == "/tes/index.html"){
     // cambiarImagenPautaHome();
     videoTecarender();
-    RedirecionEspecial();
+    // RedirecionEspecial();
   }
   // if(path == "/deportes" || path == "/" || path == "/deportes/jjoo-2024"){
   //   cambiarImagenPautaEstadio();
