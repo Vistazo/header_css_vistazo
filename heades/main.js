@@ -19,9 +19,10 @@ document.addEventListener('DOMContentLoaded', function () {
     videoTecarender();
     // RedirecionEspecial();
   }
-  // if(path == "/deportes" || path == "/" || path == "/deportes/jjoo-2024"){
-  //   cambiarImagenPautaEstadio();
-  // }
+  if(path == "/deportes/jjoo-2024"){
+    // if(path == "/deportes" || path == "/" || path == "/deportes/jjoo-2024"){
+    cambiarImagenPautaEstadio();
+  }
 });
 
 // redireccion a youtube
