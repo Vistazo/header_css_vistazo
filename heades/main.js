@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
   EjecutarScriptTaboola();
   EjecutarInit();
   if(path == "/" || path == "/tes/index.html"){
-    // cambiarImagenPautaHome();
+    cambiarImagenPautaHome();
     videoTecarender();
     // RedirecionEspecial();
   }
