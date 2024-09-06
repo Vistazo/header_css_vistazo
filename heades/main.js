@@ -12,9 +12,9 @@ document.addEventListener('DOMContentLoaded', function () {
   // Crear el elemento script
   let path = window.location.pathname;
   console.log(path);
+  CanalWhatsapp();
   EjecutarScriptTaboola();
   EjecutarInit();
-  CanalWhatsapp();
   if(path == "/" || path == "/tes/index.html"){
     cambiarImagenPautaHome();
     videoTecarender();
@@ -28,9 +28,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 function CanalWhatsapp() {
-  var elemento = document.querySelector('.e1gzwzxm0');
+  var elemento = document.querySelector('.ancl_whatsapp_link_redirect');
+  console.log(elemento);
   if (elemento) {
-    elemento.textContent = ' 📲 Empieza a seguirnos ahora🚀';
+    elemento.textContent = '[¡Estamos en WhatsApp! 📲 Empieza a seguirnos ahora🚀]';
   }
 }
 
