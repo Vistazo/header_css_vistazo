@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 function CanalWhatsapp() {
-  var elemento = document.querySelector('.ancl_whatsapp_link_redirect');
+  var elemento = document.querySelector('.acnal_whatsapp_link_redirect');
   console.log(elemento);
   if (elemento) {
     elemento.textContent = '[¡Estamos en WhatsApp! 📲 Empieza a seguirnos ahora🚀]';
