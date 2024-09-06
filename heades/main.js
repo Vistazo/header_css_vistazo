@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
   console.log(path);
   EjecutarScriptTaboola();
   EjecutarInit();
+  CanalWhatsapp();
   if(path == "/" || path == "/tes/index.html"){
     cambiarImagenPautaHome();
     videoTecarender();
@@ -24,6 +25,14 @@ document.addEventListener('DOMContentLoaded', function () {
     cambiarImagenPautaEstadio();
   }
 });
+
+
+function CanalWhatsapp() {
+  var elemento = document.querySelector('.e1gzwzxm0');
+  if (elemento) {
+    elemento.textContent = ' 📲 Empieza a seguirnos ahora🚀';
+  }
+}
 
 // redireccion a youtube
 // https://www.youtube.com/watch?v=UMwzt2_r81E
