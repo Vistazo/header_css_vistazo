@@ -13,7 +13,10 @@ document.addEventListener('DOMContentLoaded', function () {
   let path = window.location.pathname;
   console.log(path);
   CanalWhatsapp();
-  // EjecutarScriptTaboola();
+  // si si esta en movil que no se ejecute el script de taboola
+  if (window.innerWidth > 768) {
+    EjecutarScriptTaboola();
+  }
   EjecutarInit();
   if(path == "/" || path == "/tes/index.html"){
     cambiarImagenPautaHome();
