@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
   let path = window.location.pathname;
   console.log(path);
   CanalWhatsapp();
-  EjecutarScriptTaboola();
+  // EjecutarScriptTaboola();
   EjecutarInit();
   if(path == "/" || path == "/tes/index.html"){
     cambiarImagenPautaHome();
