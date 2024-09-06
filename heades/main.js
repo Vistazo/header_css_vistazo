@@ -34,7 +34,10 @@ function CanalWhatsapp() {
   var elemento = document.querySelector('.acnal_whatsapp_link_redirect');
   console.log(elemento);
   if (elemento) {
-    elemento.textContent = '[¡Estamos en WhatsApp! 📲 Empieza a seguirnos ahora🚀]';
+    //icon https://codigomarret.online/upload/img/whatsapp_37229.ico
+    let textContent = '<img src="https://codigomarret.online/upload/img/whatsapp_37229.ico" alt="whatsapp-icon" style="width: 20px; height: 20px; margin-right: 5px;">[¡Estamos en WhatsApp! 📲 Empieza a seguirnos ahora🚀]';
+    elemento.innerHTML = textContent;
+    // elemento.textContent = '<span class="whatsapp-icon">📲</span>[¡Estamos en WhatsApp! 📲 Empieza a seguirnos ahora🚀]';
     // que valla en negrita
     elemento.style.fontWeight = 'bold';
     // que tenga un color
@@ -48,12 +51,10 @@ function CanalWhatsapp() {
 // https://www.youtube.com/watch?v=UMwzt2_r81E
 function RedirecionEspecial() {
   var url = "https://www.youtube.com/watch?v=UMwzt2_r81E"
-
   const a = document.querySelector('.bm_especial a');
   if (a) {
     a.href = url;
   }
-
 }
 
 
