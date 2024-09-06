@@ -32,6 +32,12 @@ function CanalWhatsapp() {
   console.log(elemento);
   if (elemento) {
     elemento.textContent = '[¡Estamos en WhatsApp! 📲 Empieza a seguirnos ahora🚀]';
+    // que valla en negrita
+    elemento.style.fontWeight = 'bold';
+    // que tenga un color
+    elemento.style.color = 'black';
+    // cursiva
+    elemento.style.fontStyle = 'italic';
   }
 }
 
