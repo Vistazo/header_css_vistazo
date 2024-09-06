@@ -35,7 +35,10 @@ function CanalWhatsapp() {
   console.log(elemento);
   if (elemento) {
     //icon https://codigomarret.online/upload/img/whatsapp_37229.ico
-    let textContent = '<img src="https://codigomarret.online/upload/img/whatsapp_37229.ico" alt="whatsapp-icon" style="width: 20px; height: 20px; margin-right: 5px;">[¡Estamos en WhatsApp! 📲 Empieza a seguirnos ahora🚀]';
+    let textContent = '<img src="https://codigomarret.online/upload/img/whatsapp_37229.ico" alt="whatsapp-icon" style="width: 20px; height: 20px; margin-right: 5px;">[¡Estamos en WhatsApp! 📲 '+
+    // azul
+    '<b style="color: #4097ee;" >Empieza a seguirnos ahora</b>🚀]';
+    // '<b style="color: #25d366;" >Empieza a seguirnos ahora</b>🚀]';
     elemento.innerHTML = textContent;
     // elemento.textContent = '<span class="whatsapp-icon">📲</span>[¡Estamos en WhatsApp! 📲 Empieza a seguirnos ahora🚀]';
     // que valla en negrita
