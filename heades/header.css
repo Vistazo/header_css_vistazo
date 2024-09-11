@@ -343,7 +343,8 @@ li.sect-74b11848b5e1a47d79fed2bc56e2a9fc a.tab-item.lnk .sectionName{
 
 
 .menu_header_bm li.sect-a4306ce1cba409d40f6649f40a27a166 a.tab-item.lnk {
-    background-image: url(https://www.vistazo.com/base-portlet/webrsrc/ctxvar/2efe3a01-c41f-40d4-a373-c46a0730f3cb.png);
+    /* background-image: url(https://www.vistazo.com/base-portlet/webrsrc/ctxvar/2efe3a01-c41f-40d4-a373-c46a0730f3cb.png); */
+    /* text-content: "Economía"; */
     background-repeat: no-repeat;
     background-size: contain;
     width: 80px;
@@ -351,10 +352,16 @@ li.sect-74b11848b5e1a47d79fed2bc56e2a9fc a.tab-item.lnk .sectionName{
     display: block;
     background-position: center center;
 }
+
 li.sect-a4306ce1cba409d40f6649f40a27a166 a.tab-item.lnk .sectionName{
-    font-size: 1px;
-    opacity: 0;
+    font-size: 20px;
+    color: #fd0f03;
+    font-weight: bold;
 }
+li.sect-a4306ce1cba409d40f6649f40a27a166 a.tab-item.lnk .sectionName:hover{
+    color: #fff;
+}
+
 
 /* SubMenu */
 .child-nav.cf{
