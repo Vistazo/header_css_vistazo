@@ -10,7 +10,9 @@
     border-bottom: 1px solid white;
     height: 60px;
 }
-
+header .container{
+    margin: 0px;
+}
 .menu_header_bm{
    margin: 0px;
    display: none;
@@ -564,6 +566,6 @@ li a.menu_text_principal{
     }
     .btn_menu{
         /* ajustamos a movil */
-        
+
     }
 }
