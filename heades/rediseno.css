@@ -10,6 +10,7 @@
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
     border-bottom: 1px solid white;
     height: 60px;
+    margin-bottom: 10px;
 }
 
 /* Para asegurarte de que el contenedor padre también ocupe el 100% del ancho */
@@ -184,6 +185,7 @@ li a.menu_text_principal{
     background-color: #000;
     padding: 10px;
     text-align: center;
+    height: 30px;
 }
 
 .subnav ul {
