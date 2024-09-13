@@ -51,8 +51,8 @@ header, .iter-header-wrapper {
 .nav-links {
     list-style: none;
     display: flex;
-    margin: 0;
-    padding: 0;
+    justify-content: space-between; /* Distribuir espacio uniformemente */
+    align-items: center; /* Asegura que todos los elementos estén alineados verticalmente */
 }
 
 .nav-links li {
@@ -139,6 +139,41 @@ li a.menu_text_principal{
     width: 100%;
     z-index: 1;
     /* margin-top: 1px; */
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cta {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.navbar .logo {
+    max-width: 150px;
+    height: auto;
+}
+
+.cta img {
+    max-height: 40px;
+}
+
+.cta .login-btn, .subscribe-btn {
+    padding: 5px 15px;
+    font-size: 14px;
+}
+
+.navbar {
+    position: relative;
+    z-index: 10; /* Asegura que esté siempre encima de otros elementos */
+}
+
+.cta {
+    z-index: 9; /* Un poco detrás del logo si es necesario */
 }
 
 
