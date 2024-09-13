@@ -1,0 +1,496 @@
+/* Para asegurarte de que el contenedor padre también ocupe el 100% del ancho */
+header, .iter-header-wrapper {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    z-index: 1;
+} 
+/* Hacer que box-shadow bottom a header, iter-wrapper */
+.navbar {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+
+.menu_header_bm{
+   margin: 0px;
+   display: none;
+}
+.header_suscribete_bm{
+    display: none;
+}
+
+/* Estilo base para el navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    color: white;
+    margin: 0px;
+    height: 60px;
+}
+
+.navbar .logo {
+    height: 25px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 10px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.menu_text_principal {
+    color: white;
+    font-weight: bold;
+}
+li a.menu_text_principal{
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    color: #f00; /* Cambia el color de hover según tu diseño */
+}
+
+/* Estilos generales para la sección cta */
+.cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+/* Estilos para el botón de Login */
+.login a.lg_bm {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    color: black;
+    padding: 3px 8px;
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 50px;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    margin-right: 5px;
+}
+
+.login img {
+    margin-right: 5px;
+}
+
+/* Estilos para el menú hamburguesa */
+.btn_menu {
+    position: relative; /* Para que el menú se posicione en relación con el contenedor */
+}
+.btn_menu {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.hamburg_bm svg, .hamburg_bm_lupin svg {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.hamburg_bm svg:hover, .hamburg_bm_lupin svg:hover {
+    transform: scale(1.1); /* Efecto hover para agrandar un poco el ícono */
+    color: #f00; /* Cambia el color a rojo al hacer hover */
+}
+
+
+.subscribe-btn{
+    background-color: white;
+    padding: 15px 15px 20px 20px;
+    height: auto;
+    color: black;
+    font-family: 'Crete Round',serif;
+    clip-path: polygon(31.5% -25.13%,96.5% -24%,95.81% 115.07%,0% 100%);
+    font-size: 18px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.linearoja_subcribe{
+    background-color: #f00;
+    height: 5px;
+    width: 100%;
+    z-index: 1;
+    /* margin-top: 1px; */
+}
+
+
+/* Submenú */
+.subnav {
+    background-color: #000;
+    padding: 10px;
+    text-align: center;
+}
+
+.subnav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.subnav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.subnav ul li a {
+    text-decoration: none;
+}
+
+.menu_text_principal{
+    font-family: 'YourFontHere', sans-serif;
+    font-weight: bolder;
+    font-size: large;
+    text-decoration: none;
+}
+.menu_text_principal_estadio { 
+    color: #f00; 
+    font-family: 'YourFontHere', sans-serif;
+    font-weight: bolder;
+    font-size: large;
+    text-decoration: none;
+}
+.menu_text_principal_estadio:hover { 
+    color: white !important;
+}
+/* Si es menor o igual a 1024 el tamano de la letra tiene que cambar */
+@media (max-width: 1024px) {
+    .menu_text_principal{
+        font-size: small;
+    }
+    .logo {
+        height: 10px;
+    }
+}
+
+/* Si es menor o igual a 768 el tamano de la letra tiene que cambar */
+@media (max-width: 768px) {
+    .menu_text_principal{
+        font-size: x-small;
+    }
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #000;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        text-align: center;
+    }
+    
+    .nav-links li {
+        margin: 15px 0;
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .search-icon {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .subnav ul {
+        display: none;
+    }
+
+    .subnav ul.active {
+        display: block;
+    }
+}
+
+/* MEDIDAS RESPOSIVE PARA LOGIN-BTN */
+@media (max-width: 1024px) {
+    .btn_menu {
+        margin-top: 10px;
+    }
+
+    /* .login a.lg_bm {
+        width: 80px !important;
+        text-align: center;
+    } */
+
+    .subscribe-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/*MEDIDAS PARA LA IMAGEN LOGIO*/
+@media (max-width: 1024px) {
+    .logo_rediseno {
+        height: 10px;
+    }
+}
+
+
+/* HOGAR */
+.hogar-text {
+    font-family: 'YourFontHere', sans-serif; /* Cambia a la fuente que estás utilizando */
+    font-size: 20px; /* Ajusta según el tamaño deseado */
+    font-weight: bold;
+}
+
+.letter-h, .letter-g, .letter-a, .letter-r {
+    color: white; /* Letras en color blanco */
+}
+
+.letter-o {
+    color: #800080; /* Color morado para la letra O */
+    font-size: 20px; /* Ajusta el tamaño si quieres que sea más grande */
+}
+
+.letter-o::before {
+    color: #800080; /* Color del círculo */
+    display: inline-block;
+    font-size: 20px; /* Tamaño del círculo */
+}
+
+/* HOKAR Si es menor o igual a 1024 el tamano de la letra tiene que cambar */
+@media (max-width: 1024px) {
+    .hogar-text {
+        font-size: large;
+    }
+    .letter-h, .letter-g, .letter-a, .letter-r, .letter-o {
+        font-size: large;
+    }
+    .menu_text_principal_estadio{
+        font-size: large;
+    }
+}
+
+/* MENU BURGER */
+/* Estilos para el contenedor del menú hamburguesa */
+.btn_menu {
+    position: relative; /* Para que el menú se posicione en relación con el contenedor */
+}
+
+/* Menú hamburguesa desplegable */
+.menu_burguer_bm {
+    display: none; /* Oculto por defecto */
+    background-color: black;
+    position: absolute;
+    top: 60px; /* Para asegurarse de que aparezca justo debajo del botón */
+    right: 0; /* Alineado a la derecha */
+    width: 150px; /* Ajusta el ancho según sea necesario */
+    padding: 10px;
+    border-radius: 3px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    right: 7%;
+}
+
+.menu_burguer_bm ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu_burguer_bm ul li {
+    margin: 10px 0;
+}
+
+.menu_burguer_bm ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.menu_burguer_bm ul li a:hover {
+    color: #f00; /* Cambia el color en hover */
+}
+
+
+/* BUSCARDOR */
+/* Contenedor para el buscador */
+.search-container {
+    position: relative;
+}
+
+/* Estilos para la caja de búsqueda, inicialmente oculta */
+.basic_search_bm {
+    display: none;
+    position: absolute;
+    top: 60px; /* Ajusta para posicionar debajo de la lupa */
+    right: 0;
+    background-color: white;
+    padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+.basic_search_bm input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.basic_search_bm button {
+    padding: 8px 15px;
+    background-color: #000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.basic_search_bm button:hover {
+    background-color: #f00; /* Cambia a rojo al hacer hover */
+}
+
+/* Hover en el icono de lupa */
+.search-icon:hover {
+    cursor: pointer;
+    color: #f00; /* Cambia de color en hover */
+}
+.header_contain_dm .basic_search_bm {
+    margin-top: 10px;
+    position: absolute;
+    right: 45px;
+    top: 50px;
+    background: #fff;
+    box-shadow: 0 2px 6px rgb(0 0 0 / 18%);
+    border-top: 2px solid #fd0f03;
+    padding: 10px;
+    display: none;
+}
+.basic_search_bm input[type="text"] {
+    width: 235px;
+    height: 25px;
+    margin: 0;
+    border-right: 0;
+    line-height: 17px;
+    border-color: #eaeaea !important;
+    font-size: 12px;
+    color: #444;
+    border: 1px solid #e1e1e1;
+    max-width: 100%;
+    padding: 3px 9px;
+    outline: none;
+}
+
+.basic_search_bm input[type=submit] {
+    height: 32px;
+    min-width: 67px;
+    line-height: 17px;
+    padding: 7px 15px 8px;
+    text-shadow: none;
+    vertical-align: top;
+    right: 20px;
+    margin: 0 !important;
+    -webkit-transition: background-color .4s;
+    -moz-transition: background-color .4s;
+    -o-transition: background-color .4s;
+    transition: background-color .4s;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    background-color: #222;
+    border-radius: 0;
+    color: #fff;
+    border: none;
+    font-weight: normal;
+    cursor: pointer;
+    /* darle un placeholder */
+    font-size: 12px;
+}
+
+.basic_search_bm input[type=submit]:hover {
+    background-color: #000
+}
+
+
+/* SUBMENU */
+.subnav{
+    top: 60px;
+    border-top: #ddd 1px solid;
+    display: none;
+}
+.subnav .actualidad_submenu{
+    display: none;
+    top: 60px;
+    right: 0;
+    background-color: #000;
+    padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    z-index: 1000;
+}
+.subnav .politica_submenu{
+    display: none;
+    top: 60px;
+    right: 0;
+    background-color: #000;
+    padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    z-index: 1000;
+}
+.subnav .estilo_vida_submenu{
+    display: none;
+    top: 60px;
+    right: 0;
+    background-color: #000;
+    padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    z-index: 1000;
+}
+.subnav .estadio_submenu{
+    display: none;
+    top: 60px;
+    right: 0;
+    background-color: #000;
+    padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    z-index: 1000;
+}
+.subnav .portafolio_submenu{
+    display: none;
+    top: 60px;
+    right: 0;
+    background-color: #000;
+    padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    z-index: 1000;
+}
+
+.subnav li a{
+    font-family: 'YourFontHere', sans-serif;
+    text-decoration: none;
+    color: white;
+}
+
+.actualidad_submenu li a:hover{
+    color: #f00;
+}

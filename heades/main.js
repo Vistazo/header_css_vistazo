@@ -497,14 +497,14 @@ function EjecutarInit() {
         </div>`
     e3.innerHTML = div3;
 
-    e4 = document.querySelector(".sect-74b11848b5e1a47d79fed2bc56e2a9fc");
-    div4 = `<div class="tab-grp">
-            ${e4.innerHTML}
-            <span class="hasChildsIcon"></span>
-            <div class="child-nav cf">
-            </div>
-        </div>`
-    e4.innerHTML = div4;
+    // e4 = document.querySelector(".sect-74b11848b5e1a47d79fed2bc56e2a9fc");
+    // div4 = `<div class="tab-grp">
+    //         ${e4.innerHTML}
+    //         <span class="hasChildsIcon"></span>
+    //         <div class="child-nav cf">
+    //         </div>
+    //     </div>`
+    // e4.innerHTML = div4;
 
     e5 = document.querySelector(".sect-a4306ce1cba409d40f6649f40a27a166");
     div5 = `<div class="tab-grp">
@@ -844,7 +844,7 @@ function EjecutarInit() {
 
     var elems = document.querySelector('.lst-item.tabnav.sect-1824.sect-262e52091545304582cf18882fc67b4f div a strong');
     if (elems) {
-      elems.style.fontSize = "1px";
+      // elems.style.fontSize = "1px";
     }
     hogar = document.querySelector(".lst-item.tabnav.sect-529.sect-0903d1806e4bd8bf290229a78d484445 a");
     if (hogar) {
@@ -917,7 +917,7 @@ function EjecutarInit() {
       } else if (event.target.className.baseVal == "burger") {
         document.querySelector(".basic_search_bm").style.display = "none";
       } else {
-        movil = window.matchMedia("(min-width: 360px) and (max-width: 1024px)");
+        movil = window.matchMedia("(min-width: 360px) and (max-width: 1023px)");
         if (!movil.matches) {
           document.querySelector(".menu_burguer_bm").style.display = "none";
           // document.querySelector(".basic_search_bm").style.display = "none";
