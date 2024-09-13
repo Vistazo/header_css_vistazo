@@ -328,7 +328,7 @@ li.sect-0903d1806e4bd8bf290229a78d484445 a.tab-item.lnk .sectionName{
 }
 /* Enfoque */
 .lst-item.tabnav.sect-379.sect-74b11848b5e1a47d79fed2bc56e2a9fc{
-    display: none;
+    /* display: none; */
 }
 .menu_header_bm li.sect-74b11848b5e1a47d79fed2bc56e2a9fc a.tab-item.lnk {
     /* background-image: url(https://www.vistazo.com/base-portlet/webrsrc/ctxvar/c607a3ce-c67c-44a9-873c-81f2200d1fee.png); */
