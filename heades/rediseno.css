@@ -130,6 +130,13 @@ li a.menu_text_principal{
     /* margin-top: 1px; */
 }
 
+@media (max-width: 410px) {
+    .login{
+        display: none;
+    }
+    
+}
+
 @media (max-width: 800px) {
     .nav-links {
         flex-direction: column;
