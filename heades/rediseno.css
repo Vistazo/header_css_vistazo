@@ -10,19 +10,13 @@
     border-bottom: 1px solid white;
     height: 60px;
 }
-header .container{
-    margin: 0px;
-}
+
 .menu_header_bm{
    margin: 0px;
    display: none;
 }
 .header_suscribete_bm{
     display: none;
-}
-
-.headres_bm_diseno{
-    width: 100%;
 }
 
 /* Estilo base para el navbar */
@@ -125,6 +119,7 @@ li a.menu_text_principal{
     cursor: pointer;
     text-decoration: none;
     height: 58px;
+    
 }
 
 .linearoja_subcribe{
@@ -535,41 +530,4 @@ li a.menu_text_principal{
 
 .actualidad_submenu li a:hover{
     color: #f00;
-}
-
-
-/* CUANDO LLEGUE A 1000px a 1023px */
-@media (max-width: 1023px) and (min-width: 768px) {
-    .subnav{
-        display: none;
-    }
-    .subnav .actualidad_submenu{
-        display: none;
-    }
-    .subnav .politica_submenu{
-        display: none;
-    }
-    .subnav .estilo_vida_submenu{
-        display: none;
-    }
-    .subnav .estadio_submenu{
-        display: none;
-    }
-    .subnav .portafolio_submenu{
-        display: none;
-    }
-    .hogar_link{
-        display: none;
-    }
-}
-
-/* CUANDO LLEGUE A 767px */
-@media (max-width: 768px) {
-    .cta {
-        
-    }
-    .btn_menu{
-        /* ajustamos a movil */
-
-    }
 }
