@@ -21,6 +21,10 @@ header .container{
     display: none;
 }
 
+.headres_bm_diseno{
+    width: 100vh;
+}
+
 /* Estilo base para el navbar */
 .navbar {
     display: flex;
