@@ -40,6 +40,9 @@ document.addEventListener("DOMContentLoaded", function() {
     if (window.innerWidth <= 768) {
         document.querySelector('.hamburg_bm').style.display = 'none';
         document.querySelector('.hamburg_bm_movil').style.display = 'block';
+    }else{
+        document.querySelector('.hamburg_bm').style.display = 'block';
+        document.querySelector('.hamburg_bm_movil').style.display = 'none';
     }
         
 
