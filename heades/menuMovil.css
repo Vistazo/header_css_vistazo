@@ -1,0 +1,88 @@
+/* Contenedor principal del menú móvil */
+.menu_movil {
+    display: none; /* Ocultar el menú por defecto */
+    width: 100%;
+    background-color: #000;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* Estilo general para las opciones principales del menú */
+.movil_nav-links {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.movil_nav-links li {
+    margin-bottom: 10px;
+    position: relative; /* Para posicionar correctamente los submenús */
+}
+
+/* Estilo para los enlaces principales del menú */
+.movil_nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between; /* Para alinear la flecha a la derecha */
+    padding: 10px;
+    background-color: #333;
+    border-radius: 5px;
+}
+
+/* Flecha hacia abajo para los elementos con submenú */
+.movil_nav-links li a.has-submenu::after {
+    content: "▼";
+    font-size: 14px;
+    color: white;
+}
+
+/* Hover para los enlaces principales */
+.movil_nav-links li a:hover {
+    background-color: #f00;
+    color: white;
+}
+
+/* Estilos para los submenús (ocultos por defecto) */
+.submenu_movil {
+    display: none;
+    list-style-type: none;
+    padding-left: 20px;
+    margin: 0;
+}
+
+/* Estilos para los enlaces de los submenús */
+.submenu_movil li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    padding: 8px;
+    background-color: #444;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+/* Hover para los enlaces del submenú */
+.submenu_movil li a:hover {
+    background-color: #f00;
+    color: white;
+}
+
+/* Para dispositivos móviles específicos (ajuste responsivo) */
+@media (max-width: 768px) {
+    .menu_movil {
+        padding: 15px;
+    }
+
+    .movil_nav-links li a {
+        font-size: 16px; /* Reducir el tamaño del texto en pantallas pequeñas */
+    }
+
+    .submenu_movil li a {
+        font-size: 14px;
+        padding: 6px;
+    }
+}

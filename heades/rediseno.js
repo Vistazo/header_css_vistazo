@@ -19,6 +19,30 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
+    // Selecciona todos los enlaces con submenús
+    const menuItems = document.querySelectorAll('.movil_nav-links li a.has-submenu');
+
+    // Itera sobre cada elemento que tiene submenú y agrega el evento de clic
+    menuItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+            e.preventDefault(); // Prevenir el comportamiento por defecto del enlace
+            const submenu = this.nextElementSibling;
+            // Alternar la visibilidad del submenú
+            if (submenu.style.display === 'block') {
+                submenu.style.display = 'none';
+            } else {
+                submenu.style.display = 'block';
+            }
+        });
+    });
+
+    // si el tamaño de la pantalla es menor o igual a 768px
+    if (window.innerWidth <= 768) {
+        document.querySelector('.hamburg_bm').style.display = 'none';
+        document.querySelector('.hamburg_bm_movil').style.display = 'block';
+    }
+        
+
 });
 
 function MostrarSubMenu(classList) {
@@ -52,5 +76,10 @@ function toggleMenu() {
 function toggleSearch() {
     const searchBox = document.querySelector('.basic_search_bm');
     searchBox.style.display = (searchBox.style.display === 'none' || searchBox.style.display === '') ? 'block' : 'none';
+}
+
+function toggleMenuMovil() {
+    const menu = document.querySelector('.menu_movil');
+    menu.style.display = (menu.style.display === 'none' || menu.style.display === '') ? 'block' : 'none';
 }
 
