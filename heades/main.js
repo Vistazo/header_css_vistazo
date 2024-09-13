@@ -885,8 +885,6 @@ function EjecutarInit() {
     }
 
     // para que tambien se cierre el menu cuando se haga click en cualquier parte de la pantalla
-
-
     buscador = document.querySelector(".hamburg_bm_lupin");
     if (buscador) {
       buscador.addEventListener("click", function () {
