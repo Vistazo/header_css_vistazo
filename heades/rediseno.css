@@ -185,6 +185,9 @@ li a.menu_text_principal{
     height: 30px;
     border-top: 1px solid #EEE;
     width: 100%;
+    position: absolute;
+    height: 56px;
+    border-radius: 0 0 5px 5px;
 }
 
 .subnav ul {
