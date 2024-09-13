@@ -268,9 +268,9 @@ li a.menu_text_principal{
 
 /* MEDIDAS RESPOSIVE PARA LOGIN-BTN */
 @media (max-width: 1024px) {
-    .btn_menu {
+    /* .btn_menu {
         margin-top: 10px;
-    }
+    } */
 
     /* .login a.lg_bm {
         width: 80px !important;
