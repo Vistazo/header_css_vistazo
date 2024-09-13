@@ -183,6 +183,7 @@ li a.menu_text_principal{
     padding: 10px;
     text-align: center;
     height: 30px;
+    border-top: 1px solid #EEE
 }
 
 .subnav ul {

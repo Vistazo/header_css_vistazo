@@ -61,7 +61,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function MostrarSubMenu(classList) {
     LimpiaHoverMenu();
-    document.querySelector('.subnav').style.display = 'block';
+    cont = document.querySelector('.subnav')
+    cont.style.display = 'block';
+    // cont.style.backgroundColor = 'white';
     document.querySelector('.'+classList).style.display = 'block';
 }
 
