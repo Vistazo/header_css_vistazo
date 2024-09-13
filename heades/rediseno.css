@@ -130,12 +130,20 @@ li a.menu_text_principal{
     /* margin-top: 1px; */
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     .nav-links {
         flex-direction: column;
         align-items: flex-start;
     }
-
+    .hogar-text{
+        display: none;
+    }
+}
+/* 801px a 1023px */
+@media (min-width: 801px) and (max-width: 1023px) {
+    .nav-links{
+        display: none;
+    }
 }
 
 .navbar .logo {
