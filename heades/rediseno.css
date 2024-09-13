@@ -136,10 +136,6 @@ li a.menu_text_principal{
         align-items: flex-start;
     }
 
-    .cta {
-        flex-direction: column;
-        align-items: flex-start;
-    }
 }
 
 .navbar .logo {
