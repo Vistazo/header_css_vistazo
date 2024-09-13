@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function() {
         item.addEventListener('click', function(e) {
             e.preventDefault(); // Prevenir el comportamiento por defecto del enlace
             const submenu = this.nextElementSibling;
+            // Alternar la visibilidad del submenú
             if (submenu.style.display === 'block') {
                 submenu.style.display = 'none';
             } else {
@@ -61,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function() {
 function MostrarSubMenu(classList) {
     LimpiaHoverMenu();
     cont = document.querySelector('.subnav')
-    // cont.style.display = 'block';
+    cont.style.display = 'block';
     document.querySelector('.'+classList).style.display = 'block';
 }
 
