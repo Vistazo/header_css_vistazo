@@ -136,7 +136,7 @@ function CanalWhatsapp() {
 }
 
 function CanalWhatsappMovil() {
-    var elemento = document.querySelector('.acnal_whatsapp_link_redirect_movil');
+    var elemento = document.querySelector('.canal_whatsapp_link_movil .acnal_whatsapp_link_redirect');
     console.log(elemento);
     if (elemento) {
       //icon https://codigomarret.online/upload/img/whatsapp_37229.ico
