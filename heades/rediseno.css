@@ -547,3 +547,23 @@ li a.menu_text_principal{
 .actualidad_submenu li a:hover{
     color: #f00;
 }
+
+
+/* NOMBRE DE LA SECCION */
+.template-infinity .article-section .section{
+    background: #000;
+    padding: 2px 5px;
+    border-radius: 3px;
+    color: #FFF;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* NOMBRE DE LA SECCION CON HOVER */
+.template-infinity .article-section .section:hover{
+    background: #fd0f03;
+    color: #FFF;
+}
+/* SUBTITULOS */
+.subheadline.artit.font-2.medium{
+    font-size: large;
+}

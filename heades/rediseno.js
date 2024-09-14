@@ -63,7 +63,6 @@ function MostrarSubMenu(classList) {
     LimpiaHoverMenu();
     cont = document.querySelector('.subnav')
     cont.style.display = 'block';
-    cont.style.position = 'absolute';
     // position: absolute;
     document.querySelector('.'+classList).style.display = 'block';
 }
