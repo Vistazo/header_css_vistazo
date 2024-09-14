@@ -549,6 +549,12 @@ li a.menu_text_principal{
 }
 
 
+/* Estilos generales */
+.IMG_PAUTAS_DIGITALES .multimedia img {
+    width: 100%;
+    height: auto; /* Altura para escritorio */
+}
+
 /* NOMBRE DE LA SECCION */
 .template-infinity .article-section .section{
     background: #000;
