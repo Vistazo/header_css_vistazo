@@ -42,6 +42,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (window.innerWidth <= 768) {
         document.querySelector('.hamburg_bm').style.display = 'none';
         document.querySelector('.hamburg_bm_movil').style.display = 'block';
+        CanalWhatsappMovil();
     }else{
         document.querySelector('.hamburg_bm').style.display = 'block';
         document.querySelector('.hamburg_bm_movil').style.display = 'none';
@@ -110,6 +111,7 @@ function toggleMenuMovil() {
 }
 
 function CanalWhatsapp() {
+    document.querySelector('.canal_whatsapp_link_movil .acnal_whatsapp_link_redirect').style.display = 'none';
     var elemento = document.querySelector('.canal_whatsapp_link .acnal_whatsapp_link_redirect');
     console.log(elemento);
     if (elemento) {
@@ -136,6 +138,7 @@ function CanalWhatsapp() {
 }
 
 function CanalWhatsappMovil() {
+    document.querySelector('.canal_whatsapp_link .acnal_whatsapp_link_redirect').style.display = 'none';
     var elemento = document.querySelector('.canal_whatsapp_link_movil .acnal_whatsapp_link_redirect');
     console.log(elemento);
     if (elemento) {
