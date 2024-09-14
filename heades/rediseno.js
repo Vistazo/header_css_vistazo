@@ -57,6 +57,16 @@ document.addEventListener("DOMContentLoaded", function() {
         videoTecarender();
     }
 
+    // Selecciona el enlace por su clase o por cualquier otro identificador
+    let enlace = document.querySelector('a.submenu[href="/portafolio/nacional"]');
+
+    // Verifica si el enlace existe
+    if (enlace) {
+    // Cambia el valor de href
+    enlace.href = "/portafolio/economia";
+    }
+
+
 });
 
 function MostrarSubMenu(classList) {
