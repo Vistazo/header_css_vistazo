@@ -42,12 +42,12 @@ document.addEventListener("DOMContentLoaded", function() {
     if (window.innerWidth <= 768) {
         document.querySelector('.hamburg_bm').style.display = 'none';
         document.querySelector('.hamburg_bm_movil').style.display = 'block';
-        CanalWhatsappMovil();
+        // CanalWhatsappMovil();
     }else{
         document.querySelector('.hamburg_bm').style.display = 'block';
         document.querySelector('.hamburg_bm_movil').style.display = 'none';
-        CanalWhatsapp();
     }
+    CanalWhatsapp();
         
 
     if(path == "/deportes/jjoo-2024"){
