@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    CanalWhatsapp();
+    
     let path = window.location.pathname;
 
     document.querySelector('.nav-links').addEventListener('mouseover', function(event) {
@@ -45,6 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }else{
         document.querySelector('.hamburg_bm').style.display = 'block';
         document.querySelector('.hamburg_bm_movil').style.display = 'none';
+        CanalWhatsapp();
     }
         
 
@@ -59,11 +60,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Selecciona el enlace por su clase o por cualquier otro identificador
     let enlace = document.querySelector('a.submenu[href="/portafolio/nacional"]');
-
     // Verifica si el enlace existe
     if (enlace) {
-    // Cambia el valor de href
-    enlace.href = "/portafolio/economia";
+        // Cambia el valor de href
+        enlace.href = "/portafolio/economia";
     }
 
 
@@ -110,7 +110,33 @@ function toggleMenuMovil() {
 }
 
 function CanalWhatsapp() {
-    var elemento = document.querySelector('.acnal_whatsapp_link_redirect');
+    var elemento = document.querySelector('.canal_whatsapp_link .acnal_whatsapp_link_redirect');
+    console.log(elemento);
+    if (elemento) {
+      //icon https://codigomarret.online/upload/img/whatsapp_37229.ico
+      let textContent = '<img src="https://codigomarret.online/upload/img/whatsapp_37229.ico" alt="whatsapp-icon" style="width: 20px; height: 20px; margin-right: 5px;">[¡Estamos en WhatsApp! 📲 '+
+      // azul
+      '<b  class="b_azul" style="color: #4097ee;" >Empieza a seguirnos ahora</b>🚀]';
+      // '<b style="color: #25d366;" >Empieza a seguirnos ahora</b>🚀]';
+      elemento.innerHTML = textContent;
+      // que cuando agan hover en b_azul le apareca una subraya azul
+      let b = document.querySelector('.b_azul');
+      b.onmouseover = () => {
+        b.style.textDecoration = 'underline';
+      }
+  
+      // elemento.textContent = '<span class="whatsapp-icon">📲</span>[¡Estamos en WhatsApp! 📲 Empieza a seguirnos ahora🚀]';
+      // que valla en negrita
+      elemento.style.fontWeight = 'bold';
+      // que tenga un color
+      elemento.style.color = 'black';
+      // cursiva
+      elemento.style.fontStyle = 'italic';
+    }
+}
+
+function CanalWhatsappMovil() {
+    var elemento = document.querySelector('.acnal_whatsapp_link_redirect_movil');
     console.log(elemento);
     if (elemento) {
       //icon https://codigomarret.online/upload/img/whatsapp_37229.ico
