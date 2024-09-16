@@ -92,10 +92,8 @@ document.addEventListener("DOMContentLoaded", function() {
     // Primero eliminamos los scripts si existen
     removeExternalScripts();
 
-    // Retrasar la carga de los scripts 30 segundos después de que la página haya cargado
-    setTimeout(function() {
-        loadExternalScripts();
-    }, 30000); // 30,000 ms = 30 segundos
+    // Esperar el primer scroll para cargar los scripts
+    window.addEventListener('scroll', loadOnScroll, { once: true });  // Escuchar solo una vez
 });
 
 function removeExternalScripts() {
@@ -114,6 +112,11 @@ function removeExternalScripts() {
     }
 }
 
+function loadOnScroll() {
+    // Llamar la función para cargar los scripts al hacer scroll
+    loadExternalScripts();
+}
+
 function loadExternalScripts() {
     // Cargar el script de YouTube nuevamente
     let youtubeScript = document.createElement('script');
@@ -127,6 +130,7 @@ function loadExternalScripts() {
     document.body.appendChild(googleAdsScript);
     console.log('Script de Google Ads cargado nuevamente');
 }
+
 
 
 function MostrarSubMenu(classList) {
