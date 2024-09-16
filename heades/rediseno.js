@@ -71,14 +71,27 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-    videoTecarender();
+    // Configurar el IntersectionObserver para la carga de la videoteca
+    const observer = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                videoTecarender();  // Llamar a la función para cargar los videos cuando es visible
+                observer.unobserve(entry.target);  // Dejar de observar después de cargar los videos
+            }
+        });
+    });
+
+    // Selecciona el contenedor de la videoteca
+    const videotecaSection = document.querySelector('.videoteca');
+    if (videotecaSection) {
+        observer.observe(videotecaSection);  // Inicia la observación de la sección videoteca
+    }
 });
 
 function MostrarSubMenu(classList) {
     LimpiaHoverMenu();
     cont = document.querySelector('.subnav')
     cont.style.display = 'block';
-    // position: absolute;
     document.querySelector('.'+classList).style.display = 'block';
 }
 
@@ -175,10 +188,8 @@ function videoTecarender() {
       .then(data => {
         var videoteca = document.querySelector('.videoteca .noticias');
         var videoPlayer = document.querySelector('.art-youtube .responsive-video iframe');
-        console.log("videoPlayer: ", data);
         if (videoteca && data.success) {
           videoteca.innerHTML = '';
-          // Populate the video list
           data.data.forEach(video => {
             const videoItem = document.createElement('div');
             videoItem.style.cursor = 'pointer';
