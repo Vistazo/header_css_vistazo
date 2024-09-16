@@ -1,3 +1,14 @@
+window.addEventListener('resize', cambiarImagenPautaHome);
+
+document.addEventListener("DOMContentLoaded", function() {
+    var middle3 = document.getElementById("Middle3");
+    if (middle3) {
+        middle3.remove();
+    }
+});
+
+
+
 document.addEventListener("DOMContentLoaded", function() {
     
     let path = window.location.pathname;
@@ -56,10 +67,11 @@ document.addEventListener("DOMContentLoaded", function() {
     }  
     if(path == "/" || path == "/tes/index.html"){
         cambiarImagenPautaHome();
-        videoTecarender();
     }
+});
 
-
+document.addEventListener("DOMContentLoaded", function() {
+    videoTecarender();
 });
 
 function MostrarSubMenu(classList) {
