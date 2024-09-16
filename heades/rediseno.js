@@ -88,6 +88,47 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    // Primero eliminamos los scripts si existen
+    removeExternalScripts();
+
+    // Retrasar la carga de los scripts 30 segundos después de que la página haya cargado
+    setTimeout(function() {
+        loadExternalScripts();
+    }, 30000); // 30,000 ms = 30 segundos
+});
+
+function removeExternalScripts() {
+    // Eliminar el script de YouTube si ya existe
+    let youtubeScript = document.querySelector('script[src="https://www.youtube.com/iframe_api"]');
+    if (youtubeScript) {
+        youtubeScript.remove();
+        console.log('Script de YouTube eliminado');
+    }
+
+    // Eliminar el script de Google Ads si ya existe
+    let googleAdsScript = document.querySelector('script[src="https://tpc.googlesyndication.com/sodar/sodar2.js"]');
+    if (googleAdsScript) {
+        googleAdsScript.remove();
+        console.log('Script de Google Ads eliminado');
+    }
+}
+
+function loadExternalScripts() {
+    // Cargar el script de YouTube nuevamente
+    let youtubeScript = document.createElement('script');
+    youtubeScript.src = 'https://www.youtube.com/iframe_api';
+    document.body.appendChild(youtubeScript);
+    console.log('Script de YouTube cargado nuevamente');
+
+    // Cargar el script de Google Ads nuevamente
+    let googleAdsScript = document.createElement('script');
+    googleAdsScript.src = 'https://tpc.googlesyndication.com/sodar/sodar2.js';
+    document.body.appendChild(googleAdsScript);
+    console.log('Script de Google Ads cargado nuevamente');
+}
+
+
 function MostrarSubMenu(classList) {
     LimpiaHoverMenu();
     cont = document.querySelector('.subnav')
