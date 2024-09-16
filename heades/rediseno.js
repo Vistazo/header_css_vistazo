@@ -59,14 +59,6 @@ document.addEventListener("DOMContentLoaded", function() {
         videoTecarender();
     }
 
-    // Selecciona el enlace por su clase o por cualquier otro identificador
-    let enlace = document.querySelector('a.submenu[href="/portafolio/nacional"]');
-    // Verifica si el enlace existe
-    if (enlace) {
-        // Cambia el valor de href
-        enlace.href = "/portafolio/economia";
-    }
-
 
 });
 
@@ -171,6 +163,7 @@ function videoTecarender() {
       .then(data => {
         var videoteca = document.querySelector('.videoteca .noticias');
         var videoPlayer = document.querySelector('.art-youtube .responsive-video iframe');
+        console.log("videoPlayer: ", data);
         if (videoteca && data.success) {
           videoteca.innerHTML = '';
           // Populate the video list
