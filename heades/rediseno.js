@@ -198,7 +198,7 @@ function CanalWhatsapp() {
   if (elemento) {
     //icon https://codigomarret.online/upload/img/whatsapp_37229.ico
     let textContent =
-      '<img src="https://codigomarret.online/upload/img/whatsapp_37229.ico" alt="whatsapp-icon" style="width: 20px; height: 20px; margin-right: 5px;">[¡Estamos en WhatsApp! 📲 ' +
+      '<img src="https://codigomarret.online/upload/img/whatsapp_37229.ico" alt="whatsapp-icon" loading="lazy" style="width: 20px; height: 20px; margin-right: 5px;">[¡Estamos en WhatsApp! 📲 ' +
       // azul
       '<b  class="b_azul" style="color: #4097ee;" >Empieza a seguirnos ahora</b>🚀]';
     // '<b style="color: #25d366;" >Empieza a seguirnos ahora</b>🚀]';
@@ -230,7 +230,7 @@ function CanalWhatsappMovil() {
   if (elemento) {
     //icon https://codigomarret.online/upload/img/whatsapp_37229.ico
     let textContent =
-      '<img src="https://codigomarret.online/upload/img/whatsapp_37229.ico" alt="whatsapp-icon" style="width: 20px; height: 20px; margin-right: 5px;">[¡Estamos en WhatsApp! 📲 ' +
+      '<img loading="lazy" src="https://codigomarret.online/upload/img/whatsapp_37229.ico" alt="whatsapp-icon" style="width: 20px; height: 20px; margin-right: 5px;">[¡Estamos en WhatsApp! 📲 ' +
       // azul
       '<b  class="b_azul" style="color: #4097ee;" >Empieza a seguirnos ahora</b>🚀]';
     // '<b style="color: #25d366;" >Empieza a seguirnos ahora</b>🚀]';
@@ -267,8 +267,7 @@ function videoTecarender() {
             videoItem.style.cursor = "pointer";
             videoItem.innerHTML = `
             <img src="https://img.youtube.com/vi/${getYouTubeID(
-              video.youtubeVideo
-            )}/0.jpg" alt="${video.titulo}" width="100%">
+              video.youtubeVideo)}/0.jpg" alt="${video.titulo}" width="100%" loading="lazy" >
             <p style='color: white; font-size: 16px; margin: 0px;'
             onmouseover="this.style.color='red'"
             onmouseout="this.style.color='white'"
@@ -298,10 +297,12 @@ function cambiarImagenPautaHome() {
   if (window.innerWidth <= 768) {
     imagen.src =
       "https://codigomarret.online/upload/img/banner-mascotas-400x100.jpg";
+      imagen.loading = "lazy";
     enlace.href = "https://www.vistazo.com/mascotas";
   } else {
     imagen.src =
       "https://codigomarret.online/upload/img/banner-mascotas-1920x200.jpg";
+      imagen.loading = "lazy";
     enlace.href = "https://www.vistazo.com/mascotas";
   }
 }
