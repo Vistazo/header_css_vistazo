@@ -99,6 +99,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Esperar el primer scroll para cargar los scripts
   window.addEventListener("scroll", loadOnScroll, { once: true }); // Escuchar solo una vez
+
+    // Selecciona el enlace por su clase
+  const subscribeBtn = document.querySelector('.subscribe-btn');
+
+  // Define la URL que deseas asignar
+  const url = 'https://suscripciones.vistazo.com/';
+
+  // Asigna la URL al atributo href del enlace
+  subscribeBtn.href = url;
+  subscribeBtn.target = '_blank';
+
 });
 
 function removeExternalScripts() {
