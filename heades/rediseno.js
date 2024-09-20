@@ -198,6 +198,7 @@ function toggleMenuMovil() {
       : "none";
 }
 
+
 function CanalWhatsapp() {
   document.querySelector(
     ".canal_whatsapp_link_movil .acnal_whatsapp_link_redirect"

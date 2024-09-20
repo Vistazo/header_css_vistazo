@@ -573,3 +573,31 @@ li a.menu_text_principal{
 .subheadline.artit.font-2.medium{
     font-size: large;
 }
+
+
+/* Bully */
+.bulletvistazo {
+    list-style: none; /* Remover el estilo de lista por defecto */
+    position: relative; /* Necesario para posicionar el guion debajo */
+    padding-left: 15px; /* Espacio para el círculo */
+  }
+  
+  .bulletvistazo::before {
+    content: "◯"; /* El círculo */
+    position: absolute;
+    left: 0; /* Posiciona el círculo al inicio del ítem */
+    top: 0;
+    font-size: 9px;
+    color: #000; /* Color del círculo */
+  }
+  
+  .bulletvistazo::after {
+    content: ""; /* Crear un guion */
+    position: absolute;
+    left: 0px; /* Ajustar según sea necesario */
+    top: 12px; /* Ajustar para colocar el guion debajo del círculo */
+    width: 9px; /* Longitud del guion */
+    height: 2px; /* Grosor del guion */
+    background-color: #fd0f03; /* Color azul */
+  }
+  
