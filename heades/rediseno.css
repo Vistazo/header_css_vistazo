@@ -579,7 +579,7 @@ li a.menu_text_principal{
 .bulletvistazo {
     list-style: none; /* Remover el estilo de lista por defecto */
     position: relative; /* Necesario para posicionar el guion debajo */
-    padding-left: 30px; /* Espacio para el círculo */
+    padding-left: 35px; /* Espacio para el círculo */
 }
 
 .bulletvistazo::before {
@@ -601,3 +601,6 @@ li a.menu_text_principal{
     background-color: #fd0f03; /* Color azul */
 }
   
+.relatedContent{
+    display: none;
+}
