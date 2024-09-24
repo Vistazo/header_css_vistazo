@@ -200,34 +200,38 @@ function toggleMenuMovil() {
 
 
 function CanalWhatsapp() {
-  document.querySelector(
-    ".canal_whatsapp_link_movil .acnal_whatsapp_link_redirect"
-  ).style.display = "none";
-  var elemento = document.querySelector(
-    ".canal_whatsapp_link .acnal_whatsapp_link_redirect"
-  );
-  console.log(elemento);
-  if (elemento) {
-    //icon https://codigomarret.online/upload/img/whatsapp_37229.ico
-    let textContent =
-      '<img src="https://codigomarret.online/upload/img/whatsapp_37229.ico" alt="whatsapp-icon" loading="lazy" style="width: 20px; height: 20px; margin-right: 5px;">[¡Estamos en WhatsApp! 📲 ' +
-      // azul
-      '<b  class="b_azul" style="color: #4097ee;" >Empieza a seguirnos ahora</b>🚀]';
-    // '<b style="color: #25d366;" >Empieza a seguirnos ahora</b>🚀]';
-    elemento.innerHTML = textContent;
-    // que cuando agan hover en b_azul le apareca una subraya azul
-    let b = document.querySelector(".b_azul");
-    b.onmouseover = () => {
-      b.style.textDecoration = "underline";
-    };
-
-    // elemento.textContent = '<span class="whatsapp-icon">📲</span>[¡Estamos en WhatsApp! 📲 Empieza a seguirnos ahora🚀]';
-    // que valla en negrita
-    elemento.style.fontWeight = "bold";
-    // que tenga un color
-    elemento.style.color = "black";
-    // cursiva
-    elemento.style.fontStyle = "italic";
+  try {
+    document.querySelector(
+      ".canal_whatsapp_link_movil .acnal_whatsapp_link_redirect"
+    ).style.display = "none";
+    var elemento = document.querySelector(
+      ".canal_whatsapp_link .acnal_whatsapp_link_redirect"
+    );
+    console.log(elemento);
+    if (elemento) {
+      //icon https://codigomarret.online/upload/img/whatsapp_37229.ico
+      let textContent =
+        '<img src="https://codigomarret.online/upload/img/whatsapp_37229.ico" alt="whatsapp-icon" loading="lazy" style="width: 20px; height: 20px; margin-right: 5px;">[¡Estamos en WhatsApp! 📲 ' +
+        // azul
+        '<b  class="b_azul" style="color: #4097ee;" >Empieza a seguirnos ahora</b>🚀]';
+      // '<b style="color: #25d366;" >Empieza a seguirnos ahora</b>🚀]';
+      elemento.innerHTML = textContent;
+      // que cuando agan hover en b_azul le apareca una subraya azul
+      let b = document.querySelector(".b_azul");
+      b.onmouseover = () => {
+        b.style.textDecoration = "underline";
+      };
+  
+      // elemento.textContent = '<span class="whatsapp-icon">📲</span>[¡Estamos en WhatsApp! 📲 Empieza a seguirnos ahora🚀]';
+      // que valla en negrita
+      elemento.style.fontWeight = "bold";
+      // que tenga un color
+      elemento.style.color = "black";
+      // cursiva
+      elemento.style.fontStyle = "italic";
+    }
+  } catch (error) {
+    console.log("");
   }
 }
 
