@@ -538,6 +538,17 @@ li a.menu_text_principal{
     z-index: 1000;
 }
 
+.subnav .hogar_submenu{
+    display: none;
+    top: 60px;
+    right: 0;
+    background-color: #000;
+    padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    z-index: 1000;
+}
+
 .subnav li a{
     font-family: 'YourFontHere', sans-serif;
     text-decoration: none;

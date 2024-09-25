@@ -26,11 +26,9 @@ document.addEventListener("DOMContentLoaded", function () {
           MostrarSubMenu("estadio_submenu");
         } else if (classList == "portafolio_link") {
           MostrarSubMenu("portafolio_submenu");
-        } else if (
-          classList == "hogar_link" ||
-          classList == "opinion_link" ||
-          classList == "hogar_link"
-        ) {
+        } else if (classList == "hogar_link") {
+          MostrarSubMenu("hogar_submenu");
+        } else if ( classList == "opinion_link") {
           LimpiaHoverMenu();
         }
       }
@@ -115,12 +113,11 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function() {
   // Seleccionar todos los enlaces dentro de la lista teaser-related-list
   const enlaces = document.querySelectorAll('.teaser-related-list article a');
-
+  if(!enlaces) return; // Salir si no hay enlaces
   // Iterar sobre cada enlace
   enlaces.forEach(function(enlace) {
       // Crear un pseudoelemento antes del enlace para el punto
       enlace.style.position = 'relative';
-
       // Quitar el subrayado del punto (contenido en ::before)
       const punto = document.createElement('span');
       punto.textContent = "•"; // Punto como bullet
@@ -130,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function() {
       punto.style.textDecoration = 'none'; // Remueve el subrayado del punto
 
       // Insertar el punto antes del texto del enlace
-      enlace.prepend(punto); 
+      enlace.prepend(punto);
   });
 });
 
@@ -210,6 +207,7 @@ function LimpiaHoverMenu() {
   document.querySelector(".estilo_vida_submenu").style.display = "none";
   document.querySelector(".estadio_submenu").style.display = "none";
   document.querySelector(".portafolio_submenu").style.display = "none";
+  document.querySelector(".hogar_submenu").style.display = "none";
   document.querySelector(".basic_search_bm").style.display = "none";
   document.querySelector(".menu_burguer_bm").style.display = "none";
 }
