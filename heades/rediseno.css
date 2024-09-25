@@ -625,13 +625,12 @@ li a.menu_text_principal{
     font-size: 18px;
     font-weight: bold;
     text-decoration: none; /* Remueve la subrayado predeterminado del enlace */
-    color: #0d6efd;
+    color: #3eadf4;
     position: relative;
     display: inline-block;
     padding-left: 20px; /* Espacio para el ícono */
     max-width: 100%;
-    /* que el texto este cursive */
-    /* font-style: italic; */
+    
 
 }
 
