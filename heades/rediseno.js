@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", function() {
       const punto = document.createElement('span');
       punto.textContent = "•"; // Punto como bullet
       punto.style.position = 'absolute';
-      punto.style.left = '-10px';
+      punto.style.left = '-5px';
       punto.style.color = 'black';
       punto.style.textDecoration = 'none'; // Remueve el subrayado del punto
 

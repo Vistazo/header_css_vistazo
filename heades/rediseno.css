@@ -601,9 +601,6 @@ li a.menu_text_principal{
     background-color: #fd0f03; /* Color azul */
 }
   
-/* .relatedContent{
-    display: none;
-} */
 
 /* caja nota relaciona */
 .notas_relacionadass{
@@ -619,15 +616,11 @@ li a.menu_text_principal{
     font-size: 1.2em;
 }
 
-
-
 .teaser-related-list article {
     display: flex;
     align-items: center; /* Alinea el contenido verticalmente al centro */
     margin-bottom: 15px; /* Espacio entre artículos */
 }
-
-
 
 /* Estilo del enlace */
 .teaser-related-list article a {
@@ -642,7 +635,7 @@ li a.menu_text_principal{
     word-wrap: break-word; /* Permitir que el texto se divida en varias líneas si es necesario */
     display: inline-flex;
     align-items: center; /* Asegura que el texto esté alineado verticalmente */
-    padding-left: 0; /* No necesitamos padding ya que usamos flexbox */
+    padding-left: 15px; /* No necesitamos padding ya que usamos flexbox */
 }
 
 .teaser-related-list article a:hover {
