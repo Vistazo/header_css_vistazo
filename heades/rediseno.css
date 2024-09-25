@@ -619,51 +619,32 @@ li a.menu_text_principal{
     font-size: 1.2em;
 }
 
-/* Selecciona los artículos dentro de la sección teaser-related-list */
+
+
+.teaser-related-list article {
+    display: flex;
+    align-items: center; /* Alinea el contenido verticalmente al centro */
+    margin-bottom: 15px; /* Espacio entre artículos */
+}
+
+
+
+/* Estilo del enlace */
 .teaser-related-list article a {
     font-family: 'Times New Roman', Times, serif;
     font-size: 18px;
     font-weight: bold;
-    text-decoration: none; /* Remueve la subrayado predeterminado del enlace */
-    /* color: #3eadf4; */
     color: #000; /* Color del texto */
-    position: relative;
-    display: inline-block;
-    padding-left: 20px; /* Espacio para el ícono */
+    text-decoration: underline; /* Subrayado solo para el texto */
+    text-decoration-color: red; /* Color del subrayado */
+    text-decoration-thickness: 2px; /* Grosor del subrayado */
     max-width: 100%;
-    
-
+    word-wrap: break-word; /* Permitir que el texto se divida en varias líneas si es necesario */
+    display: inline-flex;
+    align-items: center; /* Asegura que el texto esté alineado verticalmente */
+    padding-left: 0; /* No necesitamos padding ya que usamos flexbox */
 }
 
 .teaser-related-list article a:hover {
     color: #3eadf4; /* Cambia el color del texto al pasar el cursor por encima */
-}
-
-/* Añade el subrayado en rojo debajo del enlace */
-.teaser-related-list article a:after {
-    content: '';
-    display: block;
-    width: 98%;
-    height: 2px;
-    background-color: #fd0f03;
-    position: absolute;
-    bottom: 9px;
-    /* left: 0; */
-    padding-left: 20px;
-    max-width: 100%; /* Asegura que no se sobresalga del contenedor */
-}
-
-/* Añadir el punto antes del enlace */
-.teaser-related-list article a:before {
-    content: "•"; /* El símbolo del punto (bullet) */
-    color: black; /* Color del punto */
-    font-size: 20px;
-    position: absolute;
-    left: 0;
-    top: 0;
-}
-
-/* Espaciado entre artículos */
-.teaser-related-list article {
-    margin-bottom: 15px;
 }
