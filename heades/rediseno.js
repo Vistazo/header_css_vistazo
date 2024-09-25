@@ -112,6 +112,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  // Mover el contenido de 'notas_relacionadass' justo después del h2 'subheadline'
+  moverNotasRelacionadas();
+})
+
+function moverNotasRelacionadas() {
+  // Seleccionar el elemento con la clase 'notas_relacionadass'
+  const notasRelacionadas = document.querySelector('.notas_relacionadass');
+  
+  // Seleccionar el h2 con la clase 'subheadline'
+  const subheadline = document.querySelector('.subheadline');
+  
+  // Verificar si el div 'notas_relacionadass' existe
+  if (notasRelacionadas && subheadline) {
+      // Mover el div 'notas_relacionadass' justo después del h2 'subheadline'
+      subheadline.insertAdjacentElement('afterend', notasRelacionadas);
+      console.log('El contenido de "notas_relacionadass" se ha movido correctamente.');
+  } else {
+      console.log('El elemento con la clase "notas_relacionadass" no existe o el "subheadline" no está presente.');
+  }
+}
+
 function removeExternalScripts() {
   // Eliminar el script de YouTube si ya existe
   let youtubeScript = document.querySelector(

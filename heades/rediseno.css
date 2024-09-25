@@ -601,6 +601,69 @@ li a.menu_text_principal{
     background-color: #fd0f03; /* Color azul */
 }
   
-.relatedContent{
+/* .relatedContent{
     display: none;
+} */
+
+/* caja nota relaciona */
+.notas_relacionadass{
+    margin: 15px;
+}
+.relatedContent{
+    padding: 15px;
+    background: #f0f0f0;
+    border-radius: 3px 3px 3px 3px;
+}
+/* tamano de la letra en relacionadas */
+.notas_relacionadass .rel h2{
+    font-size: 1.2em;
+}
+
+/* Selecciona los artículos dentro de la sección teaser-related-list */
+.teaser-related-list article a {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none; /* Remueve la subrayado predeterminado del enlace */
+    color: #0d6efd;
+    position: relative;
+    display: inline-block;
+    padding-left: 20px; /* Espacio para el ícono */
+    max-width: 100%;
+    /* que el texto este cursive */
+    /* font-style: italic; */
+
+}
+
+.teaser-related-list article a:hover {
+    color: #fd0f03; /* Cambia el color del texto al pasar el cursor por encima */
+}
+
+/* Añade el subrayado en rojo debajo del enlace */
+.teaser-related-list article a:after {
+    content: '';
+    display: block;
+    width: 98%;
+    height: 2px;
+    background-color: #fd0f03;
+    position: absolute;
+    bottom: 9px;
+    /* left: 0; */
+    padding-left: 20px;
+    max-width: 100%; /* Asegura que no se sobresalga del contenedor */
+}
+
+/* Añadir el punto antes del enlace */
+.teaser-related-list article a:before {
+    content: "•"; /* El símbolo del punto (bullet) */
+    color: black; /* Color del punto */
+    font-size: 20px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Espaciado entre artículos */
+.teaser-related-list article {
+    margin-bottom: 15px;
 }
