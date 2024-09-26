@@ -142,16 +142,20 @@ function moverNotasRelacionadas() {
   // Seleccionar el elemento con la clase 'notas_relacionadass'
   const notasRelacionadas = document.querySelector('.notas_relacionadass');
   
-  // Seleccionar el h2 con la clase 'subheadline'
+  // Seleccionar los encabezados que pueden existir
   const subheadline = document.querySelector('.subheadline');
+  const headline = document.querySelector('.headline');
   
-  // Verificar si el div 'notas_relacionadass' existe
-  if (notasRelacionadas && subheadline) {
-      // Mover el div 'notas_relacionadass' justo después del h2 'subheadline'
-      subheadline.insertAdjacentElement('afterend', notasRelacionadas);
-      console.log('El contenido de "notas_relacionadass" se ha movido correctamente.');
+  // Verificar si alguno de los encabezados existe
+  const subheadlineExistente = subheadline || headline;
+  
+  // Verificar si el div 'notas_relacionadass' existe y hay un encabezado
+  if (notasRelacionadas && subheadlineExistente) {
+    // Mover el div 'notas_relacionadass' justo después del encabezado encontrado
+    subheadlineExistente.insertAdjacentElement('afterend', notasRelacionadas);
+    console.log('El contenido de "notas_relacionadass" se ha movido correctamente.');
   } else {
-      console.log('El elemento con la clase "notas_relacionadass" no existe o el "subheadline" no está presente.');
+    console.log('El elemento con la clase "notas_relacionadass" no existe o ningún encabezado está presente.');
   }
 }
 
