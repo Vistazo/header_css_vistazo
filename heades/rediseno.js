@@ -113,22 +113,23 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function() {
   // Seleccionar todos los enlaces dentro de la lista teaser-related-list
   const enlaces = document.querySelectorAll('.teaser-related-list article a');
-  if(!enlaces) return; // Salir si no hay enlaces
-  // Iterar sobre cada enlace
-  enlaces.forEach(function(enlace) {
-      // Crear un pseudoelemento antes del enlace para el punto
-      enlace.style.position = 'relative';
-      // Quitar el subrayado del punto (contenido en ::before)
-      const punto = document.createElement('span');
-      punto.textContent = "•"; // Punto como bullet
-      punto.style.position = 'absolute';
-      punto.style.left = '-5px';
-      punto.style.color = 'black';
-      punto.style.textDecoration = 'none'; // Remueve el subrayado del punto
-
-      // Insertar el punto antes del texto del enlace
-      enlace.prepend(punto);
-  });
+  if(enlaces){
+    // Iterar sobre cada enlace
+    enlaces.forEach(function(enlace) {
+        // Crear un pseudoelemento antes del enlace para el punto
+        enlace.style.position = 'relative';
+        // Quitar el subrayado del punto (contenido en ::before)
+        const punto = document.createElement('span');
+        punto.textContent = "•"; // Punto como bullet
+        punto.style.position = 'absolute';
+        punto.style.left = '-5px';
+        punto.style.color = 'black';
+        punto.style.textDecoration = 'none'; // Remueve el subrayado del punto
+  
+        // Insertar el punto antes del texto del enlace
+        enlace.prepend(punto);
+    });
+  }
 });
 
 
@@ -176,7 +177,7 @@ function removeExternalScripts() {
 
 function loadOnScroll() {
   // Llamar la función para cargar los scripts al hacer scroll
-  loadExternalScripts();
+  // loadExternalScripts();
 }
 
 function loadExternalScripts() {
