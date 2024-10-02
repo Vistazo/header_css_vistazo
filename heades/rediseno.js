@@ -1,11 +1,24 @@
 window.addEventListener("resize", cambiarImagenPautaHome);
 
 document.addEventListener("DOMContentLoaded", function () {
+    // Para activar la eliminación de scripts
+  localStorage.setItem('removeScripts', 'true');
+  let localStorageKey = localStorage.getItem('removeScripts');
+  if(localStorageKey !== 'true'){
+    removeExternalScripts();
+    console.log('Scripts externos eliminados por que localStorage no esta configurado');
+  }else{
+    console.log('localStorage configurado para no eliminar scripts');
+  }
+
+  // Remover el elemento 'Middle3' si existe
   var middle3 = document.getElementById("Middle3");
   if (middle3) {
     middle3.remove();
   }
   Replica();
+
+
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -92,22 +105,18 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Primero eliminamos los scripts si existen
-  removeExternalScripts();
-
-  // Esperar el primer scroll para cargar los scripts
-  window.addEventListener("scroll", loadOnScroll, { once: true }); // Escuchar solo una vez
-
-    // Selecciona el enlace por su clase
+  // Selecciona el enlace por su clase
   const subscribeBtn = document.querySelector('.subscribe-btn');
-
+  
   // Define la URL que deseas asignar
   const url = 'https://suscripciones.vistazo.com/';
-
+  
   // Asigna la URL al atributo href del enlace
   subscribeBtn.href = url;
   subscribeBtn.target = '_blank';
-
+  
+  // Esperar el primer scroll para cargar los scripts
+  // window.addEventListener("scroll", loadOnScroll, { once: true }); // Escuchar solo una vez
 });
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -177,11 +186,56 @@ function removeExternalScripts() {
     googleAdsScript.remove();
     console.log("Script de Google Ads eliminado");
   }
+  // https://www.youtube.com/s/player/bbc52cb2/www-embed-player.vflset/www-embed-player.js
+  // Eliminar el script de YouTube si ya existe
+  let youtubeScript2 = document.querySelector(
+    'script[src="https://www.youtube.com/s/player/bbc52cb2/www-embed-player.vflset/www-embed-player.js"]'
+  );
+  if (youtubeScript2) {
+    youtubeScript2.remove();
+    console.log("Script de YouTube eliminado");
+  }
+  // https://www.youtube.com/s/player/bbc52cb2/player_ias.vflset/en_US/base.js
+  // Eliminar el script de YouTube si ya existe
+  let youtubeScript3 = document.querySelector(
+    'script[src="https://www.youtube.com/s/player/bbc52cb2/player_ias.vflset/en_US/base.js"]'
+  );
+  if (youtubeScript3) {
+    youtubeScript3.remove();
+    console.log("Script de YouTube eliminado");
+  }
+  // https://www.youtube.com/embed/EvQEN6Hi1AA?wmode=transparent&showinfo=0&theme=light
+  // Eliminar el script de YouTube si ya existe
+  let youtubeScript4 = document.querySelector(
+    'script[src="https://www.youtube.com/embed/EvQEN6Hi1AA?wmode=transparent&showinfo=0&theme=light"]'
+  );
+  if (youtubeScript4) {
+    youtubeScript4.remove();
+    console.log("Script de YouTube eliminado");
+  }
+  // https://tpc.googlesyndication.com/sodar/sodar2/232/runner.html
+  // Eliminar el script de Google Ads si ya existe
+  let googleAdsScript2 = document.querySelector(
+    'script[src="https://tpc.googlesyndication.com/sodar/sodar2/232/runner.html"]'
+  );
+  if (googleAdsScript2) {
+    googleAdsScript2.remove();
+    console.log("Script de Google Ads eliminado");
+  }
+  // https://libs.lavoz.com.ar/paywall/pw.js
+  // Eliminar el script de Google Ads si ya existe
+  let googleAdsScript3 = document.querySelector(
+    'script[src="https://libs.lavoz.com.ar/paywall/pw.js"]'
+  );
+  if (googleAdsScript3) {
+    googleAdsScript3.remove();
+    console.log("Script de Google Ads eliminado");
+  }
 }
 
 function loadOnScroll() {
   // Llamar la función para cargar los scripts al hacer scroll
-  // loadExternalScripts();
+  loadExternalScripts();
 }
 
 function loadExternalScripts() {
@@ -245,7 +299,6 @@ function toggleMenuMovil() {
       ? "block"
       : "none";
 }
-
 
 function CanalWhatsapp() {
   try {
@@ -440,6 +493,7 @@ function loadScript(a) {
     (c.onload = a),
     b.appendChild(c);
 }
+
 loadScript(
     function () {
         beTracker.t({ hash: "1f8f9d10dbf96519b00b253d557670f8" });
