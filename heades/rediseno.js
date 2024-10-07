@@ -1,5 +1,18 @@
 window.addEventListener("resize", cambiarImagenPautaHome);
 
+window.onscroll = function() {
+  updateProgressBar();
+};
+
+function updateProgressBar() {
+  const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const scrolled = (winScroll / height) * 100;
+  
+  document.querySelector(".progress-bar-desk").style.width = scrolled + "%";
+}
+
+
 document.addEventListener("DOMContentLoaded", function () {
     // Para activar la eliminación de scripts
   localStorage.setItem('removeScripts', 'true');

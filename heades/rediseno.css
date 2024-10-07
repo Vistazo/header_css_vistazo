@@ -652,3 +652,14 @@ li a.menu_text_principal{
 .teaser-related-list article a:hover {
     color: #3eadf4; /* Cambia el color del texto al pasar el cursor por encima */
 }
+
+/* barra progress */
+.progress-bar-desk {
+    position: fixed;
+    top: 60px; /* Justo debajo de la cabecera */
+    left: 0;
+    width: 0%;
+    height: 5px;
+    background-color: red;
+    z-index: 1001;
+}
