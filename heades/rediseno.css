@@ -663,3 +663,9 @@ li a.menu_text_principal{
     background-color: red;
     z-index: 1001;
 }
+
+.head_title .title{
+    padding-top: 7px !important;
+    padding-left: 10% !important;
+    padding-right: 10% !important;
+}
