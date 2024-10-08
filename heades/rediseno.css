@@ -665,7 +665,15 @@ li a.menu_text_principal{
 }
 
 .head_title .title{
-    padding-top: 7px !important;
+    padding-top: 6px !important;
     padding-left: 10% !important;
     padding-right: 10% !important;
+}
+
+@media (max-width: 767px) {
+    .head_title .title {
+        height: 25px;
+        font-size: 1rem;
+        padding-top: 0px !important;
+    }
 }
