@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     try {
         var navContainer = document.querySelector('.nav-dropdown .parent-nav');
-        console.log("navContainer: ", navContainer); // Agregar salida de depuración
-
         // Verificar si navContainer existe
         if (!navContainer) {
             throw new Error('El contenedor de navegación no se encontró.');
@@ -14,7 +12,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if (modaItem) modaItem.style.display = 'none';
         if (bellezaItem) bellezaItem.style.display = 'none';
-
         // Inyectar HTML
         var tendenciasHTML = `
             <li class="lst-item tabnav sect-tendencias">
@@ -50,6 +47,18 @@ document.addEventListener("DOMContentLoaded", function() {
         `;
 
         navContainer.insertAdjacentHTML('afterbegin', tendenciasHTML);
+
+        // siempre que se haga hover en tendencias, se debe mostrar el submenu
+        var tendencias = document.querySelector('.sect-tendencias');
+        var tendenciasSubmenu = document.querySelector('.sect-tendencias .child-nav');
+        tendencias.addEventListener('mouseover', function () {
+            tendenciasSubmenu.classList.add('active');
+        });
+        tendencias.addEventListener('mouseleave', function () {
+            tendenciasSubmenu.classList.remove('active');
+        });
+
+        
 
     } catch (error) {
         console.error(error.message);
