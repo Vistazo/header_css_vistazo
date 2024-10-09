@@ -154,6 +154,21 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  let hogarSession = document.querySelector(".head_title .title.hogar a>div");
+  console.log("hogarSession: ", hogarSession);
+  if (hogarSession) {
+    hogarSession.innerHTML = "";
+    hogarSession.innerHTML = `
+    <span class="hogar-text"> 
+      <span class="letter-h">H</span>
+      <span class="letter-o">O</span> 
+      <span class="letter-g">G</span> 
+      <span class="letter-a">A</span> 
+      <span class="letter-r">R</span> 
+    </span>`;
+  }
+});
 
 document.addEventListener("DOMContentLoaded", function () {
   // Mover el contenido de 'notas_relacionadass' justo después del h2 'subheadline'

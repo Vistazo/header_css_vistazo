@@ -664,6 +664,7 @@ li a.menu_text_principal{
     z-index: 1001;
 }
 
+/* TITULOS DE SESSIONES */
 .head_title .title{
     padding-top: 6px !important;
     padding-left: 10% !important;
@@ -676,4 +677,8 @@ li a.menu_text_principal{
         font-size: 1rem;
         padding-top: 0px !important;
     }
+}
+
+.head_title .title.hogar a>div{
+    background-image: none;
 }
