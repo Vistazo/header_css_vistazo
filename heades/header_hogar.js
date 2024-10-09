@@ -57,3 +57,10 @@ document.addEventListener("DOMContentLoaded", function() {
         console.log('Script de inyección de tendencias ejecutado.');
     }
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    let viaja = document.getElementById('3533742219');
+    if(viaja){
+        viaja.style.display = 'none';
+    }
+});
