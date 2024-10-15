@@ -687,3 +687,6 @@ li a.menu_text_principal{
 .contenido_subrayado{
     text-decoration: underline #fd0f03;
 }
+p u{
+    text-decoration: underline #fd0f03;
+}
