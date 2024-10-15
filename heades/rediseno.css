@@ -682,3 +682,8 @@ li a.menu_text_principal{
 .head_title .title.hogar a>div{
     background-image: none;
 }
+
+/* ConteSubrayado */
+.contenido_subrayado{
+    text-decoration: underline #fd0f03;
+}

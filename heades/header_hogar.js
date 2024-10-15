@@ -48,18 +48,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
         navContainer.insertAdjacentHTML('afterbegin', tendenciasHTML);
 
-        // siempre que se haga hover en tendencias, se debe mostrar el submenu
-        var tendencias = document.querySelector('.sect-tendencias');
-        var tendenciasSubmenu = document.querySelector('.sect-tendencias .child-nav');
-        tendencias.addEventListener('mouseover', function () {
-            tendenciasSubmenu.classList.add('active');
-        });
-        tendencias.addEventListener('mouseleave', function () {
-            tendenciasSubmenu.classList.remove('active');
-        });
-
-        
-
     } catch (error) {
         console.error(error.message);
     } finally {
