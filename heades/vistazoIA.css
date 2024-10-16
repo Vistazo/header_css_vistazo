@@ -1,0 +1,68 @@
+  .card_ia {
+    width: 100%;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .header_ia {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, #000000, #FF0000);
+    color: white;
+    padding: 10px;
+  }
+  
+  .logo_ia img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  
+  .title_ia {
+    flex-grow: 1;
+    text-align: center;
+}
+  
+  .main-title_ia {
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  .subtitle_ia {
+    display: block;
+    font-size: 12px;
+    color: #eeeeee;
+  }
+  
+  .dropdown_ia {
+    cursor: pointer;
+  }
+  
+  .dropdown_ia span {
+    font-size: 18px;
+  }
+
+  .loader_ia {
+    display: none; /* Oculto por defecto */
+    padding: 20px;
+    font-size: 14px;
+    text-align: center;
+    color: #333;
+  }
+  
+  .content_ia {
+    display: none; /* Oculto por defecto */
+    padding: 20px;
+    font-size: 14px;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  .typing {
+    border-right: 2px solid;
+    white-space: nowrap;
+    overflow: hidden;
+  }

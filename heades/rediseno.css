@@ -615,6 +615,7 @@ li a.menu_text_principal{
 
 /* caja nota relaciona */
 .notas_relacionadass{
+    display: inline;
     margin: 15px;
 }
 .relatedContent{
