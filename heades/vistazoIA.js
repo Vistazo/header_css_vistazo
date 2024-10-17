@@ -1,38 +1,80 @@
 window.addEventListener("DOMContentLoaded", function () {
-    ToggleContent = document.getElementById("toggleContentIA")
+    const ToggleContent = document.getElementById("toggleContentIA");
+    
     ToggleContent.addEventListener("click", function () {
       const loader = document.getElementById("loader_ia");
       const content = document.getElementById("content_ia");
       const textContent = document.getElementById("textContentIA");
+      
       console.log("click");
+
       // Ocultar el contenido y mostrar el loader
       content.style.display = "none";
       loader.style.display = "block";
-
-      // Simular un retardo para la carga
-      setTimeout(function () {
-        loader.style.display = "none"; // Ocultar el loader
-        content.style.display = "block"; // Mostrar el contenido
-        typeWriterEffect(); // Aplicar el efecto de escritura
-      }, 2000); // 2 segundos de carga
+      
+      // Ejecutar el scraping
+      resumenscrape();
     });
+    
+    function typeWriterEffect(text) {
+        let index = 0;
+        const speed = 25; // Velocidad de escritura
 
-  function typeWriterEffect() {
-    const text = `El futbolista Marco Ángulo, de Liga de Quito, está en estado crítico tras un grave accidente de tránsito en la Autopista General Rumiñahui, Quito, el 7 de octubre. Ángulo sufrió múltiples lesiones, incluyendo fractura de pelvis, edema cerebral y hemorragias internas, y se encuentra en terapia intensiva con pronóstico reservado. El accidente ocurrió cuando un auto de alta gama impactó a gran velocidad contra una viga. Liga de Quito ha expresado su solidaridad con las familias afectadas. Este es el segundo accidente grave en el que Ángulo se ve involucrado en los últimos años.`;
-    let index = 0;
-    const speed = 50; // Velocidad de escritura
+        function typeWriter() {
+            if (index < text.length) {
+                document.getElementById("textContentIA").innerHTML +=
+                text.charAt(index);  // Agregar carácter por carácter
+                index++;
+                setTimeout(typeWriter, speed);  // Repetir hasta terminar el texto
+            }
+        }
 
-    function typeWriter() {
-      if (index < text.length) {
-        document.getElementById("textContentIA").innerHTML +=
-          text.charAt(index);
-        index++;
-        setTimeout(typeWriter, speed);
-      }
+        // Limpiar el contenido previo
+        document.getElementById("textContentIA").innerHTML = "";
+        typeWriter(); // Iniciar el efecto
     }
 
-    // Limpiar el contenido previo
-    document.getElementById("textContentIA").innerHTML = "";
-    typeWriter(); // Iniciar el efecto
-  }
+    function resumenscrape(){
+        const urlActual = window.location.href;
+        
+        // Hacer la petición POST para el scraping
+        //https://api.ticketsecuador.ec/letter/send
+        fetch("https://api.ticketsecuador.ec/letter/scraping/nota", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                url: urlActual,
+                resumen: true,
+            }),
+            })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data);
+
+                // Ocultar el loader y mostrar el contenido
+                document.getElementById("loader_ia").style.display = "none"; // Ocultar el loader
+                document.getElementById("content_ia").style.display = "block"; // Mostrar el contenido
+
+                // Asignar el título y aplicar la transición suave
+                const titleContent = document.getElementById("titleContentIA");
+                titleContent.innerHTML = data.title;
+                titleContent.classList.add("fade-in_ia"); // Activar la transición suave para el título
+
+                // Asignar la imagen y mostrarla
+                const imgContent = document.getElementById("imgContentIA");
+                imgContent.src = data.src;
+                imgContent.style.display = "block"; // Mostrar la imagen
+                imgContent.classList.add("fade-in_ia"); // Activar la transición suave para la imagen
+
+                // Iniciar el efecto de escritura para el contenido del bullet
+                typeWriterEffect(data.bullet); // Aplicar el efecto de escritura
+            })
+            .catch((error) => {
+                console.error("Error:", error);
+                // En caso de error, mostrar un mensaje de fallo en el efecto de escritura
+                typeWriterEffect("No se pudo obtener el resumen de la noticia");
+            });
+    }
 });

@@ -54,11 +54,9 @@
   }
   
   .content_ia {
-    display: none; /* Oculto por defecto */
-    padding: 20px;
-    font-size: 14px;
+    padding: 20px; /* Espaciado interno para separar el texto de los bordes */
+    line-height: 1.6; /* Mejora la legibilidad */
     color: #333;
-    line-height: 1.6;
   }
   
   .typing {
@@ -66,3 +64,36 @@
     white-space: nowrap;
     overflow: hidden;
   }
+
+  #titleContentIA{
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  #textContentIA {
+    white-space: pre-line; /* Respetar los saltos de línea */
+    padding: 15px; /* Espaciado interno */
+  }
+  
+  /* Estilo para la imagen */
+  #imgContentIA {
+    display: block; /* Para que la imagen se comporte como un bloque */
+    /* margin: 20px auto;  */
+    /* max-width: 100%;  */
+    width: 100%;
+    height: auto; /* Para mantener la proporción original */
+    /* border-radius: 5px;  */
+  }
+
+  /* Transición de opacidad para una aparición suave */
+  .fade_ia {
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+  }
+
+  /* Clase que activa la transición suave */
+  .fade-in_ia {
+    opacity: 1;
+  }
+
