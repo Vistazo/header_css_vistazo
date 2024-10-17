@@ -4,6 +4,7 @@
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    margin-bottom: 15px;
   }
   
   .header_ia {
@@ -70,6 +71,7 @@
     font-weight: bold;
     text-align: center;
     margin-bottom: 10px;
+    margin-top: 10px;
   }
   #textContentIA {
     white-space: pre-line; /* Respetar los saltos de línea */
