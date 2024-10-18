@@ -9,7 +9,7 @@ function updateProgressBar() {
   const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
   const scrolled = (winScroll / height) * 100;
   
-  document.querySelector(".progress-bar-desk").style.width = scrolled + "%";
+  document.querySelector(".progress-bardesk").style.width = scrolled + "%";
 }
 
 

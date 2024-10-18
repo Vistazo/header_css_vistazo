@@ -655,7 +655,7 @@ li a.menu_text_principal{
 }
 
 /* barra progress */
-.progress-bar-desk {
+.progress-bardesk {
     position: fixed;
     top: 60px; /* Justo debajo de la cabecera */
     left: 0;
