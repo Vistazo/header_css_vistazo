@@ -12,6 +12,21 @@ function updateProgressBar() {
   document.querySelector(".progress-bardesk").style.width = scrolled + "%";
 }
 
+// cambiar el titulo en una pagina especifica
+document.addEventListener("DOMContentLoaded", function() {
+  let path = window.location.pathname;
+  if (path == "/tes/narco.html" || path == "/actualidad/narco-lituano-cayo-en-bogota-destino-guayaquil-BA8112012") {
+    // <span>‘Narco’ lituano cayó en Bogotá: </span><br>
+    // <span>su destino era Guayaquil</span>
+    contenido = document.querySelector(".headline");
+    contenido.innerHTML = "";
+    contenido.innerHTML = `
+    <span>‘Narco’ lituano cayó en Bogotá: </span><br>
+    <span>su destino era Guayaquil</span>
+    `;
+
+  }
+});
 
 document.addEventListener("DOMContentLoaded", function () {
     // Para activar la eliminación de scripts

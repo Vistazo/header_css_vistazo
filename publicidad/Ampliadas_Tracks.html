@@ -1,0 +1,159 @@
+<script>
+    // Verificar si el navegador soporta localStorage
+    if (typeof localStorage !== 'undefined') {
+        // Función para cargar el contenido dinámico y los scripts
+        function loadMediaContent() {
+            // Inyectar los elementos HTML necesarios
+            var mdstrmDiv = document.createElement('div');
+            mdstrmDiv.id = 'mdstrm-player';
+            document.body.appendChild(mdstrmDiv);
+
+            var trackVideosDiv = document.createElement('div');
+            trackVideosDiv.id = 'trackVideos';
+            document.body.appendChild(trackVideosDiv);
+
+            // Cargar las librerías necesarias
+            var jqueryScript = document.createElement('script');
+            jqueryScript.src = "https://code.jquery.com/jquery-3.6.0.min.js";
+            document.body.appendChild(jqueryScript);
+
+            var momentScript = document.createElement('script');
+            momentScript.src = "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js";
+            document.body.appendChild(momentScript);
+
+            var momentDurationScript = document.createElement('script');
+            momentDurationScript.src = "https://cdnjs.cloudflare.com/ajax/libs/moment-duration-format/1.3.0/moment-duration-format.min.js";
+            document.body.appendChild(momentDurationScript);
+
+            var slickCSS = document.createElement('link');
+            slickCSS.rel = "stylesheet";
+            slickCSS.href = "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css";
+            document.head.appendChild(slickCSS);
+
+            var slickThemeCSS = document.createElement('link');
+            slickThemeCSS.rel = "stylesheet";
+            slickThemeCSS.href = "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css";
+            document.head.appendChild(slickThemeCSS);
+
+            var slickScript = document.createElement('script');
+            slickScript.src = "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js";
+            document.body.appendChild(slickScript);
+
+            var mdstrmScript = document.createElement('script');
+            mdstrmScript.src = "https://platform-static.cdn.mdstrm.com/js/player_api.js";
+            document.body.appendChild(mdstrmScript);
+
+            // Una vez que los scripts estén cargados, inicializamos los componentes
+            slickScript.onload = function () {
+                initPlayerAndVideos();
+            };
+
+            // Función para inicializar el reproductor y los videos
+            function initPlayerAndVideos() {
+                // Opciones del reproductor
+                var playerOptions = {
+                    width: 640,
+                    height: 360,
+                    type: "media",
+                    id: "6213c19add25b9082a667939",
+                    autoplay: false,
+                    events: {},
+                };
+
+                var idPlayer = playerOptions.id;
+                console.log("consola", idPlayer);
+                if (playerOptions.id) {
+                    console.log("yes_player");
+                } else {
+                    console.log("not_player");
+                }
+
+                // Función para el manejo de los videos
+                function getVideos(url) {
+                    $.ajax({
+                        url: url,
+                        type: "GET",
+                        dataType: "json",
+                        success: function (result) {
+                            var data = result.data;
+                            $.each(data, function (key, video) {
+                                if (video != null) {
+                                    var tracks = "";
+                                    if (video.tracks.length > 0) {
+                                        console.log("lleno");
+                                    } else {
+                                        console.log("vacio");
+                                        $("#trackVideos").hide();
+                                    }
+                                    video.tracks.forEach(function (track) {
+                                        var goToSegundos = track.position;
+                                        const duration = moment.duration(track.position, "seconds");
+                                        const h = duration.format("HH");
+                                        const m = duration.format("mm");
+                                        const s = duration.seconds();
+
+                                        tracks += '<a class="link-dark track-item" href="javascript:;" onclick="clickSeg('+track.position+')"><h6><svg width="20" height="20" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2Zm3.22 6.97-4.47 4.47-1.97-1.97a.75.75 0 0 0-1.06 1.06l2.5 2.5a.75.75 0 0 0 1.06 0l5-5a.75.75 0 1 0-1.06-1.06Z" fill="#046cdf"/></svg><b> Desde '+ h+':'+m+':'+s+'</b></h6><p>'+ track.name+'</p></a>';
+                                    });
+
+                                    var dateVideo = dateToYMD(video.date_created);
+                                    $("#trackVideos").append("<div class='video-popular-track'><div><div class='content'><h4>Contenido destacado del video</h4><div class='tracks multiple-items'>"+tracks+"</div></div></div></div>");
+                                }
+                            });
+
+                            $(".multiple-items").slick({
+                                infinite: false,
+                                slidesToShow: 4,
+                                slidesToScroll: 1,
+                                arrows: false,
+                                dots: true,
+                                responsive: [
+                                    {
+                                        breakpoint: 1024,
+                                        settings: {
+                                            slidesToShow: 4,
+                                            slidesToScroll: 1,
+                                            infinite: false,
+                                            dots: true,
+                                        },
+                                    },
+                                    {
+                                        breakpoint: 600,
+                                        settings: {
+                                            slidesToShow: 2,
+                                            slidesToScroll: 1,
+                                        },
+                                    },
+                                    {
+                                        breakpoint: 480,
+                                        settings: {
+                                            slidesToShow: 2,
+                                            slidesToScroll: 1,
+                                        },
+                                    },
+                                ],
+                            });
+                        },
+                        error: function (error) {},
+                    });
+                }
+
+                // Inicializar el reproductor
+                var player = new MediastreamPlayer("mdstrm-player", playerOptions);
+                player.videoPlay();
+
+                // Cargar los videos
+                var url = "https://platform.mediastre.am/api/media?id="+idPlayer+"&limit=10&token=215979b6242fdd636897c19bb6428cb5";
+                getVideos(url);
+                console.log('url:', url);
+            }
+
+            // Remover los eventos de interacción
+            window.removeEventListener('click', loadMediaContent);
+            window.removeEventListener('mousemove', loadMediaContent);
+        }
+
+        // Esperar la primera interacción del usuario
+        window.addEventListener('click', loadMediaContent);
+        window.addEventListener('mousemove', loadMediaContent);
+    }
+</script>

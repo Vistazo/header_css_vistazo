@@ -1,0 +1,35 @@
+<script>
+    // Verificar si el navegador soporta localStorage
+    if (typeof localStorage !== 'undefined') {
+        // Función para cargar el script de Taboola y configurar el contenedor
+        function loadTaboolaBelowArticle() {
+            var taboolaDiv = document.getElementById('taboola-below-article-thumbnails');
+            
+            // Asegurarse de que el contenedor de Taboola existe en la página
+            if (taboolaDiv) {
+                window._taboola = window._taboola || [];
+                _taboola.push({
+                    mode: 'alternating-thumbnails-a',
+                    container: 'taboola-below-article-thumbnails',
+                    placement: 'Below Article Thumbnails',
+                    target_type: 'mix'
+                });
+
+                // Cargar el script de Taboola
+                !function (e, f, u) {
+                    e.async = 1;
+                    e.src = u;
+                    f.parentNode.insertBefore(e, f);
+                }(document.createElement('script'), document.getElementsByTagName('script')[0], '//cdn.taboola.com/libtrc/adops-vistazo/loader.js');
+            }
+
+            // Remover los eventos para que no vuelva a cargarse el script
+            window.removeEventListener('click', loadTaboolaBelowArticle);
+            window.removeEventListener('mousemove', loadTaboolaBelowArticle);
+        }
+
+        // Esperar la primera interacción del usuario
+        window.addEventListener('click', loadTaboolaBelowArticle);
+        window.addEventListener('mousemove', loadTaboolaBelowArticle);
+    }
+</script>
