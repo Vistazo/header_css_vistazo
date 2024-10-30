@@ -691,3 +691,7 @@ li a.menu_text_principal{
 p u{
     text-decoration: underline #fd0f03;
 }
+
+.google_news {
+    display: none;
+}
