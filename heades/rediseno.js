@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (window.innerWidth <= 768) {
     document.querySelector(".hamburg_bm").style.display = "none";
     document.querySelector(".hamburg_bm_movil").style.display = "block";
-    // CanalWhatsappMovil();
+    CanalWhatsappMovil();
   } else {
     document.querySelector(".hamburg_bm").style.display = "block";
     document.querySelector(".hamburg_bm_movil").style.display = "none";
@@ -380,35 +380,45 @@ function CanalWhatsapp() {
 }
 
 function CanalWhatsappMovil() {
-  document.querySelector(
-    ".canal_whatsapp_link .acnal_whatsapp_link_redirect"
-  ).style.display = "none";
-  var elemento = document.querySelector(
-    ".canal_whatsapp_link_movil .acnal_whatsapp_link_redirect"
-  );
-  console.log(elemento);
-  if (elemento) {
-    //icon https://codigomarret.online/upload/img/whatsapp_37229.ico
-    let textContent =
-      '<img loading="lazy" src="https://codigomarret.online/upload/img/whatsapp_37229.ico" alt="whatsapp-icon" style="width: 20px; height: 20px; margin-right: 5px;">[¡Estamos en WhatsApp! 📲 ' +
-      // azul
-      '<b  class="b_azul" style="color: #4097ee;" >Empieza a seguirnos ahora</b>🚀]';
-    // '<b style="color: #25d366;" >Empieza a seguirnos ahora</b>🚀]';
-    elemento.innerHTML = textContent;
-    // que cuando agan hover en b_azul le apareca una subraya azul
-    let b = document.querySelector(".b_azul");
-    b.onmouseover = () => {
-      b.style.textDecoration = "underline";
-    };
+  // Selecciona el contenedor principal y el elemento que deseas mover
+  const textResizableContainer = document.querySelector('.text.resizable');
+  const canalWhatsAppLink = document.getElementById('canal_whatsapp_link');
 
-    // elemento.textContent = '<span class="whatsapp-icon">📲</span>[¡Estamos en WhatsApp! 📲 Empieza a seguirnos ahora🚀]';
-    // que valla en negrita
-    elemento.style.fontWeight = "bold";
-    // que tenga un color
-    elemento.style.color = "black";
-    // cursiva
-    elemento.style.fontStyle = "italic";
+  // Verifica que ambos elementos existan en el DOM antes de mover
+  if (textResizableContainer && canalWhatsAppLink) {
+    // Mueve el div de 'canal_whatsapp_link' al inicio de 'text resizable'
+    textResizableContainer.insertBefore(canalWhatsAppLink, textResizableContainer.firstChild);
   }
+
+  // document.querySelector(
+  //   ".canal_whatsapp_link .acnal_whatsapp_link_redirect"
+  // ).style.display = "none";
+  // var elemento = document.querySelector(
+  //   ".canal_whatsapp_link_movil .acnal_whatsapp_link_redirect"
+  // );
+  // console.log(elemento);
+  // if (elemento) {
+  //   //icon https://codigomarret.online/upload/img/whatsapp_37229.ico
+  //   let textContent =
+  //     '<img loading="lazy" src="https://codigomarret.online/upload/img/whatsapp_37229.ico" alt="whatsapp-icon" style="width: 20px; height: 20px; margin-right: 5px;">[¡Estamos en WhatsApp! 📲 ' +
+  //     // azul
+  //     '<b  class="b_azul" style="color: #4097ee;" >Empieza a seguirnos ahora</b>🚀]';
+  //   // '<b style="color: #25d366;" >Empieza a seguirnos ahora</b>🚀]';
+  //   elemento.innerHTML = textContent;
+  //   // que cuando agan hover en b_azul le apareca una subraya azul
+  //   let b = document.querySelector(".b_azul");
+  //   b.onmouseover = () => {
+  //     b.style.textDecoration = "underline";
+  //   };
+
+  //   // elemento.textContent = '<span class="whatsapp-icon">📲</span>[¡Estamos en WhatsApp! 📲 Empieza a seguirnos ahora🚀]';
+  //   // que valla en negrita
+  //   elemento.style.fontWeight = "bold";
+  //   // que tenga un color
+  //   elemento.style.color = "black";
+  //   // cursiva
+  //   elemento.style.fontStyle = "italic";
+  // }
 }
 
 function videoTecarender() {
