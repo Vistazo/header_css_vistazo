@@ -345,9 +345,9 @@ function toggleMenuMovil() {
 
 function CanalWhatsapp() {
   try {
-    document.querySelector(
-      ".canal_whatsapp_link_movil .acnal_whatsapp_link_redirect"
-    ).style.display = "none";
+    // document.querySelector(
+    //   ".canal_whatsapp_link_movil .acnal_whatsapp_link_redirect"
+    // ).style.display = "none";
     var elemento = document.querySelector(
       ".canal_whatsapp_link .acnal_whatsapp_link_redirect"
     );
@@ -386,7 +386,6 @@ function CanalWhatsappMovil() {
   var elemento = document.querySelector(
     ".canal_whatsapp_movil .acnal_whatsapp_link_redirect"
   );
-  console.log(elemento);
   if (elemento) {
     //icon https://codigomarret.online/upload/img/whatsapp_37229.ico
     let textContent =
