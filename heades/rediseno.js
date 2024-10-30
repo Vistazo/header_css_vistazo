@@ -381,8 +381,8 @@ function CanalWhatsapp() {
 
 function CanalWhatsappMovil() {
   document.querySelector(
-    ".canal_whatsapp_link"
-  ).style.display = "none !important";
+    ".canal_whatsapp_link .canal_whatsapp"
+  ).style.display = "none";
   var elemento = document.querySelector(
     ".canal_whatsapp_movil .acnal_whatsapp_link_redirect"
   );
