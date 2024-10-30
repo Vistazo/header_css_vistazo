@@ -345,9 +345,9 @@ function toggleMenuMovil() {
 
 function CanalWhatsapp() {
   try {
-    document.querySelector(
-      ".canal_whatsapp_link_movil .acnal_whatsapp_link_redirect"
-    ).style.display = "none";
+    // document.querySelector(
+    //   ".canal_whatsapp_link_movil .acnal_whatsapp_link_redirect"
+    // ).style.display = "none";
     var elemento = document.querySelector(
       ".canal_whatsapp_link .acnal_whatsapp_link_redirect"
     );
