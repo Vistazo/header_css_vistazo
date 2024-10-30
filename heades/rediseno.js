@@ -384,7 +384,7 @@ function CanalWhatsappMovil() {
     ".canal_whatsapp_link .acnal_whatsapp_link_redirect"
   ).style.display = "none !important";
   var elemento = document.querySelector(
-    ".canal_whatsapp_link_movil .acnal_whatsapp_link_redirect"
+    ".canal_whatsapp_movil .acnal_whatsapp_link_redirect"
   );
   console.log(elemento);
   if (elemento) {
