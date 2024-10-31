@@ -45,8 +45,6 @@ document.addEventListener("DOMContentLoaded", function () {
     middle3.remove();
   }
   Replica();
-
-
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -145,6 +143,11 @@ document.addEventListener("DOMContentLoaded", function () {
   
   // Esperar el primer scroll para cargar los scripts
   // window.addEventListener("scroll", loadOnScroll, { once: true }); // Escuchar solo una vez
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  // .google_news_img  cambiar la imagen de la pauta
+
 });
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -345,9 +348,9 @@ function toggleMenuMovil() {
 
 function CanalWhatsapp() {
   try {
-    // document.querySelector(
-    //   ".canal_whatsapp_link_movil .acnal_whatsapp_link_redirect"
-    // ).style.display = "none";
+    document.querySelector(
+      ".canal_whatsapp_link_movil .acnal_whatsapp_link_redirect"
+    ).style.display = "none";
     var elemento = document.querySelector(
       ".canal_whatsapp_link .acnal_whatsapp_link_redirect"
     );

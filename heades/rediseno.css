@@ -692,6 +692,10 @@ p u{
     text-decoration: underline #fd0f03;
 }
 
+/* .google_news {
+    display: none; 
+} */
+
 .google_news {
-    display: none;
+    width: -webkit-fill-available;
 }
