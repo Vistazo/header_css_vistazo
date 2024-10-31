@@ -145,10 +145,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // window.addEventListener("scroll", loadOnScroll, { once: true }); // Escuchar solo una vez
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  // .google_news_img  cambiar la imagen de la pauta
-
-});
 
 document.addEventListener("DOMContentLoaded", function() {
   // Seleccionar todos los enlaces dentro de la lista teaser-related-list
