@@ -30,16 +30,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 document.addEventListener("DOMContentLoaded", function () {
     // Para activar la eliminación de scripts
-  localStorage.setItem('removeScripts', 'true');
-  let localStorageKey = localStorage.getItem('removeScripts');
-  if(localStorageKey !== 'true'){
-    removeExternalScripts();
-    console.log('Scripts externos eliminados por que localStorage no esta configurado');
-  }else{
-    console.log('localStorage configurado para no eliminar scripts');
-  }
-
-  // Remover el elemento 'Middle3' si existe
   var middle3 = document.getElementById("Middle3");
   if (middle3) {
     middle3.remove();
@@ -209,72 +199,6 @@ function moverNotasRelacionadas() {
     console.log('El elemento con la clase "notas_relacionadass" no existe o ningún encabezado está presente.');
   }
 }
-
-function removeExternalScripts() {
-  // Eliminar el script de YouTube si ya existe
-  let youtubeScript = document.querySelector(
-    'script[src="https://www.youtube.com/iframe_api"]'
-  );
-  if (youtubeScript) {
-    youtubeScript.remove();
-    console.log("Script de YouTube eliminado");
-  }
-
-  // Eliminar el script de Google Ads si ya existe
-  let googleAdsScript = document.querySelector(
-    'script[src="https://tpc.googlesyndication.com/sodar/sodar2.js"]'
-  );
-  if (googleAdsScript) {
-    googleAdsScript.remove();
-    console.log("Script de Google Ads eliminado");
-  }
-  // https://www.youtube.com/s/player/bbc52cb2/www-embed-player.vflset/www-embed-player.js
-  // Eliminar el script de YouTube si ya existe
-  let youtubeScript2 = document.querySelector(
-    'script[src="https://www.youtube.com/s/player/bbc52cb2/www-embed-player.vflset/www-embed-player.js"]'
-  );
-  if (youtubeScript2) {
-    youtubeScript2.remove();
-    console.log("Script de YouTube eliminado");
-  }
-  // https://www.youtube.com/s/player/bbc52cb2/player_ias.vflset/en_US/base.js
-  // Eliminar el script de YouTube si ya existe
-  let youtubeScript3 = document.querySelector(
-    'script[src="https://www.youtube.com/s/player/bbc52cb2/player_ias.vflset/en_US/base.js"]'
-  );
-  if (youtubeScript3) {
-    youtubeScript3.remove();
-    console.log("Script de YouTube eliminado");
-  }
-  // https://www.youtube.com/embed/EvQEN6Hi1AA?wmode=transparent&showinfo=0&theme=light
-  // Eliminar el script de YouTube si ya existe
-  let youtubeScript4 = document.querySelector(
-    'script[src="https://www.youtube.com/embed/EvQEN6Hi1AA?wmode=transparent&showinfo=0&theme=light"]'
-  );
-  if (youtubeScript4) {
-    youtubeScript4.remove();
-    console.log("Script de YouTube eliminado");
-  }
-  // https://tpc.googlesyndication.com/sodar/sodar2/232/runner.html
-  // Eliminar el script de Google Ads si ya existe
-  let googleAdsScript2 = document.querySelector(
-    'script[src="https://tpc.googlesyndication.com/sodar/sodar2/232/runner.html"]'
-  );
-  if (googleAdsScript2) {
-    googleAdsScript2.remove();
-    console.log("Script de Google Ads eliminado");
-  }
-  // https://libs.lavoz.com.ar/paywall/pw.js
-  // Eliminar el script de Google Ads si ya existe
-  let googleAdsScript3 = document.querySelector(
-    'script[src="https://libs.lavoz.com.ar/paywall/pw.js"]'
-  );
-  if (googleAdsScript3) {
-    googleAdsScript3.remove();
-    console.log("Script de Google Ads eliminado");
-  }
-}
-
 function loadOnScroll() {
   // Llamar la función para cargar los scripts al hacer scroll
   loadExternalScripts();
@@ -350,6 +274,7 @@ function CanalWhatsapp() {
     var elemento = document.querySelector(
       ".canal_whatsapp_link .acnal_whatsapp_link_redirect"
     );
+    elemento.style.display = "block";
     console.log(elemento);
     if (elemento) {
       //icon https://codigomarret.online/upload/img/whatsapp_37229.ico
