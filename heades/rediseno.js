@@ -82,6 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  CanalWhatsapp();
   // si el tamaño de la pantalla es menor o igual a 768px
   if (window.innerWidth <= 768) {
     document.querySelector(".hamburg_bm").style.display = "none";
@@ -91,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector(".hamburg_bm").style.display = "block";
     document.querySelector(".hamburg_bm_movil").style.display = "none";
   }
-  CanalWhatsapp();
+  
 
   if (path == "/deportes/jjoo-2024") {
     // if(path == "/deportes" || path == "/" || path == "/deportes/jjoo-2024"){
@@ -268,14 +269,10 @@ function toggleMenuMovil() {
 
 function CanalWhatsapp() {
   try {
-    document.querySelector(
-      ".canal_whatsapp_link_movil .acnal_whatsapp_link_redirect"
-    ).style.display = "none";
     var elemento = document.querySelector(
       ".canal_whatsapp_link .acnal_whatsapp_link_redirect"
     );
-    elemento.style.display = "block";
-    console.log(elemento);
+    // elemento.style.display = "block";
     if (elemento) {
       //icon https://codigomarret.online/upload/img/whatsapp_37229.ico
       let textContent =
