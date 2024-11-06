@@ -689,7 +689,11 @@ li a.menu_text_principal{
     text-decoration: underline #fd0f03;
 }
 p u{
-    text-decoration: underline #fd0f03;
+    /* 
+    para nevagadores iphone tambien se puede usar
+    */
+    -webkit-text-decoration-color: #fd0f03;
+    text-decoration-color: #fd0f03;
 }
 
 /*
