@@ -464,32 +464,40 @@ loadScript(
 );
 
 window.addEventListener("DOMContentLoaded", function () {
+    // Seleccionar el enlace por su clase
     const downloadButton = document.querySelector(".descargar_codigo_etica");
-    console.log("downloadButton: ", downloadButton);
+
     if (downloadButton) {
-        downloadButton.addEventListener("click", function () {
+        downloadButton.addEventListener("click", function (event) {
+            event.preventDefault(); // Evitar el comportamiento predeterminado del enlace
+            console.log("Iniciando la descarga de código de ética...");
+
             // Hacer la petición GET para descargar el PDF
-            console.log("descargar_codigo_etica");
             fetch("https://codigomarret.online/upload/img/codigo-de-etica-vistazo.pdf", {
                 method: "GET",
             })
-                .then((response) => response.blob())
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.blob();
+                })
                 .then((blob) => {
                     // Crear un enlace temporal para descargar el archivo
                     const url = window.URL.createObjectURL(blob);
                     const a = document.createElement("a");
                     a.href = url;
-                    a.download = "codigo_etica.pdf";
+                    a.download = "codigo_etica.pdf"; // Nombre del archivo descargado
                     document.body.appendChild(a); // Agregar el enlace al DOM
-                    a.click(); // Simular clic para iniciar la descarga
-                    document.body.removeChild(a); // Limpiar el DOM
+                    a.click(); // Simular clic
+                    a.remove(); // Limpiar el DOM
                     window.URL.revokeObjectURL(url); // Liberar memoria
                 })
                 .catch((error) => {
-                    console.error("Error:", error);
+                    console.error("Error al descargar el archivo:", error);
                 });
         });
     } else {
-        console.error("El botón con ID 'descargar_codigo_etica' no se encontró en el DOM.");
+        console.error("No se encontró el enlace con la clase 'descargar_codigo_etica' en el DOM.");
     }
 });
