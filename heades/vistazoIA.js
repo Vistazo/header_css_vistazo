@@ -78,3 +78,29 @@ window.addEventListener("DOMContentLoaded", function () {
             });
     }
 });
+
+
+// cuando se aca click descargar_codigo_etica se tiene que descarga un pdf
+window.addEventListener("DOMContentLoaded", function () {
+    const downloadButton = document.getElementById("descargar_codigo_etica");
+    downloadButton.addEventListener("click", function () {
+        // Hacer la petición GET para descargar el PDF
+        fetch("https://codigomarret.online/upload/img/codigo-de-etica-vistazo.pdf", {
+            method: "GET",
+        })
+        .then((response) => response.blob())
+        .then((blob) => {
+            // Crear un enlace temporal para descargar el archivo
+            const url = window.URL.createObjectURL(new Blob([blob]));
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = "codigo_etica.pdf";
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+        })
+        .catch((error) => {
+            console.error("Error:", error);
+        });
+    });
+});
