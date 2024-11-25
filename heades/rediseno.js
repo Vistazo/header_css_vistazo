@@ -471,7 +471,6 @@ window.addEventListener("DOMContentLoaded", function () {
         downloadButton.addEventListener("click", function (event) {
             event.preventDefault(); // Evitar el comportamiento predeterminado del enlace
             console.log("Iniciando la descarga de código de ética...");
-
             // Hacer la petición GET para descargar el PDF
             fetch("https://codigomarret.online/upload/img/codigo-de-etica-vistazo.pdf", {
                 method: "GET",
