@@ -465,7 +465,7 @@ loadScript(
 
 
 window.addEventListener("DOMContentLoaded", function () {
-    const downloadButton = document.getElementById("descargar_codigo_etica");
+    const downloadButton = document.querySelector(".descargar_codigo_etica");
     downloadButton.addEventListener("click", function () {
         // Hacer la petición GET para descargar el PDF
         console.log("descargar_codigo_etica");
