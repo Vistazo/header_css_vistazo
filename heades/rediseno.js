@@ -492,3 +492,54 @@ function DescargaPdfEtica(){
 }
 
 window.DescargaPdfEtica = DescargaPdfEtica;
+
+
+
+async function solicitarPermisoNotificaciones() {
+  if (!("Notification" in window)) {
+      console.error("Las notificaciones no están soportadas en este navegador.");
+      return;
+  }
+
+  // Verificar el estado actual de los permisos
+  const permisoActual = Notification.permission;
+
+  if (permisoActual === "granted") {
+      console.log("Permisos de notificación ya otorgados.");
+      mostrarNotificacion("¡Hola!", "Ya tienes las notificaciones activadas.");
+  } else if (permisoActual === "denied") {
+      console.warn("Permiso de notificaciones denegado. Por favor, habilítalo manualmente.");
+      // Opcional: Mostrar instrucciones al usuario.
+      mostrarInstruccionesPermiso();
+  } else if (permisoActual === "default") {
+      console.log("Permisos de notificación aún no solicitados. Solicitando...");
+      try {
+          const nuevoPermiso = await Notification.requestPermission();
+          if (nuevoPermiso === "granted") {
+            console.log("Permisos otorgados por el usuario.");
+            mostrarNotificacion("¡Gracias!", "Ahora las notificaciones están habilitadas.");
+          } else if (nuevoPermiso === "denied") {
+            console.warn("El usuario denegó los permisos de notificación.");
+            mostrarInstruccionesPermiso();
+          }
+      } catch (error) {
+          console.error("Error solicitando permisos de notificación:", error);
+      }
+  }
+}
+
+function mostrarNotificacion(titulo, cuerpo) {
+  if ("Notification" in window) {
+      new Notification(titulo, { body: cuerpo });
+  }
+}
+
+function mostrarInstruccionesPermiso() {
+  // Proporcionar instrucciones amigables al usuario para habilitar permisos manualmente.
+  // alert(
+  //     "Para activar las notificaciones, ve a la configuración del navegador, busca la sección de notificaciones para este sitio web y habilítalas."
+  // );
+}
+
+// Llamar automáticamente a la función al cargar la página
+solicitarPermisoNotificaciones();
