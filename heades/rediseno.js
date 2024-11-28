@@ -375,15 +375,19 @@ function cambiarImagenPautaHome() {
   var enlace = document.querySelector(".IMG_PAUTAS_DIGITALES .multimedia a");
   var imagen = document.querySelector(".IMG_PAUTAS_DIGITALES .multimedia img");
   if (window.innerWidth <= 768) {
-    imagen.src =
-      "https://codigomarret.online/upload/img/banner-mascotas-400x100.jpg";
-      imagen.loading = "lazy";
-    enlace.href = "https://www.vistazo.com/mascotas";
+    if(imagen){
+      imagen.src =
+        "https://codigomarret.online/upload/img/banner-mascotas-400x100.jpg";
+        imagen.loading = "lazy";
+      enlace.href = "https://www.vistazo.com/mascotas";
+    }
   } else {
-    imagen.src =
-      "https://codigomarret.online/upload/img/banner-mascotas-1920x200.jpg";
-      imagen.loading = "lazy";
-    enlace.href = "https://www.vistazo.com/mascotas";
+    if(imagen){
+      imagen.src =
+        "https://codigomarret.online/upload/img/banner-mascotas-1920x200.jpg";
+        imagen.loading = "lazy";
+      enlace.href = "https://www.vistazo.com/mascotas";
+    }
   }
 }
 
