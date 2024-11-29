@@ -563,7 +563,7 @@ async function activarNotificaciones() {
           });
       } else if (permission === "denied") {
           // Si están denegadas, informa al usuario que debe activarlas manualmente
-          alert("Parece que denegaste las notificaciones. Actívalas desde la configuración de tu navegador.");
+          alert("Parece que tienes las notificaciones desactivadas. Por favor, actívalas manualmente en la configuración del navegador.");
       } else {
           // Caso "default" o cuando el usuario no interactúa
           alert("Por favor, habilita las notificaciones para recibir actualizaciones.");
