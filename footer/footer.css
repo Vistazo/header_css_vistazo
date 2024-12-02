@@ -4,6 +4,10 @@
   display: none;
 }
 
+footer {
+height: 470px !important;
+}
+
 footer .derechos {
   margin-top: 25px !important;
 }

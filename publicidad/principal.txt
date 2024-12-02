@@ -1,8 +1,3 @@
-// Inyectar la publicidad en el head de la página solo si de donde se esta accediendo tiene localStorage
-
-// Si el usuario tiene localStorage
-
-
 <!-- Google Tag Manager -->
 <script>(function (w, d, s, l, i) {
         w[l] = w[l] || []; w[l].push({
