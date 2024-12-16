@@ -707,3 +707,9 @@ p u{
 .google_news_img {
     width: -webkit-fill-available;
 }
+
+
+.Citavistazo{
+    border-left: 4px solid #fd0f03;
+    padding-left: 5px;
+}
