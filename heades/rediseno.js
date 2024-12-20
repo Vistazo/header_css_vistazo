@@ -31,9 +31,9 @@ document.addEventListener("DOMContentLoaded", function() {
   var headerContainDm = document.querySelector('div.header_contain_dm');
   if(headerAd && headerContainDm) {
     // Remover el elemento 'header_ad' de su posición actual
-    headerAd.parentNode.removeChild(headerAd);
-    // Insertar el elemento 'header_ad' justo después de 'header_contain_dm'
-    headerContainDm.parentNode.insertBefore(headerAd, headerContainDm.nextSibling);
+    // headerAd.parentNode.removeChild(headerAd);
+    // // Insertar el elemento 'header_ad' justo después de 'header_contain_dm'
+    // headerContainDm.parentNode.insertBefore(headerAd, headerContainDm.nextSibling);
   }
 
 });
