@@ -2,7 +2,7 @@
     background-color: #000;
     color: white;
     position: fixed;
-    top: 0;
+    top: auto;
     left: 0;
     right: 0;
     z-index: 1;
