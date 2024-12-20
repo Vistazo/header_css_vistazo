@@ -1,14 +1,19 @@
 .header_contain_dm{
-    background-color: #000;
+    background-color: white;
     color: white;
     position: fixed;
-    top: auto;
+    top: 0;
     left: 0;
     right: 0;
     z-index: 1;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
     border-bottom: 1px solid white;
     /* height: 60px; */
+}
+
+.header_contain_dm .content{
+    background-color: #000;;
+
 }
 
 .menu_header_bm{
