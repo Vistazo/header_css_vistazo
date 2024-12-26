@@ -661,10 +661,19 @@ li a.menu_text_principal{
     color: #3eadf4; /* Cambia el color del texto al pasar el cursor por encima */
 }
 
+/* Estilos para el cuerpo de la página, aplicarlo al cuerpo principal de la pagina*/
+body {
+    margin-top: 135px !important;
+     /* Agrega un margen superior para el cuerpo de la página */
+}
+
+#header_ad {
+    margin-left: 150px;  /* Ajusta el margen izquierdo del encabezado */
+}
 /* barra progress */
 .progress-bardesk {
     position: fixed;
-    top: 60px; /* Justo debajo de la cabecera */
+    top: 145px; /* Justo debajo de la cabecera */
     left: 0;
     width: 0%;
     height: 5px;
