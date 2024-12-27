@@ -721,3 +721,7 @@ p u{
     font-style: italic;
     margin-bottom: 10px;
 }
+
+.footer_revistas_mobile{
+    display: none;
+}
