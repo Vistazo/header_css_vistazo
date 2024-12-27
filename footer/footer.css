@@ -9,7 +9,7 @@ footer {
 }
 
 footer  {
-  background-color: none;
+  background-color: none !important;
 }
 
 footer .derechos {
