@@ -8,6 +8,10 @@ footer {
   height: 470px !important;
 }
 
+footer  {
+  background-color: none;
+}
+
 footer .derechos {
   margin-top: 25px !important;
 }
