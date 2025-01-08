@@ -33,6 +33,37 @@ function swiperCandidatos() {
 
 }
 
+function startCountdown(targetDate) {
+  const updateTimer = () => {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+
+    if (distance < 0) {
+      clearInterval(interval);
+      document.querySelector(".countdown").innerHTML = "¡Tiempo finalizado!";
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("days").textContent = days.toString().padStart(2, "0");
+    document.getElementById("hours").textContent = hours.toString().padStart(2, "0");
+    document.getElementById("minutes").textContent = minutes.toString().padStart(2, "0");
+    document.getElementById("seconds").textContent = seconds.toString().padStart(2, "0");
+  };
+
+  const interval = setInterval(updateTimer, 1000);
+  updateTimer(); // Llama una vez para evitar el retraso inicial
+}
+
+// Fecha objetivo: 4 de febrero de 2025 a las 00:00:00
+const targetDate = new Date("2025-02-04T00:00:00");
+startCountdown(targetDate);
+
+
 setTimeout(() => {
   swiperCandidatos();
 }, 500);

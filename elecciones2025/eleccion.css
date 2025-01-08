@@ -3,6 +3,9 @@
 div#iter-content-wrapper {
   margin-top: 70px;
 }
+.bloque-candidatos {
+  padding-bottom: 50px;
+}
 
 .bloque-candidatos .teaser-viewer-title {
   font-family: "Inter", serif;
@@ -10,9 +13,107 @@ div#iter-content-wrapper {
   font-weight: 800;
   line-height: 77.45px;
   text-align: left;
+  padding: 74px 0;
+  text-align: center;
+}
+
+.bloque-candidatos .noticias .article {
+  box-shadow: 0px 3px 15px 0px #00346540;
+  padding: 30px;
+  height: 600px;
+}
+
+
+.bloque-candidatos .noticias .article .headline{
+  margin-top: 15px;
+}
+
+.bloque-candidatos .noticias .article .headline a {
+  text-decoration: none;
+}
+
+.bloque-candidatos .noticias .article .headline a h2{
+font-family: "Inter", serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 29.05px;
+  text-align: left;
+  color: #1E1E1E;
+}
+
+
+.bloque-candidatos .noticias .article .text {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.36px;
+  text-align: left;
+  color: #1E1E1E;
+  margin-top: 20px;
 
 }
 
-.bloque-candidatos .noticias .article{
-  transform: translate3d(0px, 0, 0);
+.swiper-button-prev ,
+.swiper-button-next {
+
+  width: 70px !important;
+  height: 70px !important;
 }
+
+.swiper-button-next, .swiper-rtl .swiper-button-prev{
+  right: 0 !important;
+}
+
+.swiper-button-prev {
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+  background-image: url("https://estadisticas.ecuavisa.com/sites/gestor/assets-rd%2Fprev.png") !important;
+}
+
+.swiper-button-next {
+  background-repeat: no-repeat;
+background-size: 100% auto;
+background-position: center;
+  background-image: url("https://estadisticas.ecuavisa.com/sites/gestor/assets-rd%2Fnext.png") !important;
+}
+
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  content: "";
+}
+
+
+/*contador*/
+
+
+
+.countdown {
+  display: flex;
+  background-color: #111;
+  padding: 20px 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.time-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 10px;
+}
+
+.time-box span:first-child {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.label {
+  margin-top: 5px;
+  font-size: 1rem;
+  font-weight: lighter;
+  text-transform: uppercase;
+}
+
