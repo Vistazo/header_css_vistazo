@@ -7,8 +7,19 @@ div#iter-content-wrapper {
   margin-top: 70px;
 }
 
+.cta {
+  justify-content: start !important;
+}
+
 .header_contain_dm {
   z-index: 99;
+}
+
+.navbar{
+  row-gap: 20px !important;
+  height: auto !important;
+  padding: 10px 0 !important;
+
 }
 
 .e-informate {
@@ -17,6 +28,15 @@ div#iter-content-wrapper {
   color: #fff;
   font-family: Inter;
   text-decoration: none;
+}
+
+.items-anclados {
+  overflow: auto;
+  white-space: nowrap;
+  display: flex;
+  align-items: flex-start;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .items-anclados a {
@@ -159,4 +179,22 @@ div#iter-content-wrapper {
   font-size: 1rem;
   font-weight: lighter;
   text-transform: uppercase;
+}
+
+
+@media(max-width: 767px) {
+  .cta {
+    width: 100% !important;
+  }
+
+  .navbar {
+    height: auto !important;
+    padding: 10px 0 !important;
+    justify-content: center !important;
+    row-gap: 20px !important;
+  }
+
+  .countdown {
+    width: 100%;
+  }
 }
