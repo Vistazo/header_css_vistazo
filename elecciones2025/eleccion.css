@@ -1,8 +1,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
+
+
+/*header*/
 div#iter-content-wrapper {
   margin-top: 70px;
 }
+
+.header_contain_dm {
+  z-index: 99;
+}
+
+.e-informate {
+  background: #141414;
+  padding: 6px 19px;
+  color: #fff;
+  font-family: Inter;
+  text-decoration: none;
+}
+
+.items-anclados a {
+  color: #fff;
+  padding: 6px;
+  text-decoration: none;
+  font-family: Inter;
+  border-radius: 10px;
+}
+
+.items-anclados a:hover {
+  background: #f3000b;
+}
+
+
+/*bloque candidatos*/
 
 .bloque-candidatos {
   padding-bottom: 50px;
