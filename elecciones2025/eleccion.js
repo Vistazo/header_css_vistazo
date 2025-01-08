@@ -23,7 +23,7 @@ function swiperCandidatos() {
   
   
   var init = new Swiper(eleSwiper, {
-    slidesPerView: 3,
+    slidesPerView: 1,
     spaceBetween: 30,
     navigation: {
       nextEl: ".swiper-button-next",
