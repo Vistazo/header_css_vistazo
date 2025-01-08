@@ -61,9 +61,8 @@ function startCountdown(targetDate) {
 
 // Fecha objetivo: 4 de febrero de 2025 a las 00:00:00
 const targetDate = new Date("2025-02-04T00:00:00");
-startCountdown(targetDate);
-
 
 setTimeout(() => {
   swiperCandidatos();
+  startCountdown(targetDate);
 }, 500);
