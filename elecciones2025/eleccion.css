@@ -238,6 +238,11 @@ div#iter-content-wrapper {
   min-width: 200px;
 }
 
+.sololinea .head_title .title {
+  background-color: transparent;
+
+}
+
 .head_title .line_title {
   position: relative;
   top: -40px;
