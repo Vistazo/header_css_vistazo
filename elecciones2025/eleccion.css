@@ -210,6 +210,39 @@ div#iter-content-wrapper {
 
 
 /* INICIO - BLOQUE ELECCCIONES AL DIA*/
+
+
+.head_title {
+  float: left;
+  width: 100%;
+}
+.head_title .title {
+  background-color: #F3000B;
+  color: white;
+  height: 40px;
+  width: max-content;
+  text-align: center;
+  margin: 0 auto;
+  clip-path: polygon(11.5% -25.13%,96.50% -24.00%,88% 100%,0% 100%);
+  z-index: 5;
+  font-family: Inter;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  letter-spacing: .5px;
+  padding-top: 6px ;
+  padding-left: 10% ;
+  padding-right: 10% ;
+  min-width: 200px;
+}
+.head_title .line_title {
+  position: relative;
+  top: -40px;
+  border-bottom: solid 1px #000;
+  z-index: -1;
+  width: 100%;
+}
+
 .ed-izquierda .noticias .article .headline a {
   text-decoration: none;
 }
