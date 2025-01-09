@@ -337,6 +337,11 @@ div#iter-content-wrapper {
   margin-top: 100px;
 }
 
+.row.r05 {
+  margin-top: 100px;
+}
+
+
 @media (max-width: 768px) {
 
   .ed-derecha-arriba .noticias .article .headline a h2{
