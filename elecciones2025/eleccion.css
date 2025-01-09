@@ -437,11 +437,15 @@ div#iter-content-wrapper {
 .ge-bloque-derecha .noticias {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 40px;
 }
 
 .ge-bloque-derecha .noticias .article .IMG_TIT  {
   position: relative;
+}
+.ge-bloque-derecha .noticias .article .IMG_TIT img {
+
+  border-radius: 40px;
 }
 
 .ge-bloque-derecha .noticias .article .IMG_TIT .text_block {
@@ -460,6 +464,17 @@ div#iter-content-wrapper {
   font-weight: 700;
   line-height: 38.73px;
   text-align: left;
+  color: #fff;
+  padding: 20px;
 }
+
+
+@media (max-width: 767px) {
+  .ge-bloque-derecha .noticias {
+    grid-template-columns: none;
+
+  }
+}
+
 
 /* FIN - BLOQUE GUIA ELECTORAÑ*/
