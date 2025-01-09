@@ -215,7 +215,10 @@ div#iter-content-wrapper {
 .head_title {
   float: left;
   width: 100%;
+  display: block;
+  margin: 100px 0;
 }
+
 .head_title .title {
   background-color: #F3000B;
   color: white;
@@ -223,18 +226,19 @@ div#iter-content-wrapper {
   width: max-content;
   text-align: center;
   margin: 0 auto;
-  clip-path: polygon(11.5% -25.13%,96.50% -24.00%,88% 100%,0% 100%);
+  clip-path: polygon(11.5% -25.13%, 96.50% -24.00%, 88% 100%, 0% 100%);
   z-index: 5;
   font-family: Inter;
   font-weight: bold;
   font-size: 1.2rem;
   margin-top: 1rem;
   letter-spacing: .5px;
-  padding-top: 6px ;
-  padding-left: 10% ;
-  padding-right: 10% ;
+  padding-top: 6px;
+  padding-left: 10%;
+  padding-right: 10%;
   min-width: 200px;
 }
+
 .head_title .line_title {
   position: relative;
   top: -40px;
@@ -366,18 +370,9 @@ div#iter-content-wrapper {
 
 /**/
 
-.row.r04 {
-  margin-top: 100px;
-}
-
-.row.r05 {
-  margin-top: 100px;
-}
-
-
 @media (max-width: 768px) {
 
-  .ed-derecha-arriba .noticias .article .headline a h2{
+  .ed-derecha-arriba .noticias .article .headline a h2 {
     font-size: 18px;
     line-height: 20px;
   }
