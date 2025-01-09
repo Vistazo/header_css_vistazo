@@ -430,3 +430,36 @@ div#iter-content-wrapper {
 
 
 /* BLOQUE ELECCCIONES AL DIA - FIN */
+
+
+/* INICIO - BLOQUE GUIA ELECTORAÑ*/
+
+.ge-bloque-derecha .noticias {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.ge-bloque-derecha .noticias .article .IMG_TIT  {
+  position: relative;
+}
+
+.ge-bloque-derecha .noticias .article .IMG_TIT .text_block {
+  position: absolute;
+  bottom: 0px;
+}
+
+
+.ge-bloque-derecha .noticias .article .headline a {
+  text-decoration: none;
+}
+
+.ge-bloque-derecha .noticias .article .headline a h2 {
+  font-family: Inter;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 38.73px;
+  text-align: left;
+}
+
+/* FIN - BLOQUE GUIA ELECTORAÑ*/
