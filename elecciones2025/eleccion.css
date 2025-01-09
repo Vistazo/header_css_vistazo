@@ -2,7 +2,7 @@
 
 
 
-/*header*/
+/* INICIO - header*/
 div#iter-content-wrapper {
   margin-top: 70px;
 }
@@ -15,7 +15,7 @@ div#iter-content-wrapper {
   z-index: 99;
 }
 
-.navbar{
+.navbar {
   row-gap: 20px !important;
   height: auto !important;
   padding: 10px 0 !important;
@@ -51,6 +51,24 @@ div#iter-content-wrapper {
   background: #f3000b;
 }
 
+@media(max-width: 767px) {
+  .cta {
+    width: 100% !important;
+  }
+
+  .navbar {
+    height: auto !important;
+    padding: 10px 0 !important;
+    justify-content: center !important;
+    row-gap: 20px !important;
+  }
+
+
+}
+
+
+
+/*header - FIN*/
 
 /*bloque candidatos*/
 
@@ -137,7 +155,7 @@ div#iter-content-wrapper {
 }
 
 
-/*contador*/
+/* INICIO -  contador*/
 
 .text-tiempo {
   font-family: Inter;
@@ -181,20 +199,169 @@ div#iter-content-wrapper {
   text-transform: uppercase;
 }
 
-
 @media(max-width: 767px) {
-  .cta {
-    width: 100% !important;
-  }
-
-  .navbar {
-    height: auto !important;
-    padding: 10px 0 !important;
-    justify-content: center !important;
-    row-gap: 20px !important;
-  }
-
   .countdown {
     width: 100%;
   }
 }
+
+/* FIN -  contador*/
+
+
+
+/* INICIO - BLOQUE ELECCCIONES AL DIA*/
+.ed-izquierda .noticias .article .headline a {
+  text-decoration: none;
+}
+
+.ed-izquierda .noticias .article .headline a h2 {
+  font-family: Inter;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 56px;
+  text-align: left;
+  color: #040404;
+}
+
+.ed-izquierda .noticias .article .subheadline h3 {
+  font-family: Inter;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 35.2px;
+  text-align: left;
+  color: #404040;
+}
+
+.ed-izquierda .noticias .article .section {
+  font-family: Inter;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: left;
+  background: #D9D9D9;
+  text-decoration: none;
+  padding: 5px 20px;
+  margin-bottom: 20px;
+  display: inline-block;
+  color: #737171;
+}
+
+.ed-derecha-arriba .noticias {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.ed-derecha-arriba .noticias .article .headline a {
+  text-decoration: none;
+}
+
+.ed-derecha-arriba .noticias .article .headline a h2 {
+  font-family: Inter;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+  text-align: left;
+  color: #262626;
+}
+
+.ed-derecha-arriba .noticias .article .subheadline h3 {
+
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22.4px;
+  text-align: left;
+  color: #262626;
+
+}
+
+.ed-derecha-arriba .noticias .article {
+
+  background: #fff;
+  box-shadow: 0px 3px 15px 0px #00346540;
+  padding: 16px;
+
+}
+
+
+/**/
+
+.ed-derecha-abajo{
+  margin-top: 20px;
+}
+.ed-derecha-abajo .noticias .article .media_block {
+  display: none;
+}
+
+.ed-derecha-abajo .noticias .article .headline a {
+  text-decoration: none;
+}
+
+.ed-derecha-abajo .noticias .article .headline a h2 {
+  font-family: Inter;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 56px;
+  text-align: left;
+  color: #040404;
+}
+
+.ed-derecha-abajo .noticias .article .subheadline h3 {
+  font-family: Inter;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 35.2px;
+  text-align: left;
+  color: #404040;
+}
+
+.ed-derecha-abajo .noticias .article .section {
+  font-family: Inter;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: left;
+  background: #D9D9D9;
+  text-decoration: none;
+  padding: 5px 20px;
+  margin-bottom: 20px;
+  display: inline-block;
+  color: #737171;
+}
+/**/
+
+.row.r04 {
+  margin-top: 100px;
+}
+
+@media (max-width: 767px) {
+  .ed-izquierda .noticias .article .headline a h2 {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  .ed-izquierda .noticias .article .subheadline h3 {
+    font-size: 18px;
+    line-height: 25px;
+  }
+  .ed-derecha-arriba .noticias {
+    margin-top: 20px;
+  }
+
+  .ed-izquierda .noticias .article .section {
+    font-size: 12px;
+    line-height: 20px;
+    padding: 5px 10px;
+  }
+}
+
+@media (max-width: 575px) {
+  .ed-derecha-arriba .noticias {
+    grid-template-columns: none;
+    
+  }
+}
+
+
+/* BLOQUE ELECCCIONES AL DIA - FIN */
