@@ -164,6 +164,7 @@ div#iter-content-wrapper {
   line-height: 58.09px;
   text-align: left;
   text-align: center;
+  margin: 50px 0;
 }
 
 .countdown {
@@ -202,6 +203,9 @@ div#iter-content-wrapper {
 @media(max-width: 767px) {
   .countdown {
     width: 100%;
+  }
+  .time-box span:first-child{
+    font-size: 1.5rem;
   }
 }
 
