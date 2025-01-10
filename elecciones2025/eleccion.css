@@ -549,7 +549,8 @@ div#iter-content-wrapper {
 
 /*INICIO - PRIMERA VUELTA*/
 
-.prim-vuelta img {
+.prim-vuelta img,
+.segund-vuelta img {
   width: 100%;
   height: auto;
 }
@@ -588,6 +589,10 @@ div#iter-content-wrapper {
 
 }
 
+.segun-vuelta .texto_2025 {
+  background: #0C5A9A;
+  
+}
 
 @media (max-width: 991px) {
 
