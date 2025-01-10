@@ -502,7 +502,7 @@ div#iter-content-wrapper {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
   gap: 20px;
-  max-width: 1200px;
+  /* max-width: 1200px; */
   width: 100%;
 }
 
@@ -545,3 +545,67 @@ div#iter-content-wrapper {
 }
 
 /* FIN - BLOQUE GUIA ELECTORAÑ*/
+
+
+/*INICIO - PRIMERA VUELTA*/
+
+.prim-vuelta img {
+  width: 100%;
+  height: auto;
+}
+
+.contenedor_pv {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 55px;
+
+}
+
+.texto_2025 {
+  background: #800D12;
+  color: #fff;
+  font-family: Inter;
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 38.73px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  padding: 7px 40px;
+}
+
+.texto_primeravuelta {
+  text-transform: uppercase;
+  text-align: center;
+  font-family: Inter;
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 58.09px;
+  position: absolute;
+  right: 0;
+  left: 0;
+
+}
+
+
+@media (max-width: 991px) {
+
+  .texto_primeravuelta{
+    position: initial;
+  }
+  .contenedor_pv{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .texto_primeravuelta{
+    font-size: 28px;
+    line-height: 38px;
+    text-align: start;
+    margin-top: 10px;
+  }
+}
+
+
+/*FIN - PRIMERA VUELTA*/
