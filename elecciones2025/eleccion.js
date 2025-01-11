@@ -90,7 +90,13 @@ async function fetchData() {
     }
 
     const data = await response.json();
-    renderResults(data);
+
+    // Verificamos si la respuesta contiene datos
+    if (data.success && data.data && Array.isArray(data.data)) {
+      renderResults(data.data);
+    } else {
+      document.getElementById("results").innerHTML = `<p>No se encontraron datos disponibles.</p>`;
+    }
   } catch (error) {
     console.error("Error al consumir la API:", error);
     document.getElementById("results").innerHTML = `<p>Error al cargar los datos.</p>`;
@@ -100,17 +106,20 @@ async function fetchData() {
 function renderResults(data) {
   const resultsContainer = document.getElementById("results");
 
+  // Limpiar contenido previo
+  resultsContainer.innerHTML = "";
+
   data.forEach((item) => {
     const card = document.createElement("div");
     card.className = "card";
 
     card.innerHTML = `
-          <img src="${item.src}" alt="${item.title}">
-          <div class="content">
-            <h2>${item.title}</h2>
-            <a href="${item.redirect}" target="_blank">Ir al enlace</a>
-          </div>
-        `;
+      <img src="${item.src}" alt="${item.title}">
+      <div class="content">
+        <h2>${item.title}</h2>
+        <a href="${item.redirect}" target="_blank">Ver más</a>
+      </div>
+    `;
 
     resultsContainer.appendChild(card);
   });
