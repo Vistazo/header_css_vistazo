@@ -5,6 +5,7 @@ function swiperCandidatos() {
   var init = new Swiper(".b-can", {
     slidesPerView: 1,
     spaceBetween: 30,
+    cssMode: true,
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",

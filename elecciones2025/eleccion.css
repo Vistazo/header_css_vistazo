@@ -184,26 +184,26 @@ text-decoration: none;
 
 }
 
-.swiper-button-prev,
-.swiper-button-next {
+.bloque-candidatos .swiper-button-prev,
+.bloque-candidatos .swiper-button-next {
 
   width: 70px !important;
   height: 70px !important;
 }
 
-.swiper-button-next,
-.swiper-rtl .swiper-button-prev {
+.bloque-candidatos .swiper-button-next,
+.bloque-candidatos .swiper-rtl .swiper-button-prev {
   right: 0 !important;
 }
 
-.swiper-button-prev {
+.bloque-candidatos .swiper-button-prev {
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-position: center;
   background-image: url("https://estadisticas.ecuavisa.com/sites/gestor/assets-rd%2Fprev.png") !important;
 }
 
-.swiper-button-next {
+.bloque-candidatos .swiper-button-next {
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-position: center;
@@ -211,8 +211,8 @@ text-decoration: none;
 }
 
 
-.swiper-button-next::after,
-.swiper-button-prev::after {
+.bloque-candidatos .swiper-button-next::after,
+.bloque-candidatos .swiper-button-prev::after {
   content: "";
 }
 
