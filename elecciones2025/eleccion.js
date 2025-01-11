@@ -150,14 +150,15 @@ async function fetchAndDisplayCandidatos() {
                 card.className = "card";
 
                 card.innerHTML = `
-                    <img src="${candidato.src}" alt="${candidato.title}">
-                    <div class="card-body">
-                        <h3 class="card-title">${candidato.title}</h3>
-                        <div class="card-description">
-                            ${candidato.description.join("<br>")}
-                        </div>
-                        <a href="${candidato.redirect}" target="_blank">Leer más</a>
-                    </div>
+                <a href="${candidato.redirect}" target="_blank">
+                  <img src="${candidato.src}" alt="${candidato.title}">
+                  <div class="card-body">
+                      <h3 class="card-title">${candidato.title}</h3>
+                      <div class="card-description">
+                          ${candidato.description.join("<br>")}
+                      </div>
+                  </div>
+                </a>
                 `;
 
                 container.appendChild(card);
@@ -172,8 +173,8 @@ async function fetchAndDisplayCandidatos() {
 }
 
 setTimeout(() => {
-  fetchData();
   fetchAndDisplayCandidatos();
+  fetchData();
   swiperCandidatos();
   startCountdown(targetDate);
 }, 500);
