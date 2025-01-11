@@ -165,7 +165,7 @@ async function fetchAndDisplayCandidatos() {
                 card.innerHTML = `
                 <a href="${candidato.redirect}" target="_blank">
                   <img width="400" height="400" src="${candidato.src}" alt="${candidato.title}">
-                  <div class="card-body">
+                  <div class="card-body_">
                       <h3 class="card-title">${candidato.title}</h3>
                       <div class="card-description">
                           ${candidato.description.join("<br>")}
