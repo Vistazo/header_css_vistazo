@@ -39,9 +39,8 @@ function swiperPortada() {
     slidesPerView: 1,
     spaceBetween: 30,
     cssMode: true,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+    pagination: {
+      el: ".swiper-pagination",
     },
     breakpoints: {
       600: {
@@ -49,15 +48,15 @@ function swiperPortada() {
         spaceBetween: 20,
       },
       768: {
-        slidesPerView: 2,
+        slidesPerView: 1,
         spaceBetween: 30,
       },
       1024: {
-        slidesPerView: 3,
+        slidesPerView: 1,
         spaceBetween: 30,
       },
       1200: {
-        slidesPerView: 3,
+        slidesPerView: 1,
         spaceBetween: 30,
       },
     },
