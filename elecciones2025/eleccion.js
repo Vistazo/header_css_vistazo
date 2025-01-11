@@ -32,6 +32,39 @@ function swiperCandidatos() {
 
 }
 
+function swiperPortada() {
+
+
+  var init = new Swiper(".b-port", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    cssMode: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      600: {
+        slidesPerView: 1,
+        spaceBetween: 20,
+      },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 30,
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      },
+      1200: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      },
+    },
+  });
+
+}
+
 function startCountdown(targetDate) {
   const updateTimer = () => {
     const now = new Date().getTime();
@@ -92,7 +125,7 @@ function renderResults(data) {
 
   data.forEach((item) => {
     const card = document.createElement("div");
-    card.className = "card-portada";
+    card.className = "card-portada swiper-slide";
 
     card.innerHTML = `
       <div class="text_block">
@@ -154,6 +187,7 @@ async function fetchAndDisplayCandidatos() {
 }
 
 setTimeout(() => {
+  swiperPortada();
   fetchAndDisplayCandidatos();
   fetchData();
   swiperCandidatos();
