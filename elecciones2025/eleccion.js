@@ -3,7 +3,7 @@ function swiperCandidatos() {
 
   var eleSwiper = document.querySelector('.bloque-candidatos');
   var eleWrapper = document.querySelector('.bloque-candidatos #candidatos-container');
-  var elementsSlide = document.querySelectorAll('bloque-candidatos #candidatos-container .card-items');
+  var elementsSlide = document.querySelectorAll('.bloque-candidatos #candidatos-container .card-items');
 
   eleSwiper.classList.add('swiper');
   eleWrapper.classList.add('swiper-wrapper');
