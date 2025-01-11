@@ -111,13 +111,13 @@ function renderResults(data) {
 
   data.forEach((item) => {
     const card = document.createElement("div");
-    card.className = "card";
+    card.className = "card-portada";
 
     card.innerHTML = `
       <h2>${item.title}</h2>
       <a href="${item.redirect}" target="_blank">Ver más</a>
       <div class="content">
-        <img src="${item.src}" alt="${item.title}">
+        <img width="500" height="500" src="${item.src}" alt="${item.title}">
       </div>
     `;
 
