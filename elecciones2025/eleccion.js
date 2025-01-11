@@ -1,28 +1,8 @@
 
 function swiperCandidatos() {
 
-  var eleSwiper = document.querySelector('.bloque-candidatos');
-  var eleWrapper = document.querySelector('.bloque-candidatos #candidatos-container');
-  var elementsSlide = document.querySelectorAll('.bloque-candidatos #candidatos-container .card-items');
 
-  eleSwiper.classList.add('swiper');
-  eleWrapper.classList.add('swiper-wrapper');
-
-  for (const xSliders of elementsSlide) {
-    xSliders.classList.add('swiper-slide');
-  }
-
-  var prev = document.createElement('div');
-  var next = document.createElement('div');
-
-  prev.classList.add('swiper-button-prev');
-  next.classList.add('swiper-button-next');
-
-  eleSwiper.appendChild(prev);
-  eleSwiper.appendChild(next);
-
-
-  var init = new Swiper(eleSwiper, {
+  var init = new Swiper(".b-can", {
     slidesPerView: 1,
     spaceBetween: 30,
     navigation: {
@@ -147,7 +127,7 @@ async function fetchAndDisplayCandidatos() {
             // Iterar y crear las cards
             candidatos.forEach(candidato => {
                 const card = document.createElement("div");
-                card.className = "card-items";
+                card.className = "card-items swiper-slide";
 
                 card.innerHTML = `
                 <a href="${candidato.redirect}" target="_blank">
