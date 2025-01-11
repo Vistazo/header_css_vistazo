@@ -114,9 +114,12 @@ function renderResults(data) {
     card.className = "card-portada";
 
     card.innerHTML = `
-      <h2>${item.title}</h2>
-      <a href="${item.redirect}" target="_blank">Ver más</a>
-      <div class="content">
+      <div class="text_block">
+        <h2>${item.title}</h2>
+        <a href="${item.redirect}" target="_blank">Ver más</a>
+      </div>
+      
+      <div class="media_block">
         <img width="500" height="500" src="${item.src}" alt="${item.title}">
       </div>
     `;
