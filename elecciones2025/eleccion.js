@@ -140,7 +140,7 @@ function renderResults(data) {
       </div>
       
       <div class="media_block">
-        <img width="500" height="500" src="${item.src}" alt="${item.title}">
+        <img width="500" height="auto" src="${item.src}" alt="${item.title}">
       </div>
     `;
 

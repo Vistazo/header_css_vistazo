@@ -166,7 +166,7 @@ div#iter-content-wrapper {
   gap: 20px;
 }
 
-.card-portada img {
+.card-portada .media_block img {
   width: 100%;
   height: auto;
   border-radius: 20px;
