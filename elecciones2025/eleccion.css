@@ -102,10 +102,10 @@ div#iter-content-wrapper {
   padding-bottom: 90px;
 }
 
-.ele-portada {
+.loading {
   text-align: center;
-    padding: 160px 0;
-    margin: auto;
+  padding: 160px 0 230px 0;
+  margin: auto;
 }
 
 .b-port .swiper-pagination-bullet {
