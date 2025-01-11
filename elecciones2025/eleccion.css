@@ -79,9 +79,15 @@ div#iter-content-wrapper {
 
 /*PORTADA INICIO*/
 
+.r00 #726354{
+  background: #0B0B0B;
+  padding: 70px 0;
+}
+
 .card-portada {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  align-items: center;
   gap: 20px;
 }
 
@@ -90,6 +96,14 @@ div#iter-content-wrapper {
   height: auto;
 }
 
+.card-portada h2 {
+  font-family: 'Inter';
+    font-size: 50px;
+    font-weight: 600;
+    line-height: 60px;
+    text-align: left;
+    color: #fff;
+}
 /*PORTADA FIN*/
 
 
