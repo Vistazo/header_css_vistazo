@@ -11,7 +11,7 @@ div#iter-content-wrapper {
   border-bottom: none;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 767px) {
   div#iter-content-wrapper {
     margin-top: 108px;
   }
@@ -73,6 +73,10 @@ div#iter-content-wrapper {
     row-gap: 20px !important;
   }
 
+  .header_contain_dm .basic_search_bm {
+    top: 112px;
+  }
+
 
 }
 
@@ -120,6 +124,7 @@ div#iter-content-wrapper {
 .card-portada img {
   width: 100%;
   height: auto;
+  border-radius: 20px;
 }
 
 .card-portada h2 {
@@ -373,9 +378,7 @@ div#iter-content-wrapper {
   padding-left: 10%;
   padding-right: 10%;
   min-width: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
 }
 
 .sololinea .head_title .title {
@@ -540,6 +543,14 @@ div#iter-content-wrapper {
   .ed-izquierda .noticias .article .headline a h2 {
     font-size: 24px;
     line-height: 30px;
+  }
+
+  .head_title .title {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
   }
 
   .head_title {
