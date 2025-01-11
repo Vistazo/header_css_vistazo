@@ -38,7 +38,6 @@ function swiperPortada() {
   var init = new Swiper(".b-port", {
     slidesPerView: 1,
     spaceBetween: 30,
-    cssMode: true,
     pagination: {
       el: ".swiper-pagination",
     },
