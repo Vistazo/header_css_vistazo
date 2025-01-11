@@ -128,13 +128,52 @@ function renderResults(data) {
   });
 }
 
-// Llamar a la función para cargar los datos al cargar la página
 
+// URL de la API
+const API_URL_CANDIDATOS = "https://vtz.bmcodigo.com/getCandidatos";
 
+// Contenedor de las cards
+const container = document.getElementById("candidatos-container");
 
+// Función para crear y mostrar las cards
+async function fetchAndDisplayCandidatos() {
+    try {
+        const response = await fetch(API_URL_CANDIDATOS);
+        const result = await response.json();
+
+        if (result.success) {
+            const candidatos = result.data;
+
+            // Iterar y crear las cards
+            candidatos.forEach(candidato => {
+                const card = document.createElement("div");
+                card.className = "card";
+
+                card.innerHTML = `
+                    <img src="${candidato.src}" alt="${candidato.title}">
+                    <div class="card-body">
+                        <h3 class="card-title">${candidato.title}</h3>
+                        <div class="card-description">
+                            ${candidato.description.join("<br>")}
+                        </div>
+                        <a href="${candidato.redirect}" target="_blank">Leer más</a>
+                    </div>
+                `;
+
+                container.appendChild(card);
+            });
+        } else {
+            container.innerHTML = "<p>No se pudo cargar la lista de candidatos.</p>";
+        }
+    } catch (error) {
+        console.error("Error al consumir la API:", error);
+        container.innerHTML = "<p>Ocurrió un error al cargar los datos.</p>";
+    }
+}
 
 setTimeout(() => {
   fetchData();
+  fetchAndDisplayCandidatos();
   swiperCandidatos();
   startCountdown(targetDate);
 }, 500);
