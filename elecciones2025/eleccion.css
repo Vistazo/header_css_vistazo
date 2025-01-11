@@ -146,23 +146,20 @@ text-decoration: none;
   padding: 74px 0;
   text-align: center;
 }
+.bloque-candidatos .card-items img {
+  width: 100%;
+  height: auto;
+}
 
-.bloque-candidatos .noticias .article {
+.bloque-candidatos .card-items {
   box-shadow: 0px 3px 15px 0px #00346540;
   padding: 30px;
   height: 600px;
 }
 
 
-.bloque-candidatos .noticias .article .headline {
+.bloque-candidatos .card-items .card-title {
   margin-top: 15px;
-}
-
-.bloque-candidatos .noticias .article .headline a {
-  text-decoration: none;
-}
-
-.bloque-candidatos .noticias .article .headline a h2 {
   font-family: "Inter", serif;
   font-size: 24px;
   font-weight: 700;
@@ -171,8 +168,12 @@ text-decoration: none;
   color: #1E1E1E;
 }
 
+.bloque-candidatos .card-items a {
+  text-decoration: none;
+}
 
-.bloque-candidatos .noticias .article .text {
+
+.bloque-candidatos .card-items .card-description {
   font-family: Inter;
   font-size: 16px;
   font-weight: 400;

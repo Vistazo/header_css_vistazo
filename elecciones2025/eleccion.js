@@ -2,8 +2,8 @@
 function swiperCandidatos() {
 
   var eleSwiper = document.querySelector('.bloque-candidatos');
-  var eleWrapper = document.querySelector('.bloque-candidatos .noticias');
-  var elementsSlide = document.querySelectorAll('.bloque-candidatos .noticias .article');
+  var eleWrapper = document.querySelector('.bloque-candidatos #candidatos-container');
+  var elementsSlide = document.querySelectorAll('bloque-candidatos #candidatos-container .card-items');
 
   eleSwiper.classList.add('swiper');
   eleWrapper.classList.add('swiper-wrapper');
@@ -147,11 +147,11 @@ async function fetchAndDisplayCandidatos() {
             // Iterar y crear las cards
             candidatos.forEach(candidato => {
                 const card = document.createElement("div");
-                card.className = "card";
+                card.className = "card-items";
 
                 card.innerHTML = `
                 <a href="${candidato.redirect}" target="_blank">
-                  <img src="${candidato.src}" alt="${candidato.title}">
+                  <img width="400" height="400" src="${candidato.src}" alt="${candidato.title}">
                   <div class="card-body">
                       <h3 class="card-title">${candidato.title}</h3>
                       <div class="card-description">
