@@ -114,10 +114,10 @@ function renderResults(data) {
     card.className = "card";
 
     card.innerHTML = `
-      <img src="${item.src}" alt="${item.title}">
+      <h2>${item.title}</h2>
+      <a href="${item.redirect}" target="_blank">Ver más</a>
       <div class="content">
-        <h2>${item.title}</h2>
-        <a href="${item.redirect}" target="_blank">Ver más</a>
+        <img src="${item.src}" alt="${item.title}">
       </div>
     `;
 
