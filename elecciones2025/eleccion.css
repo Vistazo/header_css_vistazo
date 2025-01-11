@@ -79,7 +79,7 @@ div#iter-content-wrapper {
 
 /*PORTADA INICIO*/
 
-.r00 #b-000{
+.r00 #b-000 {
   background: #0B0B0B;
   padding: 70px 0;
 }
@@ -98,12 +98,35 @@ div#iter-content-wrapper {
 
 .card-portada h2 {
   font-family: 'Inter';
-    font-size: 50px;
-    font-weight: 600;
-    line-height: 60px;
-    text-align: left;
-    color: #fff;
+  font-size: 50px;
+  font-weight: 600;
+  line-height: 60px;
+  text-align: left;
+  color: #fff;
 }
+
+.card-portada a {
+
+  font-family: Inter;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24.2px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #fff;
+  background: #F3000B;
+  padding: 20px 30px;
+text-decoration: none;
+  display: inline-block;
+
+}
+
+.card-portada a:hover {
+  background: #ca000a;
+}
+
+
 /*PORTADA FIN*/
 
 
