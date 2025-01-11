@@ -109,6 +109,10 @@ div#iter-content-wrapper {
   opacity: 1 !important;
 }
 
+.results {
+  display: none;
+}
+
 .b-port .swiper-pagination-bullet-active {
   background: #F3000B !important;
 }

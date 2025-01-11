@@ -96,6 +96,9 @@ const targetDate = new Date("2025-02-09T00:00:00");
 const API_URL = "https://vtz.bmcodigo.com/getPortadaElecciones";
 
 async function fetchData() {
+
+  document.getElementById("loading").style.display = "block";
+  document.getElementById("results").style.display = "none";
   try {
     const response = await fetch(API_URL);
     if (!response.ok) {
@@ -113,6 +116,10 @@ async function fetchData() {
   } catch (error) {
     console.error("Error al consumir la API:", error);
     document.getElementById("results").innerHTML = `<p>Error al cargar los datos.</p>`;
+  } finally {
+    // Ocultar el mensaje de "Cargando..." y mostrar los resultados
+    document.getElementById("loading").style.display = "none";
+    document.getElementById("results").style.display = "flex";
   }
 }
 
