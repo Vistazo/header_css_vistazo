@@ -732,25 +732,7 @@ div#iter-content-wrapper {
 
 /**/
 
-.gallery {
-  display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 20px;
-  /* max-width: 1200px; */
-  width: 100%;
-}
 
-.gallery .ge-bloque-derecha .noticias {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-
-.gallery .article img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover;
-}
 
 .ge-bloque-izquierda .media_block [frame="crop_160x282"] {
   position: relative;
@@ -764,10 +746,6 @@ div#iter-content-wrapper {
 
 @media (max-width: 767px) {
 
-  .gallery {
-    grid-template-columns: none;
-
-  }
   .ge-bloque-izquierda .noticias .article .headline a h2{
     font-size: 24px;
     line-height: 30px;
@@ -776,10 +754,7 @@ div#iter-content-wrapper {
 
 @media (max-width: 575px) {
 
-  .gallery .ge-bloque-derecha .noticias {
-    grid-template-columns: none;
 
-  }
 }
 
 /* FIN - BLOQUE GUIA ELECTORAÑ*/
