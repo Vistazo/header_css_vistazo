@@ -104,7 +104,10 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   
 
-
+  if (path == "/deportes/jjoo-2024") {
+    // if(path == "/deportes" || path == "/" || path == "/deportes/jjoo-2024"){
+    cambiarImagenPautaEstadio();
+  }
   if (path == "/" || path == "/tes/index.html") {
     cambiarImagenPautaHome();
   }
@@ -381,6 +384,53 @@ function getYouTubeID(url) {
 function cambiarImagenPautaHome() {
   var enlace = document.querySelector(".IMG_PAUTAS_DIGITALES .multimedia a");
   var imagen = document.querySelector(".IMG_PAUTAS_DIGITALES .multimedia img");
+  var imageneDesk = [
+    { src: "https://codigomarret.online/upload/img/elecciones-(12).jpg", href: "https://www.vistazo.com/elecciones-ecuador-presidente-asamblea-2025" },
+    { src: "https://codigomarret.online/upload/img/banner-mascotas-1920x200.jpg", href: "https://www.vistazo.com/mascotas" }
+    // Agrega más objetos para más imágenes y enlaces
+  ];
+  var imageneMovil = [
+    { src: "https://codigomarret.online/upload/img/elecciones-(728-x-90-px)-(4).jpg", href: "https://www.vistazo.com/elecciones-ecuador-presidente-asamblea-2025" },
+    { src: "https://codigomarret.online/upload/img/banner-mascotas-400x100.jpg", href: "https://www.vistazo.com/mascotas" },
+    // Agrega más objetos para más imágenes y enlaces
+  ]
+  let indiceActual = 0;
+  function actualizarImagen() {
+    const imagenActual = imageneDesk[indiceActual];
+    imagen.src = imagenActual.src;
+    imagen.loading = "lazy";
+    enlace.href = imagenActual.href;
+    // Actualiza el índice para la próxima imagen o vuelve al inicio si es la última
+    indiceActual = (indiceActual + 1) % imageneDesk.length;
+  }
+  function actualizarImagenMovil() {
+    const imagenActual = imageneMovil[indiceActual];
+    imagen.src = imagenActual.src;
+    imagen.loading = "lazy";
+    enlace.href = imagenActual.href;
+    // Actualiza el índice para la próxima imagen o vuelve al inicio si es la última
+    indiceActual = (indiceActual + 1) % imageneMovil.length;
+  }
+
+  setInterval(() => {
+    if (window.innerWidth <= 768) {
+      actualizarImagenMovil();
+    } else {
+      actualizarImagen();
+    }
+  }, 3000);
+
+  // Actualizar la imagen al cargar la página
+  if (window.innerWidth <= 768) {
+    actualizarImagenMovil();
+  } else {
+    actualizarImagen();
+  }
+}
+
+function cambiarImagenPautaHome() {
+  var enlace = document.querySelector(".IMG_PAUTAS_DIGITALES .multimedia a");
+  var imagen = document.querySelector(".IMG_PAUTAS_DIGITALES .multimedia img");
   var imagenesDesktop = [
     { src: "https://codigomarret.online/upload/img/elecciones-(12).jpg", href: "https://www.vistazo.com/elecciones-ecuador-presidente-asamblea-2025" },
     { src: "https://codigomarret.online/upload/img/banner-mascotas-1920x200.jpg", href: "https://www.vistazo.com/mascotas" }
@@ -429,42 +479,6 @@ function cambiarImagenPautaHome() {
   }
 }
 
-
-function cambiarImagenPautaEstadio() {
-  try {
-    let url = "https://codigomarret.online/upload/img/jjoo-(1920-x-200-px).png";
-    var pautaEstadio = document.querySelector(".pauta_estadio_css");
-    // Asegúrate de que el elemento existe antes de aplicar estilos
-    if (pautaEstadio) {
-      // crear etiqueta img y poner la imagen envolver la imagen en a para que sea clickeable y redireccione a la url de estadío
-      let path = window.location.pathname;
-      if (path == "/") {
-        let a = document.createElement("a");
-        a.href = "https://www.vistazo.com/deportes/jjoo-2024";
-        let img = document.createElement("img");
-        img.src = url;
-        img.style.width = "100%";
-        img.style.height = "auto";
-        img.style.display = "block";
-        pautaEstadio.style.width = "100%";
-        pautaEstadio.style.overflow = "hidden";
-        a.appendChild(img);
-        pautaEstadio.appendChild(a);
-      } else {
-        let img = document.createElement("img");
-        img.src = url;
-        img.style.width = "100%";
-        img.style.height = "auto";
-        img.style.display = "block";
-        pautaEstadio.style.width = "100%";
-        pautaEstadio.style.overflow = "hidden";
-        pautaEstadio.appendChild(img);
-      }
-    }
-  } catch (error) {
-    console.log(error);
-  }
-}
 
 function Replica() {
   fetch("https://www.vistazo.com/rss/replicas.json")
@@ -536,7 +550,7 @@ function DescargaPdfEtica(){
 
 window.DescargaPdfEtica = DescargaPdfEtica;
 // Llama a iniciarCarrusel cuando la página esté completamente cargada
-window.onload = cambiarImagenPautaEstadio;
+window.onload = cambiarImagenPautaEstadio
 
 
 async function solicitarPermisoNotificaciones() {
