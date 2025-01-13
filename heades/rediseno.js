@@ -451,10 +451,8 @@ function cambiarImagenPautaEstadio() {
         let a = document.createElement("a");
         let img = document.createElement("img");
         if (window.innerWidth <= 768) {
-          actualizarImagenMovil();
           img.src = "https://codigomarret.online/upload/img/elecciones-(400-x-100-px).png";
         } else {
-          actualizarImagen();
           img.src = "https://codigomarret.online/upload/img/elecciones-(1920-x-200-px).png"
         }
         a.href = "https://www.vistazo.com/elecciones-ecuador-presidente-asamblea-2025";
