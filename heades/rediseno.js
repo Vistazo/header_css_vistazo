@@ -311,12 +311,11 @@ function CanalWhatsapp() {
 }
 
 function CanalWhatsappMovil() {
-  document.querySelector(
-    ".canal_whatsapp_link .canal_whatsapp"
-  ).style.display = "none";
-  var elemento = document.querySelector(
-    ".canal_whatsapp_movil .acnal_whatsapp_link_redirect"
-  );
+  const canalMovil = document.querySelector(".canal_whatsapp_link .canal_whatsapp")
+  if(canalMovil){
+    canalMovil.style.display = "none";
+  }
+  var elemento = document.querySelector(".canal_whatsapp_movil .acnal_whatsapp_link_redirect");
   if (elemento) {
     //icon https://codigomarret.online/upload/img/whatsapp_37229.ico
     let textContent =
