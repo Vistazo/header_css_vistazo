@@ -390,7 +390,7 @@ div#iter-content-wrapper {
 
   .text-tiempo {
     font-size: 15px;
-    line-height: 25;
+    /* line-height: 25; */
   }
 
   .time-box span:first-child {
