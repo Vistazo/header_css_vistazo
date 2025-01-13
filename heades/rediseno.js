@@ -385,13 +385,13 @@ function cambiarImagenPautaHome() {
   var enlace = document.querySelector(".IMG_PAUTAS_DIGITALES .multimedia a");
   var imagen = document.querySelector(".IMG_PAUTAS_DIGITALES .multimedia img");
   var imagenesDesktop = [
+    { src: "https://codigomarret.online/upload/img/banner-mascotas-1920x200.jpg", href: "https://www.vistazo.com/mascotas" },
     { src: "https://codigomarret.online/upload/img/elecciones-(1920-x-200-px).png", href: "https://www.vistazo.com/elecciones-ecuador-presidente-asamblea-2025" },
-    { src: "https://codigomarret.online/upload/img/banner-mascotas-1920x200.jpg", href: "https://www.vistazo.com/mascotas" }
     // Agrega más objetos para más imágenes y enlaces
   ];
   var imagenesMovil = [
+    { src: "https://codigomarret.online/upload/img/banner-mascotas-400x100.jpg", href: "https://www.vistazo.com/mascotas" },
     { src: "https://codigomarret.online/upload/img/elecciones-(400-x-100-px).png", href: "https://www.vistazo.com/elecciones-ecuador-presidente-asamblea-2025" },
-    { src: "https://codigomarret.online/upload/img/banner-mascotas-400x100.jpg", href: "https://www.vistazo.com/mascotas" }
     // Agrega más objetos para más imágenes y enlaces
   ];
   let indiceActual = 0;
@@ -416,13 +416,20 @@ function cambiarImagenPautaHome() {
     indiceActual = (indiceActual + 1) % imagenesMovil.length;
   }
 
-  setInterval(() => {
-    if (window.innerWidth <= 768) {
-      actualizarImagenMovil();
+  // Decide si iniciar el carrusel o mostrar solo una imagen
+  if (window.innerWidth <= 768) {
+    if (imagenesMovil.length > 1) {
+      setInterval(actualizarImagenMovil, 10000); // Cambia cada 10 segundos
     } else {
-      actualizarImagen();
+      mostrarImagenSuave(imagenesMovil[0]);
     }
-  }, 4000); // Intervalo ajustado a 4 segundos para incluir el tiempo de transición
+  } else {
+    if (imagenesDesktop.length > 1) {
+      setInterval(actualizarImagen, 10000); // Cambia cada 10 segundos
+    } else {
+      mostrarImagenSuave(imagenesDesktop[0]);
+    }
+  }
 
   // Actualizar la imagen al cargar la página
   if (window.innerWidth <= 768) {
