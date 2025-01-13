@@ -384,10 +384,13 @@ div#iter-content-wrapper {
   .countdown {
     width: 100%;
   }
+  .countdown{
+    padding: 20px 10px;
+  }
 
   .text-tiempo {
     font-size: 15px;
-    line-height: 38px;
+    line-height: 25;
   }
 
   .time-box span:first-child {
@@ -590,6 +593,9 @@ div#iter-content-wrapper {
     font-size: 24px;
     line-height: 30px;
   }
+  .ed-derecha-abajo {
+    margin-top: 30px;
+  }
 
   .head_title .title {
 
@@ -761,6 +767,10 @@ div#iter-content-wrapper {
   .gallery {
     grid-template-columns: none;
 
+  }
+  .ge-bloque-izquierda .noticias .article .headline a h2{
+    font-size: 24px;
+    line-height: 30px;
   }
 }
 
