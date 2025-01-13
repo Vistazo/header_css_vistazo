@@ -728,3 +728,9 @@ p u{
 .footer_revistas{
     display: none;
 }
+
+.IMG_PAUTAS_DIGITALES .multimedia img {
+    transition: opacity 1s ease-in-out; /* Transición suave de opacidad */
+    opacity: 0; /* Inicia con opacidad cero */
+}
+  

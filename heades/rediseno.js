@@ -381,32 +381,36 @@ function getYouTubeID(url) {
 function cambiarImagenPautaHome() {
   var enlace = document.querySelector(".IMG_PAUTAS_DIGITALES .multimedia a");
   var imagen = document.querySelector(".IMG_PAUTAS_DIGITALES .multimedia img");
-  var imageneDesk = [
+  var imagenesDesktop = [
     { src: "https://codigomarret.online/upload/img/elecciones-(12).jpg", href: "https://www.vistazo.com/elecciones-ecuador-presidente-asamblea-2025" },
     { src: "https://codigomarret.online/upload/img/banner-mascotas-1920x200.jpg", href: "https://www.vistazo.com/mascotas" }
     // Agrega más objetos para más imágenes y enlaces
   ];
-  var imageneMovil = [
+  var imagenesMovil = [
     { src: "https://codigomarret.online/upload/img/elecciones-(728-x-90-px)-(4).jpg", href: "https://www.vistazo.com/elecciones-ecuador-presidente-asamblea-2025" },
-    { src: "https://codigomarret.online/upload/img/banner-mascotas-400x100.jpg", href: "https://www.vistazo.com/mascotas" },
+    { src: "https://codigomarret.online/upload/img/banner-mascotas-400x100.jpg", href: "https://www.vistazo.com/mascotas" }
     // Agrega más objetos para más imágenes y enlaces
-  ]
+  ];
   let indiceActual = 0;
-  function actualizarImagen() {
-    const imagenActual = imageneDesk[indiceActual];
-    imagen.src = imagenActual.src;
-    imagen.loading = "lazy";
-    enlace.href = imagenActual.href;
-    // Actualiza el índice para la próxima imagen o vuelve al inicio si es la última
-    indiceActual = (indiceActual + 1) % imageneDesk.length;
+
+  function mostrarImagenSuave(imagenActual) {
+    imagen.style.opacity = 0; // Hace invisible la imagen para comenzar la transición
+    setTimeout(() => {
+      imagen.src = imagenActual.src;
+      imagen.loading = "lazy";
+      enlace.href = imagenActual.href;
+      imagen.style.opacity = 1; // Hace visible la imagen suavemente
+    }, 1000); // Espera 1 segundo para comenzar a mostrar la imagen, coincidiendo con la transición de opacidad
   }
+
+  function actualizarImagen() {
+    mostrarImagenSuave(imagenesDesktop[indiceActual]);
+    indiceActual = (indiceActual + 1) % imagenesDesktop.length;
+  }
+
   function actualizarImagenMovil() {
-    const imagenActual = imageneMovil[indiceActual];
-    imagen.src = imagenActual.src;
-    imagen.loading = "lazy";
-    enlace.href = imagenActual.href;
-    // Actualiza el índice para la próxima imagen o vuelve al inicio si es la última
-    indiceActual = (indiceActual + 1) % imageneMovil.length;
+    mostrarImagenSuave(imagenesMovil[indiceActual]);
+    indiceActual = (indiceActual + 1) % imagenesMovil.length;
   }
 
   setInterval(() => {
@@ -415,7 +419,7 @@ function cambiarImagenPautaHome() {
     } else {
       actualizarImagen();
     }
-  }, 3000);
+  }, 4000); // Intervalo ajustado a 4 segundos para incluir el tiempo de transición
 
   // Actualizar la imagen al cargar la página
   if (window.innerWidth <= 768) {
@@ -424,6 +428,7 @@ function cambiarImagenPautaHome() {
     actualizarImagen();
   }
 }
+
 
 function cambiarImagenPautaEstadio() {
   try {
