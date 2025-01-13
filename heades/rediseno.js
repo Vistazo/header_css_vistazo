@@ -104,10 +104,10 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   
 
-  if (path == "/deportes/jjoo-2024") {
+  // if (path == "/deportes/jjoo-2024") {
     // if(path == "/deportes" || path == "/" || path == "/deportes/jjoo-2024"){
-    cambiarImagenPautaEstadio();
-  }
+    // cambiarImagenPautaEstadio();
+  // }
   if (path == "/" || path == "/tes/index.html") {
     cambiarImagenPautaHome();
   }
@@ -384,58 +384,90 @@ function getYouTubeID(url) {
 function cambiarImagenPautaHome() {
   var enlace = document.querySelector(".IMG_PAUTAS_DIGITALES .multimedia a");
   var imagen = document.querySelector(".IMG_PAUTAS_DIGITALES .multimedia img");
+  var imagenesDesktop = [
+    { src: "https://codigomarret.online/upload/img/elecciones-(12).jpg", href: "https://www.vistazo.com/elecciones-ecuador-presidente-asamblea-2025" },
+    { src: "https://codigomarret.online/upload/img/banner-mascotas-1920x200.jpg", href: "https://www.vistazo.com/mascotas" }
+    // Agrega más objetos para más imágenes y enlaces
+  ];
+  var imagenesMovil = [
+    { src: "https://codigomarret.online/upload/img/elecciones-(728-x-90-px)-(4).jpg", href: "https://www.vistazo.com/elecciones-ecuador-presidente-asamblea-2025" },
+    { src: "https://codigomarret.online/upload/img/banner-mascotas-400x100.jpg", href: "https://www.vistazo.com/mascotas" }
+    // Agrega más objetos para más imágenes y enlaces
+  ];
+  let indiceActual = 0;
+
+  function mostrarImagenSuave(imagenActual) {
+    imagen.style.opacity = 0; // Hace invisible la imagen para comenzar la transición
+    setTimeout(() => {
+      imagen.src = imagenActual.src;
+      imagen.loading = "lazy";
+      enlace.href = imagenActual.href;
+      imagen.style.opacity = 1; // Hace visible la imagen suavemente
+    }, 1000); // Espera 1 segundo para comenzar a mostrar la imagen, coincidiendo con la transición de opacidad
+  }
+
+  function actualizarImagen() {
+    mostrarImagenSuave(imagenesDesktop[indiceActual]);
+    indiceActual = (indiceActual + 1) % imagenesDesktop.length;
+  }
+
+  function actualizarImagenMovil() {
+    mostrarImagenSuave(imagenesMovil[indiceActual]);
+    indiceActual = (indiceActual + 1) % imagenesMovil.length;
+  }
+
+  setInterval(() => {
+    if (window.innerWidth <= 768) {
+      actualizarImagenMovil();
+    } else {
+      actualizarImagen();
+    }
+  }, 4000); // Intervalo ajustado a 4 segundos para incluir el tiempo de transición
+
+  // Actualizar la imagen al cargar la página
   if (window.innerWidth <= 768) {
-    if(imagen){
-      imagen.src =
-        "https://codigomarret.online/upload/img/banner-mascotas-400x100.jpg";
-        imagen.loading = "lazy";
-      enlace.href = "https://www.vistazo.com/mascotas";
-    }
+    actualizarImagenMovil();
   } else {
-    if(imagen){
-      imagen.src =
-        "https://codigomarret.online/upload/img/banner-mascotas-1920x200.jpg";
-        imagen.loading = "lazy";
-      enlace.href = "https://www.vistazo.com/mascotas";
-    }
+    actualizarImagen();
   }
 }
 
-function cambiarImagenPautaEstadio() {
-  try {
-    let url = "https://codigomarret.online/upload/img/jjoo-(1920-x-200-px).png";
-    var pautaEstadio = document.querySelector(".pauta_estadio_css");
-    // Asegúrate de que el elemento existe antes de aplicar estilos
-    if (pautaEstadio) {
-      // crear etiqueta img y poner la imagen envolver la imagen en a para que sea clickeable y redireccione a la url de estadío
-      let path = window.location.pathname;
-      if (path == "/") {
-        let a = document.createElement("a");
-        a.href = "https://www.vistazo.com/deportes/jjoo-2024";
-        let img = document.createElement("img");
-        img.src = url;
-        img.style.width = "100%";
-        img.style.height = "auto";
-        img.style.display = "block";
-        pautaEstadio.style.width = "100%";
-        pautaEstadio.style.overflow = "hidden";
-        a.appendChild(img);
-        pautaEstadio.appendChild(a);
-      } else {
-        let img = document.createElement("img");
-        img.src = url;
-        img.style.width = "100%";
-        img.style.height = "auto";
-        img.style.display = "block";
-        pautaEstadio.style.width = "100%";
-        pautaEstadio.style.overflow = "hidden";
-        pautaEstadio.appendChild(img);
-      }
-    }
-  } catch (error) {
-    console.log(error);
-  }
-}
+
+// function cambiarImagenPautaEstadio() {
+//   try {
+//     let url = "https://codigomarret.online/upload/img/jjoo-(1920-x-200-px).png";
+//     var pautaEstadio = document.querySelector(".pauta_estadio_css");
+//     // Asegúrate de que el elemento existe antes de aplicar estilos
+//     if (pautaEstadio) {
+//       // crear etiqueta img y poner la imagen envolver la imagen en a para que sea clickeable y redireccione a la url de estadío
+//       let path = window.location.pathname;
+//       if (path == "/") {
+//         let a = document.createElement("a");
+//         a.href = "https://www.vistazo.com/deportes/jjoo-2024";
+//         let img = document.createElement("img");
+//         img.src = url;
+//         img.style.width = "100%";
+//         img.style.height = "auto";
+//         img.style.display = "block";
+//         pautaEstadio.style.width = "100%";
+//         pautaEstadio.style.overflow = "hidden";
+//         a.appendChild(img);
+//         pautaEstadio.appendChild(a);
+//       } else {
+//         let img = document.createElement("img");
+//         img.src = url;
+//         img.style.width = "100%";
+//         img.style.height = "auto";
+//         img.style.display = "block";
+//         pautaEstadio.style.width = "100%";
+//         pautaEstadio.style.overflow = "hidden";
+//         pautaEstadio.appendChild(img);
+//       }
+//     }
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
 
 function Replica() {
   fetch("https://www.vistazo.com/rss/replicas.json")
@@ -506,7 +538,7 @@ function DescargaPdfEtica(){
 }
 
 window.DescargaPdfEtica = DescargaPdfEtica;
-
+window.cambiarImagenPautaHome = cambiarImagenPautaHome;
 
 
 async function solicitarPermisoNotificaciones() {
