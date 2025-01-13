@@ -33,9 +33,9 @@ function swiperCandidatos() {
 
 function swiperGuia() {
 
-  var classListaProgramas = document.querySelector('.ge-bloque-izquierda');
-  var classListaProgramasNot = document.querySelector('.ge-bloque-izquierda .noticias');
-  var classListaProgramasNotArt = document.querySelectorAll('.ge-bloque-izquierda .noticias .article');
+  var classListaProgramas = document.querySelector('.carrucel-guia');
+  var classListaProgramasNot = document.querySelector('.carrucel-guia .noticias');
+  var classListaProgramasNotArt = document.querySelectorAll('.carrucel-guia .noticias .article');
 
   classListaProgramas.classList.add('swiper');
   classListaProgramasNot.classList.add('swiper-wrapper');
@@ -52,7 +52,7 @@ function swiperGuia() {
     SlideProg.classList.add('swiper-slide');
   }
 
-  var init = new Swiper(".ge-bloque-izquierda", {
+  var init = new Swiper(".carrucel-guia", {
     slidesPerView: 1,
     spaceBetween: 30,
     cssMode: true,
