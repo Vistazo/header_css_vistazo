@@ -338,23 +338,25 @@ div#iter-content-wrapper {
   font-family: Inter;
   font-size: 48px;
   font-weight: 800;
-  line-height: 58.09px;
-  text-align: left;
+  /* line-height: 58.09px; */
+  /* text-align: left; */
   text-align: center;
   margin: 50px 0;
+  margin-left: 10px;
+  color: white;
 }
 
 .countdown {
   display: flex;
-  background-color: #111;
+  /* background-color: #111; */
   padding: 20px 40px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  /* border-radius: 10px; */
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); */
   color: #C8C8C8;
-  width: 500px;
+  /* width: 500px; */
   align-items: center;
   justify-content: center;
-  margin: auto;
+  /* margin: auto; */
   font-family: Inter;
 }
 

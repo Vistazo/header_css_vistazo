@@ -132,7 +132,6 @@ function renderResults(data) {
   data.forEach((item) => {
     const card = document.createElement("div");
     card.className = "card-portada swiper-slide";
-
     card.innerHTML = `
       <div class="text_block">
         <h2>${item.title}</h2>
