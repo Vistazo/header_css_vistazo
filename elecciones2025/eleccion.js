@@ -136,7 +136,7 @@ function renderResults(data) {
     card.innerHTML = `
       <div class="text_block">
         <h2>${item.title}</h2>
-        <a href="${item.redirect}" target="_blank">Saber Más</a>
+        <a href="${item.redirect}" target="_blank">Ver Más</a>
       </div>
       
       <div class="media_block">
