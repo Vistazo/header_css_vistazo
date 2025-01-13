@@ -445,13 +445,19 @@ function cambiarImagenPautaEstadio() {
     var pautaEstadio = document.querySelector(".pauta_estadio_css");
     // Asegúrate de que el elemento existe antes de aplicar estilos
     if (pautaEstadio) {
-      // crear etiqueta img y poner la imagen envolver la imagen en a para que sea clickeable y redireccione a la url de estadío
+      // crear etiqueta img y poner la imagen en volver la imagen en a para que sea clickeable y redireccione a la url de estadío
       let path = window.location.pathname;
       if (path == "/") {
         let a = document.createElement("a");
-        a.href = "https://www.vistazo.com/elecciones-ecuador-presidente-asamblea-2025";
         let img = document.createElement("img");
-        img.src = url;
+        if (window.innerWidth <= 768) {
+          actualizarImagenMovil();
+          img.src = "https://codigomarret.online/upload/img/elecciones-(400-x-100-px).png";
+        } else {
+          actualizarImagen();
+          img.src = "https://codigomarret.online/upload/img/elecciones-(1920-x-200-px).png"
+        }
+        a.href = "https://www.vistazo.com/elecciones-ecuador-presidente-asamblea-2025";
         img.style.width = "100%";
         img.style.height = "auto";
         img.style.display = "block";
