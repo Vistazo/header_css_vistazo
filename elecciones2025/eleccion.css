@@ -290,7 +290,6 @@ div#iter-content-wrapper {
 
 .bloque-candidatos .swiper-button-prev,
 .bloque-candidatos .swiper-button-next {
-
   width: 70px !important;
   height: 70px !important;
 }
@@ -342,8 +341,13 @@ div#iter-content-wrapper {
   /* text-align: left; */
   text-align: center;
   margin: 50px 0;
-  margin-left: 10px;
   color: white;
+}
+
+.contenedor-contador {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .countdown {
@@ -397,6 +401,17 @@ div#iter-content-wrapper {
     font-size: 1.5rem;
   }
 }
+
+@media(max-width: 567px) {
+  .contenedor-contador {
+    flex-direction: column;
+  }
+  .text-tiempo {
+    margin: 0;
+    margin-left: 0;
+  }
+}
+
 
 /* FIN -  contador*/
 
@@ -688,6 +703,40 @@ div#iter-content-wrapper {
 }
 
 
+/**/
+.carrucel-guia .swiper-button-prev,
+.carrucel-guia .swiper-button-next {
+  width: 70px !important;
+  height: 70px !important;
+}
+
+.carrucel-guia .swiper-button-next,
+.carrucel-guia .swiper-rtl .swiper-button-prev {
+  right: 0 !important;
+}
+
+.carrucel-guia .swiper-button-prev {
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+  background-image: url("https://estadisticas.ecuavisa.com/sites/gestor/assets-rd%2Fprev.png") !important;
+}
+
+.carrucel-guia .swiper-button-next {
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+  background-image: url("https://estadisticas.ecuavisa.com/sites/gestor/assets-rd%2Fnext.png") !important;
+}
+
+
+.carrucel-guia .swiper-button-next::after,
+.carrucel-guia .swiper-button-prev::after {
+  content: "";
+}
+/**/
+
+
 .ge-bloque-izquierda .noticias .article .IMG_TIT {
   position: relative;
 }
@@ -749,6 +798,14 @@ div#iter-content-wrapper {
   .ge-bloque-izquierda .noticias .article .headline a h2{
     font-size: 24px;
     line-height: 30px;
+  }
+
+
+  .carrucel-guia .swiper-button-prev,
+  .carrucel-guia .swiper-button-next {
+
+    width: 40px !important;
+    height: 40px !important;
   }
 }
 
