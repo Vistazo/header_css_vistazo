@@ -1,8 +1,58 @@
 
 function swiperCandidatos() {
-
-
   var init = new Swiper(".b-can", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    cssMode: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      600: {
+        slidesPerView: 1,
+        spaceBetween: 20,
+      },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 30,
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      },
+      1200: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      },
+    },
+  });
+
+}
+
+
+function swiperGuia() {
+
+  var classListaProgramas = document.querySelector('.carrucel-guia');
+  var classListaProgramasNot = document.querySelector('.carrucel-guia .noticias');
+  var classListaProgramasNotArt = document.querySelectorAll('.carrucel-guia .noticias .article');
+
+  classListaProgramas.classList.add('swiper');
+  classListaProgramasNot.classList.add('swiper-wrapper');
+
+  var dNext = document.createElement("div");
+  dNext.classList = "swiper-button-next";
+  classListaProgramas.append(dNext);
+
+  var dPrev = document.createElement("div");
+  dPrev.classList = "swiper-button-prev";
+  classListaProgramas.append(dPrev);
+
+  for (const SlideProg of classListaProgramasNotArt) {
+    SlideProg.classList.add('swiper-slide');
+  }
+
+  var init = new Swiper(".carrucel-guia", {
     slidesPerView: 1,
     spaceBetween: 30,
     cssMode: true,
@@ -156,19 +206,19 @@ const container = document.getElementById("candidatos-container");
 
 // Función para crear y mostrar las cards
 async function fetchAndDisplayCandidatos() {
-    try {
-        const response = await fetch(API_URL_CANDIDATOS);
-        const result = await response.json();
+  try {
+    const response = await fetch(API_URL_CANDIDATOS);
+    const result = await response.json();
 
-        if (result.success) {
-            const candidatos = result.data;
+    if (result.success) {
+      const candidatos = result.data;
 
-            // Iterar y crear las cards
-            candidatos.forEach(candidato => {
-                const card = document.createElement("div");
-                card.className = "card-items swiper-slide";
+      // Iterar y crear las cards
+      candidatos.forEach(candidato => {
+        const card = document.createElement("div");
+        card.className = "card-items swiper-slide";
 
-                card.innerHTML = `
+        card.innerHTML = `
                 <a href="${candidato.redirect}" target="_blank">
                   <img width="400" height="400" src="${candidato.src}" alt="${candidato.title}">
                   <div class="card-body_">
@@ -180,20 +230,21 @@ async function fetchAndDisplayCandidatos() {
                 </a>
                 `;
 
-                container.appendChild(card);
-            });
-        } else {
-            container.innerHTML = "<p>No se pudo cargar la lista de candidatos.</p>";
-        }
-    } catch (error) {
-        console.error("Error al consumir la API:", error);
-        container.innerHTML = "<p>Ocurrió un error al cargar los datos.</p>";
+        container.appendChild(card);
+      });
+    } else {
+      container.innerHTML = "<p>No se pudo cargar la lista de candidatos.</p>";
     }
+  } catch (error) {
+    console.error("Error al consumir la API:", error);
+    container.innerHTML = "<p>Ocurrió un error al cargar los datos.</p>";
+  }
 }
 
 setTimeout(() => {
   swiperPortada();
   fetchAndDisplayCandidatos();
+  swiperGuia();
   fetchData();
   swiperCandidatos();
   startCountdown(targetDate);
