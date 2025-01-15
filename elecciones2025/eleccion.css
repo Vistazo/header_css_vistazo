@@ -791,7 +791,9 @@ div#iter-content-wrapper {
   padding-top: 0 !important;
 }
 
-
+.noticias .article a h2{
+  margin-top: 10px;
+}
 
 @media (max-width: 767px) {
 
