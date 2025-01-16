@@ -47,11 +47,6 @@ document.addEventListener("DOMContentLoaded", function () {
   Replica();
 });
 
-document.querySelector('a[href="/politica/elecciones-ecuador-2025"]').addEventListener('click', function(event) {
-  event.preventDefault();
-  window.location.href = 'https://www.vistazo.com/elecciones-ecuador-presidente-asamblea-2025';
-});
-
 document.addEventListener("DOMContentLoaded", function () {
   let path = window.location.pathname;
 
