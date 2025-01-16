@@ -1,51 +1,130 @@
-<!DOCTYPE html>
-<html lang="es">
+##----TIT-INFO-RSS-IMG----
+#set($hmAutores = {})
+#getAcAssignedCatExtended_v1($hmAutores "Vtz_Author")
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- bostrapp -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+#set($sort = "createdate")
+#set($criteria= "desc")
+#set($art_next = $articleToolbox.getSiblingArticle($sort, $criteria, "next"))
+#set($sectionID = "#printAssignedSectionID_v1")
+#set($templateId = $iterVelocityTools.getVelocityVariable("template_id")) 
+## CONTENIDOS
+#set($dateMask = "EEEE, d MMMM yyyy - HH:mm")
+#set($canonicalUrl = $articleToolbox.getArticleViewer('canonical'))
+<script>
+	var group_id = $request.theme-display.scope-group-id;
+	var id_art_infinity = $reserved-article-id.data;
+	#if($iterVelocityTools.getVelocityVariable("teaseritemposition") == 1)
+		var teaser_first = true;
+		var n_noticia = 1;
+		idart_view = $reserved-article-id.data;
+	#else
+		var teaser_first = false;
+		var n_noticia = n_noticia + 1;
+	#end
+	console.log("+++ teaseritemposition:  $iterVelocityTools.getVelocityVariable("teaseritemposition")");
+	console.log("+++ n_noticia: " + n_noticia);
+</script>
+<div class="template-infinity detail" id-next="$!art_next.reserved-article-id.data" id-section="$sectionID">
 
-</head>
-<style>
-    @keyframes pulse {
-        0% {
-            transform: scale(1);
-            opacity: 1;
-        }
-        50% {
-            transform: scale(1.1);
-            opacity: 0.7;
-        }
-        100% {
-            transform: scale(1);
-            opacity: 1;
-        }
-    }
+	##MARCA PAYWALL
+	#getAcAssignedCatMain_v1($hmMain,"Vtz_Classification")
+	#set($classif = "")
+	#if($hmMain && $hmMain.size() > 0)
+		#foreach ($elem in $hmMain)
+			#set($classif = $elem.name)
+		#end
+	#end
+	#set($article_is_restricted = $articleToolbox.article_is_restricted())
+	#if ($article_is_restricted)
+	    #foreach($product in $articleToolbox.getProductList())
+		#set($prod = $product.get("name"))
+	    #end
+	#else
+	    #set($prod = "")
+	#end  
+	<div class="paywall" data-suscription="$!prod" data-classification="$!classif"></div>
+
+#getAcAssignedExtendedAllCat_v1($hmAutores "Branded_Content")
+#if($hmAutores.size() > 0)
+	#set($hmAutor = $hmAutores.get(0))
+	#set($autor = $hmAutores.get(0).name)
+#end
+
+
+
+
+ ##seccion
+	#set($topcontent = "section")
+	#if($topcontent == "section")
+			<div class="article-section">
+					<a class="section" href="#printURLAssignedSection_v1">#printAssignedSection_v1</a>
+			</div>
+	#end
+
+	##HEADLINE
+	<h1 class="headline artit font-1 medium bold" itemprop="headline" canonicalUrl="$articleToolbox.getArticleViewer('canonical')" idart="$reserved-article-id.data" metric="off">#getTeaserTitle_v1</h1>
+
+    ##SUBHEADLINE
+    #if($articleToolbox.getTag(null,'Subheadline').data)
+        <h2 class="subheadline artit font-2 medium" itemprop="description">#getTeaserSubheadline_v1</h2>
+    #end
+
+	##INFO
+	<div class="inf2">
+		#if($hmAutores && $hmAutores.size() > 0)
+			#foreach ($elem in $hmAutores)
+                #if($elem.name == "En vivo")
+                    <div class="border border-danger text-center" style="width: 100px; border-radius: 5px; cursor: pointer;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="25px" height="25px">
+                            <circle cx="24" cy="24" r="6" fill="#f44336" />
+                            <path fill="#f44336" d="M17.09,16.789L14.321,13.9C11.663,16.448,10,20.027,10,24s1.663,7.552,4.321,10.1l2.769-2.889 C15.19,29.389,14,26.833,14,24C14,21.167,15.19,18.61,17.09,16.789z" />
+                            <path fill="#f44336" d="M33.679,13.9l-2.769,2.889C32.81,18.611,34,21.167,34,24c0,2.833-1.19,5.389-3.09,7.211l2.769,2.889 C36.337,31.552,38,27.973,38,24S36.337,16.448,33.679,13.9z" />
+                            <g>
+                                <path fill="#f44336" d="M11.561,11.021l-2.779-2.9C4.605,12.125,2,17.757,2,24s2.605,11.875,6.782,15.879l2.779-2.9 C8.142,33.701,6,29.1,6,24S8.142,14.299,11.561,11.021z" />
+                                <path fill="#f44336" d="M39.218,8.121l-2.779,2.9C39.858,14.299,42,18.9,42,24s-2.142,9.701-5.561,12.979l2.779,2.9 C43.395,35.875,46,30.243,46,24S43.395,12.125,39.218,8.121z" />
+                            </g>
+                        </svg>
+                        <span style="font-size: 12px; font-weight: bold; color: #f44336; text-transform: uppercase; letter-spacing: 1px;">$elem.name</span>
+                    </div>
+                #else
+                    <span class="partea" itemprop="author"><a href="/periodistas/-/meta/$elem.friendlyname">$elem.name</a></span>
+                #end
+			#end
+		#end
+			<span class="parteb"> #printDate_v1($dateMask)</span>
+			##ACTIVA NOTIFICACIONES
+			<span class="partea" itemprop="author"
+				style="font-size: 16px; font-weight: bold; cursor: pointer;"
+				onclick="activarNotificaciones()"
+			>
+			Activar Notificaciones 
+				<!-- icono de una campana -->
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell" viewBox="0 0 16 16">
+					<path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2z"/>
+					<path fill-rule="evenodd" d="M8 1.5a1 1 0 0 0-1 1V3.1a5.5 5.5 0 0 0-5 5.45v2.95l-1 1v1h14v-1l-1-1V8.55a5.5 5.5 0 0 0-5-5.45V2.5a1 1 0 0 0-1-1zm-1 12a1 1 0 0 1 2 0H7z"/>
+				</svg>
+			</span>			
+	</div>
+	## RRSS
+	<div class="rrss">
+		<div class="cfacebook" onclick="window.open('//facebook.com/sharer.php?u=#siteUrl()$canonicalUrl&text=$!escapeTool.html($!Headline.data)')" style="cursor:pointer"><span style="font-size:15px" class="fa">Facebook</span></div>
+		<div class="ctwitter" onclick="window.open('//twitter.com/intent/tweet?url=#siteUrl()$canonicalUrl&text=$!escapeTool.html($!Headline.data)')" style="cursor:pointer"><span style="font-size:15px" class="fa">Twitter</span></div>
+		<div class="cwhatsapp" onClick="window.open('whatsapp://send?text=$!escapeTool.html($!Headline.data) - #siteUrl()$canonicalUrl')" style="cursor:pointer"><span style="font-size:15px" class="fa">Whatsapp</span></div>
+		<div class="correo" onClick="window.open('mailto:?subject=Revisa esta noticia!&amp;body=Revisa esta noticia $!escapeTool.html($!articleToolbox.getTag(null,'TeaserHeadline').data) #siteUrl()$canonicalUrl Saludos')" style="cursor:pointer"><span style="font-size:15px" class="fa">Email</span></div>    
+	</div>
+	## IMAGEN
+	#getMultimediaMixed_v1("fullcontent", "crop_768x432", "100%", "495", "100%")
+
+
+	#if($Generico && $Generico.getSiblings().size()>0)
+		<ul class="generic">
+			#foreach ($el in $Generico.getSiblings())
+				
+				<li><span class="icon"></span><a href="$!el.Document.data" >$!el.Cutline.data ($el.Extension.data)</a></li>
+			#end
+		</ul>
+	#end
+
+
     
-    .border {
-        animation: pulse 2s infinite;
-    }
-    
-</style>
-<body>
-    <!-- ETIQUETA EN VIVO -->
-    <div class="border border-danger text-center" style="width: 100px; border-radius: 5px; cursor: pointer;">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="25px" height="25px">
-            <circle cx="24" cy="24" r="6" fill="#f44336" />
-            <path fill="#f44336" d="M17.09,16.789L14.321,13.9C11.663,16.448,10,20.027,10,24s1.663,7.552,4.321,10.1l2.769-2.889 C15.19,29.389,14,26.833,14,24C14,21.167,15.19,18.61,17.09,16.789z" />
-            <path fill="#f44336" d="M33.679,13.9l-2.769,2.889C32.81,18.611,34,21.167,34,24c0,2.833-1.19,5.389-3.09,7.211l2.769,2.889 C36.337,31.552,38,27.973,38,24S36.337,16.448,33.679,13.9z" />
-            <g>
-                <path fill="#f44336" d="M11.561,11.021l-2.779-2.9C4.605,12.125,2,17.757,2,24s2.605,11.875,6.782,15.879l2.779-2.9 C8.142,33.701,6,29.1,6,24S8.142,14.299,11.561,11.021z" />
-                <path fill="#f44336" d="M39.218,8.121l-2.779,2.9C39.858,14.299,42,18.9,42,24s-2.142,9.701-5.561,12.979l2.779,2.9 C43.395,35.875,46,30.243,46,24S43.395,12.125,39.218,8.121z" />
-            </g>
-        </svg>
-        <span style="font-size: 12px; font-weight: bold; color: #f44336; text-transform: uppercase; letter-spacing: 1px;">EN VIVO</span>
-    </div>
-    
-
-</body>
-
-</html>
+</div>
