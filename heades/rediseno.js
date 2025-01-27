@@ -205,6 +205,12 @@ function moverNotasRelacionadas() {
   if (notasRelacionadas && subheadlineExistente) {
     // Mover el div 'notas_relacionadass' justo después del encabezado encontrado
     subheadlineExistente.insertAdjacentElement('afterend', notasRelacionadas);
+    // si el h2 que esta entro de notas_relacionadas esta vacio se elimina todo el div
+    const h2 = notasRelacionadas.querySelector("h2");
+    if (h2 && h2.textContent.trim() === "") {
+      notasRelacionadas.remove();
+    }
+
     console.log('El contenido de "notas_relacionadass" se ha movido correctamente.');
   } else {
     console.log('El elemento con la clase "notas_relacionadass" no existe o ningún encabezado está presente.');
