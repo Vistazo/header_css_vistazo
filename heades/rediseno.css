@@ -761,3 +761,7 @@ p u{
     display: flex;
     justify-content: end;
 }
+
+.top1_center_publicidad_notas{
+    display: none;
+}
