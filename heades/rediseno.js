@@ -2,6 +2,12 @@ window.addEventListener("resize", cambiarImagenPautaHome);
 
 window.onscroll = function() {
   updateProgressBar();
+  // Seleccionar el elemento por su ID
+  var lateralIzq = document.getElementById('lateral_izq');
+  if(lateralIzq) {
+    // Reemplazar todos los '&nbsp;' por un string vacío (eliminándolos)
+    lateralIzq.innerHTML = lateralIzq.innerHTML.replace(/&nbsp;/g, '');
+  }
 };
 
 function updateProgressBar() {
