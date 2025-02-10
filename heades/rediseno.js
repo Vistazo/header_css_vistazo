@@ -354,46 +354,6 @@ function CanalWhatsappMovil() {
   }
 }
 
-function videoTecarender() {
-  try {
-    fetch("https://api.ticketsecuador.ec/letter/videoteca_listar")
-      .then((res) => res.json())
-      .then((data) => {
-        var videoteca = document.querySelector(".videoteca .noticias");
-        var videoPlayer = document.querySelector(
-          ".art-youtube .responsive-video iframe"
-        );
-        if (videoteca && data.success) {
-          videoteca.innerHTML = "";
-          data.data.forEach((video) => {
-            const videoItem = document.createElement("div");
-            videoItem.style.cursor = "pointer";
-            videoItem.innerHTML = `
-            <img src="https://img.youtube.com/vi/${getYouTubeID(
-              video.youtubeVideo)}/0.jpg" alt="${video.titulo}" width="100%" loading="lazy" >
-            <p style='color: white; font-size: 16px; margin: 0px;'
-            onmouseover="this.style.color='red'"
-            onmouseout="this.style.color='white'"
-            >${video.titulo}</p>`;
-            videoItem.onclick = () => {
-              videoPlayer.src = `//${video.youtubeVideo}`;
-            };
-            console.log(videoItem);
-            videoteca.appendChild(videoItem);
-          });
-        }
-      });
-  } catch (error) {
-    console.log(error);
-  }
-}
-
-function getYouTubeID(url) {
-  const urlParts = url.split("/");
-  const videoID = urlParts[urlParts.length - 1].split("?")[0];
-  return videoID;
-}
-
 function cambiarImagenPautaHome() {
   var enlace = document.querySelector(".IMG_PAUTAS_DIGITALES .multimedia a");
   var imagen = document.querySelector(".IMG_PAUTAS_DIGITALES .multimedia img");
