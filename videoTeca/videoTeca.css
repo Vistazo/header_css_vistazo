@@ -13,7 +13,7 @@
     color: red;
 }
 
-@media (max-width: 1000px) { /* Media query para pantallas menores de 600px */
+@media (max-width: 700px) { /* Media query para pantallas menores de 600px */
     .video-item-teca{
         display: flex;
         justify-content: space-between;
