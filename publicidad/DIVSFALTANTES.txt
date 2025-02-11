@@ -1,0 +1,69 @@
+<!-- Faltan los siguientes DIVS EN MOBILE EN LAS Notas -->
+<div id='Center3'>
+    <script>
+        googletag.cmd.push(function() { googletag.display('Center3'); });
+    </script>
+</div>
+
+<!-- Faltan los siguientes DIVS EN DESKTOP EN LAS Notas -->
+<div id='Center3'>
+    <script>
+        googletag.cmd.push(function() { googletag.display('Center3'); });
+    </script>
+</div>
+
+<!-- Faltan los siguientes DIVS EN LA HOME MOBILE -->
+<div id='Top1'>
+    <script>
+        googletag.cmd.push(function() { googletag.display('Top1'); });
+    </script>
+</div>
+
+<div id='Leader1'>
+    <script>
+        googletag.cmd.push(function() { googletag.display('Leader1'); });
+    </script>
+</div>
+
+<div id='Center1'>
+    <script>
+        googletag.cmd.push(function() { googletag.display('Center1'); });
+    </script>
+</div>
+
+<div id='Center2'>
+    <script>
+        googletag.cmd.push(function() { googletag.display('Center2'); });
+    </script>
+</div>
+
+<div id='Center3'>
+    <script>
+        googletag.cmd.push(function() { googletag.display('Center3'); });
+    </script>
+</div>
+
+<div id='Middle2'>
+    <script>
+        googletag.cmd.push(function() { googletag.display('Middle2'); });
+    </script>
+</div>
+
+<!-- FALTAN LOS SIGUIENTES DIVS EN LA HOME DESKTOP -->
+<div id='Leader1'>
+    <script>
+        googletag.cmd.push(function() { googletag.display('Leader1'); });
+    </script>
+</div>
+
+<div id='Middle1'>
+    <script>
+        googletag.cmd.push(function() { googletag.display('Middle1'); });
+    </script>
+</div>
+
+<div id='Middle2'>
+    <script>
+        googletag.cmd.push(function() { googletag.display('Middle2'); });
+    </script>
+</div>

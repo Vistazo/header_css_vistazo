@@ -20,8 +20,8 @@
     }
     
     .video-item-teca img {
-      width: 25%; /* Reducir el tamaño de las imágenes a la mitad en móviles */
-      margin-bottom: -5px;
+        width: 25%; /* Reducir el tamaño de las imágenes a la mitad en móviles */
+        margin-bottom: -5px;
     }
 
     .video-item-teca p {

@@ -135,7 +135,7 @@ li a.menu_text_principal{
     /* margin-top: 1px; */
 }
 
-@media (max-width: 410px) {
+@media (max-width: 451px) {
     .login{
         display: none;
     }
