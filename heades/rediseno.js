@@ -183,7 +183,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (hogarSession) {
     hogarSession.innerHTML = "";
     hogarSession.innerHTML = `
-    <span class="hogar-text"> 
+    <span class="hogar-text-1"> 
       <span class="letter-h">H</span>
       <span class="letter-o">O</span> 
       <span class="letter-g">G</span> 

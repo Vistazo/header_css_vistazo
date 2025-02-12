@@ -142,6 +142,9 @@ li a.menu_text_principal{
     
 }
 
+/* 
+    solo se veran en pantallas mayores a 1024px
+ */
 @media (max-width: 800px) {
     .nav-links {
         flex-direction: column;
@@ -150,6 +153,7 @@ li a.menu_text_principal{
     .hogar-text{
         display: none;
     }
+    
 }
 /* 801px a 1023px */
 @media (min-width: 801px) and (max-width: 1023px) {
@@ -315,6 +319,12 @@ li a.menu_text_principal{
     font-weight: bold;
 }
 
+.hogar-text-1 {
+    font-family: 'YourFontHere', sans-serif; /* Cambia a la fuente que estás utilizando */
+    font-size: 20px; /* Ajusta según el tamaño deseado */
+    font-weight: bold;
+}
+
 .letter-h, .letter-g, .letter-a, .letter-r {
     color: white; /* Letras en color blanco */
 }
@@ -333,6 +343,9 @@ li a.menu_text_principal{
 /* HOKAR Si es menor o igual a 1024 el tamano de la letra tiene que cambar */
 @media (max-width: 1024px) {
     .hogar-text {
+        font-size: large;
+    }
+    .hogar-text-1 {
         font-size: large;
     }
     .letter-h, .letter-g, .letter-a, .letter-r, .letter-o {
