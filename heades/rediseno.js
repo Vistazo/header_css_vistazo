@@ -417,8 +417,11 @@ function cambiarImagenPautaEstadio() {
   try {
     let url = "https://codigomarret.online/upload/img/elecciones-(1920-x-200-px).png";
     var pautaEstadio = document.querySelector(".pauta_estadio_css");
+
     // Asegúrate de que el elemento existe antes de aplicar estilos
     if (pautaEstadio) {
+      pautaEstadio.style.display = "none";
+      return;
       // crear etiqueta img y poner la imagen en volver la imagen en a para que sea clickeable y redireccione a la url de estadío
       let path = window.location.pathname;
       if (path == "/") {
