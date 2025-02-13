@@ -200,7 +200,6 @@ function renderResults(data) {
 
 // URL de la API
 const API_URL_CANDIDATOS = "https://vtz.bmcodigo.com/getCandidatos";
-
 // Contenedor de las cards
 const container = document.getElementById("candidatos-container");
 
@@ -218,17 +217,18 @@ async function fetchAndDisplayCandidatos() {
         const card = document.createElement("div");
         card.className = "card-items swiper-slide";
 
-        card.innerHTML = `
-                <a href="${candidato.redirect}" target="_blank">
-                  <img width="400" height="400" src="${candidato.src}" alt="${candidato.title}">
-                  <div class="card-body_">
-                      <h3 class="card-title">${candidato.title}</h3>
-                      <div class="card-description">
-                          ${candidato.description.join("<br>")}
-                      </div>
-                  </div>
-                </a>
-                `;
+        // card.innerHTML = `
+        //         <a href="${candidato.redirect}" target="_blank">
+        //           <img width="400" height="400" src="${candidato.src}" alt="${candidato.title}">
+        //           <div class="card-body_">
+        //               <h3 class="card-title">${candidato.title}</h3>
+        //               <div class="card-description">
+        //                   ${candidato.description.join("<br>")}
+        //               </div>
+        //           </div>
+        //         </a>
+        //         `;
+        card.innerHTML = ''
 
         container.appendChild(card);
       });
