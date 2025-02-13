@@ -141,7 +141,7 @@ function startCountdown(targetDate) {
 }
 
 // Fecha objetivo: 4 de febrero de 2025 a las 00:00:00
-const targetDate = new Date("2025-02-09T00:00:00");
+const targetDate = new Date("2025-04-13T00:00:00");
 
 const API_URL = "https://vtz.bmcodigo.com/getPortadaElecciones";
 
