@@ -210,6 +210,8 @@ async function fetchAndDisplayCandidatos() {
     const result = await response.json();
 
     if (result.success) {
+      container.style.display = "node";
+      return;
       const candidatos = result.data;
 
       // Iterar y crear las cards
