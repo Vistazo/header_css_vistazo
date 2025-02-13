@@ -311,7 +311,6 @@ li a.menu_text_principal{
     }
 }
 
-
 /* HOGAR */
 .hogar-text {
     font-family: 'YourFontHere', sans-serif; /* Cambia a la fuente que estás utilizando */
@@ -778,5 +777,10 @@ p u{
 }
 
 .top1_center_publicidad_notas{
+    display: none;
+}
+
+
+#1476944937{
     display: none;
 }
