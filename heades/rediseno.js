@@ -370,11 +370,11 @@ function cambiarImagenPautaHome() {
   let indiceActual = 0;
 
   function mostrarImagenSuave(imagenActual) {
-    // imagen.style.opacity = 0; // Hace invisible la imagen para comenzar la transición
+    imagen.style.opacity = 0; // Hace invisible la imagen para comenzar la transición
     imagen.src = imagenActual.src;
     imagen.loading = "lazy";
     enlace.href = imagenActual.href;
-    // imagen.style.opacity = 1; // Hace visible la imagen suavemente
+    imagen.style.opacity = 1; // Hace visible la imagen suavemente
     // setTimeout(() => {
     // }, 100); // Espera 1 segundo para comenzar a mostrar la imagen, coincidiendo con la transición de opacidad
   }
