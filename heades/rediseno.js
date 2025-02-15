@@ -15,36 +15,16 @@ function updateProgressBar() {
 
 // cambiar el titulo en una pagina especifica
 document.addEventListener("DOMContentLoaded", function() {
-  let path = window.location.pathname;
-  if (path == "/tes/narco.html" || path == "/actualidad/narco-lituano-cayo-en-bogota-destino-guayaquil-BA8112012") {
-    // <span>‘Narco’ lituano cayó en Bogotá: </span><br>
-    // <span>su destino era Guayaquil</span>
-    contenido = document.querySelector(".headline");
-    contenido.innerHTML = "";
-    contenido.innerHTML = `
-    <span>‘Narco’ lituano cayó en Bogotá: </span><br>
-    <span>su destino era Guayaquil</span>
-    `;
-
-  }
-  // Obtener el elemento 'header_ad' y 'header_contain_dm'
-  var headerAd = document.querySelector('div.header_ad');
-  var headerContainDm = document.querySelector('div.header_contain_dm');
-  if(headerAd && headerContainDm) {
-    // Remover el elemento 'header_ad' de su posición actual
-    // headerAd.parentNode.removeChild(headerAd);
-    // // Insertar el elemento 'header_ad' justo después de 'header_contain_dm'
-    // headerContainDm.parentNode.insertBefore(headerAd, headerContainDm.nextSibling);
-  }
-
+  // let path = window.location.pathname;
+  //   contenido = document.querySelector(".headline");
+  //   contenido.innerHTML = "";
+  //   contenido.innerHTML = `
+  //   <span>‘Narco’ lituano cayó en Bogotá: </span><br>
+  //   <span>su destino era Guayaquil</span>
+  //   `;
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Para activar la eliminación de scripts
-  var middle3 = document.getElementById("Middle3");
-  if (middle3) {
-    middle3.remove();
-  }
   Replica();
   // Seleccionar el elemento por su ID
   var lateralIzq = document.getElementById('lateral_izq');
@@ -193,37 +173,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  // Mover el contenido de 'notas_relacionadass' justo después del h2 'subheadline'
-  // moverNotasRelacionadas();
-})
 
-function moverNotasRelacionadas() {
-  // Seleccionar el elemento con la clase 'notas_relacionadass'
-  const notasRelacionadas = document.querySelector('.notas_relacionadass');
-  
-  // Seleccionar los encabezados que pueden existir
-  const subheadline = document.querySelector('.subheadline');
-  const headline = document.querySelector('.headline');
-  
-  // Verificar si alguno de los encabezados existe
-  const subheadlineExistente = subheadline || headline;
-  
-  // Verificar si el div 'notas_relacionadass' existe y hay un encabezado
-  if (notasRelacionadas && subheadlineExistente) {
-    // Mover el div 'notas_relacionadass' justo después del encabezado encontrado
-    subheadlineExistente.insertAdjacentElement('afterend', notasRelacionadas);
-    // si el h2 que esta entro de notas_relacionadas esta vacio se elimina todo el div
-    const h2 = notasRelacionadas.querySelector("h2");
-    if (h2 && h2.textContent.trim() === "") {
-      notasRelacionadas.remove();
-    }
-
-    console.log('El contenido de "notas_relacionadass" se ha movido correctamente.');
-  } else {
-    console.log('El elemento con la clase "notas_relacionadass" no existe o ningún encabezado está presente.');
-  }
-}
 function loadOnScroll() {
   // Llamar la función para cargar los scripts al hacer scroll
   loadExternalScripts();
