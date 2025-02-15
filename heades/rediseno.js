@@ -62,9 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
   // Selecciona todos los enlaces con submenús
-  const menuItems = document.querySelectorAll(
-    ".movil_nav-links li a.has-submenu"
-  );
+  const menuItems = document.querySelectorAll(".movil_nav-links li a.has-submenu");
 
   // Itera sobre cada elemento que tiene submenú y agrega el evento de clic
   menuItems.forEach((item) => {
@@ -80,7 +78,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // CanalWhatsapp();
   CanalWhatsappMovil();
   // si el tamaño de la pantalla es menor o igual a 768px
   if (window.innerWidth <= 768) {
@@ -130,8 +127,6 @@ document.addEventListener("DOMContentLoaded", function () {
   subscribeBtn.href = url;
   subscribeBtn.target = '_blank';
   
-  // Esperar el primer scroll para cargar los scripts
-  // window.addEventListener("scroll", loadOnScroll, { once: true }); // Escuchar solo una vez
 });
 
 
@@ -150,7 +145,6 @@ document.addEventListener("DOMContentLoaded", function() {
         punto.style.left = '-5px';
         punto.style.color = 'black';
         punto.style.textDecoration = 'none'; // Remueve el subrayado del punto
-  
         // Insertar el punto antes del texto del enlace
         enlace.prepend(punto);
     });
