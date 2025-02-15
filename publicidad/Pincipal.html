@@ -1,6 +1,4 @@
 
-         
-         
          <!-- Google Tag Manager -->
          <script>(function (w, d, s, l, i) {
             w[l] = w[l] || []; w[l].push({
@@ -27,6 +25,18 @@
         var VI_Subseccion = '';
         var VI_Articulo = '';
         var VI_Tag = '';
+    
+        // Detecta si la página está siendo cargada por un bot común o headless browser
+        function isLikelyBot() {
+            return /bot|crawl|slurp|spider/i.test(navigator.userAgent) || !('onscroll' in window) || /HeadlessChrome/.test(navigator.userAgent);
+        }
+        // Si no es un bot, carga el script de Teads Analytics
+        if (!isLikelyBot()) {
+            var script = document.createElement('script');
+            script.src = 'https://a.teads.tv/analytics/tag.js';
+            script.async = true;
+            document.head.appendChild(script);
+        }
     </script>
     
     <!-- Start GPT Tag -->
@@ -68,10 +78,10 @@
                     .addSize([992, 0], [[728, 90], [728, 180], [728, 250]]).addSize([768, 0], [[728, 90], [728, 180], [728, 250]]).addSize([320, 0], [[320, 100], [300, 100], [300, 250]]).addSize([0, 0], [[320, 100], [300, 100], [300, 250]]).build();
                 var mappingHeader = googletag.sizeMapping()
                     .addSize([992, 0], [[728, 90], [970, 90]]).addSize([768, 0], [[728, 90]]).addSize([320, 0], [[320, 50]]).addSize([0, 0], [[320, 50]]).build();
-                
+    
                 //adUnits
                 googletag.defineSlot('/21839199781/Vistazo/Vistazo_Top1', [[300, 100], [300, 250], [320, 100], [728, 90], [970, 90], [970, 250]], 'Top1').defineSizeMapping(mappingbill).setTargeting(REFRESH_KEY, REFRESH_VALUE).addService(googletag.pubads());
-                googletag.defineSlot('/21839199781/Vistazo/Vistazo_Leader1', [[320,100],[300,100],[300,250],[336,280],[728,90]],'Leader1').defineSizeMapping(mappingcenter).setTargeting(REFRESH_KEY, REFRESH_VALUE).addService(googletag.pubads());
+                googletag.defineSlot('/21839199781/Vistazo/Vistazo_Leader1', [[320, 100], [300, 100], [300, 250], [336, 280], [728, 90]], 'Leader1').defineSizeMapping(mappingcenter).setTargeting(REFRESH_KEY, REFRESH_VALUE).addService(googletag.pubads());
                 googletag.defineSlot('/21839199781/Vistazo/Vistazo_Center1', [[320, 100], [300, 100], [300, 250], [728, 90]], 'Center1').defineSizeMapping(mappingcenter).setTargeting(REFRESH_KEY, REFRESH_VALUE).addService(googletag.pubads());
                 googletag.defineSlot('/21839199781/Vistazo/Vistazo_Center2', [[320, 100], [300, 100], [300, 250], [728, 90]], 'Center2').defineSizeMapping(mappingcenter).setTargeting(REFRESH_KEY, REFRESH_VALUE).addService(googletag.pubads());
                 googletag.defineSlot('/21839199781/Vistazo/Vistazo_Center3', [[320, 100], [300, 100], [300, 250], [728, 90]], 'Center3').defineSizeMapping(mappingcenter).setTargeting(REFRESH_KEY, REFRESH_VALUE).addService(googletag.pubads());
@@ -79,16 +89,16 @@
                 googletag.defineSlot('/21839199781/Vistazo/Vistazo_Middle1', [[300, 600], [300, 250]], 'Middle1').defineSizeMapping(mappingbox).setTargeting(REFRESH_KEY, REFRESH_VALUE).addService(googletag.pubads());
                 //-----------------------------------
                 googletag.defineSlot('/21839199781/Vistazo/Vistazo_Middle2', [300, 250], 'Middle2').defineSizeMapping(mappingbox).setTargeting(REFRESH_KEY, REFRESH_VALUE).addService(googletag.pubads());
-
+    
                 googletag.defineSlot('/21839199781/Vistazo/Floating', [1, 1], 'Floating').addService(googletag.pubads());
                 googletag.defineSlot('/21839199781/Vistazo/Zocalo', [1, 3], 'Zocalo').addService(googletag.pubads());
                 //Agregar este tag a la pagina
-                googletag.defineSlot('/21839199781/Vistazo/header', [[320, 50],[970, 90],[728, 90],[300, 50]],'header_ad').defineSizeMapping(mappingHeader).addService(googletag.pubads());
+                googletag.defineSlot('/21839199781/Vistazo/header', [[320, 50], [970, 90], [728, 90], [300, 50]], 'header_ad').defineSizeMapping(mappingHeader).addService(googletag.pubads());
                 googletag.pubads().enableLazyLoad({
                     fetchMarginPercent: 20,
                     renderMarginPercent: 10,
                     mobileScaling: 2.0,
-                });     
+                });
     
                 //Start refresh
                 var SECONDS_TO_WAIT_AFTER_VIEWABILITY = 30; // 30 seconds
@@ -191,12 +201,12 @@
     
     
     <!-- Start Alexa Certify Javascript -->
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
         _atrk_opts = { atrk_acct: "fxUuj1aEsk00aa", domain: "vistazo.com", dynamic: true };
         (function () { var as = document.createElement('script'); as.type = 'text/javascript'; as.async = true; as.src = "https://certify-js.alexametrics.com/atrk.js"; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(as, s); })();
-    </script>
-    <noscript><img src="https://certify.alexametrics.com/atrk.gif?account=fxUuj1aEsk00aa" style="display:none" height="1"
-            width="1" alt="" /></noscript>
+    </script> -->
+    <!-- <noscript><img src="https://certify.alexametrics.com/atrk.gif?account=fxUuj1aEsk00aa" style="display:none" height="1"
+            width="1" alt="" /></noscript> -->
     <!-- End Alexa Certify Javascript -->
     
     
@@ -212,7 +222,5 @@
             ; (window.teads_analytics.shared_data = window.teads_analytics.shared_data || []).push(arguments)
         };
     </script>
-    <script async src="https://a.teads.tv/analytics/tag.js"></script>
-          
-          
+    <!-- <script async src="https://a.teads.tv/analytics/tag.js"></script> -->
           

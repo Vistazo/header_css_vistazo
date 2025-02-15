@@ -100,12 +100,12 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  CanalWhatsapp();
+  // CanalWhatsapp();
+  CanalWhatsappMovil();
   // si el tamaño de la pantalla es menor o igual a 768px
   if (window.innerWidth <= 768) {
     document.querySelector(".hamburg_bm").style.display = "none";
     document.querySelector(".hamburg_bm_movil").style.display = "block";
-    CanalWhatsappMovil();
   } else {
     document.querySelector(".hamburg_bm").style.display = "block";
     document.querySelector(".hamburg_bm_movil").style.display = "none";
