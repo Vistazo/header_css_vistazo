@@ -1,130 +1,224 @@
-##----TIT-INFO-RSS-IMG----
-#set($hmAutores = {})
-#getAcAssignedCatExtended_v1($hmAutores "Vtz_Author")
+<!-- Google Tag Manager -->
+<script>(function (w, d, s, l, i) {
+		w[l] = w[l] || []; w[l].push({
+			'gtm.start':
+				new Date().getTime(), event: 'gtm.js'
+		}); var f = d.getElementsByTagName(s)[0],
+			j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+				'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+	})(window, document, 'script', 'dataLayer', 'GTM-MJB87NX');</script>
+<!-- End Google Tag Manager -->
 
-#set($sort = "createdate")
-#set($criteria= "desc")
-#set($art_next = $articleToolbox.getSiblingArticle($sort, $criteria, "next"))
-#set($sectionID = "#printAssignedSectionID_v1")
-#set($templateId = $iterVelocityTools.getVelocityVariable("template_id")) 
-## CONTENIDOS
-#set($dateMask = "EEEE, d MMMM yyyy - HH:mm")
-#set($canonicalUrl = $articleToolbox.getArticleViewer('canonical'))
-<script>
-	var group_id = $request.theme-display.scope-group-id;
-	var id_art_infinity = $reserved-article-id.data;
-	#if($iterVelocityTools.getVelocityVariable("teaseritemposition") == 1)
-		var teaser_first = true;
-		var n_noticia = 1;
-		idart_view = $reserved-article-id.data;
-	#else
-		var teaser_first = false;
-		var n_noticia = n_noticia + 1;
-	#end
-	console.log("+++ teaseritemposition:  $iterVelocityTools.getVelocityVariable("teaseritemposition")");
-	console.log("+++ n_noticia: " + n_noticia);
+
+<script type='text/javascript'>
+	//Captura variables para DFP desde la url
+	var getQueryString = function (field, url) {
+		var href = url ? url : window.location.href;
+		var reg = new RegExp('[?&]' + field + '=([^&#]*)', 'i');
+		var string = reg.exec(href);
+		return string ? string[1] : null;
+	};
+	dfp_demo = getQueryString("demo");
+	var VI_Seccion = '${secPub}';
+	var VI_Tipo = 'Portada';
+	var VI_Subseccion = '';
+	var VI_Articulo = '';
+	var VI_Tag = '';
+
+	// Detecta si la página está siendo cargada por un bot común o headless browser
+	function isLikelyBot() {
+		return /bot|crawl|slurp|spider/i.test(navigator.userAgent) || !('onscroll' in window) || /HeadlessChrome/.test(navigator.userAgent);
+	}
+    // Si no es un bot, carga el script de Teads Analytics
+    if (!isLikelyBot()) {
+        var script = document.createElement('script');
+        script.src = 'https://a.teads.tv/analytics/tag.js';
+        script.async = true;
+        document.head.appendChild(script);
+    }
 </script>
-<div class="template-infinity detail" id-next="$!art_next.reserved-article-id.data" id-section="$sectionID">
 
-	##MARCA PAYWALL
-	#getAcAssignedCatMain_v1($hmMain,"Vtz_Classification")
-	#set($classif = "")
-	#if($hmMain && $hmMain.size() > 0)
-		#foreach ($elem in $hmMain)
-			#set($classif = $elem.name)
-		#end
-	#end
-	#set($article_is_restricted = $articleToolbox.article_is_restricted())
-	#if ($article_is_restricted)
-	    #foreach($product in $articleToolbox.getProductList())
-		#set($prod = $product.get("name"))
-	    #end
-	#else
-	    #set($prod = "")
-	#end  
-	<div class="paywall" data-suscription="$!prod" data-classification="$!classif"></div>
-
-#getAcAssignedExtendedAllCat_v1($hmAutores "Branded_Content")
-#if($hmAutores.size() > 0)
-	#set($hmAutor = $hmAutores.get(0))
-	#set($autor = $hmAutores.get(0).name)
-#end
+<!-- Start GPT Tag -->
+<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+<script>
 
 
 
+	// Selecciona todos los elementos <meta> de la página
+	const metaTags = document.getElementsByTagName('meta');
+	// Variable para rastrear si se encontró la etiqueta <meta>
+	let noAdsMetaTagFound = false;
+	// Itera sobre todos los elementos <meta> encontrados
+	for (let i = 0; i < metaTags.length; i++) {
+		// Verifica si el elemento actual tiene el atributo 'name' con el valor 'keywords'
+		// y el atributo 'content' con el valor 'no-ads'
+		if (metaTags[i].getAttribute('name') === 'keywords' && metaTags[i].getAttribute('content') === 'no-ads') {
+			// Si se encuentra, actualiza la variable y sale del bucle
+			noAdsMetaTagFound = true;
+			break;
+		}
+	}
 
- ##seccion
-	#set($topcontent = "section")
-	#if($topcontent == "section")
-			<div class="article-section">
-					<a class="section" href="#printURLAssignedSection_v1">#printAssignedSection_v1</a>
-			</div>
-	#end
+	// Manda un mensaje por consola indicando si se encontró o no la etiqueta <meta>
+	if (noAdsMetaTagFound) {
+		console.log('si existe el meta no-ads');
+	} else {
+		console.log('no existe el meta no-ads');
+		window.googletag = window.googletag || { cmd: [] };
+		googletag.cmd.push(function () {
+			//required variable for refresh
+			var REFRESH_KEY = "refresh";
+			var REFRESH_VALUE = "true";
+			var mappingbill = googletag.sizeMapping()
+				.addSize([992, 0], [[970, 250], [970, 180], [970, 90], [728, 250], [728, 180], [728, 90]]).addSize([768, 0], [[728, 250], [728, 180], [728, 90]]).addSize([320, 0], [[320, 100], [320, 50], [300, 100], [300, 50]]).addSize([0, 0], [[300, 100], [300, 250], [320, 100]]).build();
+			var mappingbox = googletag.sizeMapping()
+				.addSize([992, 0], [[300, 600], [300, 250]]).addSize([768, 0], [[300, 600], [300, 250]]).addSize([320, 0], [[300, 250], [320, 100], [320, 50], [300, 100], [300, 50]]).addSize([0, 0], [[300, 250], [300, 100], [300, 50]]).build();
+			var mappingcenter = googletag.sizeMapping()
+				.addSize([992, 0], [[728, 90], [728, 180], [728, 250]]).addSize([768, 0], [[728, 90], [728, 180], [728, 250]]).addSize([320, 0], [[320, 100], [300, 100], [300, 250]]).addSize([0, 0], [[320, 100], [300, 100], [300, 250]]).build();
+			var mappingHeader = googletag.sizeMapping()
+				.addSize([992, 0], [[728, 90], [970, 90]]).addSize([768, 0], [[728, 90]]).addSize([320, 0], [[320, 50]]).addSize([0, 0], [[320, 50]]).build();
 
-	##HEADLINE
-	<h1 class="headline artit font-1 medium bold" itemprop="headline" canonicalUrl="$articleToolbox.getArticleViewer('canonical')" idart="$reserved-article-id.data" metric="off">#getTeaserTitle_v1</h1>
+			//adUnits
+			googletag.defineSlot('/21839199781/Vistazo/Vistazo_Top1', [[300, 100], [300, 250], [320, 100], [728, 90], [970, 90], [970, 250]], 'Top1').defineSizeMapping(mappingbill).setTargeting(REFRESH_KEY, REFRESH_VALUE).addService(googletag.pubads());
+			googletag.defineSlot('/21839199781/Vistazo/Vistazo_Leader1', [[320, 100], [300, 100], [300, 250], [336, 280], [728, 90]], 'Leader1').defineSizeMapping(mappingcenter).setTargeting(REFRESH_KEY, REFRESH_VALUE).addService(googletag.pubads());
+			googletag.defineSlot('/21839199781/Vistazo/Vistazo_Center1', [[320, 100], [300, 100], [300, 250], [728, 90]], 'Center1').defineSizeMapping(mappingcenter).setTargeting(REFRESH_KEY, REFRESH_VALUE).addService(googletag.pubads());
+			googletag.defineSlot('/21839199781/Vistazo/Vistazo_Center2', [[320, 100], [300, 100], [300, 250], [728, 90]], 'Center2').defineSizeMapping(mappingcenter).setTargeting(REFRESH_KEY, REFRESH_VALUE).addService(googletag.pubads());
+			googletag.defineSlot('/21839199781/Vistazo/Vistazo_Center3', [[320, 100], [300, 100], [300, 250], [728, 90]], 'Center3').defineSizeMapping(mappingcenter).setTargeting(REFRESH_KEY, REFRESH_VALUE).addService(googletag.pubads());
+			//Reemplaza al Box de la home -------
+			googletag.defineSlot('/21839199781/Vistazo/Vistazo_Middle1', [[300, 600], [300, 250]], 'Middle1').defineSizeMapping(mappingbox).setTargeting(REFRESH_KEY, REFRESH_VALUE).addService(googletag.pubads());
+			//-----------------------------------
+			googletag.defineSlot('/21839199781/Vistazo/Vistazo_Middle2', [300, 250], 'Middle2').defineSizeMapping(mappingbox).setTargeting(REFRESH_KEY, REFRESH_VALUE).addService(googletag.pubads());
 
-    ##SUBHEADLINE
-    #if($articleToolbox.getTag(null,'Subheadline').data)
-        <h2 class="subheadline artit font-2 medium" itemprop="description">#getTeaserSubheadline_v1</h2>
-    #end
+			googletag.defineSlot('/21839199781/Vistazo/Floating', [1, 1], 'Floating').addService(googletag.pubads());
+			googletag.defineSlot('/21839199781/Vistazo/Zocalo', [1, 3], 'Zocalo').addService(googletag.pubads());
+			//Agregar este tag a la pagina
+			googletag.defineSlot('/21839199781/Vistazo/header', [[320, 50], [970, 90], [728, 90], [300, 50]], 'header_ad').defineSizeMapping(mappingHeader).addService(googletag.pubads());
+			googletag.pubads().enableLazyLoad({
+				fetchMarginPercent: 20,
+				renderMarginPercent: 10,
+				mobileScaling: 2.0,
+			});
 
-	##INFO
-	<div class="inf2">
-		#if($hmAutores && $hmAutores.size() > 0)
-			#foreach ($elem in $hmAutores)
-                #if($elem.name == "En vivo")
-                    <div class="border border-danger text-center" style="width: 100px; border-radius: 5px; cursor: pointer;">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="25px" height="25px">
-                            <circle cx="24" cy="24" r="6" fill="#f44336" />
-                            <path fill="#f44336" d="M17.09,16.789L14.321,13.9C11.663,16.448,10,20.027,10,24s1.663,7.552,4.321,10.1l2.769-2.889 C15.19,29.389,14,26.833,14,24C14,21.167,15.19,18.61,17.09,16.789z" />
-                            <path fill="#f44336" d="M33.679,13.9l-2.769,2.889C32.81,18.611,34,21.167,34,24c0,2.833-1.19,5.389-3.09,7.211l2.769,2.889 C36.337,31.552,38,27.973,38,24S36.337,16.448,33.679,13.9z" />
-                            <g>
-                                <path fill="#f44336" d="M11.561,11.021l-2.779-2.9C4.605,12.125,2,17.757,2,24s2.605,11.875,6.782,15.879l2.779-2.9 C8.142,33.701,6,29.1,6,24S8.142,14.299,11.561,11.021z" />
-                                <path fill="#f44336" d="M39.218,8.121l-2.779,2.9C39.858,14.299,42,18.9,42,24s-2.142,9.701-5.561,12.979l2.779,2.9 C43.395,35.875,46,30.243,46,24S43.395,12.125,39.218,8.121z" />
-                            </g>
-                        </svg>
-                        <span style="font-size: 12px; font-weight: bold; color: #f44336; text-transform: uppercase; letter-spacing: 1px;">$elem.name</span>
-                    </div>
-                #else
-                    <span class="partea" itemprop="author"><a href="/periodistas/-/meta/$elem.friendlyname">$elem.name</a></span>
-                #end
-			#end
-		#end
-			<span class="parteb"> #printDate_v1($dateMask)</span>
-			##ACTIVA NOTIFICACIONES
-			<span class="partea" itemprop="author"
-				style="font-size: 16px; font-weight: bold; cursor: pointer;"
-				onclick="activarNotificaciones()"
-			>
-			Activar Notificaciones 
-				<!-- icono de una campana -->
-				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell" viewBox="0 0 16 16">
-					<path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2z"/>
-					<path fill-rule="evenodd" d="M8 1.5a1 1 0 0 0-1 1V3.1a5.5 5.5 0 0 0-5 5.45v2.95l-1 1v1h14v-1l-1-1V8.55a5.5 5.5 0 0 0-5-5.45V2.5a1 1 0 0 0-1-1zm-1 12a1 1 0 0 1 2 0H7z"/>
-				</svg>
-			</span>			
-	</div>
-	## RRSS
-	<div class="rrss">
-		<div class="cfacebook" onclick="window.open('//facebook.com/sharer.php?u=#siteUrl()$canonicalUrl&text=$!escapeTool.html($!Headline.data)')" style="cursor:pointer"><span style="font-size:15px" class="fa">Facebook</span></div>
-		<div class="ctwitter" onclick="window.open('//twitter.com/intent/tweet?url=#siteUrl()$canonicalUrl&text=$!escapeTool.html($!Headline.data)')" style="cursor:pointer"><span style="font-size:15px" class="fa">Twitter</span></div>
-		<div class="cwhatsapp" onClick="window.open('whatsapp://send?text=$!escapeTool.html($!Headline.data) - #siteUrl()$canonicalUrl')" style="cursor:pointer"><span style="font-size:15px" class="fa">Whatsapp</span></div>
-		<div class="correo" onClick="window.open('mailto:?subject=Revisa esta noticia!&amp;body=Revisa esta noticia $!escapeTool.html($!articleToolbox.getTag(null,'TeaserHeadline').data) #siteUrl()$canonicalUrl Saludos')" style="cursor:pointer"><span style="font-size:15px" class="fa">Email</span></div>    
-	</div>
-	## IMAGEN
-	#getMultimediaMixed_v1("fullcontent", "crop_768x432", "100%", "495", "100%")
-
-
-	#if($Generico && $Generico.getSiblings().size()>0)
-		<ul class="generic">
-			#foreach ($el in $Generico.getSiblings())
-				
-				<li><span class="icon"></span><a href="$!el.Document.data" >$!el.Cutline.data ($el.Extension.data)</a></li>
-			#end
-		</ul>
-	#end
+			//Start refresh
+			var SECONDS_TO_WAIT_AFTER_VIEWABILITY = 30; // 30 seconds
+			googletag.pubads().addEventListener("impressionViewable", function (event) {
+				var slot = event.slot;
+				if (slot.getTargeting(REFRESH_KEY).indexOf(REFRESH_VALUE) > -1) {
+					setTimeout(function () {
+						googletag.pubads().refresh([slot]);
+					}, SECONDS_TO_WAIT_AFTER_VIEWABILITY * 1000);
+				}
+			});
+			//End refresh
 
 
-    
-</div>
+			if (jQryIter.contextIsArticlePage()) {
+				VI_Tipo = 'Artículo';
+				VI_Subseccion = '${SectionName}';
+				var urltemp = window.location.href;
+				var n = urltemp.lastIndexOf("-");
+				VI_Articulo = urltemp.substring(n + 3);
+			}
+			// metadatos
+			$("meta[data-voc-name=topic]").each(function () {
+				if (VI_Tag == '') {
+					VI_Tag = $(this).attr('content');
+				}
+				else {
+					VI_Tag = VI_Tag + "," + $(this).attr('content');
+				}
+			});
+
+			parts = (window.location.href.split("/"));
+			console.log("parts", parts[3]);
+
+			if (parts[3] == 'hogar' && parts.length <= 4) {
+				VI_Seccion = 'Home-hogar';
+			}
+			if (parts[3].includes('taller-cocina-colada-morada-guaguas-pan')) {
+
+				VI_Seccion = 'formulariod4';
+			}
+
+			if (parts[4] && parts[4] != "") {
+				VI_Seccion = 'Home-hogar';
+				VI_Subseccion = parts[4] + '-hogar';
+			}
+
+
+			console.log('VI_Seccion:' + VI_Seccion);
+			console.log('VI_Subec:' + VI_Subseccion);
+			console.log('VI_Tipo:' + VI_Tipo);
+			console.log('VI_Articulo:' + VI_Articulo);
+			console.log('VI_Tag:' + VI_Tag);
+			console.log('dfp_demo:' + dfp_demo);
+			googletag.pubads().setTargeting('VI_Seccion', VI_Seccion);
+			googletag.pubads().setTargeting('VI_Subseccion', VI_Subseccion);
+			googletag.pubads().setTargeting('VI_Tipo', VI_Tipo);
+			googletag.pubads().setTargeting('VI_Articulo', VI_Articulo);
+			googletag.pubads().setTargeting('VI_Tag', VI_Tag);
+			googletag.pubads().setTargeting('VI_Demo', dfp_demo);
+			googletag.pubads().setTargeting('censurado', 'no');
+			googletag.pubads().enableSingleRequest();
+			googletag.pubads().collapseEmptyDivs();
+			googletag.enableServices();
+		});
+		console.log('0P');
+
+
+		// inicio - Bottom_Anchor
+		var interstitialSlot, bottomAnchorSlot;
+		googletag.cmd.push(function () {
+			interstitialSlot = googletag.defineOutOfPageSlot(
+				"/21839199781/Vistazo_Web-ITT",
+				googletag.enums.OutOfPageFormat.INTERSTITIAL
+			);
+			interstitialSlot && interstitialSlot.addService(googletag.pubads());
+			bottomAnchorSlot = googletag.defineOutOfPageSlot(
+				"/21839199781/Vistazo_Bottom_Anchor",
+				googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR
+			);
+			bottomAnchorSlot && bottomAnchorSlot.addService(googletag.pubads());
+		});
+
+		googletag.cmd.push(function () {
+			interstitialSlot && googletag.display(interstitialSlot);
+			bottomAnchorSlot && googletag.display(bottomAnchorSlot);
+		});
+		// fin - Bottom_Anchor
+	}
+
+
+
+
+
+
+
+</script>
+<!-- End: GPT -->
+
+
+
+<!-- Start Alexa Certify Javascript -->
+<script type="text/javascript">
+	_atrk_opts = { atrk_acct: "fxUuj1aEsk00aa", domain: "vistazo.com", dynamic: true };
+	(function () { var as = document.createElement('script'); as.type = 'text/javascript'; as.async = true; as.src = "https://certify-js.alexametrics.com/atrk.js"; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(as, s); })();
+</script>
+<noscript><img src="https://certify.alexametrics.com/atrk.gif?account=fxUuj1aEsk00aa" style="display:none" height="1"
+		width="1" alt="" /></noscript>
+<!-- End Alexa Certify Javascript -->
+
+
+
+
+<!-- Script MowPlayer -->
+
+
+<script>
+	window.teads_analytics = window.teads_analytics || {};
+	window.teads_analytics.analytics_tag_id = "PUB_18943";
+	window.teads_analytics.share = window.teads_analytics.share || function () {
+		; (window.teads_analytics.shared_data = window.teads_analytics.shared_data || []).push(arguments)
+	};
+</script>
+<!-- <script async src="https://a.teads.tv/analytics/tag.js"></script> -->

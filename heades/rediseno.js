@@ -195,7 +195,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
   // Mover el contenido de 'notas_relacionadass' justo después del h2 'subheadline'
-  moverNotasRelacionadas();
+  // moverNotasRelacionadas();
 })
 
 function moverNotasRelacionadas() {
