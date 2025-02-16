@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
                     // Dejar de observar después de la carga
                     observer.disconnect();
-                }, 5000); // Retraso de 5 segundos
+                }, 2000); // Retraso de 2 segundos
             }
         });
     }, { rootMargin: "100px 0px", threshold: 0.5 });
