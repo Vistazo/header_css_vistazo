@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
             entries.forEach(entry => {
                 if (entry.isIntersecting && !taboolaLoaded) {
                     // Establecer un retraso antes de cargar los scripts
-                    setTimeout(() => {
+                    // setTimeout(() => {
                         taboolaLoaded = true;
                         // Insertar el script de Taboola
                         let script1 = document.createElement("script");
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
     
                         // Dejar de observar después de la carga
                         observer.disconnect();
-                    }, 2000); // Retraso de 2 segundos
+                    // }, 2000); // Retraso de 2 segundos
                 }
             });
         }, { rootMargin: "100px 0px", threshold: 0.5 });
