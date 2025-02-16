@@ -200,7 +200,6 @@ function renderResults(data) {
 
 // URL de la API
 const API_URL_CANDIDATOS = "https://vtz.bmcodigo.com/getCandidatos";
-
 // Contenedor de las cards
 const container = document.getElementById("candidatos-container");
 
