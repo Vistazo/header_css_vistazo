@@ -21,7 +21,7 @@
                 })(window, document, 'script', 'dataLayer', 'GTM-MJB87NX');
             }
         }
-        setTimeout(loadGTM, 5000);
+        //setTimeout(loadGTM, 5000);
         function handleFirstInteraction() {
             loadGTM();
             document.removeEventListener('click', handleFirstInteraction);
@@ -82,7 +82,7 @@
             }
         }
         // Temporizador para cargar GPT después de 5 segundos si no hay interacción antes
-        setTimeout(loadGPT, 5000);
+        //setTimeout(loadGPT, 5000);
         // Evento para cargar GPT en la primera interacción
         function handleFirstInteraction() {
             loadGPT();
@@ -114,7 +114,7 @@
     
                 if (!noAdsMetaTagFound) {
                     initializeAdSlots();
-                    setTimeout(displayAds, 2000)
+                    setTimeout(displayAds, 3000)
                     // fin - Bottom_Anchor
                     console.log('Ads will be loaded because no "no-ads" meta tag was found.');
                 } else {
@@ -261,15 +261,15 @@
                 googletag.display('header_ad');
             }
             if(document.getElementById('Floating')){
-                googletag.display('Floating');
+                //googletag.display('Floating');
             }
             if(document.getElementById('Zocalo')){
-                googletag.display('Zocalo');
+                //googletag.display('Zocalo');
             }
 
         }
         // Temporizador para cargar el script después de 5 segundos si no hay interacción antes
-        setTimeout(loadGPTScript, 5000);
+        //setTimeout(loadGPTScript, 5000);
     
         // Evento para cargar el script en la primera interacción
         function handleFirstInteraction() {
@@ -298,7 +298,7 @@
                 };
             }
         }
-        setTimeout(loadTeadsAnalytics, 5000);
+        //setTimeout(loadTeadsAnalytics, 5000);
         function handleFirstInteraction() {
             loadTeadsAnalytics();
             document.removeEventListener('click', handleFirstInteraction);
@@ -307,4 +307,5 @@
         document.addEventListener('click', handleFirstInteraction);
         document.addEventListener('scroll', handleFirstInteraction, { passive: true });
     });
+
 </script>
