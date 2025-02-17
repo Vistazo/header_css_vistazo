@@ -32,35 +32,33 @@
     });
 </script>
 <!-- End Google Tag Manager -->
-    
-    
-    <script type='text/javascript'>
-        //Captura variables para DFP desde la url
-        var getQueryString = function (field, url) {
-            var href = url ? url : window.location.href;
-            var reg = new RegExp('[?&]' + field + '=([^&#]*)', 'i');
-            var string = reg.exec(href);
-            return string ? string[1] : null;
-        };
-        dfp_demo = getQueryString("demo");
-        var VI_Seccion = '${secPub}';
-        var VI_Tipo = 'Portada';
-        var VI_Subseccion = '';
-        var VI_Articulo = '';
-        var VI_Tag = '';
-    
-        // Detecta si la página está siendo cargada por un bot común o headless browser
-        function isLikelyBot() {
-            return /bot|crawl|slurp|spider/i.test(navigator.userAgent) || !('onscroll' in window) || /HeadlessChrome/.test(navigator.userAgent);
-        }
-        // Si no es un bot, carga el script de Teads Analytics
-        if (!isLikelyBot()) {
-            var script = document.createElement('script');
-            script.src = 'https://a.teads.tv/analytics/tag.js';
-            script.async = true;
-            document.head.appendChild(script);
-        }
-    </script>
+<script type='text/javascript'>
+    //Captura variables para DFP desde la url
+    var getQueryString = function (field, url) {
+        var href = url ? url : window.location.href;
+        var reg = new RegExp('[?&]' + field + '=([^&#]*)', 'i');
+        var string = reg.exec(href);
+        return string ? string[1] : null;
+    };
+    dfp_demo = getQueryString("demo");
+    var VI_Seccion = '${secPub}';
+    var VI_Tipo = 'Portada';
+    var VI_Subseccion = '';
+    var VI_Articulo = '';
+    var VI_Tag = '';
+
+    // Detecta si la página está siendo cargada por un bot común o headless browser
+    function isLikelyBot() {
+        return /bot|crawl|slurp|spider/i.test(navigator.userAgent) || !('onscroll' in window) || /HeadlessChrome/.test(navigator.userAgent);
+    }
+    // Si no es un bot, carga el script de Teads Analytics
+    if (!isLikelyBot()) {
+        var script = document.createElement('script');
+        script.src = 'https://a.teads.tv/analytics/tag.js';
+        script.async = true;
+        document.head.appendChild(script);
+    }
+</script>
     
 <!-- Google Publisher Tag (GPT) -->
 <script>
@@ -78,7 +76,7 @@
                     window.googletag = window.googletag || {cmd: []};
                     googletag.cmd.push(function() {
                         console.log("Google Publisher Tag cargado correctamente.");
-                        // Aquí va toda la configuración de anuncios y slots         
+                        // Aquí va toda la configuración de anuncios y slots
                     });
                 };
             }
