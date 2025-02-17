@@ -333,27 +333,30 @@ function cambiarImagenPautaHome() {
     indiceActual = (indiceActual + 1) % imagenesMovil.length;
   }
 
-  // Decide si iniciar el carrusel o mostrar solo una imagen
-  if (window.innerWidth <= 768) {
-    if (imagenesMovil.length > 1) {
-      setInterval(actualizarImagenMovil, 10000); // Cambia cada 10 segundos
+  if(enlace && imagen){
+    // Decide si iniciar el carrusel o mostrar solo una imagen
+    if (window.innerWidth <= 768) {
+      if (imagenesMovil.length > 1) {
+        setInterval(actualizarImagenMovil, 10000); // Cambia cada 10 segundos
+      } else {
+        mostrarImagenSuave(imagenesMovil[0]);
+      }
     } else {
-      mostrarImagenSuave(imagenesMovil[0]);
+      if (imagenesDesktop.length > 1) {
+        setInterval(actualizarImagen, 10000); // Cambia cada 10 segundos
+      } else {
+        mostrarImagenSuave(imagenesDesktop[0]);
+      }
     }
-  } else {
-    if (imagenesDesktop.length > 1) {
-      setInterval(actualizarImagen, 10000); // Cambia cada 10 segundos
+  
+    // Actualizar la imagen al cargar la página
+    if (window.innerWidth <= 768) {
+      actualizarImagenMovil();
     } else {
-      mostrarImagenSuave(imagenesDesktop[0]);
+      actualizarImagen();
     }
   }
 
-  // Actualizar la imagen al cargar la página
-  if (window.innerWidth <= 768) {
-    actualizarImagenMovil();
-  } else {
-    actualizarImagen();
-  }
 }
 
 
