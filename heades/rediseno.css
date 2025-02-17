@@ -673,6 +673,10 @@ li a.menu_text_principal{
     color: #3eadf4; /* Cambia el color del texto al pasar el cursor por encima */
 }
 
+.teaser-related-list article a h2 {
+    font-size: 1.9em;
+}
+
 /* barra progress */
 .progress-bardesk {
     position: fixed;
