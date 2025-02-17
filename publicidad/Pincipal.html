@@ -73,15 +73,19 @@
                 gptScript.async = true;
                 gptScript.src = 'https://securepubads.g.doubleclick.net/tag/js/gpt.js';
                 document.head.appendChild(gptScript);
+                // Esperar a que el script se cargue antes de ejecutar cualquier código de GPT
                 gptScript.onload = function() {
                     window.googletag = window.googletag || {cmd: []};
                     googletag.cmd.push(function() {
-                        // Configuración de slots y demás lógica de GPT
+                        console.log("Google Publisher Tag cargado correctamente.");
+                        // Aquí va toda la configuración de anuncios y slots         
                     });
                 };
             }
         }
+        // Temporizador para cargar GPT después de 5 segundos si no hay interacción antes
         setTimeout(loadGPT, 5000);
+        // Evento para cargar GPT en la primera interacción
         function handleFirstInteraction() {
             loadGPT();
             document.removeEventListener('click', handleFirstInteraction);
@@ -111,122 +115,8 @@
                 }
     
                 if (!noAdsMetaTagFound) {
-                    // Aquí iría el resto del código para configurar y activar los anuncios
-                    window.googletag = window.googletag || { cmd: [] };
-                    googletag.cmd.push(function () {
-                        //required variable for refresh
-                        var REFRESH_KEY = "refresh";
-                        var REFRESH_VALUE = "true";
-                        var mappingbill = googletag.sizeMapping()
-                            .addSize([992, 0], [[970, 250], [970, 180], [970, 90], [728, 250], [728, 180], [728, 90]]).addSize([768, 0], [[728, 250], [728, 180], [728, 90]]).addSize([320, 0], [[320, 100], [320, 50], [300, 100], [300, 50]]).addSize([0, 0], [[300, 100], [300, 250], [320, 100]]).build();
-                        var mappingbox = googletag.sizeMapping()
-                            .addSize([992, 0], [[300, 600], [300, 250]]).addSize([768, 0], [[300, 600], [300, 250]]).addSize([320, 0], [[300, 250], [320, 100], [320, 50], [300, 100], [300, 50]]).addSize([0, 0], [[300, 250], [300, 100], [300, 50]]).build();
-                        var mappingcenter = googletag.sizeMapping()
-                            .addSize([992, 0], [[728, 90], [728, 180], [728, 250]]).addSize([768, 0], [[728, 90], [728, 180], [728, 250]]).addSize([320, 0], [[320, 100], [300, 100], [300, 250]]).addSize([0, 0], [[320, 100], [300, 100], [300, 250]]).build();
-                        var mappingHeader = googletag.sizeMapping()
-                            .addSize([992, 0], [[728, 90], [970, 90]]).addSize([768, 0], [[728, 90]]).addSize([320, 0], [[320, 50]]).addSize([0, 0], [[320, 50]]).build();
-            
-                        //adUnits
-                        googletag.defineSlot('/21839199781/Vistazo/Vistazo_Top1', [[300, 100], [300, 250], [320, 100], [728, 90], [970, 90], [970, 250]], 'Top1').defineSizeMapping(mappingbill).setTargeting(REFRESH_KEY, REFRESH_VALUE).addService(googletag.pubads());
-                        googletag.defineSlot('/21839199781/Vistazo/Vistazo_Leader1', [[320, 100], [300, 100], [300, 250], [336, 280], [728, 90]], 'Leader1').defineSizeMapping(mappingcenter).setTargeting(REFRESH_KEY, REFRESH_VALUE).addService(googletag.pubads());
-                        googletag.defineSlot('/21839199781/Vistazo/Vistazo_Center1', [[320, 100], [300, 100], [300, 250], [728, 90]], 'Center1').defineSizeMapping(mappingcenter).setTargeting(REFRESH_KEY, REFRESH_VALUE).addService(googletag.pubads());
-                        googletag.defineSlot('/21839199781/Vistazo/Vistazo_Center2', [[320, 100], [300, 100], [300, 250], [728, 90]], 'Center2').defineSizeMapping(mappingcenter).setTargeting(REFRESH_KEY, REFRESH_VALUE).addService(googletag.pubads());
-                        googletag.defineSlot('/21839199781/Vistazo/Vistazo_Center3', [[320, 100], [300, 100], [300, 250], [728, 90]], 'Center3').defineSizeMapping(mappingcenter).setTargeting(REFRESH_KEY, REFRESH_VALUE).addService(googletag.pubads());
-                        //Reemplaza al Box de la home -------
-                        googletag.defineSlot('/21839199781/Vistazo/Vistazo_Middle1', [[300, 600], [300, 250]], 'Middle1').defineSizeMapping(mappingbox).setTargeting(REFRESH_KEY, REFRESH_VALUE).addService(googletag.pubads());
-                        //-----------------------------------
-                        googletag.defineSlot('/21839199781/Vistazo/Vistazo_Middle2', [300, 250], 'Middle2').defineSizeMapping(mappingbox).setTargeting(REFRESH_KEY, REFRESH_VALUE).addService(googletag.pubads());
-                        googletag.defineSlot('/21839199781/Vistazo/Floating', [1, 1], 'Floating').addService(googletag.pubads());
-                        googletag.defineSlot('/21839199781/Vistazo/Zocalo', [1, 3], 'Zocalo').addService(googletag.pubads());
-                        //Agregar este tag a la pagina
-                        googletag.defineSlot('/21839199781/Vistazo/header', [[320, 50], [970, 90], [728, 90], [300, 50]], 'header_ad').defineSizeMapping(mappingHeader).addService(googletag.pubads());
-                        googletag.pubads().enableLazyLoad({
-                            fetchMarginPercent: 20,
-                            renderMarginPercent: 10,
-                            mobileScaling: 2.0,
-                        });
-                        //Start refresh
-                        var SECONDS_TO_WAIT_AFTER_VIEWABILITY = 30; // 30 seconds
-                        googletag.pubads().addEventListener("impressionViewable", function (event) {
-                            var slot = event.slot;
-                            if (slot.getTargeting(REFRESH_KEY).indexOf(REFRESH_VALUE) > -1) {
-                                setTimeout(function () {
-                                    googletag.pubads().refresh([slot]);
-                                }, SECONDS_TO_WAIT_AFTER_VIEWABILITY * 1000);
-                            }
-                        });
-                        //End refresh
-                        if (jQryIter.contextIsArticlePage()) {
-                            VI_Tipo = 'Artículo';
-                            VI_Subseccion = '${SectionName}';
-                            var urltemp = window.location.href;
-                            var n = urltemp.lastIndexOf("-");
-                            VI_Articulo = urltemp.substring(n + 3);
-                        }
-                        // metadatos
-                        $("meta[data-voc-name=topic]").each(function () {
-                            if (VI_Tag == '') {
-                                VI_Tag = $(this).attr('content');
-                            }
-                            else {
-                                VI_Tag = VI_Tag + "," + $(this).attr('content');
-                            }
-                        });
-            
-                        parts = (window.location.href.split("/"));
-                        console.log("parts", parts[3]);
-            
-                        if (parts[3] == 'hogar' && parts.length <= 4) {
-                            VI_Seccion = 'Home-hogar';
-                        }
-                        if (parts[3].includes('taller-cocina-colada-morada-guaguas-pan')) {
-            
-                            VI_Seccion = 'formulariod4';
-                        }
-            
-                        if (parts[4] && parts[4] != "") {
-                            VI_Seccion = 'Home-hogar';
-                            VI_Subseccion = parts[4] + '-hogar';
-                        }
-                        console.log('VI_Seccion:' + VI_Seccion);
-                        console.log('VI_Subec:' + VI_Subseccion);
-                        console.log('VI_Tipo:' + VI_Tipo);
-                        console.log('VI_Articulo:' + VI_Articulo);
-                        console.log('VI_Tag:' + VI_Tag);
-                        console.log('dfp_demo:' + dfp_demo);
-                        googletag.pubads().setTargeting('VI_Seccion', VI_Seccion);
-                        googletag.pubads().setTargeting('VI_Subseccion', VI_Subseccion);
-                        googletag.pubads().setTargeting('VI_Tipo', VI_Tipo);
-                        googletag.pubads().setTargeting('VI_Articulo', VI_Articulo);
-                        googletag.pubads().setTargeting('VI_Tag', VI_Tag);
-                        googletag.pubads().setTargeting('VI_Demo', dfp_demo);
-                        googletag.pubads().setTargeting('censurado', 'no');
-                        googletag.pubads().enableSingleRequest();
-                        googletag.pubads().collapseEmptyDivs();
-                        googletag.enableServices();
-                    });
-                    console.log('0P');
-            
-            
-                    // inicio - Bottom_Anchor
-                    var interstitialSlot, bottomAnchorSlot;
-                    googletag.cmd.push(function () {
-                        interstitialSlot = googletag.defineOutOfPageSlot(
-                            "/21839199781/Vistazo_Web-ITT",
-                            googletag.enums.OutOfPageFormat.INTERSTITIAL
-                        );
-                        interstitialSlot && interstitialSlot.addService(googletag.pubads());
-                        bottomAnchorSlot = googletag.defineOutOfPageSlot(
-                            "/21839199781/Vistazo_Bottom_Anchor",
-                            googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR
-                        );
-                        bottomAnchorSlot && bottomAnchorSlot.addService(googletag.pubads());
-                    });
-            
-                    googletag.cmd.push(function () {
-                        interstitialSlot && googletag.display(interstitialSlot);
-                        bottomAnchorSlot && googletag.display(bottomAnchorSlot);
-                    });
+                    initializeAdSlots();
+                    setTimeout(displayAds, 2000)
                     // fin - Bottom_Anchor
                     console.log('Ads will be loaded because no "no-ads" meta tag was found.');
                 } else {
@@ -235,6 +125,151 @@
             }
         }
     
+        function initializeAdSlots() {
+            // Aquí iría el resto del código para configurar y activar los anuncios
+            window.googletag = window.googletag || { cmd: [] };
+            googletag.cmd.push(function () {
+                //required variable for refresh
+                var REFRESH_KEY = "refresh";
+                var REFRESH_VALUE = "true";
+                var mappingbill = googletag.sizeMapping()
+                    .addSize([992, 0], [[970, 250], [970, 180], [970, 90], [728, 250], [728, 180], [728, 90]]).addSize([768, 0], [[728, 250], [728, 180], [728, 90]]).addSize([320, 0], [[320, 100], [320, 50], [300, 100], [300, 50]]).addSize([0, 0], [[300, 100], [300, 250], [320, 100]]).build();
+                var mappingbox = googletag.sizeMapping()
+                    .addSize([992, 0], [[300, 600], [300, 250]]).addSize([768, 0], [[300, 600], [300, 250]]).addSize([320, 0], [[300, 250], [320, 100], [320, 50], [300, 100], [300, 50]]).addSize([0, 0], [[300, 250], [300, 100], [300, 50]]).build();
+                var mappingcenter = googletag.sizeMapping()
+                    .addSize([992, 0], [[728, 90], [728, 180], [728, 250]]).addSize([768, 0], [[728, 90], [728, 180], [728, 250]]).addSize([320, 0], [[320, 100], [300, 100], [300, 250]]).addSize([0, 0], [[320, 100], [300, 100], [300, 250]]).build();
+                var mappingHeader = googletag.sizeMapping()
+                    .addSize([992, 0], [[728, 90], [970, 90]]).addSize([768, 0], [[728, 90]]).addSize([320, 0], [[320, 50]]).addSize([0, 0], [[320, 50]]).build();
+    
+                //adUnits
+                googletag.defineSlot('/21839199781/Vistazo/Vistazo_Top1', [[300, 100], [300, 250], [320, 100], [728, 90], [970, 90], [970, 250]], 'Top1').defineSizeMapping(mappingbill).setTargeting(REFRESH_KEY, REFRESH_VALUE).addService(googletag.pubads());
+                googletag.defineSlot('/21839199781/Vistazo/Vistazo_Leader1', [[320, 100], [300, 100], [300, 250], [336, 280], [728, 90]], 'Leader1').defineSizeMapping(mappingcenter).setTargeting(REFRESH_KEY, REFRESH_VALUE).addService(googletag.pubads());
+                googletag.defineSlot('/21839199781/Vistazo/Vistazo_Center1', [[320, 100], [300, 100], [300, 250], [728, 90]], 'Center1').defineSizeMapping(mappingcenter).setTargeting(REFRESH_KEY, REFRESH_VALUE).addService(googletag.pubads());
+                googletag.defineSlot('/21839199781/Vistazo/Vistazo_Center2', [[320, 100], [300, 100], [300, 250], [728, 90]], 'Center2').defineSizeMapping(mappingcenter).setTargeting(REFRESH_KEY, REFRESH_VALUE).addService(googletag.pubads());
+                googletag.defineSlot('/21839199781/Vistazo/Vistazo_Center3', [[320, 100], [300, 100], [300, 250], [728, 90]], 'Center3').defineSizeMapping(mappingcenter).setTargeting(REFRESH_KEY, REFRESH_VALUE).addService(googletag.pubads());
+                //Reemplaza al Box de la home -------
+                googletag.defineSlot('/21839199781/Vistazo/Vistazo_Middle1', [[300, 600], [300, 250]], 'Middle1').defineSizeMapping(mappingbox).setTargeting(REFRESH_KEY, REFRESH_VALUE).addService(googletag.pubads());
+                //-----------------------------------
+                googletag.defineSlot('/21839199781/Vistazo/Vistazo_Middle2', [300, 250], 'Middle2').defineSizeMapping(mappingbox).setTargeting(REFRESH_KEY, REFRESH_VALUE).addService(googletag.pubads());
+                googletag.defineSlot('/21839199781/Vistazo/Floating', [1, 1], 'Floating').addService(googletag.pubads());
+                googletag.defineSlot('/21839199781/Vistazo/Zocalo', [1, 3], 'Zocalo').addService(googletag.pubads());
+                //Agregar este tag a la pagina
+                googletag.defineSlot('/21839199781/Vistazo/header', [[320, 50], [970, 90], [728, 90], [300, 50]], 'header_ad').defineSizeMapping(mappingHeader).addService(googletag.pubads());
+                googletag.pubads().enableLazyLoad({
+                    fetchMarginPercent: 20,
+                    renderMarginPercent: 10,
+                    mobileScaling: 2.0,
+                });
+                //Start refresh
+                var SECONDS_TO_WAIT_AFTER_VIEWABILITY = 30; // 30 seconds
+                googletag.pubads().addEventListener("impressionViewable", function (event) {
+                    var slot = event.slot;
+                    if (slot.getTargeting(REFRESH_KEY).indexOf(REFRESH_VALUE) > -1) {
+                        setTimeout(function () {
+                            googletag.pubads().refresh([slot]);
+                        }, SECONDS_TO_WAIT_AFTER_VIEWABILITY * 1000);
+                    }
+                });
+                //End refresh
+                if (jQryIter.contextIsArticlePage()) {
+                    VI_Tipo = 'Artículo';
+                    VI_Subseccion = '${SectionName}';
+                    var urltemp = window.location.href;
+                    var n = urltemp.lastIndexOf("-");
+                    VI_Articulo = urltemp.substring(n + 3);
+                }
+                // metadatos
+                $("meta[data-voc-name=topic]").each(function () {
+                    if (VI_Tag == '') {
+                        VI_Tag = $(this).attr('content');
+                    }
+                    else {
+                        VI_Tag = VI_Tag + "," + $(this).attr('content');
+                    }
+                });
+    
+                parts = (window.location.href.split("/"));
+                console.log("parts", parts[3]);
+    
+                if (parts[3] == 'hogar' && parts.length <= 4) {
+                    VI_Seccion = 'Home-hogar';
+                }
+                if (parts[3].includes('taller-cocina-colada-morada-guaguas-pan')) {
+    
+                    VI_Seccion = 'formulariod4';
+                }
+    
+                if (parts[4] && parts[4] != "") {
+                    VI_Seccion = 'Home-hogar';
+                    VI_Subseccion = parts[4] + '-hogar';
+                }
+                console.log('VI_Seccion:' + VI_Seccion);
+                console.log('VI_Subec:' + VI_Subseccion);
+                console.log('VI_Tipo:' + VI_Tipo);
+                console.log('VI_Articulo:' + VI_Articulo);
+                console.log('VI_Tag:' + VI_Tag);
+                console.log('dfp_demo:' + dfp_demo);
+                googletag.pubads().setTargeting('VI_Seccion', VI_Seccion);
+                googletag.pubads().setTargeting('VI_Subseccion', VI_Subseccion);
+                googletag.pubads().setTargeting('VI_Tipo', VI_Tipo);
+                googletag.pubads().setTargeting('VI_Articulo', VI_Articulo);
+                googletag.pubads().setTargeting('VI_Tag', VI_Tag);
+                googletag.pubads().setTargeting('VI_Demo', dfp_demo);
+                googletag.pubads().setTargeting('censurado', 'no');
+                googletag.pubads().enableSingleRequest();
+                googletag.pubads().collapseEmptyDivs();
+                googletag.enableServices();
+            });
+            console.log('0P');
+            // inicio - Bottom_Anchor
+            var interstitialSlot, bottomAnchorSlot;
+            googletag.cmd.push(function () {
+                interstitialSlot = googletag.defineOutOfPageSlot("/21839199781/Vistazo_Web-ITT",googletag.enums.OutOfPageFormat.INTERSTITIAL);
+                interstitialSlot && interstitialSlot.addService(googletag.pubads());
+                bottomAnchorSlot = googletag.defineOutOfPageSlot("/21839199781/Vistazo_Bottom_Anchor",googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR);
+                bottomAnchorSlot && bottomAnchorSlot.addService(googletag.pubads());
+            });
+            // fin - Bottom_Anchor
+            googletag.cmd.push(function () {
+                interstitialSlot && googletag.display(interstitialSlot);
+                bottomAnchorSlot && googletag.display(bottomAnchorSlot);
+            });
+
+        }
+
+        function displayAds() {
+            if (document.getElementById('Top1')) {
+                googletag.display('Top1');
+            }
+            if (document.getElementById('Leader1')) {
+                googletag.display('Leader1');
+            }
+            if (document.getElementById('Center1')) {
+                googletag.display('Center1');
+            }
+            if (document.getElementById('Center2')) {
+                googletag.display('Center2');
+            }
+            if (document.getElementById('Center3')) {
+                googletag.display('Center3');
+            }
+            if (document.getElementById('Middle2')) {
+                googletag.display('Middle2');
+            }
+            if (document.getElementById('Middle1')) {
+                googletag.display('Middle1');
+            }
+            if(document.getElementById('header_ad')){
+                googletag.display('header_ad');
+            }
+            if(document.getElementById('Floating')){
+                googletag.display('Floating');
+            }
+            if(document.getElementById('Zocalo')){
+                googletag.display('Zocalo');
+            }
+
+        }
         // Temporizador para cargar el script después de 5 segundos si no hay interacción antes
         setTimeout(loadGPTScript, 5000);
     
