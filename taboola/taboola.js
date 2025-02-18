@@ -42,46 +42,65 @@ document.addEventListener("DOMContentLoaded", function() {
         document.body.appendChild(script2);
     }
 });
-document.addEventListener("DOMContentLoaded", function() {
-    // Solo ejecutar este código si la pantalla es más ancha que 1024px, común para escritorios
-    if (window.matchMedia("(min-width: 1024px)").matches) {
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    var taboolaDiv = document.getElementById("taboola-right-rail-thumbnails-scroll");
-                    if (taboolaDiv) {
-                        // Recuperar la URL canónica
-                        var canonicalUrl_art = taboolaDiv.closest(".template-infinity").find('.headline.artit').attr("canonicalurl");
+// document.addEventListener("DOMContentLoaded", function() {
+//     // Solo ejecutar este código si la pantalla es más ancha que 1024px, común para escritorios
+//     if (window.matchMedia("(min-width: 1024px)").matches) {
+//         const observer = new IntersectionObserver((entries, observer) => {
+//             entries.forEach(entry => {
+//                 if (entry.isIntersecting) {
+//                     var taboolaDiv = document.getElementById("taboola-right-rail-thumbnails-scroll");
+//                     if (taboolaDiv) {
+//                         // Recuperar la URL canónica
+//                         var canonicalUrl_art = taboolaDiv.closest(".template-infinity").find('.headline.artit').attr("canonicalurl");
 
-                        // Renombrar el ID del div de Taboola
-                        var taboolaId = "taboola-right-rail-thumbnails-scroll-" + id_art_infinity;
-                        taboolaDiv.id = taboolaId;
+//                         // Renombrar el ID del div de Taboola
+//                         var taboolaId = "taboola-right-rail-thumbnails-scroll-" + id_art_infinity;
+//                         taboolaDiv.id = taboolaId;
 
-                        // Configurar e inicializar Taboola
-                        window._taboola = window._taboola || [];
-                        _taboola.push({
-                            mode: 'thumbnails-a',
-                            container: taboolaId,
-                            placement: 'Below Article Thumbnails Widget',
-                            target_type: 'mix'
-                        });
-                        _taboola.push({
-                            article: 'auto',
-                            url: canonicalUrl_art
-                        });
+//                         // Configurar e inicializar Taboola
+//                         window._taboola = window._taboola || [];
+//                         _taboola.push({
+//                             mode: 'thumbnails-a',
+//                             container: taboolaId,
+//                             placement: 'Below Article Thumbnails Widget',
+//                             target_type: 'mix'
+//                         });
+//                         _taboola.push({
+//                             article: 'auto',
+//                             url: canonicalUrl_art
+//                         });
 
-                        console.log("Taboola initialized for desktop");
+//                         console.log("Taboola initialized for desktop");
 
-                        // Dejar de observar después de la carga
-                        observer.disconnect();
-                    }
-                }
-            });
-        }, { threshold: [0.5] });
+//                         // Dejar de observar después de la carga
+//                         observer.disconnect();
+//                     }
+//                 }
+//             });
+//         }, { threshold: [0.5] });
 
-        const targetDiv = document.getElementById("taboola-right-rail-thumbnails-scroll");
-        if (targetDiv) {
-            observer.observe(targetDiv);
-        }
-    }
-});
+//         const targetDiv = document.getElementById("taboola-right-rail-thumbnails-scroll");
+//         if (targetDiv) {
+//             observer.observe(targetDiv);
+//         }
+//     }
+// });
+
+function loadTaboola() {
+    window._taboola = window._taboola || [];
+    _taboola.push({
+        mode: 'alternating-thumbnails-a',
+        container: 'taboola-below-article-thumbnails',
+        placement: 'Below Article Thumbnails',
+        target_type: 'mix'
+    });
+    _taboola.push({flush: true});
+}
+function handleFirstInteraction() {
+    loadTaboola(); // Llama a la función que carga Taboola
+    // Remueve el event listener para asegurar que el script solo se carga una vez
+    document.removeEventListener('click', handleFirstInteraction);
+}
+// Añade el event listener al documento que escucha el primer clic
+document.addEventListener('click', handleFirstInteraction);
+

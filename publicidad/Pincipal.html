@@ -1,4 +1,55 @@
 
+<script type='text/javascript'>
+    //Captura variables para DFP desde la url
+    var getQueryString = function (field, url) {
+        var href = url ? url : window.location.href;
+        var reg = new RegExp('[?&]' + field + '=([^&#]*)', 'i');
+        var string = reg.exec(href);
+        return string ? string[1] : null;
+    };
+    dfp_demo = getQueryString("demo");
+    var VI_Seccion = '${secPub}';
+    var VI_Tipo = 'Portada';
+    var VI_Subseccion = '';
+    var VI_Articulo = '';
+    var VI_Tag = '';
+    // Detecta si la página está siendo cargada por un bot común o headless browser
+    function isLikelyBot() {
+        return /bot|crawl|slurp|spider/i.test(navigator.userAgent) || !('onscroll' in window) || /HeadlessChrome/.test(navigator.userAgent);
+    }
+    // Si no es un bot, carga el script de Teads Analytics
+    if (!isLikelyBot()) {
+        var script = document.createElement('script');
+        script.src = 'https://a.teads.tv/analytics/tag.js';
+        script.async = true;
+        document.head.appendChild(script);
+    }
+     //Teads Analytics -->
+    document.addEventListener("DOMContentLoaded", function() {
+        var teadsAnalyticsLoaded = false;
+        function loadTeadsAnalytics() {
+            if (!teadsAnalyticsLoaded) {
+                teadsAnalyticsLoaded = true;
+                window.teads_analytics = window.teads_analytics || {};
+                window.teads_analytics.analytics_tag_id = "PUB_18943";
+                window.teads_analytics.share = window.teads_analytics.share || function () {
+                    (window.teads_analytics.shared_data = window.teads_analytics.shared_data || []).push(arguments);
+                };
+            }
+        }
+        setTimeout(loadTeadsAnalytics, 3000);
+        function handleFirstInteraction() {
+            loadTeadsAnalytics();
+            document.removeEventListener('click', handleFirstInteraction);
+            document.removeEventListener('scroll', handleFirstInteraction);
+        }
+        document.addEventListener('click', handleFirstInteraction);
+        document.addEventListener('scroll', handleFirstInteraction, { passive: true });
+    });
+    
+</script>
+
+
 <!-- Google Tag Manager -->
 <script>
     document.addEventListener("DOMContentLoaded", function() {
@@ -21,7 +72,12 @@
                 })(window, document, 'script', 'dataLayer', 'GTM-MJB87NX');
             }
         }
-        //setTimeout(loadGTM, 5000);
+        function isLikelyBot() {
+            return /bot|crawl|slurp|spider/i.test(navigator.userAgent) || !('onscroll' in window) || /HeadlessChrome/.test(navigator.userAgent);
+        }
+        if (!isLikelyBot()) {
+            setTimeout(loadGTM, 5000);
+        }
         function handleFirstInteraction() {
             loadGTM();
             document.removeEventListener('click', handleFirstInteraction);
@@ -31,35 +87,7 @@
         document.addEventListener('scroll', handleFirstInteraction, { passive: true });
     });
 </script>
-<!-- End Google Tag Manager -->
-<script type='text/javascript'>
-    //Captura variables para DFP desde la url
-    var getQueryString = function (field, url) {
-        var href = url ? url : window.location.href;
-        var reg = new RegExp('[?&]' + field + '=([^&#]*)', 'i');
-        var string = reg.exec(href);
-        return string ? string[1] : null;
-    };
-    dfp_demo = getQueryString("demo");
-    var VI_Seccion = '${secPub}';
-    var VI_Tipo = 'Portada';
-    var VI_Subseccion = '';
-    var VI_Articulo = '';
-    var VI_Tag = '';
 
-    // Detecta si la página está siendo cargada por un bot común o headless browser
-    function isLikelyBot() {
-        return /bot|crawl|slurp|spider/i.test(navigator.userAgent) || !('onscroll' in window) || /HeadlessChrome/.test(navigator.userAgent);
-    }
-    // Si no es un bot, carga el script de Teads Analytics
-    if (!isLikelyBot()) {
-        var script = document.createElement('script');
-        script.src = 'https://a.teads.tv/analytics/tag.js';
-        script.async = true;
-        document.head.appendChild(script);
-    }
-</script>
-    
 <!-- Google Publisher Tag (GPT) -->
 <script>
     document.addEventListener("DOMContentLoaded", function() {
@@ -81,8 +109,13 @@
                 };
             }
         }
-        // Temporizador para cargar GPT después de 5 segundos si no hay interacción antes
-        //setTimeout(loadGPT, 5000);
+        function isLikelyBot() {
+            return /bot|crawl|slurp|spider/i.test(navigator.userAgent) || !('onscroll' in window) || /HeadlessChrome/.test(navigator.userAgent);
+        }
+        if(!isLikelyBot()) {
+            // Temporizador para cargar GPT después de 5 segundos si no hay interacción antes
+            setTimeout(loadGPT, 5000);
+        }
         // Evento para cargar GPT en la primera interacción
         function handleFirstInteraction() {
             loadGPT();
@@ -114,7 +147,8 @@
     
                 if (!noAdsMetaTagFound) {
                     initializeAdSlots();
-                    setTimeout(displayAds, 3000)
+                    displayAds();
+                    //setTimeout(displayAds, 2000)
                     // fin - Bottom_Anchor
                     console.log('Ads will be loaded because no "no-ads" meta tag was found.');
                 } else {
@@ -258,7 +292,7 @@
                 googletag.display('Middle1');
             }
             if(document.getElementById('header_ad')){
-                googletag.display('header_ad');
+                //googletag.display('header_ad');
             }
             if(document.getElementById('Floating')){
                 //googletag.display('Floating');
@@ -268,8 +302,14 @@
             }
 
         }
-        // Temporizador para cargar el script después de 5 segundos si no hay interacción antes
-        //setTimeout(loadGPTScript, 5000);
+        
+        function isLikelyBot() {
+            return /bot|crawl|slurp|spider/i.test(navigator.userAgent) || !('onscroll' in window) || /HeadlessChrome/.test(navigator.userAgent);
+        }
+        if(!isLikelyBot()) {
+            // Temporizador para cargar el script después de 5 segundos si no hay interacción antes
+            setTimeout(loadGPTScript, 5000);
+        }
     
         // Evento para cargar el script en la primera interacción
         function handleFirstInteraction() {
@@ -282,30 +322,4 @@
         document.addEventListener('click', handleFirstInteraction);
         document.addEventListener('scroll', handleFirstInteraction, { passive: true });
     });
-</script>
-    
-<!-- Teads Analytics -->
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        var teadsAnalyticsLoaded = false;
-        function loadTeadsAnalytics() {
-            if (!teadsAnalyticsLoaded) {
-                teadsAnalyticsLoaded = true;
-                window.teads_analytics = window.teads_analytics || {};
-                window.teads_analytics.analytics_tag_id = "PUB_18943";
-                window.teads_analytics.share = window.teads_analytics.share || function () {
-                    (window.teads_analytics.shared_data = window.teads_analytics.shared_data || []).push(arguments);
-                };
-            }
-        }
-        //setTimeout(loadTeadsAnalytics, 5000);
-        function handleFirstInteraction() {
-            loadTeadsAnalytics();
-            document.removeEventListener('click', handleFirstInteraction);
-            document.removeEventListener('scroll', handleFirstInteraction);
-        }
-        document.addEventListener('click', handleFirstInteraction);
-        document.addEventListener('scroll', handleFirstInteraction, { passive: true });
-    });
-
 </script>
