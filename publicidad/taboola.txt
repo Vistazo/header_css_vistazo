@@ -27,6 +27,7 @@ f.parentNode.insertBefore(e, f);
 </script>
       
 taboola-mid-article
+
 <div id="taboola-below-article-thumbnails"></div>
 <script type="text/javascript">
   window._taboola = window._taboola || [];
@@ -44,7 +45,7 @@ taboola-mid-article
 </script>
 
 scroll_taboola
-         <div id="taboola-right-rail-thumbnails-scroll"></div>
+<div id="taboola-right-rail-thumbnails-scroll"></div>
 <script type="text/javascript">
 	// recuperamos la url canonica
 	var canonicalUrl_art = $("#taboola-right-rail-thumbnails-scroll").closest(".template-infinity").find('.headline.artit').attr("canonicalurl");
