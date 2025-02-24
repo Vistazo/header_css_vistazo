@@ -17,6 +17,7 @@
     function isLikelyBot() {
         return /bot|crawl|slurp|spider/i.test(navigator.userAgent) || !('onscroll' in window) || /HeadlessChrome/.test(navigator.userAgent);
     }
+
     // Si no es un bot, carga el script de Teads Analytics
     if (!isLikelyBot()) {
         var script = document.createElement('script');
@@ -75,8 +76,24 @@
         function isLikelyBot() {
             return /bot|crawl|slurp|spider/i.test(navigator.userAgent) || !('onscroll' in window) || /HeadlessChrome/.test(navigator.userAgent);
         }
+
+        // Verifica si el validador en localStorage ha expirado
+        function shouldLoadImmediately() {
+            var lastLoadTime = localStorage.getItem('lastLoadTime');
+            if (lastLoadTime) {
+                var elapsed = Date.now() - parseInt(lastLoadTime);
+                return elapsed > 28800000; // 8 horas en milisegundos
+            }
+            return true;
+        }
+
         if (!isLikelyBot()) {
-            setTimeout(loadGTM, 5000);
+            if (shouldLoadImmediately()) {
+                loadGTM();
+                localStorage.setItem('lastLoadTime', Date.now().toString());
+            } else {
+                setTimeout(loadGTM, 5000);
+            }
         }
         function handleFirstInteraction() {
             loadGTM();
@@ -112,9 +129,25 @@
         function isLikelyBot() {
             return /bot|crawl|slurp|spider/i.test(navigator.userAgent) || !('onscroll' in window) || /HeadlessChrome/.test(navigator.userAgent);
         }
+
+        // Verifica si el validador en localStorage ha expirado
+        function shouldLoadImmediately() {
+            var lastLoadTime = localStorage.getItem('lastLoadTime');
+            if (lastLoadTime) {
+                var elapsed = Date.now() - parseInt(lastLoadTime);
+                return elapsed > 28800000; // 8 horas en milisegundos
+            }
+            return true;
+        }
+
         if(!isLikelyBot()) {
             // Temporizador para cargar GPT después de 5 segundos si no hay interacción antes
-            setTimeout(loadGPT, 5000);
+            if (shouldLoadImmediately()) {
+                loadGPT();
+                localStorage.setItem('lastLoadTime', Date.now().toString());
+            } else {
+                setTimeout(loadGPT, 5000);
+            }
         }
         // Evento para cargar GPT en la primera interacción
         function handleFirstInteraction() {
@@ -235,24 +268,24 @@
                     VI_Seccion = 'Home-hogar';
                     VI_Subseccion = parts[4] + '-hogar';
                 }
-                console.log('VI_Seccion:' + VI_Seccion);
-                console.log('VI_Subec:' + VI_Subseccion);
-                console.log('VI_Tipo:' + VI_Tipo);
-                console.log('VI_Articulo:' + VI_Articulo);
-                console.log('VI_Tag:' + VI_Tag);
-                console.log('dfp_demo:' + dfp_demo);
+                //console.log('VI_Seccion:' + VI_Seccion);
+                //console.log('VI_Subec:' + VI_Subseccion);
+                //console.log('VI_Tipo:' + VI_Tipo);
+                //console.log('VI_Articulo:' + VI_Articulo);
+                //console.log('VI_Tag:' + VI_Tag);
+                //console.log('dfp_demo:' + dfp_demo);
                 googletag.pubads().setTargeting('VI_Seccion', VI_Seccion);
                 googletag.pubads().setTargeting('VI_Subseccion', VI_Subseccion);
                 googletag.pubads().setTargeting('VI_Tipo', VI_Tipo);
                 googletag.pubads().setTargeting('VI_Articulo', VI_Articulo);
                 googletag.pubads().setTargeting('VI_Tag', VI_Tag);
-                googletag.pubads().setTargeting('VI_Demo', dfp_demo);
+                //googletag.pubads().setTargeting('VI_Demo', dfp_demo);
                 googletag.pubads().setTargeting('censurado', 'no');
                 googletag.pubads().enableSingleRequest();
                 googletag.pubads().collapseEmptyDivs();
                 googletag.enableServices();
             });
-            console.log('0P');
+          
             // inicio - Bottom_Anchor
             var interstitialSlot, bottomAnchorSlot;
             googletag.cmd.push(function () {
@@ -270,45 +303,71 @@
         }
 
         function displayAds() {
-            if (document.getElementById('Top1')) {
-                googletag.display('Top1');
+            // Verificamos que googletag y sus comandos estén definidos
+            if (window.googletag && window.googletag.cmd) {
+                // Aseguramos que los comandos se ejecuten después de que GPT esté completamente cargado
+                googletag.cmd.push(function() {
+                    // Ahora verificamos cada slot individualmente antes de intentar mostrarlo
+                    if (document.getElementById('Top1') && googletag.pubads().getSlots().some(slot => slot.getSlotElementId() === 'Top1')) {
+                        googletag.display('Top1');
+                    }
+                    if (document.getElementById('Leader1') && googletag.pubads().getSlots().some(slot => slot.getSlotElementId() === 'Leader1')) {
+                        googletag.display('Leader1');
+                    }
+                    if (document.getElementById('Center1') && googletag.pubads().getSlots().some(slot => slot.getSlotElementId() === 'Center1')) {
+                        googletag.display('Center1');
+                    }
+                    if (document.getElementById('Center2') && googletag.pubads().getSlots().some(slot => slot.getSlotElementId() === 'Center2')) {
+                        googletag.display('Center2');
+                    }
+                    if (document.getElementById('Center3') && googletag.pubads().getSlots().some(slot => slot.getSlotElementId() === 'Center3')) {
+                        googletag.display('Center3');
+                    }
+                    if (document.getElementById('Middle2') && googletag.pubads().getSlots().some(slot => slot.getSlotElementId() === 'Middle2')) {
+                        googletag.display('Middle2');
+                    }
+                    if (document.getElementById('Middle1') && googletag.pubads().getSlots().some(slot => slot.getSlotElementId() === 'Middle1')) {
+                        googletag.display('Middle1');
+                    }
+                    if (document.getElementById('header_ad') && googletag.pubads().getSlots().some(slot => slot.getSlotElementId() === 'header_ad')) {
+                        googletag.display('header_ad');
+                    }
+                    if (document.getElementById('Floating') && googletag.pubads().getSlots().some(slot => slot.getSlotElementId() === 'Floating')) {
+                        googletag.display('Floating');
+                    }
+                    if (document.getElementById('Zocalo') && googletag.pubads().getSlots().some(slot => slot.getSlotElementId() === 'Zocalo')) {
+                        googletag.display('Zocalo');
+                    }
+                });
+            } else {
+                console.log("Google Tag Library not loaded");
+                setTimeout(displayAds, 2000);
             }
-            if (document.getElementById('Leader1')) {
-                googletag.display('Leader1');
-            }
-            if (document.getElementById('Center1')) {
-                googletag.display('Center1');
-            }
-            if (document.getElementById('Center2')) {
-                googletag.display('Center2');
-            }
-            if (document.getElementById('Center3')) {
-                googletag.display('Center3');
-            }
-            if (document.getElementById('Middle2')) {
-                googletag.display('Middle2');
-            }
-            if (document.getElementById('Middle1')) {
-                googletag.display('Middle1');
-            }
-            if(document.getElementById('header_ad')){
-                //googletag.display('header_ad');
-            }
-            if(document.getElementById('Floating')){
-                //googletag.display('Floating');
-            }
-            if(document.getElementById('Zocalo')){
-                //googletag.display('Zocalo');
-            }
-
         }
+        
         
         function isLikelyBot() {
             return /bot|crawl|slurp|spider/i.test(navigator.userAgent) || !('onscroll' in window) || /HeadlessChrome/.test(navigator.userAgent);
         }
+
+        // Verifica si el validador en localStorage ha expirado
+        function shouldLoadImmediately() {
+            var lastLoadTime = localStorage.getItem('lastLoadTime');
+            if (lastLoadTime) {
+                var elapsed = Date.now() - parseInt(lastLoadTime);
+                return elapsed > 28800000; // 8 horas en milisegundos
+            }
+            return true;
+        }        
+
         if(!isLikelyBot()) {
             // Temporizador para cargar el script después de 5 segundos si no hay interacción antes
-            setTimeout(loadGPTScript, 5000);
+            if (shouldLoadImmediately()) {
+                loadGPTScript();
+                localStorage.setItem('lastLoadTime', Date.now().toString());
+            } else {
+                setTimeout(loadGPTScript, 5000);
+            }
         }
     
         // Evento para cargar el script en la primera interacción

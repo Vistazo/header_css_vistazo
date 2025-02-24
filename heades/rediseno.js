@@ -31,7 +31,6 @@ document.addEventListener("DOMContentLoaded", function () {
   if(lateralIzq) {
     // Reemplazar todos los '&nbsp;' por un string vacío (eliminándolos)
     lateralIzq.innerHTML = lateralIzq.innerHTML.replace(/&nbsp;/g, '');
-    justify
   }
 });
 
