@@ -211,13 +211,11 @@ async function fetchAndDisplayCandidatos() {
     // si borrar lo que contiene el container al final poner un div con la imagen
     if (!container){
       const card = document.createElement("div");
-      card.className = "card-items swiper-slide";
-      card.innerHTML = `
+      card.innerHTML = card.innerHTML + `
               <div>
                 <img width="400" height="400" src="https://codigomarret.online/upload/img/whatsapp-image-2025-02-25-at-13.14.56.jpeg" alt="Elecciones 2025">
               </div>
               `;
-      container.appendChild(card);
     }
     return;
     const response = await fetch(API_URL_CANDIDATOS);
