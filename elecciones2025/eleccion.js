@@ -206,7 +206,9 @@ const container = document.getElementById("candidatos-container");
 // Función para crear y mostrar las cards
 async function fetchAndDisplayCandidatos() {
   try {
-    container.style.display = "none";
+    //container.style.display = "none";
+    // poner una imagen https://codigomarret.online/upload/img/whatsapp-image-2025-02-25-at-13.14.56.jpeg";
+    container.innerHTML = "<img src='https://codigomarret.online/upload/img/whatsapp-image-2025-02-25-at-13.14.56.jpeg' alt='Daniel Novoa & Luisa Gonzales a la segunda vuelta'>";
     return;
     const response = await fetch(API_URL_CANDIDATOS);
     const result = await response.json();

@@ -9,20 +9,8 @@ function updateProgressBar() {
   const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
   const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
   const scrolled = (winScroll / height) * 100;
-  
   document.querySelector(".progress-bardesk").style.width = scrolled + "%";
 }
-
-// cambiar el titulo en una pagina especifica
-document.addEventListener("DOMContentLoaded", function() {
-  // let path = window.location.pathname;
-  //   contenido = document.querySelector(".headline");
-  //   contenido.innerHTML = "";
-  //   contenido.innerHTML = `
-  //   <span>‘Narco’ lituano cayó en Bogotá: </span><br>
-  //   <span>su destino era Guayaquil</span>
-  //   `;
-});
 
 document.addEventListener("DOMContentLoaded", function () {
   Replica();
