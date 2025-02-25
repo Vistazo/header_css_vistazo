@@ -201,14 +201,24 @@ function renderResults(data) {
 // URL de la API
 const API_URL_CANDIDATOS = "https://vtz.bmcodigo.com/getCandidatos";
 // Contenedor de las cards
-const container = document.querySelector("candidatos-container")
+const container = document.querySelector("portlet-boundary portlet-static-end htmlcontainer-portlet container")
 
 // Función para crear y mostrar las cards
 async function fetchAndDisplayCandidatos() {
   try {
     //container.style.display = "none";
     // poner una imagen https://codigomarret.online/upload/img/whatsapp-image-2025-02-25-at-13.14.56.jpeg";
-    container.innerHTML = "<img src='https://codigomarret.online/upload/img/whatsapp-image-2025-02-25-at-13.14.56.jpeg' alt='Daniel Novoa & Luisa Gonzales a la segunda vuelta'>";
+    // si borrar lo que contiene el container al final poner un div con la imagen
+    if (!container){
+      const card = document.createElement("div");
+      card.className = "card-items swiper-slide";
+      card.innerHTML = `
+              <div>
+                <img width="400" height="400" src="https://codigomarret.online/upload/img/whatsapp-image-2025-02-25-at-13.14.56.jpeg" alt="Elecciones 2025">
+              </div>
+              `;
+      container.appendChild(card);
+    }
     return;
     const response = await fetch(API_URL_CANDIDATOS);
     const result = await response.json();
