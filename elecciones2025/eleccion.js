@@ -212,10 +212,10 @@ async function fetchAndDisplayCandidatos() {
     if (!container){
       const card = document.createElement("div");
       card.innerHTML = card.innerHTML + `
-              <div>
-                <img width="400" height="400" src="https://codigomarret.online/upload/img/whatsapp-image-2025-02-25-at-13.14.56.jpeg" alt="Elecciones 2025">
-              </div>
-              `;
+      <div>
+        <img width="400" height="400" src="https://codigomarret.online/upload/img/whatsapp-image-2025-02-25-at-13.14.56.jpeg" alt="Elecciones 2025">
+      </div>
+      `;
     }
     return;
     const response = await fetch(API_URL_CANDIDATOS);
