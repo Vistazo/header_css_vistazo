@@ -1,36 +1,300 @@
-
 <style>
+  .portlet-boundary {
+    font-family: Arial, sans-serif !important;
+    color: #333 !important;
+    padding-left: 40px !important;
+    /* Espacio adicional para evitar superposición con la línea */
+  }
 
-  
+  .v2 {
+    background: #fff !important;
+    #border: 1px solid #ccc !important;
+    padding: 20px !important;
+    position: relative !important;
+    /* Posicionamiento relativo para la línea general */
+  }
+
+  .item_post {
+    position: relative !important;
+    /* Importante para el posicionamiento de la línea */
+    padding-left: 20px !important;
+    /* Espacio para la línea y punto */
+    margin-left: 10px !important;
+    /* Asegurar espacio para la línea vertical */
+  }
+
+  .item_line {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    height: 100% !important;
+    /* Altura total del post */
+  }
+
+  .point_post {
+    width: 10px !important;
+    height: 10px !important;
+    background-color: #ce0505 !important;
+    border-radius: 50% !important;
+    position: absolute !important;
+    left: -15px !important;
+    /* Ajuste para centrar */
+    top: 10px !important;
+  }
+
+  .vertical-line {
+    position: absolute !important;
+    width: 2px !important;
+    /* Ancho de la línea */
+    background-color: #a70808 !important;
+    /* Color de la línea */
+    left: -11px !important;
+    top: 20px !important;
+    /* Comienzo de la línea después del punto */
+    bottom: 0px !important;
+    /* Ajuste para no sobrepasar el último item */
+    height: calc(100% + 20px) !important;
+    /* Altura total del post */
+  }
+
+  .item_content {
+    margin-left: 15px !important;
+    /* Espacio adicional para contenido */
+  }
+
+  .date_post {
+    font-size: 0.8rem !important;
+    color: #666 !important;
+  }
+
+  .headline_post {
+    font-size: 1.2rem !important;
+    font-weight: bold !important;
+    margin-top: 5px !important;
+  }
+
+  .text_post p {
+    margin-top: 10px !important;
+  }
 </style>
-<div class="portlet-boundary">
-  <div class="live-blog-post">
-    <div class="item-post">
-      <div class="item-line">
-        <div class="point-post"></div>
-        <div class="vertical-line"></div> <!-- Línea vertical entre los puntos -->
+<div id="" class="portlet-boundary portlet-static-end content-viewer-portlet LIVE_BLOG_POST last full-access norestricted">
+  <div class="LIVE_BLOG_POST v2">
+    <div class="item_post">
+      <div class="item_line">
+        <div class="point_post"></div>
+        <div class="vertical-line"></div>
       </div>
-      <div class="item-content">
-        <div class="date-post">11/02/2025 10:30</div>
-        <div class="headline-post">Juan Martín Muller</div>
-        <div class="text-post">
-          <p>A través de la ciencia, la conservación y el periodismo, WWF-Ecuador y Grupo Vistazo buscan inspirar a más personas y sectores a tomar acción por un futuro más sostenible.</p>
-        </div>
-      </div>
-    </div>
-    <div class="item-post">
-      <div class="item-line">
-        <div class="point-post"></div>
-        <div class="vertical-line"></div> <!-- Línea vertical entre los puntos -->
-      </div>
-      <div class="item-content">
-        <div class="date-post">11/02/2025 10:30</div>
-        <div class="headline-post">Juan Martín Muller</div>
-        <div class="text-post">
-          <p>A través de la ciencia, la conservación y el periodismo, WWF-Ecuador y Grupo Vistazo buscan inspirar a más personas y sectores a tomar acción por un futuro más sostenible.</p>
-        </div>
+      <div class="item_content">
+        <div class="date_post" data-date="11/02/2025 10:30"> 11/02/2025 10:30</div>
+        <!-- <div class="content_post"> -->
+          <div class="headline_post"> Juan Martín Muller
+          </div>
+          <div class="text_post">
+            <p>A través de la ciencia, la conservación y el periodismo, <u>WWF-Ecuador y Grupo Vistazo</u> buscan
+              inspirar a más personas y sectores a tomar acción por un futuro más sostenible.</p>
+          </div>
+        <!-- </div> -->
       </div>
     </div>
-    <!-- Repetir .item-post para más entradas -->
+    <div class="item_post">
+      <div class="item_line">
+        <div class="point_post"></div>
+        <div class="vertical-line"></div>
+      </div>
+      <div class="item_content">
+        <div class="date_post" data-date="11/02/2025 06:30"> 11/02/2025 06:30
+        </div>
+        <!-- <div class="content_post"> -->
+          <div class="headline_post"> un acuerdo de cooperación para fortalecer
+          </div>
+          <div class="text_post">
+            <p><u>"El periodismo es un catalizador clave en la conciencia ambiental, </u>ya que tiene el poder de
+              informar, sensibilizar y movilizar a la sociedad. Por eso, a través de<u> reportajes basados en ciencia,
+                investigaciones profundas e historias impactantes</u></p>
+          </div>
+        <!-- </div> -->
+      </div>
+    </div>
   </div>
+  <script type="application/ld+json"> {
+"@context": "https://schema.org/",
+"@type": "LiveBlogPosting",
+"publisher": {
+"@type": "Organization",
+"name": "Vistazo",
+"url": "https://www.vistazo.com/",
+"sameAs": [
+"https://www.facebook.com/vistazo",
+"https://www.instagram.com/vistazo/",
+"https://x.com/vistazo",
+"https://www.youtube.com/user/vistazo"
+],
+"@id": "#PublisherOrg",
+"logo": {
+"@type": "ImageObject",
+"url": "http://vtz-vp.milenium.cloud/binrepository/768x432/84c0/600d432/none/12404/SSXD/wwf-ambiente-ecuador-2071664-20250314_2074134_20250314152612.jpg"
+}
+},
+"url": "/web/vistazo/lab-protec/wwf-ecuador-y-vistazo-unen-esfuerzos-para-concientizar-sobre-la-importancia-de-conservar-nuestro-planeta-YL8962504",
+"description": "A través de esta alianza, ambas organizaciones trabajarán de la mano para llevar información valiosa a la ciudadanía. Aquí los detalles.",
+"headline" : "WWF-Ecuador y Vistazo unen esfuerzos para concientizar sobre la importancia de conservar nuestro planeta","about": {
+"@type": "Event",
+"name": "WWF-Ecuador y Vistazo unen esfuerzos para concientizar sobre la importancia de conservar nuestro planeta",
+"description": "A través de esta alianza, ambas organizaciones trabajarán de la mano para llevar información valiosa a la ciudadanía. Aquí los detalles.",
+"startDate": "2025-03-14T15:46:43-05:00",
+"endDate": "2025-03-21T15:24:00-05:00",
+"location": {
+"@type": "Place",
+"name": "Ecuador",
+"address": {
+"@type": "PostalAddress",
+"addressCountry": "Ecuador"
+}
+},
+"eventAttendanceMode": "OnlineEventAttendanceMode",
+"eventStatus": "https://schema.org/EventScheduled",
+"offers": {
+"@type": "Offer",
+"availability": "https://schema.org/OnlineOnly",
+"price": "0.00",
+"priceCurrency": "USD",
+"validFrom": "2025-03-14T15:46:43-05:00",
+"url": "/web/vistazo/lab-protec/wwf-ecuador-y-vistazo-unen-esfuerzos-para-concientizar-sobre-la-importancia-de-conservar-nuestro-planeta-YL8962504"
+},
+"image": {
+"@type": "ImageObject",
+"url": "https://www.ecuavisa.com/base-portlet/webrsrc/ctxvar/c2c3b2f6-1d72-4d98-b109-9d6cbecf69ec.png",
+"width": "32",
+"height": "32"
+},
+"organizer": {
+"@type": "Organization",
+"name": "Vistazo",
+"url": "https://www.vistazo.com/"
+},
+"performer": {
+"@type": "Organization",
+"name": "Vistazo",
+"url": "https://www.vistazo.com/"
+}
+},
+"dateModified" : "2025-03-14T15:46:43-05:00",
+"coverageStartTime": "2025-03-14T15:46:43-05:00",
+"coverageEndTime": "2025-03-21T15:24:00-05:00",
+"name": "Ecuavisa",
+"liveBlogUpdate": [{
+"@type": "BlogPosting",
+"headline": "Juan Martín Muller",
+"url": "/web/vistazo/lab-protec/wwf-ecuador-y-vistazo-unen-esfuerzos-para-concientizar-sobre-la-importancia-de-conservar-nuestro-planeta-YL8962504#1",
+"@id": "#1",
+"mainEntityOfPage": {
+"@type": "WebPage"
+},
+"datePublished": "2025-02-11T10:30:00-0500",
+"dateModified": "2025-02-11T10:30:00-0500",
+"articleBody": "A través de la ciencia, la conservación y el periodismo, WWF-Ecuador y Grupo Vistazo buscan inspirar a más personas y sectores a tomar acción por un futuro más sostenible.","publisher": {
+"name": "Vistazo",
+"@type": "Organization",
+"@id": "#PublisherOrg"
+}
+},{
+"@type": "BlogPosting",
+"headline": "un acuerdo de cooperación para fortalecer",
+"url": "/web/vistazo/lab-protec/wwf-ecuador-y-vistazo-unen-esfuerzos-para-concientizar-sobre-la-importancia-de-conservar-nuestro-planeta-YL8962504#2",
+"@id": "#2",
+"mainEntityOfPage": {
+"@type": "WebPage"
+},
+"datePublished": "2025-02-11T06:30:00-0500",
+"dateModified": "2025-02-11T06:30:00-0500",
+"articleBody": "&#039;El periodismo es un catalizador clave en la conciencia ambiental, ya que tiene el poder de informar, sensibilizar y movilizar a la sociedad. Por eso, a través de reportajes basados en ciencia, investigaciones profundas e historias impactantes","publisher": {
+"name": "Vistazo",
+"@type": "Organization",
+"@id": "#PublisherOrg"
+}
+}	]
+}
+</script>
+  <script type="application/ld+json"> {
+"@context": "https://schema.org/",
+"@type": "NewsArticle",
+"mainEntityOfPage": {
+"@type": "WebPage",
+"@id": "/web/vistazo/lab-protec/wwf-ecuador-y-vistazo-unen-esfuerzos-para-concientizar-sobre-la-importancia-de-conservar-nuestro-planeta-YL8962504"
+},
+"headline": "WWF-Ecuador y Vistazo unen esfuerzos para concientizar sobre la importancia de conservar nuestro planeta",
+"description": "A través de esta alianza, ambas organizaciones trabajarán de la mano para llevar información valiosa a la ciudadanía. Aquí los detalles.",
+"articleSection": "Lab Protec",
+"articleBody": "WWF-Ecuador y Grupo Vistazo firmaron un acuerdo de cooperación para fortalecer la difusión de temáticas ambientales clave y con ello promover el desarrollo sostenible en Ecuador y la región. A través",
+"datePublished": "2025-03-14T15:46:43-05:00",
+"dateModified": "2025-03-14T15:46:43-05:00",
+"author": {
+"@type": "Person",
+"name": "$autor",
+"url": "/metadatos/-/meta/$hmAutor.friendlyname"
+},
+"publisher": {
+"@type": "Organization",
+"name": "Vistazo",
+"logo": {
+"@type": "ImageObject",
+"url": "/base-portlet/webrsrc/ctxvar/14b17260-9afe-4609-8631-132f57aa5209.png",
+"width": 32,
+"height": 32
+}
+},
+"image": {
+"@type": "ImageObject",
+"url": "http://vtz-vp.milenium.cloud/binrepository/768x432/84c0/600d432/none/12404/SSXD/wwf-ambiente-ecuador-2071664-20250314_2074134_20250314152612.jpg",
+"width": 1200,
+"height": 600
+}
+}
+</script>
+  <script>/*<![CDATA[*/
+
+    var version = "4";
+    var dateServer = "<?php echo date("d/m/Y H: i:s");?>";
+    function timeAgo(date_str) {
+      var date = getDate(date_str);
+      var now = getDate(dateServer);
+      var ms = now.getTime() - date.getTime();
+      var seconds = Math.floor(ms / 1000);
+      var minutes = Math.floor(seconds / 60);
+      var hours = Math.floor(minutes / 60);
+      var days = Math.floor(hours / 24);
+      var months = Math.floor(days / 30);
+      var years = Math.floor(months / 12);
+      if (ms < 0) {
+        return date_str;
+      }
+      if (ms === 0) {
+        return "Hace un momento";
+      }
+      if (seconds < 60) {
+        return "Hace " + seconds + " segundos";
+      }
+      if (minutes < 60) {
+        return "Hace " + minutes + " minutos";
+      }
+      if (hours < 6) {
+        return "Hace " + hours + " horas";
+      }
+      if (hours => 24) {
+        return date_str;
+      }
+    }
+
+    function getDate(date_str) {
+      let dateTimeString = date_str;
+      const [dateString, timeString] = dateTimeString.split(' ');
+      const [day, month, year] = dateString.split('/');
+      const [hour, minute] = timeString.split(':');
+      var d = new Date(+year, +month - 1, +day, +hour, +minute);
+      return d;
+    }
+
+
+
+  </script>
 </div>
