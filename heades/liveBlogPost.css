@@ -1,65 +1,65 @@
 .portlet-boundary {
-    font-family: Arial, sans-serif;
-    color: #333;
-    padding-left: 40px; /* Espacio adicional para evitar superposición con la línea */
+    font-family: Arial, sans-serif !important;
+    color: #333 !important;
+    padding-left: 40px !important; /* Espacio adicional para evitar superposición con la línea */
   }
   
   .live-blog-post {
-    background: #fff;
-    border: 1px solid #ccc;
-    padding: 20px;
-    position: relative; /* Posicionamiento relativo para la línea general */
+    background: #fff !important;
+    border: 1px solid #ccc !important;
+    padding: 20px !important;
+    position: relative !important; /* Posicionamiento relativo para la línea general */
   }
   
   .item-post {
-    position: relative; /* Importante para el posicionamiento de la línea */
-    padding-left: 20px; /* Espacio para la línea y punto */
-    margin-left: 10px; /* Asegurar espacio para la línea vertical */
+    position: relative !important; /* Importante para el posicionamiento de la línea */
+    padding-left: 20px !important; /* Espacio para la línea y punto */
+    margin-left: 10px !important; /* Asegurar espacio para la línea vertical */
   }
   
   .item-line {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%; /* Altura total del post */
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    height: 100% !important; /* Altura total del post */
   }
   
   .point-post {
-    width: 10px;
-    height: 10px;
-    background-color: #ce0505;
-    border-radius: 50%;
-    position: absolute;
-    left: -15px; /* Ajuste para centrar */
-    top: 10px;
+    width: 10px !important;
+    height: 10px !important;
+    background-color: #ce0505 !important;
+    border-radius: 50% !important;
+    position: absolute !important;
+    left: -15px !important; /* Ajuste para centrar */
+    top: 10px !important;
   }
   
   .vertical-line {
-    position: absolute;
-    width: 2px; /* Ancho de la línea */
-    background-color: #a70808; /* Color de la línea */
-    left: -11px;
-    top: 20px; /* Comienzo de la línea después del punto */
-    bottom: 0px; /* Ajuste para no sobrepasar el último item */
-    height: calc(100% + 20px); /* Altura total del post */
+    position: absolute !important;
+    width: 2px !important; /* Ancho de la línea */
+    background-color: #a70808 !important; /* Color de la línea */
+    left: -11px !important;
+    top: 20px !important; /* Comienzo de la línea después del punto */
+    bottom: 0px !important; /* Ajuste para no sobrepasar el último item */
+    height: calc(100% + 20px) !important; /* Altura total del post */
   }
   
   .item-content {
-    margin-left: 15px; /* Espacio adicional para contenido */
+    margin-left: 15px !important; /* Espacio adicional para contenido */
   }
   
   .date-post {
-    font-size: 0.8rem;
-    color: #666;
+    font-size: 0.8rem !important;
+    color: #666 !important;
   }
   
   .headline-post {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-top: 5px;
+    font-size: 1.2rem !important;
+    font-weight: bold !important;
+    margin-top: 5px !important;
   }
   
   .text-post p {
-    margin-top: 10px;
+    margin-top: 10px !important;
   }
   
