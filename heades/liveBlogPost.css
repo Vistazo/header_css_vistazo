@@ -1,0 +1,65 @@
+.portlet-boundary {
+    font-family: Arial, sans-serif;
+    color: #333;
+    padding-left: 40px; /* Espacio adicional para evitar superposición con la línea */
+  }
+  
+  .live-blog-post {
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    position: relative; /* Posicionamiento relativo para la línea general */
+  }
+  
+  .item-post {
+    position: relative; /* Importante para el posicionamiento de la línea */
+    padding-left: 20px; /* Espacio para la línea y punto */
+    margin-left: 10px; /* Asegurar espacio para la línea vertical */
+  }
+  
+  .item-line {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%; /* Altura total del post */
+  }
+  
+  .point-post {
+    width: 10px;
+    height: 10px;
+    background-color: #ce0505;
+    border-radius: 50%;
+    position: absolute;
+    left: -15px; /* Ajuste para centrar */
+    top: 10px;
+  }
+  
+  .vertical-line {
+    position: absolute;
+    width: 2px; /* Ancho de la línea */
+    background-color: #a70808; /* Color de la línea */
+    left: -11px;
+    top: 20px; /* Comienzo de la línea después del punto */
+    bottom: 0px; /* Ajuste para no sobrepasar el último item */
+    height: calc(100% + 20px); /* Altura total del post */
+  }
+  
+  .item-content {
+    margin-left: 15px; /* Espacio adicional para contenido */
+  }
+  
+  .date-post {
+    font-size: 0.8rem;
+    color: #666;
+  }
+  
+  .headline-post {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 5px;
+  }
+  
+  .text-post p {
+    margin-top: 10px;
+  }
+  
