@@ -1,71 +1,98 @@
 <style>
-    .portlet-boundary {
-      font-family: Arial, sans-serif;
-      color: #333;
-      padding-left: 40px; /* Espacio adicional para evitar superposición con la línea */
-    }
-    
-    .live-blog-post {
-      background: #fff;
-      border: 1px solid #ccc;
-      padding: 20px;
-      position: relative; /* Posicionamiento relativo para la línea general */
-    }
-    
-    .item-post {
-      position: relative; /* Importante para el posicionamiento de la línea */
-      padding-left: 20px; /* Espacio para la línea y punto */
-      margin-left: 10px; /* Asegurar espacio para la línea vertical */
-    }
-    
-    .item-line {
-      position: absolute;
-      left: 0;
-      top: 0;
-      height: 100%; /* Altura total del post */
-    }
-    
-    .point-post {
-      width: 10px;
-      height: 10px;
-      background-color: #ce0505;
-      border-radius: 50%;
-      position: absolute;
-      left: -15px; /* Ajuste para centrar */
-      top: 10px;
-    }
-    
-    .vertical-line {
-      position: absolute;
-      width: 2px; /* Ancho de la línea */
-      background-color: #a70808; /* Color de la línea */
-      left: -11px;
-      top: 20px; /* Comienzo de la línea después del punto */
-      bottom: 0px; /* Ajuste para no sobrepasar el último item */
-      height: calc(100% + 20px); /* Altura total del post */
-    }
-    
-    .item-content {
-      margin-left: 15px; /* Espacio adicional para contenido */
-    }
-    
-    .date-post {
-      font-size: 0.8rem;
-      color: #666;
-    }
-    
-    .headline-post {
-      font-size: 1.2rem;
-      font-weight: bold;
-      margin-top: 5px;
-    }
-    
-    .text-post p {
-      margin-top: 10px;
-    }
-    
-    
-  </style>
+  .portlet-boundary {
+    font-family: Arial, sans-serif !important;
+    color: #333 !important;
+    padding-left: 40px !important;
+    /* Espacio adicional para evitar superposición con la línea */
+  }
+
+  .v2 {
+    background: #fff !important;
+    padding: 20px !important;
+    position: relative !important;
+    /* Posicionamiento relativo para la línea general */
+  }
+
+  .item_post {
+    position: relative !important;
+    /* Importante para el posicionamiento de la línea */
+    padding-left: 20px !important;
+    /* Espacio para la línea y punto */
+    margin-left: 10px !important;
+    /* Asegurar espacio para la línea vertical */
+  }
+
+  .item_line {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    height: 100% !important;
+    /* Altura total del post */
+  }
+
+  .point_post {
+    width: 10px !important;
+    height: 10px !important;
+    background-color: #ce0505 !important;
+    border-radius: 50% !important;
+    position: absolute !important;
+    left: -15px !important;
+    /* Ajuste para centrar */
+    top: 10px !important;
+  }
+
+  .vertical-line {
+    position: absolute !important;
+    width: 2px !important;
+    /* Ancho de la línea */
+    background-color: #a70808 !important;
+    /* Color de la línea */
+    left: -11px !important;
+    top: 20px !important;
+    /* Comienzo de la línea después del punto */
+    bottom: 0px !important;
+    /* Ajuste para no sobrepasar el último item */
+    height: calc(100% + 20px) !important;
+    /* Altura total del post */
+  }
+
+  .item_content {
+    margin-left: 15px !important;
+    /* Espacio adicional para contenido */
+  }
+
+  .date_post {
+    font-size: 0.8rem !important;
+    color: #666 !important;
+  }
+
+  .headline_post {
+    font-size: 1.2rem !important;
+    font-weight: bold !important;
+    margin-top: 5px !important;
+  }
+
+  .text_post p {
+    margin-top: 10px !important;
+  }
+  .social-icons {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 10px;
+    border-bottom: #a70808 2px solid;
+  }
+  
+  .social-icons a img {
+    width: 24px; /* O el tamaño que prefieras */
+    height: auto;
+    cursor: pointer;
+    margin-right: 10px;
+    background-color: #a70808;
+    padding: 5px;
+    border-radius: 50%;
+  }  
+</style>
   <div class="portlet-boundary">
     <div class="live-blog-post">
       <div class="item-post">
@@ -79,6 +106,19 @@
           <div class="text-post">
             <p>A través de la ciencia, la conservación y el periodismo, WWF-Ecuador y Grupo Vistazo buscan inspirar a más personas y sectores a tomar acción por un futuro más sostenible.</p>
           </div>
+
+          <div class="social-icons">
+            <a href="https://facebook.com/sharer/sharer.php?u=[URL_DEL_POST]" target="_blank">
+                <img src="https://codigomarret.online/upload/img/facebook.svg" alt="Facebook">
+            </a>
+            <a href="https://api.whatsapp.com/send?text=[URL_DEL_POST]" data-action="share/whatsapp/share" target="_blank">
+                <img src="https://codigomarret.online/upload/img/icons8-whatsapp.svg" alt="WhatsApp">
+            </a>
+            <a href="mailto:?subject=Mira este post&body=Mira este post: [URL_DEL_POST]" target="_blank">
+                <img src="https://codigomarret.online/upload/img/opened-email-envelope_icon-icons.com_70656.svg" alt="Email">
+            </a>
+          </div>
+        
         </div>
       </div>
       <div class="item-post">
@@ -91,6 +131,17 @@
           <div class="headline-post">Juan Martín Muller</div>
           <div class="text-post">
             <p>A través de la ciencia, la conservación y el periodismo, WWF-Ecuador y Grupo Vistazo buscan inspirar a más personas y sectores a tomar acción por un futuro más sostenible.</p>
+          </div>
+          <div class="social-icons">
+            <a href="https://facebook.com/sharer/sharer.php?u=[URL_DEL_POST]" target="_blank">
+                <img src="https://codigomarret.online/upload/img/facebook.svg" alt="Facebook">
+            </a>
+            <a href="https://api.whatsapp.com/send?text=[URL_DEL_POST]" data-action="share/whatsapp/share" target="_blank">
+                <img src="https://codigomarret.online/upload/img/icons8-whatsapp.svg" alt="WhatsApp">
+            </a>
+            <a href="mailto:?subject=Mira este post&body=Mira este post: [URL_DEL_POST]" target="_blank">
+                <img src="https://codigomarret.online/upload/img/opened-email-envelope_icon-icons.com_70656.svg" alt="Email">
+            </a>
           </div>
         </div>
       </div>

@@ -74,3 +74,33 @@
   .text_post p {
     margin-top: 10px !important;
   }
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.social-icons a img {
+  width: 24px; /* O el tamaño que prefieras */
+  height: auto;
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding: 10px;
+  border-bottom: #a70808 2px solid;
+}
+
+.social-icons a img {
+  width: 24px; /* O el tamaño que prefieras */
+  height: auto;
+  cursor: pointer;
+  margin-right: 10px;
+  background-color: #a70808;
+  padding: 5px;
+  border-radius: 50%;
+}  
