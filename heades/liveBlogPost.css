@@ -2,6 +2,7 @@
     font-family: Arial, sans-serif ;
     color: #333 ;
     margin-bottom: 25px;
+
     /* padding-left: 40px !important;*/
     /* Espacio adicional para evitar superposición con la línea */
   }
@@ -33,7 +34,7 @@
   .point_post {
     width: 10px !important;
     height: 10px !important;
-    background-color: #ce0505 !important;
+    background-color: #a70808 !important;
     border-radius: 50% !important;
     position: absolute !important;
     left: -15px !important;
@@ -63,7 +64,7 @@
 
   .date_post {
     font-size: 0.8rem !important;
-    color: #666 !important;
+    color: #a70808 !important;
   }
 
   .headline_post {
@@ -80,7 +81,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 0;
+  padding: 5px;
+  border-top: 1px solid #a70808;
 }
 
 .social-icons a img {
@@ -92,8 +94,8 @@
   display: flex;
   align-items: center;
   justify-content: start;
-  padding: 10px;
-  border-bottom: #a70808 2px solid;
+  padding: 1px;
+  margin-bottom: 20px;
 }
 
 .social-icons a img {
@@ -104,4 +106,5 @@
   background-color: #a70808;
   padding: 5px;
   border-radius: 50%;
+  margin-top: 5px;
 }  

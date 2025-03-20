@@ -1,112 +1,27 @@
-<style>
-  .portlet-boundary.LIVE_BLOG_POST  {
-    font-family: Arial, sans-serif !important;
-    color: #333 !important;
-   /* padding-left: 40px !important;*/
-    /* Espacio adicional para evitar superposición con la línea */
-  }
-
-  .v2 {
-    background: #fff !important;
-    padding: 20px !important;
-    position: relative !important;
-    /* Posicionamiento relativo para la línea general */
-  }
-
-  .item_post {
-    position: relative !important;
-    /* Importante para el posicionamiento de la línea */
-    padding-left: 20px !important;
-    /* Espacio para la línea y punto */
-    margin-left: 10px !important;
-    /* Asegurar espacio para la línea vertical */
-  }
-
-  .item_line {
-    position: absolute !important;
-    left: 0 !important;
-    top: 0 !important;
-    height: 100% !important;
-    /* Altura total del post */
-  }
-
-  .point_post {
-    width: 10px !important;
-    height: 10px !important;
-    background-color: #ce0505 !important;
-    border-radius: 50% !important;
-    position: absolute !important;
-    left: -15px !important;
-    /* Ajuste para centrar */
-    top: 10px !important;
-  }
-
-  .vertical-line {
-    position: absolute !important;
-    width: 2px !important;
-    /* Ancho de la línea */
-    background-color: #a70808 !important;
-    /* Color de la línea */
-    left: -11px !important;
-    top: 20px !important;
-    /* Comienzo de la línea después del punto */
-    bottom: 0px !important;
-    /* Ajuste para no sobrepasar el último item */
-    height: calc(100% + 20px) !important;
-    /* Altura total del post */
-  }
-
-  .item_content {
-    margin-left: 15px !important;
-    /* Espacio adicional para contenido */
-  }
-
-  .date_post {
-    font-size: 0.8rem !important;
-    color: #666 !important;
-  }
-
-  .headline_post {
-    font-size: 1.2rem !important;
-    font-weight: bold !important;
-    margin-top: 5px !important;
-  }
-
-  .text_post p {
-    margin-top: 10px !important;
-  }
-  .social-icons {
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    padding: 10px;
-    border-bottom: #a70808 2px solid;
-  }
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../heades/liveBlogPost.css">
+</head>
+<body>
   
-  .social-icons a img {
-    width: 24px; /* O el tamaño que prefieras */
-    height: auto;
-    cursor: pointer;
-    margin-right: 10px;
-    background-color: #a70808;
-    padding: 5px;
-    border-radius: 50%;
-  }  
-</style>
-  <div class="portlet-boundary">
-    <div class="live-blog-post">
-      <div class="item-post">
-        <div class="item-line">
-          <div class="point-post"></div>
+  <div class="portlet-boundary LIVE_BLOG_POST">
+    <div class="live-blog-post v2">
+      <div class="item_post">
+        <div class="item_line">
+          <div class="point_post"></div>
           <div class="vertical-line"></div> <!-- Línea vertical entre los puntos -->
         </div>
         <div class="item-content">
-          <div class="date-post">11/02/2025 10:30</div>
-          <div class="headline-post">Juan Martín Muller</div>
-          <div class="text-post">
+          <div class="date_post">11/02/2025 10:30</div>
+          <div class="headline_post">Juan Martín Muller</div>
+          <div class="text_post">
             <p>A través de la ciencia, la conservación y el periodismo, WWF-Ecuador y Grupo Vistazo buscan inspirar a más personas y sectores a tomar acción por un futuro más sostenible.</p>
           </div>
-
+  
           <div class="social-icons">
             <a href="https://facebook.com/sharer/sharer.php?u=[URL_DEL_POST]" target="_blank">
                 <img src="https://codigomarret.online/upload/img/facebook.svg" alt="Facebook">
@@ -121,15 +36,15 @@
         
         </div>
       </div>
-      <div class="item-post">
-        <div class="item-line">
-          <div class="point-post"></div>
+      <div class="item_post">
+        <div class="item_line">
+          <div class="point_post"></div>
           <div class="vertical-line"></div> <!-- Línea vertical entre los puntos -->
         </div>
-        <div class="item-content">
-          <div class="date-post">11/02/2025 10:30</div>
-          <div class="headline-post">Juan Martín Muller</div>
-          <div class="text-post">
+        <div class="item_content">
+          <div class="date_post">11/02/2025 10:30</div>
+          <div class="headline_post">Juan Martín Muller</div>
+          <div class="text_post">
             <p>A través de la ciencia, la conservación y el periodismo, WWF-Ecuador y Grupo Vistazo buscan inspirar a más personas y sectores a tomar acción por un futuro más sostenible.</p>
           </div>
           <div class="social-icons">
@@ -148,3 +63,5 @@
       <!-- Repetir .item-post para más entradas -->
     </div>
   </div>
+</body>
+</html>
