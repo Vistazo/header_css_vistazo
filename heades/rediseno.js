@@ -155,6 +155,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+
 function loadOnScroll() {
   // Llamar la función para cargar los scripts al hacer scroll
   loadExternalScripts();
@@ -192,7 +193,10 @@ function LimpiaHoverMenu() {
   document.querySelector(".basic_search_bm").style.display = "none";
   document.querySelector(".menu_burguer_bm").style.display = "none";
 }
-
+// cuando se haga click en cualquier lado se oculte el submenu
+document.addEventListener("click", function (event) {
+  LimpiaHoverMenu();
+});
 function openSearch() {
   // Función para abrir un cuadro de búsqueda
   alert("Abrir cuadro de búsqueda");
