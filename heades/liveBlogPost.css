@@ -119,3 +119,14 @@
   padding-top: 5px;
   padding-bottom: 5px;
 }
+
+.image_post {
+  width: 100%; /* Asegura que el contenedor de la imagen ocupe todo el ancho disponible de su contenedor padre */
+  overflow: hidden; /* Oculta cualquier parte de la imagen que se desborde del contenedor */
+}
+
+.image_post img {
+  width: 100%; /* Hace que la imagen ocupe el 100% del ancho de su contenedor */
+  height: auto; /* Mantiene la relación de aspecto de la imagen */
+  display: block; /* Elimina cualquier espacio extra alrededor de la imagen */
+}
