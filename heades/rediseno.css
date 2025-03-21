@@ -790,3 +790,7 @@ p u{
 .menu_secc a[href*="/drogas-en-ecuador"] {
     display: none;
 }
+
+.TITULO_SUBTITULO_MOVIL{
+    margin-top: 60px;
+}
