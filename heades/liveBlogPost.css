@@ -130,3 +130,13 @@
   height: auto; /* Mantiene la relación de aspecto de la imagen */
   display: block; /* Elimina cualquier espacio extra alrededor de la imagen */
 }
+
+p a {
+  color: #0056b3; /* Color del enlace */
+  text-decoration: none; /* Elimina el subrayado del enlace */
+  font-weight: bold; /* Hace el texto en negrita */
+}
+p a:hover {
+  color: #ff4500; /* Color del enlace al pasar el mouse */
+  text-decoration: underline; /* Subraya el enlace al pasar el mouse */
+}
