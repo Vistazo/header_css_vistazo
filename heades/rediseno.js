@@ -194,9 +194,10 @@ function LimpiaHoverMenu() {
   document.querySelector(".menu_burguer_bm").style.display = "none";
 }
 // cuando se haga click en cualquier lado se oculte el submenu
-document.addEventListener("click", function (event) {
-  LimpiaHoverMenu();
-});
+// document.addEventListener("click", function (event) {
+//   LimpiaHoverMenu();
+// });
+
 function openSearch() {
   // Función para abrir un cuadro de búsqueda
   alert("Abrir cuadro de búsqueda");
