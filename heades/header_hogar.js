@@ -66,12 +66,12 @@ document.addEventListener("DOMContentLoaded", function() {
 // Ocultar Nota en Hogar 
 const HomeHogar = "https://www.vistazo.com/hogar"
 const url = [
-    'https://www.vistazo.com/hogar/personajes/david-daxsen-el-visionario-ecuatoriano-que-trabaja-para-las-naciones-unidas-GB7298109'
+    'https://www.vistazo.com/hogar/personajes/david-daxsen-el-visionario-ecuatoriano-que-trabaja-para-las-naciones-unidas-GB7298109',
+    'https://www.vistazo.com/testing/david-daxsen-el-visionario-ecuatoriano-que-trabaja-para-las-naciones-unidas-GB7298109'
 ]
 document.addEventListener("DOMContentLoaded", function() {
     const currentUrl = window.location.href;
     const isInUrlList = url.some(url => currentUrl.includes(url));
-
     if (isInUrlList) {
         // lo redirecciona a la home de hogar
         window.location.href = HomeHogar;
