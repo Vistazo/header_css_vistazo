@@ -70,10 +70,9 @@ const url = [
 ]
 document.addEventListener("DOMContentLoaded", function() {
     const currentUrl = window.location.href;
-    const isHomeHogar = currentUrl === HomeHogar;
     const isInUrlList = url.some(url => currentUrl.includes(url));
 
-    if (isHomeHogar || isInUrlList) {
+    if (isInUrlList) {
         // lo redirecciona a la home de hogar
         window.location.href = HomeHogar;
     }
