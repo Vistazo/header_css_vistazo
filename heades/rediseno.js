@@ -545,7 +545,8 @@ async function activarNotificaciones() {
 // Ocultar Nota en Hogar 
 const HomeHogar = "https://www.vistazo.com"
 const url = [
-    'https://www.vistazo.com/testing/david-daxsen-el-visionario-ecuatoriano-que-trabaja-para-las-naciones-unidas-GB7298109'
+    'https://www.vistazo.com/testing/david-daxsen-el-visionario-ecuatoriano-que-trabaja-para-las-naciones-unidas-GB7298109',
+    'https://www.vistazo.com/hogar/personajes/david-daxsen-el-visionario-ecuatoriano-que-trabaja-para-las-naciones-unidas-GB7298109'
 ]
 document.addEventListener("DOMContentLoaded", function() {
     const currentUrl = window.location.href;
