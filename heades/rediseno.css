@@ -794,3 +794,13 @@ p u{
 .TITULO_SUBTITULO_MOVIL{
     margin-top: 60px;
 }
+
+.full-width-override {
+    width: 100vw !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
