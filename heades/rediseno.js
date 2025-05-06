@@ -556,3 +556,20 @@ document.addEventListener("DOMContentLoaded", function() {
         window.location.href = HomeHogar;
     }
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const isMobile = window.matchMedia("(max-width: 768px)").matches;
+  const limit = isMobile ? 100 : 200; // Set the character limit based on screen size
+  document.querySelectorAll(".subheadline_unico").forEach(function (element) {
+	const text = element.innerHTML;
+	if (text.length > limit) {
+	  element.innerHTML = text.substring(0, limit) + "...";
+	}
+  });
+});
+
+document.getElementById("unico_6").addEventListener("click", function(e) {
+  e.preventDefault(); // Evita la redirección original
+  window.location.href = "https://www.instagram.com/reel/DJAF19npj7b/?igsh=MTBqM2c3dHFkcmRieQ%3D%3D"; // Cambia aquí la nueva URL
+});
