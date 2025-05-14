@@ -804,3 +804,6 @@ p u{
     transform: translateX(-50%);
   }
   
+  .html_post iframe {
+    width: 100%;
+  }
