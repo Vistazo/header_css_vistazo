@@ -95,6 +95,6 @@ setTimeout(() => {
 window.addEventListener('DOMContentLoaded', () => {
   const iframe = document.querySelector('iframe.instagram-media');
   if (iframe) {
-    iframe.style.height = '500px'; // Cambia a la altura que necesites
+    iframe.style.height = '750px'; // Cambia a la altura que necesites
   }
 });
