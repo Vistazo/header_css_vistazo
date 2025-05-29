@@ -890,7 +890,9 @@ INICIO - AMPLIADA
   display: none;
 }
 
-
+iframe.instagram-media {
+  height: 500px !important;
+}
 
 /**************************
 FIN - AMPLIADA
