@@ -294,13 +294,13 @@ function cambiarImagenPautaHome() {
   var enlace = document.querySelector(".IMG_PAUTAS_DIGITALES .multimedia a");
   var imagen = document.querySelector(".IMG_PAUTAS_DIGITALES .multimedia img");
   var imagenesDesktop = [
-    // { src: "https://codigomarret.online/upload/img/banner-mascotas-1920x200.jpg", href: "https://www.vistazo.com/mascotas" },
-    { src: "https://codigomarret.online/upload/img/banners_china.png", href: "https://www.vistazo.com/politica/investigacion-objetivos-de-china" },
+    { src: "https://codigomarret.online/upload/img/banner-mascotas-1920x200.jpg", href: "https://www.vistazo.com/mascotas" },
+    // { src: "https://codigomarret.online/upload/img/banners_china.png", href: "https://www.vistazo.com/politica/investigacion-objetivos-de-china" },
     // Agrega más objetos para más imágenes y enlaces
   ];
   var imagenesMovil = [
-    // { src: "https://codigomarret.online/upload/img/banner-mascotas-400x100.jpg", href: "https://www.vistazo.com/mascotas" },
-    { src: "https://codigomarret.online/upload/img/banners_china.png", href: "https://www.vistazo.com/politica/investigacion-objetivos-de-china" },
+    { src: "https://codigomarret.online/upload/img/banner-mascotas-400x100.jpg", href: "https://www.vistazo.com/mascotas" },
+    // { src: "https://codigomarret.online/upload/img/banners_china.png", href: "https://www.vistazo.com/politica/investigacion-objetivos-de-china" },
     // Agrega más objetos para más imágenes y enlaces
   ];
   let indiceActual = 0;
@@ -308,7 +308,7 @@ function cambiarImagenPautaHome() {
   function mostrarImagenSuave(imagenActual) {
     imagen.style.opacity = 0; // Hace invisible la imagen para comenzar la transición
     imagen.src = imagenActual.src;
-    imagen.loading = "lazy";
+    // imagen.loading = "lazy";
     enlace.href = imagenActual.href;
     imagen.style.opacity = 1; // Hace visible la imagen suavemente
     // setTimeout(() => {
