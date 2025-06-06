@@ -1,0 +1,30 @@
+/* Select */
+.element-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 1rem 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .form-label {
+    font-weight: bold;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .form-select {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+  }
+  
+  .form-select:focus {
+    border-color: #007bff;
+    outline: none;
+    background-color: #fff;
+  }
+  
