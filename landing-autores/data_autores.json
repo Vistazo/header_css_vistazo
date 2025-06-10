@@ -4,7 +4,7 @@
     "nombre": "Teresa",
     "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...",
     "cargo": "Technology",
-    "link": "https://www.vistazo.com/periodistas/-/meta/efe",
+    "link": "/periodistas/-/meta/teresa",
     "foto": "https://www.vistazo.com/binrepository/270x180/0c0/250d180/none/12727/SRFT/gtbsp97wkaehhcw_2242344_20250609183836.jpg",
     "redes": [
       {
@@ -30,7 +30,7 @@
     "nombre": "Dario",
     "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...",
     "cargo": "Desarrollador",
-    "link": "https://www.vistazo.com/periodistas/-/meta/efe",
+    "link": "/periodistas/-/meta/dario312",
     "foto": "https://www.vistazo.com/binrepository/270x180/0c0/250d180/none/12727/SRFT/gtbsp97wkaehhcw_2242344_20250609183836.jpg",
     "redes": [
       {
@@ -56,7 +56,7 @@
     "nombre": "Dario",
     "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...",
     "cargo": "Desarrollador",
-    "link": "https://www.vistazo.com/periodistas/-/meta/efe",
+    "link": "/periodistas/-/meta/dario",
     "foto": "https://www.vistazo.com/binrepository/270x180/0c0/250d180/none/12727/SRFT/gtbsp97wkaehhcw_2242344_20250609183836.jpg",
     "redes": [
       {
@@ -79,10 +79,10 @@
   },
   {
     "id": 4,
-    "nombre": "Dario",
+    "nombre": "EFE",
     "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...",
     "cargo": "Desarrollador",
-    "link": "https://www.vistazo.com/periodistas/-/meta/efe",
+    "link": "/periodistas/-/meta/efe",
     "foto": "https://www.vistazo.com/binrepository/270x180/0c0/250d180/none/12727/SRFT/gtbsp97wkaehhcw_2242344_20250609183836.jpg",
     "redes": [
       {
@@ -108,7 +108,7 @@
     "nombre": "Teresa",
     "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...",
     "cargo": "Technology",
-    "link": "https://www.vistazo.com/periodistas/-/meta/efe",
+    "link": "/periodistas/-/meta/rodi",
     "foto": "https://www.vistazo.com/binrepository/270x180/0c0/250d180/none/12727/SRFT/gtbsp97wkaehhcw_2242344_20250609183836.jpg",
     "redes": [
       {
@@ -134,7 +134,7 @@
     "nombre": "Jhon",
     "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...",
     "cargo": "Desarrollador",
-    "link": "https://www.vistazo.com/periodistas/-/meta/efe",
+    "link": "/periodistas/-/meta/tyw",
     "foto": "https://www.vistazo.com/binrepository/270x180/0c0/250d180/none/12727/SRFT/gtbsp97wkaehhcw_2242344_20250609183836.jpg",
     "redes": [
       {
@@ -160,7 +160,7 @@
     "nombre": "Carlos",
     "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...",
     "cargo": "Desarrollador",
-    "link": "https://www.vistazo.com/periodistas/-/meta/efe",
+    "link": "/periodistas/-/meta/apa",
     "foto": "https://www.vistazo.com/binrepository/270x180/0c0/250d180/none/12727/SRFT/gtbsp97wkaehhcw_2242344_20250609183836.jpg",
     "redes": [
       {
@@ -186,7 +186,7 @@
     "nombre": "Vera",
     "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...",
     "cargo": "Desarrollador",
-    "link": "https://www.vistazo.com/periodistas/-/meta/efe",
+    "link": "/periodistas/-/meta/vera",
     "foto": "https://www.vistazo.com/binrepository/270x180/0c0/250d180/none/12727/SRFT/gtbsp97wkaehhcw_2242344_20250609183836.jpg",
     "redes": [
       {
