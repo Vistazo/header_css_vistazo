@@ -1,1 +1,68 @@
 /* autores */
+/* https://header-css-vistazo.vercel.app/landing-autores/la_autores.css */
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.card {
+  background: white;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.nombre {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem;
+}
+
+.redes {
+  margin-bottom: 0.5rem;
+}
+
+.redes a {
+  margin-right: 0.5rem;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.redes img {
+  width: 20px;
+  height: 20px;
+}
+
+.descripcion {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.ver-mas {
+  color: red;
+  text-decoration: none;
+  font-size: 0.9rem;
+  display: block;
+  margin-top: 0.8rem;
+}
