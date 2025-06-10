@@ -105,10 +105,10 @@
   },
   {
     "id": 5,
-    "nombre": "Teresa",
+    "nombre": "Redaccion",
     "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...",
     "cargo": "Technology",
-    "link": "/periodistas/-/meta/rodi",
+    "link": "/periodistas/-/meta/redaccion-vistazo",
     "foto": "https://www.vistazo.com/binrepository/270x180/0c0/250d180/none/12727/SRFT/gtbsp97wkaehhcw_2242344_20250609183836.jpg",
     "redes": [
       {
