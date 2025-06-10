@@ -1,25 +1,29 @@
 /* autores */
 /* https://header-css-vistazo.vercel.app/landing-autores/la_autores.css */
 
-.contenido-autores {
 
-  display: flex;
-  gap: 30px;
-  flex-wrap: wrap;
+#iter-content-wrapper {
+  margin-top: 70px;
+}
+
+.contenido-autores {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
 }
 
 .contenido-autores .card {
   background: white;
-  width: 300px;
+  /* width: 300px; */
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.2s;
 }
 
-.contenido-autores .card:hover {
+/* .contenido-autores .card:hover {
   transform: translateY(-5px);
-}
+} */
 
 .contenido-autores .card img {
   width: 100%;
