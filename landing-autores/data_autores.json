@@ -50,5 +50,161 @@
         "url": "https://www.x.com"
       }
     ]
+  },
+  {
+    "id": 2,
+    "nombre": "Dario",
+    "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...",
+    "cargo": "Desarrollador",
+    "link": "https://www.vistazo.com/periodistas/-/meta/efe",
+    "foto": "https://www.vistazo.com/binrepository/270x180/0c0/250d180/none/12727/SRFT/gtbsp97wkaehhcw_2242344_20250609183836.jpg",
+    "redes": [
+      {
+        "name": "Facebook",
+        "url": "https://www.facebook.com"
+      },
+      {
+        "name": "Instagram",
+        "url": "https://www.facebook.com"
+      },
+      {
+        "name": "Linkedin",
+        "url": "https://www.facebook.com"
+      },
+      {
+        "name": "X",
+        "url": "https://www.x.com"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "nombre": "Dario",
+    "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...",
+    "cargo": "Desarrollador",
+    "link": "https://www.vistazo.com/periodistas/-/meta/efe",
+    "foto": "https://www.vistazo.com/binrepository/270x180/0c0/250d180/none/12727/SRFT/gtbsp97wkaehhcw_2242344_20250609183836.jpg",
+    "redes": [
+      {
+        "name": "Facebook",
+        "url": "https://www.facebook.com"
+      },
+      {
+        "name": "Instagram",
+        "url": "https://www.facebook.com"
+      },
+      {
+        "name": "Linkedin",
+        "url": "https://www.facebook.com"
+      },
+      {
+        "name": "X",
+        "url": "https://www.x.com"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "nombre": "Teresa",
+    "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...",
+    "cargo": "Technology",
+    "link": "https://www.vistazo.com/periodistas/-/meta/efe",
+    "foto": "https://www.vistazo.com/binrepository/270x180/0c0/250d180/none/12727/SRFT/gtbsp97wkaehhcw_2242344_20250609183836.jpg",
+    "redes": [
+      {
+        "name": "Facebook",
+        "url": "https://www.facebook.com"
+      },
+      {
+        "name": "Instagram",
+        "url": "https://www.facebook.com"
+      },
+      {
+        "name": "Linkedin",
+        "url": "https://www.facebook.com"
+      },
+      {
+        "name": "X",
+        "url": "https://www.x.com"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "nombre": "Jhon",
+    "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...",
+    "cargo": "Desarrollador",
+    "link": "https://www.vistazo.com/periodistas/-/meta/efe",
+    "foto": "https://www.vistazo.com/binrepository/270x180/0c0/250d180/none/12727/SRFT/gtbsp97wkaehhcw_2242344_20250609183836.jpg",
+    "redes": [
+      {
+        "name": "Facebook",
+        "url": "https://www.facebook.com"
+      },
+      {
+        "name": "Instagram",
+        "url": "https://www.facebook.com"
+      },
+      {
+        "name": "Linkedin",
+        "url": "https://www.facebook.com"
+      },
+      {
+        "name": "X",
+        "url": "https://www.x.com"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "nombre": "Carlos",
+    "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...",
+    "cargo": "Desarrollador",
+    "link": "https://www.vistazo.com/periodistas/-/meta/efe",
+    "foto": "https://www.vistazo.com/binrepository/270x180/0c0/250d180/none/12727/SRFT/gtbsp97wkaehhcw_2242344_20250609183836.jpg",
+    "redes": [
+      {
+        "name": "Facebook",
+        "url": "https://www.facebook.com"
+      },
+      {
+        "name": "Instagram",
+        "url": "https://www.facebook.com"
+      },
+      {
+        "name": "Linkedin",
+        "url": "https://www.facebook.com"
+      },
+      {
+        "name": "X",
+        "url": "https://www.x.com"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "nombre": "Vera",
+    "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...",
+    "cargo": "Desarrollador",
+    "link": "https://www.vistazo.com/periodistas/-/meta/efe",
+    "foto": "https://www.vistazo.com/binrepository/270x180/0c0/250d180/none/12727/SRFT/gtbsp97wkaehhcw_2242344_20250609183836.jpg",
+    "redes": [
+      {
+        "name": "Facebook",
+        "url": "https://www.facebook.com"
+      },
+      {
+        "name": "Instagram",
+        "url": "https://www.facebook.com"
+      },
+      {
+        "name": "Linkedin",
+        "url": "https://www.facebook.com"
+      },
+      {
+        "name": "X",
+        "url": "https://www.x.com"
+      }
+    ]
   }
 ]
