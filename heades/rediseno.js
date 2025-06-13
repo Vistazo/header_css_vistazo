@@ -568,8 +568,13 @@ document.addEventListener("DOMContentLoaded", function () {
 	}
   });
 });
-
-document.getElementById("unico_6").addEventListener("click", function(e) {
-  e.preventDefault(); // Evita la redirección original
-  window.location.href = "https://www.instagram.com/reel/DJAF19npj7b/?igsh=MTBqM2c3dHFkcmRieQ%3D%3D"; // Cambia aquí la nueva URL
-});
+// validar primero si existe el elemento con id unico_6
+if (document.getElementById("unico_6") === null) {
+  console.log("El elemento con id unico_6 no existe");
+  return;
+}else{
+  document.getElementById("unico_6").addEventListener("click", function(e) {
+    e.preventDefault(); // Evita la redirección original
+    window.location.href = "https://www.instagram.com/reel/DJAF19npj7b/?igsh=MTBqM2c3dHFkcmRieQ%3D%3D"; // Cambia aquí la nueva URL
+  });
+}

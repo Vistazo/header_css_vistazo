@@ -219,13 +219,13 @@
                 googletag.defineSlot('/21839199781/Vistazo/Vistazo_Center2', [[320, 100], [300, 100], [300, 250], [728, 90]], 'Center2').defineSizeMapping(mappingcenter).setTargeting(REFRESH_KEY, REFRESH_VALUE).addService(googletag.pubads());
                 googletag.defineSlot('/21839199781/Vistazo/Vistazo_Center3', [[320, 100], [300, 100], [300, 250], [728, 90]], 'Center3').defineSizeMapping(mappingcenter).setTargeting(REFRESH_KEY, REFRESH_VALUE).addService(googletag.pubads());
                 //Reemplaza al Box de la home -------
-                googletag.defineSlot('/21839199781/Vistazo/Vistazo_Middle1', [[300, 600], [300, 250]], 'Middle1').defineSizeMapping(mappingbox).setTargeting(REFRESH_KEY, REFRESH_VALUE).addService(googletag.pubads());
+                //googletag.defineSlot('/21839199781/Vistazo/Vistazo_Middle1', [[300, 600], [300, 250]], 'Middle1').defineSizeMapping(mappingbox).setTargeting(REFRESH_KEY, REFRESH_VALUE).addService(googletag.pubads());
                 //-----------------------------------
-                googletag.defineSlot('/21839199781/Vistazo/Vistazo_Middle2', [300, 250], 'Middle2').defineSizeMapping(mappingbox).setTargeting(REFRESH_KEY, REFRESH_VALUE).addService(googletag.pubads());
+                //googletag.defineSlot('/21839199781/Vistazo/Vistazo_Middle2', [300, 250], 'Middle2').defineSizeMapping(mappingbox).setTargeting(REFRESH_KEY, REFRESH_VALUE).addService(googletag.pubads());
                 googletag.defineSlot('/21839199781/Vistazo/Floating', [1, 1], 'Floating').addService(googletag.pubads());
                 googletag.defineSlot('/21839199781/Vistazo/Zocalo', [1, 3], 'Zocalo').addService(googletag.pubads());
                 //Agregar este tag a la pagina
-                googletag.defineSlot('/21839199781/Vistazo/header', [[320, 50], [970, 90], [728, 90], [300, 50]], 'header_ad').defineSizeMapping(mappingHeader).addService(googletag.pubads());
+                //googletag.defineSlot('/21839199781/Vistazo/header', [[320, 50], [970, 90], [728, 90], [300, 50]], 'header_ad').defineSizeMapping(mappingHeader).addService(googletag.pubads());
                 googletag.pubads().enableLazyLoad({
                     fetchMarginPercent: 20,
                     renderMarginPercent: 10,
@@ -285,8 +285,9 @@
                 googletag.pubads().setTargeting('VI_Tipo', VI_Tipo);
                 googletag.pubads().setTargeting('VI_Articulo', VI_Articulo);
                 googletag.pubads().setTargeting('VI_Tag', VI_Tag);
-                //googletag.pubads().setTargeting('VI_Demo', dfp_demo);
-                googletag.pubads().setTargeting('censurado', 'no');
+                googletag.pubads().setTargeting('VI_Demo', dfp_demo);
+                //googletag.pubads().setTargeting('censurado', 'no');
+                googletag.pubads().setCentering(true);
                 googletag.pubads().enableSingleRequest();
                 googletag.pubads().collapseEmptyDivs();
                 googletag.enableServices();
@@ -329,6 +330,7 @@
                     if (document.getElementById('Center3') && googletag.pubads().getSlots().some(slot => slot.getSlotElementId() === 'Center3')) {
                         googletag.display('Center3');
                     }
+                    /*
                     if (document.getElementById('Middle2') && googletag.pubads().getSlots().some(slot => slot.getSlotElementId() === 'Middle2')) {
                         googletag.display('Middle2');
                     }
@@ -338,6 +340,7 @@
                     if (document.getElementById('header_ad') && googletag.pubads().getSlots().some(slot => slot.getSlotElementId() === 'header_ad')) {
                         googletag.display('header_ad');
                     }
+                    */
                     if (document.getElementById('Floating') && googletag.pubads().getSlots().some(slot => slot.getSlotElementId() === 'Floating')) {
                         googletag.display('Floating');
                     }
@@ -388,3 +391,9 @@
         document.addEventListener('scroll', handleFirstInteraction, { passive: true });
     });
 </script>
+      
+      
+      
+      
+      
+      

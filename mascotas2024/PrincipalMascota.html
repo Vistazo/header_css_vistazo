@@ -1,0 +1,65 @@
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z9ZDG6FEG4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Z9ZDG6FEG4');
+</script>
+
+<script type='text/javascript'>
+    //Captura variables para DFP desde la url
+    var getQueryString = function (field, url) {
+        var href = url ? url : window.location.href;
+        var reg = new RegExp('[?&]' + field + '=([^&#]*)', 'i');
+        var string = reg.exec(href);
+        return string ? string[1] : null;
+    };
+    dfp_demo = getQueryString("demo");
+</script>
+<!-- Start GPT Tag -->
+<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+<script>
+    window.googletag = window.googletag || { cmd: [] };
+    googletag.cmd.push(function () {
+        //required variable for refresh
+        var REFRESH_KEY = "refresh";
+        var REFRESH_VALUE = "true";
+        var mappingbill = googletag.sizeMapping()
+            .addSize([992, 0], [[970, 250], [970, 180], [970, 90], [728, 250], [728, 180], [728, 90]]).addSize([768, 0], [[728, 250], [728, 180], [728, 90]]).addSize([320, 0], [[320, 100], [320, 50], [300, 100], [300, 50]]).addSize([0, 0], [[300, 100], [300, 250], [320, 100]]).build();
+        var mappingcenter = googletag.sizeMapping()
+            .addSize([992, 0], [[728, 90], [728, 180], [728, 250]]).addSize([768, 0], [[728, 90], [728, 180], [728, 250]]).addSize([320, 0], [[320, 100], [300, 100], [300, 250]]).addSize([0, 0], [[320, 100], [300, 100], [300, 250]]).build();
+        //adUnits
+        googletag.defineSlot('/21839199781/mascotas/Top1', [[300, 100], [300, 250], [320, 100], [728, 90], [970, 90], [970, 250]], 'Top1_ad').defineSizeMapping(mappingbill).setTargeting(REFRESH_KEY, REFRESH_VALUE).addService(googletag.pubads());
+        googletag.defineSlot('/21839199781/mascotas/Center1', [[320, 100], [300, 100], [300, 250], [728, 90]], 'Center1_ad').defineSizeMapping(mappingcenter).setTargeting(REFRESH_KEY, REFRESH_VALUE).addService(googletag.pubads());
+        googletag.defineSlot('/21839199781/mascotas/Center2', [[320, 100], [300, 100], [300, 250], [728, 90]], 'Center2_ad').defineSizeMapping(mappingcenter).setTargeting(REFRESH_KEY, REFRESH_VALUE).addService(googletag.pubads());
+        googletag.defineSlot('/21839199781/mascotas/Center3', [[320, 100], [300, 100], [300, 250], [728, 90]], 'Center3_ad').defineSizeMapping(mappingcenter).setTargeting(REFRESH_KEY, REFRESH_VALUE).addService(googletag.pubads());
+        googletag.defineSlot('/21839199781/mascotas/Middle1', [[300, 250]], 'Middle1_ad').setTargeting(REFRESH_KEY, REFRESH_VALUE).addService(googletag.pubads());
+        googletag.defineSlot('/21839199781/mascotas/Floating', [1, 1], 'floating').addService(googletag.pubads());
+        googletag.defineOutOfPageSlot('/21839199781/mascotas/anchor', googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR).addService(googletag.pubads());
+        //Start refresh
+        var SECONDS_TO_WAIT_AFTER_VIEWABILITY = 30; // 30 seconds
+        googletag.pubads().addEventListener("impressionViewable", function (event) {
+            var slot = event.slot;
+            if (slot.getTargeting(REFRESH_KEY).indexOf(REFRESH_VALUE) > -1) {
+                setTimeout(function () {
+                    googletag.pubads().refresh([slot]);
+                }, SECONDS_TO_WAIT_AFTER_VIEWABILITY * 1000);
+            }
+        });
+        //End refresh
+        googletag.pubads().setTargeting('MA_Seccion', '');
+        googletag.pubads().setTargeting('MA_Subseccion', '');
+        googletag.pubads().setTargeting('MA_Tipo', '');
+        googletag.pubads().setTargeting('MA_Articulo', '');
+        googletag.pubads().setTargeting('MA_Tag', '');
+        googletag.pubads().setTargeting('VI_Demo', dfp_demo);
+        googletag.pubads().setTargeting('censurado', 'no');
+        googletag.pubads().enableSingleRequest();
+        //googletag.pubads().disableInitialLoad();
+        googletag.pubads().collapseEmptyDivs();
+        googletag.pubads().setCentering(true);
+        googletag.enableServices();
+    });
+</script>
