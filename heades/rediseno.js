@@ -571,7 +571,6 @@ document.addEventListener("DOMContentLoaded", function () {
 // validar primero si existe el elemento con id unico_6
 if (document.getElementById("unico_6") === null) {
   console.log("El elemento con id unico_6 no existe");
-  return;
 }else{
   document.getElementById("unico_6").addEventListener("click", function(e) {
     e.preventDefault(); // Evita la redirección original
