@@ -1,209 +1,221 @@
 [
   {
     "id": 1,
-    "nombre": "Teresa",
-    "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...",
-    "cargo": "Technology",
+    "nombre": "Dario Marret",
+    "descripcion": "Darío Marret es un desarrollador y emprendedor ecuatoriano apasionado por la tecnología, la automatización y los negocios digitales. Ha liderado proyectos innovadores en software para educación, ventas y contabilidad en América Latina.",
+    "cargo": "Desarrollador",
     "link": "/periodistas/-/meta/teresa",
     "foto": "https://www.vistazo.com/binrepository/270x180/0c0/250d180/none/12727/SRFT/gtbsp97wkaehhcw_2242344_20250609183836.jpg",
     "redes": [
       {
         "name": "Facebook",
-        "url": "https://www.facebook.com"
+        "url": "facebook.com/dario.marret.dev"
       },
       {
         "name": "Instagram",
-        "url": "https://www.facebook.com"
+        "url": "instagram.com/dario.codes"
       },
       {
         "name": "Linkedin",
-        "url": "https://www.facebook.com"
+        "url": "linkedin.com/in/dariomarret"
       },
       {
         "name": "X",
-        "url": "https://www.x.com"
+        "url": "twitter.com/dariomarret_ec"
       }
     ]
   },
   {
     "id": 2,
-    "nombre": "Dario",
-    "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...",
-    "cargo": "Desarrollador",
+    "nombre": "Cecibel Serrano",
+    "descripcion": "Reportera de temas de salud y de diversos sectores productivos, educación y tecnología.  Finalista del Premio Roche de Periodismo en Salud en categoría cobertura diaria, Edición Ecuador 2020.",
+    "cargo": "Reportera",
     "link": "/periodistas/-/meta/dario312",
     "foto": "https://www.vistazo.com/binrepository/270x180/0c0/250d180/none/12727/SRFT/gtbsp97wkaehhcw_2242344_20250609183836.jpg",
     "redes": [
       {
-        "name": "Facebook",
-        "url": "https://www.facebook.com"
-      },
-      {
-        "name": "Instagram",
-        "url": "https://www.facebook.com"
-      },
-      {
         "name": "Linkedin",
-        "url": "https://www.facebook.com"
-      },
-      {
-        "name": "X",
-        "url": "https://www.x.com"
+        "url": "https://www.linkedin.com/in/cecibel-serrano-zambrano-229922149"
       }
     ]
   },
   {
-    "id": 2,
-    "nombre": "Dario",
-    "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...",
-    "cargo": "Desarrollador",
+    "id": 3,
+    "nombre": "Darwin Borja",
+    "descripcion": "Periodista ecuatoriano, con maestría en Postproducción Audiovisual Digital. Escribe sobre diversos temas, entre ellos política, economía, sostenibilidad, seguridad, empresas, turismo, etc. Colabora en proyectos editoriales especiales.",
+    "cargo": "Periodista",
     "link": "/periodistas/-/meta/dario",
     "foto": "https://www.vistazo.com/binrepository/270x180/0c0/250d180/none/12727/SRFT/gtbsp97wkaehhcw_2242344_20250609183836.jpg",
     "redes": [
       {
         "name": "Facebook",
-        "url": "https://www.facebook.com"
+        "url": "https://www.facebook.com/darwin.borja.dws"
       },
       {
         "name": "Instagram",
-        "url": "https://www.facebook.com"
+        "url": "https://www.instagram.com/darwindws/"
       },
       {
         "name": "Linkedin",
-        "url": "https://www.facebook.com"
+        "url": "https://www.linkedin.com/in/darwin-borja-salguero-92940982/"
       },
       {
         "name": "X",
-        "url": "https://www.x.com"
+        "url": "https://x.com/darwindws"
       }
     ]
   },
   {
     "id": 4,
-    "nombre": "EFE",
-    "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...",
-    "cargo": "Desarrollador",
+    "nombre": "Diana Holguín",
+    "descripcion": "Periodista con Maestría en Comunicación Digital. Apasionada por la locución y la redacción. Ha realizado reportajes sobre Sociedad, Política y Economía en Ecuador y como corresponsal. Actualmente es la Coordinadora Editorial de América Economía Ecuador.",
+    "cargo": "Periodista",
     "link": "/periodistas/-/meta/efe",
     "foto": "https://www.vistazo.com/binrepository/270x180/0c0/250d180/none/12727/SRFT/gtbsp97wkaehhcw_2242344_20250609183836.jpg",
     "redes": [
       {
-        "name": "Facebook",
-        "url": "https://www.facebook.com"
-      },
-      {
         "name": "Instagram",
-        "url": "https://www.facebook.com"
+        "url": "instagram.com/dianeli_holguin/"
       },
       {
         "name": "Linkedin",
-        "url": "https://www.facebook.com"
+        "url": "linkedin.com/in/diana-holgu%C3%ADn-3891ba90/"
       },
       {
         "name": "X",
-        "url": "https://www.x.com"
+        "url": "x.com/diana_holguinr"
       }
     ]
   },
   {
     "id": 5,
-    "nombre": "Redaccion",
-    "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...",
-    "cargo": "Technology",
+    "nombre": "Nadia Zamora Freire",
+    "descripcion": "Periodista ecuatoriana especializada en periodismo de estilo de vida, cuyo enfoque es el bienestar de la mujer y la familia. También desempeña la función de coordinadora de producción en portadas de revista Hogar y editoriales de moda, y productora gráfica para temas gastronómicos.  ",
+    "cargo": "Periodista",
     "link": "/periodistas/-/meta/redaccion-vistazo",
     "foto": "https://www.vistazo.com/binrepository/270x180/0c0/250d180/none/12727/SRFT/gtbsp97wkaehhcw_2242344_20250609183836.jpg",
     "redes": [
       {
         "name": "Facebook",
-        "url": "https://www.facebook.com"
+        "url": "https://www.facebook.com/nadia.zamora.961"
       },
       {
         "name": "Instagram",
-        "url": "https://www.facebook.com"
+        "url": "https://www.instagram.com/nadia_zam/"
       },
       {
         "name": "Linkedin",
-        "url": "https://www.facebook.com"
-      },
-      {
-        "name": "X",
-        "url": "https://www.x.com"
+        "url": "https://www.linkedin.com/in/nadia-zamora-freire-5ab22a59/"
       }
     ]
   },
   {
     "id": 6,
-    "nombre": "Jhon",
-    "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...",
-    "cargo": "Desarrollador",
+    "nombre": "Nicole Landín Jurado",
+    "descripcion": "Periodista de sostenibilidad. Investiga temas sociales, ambientales y económicos con enfoque en Derechos Humanos. Es becaria de Mongabay Latam y colaboradora de América Economía Ecuador. Ha escrito sobre migración, efectos del cambio climático y pobreza. Le apasiona viajar y conocer las comunidades rurales del país.",
+    "cargo": "Periodista",
     "link": "/periodistas/-/meta/tyw",
     "foto": "https://www.vistazo.com/binrepository/270x180/0c0/250d180/none/12727/SRFT/gtbsp97wkaehhcw_2242344_20250609183836.jpg",
     "redes": [
       {
-        "name": "Facebook",
-        "url": "https://www.facebook.com"
-      },
-      {
         "name": "Instagram",
-        "url": "https://www.facebook.com"
+        "url": "https://www.instagram.com/nicolelandinj/"
       },
       {
         "name": "Linkedin",
-        "url": "https://www.facebook.com"
-      },
-      {
-        "name": "X",
-        "url": "https://www.x.com"
+        "url": "https://www.linkedin.com/in/nicole-land%C3%ADn-/"
       }
     ]
   },
   {
     "id": 7,
-    "nombre": "Carlos",
-    "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...",
-    "cargo": "Desarrollador",
+    "nombre": "Milca Cabrera Verduga",
+    "descripcion": "Periodista de los especiales económicos y empresariales, en los que aborda el análisis de sectores. Finalista del primer Concurso de Periodismo Constructivo Ecuador de la Universidad de Nebrija. Le apasiona la investigación y la redacción narrativa y creativa.",
+    "cargo": "Periodista",
     "link": "/periodistas/-/meta/apa",
     "foto": "https://www.vistazo.com/binrepository/270x180/0c0/250d180/none/12727/SRFT/gtbsp97wkaehhcw_2242344_20250609183836.jpg",
     "redes": [
       {
-        "name": "Facebook",
-        "url": "https://www.facebook.com"
-      },
-      {
-        "name": "Instagram",
-        "url": "https://www.facebook.com"
-      },
-      {
         "name": "Linkedin",
-        "url": "https://www.facebook.com"
-      },
-      {
-        "name": "X",
-        "url": "https://www.x.com"
+        "url": "https://www.linkedin.com/in/milca-cabrera-verduga-5a477b204/"
       }
     ]
   },
   {
     "id": 8,
-    "nombre": "Vera",
-    "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...",
-    "cargo": "Desarrollador",
+    "nombre": "Sandra Armijos Medrano",
+    "descripcion": "Comunicadora social con experiencia en la redacción de artículos y reportajes relacionados al sector empresarial y productivo, así como en la creación de contenidos periodísticos para marcas y productos institucionales. Me apasiona escribir y me impulsa la curiosidad. En aprendizaje permanente...",
+    "cargo": "Comunicadora social",
     "link": "/periodistas/-/meta/vera",
     "foto": "https://www.vistazo.com/binrepository/270x180/0c0/250d180/none/12727/SRFT/gtbsp97wkaehhcw_2242344_20250609183836.jpg",
     "redes": [
       {
-        "name": "Facebook",
-        "url": "https://www.facebook.com"
-      },
+        "name": "Linkedin",
+        "url": "https://www.linkedin.com/in/sandraarmijosmedrano"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "nombre": "Ilse Herrera Marañón",
+    "descripcion": "Periodista enfocada en contenidos digitales. Su experiencia abarca desde la producción y locución de podcasts de corte investigativo centrados en temáticas sociales, hasta la redacción de notas y reportajes culturales con enfoque humano y narrativo, buscando generar productos que informen, conecten y transformen.",
+    "cargo": "Periodista",
+    "link": "/periodistas/-/meta/vera",
+    "foto": "https://www.vistazo.com/binrepository/270x180/0c0/250d180/none/12727/SRFT/gtbsp97wkaehhcw_2242344_20250609183836.jpg",
+    "redes": [
       {
         "name": "Instagram",
-        "url": "https://www.facebook.com"
+        "url": "https://www.instagram.com/ilseherreram/"
       },
       {
         "name": "Linkedin",
-        "url": "https://www.facebook.com"
+        "url": "https://www.linkedin.com/in/ilse-herrera-mara%C3%B1on?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "nombre": "María Belén Arroyo",
+    "descripcion": "Editora Política. Investiga crimen organizado transnacional. Primer Premio en Concurso Jorge Mantilla, en 2013, 2014 y 2022. Premio Nacional Eugenio Espejo en 2018 y 2020. Editora del libro “El Juego del Camaleón” (2009) y Coautora del libro “Rehenes, Por qué mataron a los periodistas de El Comercio” (2019).  Finalista del Premio Latinoamericano de Periodismo de Investigación (COLPIN) 2018.",
+    "cargo": "Editora",
+    "link": "/periodistas/-/meta/vera",
+    "foto": "https://www.vistazo.com/binrepository/270x180/0c0/250d180/none/12727/SRFT/gtbsp97wkaehhcw_2242344_20250609183836.jpg",
+    "redes": [
+      {
+        "name": "Linkedin",
+        "url": "https://www.linkedin.com/in/maría-belén-arroyo-arguello-57976736b"
       },
       {
         "name": "X",
-        "url": "https://www.x.com"
+        "url": "https://x.com/MariaBelenArro1?t=p3qpackY_yYvqfku_LxINg&s=08"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "nombre": "Ligia Proaño",
+    "descripcion": "Apasionada por el mundo animal y los océanos, trabaja para informar y sensibilizar a diversas audiencias sobre la importancia del bienestar animal en los perros y gatos, la conservación marina y el cuidado de todas las especies que habitan en el mar. Su misión es dar voz a quienes no pueden hablar, promoviendo una convivencia más consciente, empática y responsable con el planeta y sus seres vivos.",
+    "cargo": "Periodista",
+    "link": "/periodistas/-/meta/vera",
+    "foto": "https://th1.pcloud.com/tLZQDRB5cZWYxkZZZQCsfVkZv0XZJZZwRZvQZgHZLYZ5RZhKLy5Pxh3QQjAH5Ti3Nv386RcsWy/9-RNL02383.jpg",
+    "redes": [
+      {
+        "name": "Linkedin",
+        "url": "https://www.linkedin.com/in/ligiaproañof"
+      }
+    ]
+  },
+   {
+    "id": 12,
+    "nombre": "Julissa Suárez",
+    "descripcion": "Redactora digital y social media editor con enfoque en cultura, educación y temas sociales. Adapta noticias a formatos digitales, optimiza contenido para engagement y coordina piezas visuales con enfoque creativo y técnico. Tiene formación en patrimonio cultural, historia pública y medios digitales. La mueve contar historias que informen, que conecten y tengan una mirada humana.",
+    "cargo": "Redactora",
+    "link": "/periodistas/-/meta/vera",
+    "foto": "https://www.vistazo.com/binrepository/270x180/0c0/250d180/none/12727/SRFT/gtbsp97wkaehhcw_2242344_20250609183836.jpg",
+    "redes": [
+      {
+        "name": "Linkedin",
+        "url": "https://www.linkedin.com/in/julissas"
       }
     ]
   }
