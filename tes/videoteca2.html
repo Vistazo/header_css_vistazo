@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Videoteca Vistazo</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: auto;
+            padding: 1rem;
+        }
+
+        .video-player {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            margin-bottom: 2rem;
+            background-color: #000;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .video-player iframe {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .carousel-wrapper {
+            position: relative;
+            overflow: hidden;
+            padding: 2rem 0;
+        }
+
+        .carousel-container {
+            overflow-x: auto;
+            scroll-behavior: smooth;
+        }
+
+        .carousel {
+            display: flex;
+            gap: 1rem;
+            padding: 0 3rem;
+            width: fit-content;
+        }
+
+        .video-card {
+            flex: 0 0 auto;
+            width: 240px;
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .video-card img {
+            width: 100%;
+            height: 135px;
+            object-fit: cover;
+        }
+
+        .video-card .title {
+            padding: 0.5rem;
+            font-size: 14px;
+            font-weight: 600;
+            color: #111;
+            height: 60px;
+            overflow: hidden;
+        }
+
+        .video-card .duration {
+            font-size: 12px;
+            color: #666;
+            padding: 0 0.5rem 0.5rem;
+        }
+
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #cc0000;
+            border: none;
+            color: white;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s ease;
+        }
+
+        .carousel-arrow:hover {
+            background: #990000;
+        }
+
+        .carousel-arrow svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+        }
+
+        .carousel-arrow.left {
+            left: 0;
+        }
+
+        .carousel-arrow.right {
+            right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="video-player">
+            <iframe id="mainVideoPlayer" src="about:blank" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        </div>
+
+        <div class="carousel-wrapper">
+            <button class="carousel-arrow left" onclick="scrollPrev()">
+                <svg viewBox="0 0 24 24">
+                    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+                </svg>
+            </button>
+            <button class="carousel-arrow right" onclick="scrollNext()">
+                <svg viewBox="0 0 24 24">
+                    <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z" />
+                </svg>
+            </button>
+            <div class="carousel-container" id="carouselWrapper">
+                <div class="carousel" id="videoCarousel"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const playlistId = "x9si9u";
+        const player = document.getElementById("mainVideoPlayer");
+        const carousel = document.getElementById("videoCarousel");
+
+        fetch(`https://api.dailymotion.com/playlist/${playlistId}/videos?fields=id,title,thumbnail_240_url,duration&limit=12`)
+            .then(res => res.json())
+            .then(data => {
+                if (!data.list || data.list.length === 0) {
+                    carousel.innerHTML = "<p>No hay videos disponibles.</p>";
+                    return;
+                }
+
+                const firstVideo = data.list[0];
+                player.src = `https://www.dailymotion.com/embed/video/${firstVideo.id}?autoplay=1`;
+
+                data.list.forEach(video => {
+                    const durationMin = Math.floor(video.duration / 60);
+                    const durationSec = String(video.duration % 60).padStart(2, '0');
+
+                    const div = document.createElement("div");
+                    div.className = "video-card";
+                    div.innerHTML = `
+            <img src="${video.thumbnail_240_url}" alt="${video.title}">
+            <div class="title">${video.title}</div>
+            <div class="duration">⏱ ${durationMin}:${durationSec}</div>
+          `;
+
+                    div.addEventListener("click", () => {
+                        player.src = `https://www.dailymotion.com/embed/video/${video.id}?autoplay=1`;
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                    });
+
+                    carousel.appendChild(div);
+                });
+            })
+            .catch(err => {
+                carousel.innerHTML = "<p>Error al cargar videos.</p>";
+                console.error(err);
+            });
+
+        function scrollNext() {
+            document.getElementById("carouselWrapper").scrollBy({ left: 300, behavior: "smooth" });
+        }
+
+        function scrollPrev() {
+            document.getElementById("carouselWrapper").scrollBy({ left: -300, behavior: "smooth" });
+        }
+
+        function sendIframeHeight() {
+            const height = document.documentElement.scrollHeight;
+            parent.postMessage({ type: "resize-iframe", height }, "*");
+        }
+
+        window.addEventListener("load", sendIframeHeight);
+        window.addEventListener("resize", sendIframeHeight);
+    </script>
+</body>
+
+</html>
