@@ -16,6 +16,10 @@
     margin-top: 60px;
 } */
 
+.iframe-container iframe[src="https://vzheaders.netlify.app/videoteca/videoteca.html"]{
+    height: 800px !important;
+}
+
 @media (max-width: 600px) {
     .iframe-container iframe[src="https://vzheaders.netlify.app/videoteca/videoteca.html"] {
       width: 100%;
