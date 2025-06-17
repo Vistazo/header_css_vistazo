@@ -32,7 +32,7 @@
     #col-60-40-top-two-col{
         display: flex;
         flex-direction: column;
-        height: 250px;
+        /* height: 250px; */
         overflow-y: auto;
     }
 }
