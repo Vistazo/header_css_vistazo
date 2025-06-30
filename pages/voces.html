@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Voces en Acción</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+
+    <link rel="stylesheet" href="./voces/voces.css" />
+</head>
+
+<body>
+
+    <!-- Header superior -->
+    <div class="position-relative">
+        <header class="top-bar d-flex justify-content-between align-items-center px-3 py-2">
+            <img src="https://codigomarret.online/upload/img/marca-voces-en-accion-blanco_mesa-de-trabajo-1.png"
+                alt="Voces en Acción" class="logo-header" />
+            <div class="iconos-header d-flex align-items-center gap-3">
+                <i class="bi bi-search fs-4 text-white cursor-pointer" id="search-toggle"></i>
+                <i class="bi bi-list fs-3 text-white cursor-pointer" id="menu-toggle"></i>
+            </div>
+            <!-- Campo de búsqueda con sugerencias -->
+            <div id="search-box" class="search-box position-absolute end-0 top-100 mt-2 bg-white rounded shadow d-none"
+                style="z-index: 999;">
+                <div class="input-group">
+                    <span class="input-group-text bg-white border-end-0"><i class="bi bi-search text-muted"></i></span>
+                    <input type="text" class="form-control border-start-0" placeholder="Buscar..." id="search-input"
+                        autocomplete="off" />
+                </div>
+                <ul id="suggestions-list" class="list-group mt-2"></ul>
+            </div>
+
+        </header>
+
+        <nav id="menu-desplegable" class="menu-desplegable">
+            <ul class="list-unstyled mb-0">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#cronograma">Cronograma</a></li>
+                <li><a href="#ganadores">Ganadores</a></li>
+                <li><a href="#bases">Bases del Concurso</a></li>
+                <li><a href="#evento">Evento 2024</a></li>
+                <li><a href="#organizadores">Organizadores</a></li>
+            </ul>
+        </nav>
+
+    </div>
+
+    <!-- Imagen principal -->
+    <img src="https://codigomarret.online/upload/img/banner_voces-en-accion.png" alt="Concurso Voces en Acción"
+        class="main-image" />
+
+    <!-- Sección título y texto -->
+    <section id="inicio" class="title-section">
+        <div class="container text-center">
+            <h2 class="titulo-principal">
+                ¿ERES PERIODISTA O ESTUDIANTE DE<br />PERIODISMO EN ECUADOR?
+            </h2>
+            <p class="parrafo-descripcion">
+                Te invitamos a participar en el concurso <strong>“Voces en Acción”</strong>, organizado por Ayuda en
+                Acción y Revista Vistazo, en alianza con la Unión Europea. Este concurso busca promover un periodismo
+                comprometido con la sostenibilidad y el desarrollo rural, que visibilice y dé voz a las historias que a
+                menudo quedan invisibilizadas en nuestro país. Queremos relatos que cuestionen, inspiren y contribuyan a
+                transformar la realidad.
+            </p>
+            <p class="parrafo-descripcion">
+                *Los trabajos seleccionados serán reconocidos en la segunda edición del ODS Leaders Summit de Vistazo,
+                que se realizará el 27 de agosto de 2025 en Guayaquil.
+            </p>
+        </div>
+    </section>
+
+    <!-- CRONOGRAMA -->
+
+
+    <section id="cronograma" class="container-fluid px-0" style="font-family: 'Open Sans', sans-serif;">
+        <div class="row g-0">
+            <!-- Imagen -->
+            <div class="col-md-6">
+                <img src="./0f3d6471-2fc7-4cad-984f-8c8114936822.png" class="img-fluid w-100 h-100 object-fit-cover"
+                    alt="Cronograma Concurso">
+            </div>
+
+            <!-- Cronograma -->
+            <div class="col-md-6 d-flex align-items-center justify-content-center" style="background-color: #0b98c1;">
+                <div class="w-100 p-4" style="max-width: 700px;">
+                    <!-- Título -->
+                    <div class="text-white text-center fw-bold py-2 mb-3"
+                        style="background-color: #ff9a40; font-size: 1.3rem;">
+                        CRONOGRAMA
+                    </div>
+
+                    <!-- Tabla -->
+                    <table class="tabla-cronograma table mb-0"
+                        style="width: 100%; font-family: 'Open Sans', sans-serif;">
+                        <tbody>
+                            <tr>
+                                <td><strong>Presentación de concurso</strong></td>
+                                <td><strong>Lunes 30 de junio de 2025</strong></td>
+                            </tr>
+                            <tr>
+
+                                <td>Difusión de concurso y recepción de postulaciones</td>
+                                <td>Del 30 de junio al 31 de julio de 2025</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Preselección por parte de Vistazo</strong></td>
+                                <td><strong>Hasta el 08 de agosto</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Evaluación por parte del jurado</td>
+                                <td>Del 11 al 15 de agosto</td>
+                            </tr>
+                            <tr>
+                                <td style="color: #fff;"><strong>Envío de invitación a ganadores</strong></td>
+                                <td>15 de agosto</td>
+                            </tr>
+                            <tr>
+                                <td>Premiación en evento “ODS Leaders Summit” by Vistazo</td>
+                                <td>27 de agosto de 2025, en la ciudad de Guayaquil</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- SECCIÓN GANADORES -->
+    <section id="ganadores" class="seccion-ganadores">
+        <h2>¿QUIERES CONOCER LOS GANADORES?</h2>
+        <p class="mt-2 mb-4">Estos son los días que faltan para conocer a los ganadores</p>
+
+        <div class="container">
+            <div class="row justify-content-center g-4">
+                <div class="col-4 col-md-2">
+                    <div class="contador-naranja">66</div>
+                    <div class="contador-gris">DÍAS</div>
+                </div>
+                <div class="col-4 col-md-2">
+                    <div class="contador-naranja">1584</div>
+                    <div class="contador-gris">HORAS</div>
+                </div>
+                <div class="col-4 col-md-2">
+                    <div class="contador-naranja">95040</div>
+                    <div class="contador-gris">MINUTOS</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN BASES DEL CONCURSO -->
+    <section id="bases" class="seccion-bases text-center position-relative"
+        style="overflow: visible; background-color: #eeeeee;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-6 text-center text-md-start mb-4 mb-md-0">
+                    <h5 class="fw-bold text-uppercase mb-3"
+                        style="color: #4a4a4a; font-size: 1.6rem; line-height: 1.4;">
+                        CONSULTA LAS BASES COMPLETAS<br />
+                        DEL CONCURSO AQUÍ
+                    </h5>
+                    <button class="btn-conocer">CONOCER MÁS</button>
+                </div>
+
+                <div class="col-12 col-md-6 text-end position-relative">
+                    <img src="https://codigomarret.online/upload/img/maquina_voces-en-accion.png" alt="Bases concurso"
+                        class="img-fluid" style="
+              width: 520px;
+              max-width: 100vw;
+              height: auto;
+              margin-left: auto;
+              margin-top: -30px;
+              margin-bottom: -80px;
+              z-index: 10;
+              position: relative;
+            " />
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- SECCIÓN EVENTO 2024 -->
+    <section id="evento" class="seccion-evento">
+        <h2>REVIVE EL EVENTO 2024</h2>
+        <p>
+            ¿Quieres conocer lo que pasó en la primera edición? Expertos, jóvenes líderes y organizaciones de la
+            sociedad civil compartieron sus propuestas para avanzar en los Objetivos de Desarrollo Sostenible en
+            Ecuador.
+        </p>
+        <div class="video-container ratio ratio-16x9">
+            <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="ODS Leaders Summit"
+                allowfullscreen></iframe>
+        </div>
+    </section>
+
+
+    <!-- SECCIÓN ORGANIZADORES -->
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="organizadores-titulo mt-5 mb-4">CONOCE A LOS ORGANIZADORES</h2>
+            </div>
+        </div>
+    </div>
+
+    <section id="organizadores" class="seccion-organizadores">
+        <div class="container">
+
+            <!-- AYUDA EN ACCIÓN -->
+            <div class="row align-items-center mb-5 organizador-box">
+                <div class="col-12 col-md-3 organizador-img">
+                    <img src="https://codigomarret.online/upload/img/ayuda-en-accion_1_mesa-de-trabajo-1.jpg"
+                        alt="Ayuda en Acción" class="img-fluid" />
+                </div>
+                <div class="col-12 col-md-9 organizador-text">
+                    Organización internacional que combate la pobreza creando oportunidades, especialmente para personas
+                    que viven en zonas rurales, a través de: cadenas productivas sostenibles, acceso a agua potable, y
+                    promoción de derechos. Está presente en 18 países y en Ecuador lleva trabajando desde hace más de 38
+                    años, actualmente está presente en 8 provincias: Esmeraldas, Carchi, Imbabura, Chimborazo, Cotopaxi,
+                    Santa Elena, Azuay y Morona Santiago. Cada año beneficia a más de 20 mil personas a través de
+                    intervenciones a largo plazo que duran entre 10 a 15 años.
+                </div>
+            </div>
+
+
+            <!-- UNIÓN EUROPEA -->
+            <div class="row align-items-center flex-md-row-reverse organizador-box">
+                <div class="col-md-3 organizador-img">
+                    <img src="https://codigomarret.online/upload/img/union-europea_mesa-de-trabajo-1.jpg"
+                        alt="Unión Europea en Ecuador" />
+                </div>
+                <div class="col-md-9 organizador-text">
+                    La Unión Europea está constituida por 27 países que han unido sus conocimientos prácticos, sus
+                    recursos y sus destinos. Constituye una zona de estabilidad, democracia y desarrollo sostenible y
+                    preserva la diversidad cultural, la tolerancia y las libertades individuales.
+                    <br /><br />
+                    En Ecuador, la Unión Europea está presente con una Delegación desde 2003 y con Embajador acreditado
+                    desde 2016. Actualmente, la UE trabaja para profundizar lazos con el país sobre la base de una
+                    asociación de iguales y el respeto mutuo de los Derechos Humanos, el Estado de Derecho y la
+                    Democracia. Implementa su Programa Indicativo Plurianual de Cooperación, que enfatiza en proyectos
+                    verdes, sustentables e inclusivos. Lograr el desarrollo sostenible para todos a través del comercio,
+                    la inversión y un mayor intercambio de ciencia e innovación.
+                </div>
+            </div>
+
+            <!-- VISTAZO -->
+            <div class="row align-items-center organizador-box">
+                <div class="col-md-3 organizador-img">
+                    <img src="https://codigomarret.online/upload/img/vistazo_mesa-de-trabajo-1.jpg"
+                        alt="Revista Vistazo" />
+                </div>
+                <div class="col-md-9 organizador-text">
+                    Fundada en 1957, Revista Vistazo es uno de los medios de comunicación con mayor trayectoria del
+                    Ecuador. A lo largo de más de seis décadas, se ha consolidado como un referente en el periodismo de
+                    investigación, análisis político, derechos humanos, cultura y economía.
+                    <br /><br />
+                    Con presencia tanto en formato impreso como digital, Vistazo llega a miles de lectores en todo el
+                    país y se caracteriza por su compromiso con la información verificada, el pensamiento crítico y la
+                    defensa de los valores democráticos. Su enfoque de sostenibilidad, implementado hace cuatro años,
+                    profundiza los problemas sociales, ambientales y económicos que enfrenta el país. El objetivo de
+                    Vistazo es incluir voces diversas y darle protagonismo a historias que a menudo son invisibilizadas.
+                </div>
+            </div>
+
+            <section class="video-vistazo">
+                <div class="container">
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="Vistazo video"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="footer-principal">
+        <div class="container">
+            <div class="row justify-content-between align-items-center text-start text-md-start">
+                <div class="col-12 col-md-4 footer-column mb-4 mb-md-0">
+                    <h6>Sobre nosotros</h6>
+                    <ul>
+                        <li><a href="#">Evento 2024</a></li>
+                        <li><a href="#">Organizadores</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-12 col-md-4 footer-column mb-4 mb-md-0">
+                    <h6>Concurso</h6>
+                    <ul>
+                        <li><a href="#">Bases del concurso</a></li>
+                        <li><a href="#">Cronograma</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-12 col-md-4 footer-logo text-center text-md-end">
+                    <img src="https://codigomarret.online/upload/img/marca-en-blanco-y-negro_mesa-de-trabajo-1.png"
+                        alt="Voces en Acción" />
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="footer-copy">
+        © 2025 Voces en Acción – Todos los derechos reservados.
+    </div>
+
+    <script src="./voces/voces.js"></script>
+
+
+</body>
+
+</html>
