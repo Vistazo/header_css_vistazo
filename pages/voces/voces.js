@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // CRONOMETRO
-// Fecha objetivo (ajústala si es necesario)
+// Fecha objetivo (27 de agosto de 2025 a medianoche)
 const fechaObjetivo = new Date("2025-08-27T00:00:00");
 
 function actualizarContador() {
@@ -106,17 +106,34 @@ function actualizarContador() {
     document.getElementById("dias").innerText = "0";
     document.getElementById("horas").innerText = "0";
     document.getElementById("minutos").innerText = "0";
+    document.getElementById("segundos").innerText = "0";
+    document.getElementById("mensaje") &&
+      (document.getElementById("mensaje").innerText =
+        "¡El evento ha comenzado!");
     return;
   }
 
-  const minutosTotales = Math.floor(diferencia / (1000 * 60));
-  const horasTotales = Math.floor(diferencia / (1000 * 60 * 60));
-  const diasTotales = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+  const segundosTotales = Math.floor(diferencia / 1000);
+  const minutos = Math.floor(segundosTotales / 60);
+  const horas = Math.floor(minutos / 60);
+  const dias = Math.floor(horas / 24);
 
-  document.getElementById("dias").innerText = diasTotales;
-  document.getElementById("horas").innerText = horasTotales;
-  document.getElementById("minutos").innerText = minutosTotales;
+  const horasRestantes = horas % 24;
+  const minutosRestantes = minutos % 60;
+  const segundosRestantes = segundosTotales % 60;
+
+  document.getElementById("dias").innerText = dias;
+  document.getElementById("horas").innerText = horasRestantes;
+  document.getElementById("minutos").innerText = minutosRestantes;
+  document.getElementById("segundos").innerText = segundosRestantes
+    .toString()
+    .padStart(2, "0");
 }
 
 actualizarContador();
-setInterval(actualizarContador, 60000);
+setInterval(actualizarContador, 1000); // cada segundo
+
+// si hacen click la clase logo-header se tiene que abrir una nueva pestaña vistazo.com
+document.querySelector(".logo-header").addEventListener("click", function () {
+  window.open("https://www.vistazo.com", "_blank");
+});
