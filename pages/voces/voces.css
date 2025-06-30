@@ -334,7 +334,7 @@ even .seccion-evento p {
 }
 
 .organizador-img {
-  background-color: white;
+  /*background-color: white;*/
   padding: 1.5rem;
   display: flex;
   align-items: center;
