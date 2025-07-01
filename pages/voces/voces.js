@@ -150,10 +150,10 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('btnAceptarNotificaciones').addEventListener('click', () => {
       Notification.requestPermission().then(permission => {
         if (permission === 'granted') {
-          localStorage.setItem(key, 'true');
-          alert("✅ Notificaciones activadas.");
-        } else {
-          alert("🚫 Permiso denegado.");
+          localStorage.setItem(storageKey, 'true');
+          console.log("✅ Notificaciones activadas.");
+        } else if (permission === 'denied') {
+          console.warn("🚫 Permiso de notificaciones fue denegado previamente.");
         }
         modal.hide();
       });
