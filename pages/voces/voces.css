@@ -452,3 +452,17 @@ even .seccion-evento p {
 .btn-notify-no:hover {
   background-color: #c2c2c2;
 }
+
+.btn-notify-no {
+  background-color: #e0e0e0;
+  color: #555;
+  font-weight: 500;
+  padding: 0.4rem 1.2rem;
+  border-radius: 20px;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-notify-no:hover {
+  background-color: #c2c2c2;
+}

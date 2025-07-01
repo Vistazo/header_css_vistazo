@@ -147,16 +147,21 @@ document.addEventListener('DOMContentLoaded', function () {
     const modal = new bootstrap.Modal(document.getElementById('modalNotificaciones'));
     modal.show();
 
-    document.getElementById('btnAceptarNotificaciones').addEventListener('click', () => {
-      Notification.requestPermission().then(permission => {
-        if (permission === 'granted') {
-          localStorage.setItem(key, 'true');
-          console.log("✅ Notificaciones activadas.");
-        } else if (permission === 'denied') {
-          console.warn("🚫 Permiso de notificaciones fue denegado previamente.");
-        }
-        modal.hide();
-      });
+    document.getElementById('btnAceptarNotificaciones')?.addEventListener('click', async () => {
+      if (Notification.permission === 'denied') {
+        const modalDenegado = new bootstrap.Modal(document.getElementById('modalPermisoDenegado'));
+        modalDenegado.show();
+        return;
+      }
+      const permiso = await Notification.requestPermission();
+      if (permiso === 'granted') {
+        localStorage.setItem('notificaciones_activadas', 'true');
+        await activarNotificaciones(); // tu función para subscribir
+      } else if (permiso === 'denied') {
+        const modalDenegado = new bootstrap.Modal(document.getElementById('modalPermisoDenegado'));
+        modalDenegado.show();
+      }
     });
+    
   }
 });
