@@ -157,6 +157,8 @@ document.addEventListener('DOMContentLoaded', function () {
       if (permiso === 'granted') {
         localStorage.setItem('notificaciones_activadas', 'true');
         // await activarNotificaciones(); // tu función para subscribir
+        // cerrar el modal
+        modal.hide();
       } else if (permiso === 'denied') {
         const modalDenegado = new bootstrap.Modal(document.getElementById('modalPermisoDenegado'));
         modalDenegado.show();
