@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const permiso = await Notification.requestPermission();
       if (permiso === 'granted') {
         localStorage.setItem('notificaciones_activadas', 'true');
-        await activarNotificaciones(); // tu función para subscribir
+        // await activarNotificaciones(); // tu función para subscribir
       } else if (permiso === 'denied') {
         const modalDenegado = new bootstrap.Modal(document.getElementById('modalPermisoDenegado'));
         modalDenegado.show();
