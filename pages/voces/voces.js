@@ -137,3 +137,26 @@ setInterval(actualizarContador, 1000); // cada segundo
 document.querySelector(".logo-header").addEventListener("click", function () {
   window.open("https://www.vistazo.com", "_blank");
 });
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  const key = 'notificaciones_activadas';
+
+  // Si no está activado aún
+  if (localStorage.getItem(key) !== 'true') {
+    const modal = new bootstrap.Modal(document.getElementById('modalNotificaciones'));
+    modal.show();
+
+    document.getElementById('btnAceptarNotificaciones').addEventListener('click', () => {
+      Notification.requestPermission().then(permission => {
+        if (permission === 'granted') {
+          localStorage.setItem(key, 'true');
+          alert("✅ Notificaciones activadas.");
+        } else {
+          alert("🚫 Permiso denegado.");
+        }
+        modal.hide();
+      });
+    });
+  }
+});

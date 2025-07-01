@@ -10,7 +10,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
 
-    <link rel="stylesheet" href="https://vzheaders.netlify.app/pages/voces/voces.css" />
+    <!-- <link rel="stylesheet" href="https://vzheaders.netlify.app/pages/voces/voces.css" /> -->
+    <link rel="stylesheet" href="./voces/voces.css" />
 </head>
 
 <body>
@@ -205,20 +206,20 @@
     <section id="evento" class="seccion-evento">
         <h2 class="text-center">REVIVE EL EVENTO 2024</h2>
         <div class="d-flex justify-content-center mb-4">
-          <p class="col-md-5 text-center ">
-            ¿Quieres conocer lo que pasó en la primera edición? Expertos, jóvenes líderes y organizaciones de la
-            sociedad civil compartieron sus propuestas para avanzar en los Objetivos de Desarrollo Sostenible en
-            Ecuador.
-          </p>
+            <p class="col-md-5 text-center ">
+                ¿Quieres conocer lo que pasó en la primera edición? Expertos, jóvenes líderes y organizaciones de la
+                sociedad civil compartieron sus propuestas para avanzar en los Objetivos de Desarrollo Sostenible en
+                Ecuador.
+            </p>
         </div>
         <div class="video-container ratio ratio-16x9">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/UMwzt2_r81E?si=S4ZYr5bHIXoiWt5A"
-            title="YouTube video player" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/UMwzt2_r81E?si=S4ZYr5bHIXoiWt5A"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
-      </section>
-      
+    </section>
+
 
     <!-- SECCIÓN ORGANIZADORES -->
     <div class="container">
@@ -290,8 +291,7 @@
             <!-- UEES -->
             <div class="row align-items-center flex-md-row-reverse organizador-box">
                 <div class="col-md-3 organizador-img">
-                    <img src="https://codigomarret.online/upload/img/logo-ue-horizontal.png"
-                        alt="Unión Europea en Ecuador" />
+                    <img src="https://codigomarret.online/upload/img/logo-uees-final-registrado-01.png" alt="UEES" />
                 </div>
                 <div class="col-md-9 organizador-text">
                     La Universidad Espíritu Santo (UEES) se rige como una destacada institución educativa de nivel
@@ -319,6 +319,25 @@
             </section>
         </div>
     </section>
+
+    <!-- Modal Notificaciones -->
+    <div class="modal fade" id="modalNotificaciones" tabindex="-1" aria-labelledby="modalNotificacionesLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-center">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalNotificacionesLabel">🔔 Activar notificaciones</h5>
+                </div>
+                <div class="modal-body">
+                    ¿Deseas recibir notificaciones para estar al tanto de las novedades del concurso?
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-primary" id="btnAceptarNotificaciones">Sí, activar</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No, gracias</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- FOOTER -->
     <footer class="footer-principal">
@@ -353,19 +372,6 @@
 
     <script src="https://vzheaders.netlify.app/pages/voces/voces.js"></script>
 
-    <script>
-        (function () {
-            window.SDKlm = {
-                config: JSON.parse(decodeURIComponent(escape(window.atob("eyJpY29uIjoiaHR0cHM6Ly9hcGkuZmxhc2hjaGF0LmNoYXQvYmFja2ZsYXNoL3N0b3JlLyg1MTIgeCA1MTIgcHgpXzIwMjQxMDI4XzEwMjgwMl8wMDAwLnBuZyIsImFnZW50ZSI6IlZpc3Rhem8gQUkiLCJmb250U2l6ZSI6IjE0cHgiLCJpY29uQnVybCI6Imh0dHBzOi8vYXBpLmZsYXNoY2hhdC5jaGF0L2JhY2tmbGFzaC9zdG9yZS8oNTEyIHggNTEyIHB4KV8yMDI0MTAyOF8xMDI4MDJfMDAwMC5wbmciLCJwb3NpdGlvbiI6InJpZ2h0IiwicHVibGljSWQiOiJhaXRlYy01OTVqdDQxIiwiY3VlbnRhX2lkIjoyLCJkZWxheU9wZW4iOiI4MCIsImZvbnRDb2xvciI6IndoaXRlIiwiY2hhbm5lbF9pZCI6MTIsImZvbnRGYW1pbHkiOiJBcmlhbCIsImZvcm11bGFyaW8iOmZhbHNlLCJzZXNzaW9uX2lkIjpudWxsLCJub21icmV1bmljbyI6IjJfYWl0ZWMiLCJ0ZXh0b19idWJibGUiOiJIb2xhICDCv0J1c2NhcyB1bmEgbm90aWNpYT8iLCJhdmF0YXJfYWdlbnRlIjoiaHR0cHM6Ly9hcGkuZmxhc2hjaGF0LmNoYXQvYmFja2ZsYXNoL3N0b3JlLyg1MTIgeCA1MTIgcHgpXzIwMjQxMDI4XzEwMjgwMl8wMDAwLnBuZyIsImJ1aWxkZXJCdWJibGUiOnRydWUsInRpdHVsb19hZ2VudGUiOiJBc2lzdGVudGUgVmlzdGF6byIsImJhY2tncm91bmRDb2xvciI6IiMwYjJkYjEiLCJtZW5zYWplX2luaWNpYWwiOiLCoUhvbGEhIMK/RW4gcXXDqSBwdWVkbyBheXVkYXJ0ZSBob3k/Iiwic3VidGl0dWxvX2FnZW50ZSI6IkF0ZW5jacOzbiBhIGxlY3RvcmVzIiwiYmFja2dyb3VuZENvbG9ySG92ZXIiOiIjMDg1NGFhIn0="))))
-            };
-            var s = document.createElement("script");
-            s.type = 'text/javascript';
-            s.async = true;
-            s.src = "https://sdk.flashchat.chat/main.js";
-            var x = document.getElementsByTagName('script')[0];
-            x.parentNode.insertBefore(s, x);
-        })();
-    </script>
 </body>
 
 </html>
