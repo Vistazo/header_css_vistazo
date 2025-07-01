@@ -321,23 +321,28 @@
     </section>
 
     <!-- Modal Notificaciones -->
+    <!-- Modal Notificaciones Personalizado -->
     <div class="modal fade" id="modalNotificaciones" tabindex="-1" aria-labelledby="modalNotificacionesLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content text-center">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalNotificacionesLabel">🔔 Activar notificaciones</h5>
+            <div class="modal-content border-0 shadow" style="font-family: 'Open Sans', sans-serif;">
+                <div class="modal-header text-white" style="background-color: #2c2468;">
+                    <h5 class="modal-title" id="modalNotificacionesLabel">
+                        <i class="bi bi-bell-fill text-warning me-2"></i>Activar notificaciones
+                    </h5>
                 </div>
-                <div class="modal-body">
-                    ¿Deseas recibir notificaciones para estar al tanto de las novedades del concurso?
+                <div class="modal-body text-center text-dark">
+                    <p class="mb-0">¿Deseas recibir notificaciones para estar al tanto de las novedades del concurso?
+                    </p>
                 </div>
-                <div class="modal-footer justify-content-center">
-                    <button type="button" class="btn btn-primary" id="btnAceptarNotificaciones">Sí, activar</button>
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No, gracias</button>
+                <div class="modal-footer justify-content-center border-0">
+                    <button type="button" class="btn btn-notify-yes" id="btnAceptarNotificaciones">Sí, activar</button>
+                    <button type="button" class="btn btn-notify-no" data-bs-dismiss="modal">No, gracias</button>
                 </div>
             </div>
         </div>
     </div>
+
 
     <!-- FOOTER -->
     <footer class="footer-principal">
@@ -371,6 +376,8 @@
     </div>
 
     <script src="https://vzheaders.netlify.app/pages/voces/voces.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 
 </body>
 

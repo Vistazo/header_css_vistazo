@@ -423,3 +423,32 @@ even .seccion-evento p {
   font-size: 0.875rem;
   /*margin-top: 1rem;*/
 }
+
+/* MODAL ALERTA NOTIFICACION */
+.btn-notify-yes {
+  background-color: #ff9a40;
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 0.4rem 1.2rem;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-notify-yes:hover {
+  background-color: #e6882f;
+}
+
+.btn-notify-no {
+  background-color: #e0e0e0;
+  color: #555;
+  font-weight: 500;
+  padding: 0.4rem 1.2rem;
+  border-radius: 20px;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-notify-no:hover {
+  background-color: #c2c2c2;
+}
