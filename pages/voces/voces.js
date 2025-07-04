@@ -175,23 +175,25 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 async function descargarPDF() {
-  const url = "https://codigomarret.online/upload/img/voces-en-acción-bases-actualizado.pdf";
+  const url = 'https://codigomarret.online/upload/img/voces-en-accion-bases-actualizado.pdf';
   try {
     const response = await fetch(url);
     if (!response.ok) {
-      console.error("Error al descargar el PDF:", response.statusText);
+      console.error('Error al descargar el PDF:', response.statusText);
       return;
     }
     const blob = await response.blob();
     const link = document.createElement("a");
     link.href = URL.createObjectURL(blob);
-    link.download = "voces-en-acción-bases-actualizado.pdf"; // Nombre sugerido
+    link.download = "voces-en-accion-bases-actualizado.pdf"; // Nombre sugerido
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-    URL.revokeObjectURL(link.href); // liberar memoria
-    console.log("PDF descargado exitosamente");
+    URL.revokeObjectURL(link.href);
+    console.log("✅ PDF descargado exitosamente");
   } catch (error) {
     console.error("Error al intentar descargar:", error);
   }
 }
+
+
