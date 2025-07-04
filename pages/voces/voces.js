@@ -138,44 +138,60 @@ document.querySelector(".logo-header").addEventListener("click", function () {
   window.open("https://www.vistazo.com", "_blank");
 });
 
-
-document.addEventListener('DOMContentLoaded', function () {
-  const key = 'notificaciones_activadas';
+document.addEventListener("DOMContentLoaded", function () {
+  const key = "notificaciones_activadas";
 
   // Si no está activado aún
-  if (localStorage.getItem(key) !== 'true') {
-    const modal = new bootstrap.Modal(document.getElementById('modalNotificaciones'));
+  if (localStorage.getItem(key) !== "true") {
+    const modal = new bootstrap.Modal(
+      document.getElementById("modalNotificaciones")
+    );
     modal.show();
 
-    document.getElementById('btnAceptarNotificaciones')?.addEventListener('click', async () => {
-      if (Notification.permission === 'denied') {
-        const modalDenegado = new bootstrap.Modal(document.getElementById('modalPermisoDenegado'));
-        modalDenegado.show();
-        return;
-      }
-      const permiso = await Notification.requestPermission();
-      if (permiso === 'granted') {
-        localStorage.setItem('notificaciones_activadas', 'true');
-        // await activarNotificaciones(); // tu función para subscribir
-        // cerrar el modal
-        modal.hide();
-      } else if (permiso === 'denied') {
-        const modalDenegado = new bootstrap.Modal(document.getElementById('modalPermisoDenegado'));
-        modalDenegado.show();
-      }
-    });
-    
+    document
+      .getElementById("btnAceptarNotificaciones")
+      ?.addEventListener("click", async () => {
+        if (Notification.permission === "denied") {
+          const modalDenegado = new bootstrap.Modal(
+            document.getElementById("modalPermisoDenegado")
+          );
+          modalDenegado.show();
+          return;
+        }
+        const permiso = await Notification.requestPermission();
+        if (permiso === "granted") {
+          localStorage.setItem("notificaciones_activadas", "true");
+          // await activarNotificaciones(); // tu función para subscribir
+          // cerrar el modal
+          modal.hide();
+        } else if (permiso === "denied") {
+          const modalDenegado = new bootstrap.Modal(
+            document.getElementById("modalPermisoDenegado")
+          );
+          modalDenegado.show();
+        }
+      });
   }
 });
 
-function descargarPDF() {
-  const url = "https://codigomarret.online/upload/img/voces-en-acción-pdf-final.pdf";
-
-  // Crear un enlace temporal
-  const link = document.createElement("a");
-  link.href = url;
-  link.download = "voces-en-accion.pdf"; // Nombre sugerido
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
+async function descargarPDF() {
+  const url = "https://codigomarret.online/upload/img/voces-en-acción-bases-actualizado.pdf";
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      console.error("Error al descargar el PDF:", response.statusText);
+      return;
+    }
+    const blob = await response.blob();
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "voces-en-acción-bases-actualizado.pdf"; // Nombre sugerido
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(link.href); // liberar memoria
+    console.log("PDF descargado exitosamente");
+  } catch (error) {
+    console.error("Error al intentar descargar:", error);
+  }
 }
