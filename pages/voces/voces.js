@@ -167,3 +167,15 @@ document.addEventListener('DOMContentLoaded', function () {
     
   }
 });
+
+function descargarPDF() {
+  const url = "https://codigomarret.online/upload/img/voces-en-acción-pdf-final.pdf";
+
+  // Crear un enlace temporal
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = "voces-en-accion.pdf"; // Nombre sugerido
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
