@@ -218,5 +218,28 @@
         "url": "https://www.linkedin.com/in/julissas"
       }
     ]
+  },
+  {
+    "id": 13,
+    "nombre": "Mónica Patricia Estupiñán",
+    "descripcion": "Directora editorial de Revista Vistazo, donde trabaja desde 1985. Con dos maestrías de Filosofía y Ciencias Políticas en la Universidad de Kansas, una maestría en Escritura Creativa de la Universidad de Salamanca, ha sido reportera de diario El Comercio, Editora gerente y editora general de Revista Vistazo, corresponsal de Business Latin America y el Chicago Tribune.  Ha ganado cinco premios Mantilla de periodismo y de diario El País de España. Ha sido miembro del Observatorio de la política Fiscal, el Grupo Carter y la Comisión Fulbright",
+    "cargo": "Directora editorial",
+    "link": "/periodistas/-/meta/patricia-estupinan",
+    "foto": "https://www.vistazo.com/binrepository/270x180/0c0/250d180/none/12727/SRFT/gtbsp97wkaehhcw_2242344_20250609183836.jpg",
+    "redes": []
+  },
+  {
+    "id": 14,
+    "nombre": "Jorge Cavagnaro Argüello",
+    "descripcion": "Inició en el periodismo en 2005, en Diario El Comercio y en el semanario Líderes. En 2011 ingresó al Grupo Vistazo y actualmente es Editor General de Revista Vistazo y de Revista América Economía. Tiene una maestría en Dirección de Comunicación Empresarial e Institucional, y un diplomado en Planificación Estratégica. Se especializa en los contenidos relacionados al sector empresarial y económico. Segundo lugar en premios Mantilla 2014.",
+    "cargo": "Directora editorial",
+    "link": "/periodistas/-/meta/patricia-estupinan",
+    "foto": "https://www.vistazo.com/binrepository/270x180/0c0/250d180/none/12727/SRFT/gtbsp97wkaehhcw_2242344_20250609183836.jpg",
+    "redes": [
+      {
+        "name": "Linkedin",
+        "url": "https://www.linkedin.com/in/jorge-cavagnaro/"
+      }
+    ]
   }
 ]
