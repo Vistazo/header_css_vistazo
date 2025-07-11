@@ -9,19 +9,19 @@
     "redes": [
       {
         "name": "Facebook",
-        "url": "facebook.com/dario.marret.dev"
+        "url": "https://www.facebook.com/dario.marret.dev"
       },
       {
         "name": "Instagram",
-        "url": "instagram.com/dario.codes"
+        "url": "https://www.instagram.com/dario.codes"
       },
       {
         "name": "Linkedin",
-        "url": "linkedin.com/in/dariomarret"
+        "url": "https://www.linkedin.com/in/dariomarret"
       },
       {
         "name": "X",
-        "url": "twitter.com/dariomarret_ec"
+        "url": "https://www.twitter.com/dariomarret_ec"
       }
     ]
   },
