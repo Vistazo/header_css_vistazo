@@ -93,9 +93,14 @@
   font-size: 1rem;
   color: #444;
   font-family: 'Crete Round', serif;
-  margin-top: 2%;
+  margin-top: 20px;
   line-height: 1.1rem;
   max-width: 400px;
+  font-weight: 500;
+}
+
+.ficha_author .bloqueApertura {
+  margin-bottom: 20px;
 }
 
 .contenido-autores .card {
@@ -156,9 +161,17 @@
   margin-top: 0.8rem;
 }
 
+.categoryGroup {
+  display: block;
+}
+
 @media (max-width: 767px) {
   .ficha_author .bloqueDetalle {
     flex-direction: column;
+  }
+
+  .ficha_author .bloqueDetalle .name-au {
+    font-size: 28px;
   }
 
   .ficha_author .bloqueDetalle .imagen-au {
