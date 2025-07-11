@@ -79,12 +79,23 @@
   letter-spacing: -0.5px;
 }
 
+.ficha_author .bloqueDetalle .name-au {
+  font-size: 38px;
+}
+
+.ficha_author .bloqueDetalle .imagen-au img {
+  width: auto;
+  height: 250px;
+  object-fit: cover;
+}
+
 .ficha_author .bloqueDetalle .resumen-au {
   font-size: 1rem;
   color: #444;
   font-family: 'Crete Round', serif;
   margin-top: 2%;
   line-height: 1.1rem;
+  max-width: 400px;
 }
 
 .contenido-autores .card {
@@ -143,4 +154,18 @@
   font-size: 0.9rem;
   display: block;
   margin-top: 0.8rem;
+}
+
+@media (max-width: 767px) {
+  .ficha_author .bloqueDetalle {
+    flex-direction: column;
+  }
+
+  .ficha_author .bloqueDetalle .imagen-au {
+    text-align: center;
+  }
+
+  .ficha_author .bloqueApertura {
+    text-align: center;
+  }
 }
