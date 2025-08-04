@@ -577,3 +577,28 @@ if (document.getElementById("unico_6") === null) {
     window.location.href = "https://www.instagram.com/reel/DJAF19npj7b/?igsh=MTBqM2c3dHFkcmRieQ%3D%3D"; // Cambia aquí la nueva URL
   });
 }
+
+// pie de imageb
+document.addEventListener("DOMContentLoaded", function () {
+  const figures = document.querySelectorAll("figure.contentMedia.art-img");
+  const style = document.createElement("style");
+  style.innerHTML = `
+    .cutline-byline {
+      position: static !important;
+      background: #323232 !important;
+      padding-top: 0.5em;
+      color: #fff !important;
+      font-size: 0.9em;
+    }
+  `;
+  document.head.appendChild(style);
+  
+  figures.forEach((figure) => {
+    const cropDiv = figure.querySelector('div[frame="crop_768xfree"]');
+    const caption = figure.querySelector(".cutline-byline");
+
+    if (cropDiv && caption) {
+      cropDiv.insertAdjacentElement("afterend", caption);
+    }
+  });
+});
