@@ -294,15 +294,15 @@ function cambiarImagenPautaHome() {
   var enlace = document.querySelector(".IMG_PAUTAS_DIGITALES .multimedia a");
   var imagen = document.querySelector(".IMG_PAUTAS_DIGITALES .multimedia img");
   var imagenesDesktop = [
-    // { src: "https://codigomarret.online/upload/img/banner-mascotas-1920x200.jpg", href: "https://www.vistazo.com/mascotas" },
+    { src: "https://codigomarret.online/upload/img/banner-mascotas-1920x200.jpg", href: "https://www.vistazo.com/mascotas" },
     // { src: "https://codigomarret.online/upload/img/voces_escritorio.png", href: "https://www.vistazo.com/concurso_ecuador_voces_en_accion" },
-    { src: "https://codigomarret.online/upload/img/9_08_2025.jpeg", href: "https://v.vistazo.com/ODSleadersSummitPaginaWebVistazo" },
+    // { src: "https://codigomarret.online/upload/img/9_08_2025.jpeg", href: "https://v.vistazo.com/ODSleadersSummitPaginaWebVistazo" },
     // Agrega más objetos para más imágenes y enlaces
   ];
   var imagenesMovil = [
-    // { src: "https://codigomarret.online/upload/img/banner-mascotas-400x100.jpg", href: "https://www.vistazo.com/mascotas" },
+    { src: "https://codigomarret.online/upload/img/banner-mascotas-400x100.jpg", href: "https://www.vistazo.com/mascotas" },
     // { src: "https://codigomarret.online/upload/img/voces_movil.png", href: "https://www.vistazo.com/concurso_ecuador_voces_en_accion" },
-    { src: "https://codigomarret.online/upload/img/9_08_2025.jpeg", href: "https://v.vistazo.com/ODSleadersSummitPaginaWebVistazo" },
+    // { src: "https://codigomarret.online/upload/img/9_08_2025.jpeg", href: "https://v.vistazo.com/ODSleadersSummitPaginaWebVistazo" },
     // Agrega más objetos para más imágenes y enlaces
   ];
   let indiceActual = 0;
