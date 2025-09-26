@@ -1,0 +1,821 @@
+.header_contain_dm{
+    background-color: #000;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid white;
+    /* height: 60px; */
+}
+
+/* .header_contain_dm .content{
+    background-color: #000;
+    margin-top: 60px;
+} */
+
+.iframe-container iframe[src="https://vzheaders.netlify.app/videoteca/videoteca.html"]{
+    height: 800px !important;
+}
+
+@media (max-width: 600px) {
+    .iframe-container iframe[src="https://vzheaders.netlify.app/videoteca/videoteca.html"] {
+      width: 100%;
+      height: 550px !important;
+    }
+}
+
+
+.menu_header_bm{
+   margin: 0px;
+   display: none;
+}
+.header_suscribete_bm{
+    display: none;
+}
+
+/* Estilo base para el navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    color: white;
+    margin: 0px;
+    height: 58px;
+    padding: 0px 0px 0px 0px;
+}
+
+.navbar .logo {
+    height: 25px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: space-between; /* Distribuir espacio uniformemente */
+    align-items: center; /* Asegura que todos los elementos estén alineados verticalmente */
+}
+
+.nav-links li {
+    margin: 0 10px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.menu_text_principal {
+    color: white;
+    font-weight: bold;
+}
+li a.menu_text_principal{
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    color: #f00; /* Cambia el color de hover según tu diseño */
+}
+
+/* Estilos generales para la sección cta */
+.cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+/* Estilos para el botón de Login */
+.login a.lg_bm {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    color: black;
+    padding: 3px 8px;
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 50px;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    margin-right: 5px;
+}
+
+.login img {
+    margin-right: 5px;
+}
+
+/* Estilos para el menú hamburguesa */
+.btn_menu {
+    position: relative; /* Para que el menú se posicione en relación con el contenedor */
+}
+.btn_menu {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.hamburg_bm svg, .hamburg_bm_lupin svg {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.hamburg_bm svg:hover, .hamburg_bm_lupin svg:hover {
+    transform: scale(1.1); /* Efecto hover para agrandar un poco el ícono */
+    color: #f00; /* Cambia el color a rojo al hacer hover */
+}
+
+
+.subscribe-btn{
+    background-color: white;
+    padding: 15px 15px 20px 20px;
+    height: auto;
+    color: black;
+    font-family: 'Crete Round',serif;
+    clip-path: polygon(31.5% -25.13%,96.5% -24%,95.81% 115.07%,0% 100%);
+    font-size: 18px;
+    cursor: pointer;
+    text-decoration: none;
+    height: 58px;
+    
+}
+
+.linearoja_subcribe{
+    background-color: #f00;
+    height: 5px;
+    width: 100%;
+    z-index: 1;
+    /* margin-top: 1px; */
+}
+
+@media (max-width: 451px) {
+    .login{
+        display: none;
+    }
+    
+}
+
+/* 
+    solo se veran en pantallas mayores a 1024px
+ */
+@media (max-width: 800px) {
+    .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .hogar-text{
+        display: none;
+    }
+    
+}
+/* 801px a 1023px */
+@media (min-width: 801px) and (max-width: 1023px) {
+    .nav-links{
+        display: none;
+    }
+}
+
+.navbar .logo {
+    max-width: 150px;
+    width: 100%;
+    height: 32px;
+}
+
+.cta img {
+    max-height: 40px;
+}
+
+.cta .login-btn {
+    padding: 5px 15px;
+    font-size: 14px;
+}
+
+.navbar {
+    position: relative;
+    z-index: 10; /* Asegura que esté siempre encima de otros elementos */
+}
+
+.cta {
+    z-index: 9; /* Un poco detrás del logo si es necesario */
+}
+
+
+/* Submenú */
+.subnav {
+    background-color: #000;
+    padding: 10px;
+    text-align: center;
+    height: 30px;
+    border-top: 1px solid #EEE;
+    width: 100%;
+    position: absolute;
+    height: 56px;
+    border-radius: 0 0 5px 5px;
+}
+
+.subnav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.subnav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.subnav ul li a {
+    text-decoration: none;
+}
+
+.menu_text_principal{
+    font-family: 'YourFontHere', sans-serif;
+    font-weight: bolder;
+    font-size: large;
+    text-decoration: none;
+}
+.menu_text_principal_estadio { 
+    color: #f00; 
+    font-family: 'YourFontHere', sans-serif;
+    font-weight: bolder;
+    font-size: large;
+    text-decoration: none;
+}
+.menu_text_principal_estadio:hover { 
+    color: white !important;
+}
+/* Si es menor o igual a 1024 el tamano de la letra tiene que cambar */
+@media (max-width: 1024px) {
+    .menu_text_principal{
+        font-size: small;
+    }
+    .logo {
+        height: 10px;
+    }
+}
+
+/* Si es menor o igual a 768 el tamano de la letra tiene que cambar */
+@media (max-width: 768px) {
+    .menu_text_principal{
+        font-size: x-small;
+    }
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #000;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        text-align: center;
+    }
+    
+    .nav-links li {
+        margin: 15px 0;
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .search-icon {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .subnav ul {
+        display: none;
+    }
+
+    .subnav ul.active {
+        display: block;
+    }
+}
+
+/* MEDIDAS RESPOSIVE PARA LOGIN-BTN */
+@media (max-width: 1024px) {
+    /* .btn_menu {
+        margin-top: 10px;
+    } */
+
+    /* .login a.lg_bm {
+        width: 80px !important;
+        text-align: center;
+    } */
+
+    .subscribe-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/*MEDIDAS PARA LA IMAGEN LOGIO*/
+@media (max-width: 1024px) {
+    .logo_rediseno {
+        height: 10px;
+    }
+}
+
+/* HOGAR */
+.hogar-text {
+    font-family: 'YourFontHere', sans-serif; /* Cambia a la fuente que estás utilizando */
+    font-size: 20px; /* Ajusta según el tamaño deseado */
+    font-weight: bold;
+}
+
+.hogar-text-1 {
+    font-family: 'YourFontHere', sans-serif; /* Cambia a la fuente que estás utilizando */
+    font-size: 20px; /* Ajusta según el tamaño deseado */
+    font-weight: bold;
+}
+
+.letter-h, .letter-g, .letter-a, .letter-r {
+    color: white; /* Letras en color blanco */
+}
+
+.letter-o {
+    color: #800080; /* Color morado para la letra O */
+    font-size: 20px; /* Ajusta el tamaño si quieres que sea más grande */
+}
+
+.letter-o::before {
+    color: #800080; /* Color del círculo */
+    display: inline-block;
+    font-size: 20px; /* Tamaño del círculo */
+}
+
+/* HOKAR Si es menor o igual a 1024 el tamano de la letra tiene que cambar */
+@media (max-width: 1024px) {
+    .hogar-text {
+        font-size: large;
+    }
+    .hogar-text-1 {
+        font-size: large;
+    }
+    .letter-h, .letter-g, .letter-a, .letter-r, .letter-o {
+        font-size: large;
+    }
+    .menu_text_principal_estadio{
+        font-size: large;
+    }
+}
+
+/* MENU BURGER */
+/* Estilos para el contenedor del menú hamburguesa */
+.btn_menu {
+    position: relative; /* Para que el menú se posicione en relación con el contenedor */
+}
+
+/* Menú hamburguesa desplegable */
+.menu_burguer_bm {
+    display: none; /* Oculto por defecto */
+    background-color: black;
+    position: absolute;
+    top: 60px; /* Para asegurarse de que aparezca justo debajo del botón */
+    right: 0; /* Alineado a la derecha */
+    width: 150px; /* Ajusta el ancho según sea necesario */
+    padding: 10px;
+    border-radius: 3px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    right: 7%;
+}
+
+.menu_burguer_bm ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu_burguer_bm ul li {
+    margin: 10px 0;
+}
+
+.menu_burguer_bm ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.menu_burguer_bm ul li a:hover {
+    color: #f00; /* Cambia el color en hover */
+}
+
+
+/* BUSCARDOR */
+/* Contenedor para el buscador */
+.search-container {
+    position: relative;
+}
+
+/* Estilos para la caja de búsqueda, inicialmente oculta */
+.basic_search_bm {
+    display: none;
+    position: absolute;
+    top: 60px; /* Ajusta para posicionar debajo de la lupa */
+    right: 0;
+    background-color: white;
+    padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+.basic_search_bm input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.basic_search_bm button {
+    padding: 8px 15px;
+    background-color: #000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.basic_search_bm button:hover {
+    background-color: #f00; /* Cambia a rojo al hacer hover */
+}
+
+/* Hover en el icono de lupa */
+.search-icon:hover {
+    cursor: pointer;
+    color: #f00; /* Cambia de color en hover */
+}
+.header_contain_dm .basic_search_bm {
+    margin-top: 10px;
+    position: absolute;
+    right: 45px;
+    top: 50px;
+    background: #fff;
+    box-shadow: 0 2px 6px rgb(0 0 0 / 18%);
+    border-top: 2px solid #fd0f03;
+    padding: 10px;
+    display: none;
+}
+.basic_search_bm input[type="text"] {
+    width: 235px;
+    height: 25px;
+    margin: 0;
+    border-right: 0;
+    line-height: 17px;
+    border-color: #eaeaea !important;
+    font-size: 12px;
+    color: #444;
+    border: 1px solid #e1e1e1;
+    max-width: 100%;
+    padding: 3px 9px;
+    outline: none;
+}
+
+.basic_search_bm input[type=submit] {
+    height: 32px;
+    min-width: 67px;
+    line-height: 17px;
+    padding: 7px 15px 8px;
+    text-shadow: none;
+    vertical-align: top;
+    right: 20px;
+    margin: 0 !important;
+    -webkit-transition: background-color .4s;
+    -moz-transition: background-color .4s;
+    -o-transition: background-color .4s;
+    transition: background-color .4s;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    background-color: #222;
+    border-radius: 0;
+    color: #fff;
+    border: none;
+    font-weight: normal;
+    cursor: pointer;
+    /* darle un placeholder */
+    font-size: 12px;
+}
+
+.basic_search_bm input[type=submit]:hover {
+    background-color: #000
+}
+
+
+/* SUBMENU */
+.subnav{
+    /* top: 60px; */
+    border-top: #ddd 1px solid;
+    display: none;
+    position: relative;
+}
+.subnav .actualidad_submenu{
+    display: none;
+    top: 60px;
+    right: 0;
+    background-color: #000;
+    padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    z-index: 1000;
+}
+.subnav .politica_submenu{
+    display: none;
+    top: 60px;
+    right: 0;
+    background-color: #000;
+    padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    z-index: 1000;
+}
+.subnav .estilo_vida_submenu{
+    display: none;
+    top: 60px;
+    right: 0;
+    background-color: #000;
+    padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    z-index: 1000;
+}
+.subnav .estadio_submenu{
+    display: none;
+    top: 60px;
+    right: 0;
+    background-color: #000;
+    padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    z-index: 1000;
+}
+.subnav .portafolio_submenu{
+    display: none;
+    top: 60px;
+    right: 0;
+    background-color: #000;
+    padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    z-index: 1000;
+}
+
+.subnav .hogar_submenu{
+    display: none;
+    top: 60px;
+    right: 0;
+    background-color: #000;
+    padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    z-index: 1000;
+}
+
+.subnav li a{
+    font-family: 'YourFontHere', sans-serif;
+    text-decoration: none;
+    color: white;
+}
+
+.actualidad_submenu li a:hover{
+    color: #f00;
+}
+
+
+/* Estilos generales */
+.IMG_PAUTAS_DIGITALES .multimedia img {
+    width: 100%;
+    height: auto; /* Altura para escritorio */
+}
+
+/* NOMBRE DE LA SECCION */
+.template-infinity .article-section .section{
+    background: #000;
+    padding: 2px 5px;
+    border-radius: 3px;
+    color: #FFF;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* NOMBRE DE LA SECCION CON HOVER */
+.template-infinity .article-section .section:hover{
+    background: #fd0f03;
+    color: #FFF;
+}
+/* SUBTITULOS */
+.subheadline.artit.font-2.medium{
+    font-size: large;
+}
+
+
+/* Bully */
+.bulletvistazo {
+    list-style: none; /* Remover el estilo de lista por defecto */
+    position: relative; /* Necesario para posicionar el guion debajo */
+    padding-left: 35px; /* Espacio para el círculo */
+    padding-bottom: 10px;
+}
+
+.bulletvistazo::before {
+    content: "◯"; /* El círculo */
+    position: absolute;
+    left: 15px; /* Posiciona el círculo al inicio del ítem */
+    top: 0;
+    font-size: 9px;
+    color: #000; /* Color del círculo */
+}
+
+.bulletvistazo::after {
+    content: ""; /* Crear un guion */
+    position: absolute;
+    left: 15px; /* Ajustar según sea necesario */
+    top: 12px; /* Ajustar para colocar el guion debajo del círculo */
+    width: 9px; /* Longitud del guion */
+    height: 2px; /* Grosor del guion */
+    background-color: #fd0f03; /* Color azul */
+}
+  
+
+/* caja nota relaciona */
+.notas_relacionadass{
+    display: inline;
+    margin: 15px;
+}
+.relatedContent{
+    padding: 15px;
+    background: #f0f0f0;
+    border-radius: 3px 3px 3px 3px;
+}
+/* tamano de la letra en relacionadas */
+.notas_relacionadass .rel h2{
+    font-size: 1.2em;
+}
+
+.teaser-related-list article {
+    display: flex;
+    align-items: center; /* Alinea el contenido verticalmente al centro */
+    margin-bottom: 15px; /* Espacio entre artículos */
+}
+
+/* Estilo del enlace */
+.teaser-related-list article a {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #000; /* Color del texto */
+    text-decoration: underline; /* Subrayado solo para el texto */
+    text-decoration-color: red; /* Color del subrayado */
+    text-decoration-thickness: 2px; /* Grosor del subrayado */
+    max-width: 100%;
+    word-wrap: break-word; /* Permitir que el texto se divida en varias líneas si es necesario */
+    display: inline-flex;
+    align-items: center; /* Asegura que el texto esté alineado verticalmente */
+    padding-left: 15px; /* No necesitamos padding ya que usamos flexbox */
+}
+
+.teaser-related-list article a:hover {
+    color: #3eadf4; /* Cambia el color del texto al pasar el cursor por encima */
+}
+
+.teaser-related-list article a h2 {
+    font-size: 1.2em;
+}
+
+/* barra progress */
+.progress-bardesk {
+    position: fixed;
+    top: 60px; /* Justo debajo de la cabecera */
+    left: 0;
+    width: 0%;
+    height: 5px;
+    background-color: red;
+    z-index: 1001;
+}
+
+/* TITULOS DE SESSIONES */
+.head_title .title{
+    padding-top: 6px !important;
+    padding-left: 10% !important;
+    padding-right: 10% !important;
+}
+
+@media (max-width: 767px) {
+    .head_title .title {
+        height: 25px;
+        font-size: 1rem;
+        padding-top: 0px !important;
+    }
+}
+
+.head_title .title.hogar a>div{
+    background-image: none;
+}
+
+/* ConteSubrayado */
+.contenido_subrayado{
+    text-decoration: underline #fd0f03;
+}
+p u{
+    /* 
+    para nevagadores iphone tambien se puede usar
+    */
+    -webkit-text-decoration-color: #fd0f03;
+    text-decoration-color: #fd0f03;
+}
+
+/*
+    .google_news {
+        display: none;
+    }
+*/
+
+.google_news_img {
+    width: -webkit-fill-available;
+}
+
+
+.Citavistazo {
+    border-left: 4px solid #fd0f03;
+    padding-left: 5px;
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.footer_revistas_mobile{
+    display: none;
+}
+.footer_revistas{
+    display: none;
+}
+
+.IMG_PAUTAS_DIGITALES .multimedia img {
+    transition: opacity 1s ease-in-out; /* Transición suave de opacidad */
+    opacity: 0; /* Inicia con opacidad cero */
+}
+
+
+/* EN VIVO */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.border_envivo {
+    animation: pulse 2s infinite;
+    
+}
+
+.sect-94669cae3c35fd0dc9be5d5694e4d3e9{
+    display: none;
+}
+
+#col-10-80-10-top-three-col{
+    display: flex;
+    justify-content: end;
+}
+
+.top1_center_publicidad_notas{
+    display: none;
+}
+
+
+.menu_secc a[href*="/drogas-en-ecuador"] {
+    display: none;
+}
+
+.TITULO_SUBTITULO_MOVIL{
+    margin-top: 60px;
+}
+
+.full-width-override {
+    width: 100vw !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .html_post iframe {
+    width: 100%;
+  }
