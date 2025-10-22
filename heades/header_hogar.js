@@ -94,6 +94,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 link.target = '_blank';
                 element.textContent = text.replace(url, ''); // Remove the URL text
                 element.appendChild(link); // Append the clickable link
+                //Ajustar estilo si es necesario
+                link.style.color = '#0000EE'; // Color azul típico de enlaces
+                link.style.textDecoration = 'underline';
             }
         });
     } catch (error) {
