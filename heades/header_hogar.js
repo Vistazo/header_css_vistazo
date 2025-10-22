@@ -77,3 +77,26 @@ document.addEventListener("DOMContentLoaded", function() {
         window.location.href = HomeHogar;
     }
 });
+
+// cuando se defecte esto Foto crédito: https://theicebath.com.au el clink volverlo clickable
+// y esp esta aqui <span class="cutline-text" tempiter="">Foto crédito: https://theicebath.com.au</span>
+document.addEventListener("DOMContentLoaded", function() {
+    try {
+        const cutlineElements = document.querySelectorAll('.cutline-text');
+        cutlineElements.forEach(element => {
+            const text = element.textContent;
+            const urlMatch = text.match(/(https?:\/\/[^\s]+)/);
+            if (urlMatch) {
+                const url = urlMatch[0];
+                const link = document.createElement('a');
+                link.href = url;
+                link.textContent = url;
+                link.target = '_blank';
+                element.textContent = text.replace(url, ''); // Remove the URL text
+                element.appendChild(link); // Append the clickable link
+            }
+        });
+    } catch (error) {
+        console.error('Error al hacer el enlace clickable:', error);
+    }
+});
