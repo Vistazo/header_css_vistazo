@@ -1,8 +1,8 @@
 (function(){
   'use strict';
-
-  const LOG = false;
+  const LOG = false; // true para debug
   const TARGET_CLASS = 'IMG_INF1_INF2_TIT_CARRUSEL';
+  const ALT_CLASS = 'IMG_INF1_INF2_TIT'; // clase existente en tu HTML
   const AUTOPLAY_MS = 4000;
   const MIN_HOST_WIDTH = 500;
   const MAX_WAIT_MS = 3000;
@@ -40,7 +40,7 @@
   }
 
   function findItems(){
-    return Array.from(document.querySelectorAll('.' + TARGET_CLASS));
+    return Array.from(document.querySelectorAll('.' + TARGET_CLASS + ', .' + ALT_CLASS));
   }
 
   function createCarousel(items){
@@ -149,12 +149,17 @@
 /** limpiar duplicados dentro del article */
 (function(){
   const TARGET_CLASS = 'IMG_INF1_INF2_TIT_CARRUSEL';
+  const ALT_CLASS = 'IMG_INF1_INF2_TIT';
   document.querySelectorAll('article').forEach(article => {
-    if(article.querySelector('.' + TARGET_CLASS)){
-      article.querySelectorAll('style, script').forEach(n => {
-        const t = n.innerText || '';
-        if(t.includes('IMG_INF1_INF2_TIT_CARRUSEL')) n.remove();
+    if(article.querySelector('.' + TARGET_CLASS) || article.querySelector('.' + ALT_CLASS)){
+      // eliminar style/script que contengan 'bmc-carousel' o similares
+      article.querySelectorAll('style, script').forEach(node => {
+        const text = node.innerText || '';
+        if(text.includes('bmc-carousel') || text.includes('IMG_INF1_INF2_TIT') || text.includes('IMG_INF1_INF2_TIT_CARRUSEL')){
+          node.remove();
+        }
       });
     }
   });
 })();
+
