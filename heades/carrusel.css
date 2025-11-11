@@ -25,9 +25,9 @@
 .bmc-carousel-item img._loaded {
   opacity: 1;
 }
-article.element.full-access.norestricted {
+/* article.element.full-access.norestricted {
     width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box;
     display: block;
-}
+} */
