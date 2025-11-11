@@ -15,3 +15,13 @@
   .bmc-carousel-nav button{ height:34px; width:34px; font-size:18px; }
 }
 .bmc-dragging { cursor: grabbing; cursor: -webkit-grabbing; user-select:none; }
+
+/* ✅ NUEVO: fade-in cuando carga la imagen lazy */
+.bmc-carousel-item img {
+  opacity: 0;
+  transition: opacity .35s ease-in-out;
+}
+.bmc-carousel-item img[data-_lazy-loaded="1"],
+.bmc-carousel-item img._loaded {
+  opacity: 1;
+}
