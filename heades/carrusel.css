@@ -1,0 +1,17 @@
+/* bmc-carousel: styles aplican SOLO a .IMG_INF1_INF2_TIT_CARRUSEL transformados */
+.bmc-carousel-wrapper { position: relative; width: 100%; box-sizing: border-box; margin: 0; padding: 0; z-index: 2200; }
+.bmc-carousel-fw { position: relative; width: 100vw !important; left: 50%; transform: translateX(-50%); box-sizing: border-box; padding: 0; margin: 0; z-index: 2200; }
+.bmc-carousel-nav { position: absolute; top: 50%; left: 0; right: 0; transform: translateY(-50%); z-index: 2220; display:flex; justify-content:space-between; pointer-events:none; padding:0 8px; }
+.bmc-carousel-nav button { pointer-events: all; background: rgba(255,255,255,0.98); border:1px solid rgba(0,0,0,0.08); height:38px; width:38px; border-radius:8px; display:inline-flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 6px 18px rgba(0,0,0,0.08); font-size:20px; line-height:1; }
+.bmc-carousel-track { display:flex; align-items:flex-start; gap:18px; overflow-x:auto; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; width:100%; box-sizing:border-box; scroll-behavior:smooth; padding:12px 56px; }
+.bmc-carousel-track.bmc-fw { padding-left:0; padding-right:0; }
+.bmc-carousel-item { display:block !important; min-width:300px; max-width:420px; flex:0 0 auto !important; scroll-snap-align:start; box-sizing:border-box; margin:0; }
+.bmc-carousel-item img { max-width:100%; height:auto; display:block; }
+.bmc-carousel-track::-webkit-scrollbar { height:8px; }
+.bmc-carousel-track::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.14); border-radius:8px; }
+@media (max-width:640px){
+  .bmc-carousel-track{ gap:12px; }
+  .bmc-carousel-item { min-width:260px; max-width:320px; }
+  .bmc-carousel-nav button{ height:34px; width:34px; font-size:18px; }
+}
+.bmc-dragging { cursor: grabbing; cursor: -webkit-grabbing; user-select:none; }

@@ -97,6 +97,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 //Ajustar estilo si es necesario
                 link.style.color = '#0000EE'; // Color azul típico de enlaces
                 link.style.textDecoration = 'underline';
+                link.style.fontWeight = 'bold'; // Negrita para el enlace
+                link.style.marginLeft = '4px'; // Espacio entre el texto y el enlace
+                
             }
         });
     } catch (error) {
