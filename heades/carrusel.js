@@ -93,14 +93,43 @@
     });
 
     const hostWidth = host.clientWidth || host.getBoundingClientRect().width;
-    if(hostWidth < MIN_HOST_WIDTH){
-      const rect = wrapper.getBoundingClientRect();
+    if (hostWidth < MIN_HOST_WIDTH) {
+      // medimos la posición del host antes de mover nada
+      const hostRect = host.getBoundingClientRect();
+      // añadimos al body para evitar desbordes y sets de ancho completo,
+      // pero posicionamos exactamente donde estaba el host
       document.body.appendChild(wrapper);
       wrapper.classList.add('bmc-carousel-fw');
       track.classList.add('bmc-fw');
-      track.style.paddingLeft = rect.left + 'px';
-      track.style.paddingRight = (window.innerWidth - rect.right) + 'px';
+
+      // establecer posicionamiento absoluto para conservar la ubicación visual
+      wrapper.style.position = 'absolute';
+      // left/top deben incluir scrollY para coordenadas absolutas en la página
+      wrapper.style.left = Math.round(hostRect.left) + 'px';
+      wrapper.style.top = Math.round(hostRect.top + window.scrollY) + 'px';
+      wrapper.style.width = Math.round(hostRect.width) + 'px';
+      wrapper.style.boxSizing = 'border-box';
+      wrapper.style.zIndex = 2200;
+
+      // padding del track para que items no queden pegados al borde
+      const leftOffset = Math.round(hostRect.left);
+      const rightOffset = Math.round(window.innerWidth - (hostRect.left + hostRect.width));
+      track.style.paddingLeft = leftOffset + 'px';
+      track.style.paddingRight = rightOffset + 'px';
+
+      // recalcular en resize/scroll para mantener posición responsiva
+      const recompute = () => {
+        const r = host.getBoundingClientRect();
+        wrapper.style.left = Math.round(r.left) + 'px';
+        wrapper.style.top = Math.round(r.top + window.scrollY) + 'px';
+        wrapper.style.width = Math.round(r.width) + 'px';
+        track.style.paddingLeft = Math.round(r.left) + 'px';
+        track.style.paddingRight = Math.round(window.innerWidth - (r.left + r.width)) + 'px';
+      };
+      window.addEventListener('resize', () => { setTimeout(recompute, 120); });
+      window.addEventListener('scroll', () => { /* smooth update on scroll */ recompute(); });
     }
+
 
     function scrollByStep(dir = 1){
       const firstItem = track.querySelector('.bmc-carousel-item');
