@@ -112,7 +112,9 @@
   cursor: -webkit-grabbing;
   user-select: none;
 }
-
+.grid2.movil {
+    display: none !important;
+}
 /* Responsivo */
 @media (max-width: 640px) {
   .bmc-carousel-track{ gap:12px; }
