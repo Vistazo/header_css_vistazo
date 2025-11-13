@@ -4,7 +4,6 @@
   const LOG = false;
   const TARGET_CLASS = "IMG_INF1_INF2_TIT_CARRUSEL";
   const AUTOPLAY_MS = 4000;
-  const MIN_HOST_WIDTH = 500;
   const MAX_WAIT_MS = 3000;
   const RETRY_INTERVAL = 150;
   const LAZY_THRESHOLD = 0.35;
@@ -63,8 +62,7 @@
     return Array.from(document.querySelectorAll("." + TARGET_CLASS));
   }
 
-  // 🔹 Buscar el ancestro común que contiene a TODOS los ítems,
-  // para que el carrusel use el ancho completo del contenedor (no solo 1 <article>).
+  // Buscar el contenedor que tiene TODOS los items
   function findCommonHost(items) {
     if (!items || items.length === 0) return null;
 
@@ -73,7 +71,6 @@
     while (host && host !== document.body) {
       const count = host.querySelectorAll("." + TARGET_CLASS).length;
       if (count === items.length) {
-        // este host contiene todos los ítems
         return host;
       }
       host = host.parentElement;
@@ -86,14 +83,12 @@
     if (!items || items.length === 0) return;
     if (document.querySelector(".bmc-carousel-wrapper")) return;
 
-    // ⬇️ Ahora el host es el contenedor grande (section.noticias / grid completo)
     const host = findCommonHost(items) || document.body;
 
     const wrapper = document.createElement("div");
     wrapper.className = "bmc-carousel-wrapper";
 
-    // NAV (flechas) – se siguen creando por compatibilidad,
-    // pero se pueden ocultar por CSS con .bmc-carousel-nav { display:none }
+    // NAV (flechas) – se ocultan por CSS, pero se dejan por compatibilidad
     const nav = document.createElement("div");
     nav.className = "bmc-carousel-nav";
 
@@ -117,7 +112,6 @@
     wrapper.appendChild(nav);
     wrapper.appendChild(track);
 
-    // Insertamos el carrusel ANTES del primer ítem dentro del host común
     host.insertBefore(wrapper, items[0].parentElement);
 
     const lazyObserver = createLazyObserver();
@@ -128,7 +122,7 @@
       lazyObserver.observe(item);
     });
 
-    // 🔵 Dots de paginación
+    // Dots de paginación
     const dotsContainer = document.createElement("div");
     dotsContainer.className = "bmc-carousel-dots";
     const dots = [];
@@ -175,21 +169,32 @@
       setActiveDot(idx);
     });
 
+    // Scroll con loop infinito
     function scrollByStep(dir = 1) {
       const firstItem = track.querySelector(".bmc-carousel-item");
       if (!firstItem) return;
 
       const gap = parseInt(getComputedStyle(track).gap || 18, 10);
       const width = firstItem.getBoundingClientRect().width + gap;
-      track.scrollBy({ left: width * dir, behavior: "smooth" });
-      // el listener de scroll actualizará el dot activo
+
+      const maxScroll = track.scrollWidth - track.clientWidth;
+      let newLeft = track.scrollLeft + dir * width;
+
+      if (dir > 0 && newLeft > maxScroll - width / 2) {
+        // llegó (o casi) al final → vuelve al inicio
+        track.scrollTo({ left: 0, behavior: "smooth" });
+      } else if (dir < 0 && newLeft < 0) {
+        // si se va hacia atrás desde el inicio → ir al final
+        track.scrollTo({ left: maxScroll, behavior: "smooth" });
+      } else {
+        track.scrollTo({ left: newLeft, behavior: "smooth" });
+      }
     }
 
-    // Flechas (aunque luego las ocultes por CSS)
     btnPrev.onclick = () => scrollByStep(-1);
     btnNext.onclick = () => scrollByStep(1);
 
-    // Autoplay
+    // Autoplay en loop
     let autoplay = setInterval(() => scrollByStep(1), AUTOPLAY_MS);
     wrapper.addEventListener("mouseenter", () => clearInterval(autoplay));
     wrapper.addEventListener(
