@@ -115,18 +115,9 @@
 
 /* Responsivo */
 @media (max-width: 640px) {
-  .bmc-carousel-track {
-    gap: 12px;
-  }
-  .bmc-carousel-item {
-    min-width: 260px;
-    max-width: 320px;
-  }
-  .bmc-carousel-nav button {
-    height: 34px;
-    width: 34px;
-    font-size: 18px;
-  }
+  .bmc-carousel-track{ gap:12px; }
+  .bmc-carousel-item { min-width:260px; max-width:320px; }
+  .bmc-carousel-nav button{ height:34px; width:34px; font-size:18px; }
 }
 
 /* Dots de paginación ROJOS */
