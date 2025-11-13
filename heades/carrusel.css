@@ -116,6 +116,28 @@
     display: none !important;
 }
 /* Responsivo */
+/* Forzar carrusel a ocupar el ancho completo en móvil */
+@media (max-width: 780px) {
+    .bmc-carousel-wrapper {
+        width: 100vw !important;
+        max-width: 100vw !important;
+        margin-left: 50% !important;
+        transform: translateX(-50%) !important;
+        padding: 0 !important;
+    }
+
+    .bmc-carousel-track {
+        padding: 12px 12px !important;
+    }
+
+    /* Asegurar que no quede dentro de columnas estrechas */
+    .bmc-carousel-wrapper,
+    .bmc-carousel-track,
+    .bmc-carousel-item {
+        box-sizing: border-box !important;
+    }
+}
+
 @media (max-width: 640px) {
   .bmc-carousel-track{ gap:12px; }
   .bmc-carousel-item { min-width:260px; max-width:320px; }
