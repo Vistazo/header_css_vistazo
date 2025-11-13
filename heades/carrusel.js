@@ -60,6 +60,7 @@
     const wrapper = document.createElement('div');
     wrapper.className = 'bmc-carousel-wrapper';
 
+    // NAV (flechas) – se siguen creando pero se ocultarán por CSS
     const nav = document.createElement('div');
     nav.className = 'bmc-carousel-nav';
 
@@ -79,6 +80,7 @@
 
     const track = document.createElement('div');
     track.className = 'bmc-carousel-track';
+
     wrapper.appendChild(nav);
     wrapper.appendChild(track);
 
@@ -92,44 +94,52 @@
       lazyObserver.observe(item);
     });
 
-    // const hostWidth = host.clientWidth || host.getBoundingClientRect().width;
-    // if (hostWidth < MIN_HOST_WIDTH) {
-    //   // medimos la posición del host antes de mover nada
-    //   const hostRect = host.getBoundingClientRect();
-    //   // añadimos al body para evitar desbordes y sets de ancho completo,
-    //   // pero posicionamos exactamente donde estaba el host
-    //   document.body.appendChild(wrapper);
-    //   wrapper.classList.add('bmc-carousel-fw');
-    //   track.classList.add('bmc-fw');
+    // 🟣 Dots de paginación
+    const dotsContainer = document.createElement('div');
+    dotsContainer.className = 'bmc-carousel-dots';
+    const dots = [];
 
-    //   // establecer posicionamiento absoluto para conservar la ubicación visual
-    //   wrapper.style.position = 'absolute';
-    //   // left/top deben incluir scrollY para coordenadas absolutas en la página
-    //   wrapper.style.left = Math.round(hostRect.left) + 'px';
-    //   wrapper.style.top = Math.round(hostRect.top + window.scrollY) + 'px';
-    //   wrapper.style.width = Math.round(hostRect.width) + 'px';
-    //   wrapper.style.boxSizing = 'border-box';
-    //   wrapper.style.zIndex = 2200;
+    items.forEach((item, index) => {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = 'bmc-dot';
+      if (index === 0) dot.classList.add('is-active');
 
-    //   // padding del track para que items no queden pegados al borde
-    //   const leftOffset = Math.round(hostRect.left);
-    //   const rightOffset = Math.round(window.innerWidth - (hostRect.left + hostRect.width));
-    //   track.style.paddingLeft = leftOffset + 'px';
-    //   track.style.paddingRight = rightOffset + 'px';
+      dot.addEventListener('click', () => {
+        const firstItem = track.querySelector('.bmc-carousel-item');
+        if (!firstItem) return;
+        const gap = parseInt(getComputedStyle(track).gap || 18, 10);
+        const width = firstItem.getBoundingClientRect().width + gap;
+        const targetLeft = index * width;
+        track.scrollTo({ left: targetLeft, behavior: 'smooth' });
+      });
 
-    //   // recalcular en resize/scroll para mantener posición responsiva
-    //   const recompute = () => {
-    //     const r = host.getBoundingClientRect();
-    //     wrapper.style.left = Math.round(r.left) + 'px';
-    //     wrapper.style.top = Math.round(r.top + window.scrollY) + 'px';
-    //     wrapper.style.width = Math.round(r.width) + 'px';
-    //     track.style.paddingLeft = Math.round(r.left) + 'px';
-    //     track.style.paddingRight = Math.round(window.innerWidth - (r.left + r.width)) + 'px';
-    //   };
-    //   window.addEventListener('resize', () => { setTimeout(recompute, 120); });
-    //   window.addEventListener('scroll', () => { /* smooth update on scroll */ recompute(); });
-    // }
+      dotsContainer.appendChild(dot);
+      dots.push(dot);
+    });
 
+    wrapper.appendChild(dotsContainer);
+
+    function setActiveDot(idx){
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('is-active', i === idx);
+      });
+    }
+
+    function getCurrentIndex(){
+      const firstItem = track.querySelector('.bmc-carousel-item');
+      if(!firstItem) return 0;
+      const gap = parseInt(getComputedStyle(track).gap || 18, 10);
+      const width = firstItem.getBoundingClientRect().width + gap;
+      if(width <= 0) return 0;
+      return Math.round(track.scrollLeft / width);
+    }
+
+    // Actualizar dots cuando hay scroll manual
+    track.addEventListener('scroll', () => {
+      const idx = getCurrentIndex();
+      setActiveDot(idx);
+    });
 
     function scrollByStep(dir = 1){
       const firstItem = track.querySelector('.bmc-carousel-item');
@@ -138,11 +148,14 @@
       const gap = parseInt(getComputedStyle(track).gap || 18, 10);
       const width = firstItem.getBoundingClientRect().width + gap;
       track.scrollBy({ left: width * dir, behavior: 'smooth' });
+      // El listener de scroll actualizará el dot activo
     }
 
+    // Flechas siguen funcionando si las llamas por JS (pero estarán ocultas visualmente)
     btnPrev.onclick = () => scrollByStep(-1);
     btnNext.onclick = () => scrollByStep(1);
 
+    // Autoplay
     let autoplay = setInterval(()=> scrollByStep(1), AUTOPLAY_MS);
     wrapper.addEventListener('mouseenter', ()=> clearInterval(autoplay));
     wrapper.addEventListener('mouseleave', ()=> autoplay = setInterval(()=> scrollByStep(1), AUTOPLAY_MS));

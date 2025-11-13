@@ -31,3 +31,33 @@
     box-sizing: border-box;
     display: block;
 } */
+/* Ocultar totalmente las flechas del carrusel */
+.bmc-carousel-nav {
+  display: none !important;
+}
+
+/* Dots de paginación del carrusel */
+.bmc-carousel-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 0 12px;
+}
+
+.bmc-carousel-dots .bmc-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  border: 0;
+  background: rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  transition: all 0.25s ease;
+}
+
+.bmc-carousel-dots .bmc-dot.is-active {
+  width: 18px;
+  background: rgba(0, 0, 0, 0.75);
+}
