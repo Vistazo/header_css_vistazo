@@ -138,8 +138,10 @@
         if (!firstItem) return;
         const gap = parseInt(getComputedStyle(track).gap || 18, 10);
         const width = firstItem.getBoundingClientRect().width + gap;
-        const targetLeft = index * width;
+        currentIndex = index; // sincronizar índice
+        const targetLeft = currentIndex * width;
         track.scrollTo({ left: targetLeft, behavior: "smooth" });
+        setActiveDot(currentIndex);
       });
 
       dotsContainer.appendChild(dot);
@@ -147,6 +149,8 @@
     });
 
     wrapper.appendChild(dotsContainer);
+
+    let currentIndex = 0; // 👉 índice del ítem “principal”
 
     function setActiveDot(idx) {
       dots.forEach((dot, i) => {
@@ -163,13 +167,14 @@
       return Math.round(track.scrollLeft / width);
     }
 
-    // Actualizar dots cuando hay scroll manual
+    // Actualizar índice y dots cuando hay scroll manual
     track.addEventListener("scroll", () => {
       const idx = getCurrentIndex();
+      currentIndex = idx;
       setActiveDot(idx);
     });
 
-    // Scroll con loop infinito
+    // Scroll controlado por índice (loop perfecto)
     function scrollByStep(dir = 1) {
       const firstItem = track.querySelector(".bmc-carousel-item");
       if (!firstItem) return;
@@ -177,24 +182,19 @@
       const gap = parseInt(getComputedStyle(track).gap || 18, 10);
       const width = firstItem.getBoundingClientRect().width + gap;
 
-      const maxScroll = track.scrollWidth - track.clientWidth;
-      let newLeft = track.scrollLeft + dir * width;
+      currentIndex += dir;
+      if (currentIndex >= items.length) currentIndex = 0;
+      if (currentIndex < 0) currentIndex = items.length - 1;
 
-      if (dir > 0 && newLeft > maxScroll - width / 2) {
-        // llegó (o casi) al final → vuelve al inicio
-        track.scrollTo({ left: 0, behavior: "smooth" });
-      } else if (dir < 0 && newLeft < 0) {
-        // si se va hacia atrás desde el inicio → ir al final
-        track.scrollTo({ left: maxScroll, behavior: "smooth" });
-      } else {
-        track.scrollTo({ left: newLeft, behavior: "smooth" });
-      }
+      const targetLeft = currentIndex * width;
+      track.scrollTo({ left: targetLeft, behavior: "smooth" });
+      setActiveDot(currentIndex);
     }
 
     btnPrev.onclick = () => scrollByStep(-1);
     btnNext.onclick = () => scrollByStep(1);
 
-    // Autoplay en loop
+    // Autoplay en loop (usa el currentIndex, así pasa por TODOS los items)
     let autoplay = setInterval(() => scrollByStep(1), AUTOPLAY_MS);
     wrapper.addEventListener("mouseenter", () => clearInterval(autoplay));
     wrapper.addEventListener(
