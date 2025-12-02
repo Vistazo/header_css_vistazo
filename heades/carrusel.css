@@ -112,9 +112,9 @@
   cursor: -webkit-grabbing;
   user-select: none;
 }
-.grid2.movil {
-    display: none !important;
-}
+/* .grid2.movil {
+  display: none !important;
+} */
 /* Responsivo */
 /* Forzar carrusel a ocupar el ancho completo en móvil */
 @media (max-width: 780px) {
