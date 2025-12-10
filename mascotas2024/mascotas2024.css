@@ -905,9 +905,36 @@ FIN - AMPLIADA
 }
 
 .Citavistazo {
-  border-left: 4px solid #fd0f03;
+  border-left: 4px solid #9a4fc7;
   padding-left: 5px;
   font-weight: bold;
   font-style: italic;
   margin-bottom: 10px;
 }
+
+.bulletvistazo {
+  list-style: none; /* Remover el estilo de lista por defecto */
+  position: relative; /* Necesario para posicionar el guion debajo */
+  padding-left: 35px; /* Espacio para el círculo */
+  padding-bottom: 10px;
+}
+
+.bulletvistazo::before {
+  content: "◯"; /* El círculo */
+  position: absolute;
+  left: 15px; /* Posiciona el círculo al inicio del ítem */
+  top: 0;
+  font-size: 9px;
+  color: #000; /* Color del círculo */
+}
+
+.bulletvistazo::after {
+  content: ""; /* Crear un guion */
+  position: absolute;
+  left: 15px; /* Ajustar según sea necesario */
+  top: 12px; /* Ajustar para colocar el guion debajo del círculo */
+  width: 9px; /* Longitud del guion */
+  height: 2px; /* Grosor del guion */
+  background-color: #fd0f03; /* Color azul */
+}
+  
