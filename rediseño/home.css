@@ -1,0 +1,13 @@
+/* APERTURA */
+
+.apertura-principal .media_block {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.apertura-principal .media_block>* {
+    flex: 1 1 300px;
+}
+
+
