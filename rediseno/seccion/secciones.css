@@ -1,0 +1,365 @@
+:root {
+    --gray: #D4D4D4;
+    --red: #CC1114;
+}
+
+/* ============================================================
+      NOTA PRINCIPAL
+   ============================================================ */
+.principal_notas .sect-date,
+.listado_notas .sect-date,
+.noticias_list .sect-date{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+.principal_notas .sect-date h3.article-section,
+.listado_notas .sect-date h3.article-section,
+.noticias_list .sect-date h3.article-section {
+  display: inline-flex;
+  align-items: center;
+  margin: 0;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1;
+}
+.principal_notas .sect-date h3.article-section a.section,
+.listado_notas .sect-date h3.article-section a.section,
+.noticias_list .sect-date h3.article-section a.section {
+  display: inline-block;
+  background-color: #f0f0f0;
+  color: #333333 !important;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-decoration: none !important;
+  padding: 2px 8px;
+  border-radius: 2px;
+  line-height: 20px;
+  font-family: "Geist Mono", monospace;
+}
+/* Punto separador rojo */
+.principal_notas .sect-date h3.article-section::after,
+.listado_notas .sect-date h3.article-section::after,
+.noticias_list .sect-date h3.article-section::after {
+  content: "•";
+  color: #C8102E;
+  font-size: 14px;
+  margin-left: 6px;
+  font-weight: 700;
+}
+.principal_notas .inf2 {
+  display: inline-flex;
+  align-items: center;
+  margin: 0;
+}
+.principal_notas .inf2 ul {
+  display: inline-flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 8px;
+}
+.principal_notas .inf2 ul li {
+  font-size: 11px;
+  color: #888888;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+.principal_notas .inf2 ul li a {
+  color: #888888 !important;
+  text-decoration: none !important;
+  font-size: 11px;
+}
+
+/* Título del artículo */
+.principal_notas .headline {
+  margin: 0 0 6px 0;
+}
+.principal_notas .headline a {
+  text-decoration: none !important;
+  color: inherit;
+}
+.principal_notas .headline h2 {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 10px 0 6px 0;
+  color: #1a1a1a !important;
+}
+/* Texto destacado (priority-content) en rojo */
+/*.principal_notas .headline h2 .priority-content,
+.principal_notas .headline .priority-content {
+  color: #C8102E !important;
+}*/
+
+/* Solo la primera línea visual en rojo */
+.principal_notas .headline h2::first-line {
+  color: #C8102E;
+}
+.principal_notas .autor-nombre,
+.listado_notas .autor-nombre{
+  display: none;
+}
+
+/* Descripcion */
+.principal_notas .subheadline {
+  margin: 0;
+}
+.principal_notas .subheadline h3,
+.principal_notas .subheadline p {
+  font-size: 13px;
+  color: #555555;
+  line-height: 1.5;
+  margin: 0;
+  font-weight: 400;
+  font-family: "Arial", sans-serif;
+}
+.principal_notas .subheadline h3 .priority-content {
+  color: #555555 !important;
+}
+
+/*  Multimedia */
+.principal_notas .media_block {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.principal_notas .multimedia.w-100 {
+  flex: 1;
+  min-height: 200px;
+  overflow: hidden;
+}
+.principal_notas .multimediaIconMacroWrapper {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 220px;
+  position: relative;
+  overflow: hidden;
+}
+.principal_notas .multimediaIconMacroWrapper div {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 220px;
+  position: relative;
+}
+.principal_notas .multimediaIconMacroWrapper .cutlineShow {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* ============================================================
+      LISTADO DE NOTAS DER
+   ============================================================ */
+.listado_notas {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 0 12px 12px;
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 0;
+}
+.listado_notas .R_SEC_DATE_TIT_AU_SUB_IMG{
+  padding-bottom: 20px;
+  border-bottom: 1px solid #D4D4D4;
+  padding-top: 20px;
+}
+.listado_notas .R_SEC_DATE_TIT_AU_SUB_IMG.n4{
+  border-bottom: 1px solid transparent;
+}
+.listado_notas:last-child {
+  border-bottom: none;
+}
+.listado_notas .media_block {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-start;
+  gap: 30px;
+  width: 100%;
+}
+.listado_notas .text_block {
+  flex: 1;
+  min-width: 0;
+  order: 1;
+}
+.listado_notas .multimedia {
+  flex-shrink: 0 !important;
+  width: 160px !important;
+  height: 100% !important;
+  order: 2;
+  overflow: hidden;
+}
+.listado_notas .headline a{
+  text-decoration: none;
+}
+.listado_notas .headline h2 {
+  font-size: 16px;
+  line-height: 1.3;
+  color: #1a1a1a !important;
+}
+.listado_notas .subheadline h3 {
+  font-size: 14px;
+  color: #555555 !important;
+}
+
+@media (max-width: 768px) {
+.listado_notas .multimedia{
+  width: 130px !important;
+}
+.listado_notas .media_block{
+  gap: 22px;
+}
+.listado_notas .headline h2{
+  line-height: 1;
+}
+.listado_notas{
+  padding: 12px 0 12px 0;
+}
+}
+/* ============================================================
+   ARTÍCULO LISTA
+   ============================================================ */
+.noticias_list {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+.noticias_list .headline a{
+  text-decoration: none;
+}
+.noticias_list .R_IMG_SEC_DATE_TIT{
+  padding-bottom: 20px;
+  padding-top: 20px;
+  border-bottom: 1px solid #d4d4d4;
+}
+.noticias_list .R_IMG_SEC_DATE_TIT.n8{
+  border-bottom: 1px solid transparent;
+}
+.noticias_list:last-child {
+  border-bottom: none;
+}
+.noticias_list .media_block {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+}
+.noticias_list .multimedia {
+  flex-shrink: 0 !important;
+  width: 190px !important;
+  height: 120px !important;
+  order: 1;
+  overflow: hidden;
+}
+.noticias_list .text_block {
+  flex: 1;
+  min-width: 0;
+  order: 2;
+}
+.noticias_list .headline h2 {
+  font-size: 16px;
+  line-height: 1.3;
+  color: #1a1a1a !important;
+}
+.noticias_list article{
+  padding-right: 2rem;
+}
+.tit_sec .titlesec span{
+  font-size: 15px;
+  line-height: 16px;
+  font-weight: 700;
+}
+.tit_sec .titlesec {
+  position: relative;
+  padding-bottom: 13px;
+  font-size: 13px;
+  line-height: 16px;
+  border-bottom: 1px solid var(--gray);
+  font-weight: 700;
+}
+.tit_sec .titlesec::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: translateY(60%);
+    height: 4px;
+    width: 30px;
+    background: var(--red);
+}
+.tit_sec .titlesec p{
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 400;
+  margin: 0.4rem 0 0.3rem 0;
+}
+
+@media (max-width: 768px) {
+.noticias_list article {
+    padding-right: 0rem;
+}
+.noticias_list .multimedia{
+  width: 140px !important;
+  height: 100px !important;
+}
+}
+/* ============================================================
+   DESTACADAS
+   ============================================================ */
+.mas-destacados .R_TIT {
+  display: flex;
+  gap: 20px;
+}
+.mas-destacados .headline a{
+  color: #000;
+  text-decoration: none;
+}
+.mas-destacados .headline h2 {
+  font-size: 14px;
+}
+.mas-destacados .r_numeracion {
+  font-size: 18px;
+  color: var(--red);
+}
+.mas-destacados article {
+  border-bottom: 1px solid var(--gray);
+  padding: 16px 0;
+}
+.mas-destacados article:nth-child(5){
+  border-bottom: 1px solid transparent;
+}
+.mas-destacados .teaser-viewer-title {
+  position: relative;
+  padding-bottom: 13px;
+  font-size: 13px;
+  line-height: 16px;
+  border-bottom: 1px solid var(--gray);
+  font-weight: 700;
+}
+.mas-destacados .teaser-viewer-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform: translateY(60%);
+  height: 4px;
+  width: 30px;
+  background: var(--red);
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .mas-destacados .R_TIT {
+      gap: 10px;
+  }
+  .mas-destacados .headline h2 {
+      font-size: 12px;
+  }
+}
+
