@@ -2,35 +2,35 @@
 const slidesData = [
     {
         img: "https://codigomarret.online/upload/img/en_circulacion.webp",
-        link: "#",
+        link: "https://suscripciones.vistazo.com/",
         edition: "Edición No.1402 · Dic 4 / 2025",
         title: "Trump Aprieta a Maduro",
         price: "Suscríbete por $5,41/mes"
     },
     {
         img: "https://codigomarret.online/upload/img/revista_2.png",
-        link: "#",
+        link: "https://suscripciones.vistazo.com/",
         edition: "Edición No.1401 · Nov 20 / 2025",
         title: "La Crisis Económica que Viene",
         price: "Suscríbete por $5,41/mes"
     },
     {
         img: "https://codigomarret.online/upload/img/revista_3.png",
-        link: "#",
+        link: "https://suscripciones.vistazo.com/",
         edition: "Edición No.1400 · Nov 6 / 2025",
         title: "El Poder de las Mujeres en Política",
         price: "Suscríbete por $5,41/mes"
     },
     {
         img: "https://codigomarret.online/upload/img/revista_4.png",
-        link: "#",
+        link: "https://suscripciones.vistazo.com/",
         edition: "Edición No.1399 · Oct 23 / 2025",
         title: "Secretos del Narcotráfico Regional",
         price: "Suscríbete por $5,41/mes"
     },
     {
         img: "https://codigomarret.online/upload/img/revista_5.png",
-        link: "#",
+        link: "https://suscripciones.vistazo.com/",
         edition: "Edición No.1398 · Oct 9 / 2025",
         title: "Tecnología e Innovación en Ecuador",
         price: "Suscríbete por $5,41/mes"
@@ -48,15 +48,16 @@ function initCarousel(data) {
     track.innerHTML = data.map(item => `
   <div class="slide">
     <div class="cover">
-      <a href="${item.link}">
+      
         <img class="cover-img" src="${item.img}" alt="${item.title}">
-      </a>
+      
     </div>
 
     <div class="slide-info">
         <div class="slide-title">${item.title}</div>
         <div class="slide-edition">${item.edition}</div>
-         <button class="slide-btn">${item.price}</button>
+        <hr/>
+        <a href="${item.link}" class="slide-btn">${item.price}</a>
     </div>
   </div>
 `).join('');

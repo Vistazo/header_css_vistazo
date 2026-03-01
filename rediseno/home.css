@@ -159,56 +159,63 @@
 /* APERTURA SECUNDARIO - SWIPER RIVISTA */
 
 
- 
 
-  /* ── Brand ── */
-  .brand {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    font-weight: 900;
+.bloque-dos-revista {
+    background: var(--bone);
+    padding: 18px;
+}
+
+
+/* ── Brand ── */
+.brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand span {
+    font-size: 14px;
+    font-weight: 500;
     letter-spacing: .05em;
     text-transform: uppercase;
-    border: 3px solid var(--dark);
-    padding: 4px 24px;
-    margin-bottom: 36px;
-    position: relative;
-  }
-  .brand::after {
-    content: '';
-    position: absolute;
-    inset: 4px -4px -4px 4px;
-    background: var(--red);
-    z-index: -1;
-  }
+    padding: 4px 12px;
+    margin: 16px;
+    color: var(--light);
+    background: var(--dark);
+}
 
-  /* ── Slider ── */
-  .slider-wrapper { width: 100%; max-width: 320px; }
 
-  .slider-clip {
+/* ── Slider ── */
+.slider-wrapper {
+    width: 100%;
+    max-width: 320px;
+    margin: auto;
+}
+
+.slider-clip {
     overflow: hidden;
-    border-radius: 6px;
     cursor: grab;
-  }
-  .slider-clip.dragging { cursor: grabbing; }
+}
 
-  .slider-track {
+.slider-clip.dragging {
+    cursor: grabbing;
+}
+
+.slider-track {
     display: flex;
     will-change: transform;
-  }
+}
 
-  /* ── Card ── */
-  .slide {
+/* ── Card ── */
+.slide {
     flex: 0 0 100%;
-    background: #fff;
-    border-radius: 6px;
     overflow: hidden;
-    box-shadow: 0 2px 16px rgba(0,0,0,.1);
     pointer-events: none;
-  }
+}
 
-  .cover {
+.cover {
     width: 100%;
-    aspect-ratio: 3/4;
+    aspect-ratio: 3/2;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -217,11 +224,19 @@
     text-align: center;
     position: relative;
     overflow: hidden;
-  }
-  .cover-bg { position: absolute; inset: 0; }
-  .cover-content { position: relative; z-index: 1; }
-  .cover-logo {
-    font-family: 'Playfair Display', serif;
+}
+
+.cover-bg {
+    position: absolute;
+    inset: 0;
+}
+
+.cover-content {
+    position: relative;
+    z-index: 1;
+}
+
+.cover-logo {
     font-size: 1.7rem;
     font-weight: 900;
     color: #fff;
@@ -229,41 +244,46 @@
     border: 2px solid #fff;
     padding: 2px 12px;
     margin-bottom: 14px;
-  }
-  .cover-headline {
-    font-family: 'Playfair Display', serif;
+}
+
+.cover-headline {
     font-size: 1.2rem;
     font-weight: 700;
     color: #fff;
     line-height: 1.25;
     text-transform: uppercase;
-    text-shadow: 0 2px 6px rgba(0,0,0,.5);
-  }
-  
-  .cover img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+    text-shadow: 0 2px 6px rgba(0, 0, 0, .5);
+}
 
-  .slide-info { padding: 16px 18px 20px; }
-  .slide-edition {
+.cover img {
+    width: 160px;
+    height: 200px;
+    object-fit: contain;
+}
+
+.slide-info {
+    padding: 16px 18px 20px;
+    text-align: center;
+}
+
+.slide-edition {
     font-size: .68rem;
     font-weight: 600;
     letter-spacing: .12em;
     text-transform: uppercase;
-    /* color: var(--bone); */
     margin-bottom: 6px;
-  }
-  .slide-title {
-    font-family: 'Playfair Display', serif;
+    padding: 4px;
+}
+
+.slide-title {
     font-size: 1.05rem;
     font-weight: 700;
     line-height: 1.3;
     margin-bottom: 14px;
     text-transform: uppercase;
-  }
-  .slide-btn {
+}
+
+.slide-btn {
     display: block;
     width: 100%;
     background: var(--red);
@@ -280,35 +300,44 @@
     text-transform: uppercase;
     transition: background 0.2s;
     pointer-events: all;
-  }
-  .slide-btn:hover { background: #b01f1f; }
+}
 
-  /* ── Dots ── */
-  .dots {
+.slide-btn:hover {
+    background: #b01f1f;
+}
+
+/* ── Dots ── */
+.dots {
     display: flex;
     justify-content: center;
     gap: 8px;
     margin-top: 14px;
-  }
-  .dot {
-    width: 8px; height: 8px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
     background: #ccc;
     border: none;
     cursor: pointer;
     padding: 0;
     transition: background 0.2s, transform 0.2s;
-  }
-  .dot.active { background: var(--red); transform: scale(1.4); }
+}
 
-  .drag-hint {
+.dot.active {
+    background: var(--red);
+    transform: scale(1.4);
+}
+
+.drag-hint {
     margin-top: 10px;
     font-size: .68rem;
     color: #bbb;
     letter-spacing: .1em;
     text-transform: uppercase;
     text-align: center;
-  }
+}
 
 
 
