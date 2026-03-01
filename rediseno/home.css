@@ -215,7 +215,7 @@
 
 .cover {
     width: 100%;
-    aspect-ratio: 3/2;
+    /* aspect-ratio: 3/2; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -267,16 +267,17 @@
 }
 
 .slide-edition {
-    font-size: .68rem;
+    font-size: 13px;
     font-weight: 600;
     letter-spacing: .12em;
     text-transform: uppercase;
     margin-bottom: 6px;
     padding: 4px;
+    background: - var(--light);
 }
 
 .slide-title {
-    font-size: 1.05rem;
+    font-size: 16px;
     font-weight: 700;
     line-height: 1.3;
     margin-bottom: 14px;
@@ -289,7 +290,7 @@
     background: var(--red);
     color: #fff;
     font-family: 'Barlow', sans-serif;
-    font-size: .78rem;
+    font-size: 14px;
     font-weight: 600;
     text-align: center;
     padding: 10px 0;
@@ -386,6 +387,25 @@
 
     .mas-destacados .headline h2 {
         font-size: 12px;
+    }
+
+
+    .cover img {
+        width: 100%;
+        height: auto;
+    }
+
+    .slide-title,
+    .slide-edition {
+        font-size: 9px;
+    }
+
+    .bloque-dos-revista {
+        padding: 0;
+    }
+
+    .cover {
+        padding: 14px;
     }
 }
 
