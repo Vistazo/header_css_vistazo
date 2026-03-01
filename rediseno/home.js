@@ -139,4 +139,7 @@ function initCarousel(data) {
 }
 
 /* init */
-initCarousel(slidesData);
+
+setTimeout(() => {
+    initCarousel(slidesData);
+}, 500);
