@@ -178,7 +178,7 @@
     letter-spacing: .05em;
     text-transform: uppercase;
     padding: 4px 12px;
-    margin: 16px;
+    margin-bottom: 16px;
     color: var(--light);
     background: var(--dark);
 }
@@ -341,6 +341,11 @@
 
 /* BLOQUE DE INVESTIGACION */
 
+.bg-investigacion {
+    background: var(--bone);
+    padding: 40px 37px;
+    margin: 50px 0;
+}
 
 .investigacion-principal {
     border-bottom: 2px solid var(--gray);
@@ -443,9 +448,54 @@
 
 .bloque-actualidad .media_block {
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 50PX;
+    grid-template-columns: 3fr 1fr;
+    gap: 24px;
 }
+
+.bloque-actualidad .mobile-act-nac {
+    margin-bottom: 36px;
+}
+
+.bloque-actualidad .mobile-act-nac .media_block {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    background: var(--bone);
+}
+
+.bloque-actualidad .date {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+}
+
+.bloque-actualidad .date::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background-color: var(--red);
+    /* rojo */
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.bloque-actualidad .mobile-act-nac .text_block {
+        padding: 18px;
+}
+
+.bloque-actualidad .mobile-act-nac .autor-nombre,
+.bloque-actualidad .mobile-act-nac .subheadline,
+.bloque-actualidad .mobile-act-nac .article-section {
+    display: none;
+}
+
+.bloque-actualidad .mobile-act-nac .headline h2 {
+    font-size: 20px;
+}
+
+
+
 
 .bloque-actualidad .noticias .headline h2 {
     font-size: 18px;
@@ -470,6 +520,19 @@
 
     padding-top: 16px;
 }
+
+.bloque-actualidad .date {
+    font-size: 13px;
+    margin-bottom: 16px;
+}
+
+
+@media (max-width: 1279px) {
+    .bloque-actualidad .media_block {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
 
 @media (max-width: 991px) {
 
@@ -531,7 +594,7 @@
     }
 
     .bloque-dos-revista {
-        padding: 0;
+        padding: 27px 0;
     }
 
     .cover {
@@ -563,5 +626,19 @@
 
     .investigacion-lista {
         padding-top: 32px;
+    }
+
+    .investigacion-principal .headline h2 {
+        font-size: 20px;
+    }
+
+    .ly-12investigacion {
+        padding-right: 1%;
+        padding-left: 1%;
+    }
+
+    .bg-investigacion {
+        padding: 36px 12px;
+
     }
 }
