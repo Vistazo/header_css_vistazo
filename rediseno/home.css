@@ -481,7 +481,7 @@
 }
 
 .bloque-actualidad .mobile-act-nac .text_block {
-        padding: 18px;
+    padding: 18px;
 }
 
 .bloque-actualidad .mobile-act-nac .autor-nombre,
@@ -524,6 +524,22 @@
 .bloque-actualidad .date {
     font-size: 13px;
     margin-bottom: 16px;
+}
+
+
+.bloque-actualidad .inter-mobile .media_block {
+    grid-template-columns: none;
+}
+
+.bloque-actualidad .inter-mobile article {
+    border-bottom: 1px solid var(--gray);
+    padding-bottom: 16px;
+}
+
+.bloque-actualidad .inter-mobile article:nth-child(2),
+.bloque-actualidad .inter-mobile article:nth-child(3),
+.bloque-actualidad .inter-mobile article:nth-child(4) {
+    padding-top: 16px;
 }
 
 
