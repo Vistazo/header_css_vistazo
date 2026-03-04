@@ -624,9 +624,152 @@
     gap: 24px;
 }
 
+
+/* BLOQUE OPINION */
+
+.bloque-opinion {
+    margin-bottom: 52px;
+}
+
+.bloque-opinion .op-uno .media_block {
+    display: flex;
+    gap: 24px;
+}
+
+.bloque-opinion .op-uno .media_block .headline h2 {
+    font-size: 24px;
+}
+
+.bloque-opinion .op-uno .media_block .text p {
+    font-size: 16px;
+}
+
+.bloque-opinion .op-uno .media_block .autor-nombre {
+    font-size: 13px;
+}
+
+.bloque-opinion .op-dos .noticias {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 24px;
+}
+
+.bloque-opinion .op-dos .noticias article:nth-child(1),
+.bloque-opinion .op-dos .noticias article:nth-child(2) {
+    border-bottom: 1px solid var(--gray);
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+}
+
+.bloque-opinion .op-dos .media_block {
+    display: flex;
+    gap: 24px;
+}
+
+.bloque-opinion .op-dos .media_block .headline h2 {
+    font-size: 20px;
+}
+
+.bloque-opinion .op-dos .media_block .text p {
+    display: none;
+}
+
+.bloque-opinion .op-dos .media_block .autor-nombre {
+    font-size: 13px;
+}
+
+
+/* BLOQUE DEPORTES */
+
+.bloque-deportes {
+    margin-bottom: 52px;
+}
+
+.bloque-deportes .depo-dos .date,
+.bloque-deportes .depo-tres .date {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+}
+
+.bloque-deportes .depo-uno .date {
+    margin-top: 16px;
+}
+
+.bloque-deportes .date {
+    margin-bottom: 16px;
+}
+
+.bloque-deportes .depo-dos .date::before,
+.bloque-deportes .depo-tres .date::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background-color: var(--red);
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.bloque-deportes .headline h2 {
+    font-size: 20px;
+}
+
+
+
+.bloque-deportes .depo-tres .headline h2 {
+    font-size: 16px;
+}
+
+.bloque-deportes .autor-nombre,
+.bloque-deportes .subheadline,
+.bloque-deportes .article-section {
+    display: none;
+}
+
+
+.bloque-deportes .depo-dos .noticias article:nth-child(1),
+.bloque-deportes .depo-dos .noticias article:nth-child(2) {
+    border-bottom: 1px solid var(--gray);
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+}
+
+.bloque-deportes .depo-tres .media_block {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 20px;
+}
+
+.bloque-deportes .depo-tres .noticias article:nth-child(1),
+.bloque-deportes .depo-tres .noticias article:nth-child(2) {
+    border-bottom: 1px solid var(--gray);
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+}
+
+
+/* BLOQUE PATROCINADO */
+
+.bloque-patrocinado .noticias {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+}
+
+.bloque-patrocinado .headline h2 {
+    font-size: 14px;
+    margin-top: 16px;
+}
+
+
 @media (max-width: 1279px) {
     .bloque-actualidad .media_block {
         grid-template-columns: 2fr 1fr;
+    }
+
+    .bloque-opinion .op-dos .media_block .headline h2 {
+        font-size: 16px;
     }
 }
 
@@ -658,6 +801,12 @@
 
     .bloque-uno .noticias article:first-child {
         grid-row: 1 / span 1;
+    }
+
+    .bloque-patrocinado .noticias {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
     }
 }
 
@@ -704,6 +853,14 @@
 
     .bloque-mundo .col-33-33-33-top-three-col .media_block {
         grid-template-columns: 1fr;
+    }
+
+    .bloque-opinion .op-dos .media_block {
+        flex-direction: column;
+    }
+
+    .bloque-deportes .depo-tres .headline h2 {
+        font-size: 13px;
     }
 
 }
@@ -765,6 +922,37 @@
 
     .bloque-mundo .col-33-33-33-top-three-col .media_block {
         grid-template-columns: 2fr 1fr;
+    }
+
+    .bloque-opinion .op-dos .noticias {
+
+        grid-template-columns: 1fr;
+        column-gap: 24px;
+    }
+
+    .bloque-opinion .op-dos .noticias article:nth-child(3),
+    .bloque-opinion .op-uno .noticias article {
+        border-bottom: 1px solid var(--gray);
+        margin-bottom: 24px;
+        padding-bottom: 24px;
+    }
+
+    .bloque-deportes .depo-dos .noticias article:nth-child(3) {
+        border-bottom: 1px solid var(--gray);
+        margin-bottom: 16px;
+        padding-bottom: 16px;
+    }
+
+    .bloque-deportes .depo-uno .noticias article {
+        border-bottom: 1px solid var(--gray);
+        margin-bottom: 16px;
+        padding-bottom: 16px;
+    }
+
+       .bloque-patrocinado .noticias {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
     }
 
 }
