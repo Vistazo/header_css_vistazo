@@ -3,9 +3,8 @@
     --red: #CC1114;
 }
 
-/* ============================================================
-      NOTA PRINCIPAL
-   ============================================================ */
+/* ======== NOTA PRINCIPAL ======== */
+
 .principal_notas .sect-date,
 .listado_notas .sect-date,
 .noticias_list .sect-date{
@@ -51,12 +50,16 @@
   margin-left: 6px;
   font-weight: 700;
 }
-.principal_notas .inf2 {
+.principal_notas .inf2,
+.listado_notas .inf2,
+.noticias_list .inf2 {
   display: inline-flex;
   align-items: center;
   margin: 0;
 }
-.principal_notas .inf2 ul {
+.principal_notas .inf2 ul,
+.listado_notas .inf2 ul,
+.noticias_list .inf2 ul {
   display: inline-flex;
   align-items: center;
   list-style: none;
@@ -64,7 +67,9 @@
   padding: 0;
   gap: 8px;
 }
-.principal_notas .inf2 ul li {
+.principal_notas .inf2 ul li,
+.listado_notas .inf2 ul li,
+.noticias_list .inf2 ul li{
   font-size: 11px;
   color: #888888;
   list-style: none;
@@ -72,7 +77,9 @@
   padding: 0;
   white-space: nowrap;
 }
-.principal_notas .inf2 ul li a {
+.principal_notas .inf2 ul li a,
+.listado_notas .inf2 ul li a,
+.noticias_list .inf2 ul li a {
   color: #888888 !important;
   text-decoration: none !important;
   font-size: 11px;
@@ -161,16 +168,16 @@
 .listado_notas {
   display: flex;
   flex-direction: column;
-  padding: 12px 0 12px 12px;
+  /*  padding: 12px 0 12px 12px;*/
   border-bottom: 1px solid #e5e5e5;
   margin-bottom: 0;
 }
-.listado_notas .R_SEC_DATE_TIT_AU_SUB_IMG{
+.listado_notas article{
   padding-bottom: 20px;
   border-bottom: 1px solid #D4D4D4;
   padding-top: 20px;
 }
-.listado_notas .R_SEC_DATE_TIT_AU_SUB_IMG.n4{
+.listado_notas article.n4{
   border-bottom: 1px solid transparent;
 }
 .listado_notas:last-child {
