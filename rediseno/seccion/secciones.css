@@ -2,9 +2,11 @@
     --gray: #D4D4D4;
     --red: #CC1114;
 }
+body {
+  font-family: 'Zalando Sans', sans-serif;
+}
 
 /* ======== NOTA PRINCIPAL ======== */
-
 .principal_notas .sect-date,
 .listado_notas .sect-date,
 .noticias_list .sect-date{
