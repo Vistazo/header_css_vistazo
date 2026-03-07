@@ -88,7 +88,9 @@
     padding-bottom: 13px;
     font-size: 13px;
     line-height: 16px;
+    text-transform: uppercase;
     border-bottom: 1px solid var(--gray);
+    font-weight: 600;
 }
 
 .mas-destacados .teaser-viewer-title::after {
@@ -680,6 +682,87 @@
 }
 
 
+/* BLOQUE NEGOCIO */
+
+.titulo-negocios .logo-negocios {
+    padding: 12px 16px;
+    margin-bottom: 36px;
+    background: var(--bg-gray);
+}
+
+.titulo-negocios .section-title {
+    margin-bottom: 16px;
+}
+
+.bloque-negocios {
+    margin-bottom: 52px;
+}
+
+.bloque-negocios .depo-dos .date,
+.bloque-negocios .depo-tres .date {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+}
+
+.bloque-negocios .depo-uno .date {
+    margin-top: 16px;
+}
+
+.bloque-negocios .date {
+    margin-bottom: 16px;
+}
+
+.bloque-negocios .depo-dos .date::before,
+.bloque-negocios .depo-tres .date::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background-color: var(--red);
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.bloque-negocios .headline h2 {
+    font-size: 20px;
+}
+
+
+
+.bloque-negocios .depo-tres .headline h2 {
+    font-size: 16px;
+}
+
+.bloque-negocios .autor-nombre,
+.bloque-negocios .subheadline,
+.bloque-negocios .article-section {
+    display: none;
+}
+
+
+.bloque-negocios .depo-dos .noticias article:nth-child(1),
+.bloque-negocios .depo-dos .noticias article:nth-child(2) {
+    border-bottom: 1px solid var(--gray);
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+}
+
+.bloque-negocios .depo-tres .media_block {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 20px;
+}
+
+.bloque-negocios .depo-tres .noticias article:nth-child(1),
+.bloque-negocios .depo-tres .noticias article:nth-child(2) {
+    border-bottom: 1px solid var(--gray);
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+}
+
+
+
 /* BLOQUE DEPORTES */
 
 .titulo-deportes .logo-deportes {
@@ -945,6 +1028,10 @@
         font-size: 13px;
     }
 
+    .bloque-negocios .depo-tres .headline h2 {
+        font-size: 13px;
+    }
+
     .bloque-eventos .col-50-50-top-two-col .sect-date {
         flex-direction: column;
         align-items: flex-start;
@@ -967,6 +1054,10 @@
 @media (max-width: 767px) {
     .bloque-uno .noticias .inf2 {
         display: none;
+    }
+
+    .mas-destacados .teaser-viewer-title {
+        margin-top: 36px;
     }
 
     .investigacion-lista .noticias {
@@ -1043,6 +1134,18 @@
     }
 
     .bloque-deportes .depo-uno .noticias article {
+        border-bottom: 1px solid var(--gray);
+        margin-bottom: 16px;
+        padding-bottom: 16px;
+    }
+
+    .bloque-negocios .depo-dos .noticias article:nth-child(3) {
+        border-bottom: 1px solid var(--gray);
+        margin-bottom: 16px;
+        padding-bottom: 16px;
+    }
+
+    .bloque-negocios .depo-uno .noticias article {
         border-bottom: 1px solid var(--gray);
         margin-bottom: 16px;
         padding-bottom: 16px;
