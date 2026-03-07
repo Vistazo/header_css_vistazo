@@ -344,7 +344,7 @@
 
 .bg-investigacion {
     background: var(--bone);
-    padding: 40px 37px;
+    padding: 36px;
     margin: 50px 0;
 }
 
@@ -763,6 +763,10 @@
 
 /* BLOQUE PATROCINADO */
 
+.bloque-patrocinado {
+    margin-bottom: 52px;
+}
+
 .bloque-patrocinado .noticias {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -773,6 +777,72 @@
     font-size: 14px;
     margin-top: 16px;
 }
+
+
+/* BLOQUE EVENTO DEL MES */
+
+
+.bloque-eventodelmes .media_block {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    gap: 24px;
+}
+
+.bloque-eventodelmes .media_block .headline h2 {
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+.bloque-eventodelmes .media_block .subheadline h3 {
+    font-size: 16px;
+}
+
+.bloque-eventodelmes .media_block .autor-nombre,
+.bloque-eventodelmes .media_block .article-section {
+    display: none;
+}
+
+.bloque-eventodelmes {
+    background: var(--bone);
+    padding: 36px;
+    margin: 50px 0;
+}
+
+
+/* BLOQUE EVENTOs */
+
+.bloque-eventos {
+    margin-bottom: 52px;
+}
+
+.bloque-eventos .ev-uno .headline h2 {
+    font-size: 24px;
+    margin-bottom: 0;
+}
+
+
+.bloque-eventos .ev-dos .headline h2 {
+    font-size: 20px;
+}
+
+.bloque-eventos .ev-tres .headline h2 {
+    font-size: 16px;
+    margin-top: 12px;
+}
+
+.bloque-eventos .col-50-50-top-two-col {
+    display: flex;
+    column-gap: 24px;
+}
+
+.bloque-eventos .ev-tres .noticias article:nth-child(1),
+.bloque-eventos .ev-tres .noticias article:nth-child(2) {
+    border-bottom: 1px solid var(--gray);
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+}
+
 
 
 @media (max-width: 1279px) {
@@ -875,6 +945,23 @@
         font-size: 13px;
     }
 
+    .bloque-eventos .col-50-50-top-two-col .sect-date {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .bloque-eventos .ev-tres .headline h2 {
+        font-size: 14px;
+    }
+
+    .bloque-eventos .ev-dos .headline h2 {
+        font-size: 18px;
+    }
+
+    .bloque-eventos .ev-dos .headline h2 {
+        margin-top: 12px;
+    }
+
 }
 
 @media (max-width: 767px) {
@@ -966,5 +1053,31 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
     }
+
+    .bloque-eventodelmes .media_block {
+        grid-template-columns: 1fr;
+    }
+
+    .bloque-eventodelmes {
+        padding: 36px 12px;
+    }
+
+    .bloque-eventos .ev-dos .noticias article:nth-child(1),
+    .bloque-eventos .ev-uno .noticias article:nth-child(1) {
+        border-bottom: 1px solid var(--gray);
+        margin-bottom: 16px;
+        padding-bottom: 16px;
+    }
+
+    .bloque-eventos .ev-dos .sect-date,
+    .bloque-eventos .ev-uno .sect-date {
+        margin-top: 16px;
+    }
+
+
+    .bloque-eventos .col-50-50-top-two-col {
+        flex-direction: column;
+    }
+
 
 }
