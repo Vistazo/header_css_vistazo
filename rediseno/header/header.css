@@ -1,0 +1,552 @@
+body {
+    font-family: 'Zalando Sans', sans-serif;
+}
+
+.primary-nav {
+    display: flex;
+    background: #000;
+    align-items: center;
+    padding: 16px 24px;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.primary-nav .rham-logo {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.primary-nav .rham-logo .rlogo img {
+    width: 151px;
+}
+
+.primary-nav .rnav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.primary-nav .rnav-links a:hover {
+    color: #CC1114;
+}
+
+.primary-nav .rnav-right {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.rbtn-suscribete {
+    font-size: 14px;
+    background: #CC1114;
+    padding: 8px 10px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    flex-shrink: 0;
+
+}
+
+.rbtn-suscribete:hover {
+    color: #fff;
+}
+
+.rbtn-login {
+    font-size: 14px;
+    color: #fff;
+    text-decoration: none;
+    flex-shrink: 0;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.rbtn-login svg {
+    display: none;
+    width: 20px;
+    height: 20px;
+}
+
+.secondary-nav {
+    padding: 22px 36px;
+    gap: 36px;
+    overflow: auto;
+    white-space: nowrap;
+    display: flex;
+    align-items: flex-start;
+    align-items: center;
+
+}
+
+.secondary-nav::-webkit-scrollbar {
+    height: 6px;
+}
+
+.secondary-nav::-webkit-scrollbar:hover {
+    height: 10px;
+    padding-top: 10px;
+}
+
+.secondary-nav::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 0px rgba(0, 0, 0, 0);
+}
+
+.secondary-nav::-webkit-scrollbar-thumb {
+    height: 6px;
+    background-color: #ddd;
+    border-radius: 10px;
+}
+
+.secondary-nav::-webkit-scrollbar-thumb:hover {
+    background-color: #ffffff75;
+    height: 10px;
+
+}
+
+.secondary-nav::-webkit-scrollbar:vertical {
+    display: none;
+}
+
+
+.secondary-nav a {
+    color: #000;
+    text-decoration: none;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.rnav-links {
+    overflow: auto;
+    gap: 24px;
+    white-space: nowrap;
+    display: flex;
+    align-items: flex-start;
+    align-items: center;
+    /* justify-content: center; */
+    /* width: 100%; */
+}
+
+.rnav-links::-webkit-scrollbar {
+    height: 6px;
+}
+
+.rnav-links::-webkit-scrollbar:hover {
+    height: 10px;
+    padding-top: 10px;
+}
+
+.rnav-links::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 0px rgba(0, 0, 0, 0);
+}
+
+.rnav-links::-webkit-scrollbar-thumb {
+    height: 6px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.rnav-links::-webkit-scrollbar-thumb:hover {
+    background-color: #ffffff75;
+    height: 10px;
+
+}
+
+.rnav-links::-webkit-scrollbar:vertical {
+    display: none;
+}
+
+/* ═══════════════════════════════════════════
+   HAMBURGER BUTTON (reset de <a> a <button>)
+═══════════════════════════════════════════ */
+.hamburger {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    padding: 0;
+    border-radius: 6px;
+    transition: background 0.2s;
+    /* Área táctil mínima recomendada (48×48) */
+    /* min-width: 40px;
+    min-height: 40px; */
+}
+
+.hamburger:hover {
+    background: rgba(255, 255, 255, .10);
+}
+
+.hamburger:focus-visible {
+    outline: 2px solid #CC1114;
+    outline-offset: 3px;
+}
+
+/* ═══════════════════════════════════════════
+   OVERLAY
+═══════════════════════════════════════════ */
+.sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .55);
+    backdrop-filter: blur(2px);
+    z-index: 199;
+    opacity: 0;
+    pointer-events: none;
+    /* Solo opacity en compositor — sin reflow */
+    transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sidebar-open .sidebar-overlay {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ═══════════════════════════════════════════
+   SIDEBAR
+═══════════════════════════════════════════ */
+:root {
+    --sidebar-w: 280px;
+    --sidebar-ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sidebar {
+    position: fixed;
+    inset-block: 0;
+    inset-inline-start: 0;
+    width: var(--sidebar-w);
+    background: #fff;
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    box-shadow: 4px 0 24px rgba(0, 0, 0, .18);
+    /* GPU transform — cero reflow */
+    transform: translateX(-100%);
+    transition: transform 0.35s var(--sidebar-ease);
+    will-change: transform;
+}
+
+.sidebar-open .sidebar {
+    transform: translateX(0);
+}
+
+/* ── Cabecera sticky ── */
+.sidebar__head {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    height: 56px;
+    border-bottom: 3px solid #CC1114;
+    flex-shrink: 0;
+}
+
+/* ── Botón cerrar ── */
+.sidebar__close {
+    width: 36px;
+    height: 36px;
+    border: none;
+    background: #f4f4f2;
+    border-radius: 50%;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    color: #2a2a2a;
+    transition: background 0.2s, transform 0.25s;
+    flex-shrink: 0;
+}
+
+.sidebar__close:hover {
+    background: #e8e8e8;
+    transform: rotate(90deg);
+}
+
+.sidebar__close:focus-visible {
+    outline: 2px solid #CC1114;
+    outline-offset: 3px;
+}
+
+/* ── Buscador ── */
+.sidebar__search {
+    padding: 14px 16px;
+    border-bottom: 1px solid #e0e0e0;
+    flex-shrink: 0;
+}
+
+.sidebar__search-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar__search-wrap input {
+    width: 100%;
+    padding: 8px 36px 8px 12px;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 6px;
+    font-family: 'Zalando Sans', sans-serif;
+    font-size: .875rem;
+    color: #1a1a1a;
+    background: #f4f4f2;
+    transition: border-color .2s;
+    outline: none;
+}
+
+.sidebar__search-wrap input:focus {
+    border-color: #CC1114;
+}
+
+.sidebar__search-wrap svg {
+    position: absolute;
+    right: 10px;
+    pointer-events: none;
+    opacity: .45;
+}
+
+/* ── Label sección ── */
+.sidebar__section-label {
+    font-size: .7rem;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: #666;
+    padding: 16px 16px 6px;
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.sidebar__section-label::after {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #CC1114;
+    margin-top: 4px;
+}
+
+/* ── Nav items ── */
+.sidebar__nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+}
+
+.sidebar__nav li a,
+.sidebar__nav li>button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 16px;
+    text-decoration: none;
+    font-size: .9375rem;
+    font-family: 'Zalando Sans', sans-serif;
+    color: #1a1a1a;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    border-left: 3px solid transparent;
+    transition: background .18s, border-color .18s, color .18s;
+    gap: 8px;
+}
+
+.sidebar__nav li a:hover,
+.sidebar__nav li>button:hover {
+    background: #f4f4f2;
+    border-left-color: #CC1114;
+    color: #CC1114;
+}
+
+/* ── Insignia En Vivo ── */
+.sidebar__live-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: .7rem;
+    font-weight: 700;
+    color: #CC1114;
+    letter-spacing: .06em;
+}
+
+.sidebar__live-badge::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #CC1114;
+    animation: sb-pulse 1.4s ease infinite;
+}
+
+@keyframes sb-pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: .4;
+        transform: scale(.7);
+    }
+}
+
+/* ── Flecha sub-menú ── */
+.sidebar__arrow {
+    opacity: .45;
+    flex-shrink: 0;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sidebar__has-sub.open .sidebar__arrow {
+    transform: rotate(90deg);
+}
+
+/* ── Sub-menú ── */
+.sidebar__submenu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sidebar__has-sub.open .sidebar__submenu {
+    max-height: 300px;
+}
+
+.sidebar__submenu li a {
+    padding-left: 32px !important;
+    font-size: .875rem !important;
+    color: #666 !important;
+    border-left-color: transparent !important;
+}
+
+.sidebar__submenu li a:hover {
+    color: #CC1114 !important;
+}
+
+/* ── Footer ── */
+.sidebar__footer {
+    margin-top: auto;
+    padding: 16px;
+    border-top: 1px solid #e0e0e0;
+    background: #f4f4f2;
+    flex-shrink: 0;
+}
+
+.sidebar__edition {
+    font-size: .7rem;
+    color: #666;
+    margin-bottom: 10px;
+    font-variant-numeric: tabular-nums;
+}
+
+.sidebar__btn-subscribe {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: #CC1114;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Zalando Sans', sans-serif;
+    font-size: .875rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background .2s, transform .1s;
+}
+
+.sidebar__btn-subscribe:hover {
+    background: #a80016;
+    color: #fff;
+}
+
+.sidebar__btn-subscribe:active {
+    transform: scale(.98);
+}
+
+.sidebar__social {
+    display: flex;
+    gap: 14px;
+    margin-top: 12px;
+    justify-content: center;
+}
+
+.sidebar__social a {
+    color: #666;
+    transition: color .2s;
+    display: grid;
+    place-items: center;
+}
+
+.sidebar__social a:hover {
+    color: #CC1114;
+}
+
+/* ── Accesibilidad: reducir movimiento ── */
+@media (prefers-reduced-motion: reduce) {
+
+    .sidebar,
+    .sidebar-overlay,
+    .sidebar__close,
+    .sidebar__submenu,
+    .sidebar__arrow {
+        transition-duration: 0.01ms !important;
+    }
+
+    .sidebar__live-badge::before {
+        animation: none;
+    }
+}
+
+@media (max-width: 1279px) {
+    .rbtn-suscribete span {
+        display: none;
+    }
+}
+
+@media (max-width: 991px) {
+    .rnav-links {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .rbtn-buscar {
+        display: none;
+    }
+
+    .primary-nav .rham-logo {
+        gap: 8px;
+
+    }
+
+    .primary-nav .rham-logo .rlogo img {
+        width: 102px;
+    }
+
+    .rbtn-login svg {
+        display: block;
+    }
+
+    .rbtn-login span {
+        display: none;
+    }
+    .primary-nav{
+            padding: 16px 12px;
+    }
+}
