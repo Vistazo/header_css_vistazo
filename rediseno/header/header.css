@@ -3,6 +3,11 @@ body {
 }
 
 .primary-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
     display: flex;
     background: #000;
     align-items: center;
@@ -78,6 +83,7 @@ body {
     display: flex;
     align-items: flex-start;
     align-items: center;
+    margin-top: 70px;
 
 }
 
@@ -157,6 +163,77 @@ body {
 .rnav-links::-webkit-scrollbar:vertical {
     display: none;
 }
+
+/* ═══════════════════════════════════════════
+   BUSCADOR REAL 
+═══════════════════════════════════════════ */
+
+
+.buscador-real {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border: 1.5px solid #d1d5db;
+    border-radius: 8px;
+    padding: 8px 14px;
+    max-width: 475px;
+    width: 100%;
+    box-sizing: border-box;
+    gap: 8px;
+}
+
+.buscador-real .iter-button.iter-button-submit .iter-button-content {
+    display: flex;
+}
+
+.buscador-real .iter-field {
+    flex: 1;
+}
+
+.buscador-real .iter-field-content,
+.buscador-real .iter-field-element {
+    display: block;
+    width: 100%;
+}
+
+.buscador-real .iter-field-input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    color: #6b7280;
+    background: transparent;
+    font-family: inherit;
+}
+
+.buscador-real .iter-field-input::placeholder {
+    color: #9ca3af;
+}
+
+.buscador-real .iter-button-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.buscador-real .iter-button-content {
+    position: relative;
+}
+
+.buscador-real .iter-button-input-submit {
+    width: 22px;
+    height: 22px;
+    border: none;
+    background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23374151' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cline x1='16.5' y1='16.5' x2='22' y2='22'/%3E%3C/svg%3E") center/contain no-repeat;
+    cursor: pointer;
+    font-size: 0;
+    color: transparent;
+    padding: 0;
+    outline: none;
+}
+
+
 
 /* ═══════════════════════════════════════════
    HAMBURGER BUTTON (reset de <a> a <button>)
@@ -239,7 +316,7 @@ body {
 .sidebar__head {
     position: sticky;
     top: 0;
-    background: #fff;
+    background: #000;
     z-index: 1;
     display: flex;
     align-items: center;
@@ -288,28 +365,8 @@ body {
     align-items: center;
 }
 
-.sidebar__search-wrap input {
-    width: 100%;
-    padding: 8px 36px 8px 12px;
-    border: 1.5px solid #e0e0e0;
-    border-radius: 6px;
-    font-family: 'Zalando Sans', sans-serif;
-    font-size: .875rem;
-    color: #1a1a1a;
-    background: #f4f4f2;
-    transition: border-color .2s;
-    outline: none;
-}
-
 .sidebar__search-wrap input:focus {
     border-color: #CC1114;
-}
-
-.sidebar__search-wrap svg {
-    position: absolute;
-    right: 10px;
-    pointer-events: none;
-    opacity: .45;
 }
 
 /* ── Label sección ── */
@@ -546,7 +603,8 @@ body {
     .rbtn-login span {
         display: none;
     }
-    .primary-nav{
-            padding: 16px 12px;
+
+    .primary-nav {
+        padding: 16px 12px;
     }
 }
