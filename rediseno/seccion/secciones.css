@@ -102,12 +102,6 @@ body {
   margin: 10px 0 6px 0;
   color: #1a1a1a !important;
 }
-/* Texto destacado (priority-content) en rojo */
-/*.principal_notas .headline h2 .priority-content,
-.principal_notas .headline .priority-content {
-  color: #C8102E !important;
-}*/
-
 /* Solo la primera línea visual en rojo */
 .principal_notas .headline h2::first-line {
   color: #C8102E;
@@ -116,7 +110,9 @@ body {
 .listado_notas .autor-nombre{
   display: none;
 }
-
+.principal_notas{
+  padding-top: 32px;
+}
 /* Descripcion */
 .principal_notas .subheadline {
   margin: 0;
@@ -128,7 +124,6 @@ body {
   line-height: 1.5;
   margin: 0;
   font-weight: 400;
-  font-family: "Arial", sans-serif;
 }
 .principal_notas .subheadline h3 .priority-content {
   color: #555555 !important;

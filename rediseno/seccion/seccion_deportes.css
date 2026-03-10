@@ -18,10 +18,10 @@ body {
 .tit_sec .titlesec {
   position: relative;
   padding-bottom: 13px;
-  font-size: 13px;
-  line-height: 16px;
   border-bottom: 1px solid var(--gray);
-  font-weight: 700;
+ /* font-size: 13px;
+  line-height: 16px;
+  font-weight: 700;*/
 }
 .tit_sec .titlesec::after {
     content: "";
@@ -161,7 +161,6 @@ body {
   line-height: 1.5;
   margin: 0;
   font-weight: 400;
-  font-family: "Arial", sans-serif;
 }
 .nota_principal .subheadline h3 .priority-content {
   color: #555555 !important;
