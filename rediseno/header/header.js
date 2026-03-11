@@ -1,14 +1,183 @@
 (function () {
     'use strict';
 
-    const root = document.documentElement;
-    const sidebar = document.getElementById('sidebar');
-    const overlay = document.getElementById('overlay');
-    const btnOpen = document.getElementById('btnOpen');
-    const btnClose = document.getElementById('btnClose');
+    /* ═══════════════════════════════════════════
+       ARRAY 1 — PRIMARY NAV (rnav-links)
+       Solo enlaces planos, sin sub-menú.
+       Propiedades:
+         label   → texto visible
+         href    → URL del enlace
+         live    → (opcional) true activa el badge animado "En VIVO"
+    ═══════════════════════════════════════════ */
+    var RNAV_ITEMS = [
+        { label: 'En Vivo',          href: '#', live: false },
+        { label: 'Últimas Noticias', href: '#' },
+        { label: 'Actualidad',       href: '#' },
+        { label: 'Política',         href: '#' },
+        { label: 'Seguridad',        href: '#' },
+        { label: 'Mundo',            href: '#' },
+        { label: 'Investigación',    href: '#' },
+        { label: 'Opinión',          href: '#' },
+        { label: 'Sostenibilidad',   href: '#' },
+        { label: 'Deportes',         href: '#' },
+        { label: 'Tendencias',       href: '#' },
+        { label: 'Entretenimiento',  href: '#' },
+        { label: 'Negocios',         href: '#' },
+        { label: 'Servicios',        href: '#' },
+    ];
 
-    let focusableEls;
-    let prevFocus;
+    /* ═══════════════════════════════════════════
+       ARRAY 2 — SIDEBAR NAV (sidebar__nav)
+       Soporta sub-menús mediante la propiedad children.
+       Propiedades:
+         label      → texto visible
+         href       → URL del enlace
+         live       → (opcional) true activa el badge animado "En VIVO"
+         children   → (opcional) array de { label, href } para sub-menú desplegable
+    ═══════════════════════════════════════════ */
+    var SIDEBAR_ITEMS = [
+        { label: 'En Vivo',          href: '#', live: true },
+        { label: 'Últimas Noticias', href: '#' },
+        { label: 'Actualidad',       href: '#' },
+        { label: 'Política',         href: '#' },
+        { label: 'Seguridad',        href: '#' },
+        { label: 'Mundo',            href: '#' },
+        { label: 'Investigación',    href: '#' },
+        { label: 'Opinión',          href: '#' },
+        { label: 'Sostenibilidad',   href: '#' },
+        { label: 'Deportes',         href: '#' },
+        { label: 'Tendencias',       href: '#' },
+        {
+            label: 'Entretenimiento', href: '#',
+            children: [
+                { label: 'Cine',       href: '#' },
+                { label: 'Música',     href: '#' },
+                { label: 'Televisión', href: '#' },
+            ]
+        },
+        { label: 'Negocios', href: '#' },
+        {
+            label: 'Servicios', href: '#',
+            children: [
+                { label: 'Horóscopo', href: '#' },
+                { label: 'Clima',     href: '#' },
+            ]
+        },
+    ];
+
+    /* ═══════════════════════════════════════════
+       ARRAY 3 — SECONDARY NAV (secondary-nav)
+       Solo enlaces planos.
+       Propiedades:
+         label  → texto visible
+         href   → URL del enlace
+    ═══════════════════════════════════════════ */
+    var SECONDARY_ITEMS = [
+        { label: 'Eventos',                href: '#' },
+        { label: 'Publicidad',             href: '#' },
+        { label: 'Elecciones Ecuador 2025',href: '#' },
+        { label: 'Nacional',               href: '#' },
+        { label: 'Internacional',          href: '#' },
+        { label: 'Salud',                  href: '#' },
+        { label: 'Tecnología',             href: '#' },
+        { label: 'Campeonato Ecuatoriano', href: '#' },
+        { label: 'Videos',                 href: '#' },
+        { label: '500 Mejores Empresas',   href: '#' },
+    ];
+
+    /* ─── SVG: flecha sub-menú ─── */
+    var ARROW_SVG =
+        '<svg class="sidebar__arrow" viewBox="0 0 16 16" fill="none" width="16" height="16" aria-hidden="true">' +
+        '<path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>' +
+        '</svg>';
+
+    /* ═══════════════════════════════════════════
+       RENDER — rnav-links (primary nav desktop)
+       Solo enlaces planos; badge para item live.
+    ═══════════════════════════════════════════ */
+    function buildRnavLinks(items) {
+        var container = document.getElementById('rnavLinks');
+        if (!container) return;
+
+        var html = '';
+
+        items.forEach(function (item) {
+            html += '<a href="' + item.href + '">';
+            html += item.live
+                ? '<span class="sidebar__live-badge">' + item.label + '</span>'
+                : item.label;
+            html += '</a>';
+        });
+
+        container.innerHTML = html;
+    }
+
+    /* ═══════════════════════════════════════════
+       RENDER — secondary-nav
+    ═══════════════════════════════════════════ */
+    function buildSecondaryNav(items) {
+        var nav = document.getElementById('secondaryNav');
+        if (!nav) return;
+
+        var html = '';
+        items.forEach(function (item) {
+            html += '<a href="' + item.href + '">' + item.label + '</a>';
+        });
+        nav.innerHTML = html;
+    }
+
+    /* ═══════════════════════════════════════════
+       RENDER — sidebar__nav
+       Soporta items con children → sub-menú desplegable.
+    ═══════════════════════════════════════════ */
+    function buildSidebarNav(items) {
+        var ul = document.getElementById('sidebarNav');
+        if (!ul) return;
+
+        var html = '';
+
+        items.forEach(function (item) {
+            if (item.children && item.children.length) {
+                /* ── Item con sub-menú ── */
+                var slug  = item.label.replace(/\s+/g, '').toLowerCase();
+                var subId = 'sub-' + slug;
+                var liId  = 'menu-' + slug;
+
+                html += '<li class="sidebar__has-sub" id="' + liId + '">';
+                html +=   '<div class="sidebar__has-sub-row">';
+                html +=     '<a href="' + item.href + '" class="sidebar__has-sub-label">' + item.label + '</a>';
+                html +=     '<button class="sidebar__toggle" aria-expanded="false" aria-controls="' + subId + '" aria-label="Expandir ' + item.label + '">' + ARROW_SVG + '</button>';
+                html +=   '</div>';
+                html +=   '<ul class="sidebar__submenu" id="' + subId + '" role="list">';
+                item.children.forEach(function (child) {
+                    html += '<li><a href="' + child.href + '">' + child.label + '</a></li>';
+                });
+                html +=   '</ul>';
+                html += '</li>';
+
+            } else {
+                /* ── Item simple ── */
+                html += '<li><a href="' + item.href + '">';
+                html += item.live
+                    ? '<span class="sidebar__live-badge">' + item.label + '</span>'
+                    : item.label;
+                html += '</a></li>';
+            }
+        });
+
+        ul.innerHTML = html;
+    }
+
+    /* ═══════════════════════════════════════════
+       SIDEBAR — open / close / focus trap
+    ═══════════════════════════════════════════ */
+    var root     = document.documentElement;
+    var sidebar  = document.getElementById('sidebar');
+    var overlay  = document.getElementById('overlay');
+    var btnOpen  = document.getElementById('btnOpen');
+    var btnClose = document.getElementById('btnClose');
+
+    var prevFocus;
 
     function getFocusable() {
         return Array.from(
@@ -40,22 +209,23 @@
     function trapFocus(e) {
         if (e.key === 'Escape') { closeSidebar(); return; }
         if (e.key !== 'Tab') return;
-        focusableEls = getFocusable();
-        const first = focusableEls[0];
-        const last = focusableEls[focusableEls.length - 1];
+        var els   = getFocusable();
+        var first = els[0];
+        var last  = els[els.length - 1];
         if (e.shiftKey) {
             if (document.activeElement === first) { e.preventDefault(); last.focus(); }
         } else {
-            if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+            if (document.activeElement === last)  { e.preventDefault(); first.focus(); }
         }
     }
 
     function toggleSubmenu(btn) {
-        const li = btn.closest('li');
-        const isOpen = li.classList.contains('open');
+        var li     = btn.closest('li');
+        var isOpen = li.classList.contains('open');
+        /* Cierra cualquier otro sub-menú abierto */
         document.querySelectorAll('.sidebar__has-sub.open').forEach(function (el) {
             el.classList.remove('open');
-            el.querySelector('button').setAttribute('aria-expanded', 'false');
+            el.querySelector('.sidebar__toggle').setAttribute('aria-expanded', 'false');
         });
         if (!isOpen) {
             li.classList.add('open');
@@ -63,12 +233,17 @@
         }
     }
 
+    /* ── Init ── */
+    buildRnavLinks(RNAV_ITEMS);
+    buildSidebarNav(SIDEBAR_ITEMS);
+    buildSecondaryNav(SECONDARY_ITEMS);
+
     btnOpen.addEventListener('click', openSidebar);
     btnClose.addEventListener('click', closeSidebar);
     overlay.addEventListener('click', closeSidebar);
 
-    sidebar.querySelector('.sidebar__nav').addEventListener('click', function (e) {
-        const btn = e.target.closest('.sidebar__has-sub > button');
+    document.getElementById('sidebarNav').addEventListener('click', function (e) {
+        var btn = e.target.closest('.sidebar__has-sub .sidebar__toggle');
         if (btn) toggleSubmenu(btn);
     });
 

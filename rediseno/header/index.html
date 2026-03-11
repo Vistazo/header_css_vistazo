@@ -40,63 +40,25 @@
         </div>
 
         <div class="sidebar__search">
-            <div id="529566674" class="portlet-boundary portlet-static-end advanced-search-portlet buscador-real"> <span class="iter-field iter-field-text"> <span class="iter-field-content"> <span class="iter-field-element"> <input id="_529566674_keywords" type="text" value="" name="keywords" inlinefield="true" class="iter-field-input iter-field-input-text" onkeydown="javascript:_529566674_onKeyEnterSearch(event)" placeholder="Buscar"> </span> </span> </span> <span class="iter-button iter-button-submit"> <span class="iter-button-content"> <input id="_529566674_search" type="submit" name="search" value="buscar" class="iter-button-input iter-button-input-submit" onclick="javascript:_529566674_onClickSearch()"> </span> </span> <script type="text/javascript">/*<![CDATA[*/function _529566674_cleanKeywords(i){var j="";var h="";for(var f=0;f<i.length;f++){var g=i[f];if(!(g=="/"||g=="\\"||g=="~"||g=="!"||g=="("||g==")")){h+=g}else{h+=" "}}h=encodeURIComponent(h);for(var f=0;f<h.length;f++){var g=h[f];if(g=="'"){j+="%27"}else{j+=g}}return j}function _529566674_onClickSearch(){var e=_529566674_cleanKeywords(jQryIter("#_529566674_keywords").val());if(e.length>0){var d="/busquedas/-/search/";var f="/false/false/19840310/20260310/date/true/true/0/0/meta/0/0/0/1";window.location.href=d+e+f}}function _529566674_onKeyEnterSearch(b){if(b.keyCode==13){_529566674_onClickSearch()}};/*]]>*/</script> </div>
+            <div id="529566674" class="portlet-boundary portlet-static-end advanced-search-portlet buscador-real"> <span
+                    class="iter-field iter-field-text"> <span class="iter-field-content"> <span
+                            class="iter-field-element"> <input id="_529566674_keywords" type="text" value=""
+                                name="keywords" inlinefield="true" class="iter-field-input iter-field-input-text"
+                                onkeydown="javascript:_529566674_onKeyEnterSearch(event)" placeholder="Buscar"> </span>
+                    </span> </span> <span class="iter-button iter-button-submit"> <span class="iter-button-content">
+                        <input id="_529566674_search" type="submit" name="search" value="buscar"
+                            class="iter-button-input iter-button-input-submit"
+                            onclick="javascript:_529566674_onClickSearch()"> </span> </span>
+                <script
+                    type="text/javascript">/*<![CDATA[*/function _529566674_cleanKeywords(i) { var j = ""; var h = ""; for (var f = 0; f < i.length; f++) { var g = i[f]; if (!(g == "/" || g == "\\" || g == "~" || g == "!" || g == "(" || g == ")")) { h += g } else { h += " " } } h = encodeURIComponent(h); for (var f = 0; f < h.length; f++) { var g = h[f]; if (g == "'") { j += "%27" } else { j += g } } return j } function _529566674_onClickSearch() { var e = _529566674_cleanKeywords(jQryIter("#_529566674_keywords").val()); if (e.length > 0) { var d = "/busquedas/-/search/"; var f = "/false/false/19840310/20260310/date/true/true/0/0/meta/0/0/0/1"; window.location.href = d + e + f } } function _529566674_onKeyEnterSearch(b) { if (b.keyCode == 13) { _529566674_onClickSearch() } };/*]]>*/</script>
+            </div>
         </div>
 
         <p class="sidebar__section-label">Secciones</p>
 
-        <ul class="sidebar__nav" role="list">
-            <li>
-                <a href="#">
-                    <span class="sidebar__live-badge">En VIVO</span>
-                </a>
-            </li>
-            <li><a href="#">Últimas Noticias</a></li>
-            <li><a href="#">Actualidad</a></li>
-            <li><a href="#">Política</a></li>
-            <li><a href="#">Seguridad</a></li>
-            <li><a href="#">Mundo</a></li>
-            <li><a href="#">Investigación</a></li>
-            <li><a href="#">Opinión</a></li>
-            <li><a href="#">Sostenibilidad</a></li>
-            <li><a href="#">Deportes</a></li>
-            <li><a href="#">Tendencias</a></li>
-            <li class="sidebar__has-sub" id="menuEntretenimiento">
-                <button aria-expanded="false" aria-controls="subEntretenimiento">
-                    Entretenimiento
-                    <svg class="sidebar__arrow" viewBox="0 0 16 16" fill="none" width="16" height="16"
-                        aria-hidden="true">
-                        <path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                    </svg>
-                </button>
-                <ul class="sidebar__submenu" id="subEntretenimiento" role="list">
-                    <li><a href="#">Cine</a></li>
-                    <li><a href="#">Música</a></li>
-                    <li><a href="#">Televisión</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Negocios</a></li>
-            <li class="sidebar__has-sub" id="menuServicios">
-                <button aria-expanded="false" aria-controls="subServicios">
-                    Servicios
-                    <svg class="sidebar__arrow" viewBox="0 0 16 16" fill="none" width="16" height="16"
-                        aria-hidden="true">
-                        <path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                    </svg>
-                </button>
-                <ul class="sidebar__submenu" id="subServicios" role="list">
-                    <li><a href="#">Horóscopo</a></li>
-                    <li><a href="#">Clima</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Eventos</a></li>
-            <li role="separator" style="height:1px;background:#e0e0e0;margin:6px 0;list-style:none"></li>
-            <li><a href="#">Newsletter</a></li>
-            <li><a href="#">Réplicas</a></li>
-            <li><a href="#">Suscripciones</a></li>
-        </ul>
+        <ul class="sidebar__nav" id="sidebarNav" role="list"></ul>
+
+
 
         <div class="sidebar__footer">
 
@@ -139,7 +101,7 @@
         </div>
 
     </aside>
-    
+
 
     <!-- ══════════ NAVBAR ══════════ -->
     <nav class="primary-nav">
@@ -159,17 +121,7 @@
                 <img width="100%" src="https://codigomarret.online/upload/img/logovistazo.png" alt="Vistazo">
             </a>
         </div>
-        <div class="rnav-links">
-            <a href="#">En Vivo</a>
-            <a href="#">Últimas Noticias</a>
-            <a href="#">Actualidad</a>
-            <a href="#">Política</a>
-            <a href="#">Seguridad</a>
-            <a href="#">Mundo</a>
-            <a href="#">Investigación</a>
-            <a href="#">Opinión</a>
-            <a href="#">Deportes</a>
-        </div>
+        <div class="rnav-links" id="rnavLinks"></div>
 
         <div class="rnav-right">
             <a href="#" class="rbtn-buscar">
@@ -206,74 +158,85 @@
     </nav>
 
     <!-- Secondary navigation -->
-    <nav class="secondary-nav">
-        <a href="#">Eventos</a>
-        <a href="#">Publicidad</a>
-        <a href="#">Elecciones Ecuador 2025</a>
-        <a href="#">Nacional</a>
-        <a href="#">Internacional</a>
-        <a href="#">Salud</a>
-        <a href="#">Tecnología</a>
-        <a href="#">Campeonato Ecuatoriano</a>
-        <a href="#">Videos</a>
-        <a href="#">500 Mejores Empresas</a>
-    </nav>
+    <nav class="secondary-nav" id="secondaryNav"></nav>
 
 
 
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae magnam laudantium officiis maiores? Cum numquam eos iusto, ipsam vero perferendis repellat consequatur nesciunt laborum quas, fugiat fuga animi, dicta deleniti!
-    
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae magnam laudantium officiis maiores? Cum numquam eos iusto, ipsam vero perferendis repellat consequatur nesciunt laborum quas, fugiat fuga animi, dicta deleniti!
-    
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae magnam laudantium officiis maiores? Cum numquam eos iusto, ipsam vero perferendis repellat consequatur nesciunt laborum quas, fugiat fuga animi, dicta deleniti!
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae magnam laudantium officiis maiores? Cum numquam eos
+    iusto, ipsam vero perferendis repellat consequatur nesciunt laborum quas, fugiat fuga animi, dicta deleniti!
 
-    
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae magnam laudantium officiis maiores? Cum numquam eos iusto, ipsam vero perferendis repellat consequatur nesciunt laborum quas, fugiat fuga animi, dicta deleniti!
-    
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae magnam laudantium officiis maiores? Cum numquam eos iusto, ipsam vero perferendis repellat consequatur nesciunt laborum quas, fugiat fuga animi, dicta deleniti!
-    
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae magnam laudantium officiis maiores? Cum numquam eos iusto, ipsam vero perferendis repellat consequatur nesciunt laborum quas, fugiat fuga animi, dicta deleniti!
-    
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae magnam laudantium officiis maiores? Cum numquam eos iusto, ipsam vero perferendis repellat consequatur nesciunt laborum quas, fugiat fuga animi, dicta deleniti!
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae magnam laudantium officiis maiores? Cum numquam eos
+    iusto, ipsam vero perferendis repellat consequatur nesciunt laborum quas, fugiat fuga animi, dicta deleniti!
 
-    
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae magnam laudantium officiis maiores? Cum numquam eos iusto, ipsam vero perferendis repellat consequatur nesciunt laborum quas, fugiat fuga animi, dicta deleniti!
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae magnam laudantium officiis maiores? Cum numquam eos
+    iusto, ipsam vero perferendis repellat consequatur nesciunt laborum quas, fugiat fuga animi, dicta deleniti!
 
 
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae magnam laudantium officiis maiores? Cum numquam eos
+    iusto, ipsam vero perferendis repellat consequatur nesciunt laborum quas, fugiat fuga animi, dicta deleniti!
 
-    
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae magnam laudantium officiis maiores? Cum numquam eos iusto, ipsam vero perferendis repellat consequatur nesciunt laborum quas, fugiat fuga animi, dicta deleniti!
-    
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae magnam laudantium officiis maiores? Cum numquam eos iusto, ipsam vero perferendis repellat consequatur nesciunt laborum quas, fugiat fuga animi, dicta deleniti!
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae magnam laudantium officiis maiores? Cum numquam eos
+    iusto, ipsam vero perferendis repellat consequatur nesciunt laborum quas, fugiat fuga animi, dicta deleniti!
 
-    
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae magnam laudantium officiis maiores? Cum numquam eos iusto, ipsam vero perferendis repellat consequatur nesciunt laborum quas, fugiat fuga animi, dicta deleniti!
-    
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae magnam laudantium officiis maiores? Cum numquam eos iusto, ipsam vero perferendis repellat consequatur nesciunt laborum quas, fugiat fuga animi, dicta deleniti!
-    
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae magnam laudantium officiis maiores? Cum numquam eos iusto, ipsam vero perferendis repellat consequatur nesciunt laborum quas, fugiat fuga animi, dicta deleniti!
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae magnam laudantium officiis maiores? Cum numquam eos
+    iusto, ipsam vero perferendis repellat consequatur nesciunt laborum quas, fugiat fuga animi, dicta deleniti!
+
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae magnam laudantium officiis maiores? Cum numquam eos
+    iusto, ipsam vero perferendis repellat consequatur nesciunt laborum quas, fugiat fuga animi, dicta deleniti!
 
 
-    
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae magnam laudantium officiis maiores? Cum numquam eos iusto, ipsam vero perferendis repellat consequatur nesciunt laborum quas, fugiat fuga animi, dicta deleniti!
-    
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae magnam laudantium officiis maiores? Cum numquam eos iusto, ipsam vero perferendis repellat consequatur nesciunt laborum quas, fugiat fuga animi, dicta deleniti!
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae magnam laudantium officiis maiores? Cum numquam eos
+    iusto, ipsam vero perferendis repellat consequatur nesciunt laborum quas, fugiat fuga animi, dicta deleniti!
 
-    
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae magnam laudantium officiis maiores? Cum numquam eos iusto, ipsam vero perferendis repellat consequatur nesciunt laborum quas, fugiat fuga animi, dicta deleniti!
-    
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae magnam laudantium officiis maiores? Cum numquam eos iusto, ipsam vero perferendis repellat consequatur nesciunt laborum quas, fugiat fuga animi, dicta deleniti!
 
-    
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae magnam laudantium officiis maiores? Cum numquam eos iusto, ipsam vero perferendis repellat consequatur nesciunt laborum quas, fugiat fuga animi, dicta deleniti!
-    
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae magnam laudantium officiis maiores? Cum numquam eos iusto, ipsam vero perferendis repellat consequatur nesciunt laborum quas, fugiat fuga animi, dicta deleniti!
+
+
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae magnam laudantium officiis maiores? Cum numquam eos
+    iusto, ipsam vero perferendis repellat consequatur nesciunt laborum quas, fugiat fuga animi, dicta deleniti!
+
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae magnam laudantium officiis maiores? Cum numquam eos
+    iusto, ipsam vero perferendis repellat consequatur nesciunt laborum quas, fugiat fuga animi, dicta deleniti!
+
+
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae magnam laudantium officiis maiores? Cum numquam eos
+    iusto, ipsam vero perferendis repellat consequatur nesciunt laborum quas, fugiat fuga animi, dicta deleniti!
+
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae magnam laudantium officiis maiores? Cum numquam eos
+    iusto, ipsam vero perferendis repellat consequatur nesciunt laborum quas, fugiat fuga animi, dicta deleniti!
+
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae magnam laudantium officiis maiores? Cum numquam eos
+    iusto, ipsam vero perferendis repellat consequatur nesciunt laborum quas, fugiat fuga animi, dicta deleniti!
+
+
+
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae magnam laudantium officiis maiores? Cum numquam eos
+    iusto, ipsam vero perferendis repellat consequatur nesciunt laborum quas, fugiat fuga animi, dicta deleniti!
+
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae magnam laudantium officiis maiores? Cum numquam eos
+    iusto, ipsam vero perferendis repellat consequatur nesciunt laborum quas, fugiat fuga animi, dicta deleniti!
+
+
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae magnam laudantium officiis maiores? Cum numquam eos
+    iusto, ipsam vero perferendis repellat consequatur nesciunt laborum quas, fugiat fuga animi, dicta deleniti!
+
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae magnam laudantium officiis maiores? Cum numquam eos
+    iusto, ipsam vero perferendis repellat consequatur nesciunt laborum quas, fugiat fuga animi, dicta deleniti!
+
+
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae magnam laudantium officiis maiores? Cum numquam eos
+    iusto, ipsam vero perferendis repellat consequatur nesciunt laborum quas, fugiat fuga animi, dicta deleniti!
+
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae magnam laudantium officiis maiores? Cum numquam eos
+    iusto, ipsam vero perferendis repellat consequatur nesciunt laborum quas, fugiat fuga animi, dicta deleniti!
     v
-    
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae magnam laudantium officiis maiores? Cum numquam eos iusto, ipsam vero perferendis repellat consequatur nesciunt laborum quas, fugiat fuga animi, dicta deleniti!
+
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae magnam laudantium officiis maiores? Cum numquam eos
+    iusto, ipsam vero perferendis repellat consequatur nesciunt laborum quas, fugiat fuga animi, dicta deleniti!
     <var>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae magnam laudantium officiis maiores? Cum numquam eos iusto, ipsam vero perferendis repellat consequatur nesciunt laborum quas, fugiat fuga animi, dicta deleniti!</var>
-    
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae magnam laudantium officiis maiores? Cum numquam
+        eos iusto, ipsam vero perferendis repellat consequatur nesciunt laborum quas, fugiat fuga animi, dicta
+        deleniti!</var>
+
 
     <script src="header.js" defer></script>
     <!-- <script src="https://vzheaders.netlify.app/rediseno/header/header.js"></script> -->

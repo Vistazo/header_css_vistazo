@@ -76,14 +76,15 @@ body {
 }
 
 .secondary-nav {
-    padding: 22px 36px;
+    padding: 22px 0 5px 0;
     gap: 36px;
     overflow: auto;
     white-space: nowrap;
     display: flex;
     align-items: flex-start;
     align-items: center;
-    margin-top: 70px;
+    margin: 70px 36px 20px 36px;
+
 
 }
 
@@ -107,7 +108,7 @@ body {
 }
 
 .secondary-nav::-webkit-scrollbar-thumb:hover {
-    background-color: #ffffff75;
+    background-color: #5252527c;
     height: 10px;
 
 }
@@ -417,6 +418,59 @@ body {
     gap: 8px;
 }
 
+/* ── Fila padre con sub-menú: link + botón flecha separados ── */
+.sidebar__has-sub-row {
+    display: flex;
+    align-items: stretch;
+    border-left: 3px solid transparent;
+    transition: background .18s, border-color .18s;
+}
+
+.sidebar__has-sub-row:hover {
+    background: #f4f4f2;
+    border-left-color: #CC1114;
+}
+
+.sidebar__has-sub-label {
+    flex: 1;
+    padding: 10px 0 10px 16px;
+    text-decoration: none;
+    font-size: .9375rem;
+    font-family: 'Zalando Sans', sans-serif;
+    color: #1a1a1a;
+    cursor: pointer;
+    border-left: none !important;
+    background: transparent !important;
+    transition: color .18s;
+}
+
+.sidebar__has-sub-row:hover .sidebar__has-sub-label {
+    color: #CC1114;
+}
+
+.sidebar__toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #1a1a1a;
+    border-left: 1px solid #e8e8e8;
+    transition: background .18s, color .18s;
+}
+
+.sidebar__toggle:hover {
+    background: #eaeaea;
+    color: #CC1114;
+}
+
+.sidebar__toggle:focus-visible {
+    outline: 2px solid #CC1114;
+    outline-offset: -2px;
+}
+
 .sidebar__nav li a:hover,
 .sidebar__nav li>button:hover {
     background: #f4f4f2;
@@ -429,10 +483,10 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 5px;
-    font-size: .7rem;
-    font-weight: 700;
-    color: #CC1114;
-    letter-spacing: .06em;
+    /* font-size: .7rem; */
+    /* font-weight: 700; */
+    /* color: #CC1114; */
+    /* letter-spacing: .06em; */
 }
 
 .sidebar__live-badge::before {
@@ -590,6 +644,16 @@ body {
     .primary-nav .rham-logo {
         gap: 8px;
 
+
+    }
+
+    .secondary-nav:last-of-type {
+        padding-right: 12px;
+    }
+
+    .secondary-nav {
+        margin: 70px 0 20px 12px;
+        gap: 20px;
     }
 
     .primary-nav .rham-logo .rlogo img {
