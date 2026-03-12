@@ -1,0 +1,97 @@
+:root {
+    --gray: #D4D4D4;
+    --red: #CC1114;
+    --dark: #111;
+    --light: #f5f3ee;
+    --bone: #F3F2ED;
+    --bg-gray: #F3F5F8;
+}
+
+
+.sect-date {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+
+.sect-date .article-section .section {
+    background: var(--bg-gray);
+    padding: 8px;
+    font-size: 13px;
+}
+
+.sect-date .date {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+}
+
+.sect-date .date::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background-color: var(--red);
+    /* rojo */
+    border-radius: 50%;
+    display: inline-block;
+}
+
+
+.headline {
+    font-size: 40px;
+    margin-bottom: 32px;
+    margin-top: 16px;
+
+}
+
+.subheadline {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--gray);
+    border-top: 1px solid var(--gray);
+    font-size: 18px;
+}
+
+r_relacionadas .r_relacionadas .teaser-related-list article a {
+    font-family: 'Zalando Sans';
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+    text-decoration: none;
+    text-decoration-color: red;
+    text-decoration-thickness: 2px;
+    max-width: 100%;
+    word-wrap: break-word;
+    display: inline-flex;
+    align-items: center;
+    padding-left: 0;
+}
+
+.r_relacionadas h2 {
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.r_relacionadas .relatedContent {
+    padding: 16px;
+    background: var(--bone);
+    border-radius: 0;
+}
+
+.r_relacionadas article {
+    display: flex;
+    align-items: center;
+    /* centra verticalmente */
+}
+
+.r_relacionadas .icon {
+    width: 8px;
+    height: 8px;
+    background: #c40000;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
