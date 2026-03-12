@@ -24,6 +24,7 @@
      background: var(--color-surface);
      border-top: 3px solid var(--color-accent);
      margin-top: 56px;
+     width: 100%;
  }
 
  .footer__inner {
@@ -39,9 +40,6 @@
  /* =============================================
        COL 1 — LOGO + CONTACTO
     ============================================= */
- .footer__brand {
-     text-align: center;
- }
 
  .footer__logo {
      display: inline-flex;
@@ -415,4 +413,9 @@
      .social-row {
          justify-content: center;
      }
+
+     .footer__brand {
+         text-align: center;
+     }
+
  }

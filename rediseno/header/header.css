@@ -2,6 +2,11 @@ body {
     font-family: 'Zalando Sans', sans-serif;
 }
 
+.row {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+
 .primary-nav {
     position: fixed;
     top: 0;
