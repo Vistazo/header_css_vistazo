@@ -76,8 +76,8 @@ body {
 
 .rbtn-login svg {
     display: none;
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
 }
 
 .secondary-nav {
@@ -675,5 +675,8 @@ body {
 
     .primary-nav {
         padding: 16px 12px;
+    }
+    .primary-nav .rnav-right{
+        gap: 8px;
     }
 }
