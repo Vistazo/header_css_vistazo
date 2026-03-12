@@ -20,11 +20,16 @@
  /* =============================================
        FOOTER
     ============================================= */
+
+ footer {
+     width: 100%;
+
+ }
+
  .footer {
      background: var(--color-surface);
      border-top: 3px solid var(--color-accent);
      margin-top: 56px;
-     width: 100%;
  }
 
  .footer__inner {
