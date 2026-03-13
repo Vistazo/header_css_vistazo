@@ -351,10 +351,10 @@
 
 .r_point_post {
     position: absolute !important;
-    left: -20px !important;
+    left: -22px !important;
     top: 0px !important;
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
     background-image: url(https://codigomarret.online/upload/img/puntorojo1321320192.svg);
     background-size: contain;
     background-repeat: no-repeat;
@@ -469,8 +469,65 @@
     /* Subraya el enlace al pasar el mouse */
 }
 
-.R_LIVE_BLOG_POST .r_item_post:last-of-type .r_vertical-line{
+.R_LIVE_BLOG_POST .r_item_post:last-of-type .r_vertical-line {
     opacity: 0;
+}
+
+
+.r_bulletvistazo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+}
+
+.r_bulletvistazo::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background-color: var(--red);
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.r_citavistazo {
+    position: relative;
+    padding-left: 40px;
+    font-size: 28px;
+    font-family: serif;
+    margin: 24px 0;
+}
+
+.r_citavistazo::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 4px;
+    width: 24px;
+    height: 24px;
+    background-image: url(https://codigomarret.online/upload/img/comillasvtz.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+.tag_envivo {
+    display: inline-flex;
+    gap: 8px;
+    margin-bottom: 20px;
+    color: var(--red);
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.tag_envivo img {
+  animation: parpadeo 1s infinite;
+}
+
+@keyframes parpadeo {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 
