@@ -1,0 +1,168 @@
+:root {
+    --gray: #D4D4D4;
+    --red: #CC1114;
+}
+body {
+  font-family: 'Zalando Sans', sans-serif;
+}
+.microvistazos{
+    background: black;
+    color: white;
+    padding: 3rem;
+}
+.tresnotas{
+    margin-top: 4rem;
+}
+.tresnotas .noticias{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+    margin-bottom: 5rem;
+}
+.tresnotas .text_block .section{
+    display: inline-block;
+    background-color: #f0f0f0;
+    color: #333333 !important;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-decoration: none !important;
+    padding: 2px 8px;
+    border-radius: 2px;
+    line-height: 20px;
+    font-family: "Geist Mono", monospace;
+}
+.tresnotas .text_block .headline a{
+    text-decoration: none !important;
+    color: inherit;
+}
+.tresnotas .text_block .headline h2{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.1;
+    margin: 10px 0 6px 0;
+    color: #1a1a1a !important;
+    height: 115px;
+}
+.tresnotas .titlesec,
+.listado_notas .titlesec {
+    position: relative;
+    padding-bottom: 13px;
+    font-size: 13px;
+    line-height: 16px;
+    border-bottom: 1px solid var(--gray);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+.tresnotas .titlesec span,
+.listado_notas .titlesec span {
+    font-size: 15px;
+    line-height: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.tresnotas .inf2{
+    display: none;
+}
+.tresnotas article .headline{
+    position: relative;
+    font-weight: 600;
+}
+.tresnotas article .headline::after {
+    content:"";
+    position:absolute;
+    left:0;
+    width:90px;
+    height:32px;
+    background-image:url("https://codigomarret.online/upload/img/reprducir.svg");
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center;
+}
+
+/*    LISTADO DE NOTAS  */
+.listado_notas article{
+    background: #F3F5F8;
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+.listado_notas .media_block{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    gap: 24px;
+}
+.listado_notas .text_block a{
+    text-decoration: none !important;
+    color: inherit;
+}
+.listado_notas .sect-date{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+.listado_notas .text_block .sect-date .article-section{
+    display: inline-block;
+    background-color: #f0f0f0;
+    color: #333333 !important;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-decoration: none !important;
+    padding: 2px 8px;
+    border-radius: 2px;
+    line-height: 20px;
+    font-family: "Geist Mono", monospace;
+}
+.listado_notas .inf2 {
+  display: inline-flex;
+  align-items: center;
+  margin: 0;
+}
+.listado_notas .inf2 ul{
+  display: inline-flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 8px;
+}
+.listado_notas .inf2 ul li {
+  font-size: 11px;
+  color: #888888;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+.listado_notas .inf2 ul li a {
+  color: #888888 !important;
+  text-decoration: none !important;
+  font-size: 11px;
+}
+.listado_notas .sect-date h3.article-section::after {
+  content: "•";
+  color: #C8102E;
+  font-size: 14px;
+  margin-left: 6px;
+  font-weight: 700;
+}
+.listado_notas .autor-nombre{
+    display: none;
+}
+.listado_notas .text_block .headline a{
+    text-decoration: none !important;
+    color: inherit;
+}
+.listado_notas .text_block .headline h2{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.1;
+    margin: 10px 0 6px 0;
+    color: #1a1a1a !important;
+    height: 115px;
+}
