@@ -11,11 +11,12 @@ body {
 }
 
 /* ======== NOTA PRINCIPAL ======== */
-/* Título de la sección */
+/* Categoria*/
 .sect-date {
     display: flex;
     gap: 8px;
     align-items: center;
+    margin-bottom: 0.5rem;
 }
 .sect-date .article-section .section {
     background: var(--bg-gray);
@@ -61,7 +62,7 @@ body {
   display: none;
 }
 .principal_notas{
-  padding-top: 32px;
+  padding-top: 15px;
 }
 /* Descripcion */
 .principal_notas .subheadline {
@@ -113,7 +114,6 @@ body {
 .listado_notas {
   display: flex;
   flex-direction: column;
-  /*  padding: 12px 0 12px 12px;*/
   border-bottom: 1px solid #e5e5e5;
   margin-bottom: 0;
 }
@@ -174,6 +174,7 @@ body {
   padding: 12px 0 12px 0;
 }
 }
+
 /* ============= ARTÍCULO LISTA ================= */
 .noticias_list {
   display: flex;
@@ -222,6 +223,8 @@ body {
 .noticias_list article{
   padding-right: 2rem;
 }
+
+/* Titulo Bloque*/
 .section-title {
     position: relative;
     border-bottom: 1px solid var(--gray);

@@ -39,94 +39,35 @@ body {
   font-weight: 400;
   margin: 1.2rem 0 0 0;
 }
+
 /* ======== NOTA PRINCIPAL ======== */
-.nota_principal .sect-date,
-.cuatro_notas .sect-date,
-.listado_notas .sect-date,
-.list_not .sect-date{
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-bottom: 12px;
+/* Categoria*/
+.sect-date {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 0.5rem;
 }
-.nota_principal .sect-date,
-.cuatro_notas .sect-date{
-    margin-top: 15px;
+.sect-date .article-section .section {
+    background: var(--bg-gray);
+    padding: 8px;
+    font-size: 13px;
 }
-.nota_principal .sect-date h3.article-section,
-.cuatro_notas .sect-date h3.article-section,
-.listado_notas .sect-date h3.article-section,
-.list_not .sect-date h3.article-section{
-  display: inline-flex;
-  align-items: center;
-  margin: 0;
-  font-size: 11px;
-  font-weight: 600;
-  line-height: 1;
+.sect-date .date {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
 }
-.nota_principal .sect-date h3.article-section a.section,
-.cuatro_notas .sect-date h3.article-section a.section,
-.listado_notas .sect-date h3.article-section a.section,
-.list_not .sect-date h3.article-section a.section {
-  display: inline-block;
-  background-color: #f0f0f0;
-  color: #333333 !important;
-  font-size: 11px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  text-decoration: none !important;
-  padding: 2px 8px;
-  border-radius: 2px;
-  line-height: 20px;
-  font-family: "Geist Mono", monospace;
+.sect-date .date::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background-color: var(--red);
+    border-radius: 50%;
+    display: inline-block;
 }
-/* Punto separador rojo */
-.nota_principal .sect-date h3.article-section::after,
-.listado_notas .sect-date h3.article-section::after,
-.list_not .sect-date h3.article-section::after {
-  content: "•";
-  color: #C8102E;
-  font-size: 14px;
-  margin-left: 6px;
-  font-weight: 700;
-}
-.nota_principal .inf2,
-.listado_notas .inf2,
-.list_not .inf2 {
-  display: inline-flex;
-  align-items: center;
-  margin: 0;
-}
-.nota_principal .inf2 ul,
-.listado_notas .inf2 ul,
-.list_not .inf2 ul{
-  display: inline-flex;
-  align-items: center;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  gap: 8px;
-}
-.nota_principal .inf2 ul li,
-.listado_notas .inf2 ul li,
-.list_not .inf2 ul li {
-  font-size: 11px;
-  color: #888888;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  white-space: nowrap;
-}
-.nota_principal .inf2 ul li a,
-.cuatro_notas .inf2 ul li a,
-.listado_notas .inf2 ul li a,
-.list_not .inf2 ul li a {
-  color: #888888 !important;
-  text-decoration: none !important;
-  font-size: 11px;
-}
+
 /* Título del artículo */
 .nota_principal .headline {
   margin: 0 0 6px 0;
@@ -333,22 +274,23 @@ body {
 .list_not article:nth-child(9){
     border-bottom: 1px solid transparent;
 }
-.list_not .titlesec span{
-  font-size: 15px;
-  line-height: 16px;
-  font-weight: 600;
-  text-transform: uppercase;
+
+/* Titulo del Bloque*/
+.section-title {
+    position: relative;
+    border-bottom: 1px solid var(--gray);
+    margin-bottom: 36px;
 }
-.list_not .titlesec {
-  position: relative;
-  padding-bottom: 13px;
-  font-size: 13px;
-  line-height: 16px;
-  border-bottom: 1px solid var(--gray);
-  font-weight: 700;
-  margin-bottom: 1.5rem;
+.section-title .title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    line-height: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
 }
-.list_not .titlesec::after {
+.section-title::after {
     content: "";
     position: absolute;
     left: 0;
@@ -358,6 +300,7 @@ body {
     width: 30px;
     background: var(--red);
 }
+
 @media (max-width: 767px) {
 .list_not{
   border-bottom: 1px solid var(--gray);
