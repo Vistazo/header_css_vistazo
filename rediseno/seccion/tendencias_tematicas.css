@@ -170,6 +170,11 @@ body {
   width: 30px;
   background: var(--red);
 }
+.mas-destacados span{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 @media (min-width: 768px) and (max-width: 991px) {
   .mas-destacados .R_TIT {
       gap: 10px;
