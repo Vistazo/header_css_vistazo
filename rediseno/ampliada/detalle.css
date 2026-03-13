@@ -273,6 +273,7 @@
     font-size: 13px;
     display: block;
     color: #ffffff;
+    border-radius: 4px;
 }
 
 .r_head_title {
@@ -314,9 +315,162 @@
 
 .ultimas-noticias .element:nth-child(1),
 .ultimas-noticias .element:nth-child(2) {
- padding-bottom: 16px;
+    padding-bottom: 16px;
     margin-bottom: 16px;
     border-bottom: 1px solid var(--gray);
+}
+
+
+/* LIVE BLOG POSTING */
+
+.portlet-boundary.R_LIVE_BLOG_POST {
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin-bottom: 25px;
+
+    /* padding-left: 40px !important;*/
+    /* Espacio adicional para evitar superposición con la línea */
+}
+
+.v3 {
+    background: #fff !important;
+    padding: 20px !important;
+    position: relative !important;
+    /* Posicionamiento relativo para la línea general */
+}
+
+.r_item_post {
+    position: relative !important;
+    /* Importante para el posicionamiento de la línea */
+    padding-left: 20px !important;
+    /* Espacio para la línea y punto */
+    margin-left: 10px !important;
+    /* Asegurar espacio para la línea vertical */
+}
+
+
+.r_point_post {
+    position: absolute !important;
+    left: -20px !important;
+    top: 0px !important;
+    width: 20px;
+    height: 20px;
+    background-image: url(https://codigomarret.online/upload/img/puntorojo1321320192.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.r_item_line {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    height: 100% !important;
+}
+
+
+.r_vertical-line {
+    position: absolute !important;
+    width: 2px !important;
+    background-color: #CC1114 !important;
+    left: -11px !important;
+    top: 8px !important;
+    bottom: 0px !important;
+    height: calc(100% + 20px) !important;
+}
+
+
+.r_item_content {
+    margin-left: 15px !important;
+    /* Espacio adicional para contenido */
+}
+
+.r_date_post {
+    display: inline;
+    background: var(--red);
+    padding: 8px;
+    font-size: 13px;
+    color: #fff;
+    border-radius: 4px;
+}
+
+.r_headline_post {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.r_text_post p {
+    margin-top: 18px !important;
+}
+
+.r_social-icons {
+    /* display: flex; */
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+
+}
+
+.r_linea_hr {
+    border-top: 1px solid #ccc;
+    /* Estilo de la línea */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    /* Agrega sombra debajo de la línea */
+}
+
+.r_social-icons a img {
+    width: 24px;
+    /* O el tamaño que prefieras */
+    height: auto;
+    cursor: pointer;
+    margin-right: 10px;
+    background-color: var(--red);
+    padding: 5px;
+    border-radius: 50%;
+    margin-top: 5px;
+}
+
+.r_item_post.p_4 {
+    background: #f0f0f0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.r_image_post {
+    width: 100%;
+    /* Asegura que el contenedor de la imagen ocupe todo el ancho disponible de su contenedor padre */
+    overflow: hidden;
+    /* Oculta cualquier parte de la imagen que se desborde del contenedor */
+}
+
+.r_image_post img {
+    width: 100%;
+    /* Hace que la imagen ocupe el 100% del ancho de su contenedor */
+    height: auto;
+    /* Mantiene la relación de aspecto de la imagen */
+    display: block;
+    /* Elimina cualquier espacio extra alrededor de la imagen */
+}
+
+.R_LIVE_BLOG_POST p a {
+    color: var(--red);
+    /* Color del enlace */
+    text-decoration: none;
+    /* Elimina el subrayado del enlace */
+    font-weight: bold;
+    /* Hace el texto en negrita */
+}
+
+.R_LIVE_BLOG_POST p a:hover {
+    color: var(--red);
+    /* Color del enlace al pasar el mouse */
+    text-decoration: underline;
+    /* Subraya el enlace al pasar el mouse */
+}
+
+.R_LIVE_BLOG_POST .r_item_post:last-of-type .r_vertical-line{
+    opacity: 0;
 }
 
 
