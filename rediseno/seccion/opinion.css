@@ -7,6 +7,19 @@
     --bg-gray: #F3F5F8;
 }
 
+.r_publicidad {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.05), rgba(150, 150, 150, 0.1));
+    background-image: repeating-linear-gradient(45deg,
+            /* Ángulo de las líneas */
+            rgba(0, 0, 0, 0.05) 0px, rgba(0, 0, 0, 0.05) 5px, rgba(255, 255, 255, 0) 5px, rgba(255, 255, 255, 0) 10px);
+    background-size: 200% 200%;
+    animation: diagonal-lines 8s linear infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
 .listado3x1 {
     margin-bottom: 52px;
 }
@@ -94,6 +107,48 @@
 }
 
 .section-title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: translateY(60%);
+    height: 4px;
+    width: 30px;
+    background: var(--red);
+}
+
+/* MAS DESTACADOS */
+
+.mas-destacados .R_TIT {
+    display: flex;
+    gap: 20px;
+}
+
+.mas-destacados .headline h2 {
+    font-size: 14px;
+}
+
+.mas-destacados .r_numeracion {
+    font-size: 18px;
+    color: var(--red);
+}
+
+.mas-destacados .element {
+    border-bottom: 1px solid var(--gray);
+    padding: 16px 0;
+}
+
+.mas-destacados .teaser-viewer-title {
+    position: relative;
+    padding-bottom: 13px;
+    font-size: 13px;
+    line-height: 16px;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--gray);
+    font-weight: 600;
+}
+
+.mas-destacados .teaser-viewer-title::after {
     content: "";
     position: absolute;
     left: 0;
