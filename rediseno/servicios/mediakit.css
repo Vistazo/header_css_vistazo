@@ -1,0 +1,372 @@
+body {
+  font-family: 'Zalando Sans', sans-serif;
+}
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    padding:60px 0;
+}
+
+/* HEADER */
+.header{
+    height:600px;
+    background:url("https://codigomarret.online/upload/img/mediakit-header.webp") center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+}
+.header-overlay{
+    position:relative;
+    color:white;
+    text-align:center;
+    max-width:700px;
+}
+.header h1 {
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.header p {
+    font-size: 16px;
+    font-weight: 400;
+    opacity: 0.9;
+    padding: 0 2rem;
+    line-height: 1.2;
+}
+
+/* EDITORIAL */
+.editorial{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:center;
+}
+.editorial-img img{
+    width:100%;
+}
+.editorial-text h2 {
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    letter-spacing: -1px;
+}
+.editorial-text .date {
+    font-weight: 400;
+    margin-bottom: 15px;
+    font-size: 20px;
+    line-height: 1.2;
+}
+
+/* PORTFOLIO */
+.portfolio{
+    text-align:center;
+    padding: 0;
+}
+.portfolio h2 {
+    font-size: 40px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    letter-spacing: -1px;
+    padding: 0 7rem;
+}
+.subtitle {
+    color: #666;
+    margin-bottom: 40px;
+    padding: 0 12rem;
+    font-size: 16px;
+    font-weight: 400;
+}
+.cards{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:20px;
+}
+.card{
+    position:relative;
+    display:block;
+    overflow:hidden;
+    text-decoration:none;
+    color:white;
+}
+.card img{
+    width:100%;
+    height: auto;
+    object-fit:cover;
+    transition:0.3s;
+}
+.card span{
+    position:absolute;
+    bottom:15px;
+    left:15px;
+    font-size:18px;
+    font-weight:bold;
+}
+.card:hover img{
+    transform:scale(1.1);
+}
+
+/* AUDIENCE */
+.audiences{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:center;
+}
+.audiences h3 {
+    font-size: 40px;
+    font-weight: 500;
+    letter-spacing: -1px;
+}
+.audiences p{
+    color:#555;
+}
+
+/*==============================*/
+h2{
+    margin-bottom:20px;
+    color:#333;
+}
+
+/* TOP IMAGES */
+.top-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:3rem;
+}
+.top-grid.container{
+    padding: 0;
+}
+.top-grid img{
+    width:100%;
+    border-radius:6px;
+}
+.title{
+    font-size: 28px;
+    font-weight: 500;
+}
+
+/* SOCIAL */
+.social-icon-v{
+    color: #CC1114;
+}
+.social-icon-h{
+    color: #BF2BBF;
+}
+.social-icon-v.face-vistazo{
+    color: white;
+    background: #CC1114;
+    border-radius: 1rem;
+    width: 20px;
+    height: 20px;
+}
+.social-icon-v.in-vistazo{
+    color: white;
+    background: #CC1114;
+    width: 20px;
+    height: 20px;
+}
+.social-icon-h.face-hogar{
+    color: white;
+    background: #BF2BBF;
+    border-radius: 1rem;
+    width: 20px;
+    height: 20px;
+}
+.social-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+}
+.social-card{
+    background:white;
+    border-radius:6px;
+    overflow:hidden;
+    box-shadow: 0 0px 4px rgba(0, 0, 0, 0.08);
+}
+.social-header{
+    padding:15px 20px;
+    font-weight:bold;
+    font-size:18px;
+    border-bottom:1px solid #eee;
+    background: #F3F2ED;
+}
+.social-table{
+    width:100%;
+    border-collapse:collapse;
+}
+.social-table tr{
+    border-bottom:1px solid #eee;
+}
+.social-table td{
+    padding:14px 20px;
+    font-size:14px;
+}
+.social-icon{
+    width:24px;
+}
+.metric{
+    font-weight:bold;
+    font-size:16px;
+}
+.metric-label{
+    font-size:12px;
+    color:#666;
+}
+
+/* Publicidad digital */
+/* publicidad */
+
+.publicidad_digital {
+    background: black;
+    padding-bottom: 1.5rem;
+}
+
+/* TOP CONTENT */
+
+.publicidad__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  margin-left: 12rem;
+}
+
+.publicidad__text {
+    flex: 1;
+    margin-top: 13rem;
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  color: white;
+}
+
+.tag__icon {
+    width: 24px;
+    height: 24px;
+    background: #FBE45C;
+    display: inline-block;
+}
+
+.publicidad__text h1 {
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 1.3;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.publicidad__text p {
+  color: #ccc;
+  line-height: 1.6;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.publicidad__image {
+  flex: 1;
+}
+
+.publicidad__image img {
+  width: 100%;
+}
+
+/* BOTTOM */
+.publicidad__bottom {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.publicidad__subtitle {
+  margin-bottom: 40px;
+  color: #ccc;
+  font-size: 20px;
+  letter-spacing: 1px;
+  font-weight: 400;
+}
+
+/* PUBLICIDAD CARDS */
+.publicidad-cards {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+}
+
+.publicidad-card {
+    background: #FBE45C;
+    color: #000;
+    padding: 50px 15px;
+    font-size: 18px;
+    text-align: center;
+    font-weight: 500;
+    min-height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* PUBLICIDAD PRINT */
+.publicidad_print .tag,
+.publicidad_print .publicidad__text h1,
+.publicidad_print .publicidad__text p,
+.publicidad_print .publicidad__subtitle{
+    color: black;
+}
+
+/* EVENTOS VISTAZO */
+.eventos_vistazo{
+    background: #F3F5F8;
+}
+.eventos_vistazo .tag__icon{
+    background: #CC1114;
+}
+.eventos_vistazo .tag,
+.eventos_vistazo .publicidad__text h1{
+    color: black;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .publicidad__content {
+    flex-direction: column;
+  }
+
+  .publicidad-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media(max-width:900px){
+.editorial{
+    grid-template-columns:1fr;
+}
+.cards{
+    grid-template-columns:repeat(2,1fr);
+}
+.audiences{
+    grid-template-columns:1fr;
+}
+.top-grid{
+    grid-template-columns:1fr;
+}
+.social-grid{
+    grid-template-columns:1fr;
+}
+}
+
+@media (max-width: 600px) {
+  .publicidad-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .publicidad__text h1 {
+    font-size: 28px;
+  }
+}
