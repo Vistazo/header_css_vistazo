@@ -588,6 +588,7 @@ h2{
 }
 .process__box {
     flex-direction: column;
+    padding: 25px;
 }
 .cta__container {
     flex-direction: column;
@@ -600,26 +601,11 @@ h2{
 }
 }
 
-@media (max-width: 480px) {
-.cards {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 12px;
-    padding-bottom: 12px;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-}
-.cards::-webkit-scrollbar {
-    display: none;
-}
-.card {
-    flex: 0 0 75vw;
-    scroll-snap-align: start;
-}
+@media (max-width: 767px) {
+.header-overlay {
+    margin-top: 2rem;
 }
 
-@media (max-width: 767px) {
 .header h1 {
     font-size: 20px;
 }
@@ -633,7 +619,7 @@ h2{
 }
 .portfolio h2 {
     font-size: 20px;
-    padding: 0;
+    padding: 0 40px;
 }
 .subtitle {
     padding: 10px 0;
@@ -652,10 +638,12 @@ h2{
 .editorial-text .date {
     text-align: center;
     font-size: 14px;
+    margin-bottom: 30px;
 }
 .editorial-text p{
     font-size: 13px;
     text-align: center;
+    margin-top: 25px;
 }
 .audiences {
     gap: 20px;
@@ -665,9 +653,25 @@ h2{
     text-align: center;
 }
 .audiences p {
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 400;
     text-align: center;
+}
+.cards {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 12px;
+   /* padding-bottom: 12px;*/
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+.cards::-webkit-scrollbar {
+    display: none;
+}
+.card {
+    flex: 0 0 50vw;
+    scroll-snap-align: start;
 }
 .publicidad-cards {
     grid-template-columns: repeat(2, 1fr);
@@ -675,21 +679,24 @@ h2{
 .cards {
     grid-template-columns: repeat(2, 1fr);
 }
+.title {
+    font-size: 20px;
+}
 .publicidad__text h1 {
-    font-size: 28px;
+    font-size: 20px;
 }
 .brands__title {
     font-size: 26px;
 }
 .process__left h3 {
     font-size: 24px;
+    text-align: center;
 }
 
 /* PUBLICIDAD DIGITAL / PRINT MOVIL */
 .publicidad__content {
     flex-direction: column-reverse;
     margin-left: 0;
-    padding: 0 1.2rem;
     gap: 0;
 }
 .publicidad__image {
@@ -705,37 +712,110 @@ h2{
     line-height: 1.2;
 }
 .publicidad__text p {
-    font-size: 15px;
+    font-size: 13px;
+    padding: 0px 45px;
 }
 .publicidad__bottom {
-    padding: 0 1rem;
+    padding: 0;
 }
 .publicidad__subtitle {
-    font-size: 14px;
+    font-size: 13px;
+    text-align: center;
     letter-spacing: 0;
     font-family: monospace;
     padding: 0 0.5rem;
-    text-align: left;
 }
 .publicidad-cards {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    grid-template-columns: 3fr 2fr;
+    gap: 10px;
 }
 .publicidad-card {
-    padding: 30px 10px;
-    font-size: 15px;
+    padding: 28px 12px;
+    font-size: 14px;
+    min-height: 70px;
 }
-.publicidad-card:last-child:nth-child(odd) {
+/* Card 3: full width */
+.publicidad-card:nth-child(3) {
     grid-column: 1 / -1;
-    max-width: 50%;
+}
+/* Card 4+5: vuelven a 2 columnas (ya están en el flujo normal) */
+/* Card 6 "Auspicios Especiales": centrada, mitad ancho */
+.publicidad-card:nth-child(6) {
+    grid-column: 1 / -1;
+    width: 50%;
     margin: 0 auto;
-    width: 100%;
+}
+.tag{
+    justify-content: center;
+}
+.brands__logos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-items: center;
 }
 /* Print: fondo blanco, imagen arriba */
 .publicidad_print {
     background: white;
+    padding-bottom: 60px;
 }
 .publicidad_print .publicidad__content {
     flex-direction: column-reverse;
+}
+.process__left p{
+    font-size: 14px;
+    text-align: center;
+}
+.step{
+    padding: 15px 20px;
+}
+.step p {
+    font-size: 16px;
+}
+.process__box{
+    border-radius: 0;    
+}
+.process {
+    background: #eae8e4;
+}
+/* CTA MOVIL */
+.cta__container {
+    flex-direction: column-reverse;
+    min-height: unset;
+}
+.cta__image {
+    height: 260px;
+}
+.cta__content {
+    margin-left: 0;
+    padding: 2rem 1.5rem;
+    align-items: center;
+    text-align: center;
+}
+.cta__content h2 {
+    font-size: 22px;
+    margin-top: 0;
+}
+.cta__content p {
+    display: none;
+}
+.cta__actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+}
+.btn--primary {
+    width: 100%;
+    text-align: center;
+    padding: 14px;
+}
+.btn--link {
+    font-size: 13px;
+}
+.cta__download {
+    display: block;
+    text-align: center;
+    margin-top: 4px;
 }
 }
