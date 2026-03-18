@@ -1,0 +1,48 @@
+:root {
+    --gray: #D4D4D4;
+    --red: #CC1114;
+    --dark: #111;
+    --light: #f5f3ee;
+    --bone: #F3F2ED;
+    --bg-gray: #F3F5F8;
+}
+
+.ficha_author {
+    background: var(--bone);
+    padding: 36px;
+}
+
+.content_author {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.content_author .image_author img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin: 0;
+    padding: 0;
+}
+
+.content_author .image_author [frame="crop_300x300"] {
+    width: 150px;
+    height: 150px;
+    margin: 0;
+    padding: 0;
+}
+
+
+.content_author .name_author {
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.content_author .title_author {
+    font-size: 14px;
+}
+
+.content_author .subtitle_author {
+    display: none;
+}
