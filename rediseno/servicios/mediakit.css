@@ -559,6 +559,9 @@ h2{
     margin: 0px;
 
 }
+.iter-footer-wrapper {
+    width: 100%;
+}
 /* RESPONSIVE */
 @media (max-width: 1024px) {
   .publicidad__content {
@@ -602,10 +605,12 @@ h2{
 }
 
 @media (max-width: 767px) {
+.container {
+    width: 100%;
+}
 .header-overlay {
     margin-top: 2rem;
 }
-
 .header h1 {
     font-size: 20px;
 }
@@ -675,6 +680,8 @@ h2{
 }
 .publicidad-cards {
     grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 1rem;
 }
 .cards {
     grid-template-columns: repeat(2, 1fr);
@@ -708,7 +715,7 @@ h2{
     text-align: center;
 }
 .publicidad__text h1 {
-    font-size: 24px;
+    font-size: 20px;
     line-height: 1.2;
 }
 .publicidad__text p {
@@ -717,6 +724,7 @@ h2{
 }
 .publicidad__bottom {
     padding: 0;
+    margin-top: 20px;
 }
 .publicidad__subtitle {
     font-size: 13px;
@@ -759,6 +767,9 @@ h2{
     background: white;
     padding-bottom: 60px;
 }
+.publicidad_digital {
+    padding-bottom: 3rem;
+}
 .publicidad_print .publicidad__content {
     flex-direction: column-reverse;
 }
@@ -777,6 +788,7 @@ h2{
 }
 .process {
     background: #eae8e4;
+    padding: 30px 0 40px;
 }
 /* CTA MOVIL */
 .cta__container {
@@ -788,22 +800,25 @@ h2{
 }
 .cta__content {
     margin-left: 0;
-    padding: 2rem 1.5rem;
+    padding: 2rem 0rem;
     align-items: center;
     text-align: center;
 }
 .cta__content h2 {
     font-size: 22px;
     margin-top: 0;
+    text-align: left;
 }
 .cta__content p {
-    display: none;
+    padding-left: 40px;
+    padding-right: 1rem;
 }
 .cta__actions {
     flex-direction: column;
     align-items: center;
-    gap: 12px;
+    gap: 30px;
     width: 100%;
+    padding: 0 15px;
 }
 .btn--primary {
     width: 100%;
