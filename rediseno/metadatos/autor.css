@@ -16,19 +16,21 @@
     display: flex;
     align-items: center;
     gap: 24px;
+    border-bottom: 1px solid var(--gray);
+    padding-bottom: 25px;
 }
 
 .content_author .image_author img {
     border-radius: 50%;
-    width: 150px;
-    height: 150px;
+    width: 150px !important;
+    height: 150px !important;
     margin: 0;
     padding: 0;
 }
 
 .content_author .image_author [frame="crop_300x300"] {
-    width: 150px;
-    height: 150px;
+    width: 150px !important;
+    height: 150px !important;
     margin: 0;
     padding: 0;
 }
@@ -41,8 +43,82 @@
 
 .content_author .title_author {
     font-size: 14px;
+    margin: 10px 0;
 }
 
 .content_author .subtitle_author {
     display: none;
+}
+
+
+.section-title {
+    position: relative;
+    padding-bottom: 15px;
+    font-size: 13px;
+    line-height: 16px;
+    border-bottom: 1px solid var(--gray);
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: translateY(60%);
+    height: 4px;
+    width: 30px;
+    background: var(--red);
+}
+
+.rrss_author {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 24px;
+}
+
+.rrss_author a {
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #bdbcb8;
+    border-radius: 50%;
+}
+
+.rrss_author a div {
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.rrss_author .icon_twitter {
+    background-image: url('https://codigomarret.online/upload/img/twitter-x.png');
+}
+
+.rrss_author .icon_instagram {
+    background-image: url('https://codigomarret.online/upload/img/instagram.png');
+}
+
+.rrss_author .icon_facebook {
+    background-image: url('https://codigomarret.online/upload/img/facebook.png');
+}
+
+.rrss_author .icon_mail {
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMxMTExMTEiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1tYWlsLWljb24gbHVjaWRlLW1haWwiPjxwYXRoIGQ9Im0yMiA3LTguOTkxIDUuNzI3YTIgMiAwIDAgMS0yLjAwOSAwTDIgNyIvPjxyZWN0IHg9IjIiIHk9IjQiIHdpZHRoPSIyMCIgaGVpZ2h0PSIxNiIgcng9IjIiLz48L3N2Zz4=');
+}
+
+
+@media (max-width: 767px) {
+    .content_author {
+        flex-direction: column;
+    }
+    .content_info_author {
+        text-align: center;
+    }
+    .rrss_author {
+        justify-content: center;
+    }
 }
