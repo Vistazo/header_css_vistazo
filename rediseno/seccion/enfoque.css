@@ -1,0 +1,235 @@
+:root {
+    --gray: #D4D4D4;
+    --red: #CC1114;
+    --dark: #111;
+    --light: #f5f3ee;
+    --bone: #F3F2ED;
+    --bg-gray: #F3F5F8;
+}
+body {
+  font-family: 'Zalando Sans', sans-serif;
+}
+
+.section-title.enfoque{
+    text-transform: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.section-title.enfoque .title2{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Titulo Bloque */
+.section-title {
+    position: relative;
+    padding-bottom: 15px;
+    font-size: 13px;
+    line-height: 16px;
+    border-bottom: 1px solid var(--gray);
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 36px;
+}
+.section-title .title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    line-height: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.section-title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: translateY(60%);
+    height: 4px;
+    width: 30px;
+    background: var(--red);
+}
+.section-title p{
+    font-size: 13px;
+    line-height: 16px;
+    font-weight: 400;
+    margin: 1rem 0 0.8rem 0;
+}
+
+/* Nota Principal */
+.enfoque-principal {
+    border-bottom: 1px solid var(--gray);
+    padding-bottom: 36px;
+}
+.enfoque-principal .media_block {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+.sect-date {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+.sect-date .article-section .section {
+    background: var(--bg-gray);
+    padding: 8px;
+    font-size: 13px;
+}
+.sect-date .date {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+}
+.sect-date .date::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background-color: var(--red);
+    border-radius: 50%;
+    display: inline-block;
+}
+.enfoque-principal .headline h2 {
+    font-size: 24px;
+}
+.enfoque-principal .autor-nombre {
+    display: none;
+}
+.enfoque-principal .subheadline h3 {
+    font-size: 14px;
+}
+
+/* Listado de 3 notas */
+.enfoque-lista {
+    padding-top: 36px;
+    padding-bottom: 36px;
+}
+.enfoque-lista .noticias {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+.enfoque-lista .noticias .media_block {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+.enfoque-lista .noticias .article-section, 
+.enfoque-lista .noticias .date {
+    font-size: 13px;
+}
+.enfoque-lista .noticias .headline h2 {
+    font-size: 16px;
+}
+.enfoque-lista .noticias .date {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+}
+.enfoque-lista .noticias .date::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background-color: var(--red);
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* Listado de 4 notas */
+.cuatro-notas {
+    border-bottom: 1px solid var(--gray);
+    padding-bottom: 36px;
+}
+.cuatro-notas .noticias {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+.cuatro-notas .sect-date {
+    margin: 6px 0;
+}
+.cuatro-notas .headline h2 {
+    font-size: 16px;
+}
+
+/* Nota Patrocinada */
+.patrocinada .linea{
+    border-right: 1px solid var(--gray);
+}
+.patrocinado .img2{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 15px;
+    margin-top: 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+.patrocinado p{
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+}
+.patrocinado .img img{
+    width: 100%;
+}
+.patrocinado .img2 img{
+    width: 30%;
+}
+
+.row.patrocinada{
+    border-bottom: 1px solid var(--gray);
+    padding: 36px 0;
+}
+.nota-patrocinada .media_block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: 24px;
+}
+.nota-patrocinada .media_block .headline h2 {
+    font-size: 24px;
+    margin: 20px 0;
+}
+.nota-patrocinada .media_block .autor-nombre {
+    display: none;
+}
+.nota-patrocinada .media_block .subheadline h3 {
+    font-size: 16px;
+}
+
+/* Listado subseccion */
+.row.listado{
+    margin: 70px 0 36px;
+}
+.listado-not-seccion .noticias article:nth-child(1) {
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--gray);
+}
+.listado-not-seccion .headline h2 {
+    font-size: 16px;
+}
+
+/* Listado 6 Notas */
+.listado-seis-notas .noticias {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+.listado-seis-notas .sect-date {
+    margin: 6px 0;
+}
+.listado-seis-notas .headline h2 {
+    font-size: 16px;
+}
+
+
+
+
+
