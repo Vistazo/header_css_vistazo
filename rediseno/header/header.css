@@ -74,6 +74,10 @@ body {
     align-items: center;
 }
 
+.rbtn-login:hover {
+    color: #fff;
+}
+
 .rbtn-login svg {
     display: none;
     width: 24px;
