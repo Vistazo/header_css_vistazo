@@ -177,6 +177,33 @@
     border-bottom: none;
 }
 
+.cronologia .nav-button {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.cronologia .nav-button ul {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.cronologia .next-button,
+.cronologia .prev-button {
+    padding: 8px 10px;
+    border-radius: 4px;
+    background: var(--red);
+    font: 14px;
+    color: #fff;
+}
+
+.cronologia .nav-page-selected {
+    color: var(--red);
+    text-decoration: underline;
+}
+
+
 .solo_author {
     position: relative;
     padding-bottom: 15px;
@@ -215,6 +242,27 @@
 
 .titulo-noticias-principales {
     margin-top: 60px;
+}
+
+.noticias-principales h2 {
+    font-size: 14px;
+}
+
+.noticias-principales .r_numeracion {
+    display: none;
+}
+
+
+.noticias-principales .element {
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--gray);
+}
+
+.noticias-principales .element:last-child {
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    border-bottom: none;
 }
 
 
