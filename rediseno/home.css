@@ -1205,8 +1205,34 @@
     gap: 24px;
 }
 
+/* BLOQUE EDICIÓN IMPRESA */
 
+.edicion-impresa {
+    background: var(--bone);
+    padding: 36px;
+}
 
+.edicion-impresa .revista-card {
+    background: #fff;
+    padding: 16px;
+}
+
+.edicion-impresa #revistas-wrapper {
+    padding-bottom: 50px;
+}
+
+.edicion-impresa .revista-badge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.edicion-impresa .revista-badge span {
+    background: #f8e287;
+    padding: 4px 8px;
+    border-radius: 30px;
+    font-size: 13px;
+}
 
 
 @media (max-width: 1279px) {
@@ -1287,7 +1313,7 @@
         flex-direction: column;
     }
 
-      .bloque-sostenibilidad .sos-tres .headline h2 {
+    .bloque-sostenibilidad .sos-tres .headline h2 {
         font-size: 16px;
     }
 }
@@ -1394,7 +1420,7 @@
         flex-direction: column-reverse;
     }
 
-  
+
 
 
 }
@@ -1586,10 +1612,10 @@
 
 
     .bloque-sostenibilidad .sos-tres .noticias {
-            grid-template-columns: 1fr;
+        grid-template-columns: 1fr;
     }
 
-    .bloque-sostenibilidad .sos-tres .noticias .media_block{
+    .bloque-sostenibilidad .sos-tres .noticias .media_block {
         grid-template-columns: 2fr 1fr;
     }
 
