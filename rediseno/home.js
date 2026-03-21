@@ -33,10 +33,12 @@ function aperturaRevista() {
                     <img class="cover-img" src="${item.img}" alt="${item.title}">
                 </div>
                 <div class="slide-info">
-                    <div class="slide-title">${item.title}</div>
-                    <div class="slide-edition">${item.edition}</div>
+                   <!-- <div class="slide-title">${item.title}</div> -->
+                    <!-- <div class="slide-edition">${item.edition}</div> -->
                     <hr/>
-                    <a href="${item.link}" class="slide-btn">${item.price}</a>
+                   <!-- <a href="${item.link}" class="slide-btn">${item.price}</a> -->
+                    <a href="${item.link}" class="slide-btn">Suscribirse ahora</a>
+
                 </div>
             </div>
         `;
@@ -68,7 +70,7 @@ function initRevistasSwiper() {
                             <span class="price-label">Suscríbete por:</span>
                             <span class="price-value"> ${item.price}</span>
                        </div>
-                        <a href="${item.link}" class="revista-btn">Suscríbete ahora</a>
+                        <a href="${item.link}" class="revista-btn">Suscribirse ahora</a>
                     </div>
                 </div>
             </div>

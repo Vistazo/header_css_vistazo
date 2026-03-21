@@ -4,7 +4,7 @@ const slidesData = [
         link: "https://suscripciones.vistazo.com/",
         edition: "Edición No.1402 · Dic 4 / 2025",
         title: "Trump Aprieta a Maduro",
-        price: "Suscríbete por $5,41/mes",
+        price: "$98/año",
         categoria: "Vistazo",
     },
     {
@@ -12,25 +12,25 @@ const slidesData = [
         link: "https://suscripciones.vistazo.com/",
         edition: "Edición No.1401 · Nov 20 / 2025",
         title: "La Crisis Económica que Viene",
-        price: "Suscríbete por $5,41/mes",
+        price: "$56/año",
         categoria: "Hogar",
 
     },
     {
-        img: "https://codigomarret.online/upload/img/revista_3.png",
+        img: "https://codigomarret.online/upload/img/42c45afd1495c9610a11e8faf13036cb-1.jpg",
         link: "https://suscripciones.vistazo.com/",
         edition: "Edición No.1400 · Nov 6 / 2025",
         title: "El Poder de las Mujeres en Política",
-        price: "America",
+        price: "$62/año",
         categoria: "América",
 
     },
     {
-        img: "https://codigomarret.online/upload/img/revista_4.png",
+        img: "https://codigomarret.online/upload/img/e60a5437299d7faa9855b136e4bb2cc3.jpg",
         link: "https://suscripciones.vistazo.com/",
         edition: "Edición No.1399 · Oct 23 / 2025",
         title: "Secretos del Narcotráfico Regional",
-        price: "Suscríbete por $5,41/mes",
+        price: "$44/año",
         categoria: "Estadio",
     },
     // {
@@ -38,6 +38,6 @@ const slidesData = [
     //     link: "https://suscripciones.vistazo.com/",
     //     edition: "Edición No.1398 · Oct 9 / 2025",
     //     title: "Tecnología e Innovación en Ecuador",
-    //     price: "Suscríbete por $5,41/mes"
+    //     price: "$5,41/mes"
     // }
 ];

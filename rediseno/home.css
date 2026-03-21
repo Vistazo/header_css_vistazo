@@ -205,7 +205,7 @@
 
 .slider-clip {
     overflow: hidden;
-    cursor: grab;
+    /* cursor: grab; */
 }
 
 .slider-clip.dragging {
@@ -315,6 +315,7 @@
 
 .slide-btn:hover {
     background: #b01f1f;
+    color: #fff;
 }
 
 /* ── Dots ── */
@@ -1213,11 +1214,11 @@
 
 .bloque-revistas {
     margin-bottom: 52px;
+    background: var(--bone);
+    padding: 36px;
 }
 
 .bloque-revistas .edicion-impresa {
-    background: var(--bone);
-    padding: 36px;
     width: 100%;
 }
 
@@ -1288,6 +1289,10 @@
     background: var(--red);
     height: 10px;
     width: 10px;
+}
+
+.bloque-revistas .price-label {
+    font-size: 14px;
 }
 
 /* Forzar ancho correcto en los slides */
