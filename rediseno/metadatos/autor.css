@@ -181,6 +181,7 @@
     display: flex;
     gap: 30px;
     align-items: center;
+    justify-content: center;
 }
 
 .cronologia .nav-button ul {
@@ -194,7 +195,7 @@
     padding: 8px 10px;
     border-radius: 4px;
     background: var(--red);
-    font: 14px;
+    font-size: 14px;
     color: #fff;
 }
 
@@ -279,12 +280,26 @@
     .cronologia .r_subheadline h3 {
         display: none;
     }
+
+        .cronologia .nav-button ul {
+        gap: 8px;
+    }
+
+    .cronologia .nav-button {
+        gap: 12px;
+        justify-content: center;
+    }
+    .cronologia .next-button, .cronologia .prev-button{
+        font-size: 12px;
+    }
 }
 
 @media (max-width: 767px) {
     .content_author {
         flex-direction: column;
     }
+
+
 
     .content_info_author {
         text-align: center;

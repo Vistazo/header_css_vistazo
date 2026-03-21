@@ -84,6 +84,11 @@ body {
     height: 24px;
 }
 
+.nav-fondo {
+    background: #fff;
+    padding-bottom: 22px;
+}
+
 .secondary-nav {
     padding: 22px 0 5px 0;
     gap: 36px;
@@ -92,7 +97,7 @@ body {
     display: flex;
     align-items: flex-start;
     align-items: center;
-    margin: 70px 36px 20px 36px;
+    margin: 70px 36px 0 36px;
 
 
 }
@@ -661,7 +666,7 @@ body {
     }
 
     .secondary-nav {
-        margin: 70px 0 20px 12px;
+        margin: 70px 0 0 12px;
         gap: 20px;
     }
 
