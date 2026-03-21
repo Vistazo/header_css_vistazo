@@ -108,7 +108,7 @@ setTimeout(() => aperturaRevista(), 500);
         const script = document.createElement('script');
         script.src = 'https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js';
         script.onload = () => initRevistasSwiper();
-        document.head.appendChild(script);
+        document.body.appendChild(script);
     }
     window.addEventListener('scroll', loadSwiperAndInit, { once: true, passive: true });
 })();
