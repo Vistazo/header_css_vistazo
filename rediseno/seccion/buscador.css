@@ -1,0 +1,63 @@
+.input-buscador {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border: 1.5px solid #d1d5db;
+    border-radius: 8px;
+    padding: 8px 14px;
+    max-width: 475px;
+    width: 100%;
+    box-sizing: border-box;
+    gap: 8px;
+}
+
+.input-buscador .iter-button.iter-button-submit .iter-button-content {
+    display: flex;
+}
+
+.input-buscador .iter-field {
+    flex: 1;
+}
+
+.input-buscador .iter-field-content,
+.input-buscador .iter-field-element {
+    display: block;
+    width: 100%;
+}
+
+.input-buscador .iter-field-input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    color: #6b7280;
+    background: transparent;
+    font-family: inherit;
+}
+
+.input-buscador .iter-field-input::placeholder {
+    color: #9ca3af;
+}
+
+.input-buscador .iter-button-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.input-buscador .iter-button-content {
+    position: relative;
+}
+
+.input-buscador .iter-button-input-submit {
+    width: 22px;
+    height: 22px;
+    border: none;
+    background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23374151' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cline x1='16.5' y1='16.5' x2='22' y2='22'/%3E%3C/svg%3E") center/contain no-repeat;
+    cursor: pointer;
+    font-size: 0;
+    color: transparent;
+    padding: 0;
+    outline: none;
+}

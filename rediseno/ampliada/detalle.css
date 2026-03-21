@@ -240,7 +240,6 @@
 
 .canal_whatsapp_movil {
     display: flex;
-    flex-direction: column;
     gap: 12px;
 }
 
@@ -642,6 +641,7 @@
     .R_AUTOR_IMG_REDES_ESPECIALES .autor-container {
         flex-direction: column;
         gap: 22px;
+        align-items: flex-start;
     }
 
     .vtz-wsp-card {
