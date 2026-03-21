@@ -1,3 +1,25 @@
+:root {
+    --gray: #D4D4D4;
+    --red: #CC1114;
+    --dark: #111;
+    --light: #f5f3ee;
+    --bone: #F3F2ED;
+    --bg-gray: #F3F5F8;
+}
+
+.r_publicidad {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.05), rgba(150, 150, 150, 0.1));
+    background-image: repeating-linear-gradient(45deg,
+            /* Ángulo de las líneas */
+            rgba(0, 0, 0, 0.05) 0px, rgba(0, 0, 0, 0.05) 5px, rgba(255, 255, 255, 0) 5px, rgba(255, 255, 255, 0) 10px);
+    background-size: 200% 200%;
+    animation: diagonal-lines 8s linear infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
 .input-buscador {
     display: flex;
     align-items: center;
@@ -5,7 +27,7 @@
     border: 1.5px solid #d1d5db;
     border-radius: 8px;
     padding: 8px 14px;
-    max-width: 475px;
+    max-width: 100%;
     width: 100%;
     box-sizing: border-box;
     gap: 8px;
@@ -60,4 +82,99 @@
     color: transparent;
     padding: 0;
     outline: none;
+}
+
+.sect-date {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+
+.sect-date .article-section .section {
+    background: var(--bg-gray);
+    padding: 8px;
+    font-size: 13px;
+}
+
+.sect-date .date {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    margin-bottom: 0;
+}
+
+.sect-date .date::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background-color: var(--red);
+    /* rojo */
+    border-radius: 50%;
+    display: inline-block;
+}
+
+
+.c_003_023 .media_block {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 24px;
+    align-items: center;
+}
+
+.c_003_023 .media_block h2 {
+    font-size: 20px;
+}
+
+
+.c_003_023 .noticias .element {
+    border-bottom: 1px solid var(--gray);
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+}
+
+.c_003_023 .searchHeader h2{
+    font-size: 16px;
+}
+
+
+.section-title {
+    position: relative;
+    padding-bottom: 15px;
+    font-size: 13px;
+    line-height: 16px;
+    border-bottom: 1px solid var(--gray);
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 36px;
+}
+
+.section-title a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: translateY(60%);
+    height: 4px;
+    width: 30px;
+    background: var(--red);
+}
+
+
+
+@media (max-width: 767px) {
+    .c_003_023 .media_block h2 {
+        font-size: 16px;
+    }
+
+    .c_003_023 .media_block {
+        gap: 16px;
+    }
 }
