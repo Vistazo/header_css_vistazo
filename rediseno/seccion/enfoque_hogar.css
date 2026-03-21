@@ -375,3 +375,22 @@ body {
     margin-left: auto;
 }
 }
+
+@media (min-width: 768px) and (max-width: 991px) {
+.notas-lista .noticias .media_block {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.nota-principal .headline h2 {
+    font-size: 20px;
+}
+.nota-principal .subheadline h3 {
+    font-size: 13px;
+}
+.nota-patrocinada .media_block .headline h2 {
+    font-size: 18px;
+}
+.nota-patrocinada .media_block .subheadline h3 {
+    font-size: 14px;
+}
+}
