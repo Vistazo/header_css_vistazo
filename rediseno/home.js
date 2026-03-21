@@ -74,6 +74,9 @@ function initRevistasSwiper() {
         new Swiper('.swiper-revistas', {
             slidesPerView: 1,
             spaceBetween: 16,
+            observer: true,          // 👈 recalcula si el DOM cambia
+            observeParents: true,    // 👈 recalcula si el padre cambia
+            observeSlideChildren: true,
             pagination: {
                 el: '.swiper-revistas-pagination',
                 clickable: true,

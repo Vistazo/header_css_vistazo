@@ -1210,6 +1210,7 @@
 .edicion-impresa {
     background: var(--bone);
     padding: 36px;
+     width: 100%;
 }
 
 .edicion-impresa .revista-card {
@@ -1233,6 +1234,24 @@
     border-radius: 30px;
     font-size: 13px;
 }
+
+
+.edicion-impresa .swiper-revistas {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden; /* crítico */
+}
+
+/* Forzar ancho correcto en los slides */
+.edicion-impresa .swiper-revistas .swiper-wrapper {
+    width: 100%;
+}
+
+/* .edicion-impresa .swiper-revistas .swiper-slide {
+    width: 100% !important;
+    max-width: 100%;
+    box-sizing: border-box;
+} */
 
 
 @media (max-width: 1279px) {
