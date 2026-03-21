@@ -49,7 +49,7 @@ function initRevistasSwiper() {
     cargarRevistas(function (data) {
         wrapper.innerHTML = data.map(item => `
             <div class="swiper-slide revista-card">
-                <div class="revista-badge">${item.badge ?? item.title}</div>
+                <div class="revista-badge">${item.badge ?? item.categoria}</div>
                 <div class="revista-cover">
                     <img width="100%" src="${item.img}" alt="${item.title}">
                 </div>
@@ -57,10 +57,10 @@ function initRevistasSwiper() {
                     <p class="revista-edition">${item.edition}</p>
                     <h3 class="revista-title">${item.title}</h3>
                     ${item.description ? `<p class="revista-desc">${item.description}</p>` : ''}
-                    <details class="revista-accordion">
+                    <!-- <details class="revista-accordion">
                         <summary>¿QUÉ VAS A ENCONTRAR?</summary>
                         <p>${item.content ?? ''}</p>
-                    </details>
+                    </details> -->
                     <div class="revista-footer">
                         <span class="revista-price-label">Suscríbete por:</span>
                         <span class="revista-price">${item.price}</span>
