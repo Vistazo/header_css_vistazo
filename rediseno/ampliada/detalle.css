@@ -553,6 +553,10 @@
     z-index: -1;
 }
 
+.nota-especial .left-block .date {
+    display: none;
+}
+
 .nota-especial .R_SEC_DATE_TIT_SUB .headline {
     color: #fff;
 }
@@ -574,6 +578,13 @@
     display: flex;
     gap: 48px;
 }
+
+.nota-especial .R_SEC_DATE_TIT_SUB .subheadline {
+    border-bottom: none;
+    border-top: none;
+}
+
+
 
 
 .styles_contentLayout2__R_In6:before {
@@ -619,8 +630,18 @@
         opacity: 0;
     }
 
+    .nota-especial .R_SEC_DATE_TIT_SUB .headline {
+        margin-bottom: 16px;
+    }
+
     .canal_whatsapp_movil {
         margin-bottom: 20px;
+        flex-direction: column;
+    }
+
+    .R_AUTOR_IMG_REDES_ESPECIALES .autor-container {
+        flex-direction: column;
+        gap: 22px;
     }
 
     .vtz-wsp-card {
