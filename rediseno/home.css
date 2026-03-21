@@ -644,6 +644,10 @@
     gap: 24px;
 }
 
+.bloque-opinion .image_author img {
+    border-radius: 50%;
+}
+
 .bloque-opinion .op-uno .media_block .headline h2 {
     font-size: 24px;
 }
