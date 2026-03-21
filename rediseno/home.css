@@ -9,6 +9,10 @@
 
 /* APERTURA */
 
+.parent-nav.lst.cf {
+    width: 100%;
+}
+
 .bloque-apertura .col-55-45 .container:nth-child(1) {
     padding-bottom: 40px;
     margin-bottom: 40px;
@@ -1207,28 +1211,33 @@
 
 /* BLOQUE EDICIÓN IMPRESA */
 
-.edicion-impresa {
-    background: var(--bone);
-    padding: 36px;
-     width: 100%;
+.bloque-revistas {
+    margin-bottom: 52px;
 }
 
-.edicion-impresa .revista-card {
+.bloque-revistas .edicion-impresa {
+    background: var(--bone);
+    padding: 36px;
+    width: 100%;
+}
+
+.bloque-revistas .edicion-impresa .revista-card {
     background: #fff;
     padding: 16px;
 }
 
-.edicion-impresa #revistas-wrapper {
+.bloque-revistas .edicion-impresa #revistas-wrapper {
     padding-bottom: 50px;
 }
 
-.edicion-impresa .revista-badge {
+.bloque-revistas .edicion-impresa .revista-badge {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-bottom: 16px;
 }
 
-.edicion-impresa .revista-badge span {
+.bloque-revistas .edicion-impresa .revista-badge span {
     background: #f8e287;
     padding: 4px 8px;
     border-radius: 30px;
@@ -1236,14 +1245,53 @@
 }
 
 
-.edicion-impresa .swiper-revistas {
+.bloque-revistas .edicion-impresa .swiper-revistas {
     width: 100%;
     max-width: 100%;
-    overflow: hidden; /* crítico */
+    overflow: hidden;
+    /* crítico */
+}
+
+.bloque-revistas .edicion-impresa .revista-cover {
+    margin-bottom: 16px;
+}
+
+.bloque-revistas .edicion-impresa .revista-footer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.bloque-revistas .edicion-impresa .revista-footer .price-value {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.bloque-revistas .edicion-impresa .revista-footer .revista-price {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.bloque-revistas .edicion-impresa .revista-btn {
+    padding: 8px 20px;
+    background: var(--red);
+    border-radius: 4px;
+    color: #fff;
+    font-size: 13px;
+}
+
+.bloque-revistas  .swiper-pagination-bullet {
+    background: var(--red);
+    height: 10px;
+    width: 10px;
 }
 
 /* Forzar ancho correcto en los slides */
-.edicion-impresa .swiper-revistas .swiper-wrapper {
+.bloque-revistas .edicion-impresa .swiper-revistas .swiper-wrapper {
     width: 100%;
 }
 
