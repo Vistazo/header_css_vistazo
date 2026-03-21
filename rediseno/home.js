@@ -1,30 +1,25 @@
 // Variable compartida
-let slidesData = null;
+let _revistasData = null;
 
 // Carga el script UNA sola vez y ejecuta callback cuando esté listo
 function cargarRevistas(callback) {
-    if (slidesData) {
-        // Ya está cargado, ejecutar directo
-        callback(slidesData);
+    if (_revistasData) {
+        callback(_revistasData);
         return;
     }
 
-    // Verificar si el script ya fue inyectado (está cargando)
-    if (document.querySelector('script[src*="revistas.js"]')) {
-        // Esperar a que termine de cargar
-        document.querySelector('script[src*="revistas.js"]')
-            .addEventListener('load', () => callback(slidesData));
-        return;
-    }
-
-    const script = document.createElement('script');
-    script.src = 'https://vzheaders.netlify.app/rediseno/revistas.js';
-    script.onload = function () {
-        slidesData = window.slidesData; // captura del scope global
-        callback(slidesData);
-    };
-    script.onerror = () => console.error('No se pudo cargar revistas.js');
-    document.head.appendChild(script);
+    fetch('https://vzheaders.netlify.app/rediseno/revistas.js')
+        .then(r => r.text())
+        .then(jsText => {
+            // Extrae slidesData sin declararlo en scope global
+            const fn = new Function(`
+                ${jsText.replace('const slidesData', 'var slidesData')}
+                return slidesData;
+            `);
+            _revistasData = fn();
+            callback(_revistasData);
+        })
+        .catch(err => console.error('Error cargando revistas:', err));
 }
 
 /* ── Función 1: apertura (primer elemento) ── */
