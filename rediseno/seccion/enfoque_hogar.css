@@ -52,6 +52,9 @@ body {
     width: 30px;
     background: var(--red);
 }
+.section-title.hogar::after {
+    background: #a020f0;
+}
 .section-title p{
     font-size: 13px;
     line-height: 16px;
@@ -69,7 +72,7 @@ body {
   color: black;
   font-size: 14px;
   font-weight: 400;
-  padding: 5px 5px;
+  padding: 5px 0;
   position: relative;
   transition: color 0.3s ease;
 }
@@ -301,15 +304,21 @@ body {
 .section-title p {
     font-size: 11px;
 }
+.nota-principal {
+    padding-bottom: 30px;
+}
 .nota-principal .headline h2 {
     font-size: 20px;
+}
+.nota-principal .subheadline{
+    margin-top: 1rem;
 }
 .nota-principal .subheadline h3 {
     font-size: 14px;
 }
 .nota-principal .media_block {
     display: flex;
-    gap: 24px;
+    gap: 17px;
     align-items: center;
     flex-direction: column;
 }
@@ -317,6 +326,10 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     gap: 30px;
+}
+.notas-lista .multimedia{
+    height: 110px !important;
+    overflow: hidden;
 }
 .cuatro-notas .noticias {
     display: grid;
@@ -332,7 +345,7 @@ body {
     flex: 1;
 }
 .patrocinado{
-    padding: 0 4rem 3rem;
+    padding: 0 5rem 3rem;
     border-bottom: 1px solid var(--gray);
     margin-bottom: 3rem;
 }
