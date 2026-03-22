@@ -1,3 +1,12 @@
+:root {
+    --gray: #D4D4D4;
+    --red: #CC1114;
+    --dark: #111;
+    --light: #f5f3ee;
+    --bone: #F3F2ED;
+    --bg-gray: #F3F5F8;
+}
+
 body {
     font-family: 'Zalando Sans', sans-serif;
 }
@@ -363,7 +372,7 @@ body {
 }
 
 .sidebar__close:focus-visible {
-    outline: 2px solid #CC1114;
+    outline: 2px solid var(--red);
     outline-offset: 3px;
 }
 
@@ -381,11 +390,11 @@ body {
 }
 
 .sidebar__search-wrap input:focus {
-    border-color: #CC1114;
+    border-color: var(--red);
 }
 
 /* ── Label sección ── */
-.sidebar__section-label {
+/* .sidebar__section-label {
     font-size: .7rem;
     font-weight: 600;
     letter-spacing: .12em;
@@ -403,6 +412,29 @@ body {
     height: 2px;
     background: #CC1114;
     margin-top: 4px;
+} */
+
+.sidebar__section-label {
+    position: relative;
+    margin: 16px 16px 6px;
+    font-size: 13px;
+    line-height: 16px;
+    border-bottom: 1px solid var(--gray);
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 25px;
+    padding-bottom: 12px;
+}
+
+.sidebar__section-label::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: translateY(60%);
+    height: 4px;
+    width: 30px;
+    background: var(--red);
 }
 
 /* ── Nav items ── */
@@ -442,7 +474,7 @@ body {
 
 .sidebar__has-sub-row:hover {
     background: #f4f4f2;
-    border-left-color: #CC1114;
+    border-left-color: var(--red);
 }
 
 .sidebar__has-sub-label {
@@ -459,7 +491,7 @@ body {
 }
 
 .sidebar__has-sub-row:hover .sidebar__has-sub-label {
-    color: #CC1114;
+    color: var(--red);
 }
 
 .sidebar__toggle {
@@ -477,19 +509,19 @@ body {
 
 .sidebar__toggle:hover {
     background: #eaeaea;
-    color: #CC1114;
+    color: var(--red);
 }
 
 .sidebar__toggle:focus-visible {
-    outline: 2px solid #CC1114;
+    outline: 2px solid var(--red);
     outline-offset: -2px;
 }
 
 .sidebar__nav li a:hover,
 .sidebar__nav li>button:hover {
     background: #f4f4f2;
-    border-left-color: #CC1114;
-    color: #CC1114;
+    border-left-color: var(--red);
+    color: var(--red);
 }
 
 /* ── Insignia En Vivo ── */
@@ -499,7 +531,7 @@ body {
     gap: 5px;
     /* font-size: .7rem; */
     /* font-weight: 700; */
-    /* color: #CC1114; */
+    /* color: var(--red); */
     /* letter-spacing: .06em; */
 }
 
@@ -508,7 +540,7 @@ body {
     width: 7px;
     height: 7px;
     border-radius: 50%;
-    background: #CC1114;
+    background: var(--red);
     animation: sb-pulse 1.4s ease infinite;
 }
 

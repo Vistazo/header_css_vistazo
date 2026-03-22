@@ -10,20 +10,20 @@
          live    → (opcional) true activa el badge animado "En VIVO"
     ═══════════════════════════════════════════ */
     var RNAV_ITEMS = [
-        { label: 'En Vivo',          href: '#', live: false },
+        // { label: 'En Vivo',          href: '#', live: false },
         { label: 'Últimas Noticias', href: '#' },
-        { label: 'Actualidad',       href: '#' },
-        { label: 'Política',         href: '#' },
-        { label: 'Seguridad',        href: '#' },
-        { label: 'Mundo',            href: '#' },
-        { label: 'Investigación',    href: '#' },
-        { label: 'Opinión',          href: '#' },
-        { label: 'Sostenibilidad',   href: '#' },
-        { label: 'Deportes',         href: '#' },
-        { label: 'Tendencias',       href: '#' },
-        { label: 'Entretenimiento',  href: '#' },
-        { label: 'Negocios',         href: '#' },
-        { label: 'Servicios',        href: '#' },
+        { label: 'Actualidad', href: '/actualidad' },
+        { label: 'Política', href: '/politica' },
+        // { label: 'Seguridad',        href: '#' },
+        // { label: 'Mundo', href: '/actualidad/internacional' },
+        // { label: 'Investigación',    href: '#' },
+        { label: 'Opinión', href: '/opinion' },
+        { label: 'Estilo de vida', href: '/estilo-de-vida' },
+        { label: 'Deportes', href: '/deportes' },
+        // { label: 'Tendencias', href: '/estilo-de-vida/tendencias' },
+        // { label: 'Entretenimiento',  href: '#' },
+        { label: 'Enfoque', href: '/enfoque' },
+        { label: 'Hogar', href: '/hogar' },
     ];
 
     /* ═══════════════════════════════════════════
@@ -36,33 +36,69 @@
          children   → (opcional) array de { label, href } para sub-menú desplegable
     ═══════════════════════════════════════════ */
     var SIDEBAR_ITEMS = [
-        { label: 'En Vivo',          href: '#', live: true },
+        // { label: 'En Vivo',          href: '#', live: true },
         { label: 'Últimas Noticias', href: '#' },
-        { label: 'Actualidad',       href: '#' },
-        { label: 'Política',         href: '#' },
-        { label: 'Seguridad',        href: '#' },
-        { label: 'Mundo',            href: '#' },
-        { label: 'Investigación',    href: '#' },
-        { label: 'Opinión',          href: '#' },
-        { label: 'Sostenibilidad',   href: '#' },
-        { label: 'Deportes',         href: '#' },
-        { label: 'Tendencias',       href: '#' },
         {
-            label: 'Entretenimiento', href: '#',
+            label: 'Actualidad', href: '/actualidad',
             children: [
-                { label: 'Cine',       href: '#' },
-                { label: 'Música',     href: '#' },
-                { label: 'Televisión', href: '#' },
+                { label: 'Nacional', href: '/actualidad/nacional' },
+                { label: 'Internacional', href: '/actualidad/internacional' }
             ]
         },
-        { label: 'Negocios', href: '#' },
         {
-            label: 'Servicios', href: '#',
+            label: 'Política', href: '/politica',
             children: [
-                { label: 'Horóscopo', href: '#' },
-                { label: 'Clima',     href: '#' },
+                { label: 'Nacional', href: '/politica/nacional' },
+                { label: 'Internacional', href: '/politica/internacional' }
             ]
         },
+
+
+        // { label: 'Seguridad', href: '#' },
+        // { label: 'Mundo', href: '#' },
+        // { label: 'Investigación', href: '#' },
+        { label: 'Opinión', href: '/opinion' },
+        {
+            label: 'Estilo de vida', href: '/estilo-de-vida',
+            children: [
+                { label: 'Salud', href: '/estilo-de-vida/salud' },
+                { label: 'Sostenibilidad', href: '/estilo-de-vida/sostenibilidad' },
+                { label: 'Tecnología', href: '/estilo-de-vida/tecnologia' },
+                { label: 'Cultura', href: '/estilo-de-vida/cultura' },
+                { label: 'Tendencias', href: '/estilo-de-vida/tendencias' },
+
+            ]
+        },
+        { label: 'Deportes', href: '/deportes' },
+
+        {
+            label: 'Hogar', href: '/hogar',
+            children: [
+                { label: 'Entretenimiento', href: '/hogar/entretenimiento' },
+                { label: 'Bienestar', href: '/hogar/bienestar' },
+                { label: 'Cocina', href: '/hogar/cocina' },
+                { label: 'Personajes', href: '/hogar/personajes' },
+                { label: 'Empresarial', href: '/hogar/empresarial' },
+            ]
+        },
+
+        {
+            label: 'Enfoque', href: '/enfoque',
+            children: [
+                { label: 'Calidad Educativa', href: '/enfoque/calidad-educativa' },
+                { label: 'Economía', href: '/portafolio/economia' },
+                { label: 'Empresas', href: '/portafolio/empresas' },
+                { label: '500 Mayores Empresas', href: '/portafolio/500-mayores-empresas' },
+                { label: 'Bolsa de empleo', href: '/portafolio/bolsa-de-empleo' },
+            ]
+        },
+
+        { label: 'Eventos', href: '/eventos' },  
+        { label: 'Patrocinado', href: '/patrocinado' },
+        { label: 'Podcast', href: '/podcast' },
+        { label: 'Réplicas', href: '/replica/pedido-de-replica-de-xavier-jordan-mendoza-AJ7812637' },
+
+
     ];
 
     /* ═══════════════════════════════════════════
@@ -73,16 +109,11 @@
          href   → URL del enlace
     ═══════════════════════════════════════════ */
     var SECONDARY_ITEMS = [
-        { label: 'Eventos',                href: '#' },
-        { label: 'Publicidad',             href: '#' },
-        { label: 'Elecciones Ecuador 2025',href: '#' },
-        { label: 'Nacional',               href: '#' },
-        { label: 'Internacional',          href: '#' },
-        { label: 'Salud',                  href: '#' },
-        { label: 'Tecnología',             href: '#' },
-        { label: 'Campeonato Ecuatoriano', href: '#' },
-        { label: 'Videos',                 href: '#' },
-        { label: '500 Mejores Empresas',   href: '#' },
+        { label: 'Eventos', href: '/eventos' },
+        { label: 'Patrocinado', href: '/patrocinado' },,
+        { label: 'Podcast', href: '/podcast' },
+        // { label: 'Videos', href: '#' },
+        { label: '500 Mejores Empresas', href: '/portafolio/500-mayores-empresas' },
     ];
 
     /* ─── SVG: flecha sub-menú ─── */
@@ -139,20 +170,20 @@
         items.forEach(function (item) {
             if (item.children && item.children.length) {
                 /* ── Item con sub-menú ── */
-                var slug  = item.label.replace(/\s+/g, '').toLowerCase();
+                var slug = item.label.replace(/\s+/g, '').toLowerCase();
                 var subId = 'sub-' + slug;
-                var liId  = 'menu-' + slug;
+                var liId = 'menu-' + slug;
 
                 html += '<li class="sidebar__has-sub" id="' + liId + '">';
-                html +=   '<div class="sidebar__has-sub-row">';
-                html +=     '<a href="' + item.href + '" class="sidebar__has-sub-label">' + item.label + '</a>';
-                html +=     '<button class="sidebar__toggle" aria-expanded="false" aria-controls="' + subId + '" aria-label="Expandir ' + item.label + '">' + ARROW_SVG + '</button>';
-                html +=   '</div>';
-                html +=   '<ul class="sidebar__submenu" id="' + subId + '" role="list">';
+                html += '<div class="sidebar__has-sub-row">';
+                html += '<a href="' + item.href + '" class="sidebar__has-sub-label">' + item.label + '</a>';
+                html += '<button class="sidebar__toggle" aria-expanded="false" aria-controls="' + subId + '" aria-label="Expandir ' + item.label + '">' + ARROW_SVG + '</button>';
+                html += '</div>';
+                html += '<ul class="sidebar__submenu" id="' + subId + '" role="list">';
                 item.children.forEach(function (child) {
                     html += '<li><a href="' + child.href + '">' + child.label + '</a></li>';
                 });
-                html +=   '</ul>';
+                html += '</ul>';
                 html += '</li>';
 
             } else {
@@ -171,10 +202,10 @@
     /* ═══════════════════════════════════════════
        SIDEBAR — open / close / focus trap
     ═══════════════════════════════════════════ */
-    var root     = document.documentElement;
-    var sidebar  = document.getElementById('sidebar');
-    var overlay  = document.getElementById('overlay');
-    var btnOpen  = document.getElementById('btnOpen');
+    var root = document.documentElement;
+    var sidebar = document.getElementById('sidebar');
+    var overlay = document.getElementById('overlay');
+    var btnOpen = document.getElementById('btnOpen');
     var btnClose = document.getElementById('btnClose');
 
     var prevFocus;
@@ -209,18 +240,18 @@
     function trapFocus(e) {
         if (e.key === 'Escape') { closeSidebar(); return; }
         if (e.key !== 'Tab') return;
-        var els   = getFocusable();
+        var els = getFocusable();
         var first = els[0];
-        var last  = els[els.length - 1];
+        var last = els[els.length - 1];
         if (e.shiftKey) {
             if (document.activeElement === first) { e.preventDefault(); last.focus(); }
         } else {
-            if (document.activeElement === last)  { e.preventDefault(); first.focus(); }
+            if (document.activeElement === last) { e.preventDefault(); first.focus(); }
         }
     }
 
     function toggleSubmenu(btn) {
-        var li     = btn.closest('li');
+        var li = btn.closest('li');
         var isOpen = li.classList.contains('open');
         /* Cierra cualquier otro sub-menú abierto */
         document.querySelectorAll('.sidebar__has-sub.open').forEach(function (el) {

@@ -115,6 +115,7 @@
      color: var(--color-muted);
      text-decoration: none;
      transition: border-color var(--transition), color var(--transition), background var(--transition);
+     padding: 8px;
  }
 
  .social-link:hover {
@@ -124,8 +125,8 @@
  }
 
  .social-link svg {
-     width: 16px;
-     height: 16px;
+     width: 34px;
+     height: 34px;
  }
 
  /* =============================================
@@ -196,7 +197,7 @@
      letter-spacing: 0.12em;
      text-transform: uppercase;
      color: var(--color-muted);
-     font-weight: 700;
+     /* font-weight: 700; */
      margin-bottom: 12px;
  }
 
@@ -255,14 +256,6 @@
      margin-bottom: 20px;
  }
 
- .magazine-card__cover {
-     width: 80px;
-     height: 104px;
-     object-fit: cover;
-     border-radius: 2px;
-     background: var(--color-border);
-     display: block;
- }
 
  .magazine-card__cover-placeholder {
      width: 80px;
@@ -343,10 +336,27 @@
      margin-bottom: 10px;
  }
 
+
  .other-magazines__grid {
      display: flex;
-     gap: 8px;
+     flex-wrap: wrap;
+     gap: 10px;
  }
+
+ /* Desktop / tablet */
+ .other-magazines__grid a {
+     flex: 0 0 calc(40% - 10px);
+     /* 2 columnas */
+ }
+
+ .magazine-card__cover {
+     width: 100%;
+     height: auto;
+     display: block;
+     aspect-ratio: 258 / 320;
+ }
+
+
 
  .other-mag {
      flex: 1;
@@ -398,6 +408,16 @@
          display: grid;
          grid-template-columns: 1fr 1fr;
          gap: 24px;
+     }
+
+     .other-magazines__grid {
+         flex-wrap: nowrap;
+         /* todos en una fila */
+     }
+
+     .other-magazines__grid a {
+         flex: 0 0 calc(25% - 10px);
+         /* 4 items en una fila */
      }
  }
 

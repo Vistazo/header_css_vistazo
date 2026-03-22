@@ -186,8 +186,13 @@
 
 .cronologia .nav-button ul {
     display: flex;
-    gap: 30px;
+    gap: 10px;
     align-items: center;
+}
+
+.cronologia .nav-button ul li {
+    cursor: pointer;
+    padding: 0 5px;
 }
 
 .cronologia .next-button,
@@ -197,6 +202,8 @@
     background: var(--red);
     font-size: 14px;
     color: #fff;
+    cursor: pointer;
+
 }
 
 .cronologia .nav-page-selected {
@@ -299,7 +306,9 @@
         flex-direction: column;
     }
 
-
+.cronologia .nav-button ul li{
+    padding: 0;
+}
 
     .content_info_author {
         text-align: center;

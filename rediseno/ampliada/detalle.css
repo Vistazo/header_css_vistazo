@@ -276,6 +276,7 @@
     display: flex;
     align-items: center;
     gap: 12px;
+    margin-bottom: 36px;
 }
 
 .R_TABOOLA_TAGS .temas .item_tema a {

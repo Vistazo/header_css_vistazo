@@ -136,6 +136,7 @@
 
 .c_003_023 .searchHeader {
     margin-top: 10px;
+    margin-bottom: 36px;
 }
 
 .c_003_023 .searchHeader h2 {
@@ -184,8 +185,13 @@
 
 .c_003_023 .nav-button ul {
     display: flex;
-    gap: 30px;
+    gap: 10px;
     align-items: center;
+}
+
+.c_003_023 .nav-button ul li {
+    cursor: pointer;
+    padding: 0 5px;
 }
 
 .c_003_023 .next-button,
@@ -195,6 +201,7 @@
     background: var(--red);
     font-size: 14px;
     color: #fff;
+    cursor: pointer;
 }
 
 .c_003_023 .nav-page-selected {
@@ -222,6 +229,9 @@
 @media (max-width: 767px) {
     .c_003_023 .media_block h2 {
         font-size: 16px;
+    }
+    .c_003_023 .nav-button ul li {
+        padding: 0;
     }
 
     .c_003_023 .media_block {
