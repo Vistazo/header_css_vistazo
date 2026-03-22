@@ -8,6 +8,11 @@ body {
     padding:60px 0;
 }
 
+.iter-footer-wrapper {
+    padding: 0;
+    margin: 0;
+}
+
 /* HEADER */
 .header{
     height:600px;
@@ -126,6 +131,9 @@ body {
     color:#555;
 }
 
+.audiencias .imgmov{
+    display: none;
+}
 /*==============================*/
 h2{
     margin-bottom:20px;
@@ -562,6 +570,7 @@ h2{
 .iter-footer-wrapper {
     width: 100%;
 }
+
 /* RESPONSIVE */
 @media (max-width: 1024px) {
   .publicidad__content {
@@ -614,11 +623,7 @@ h2{
 .audiences {
     text-align: center;
     gap: 30px;
-
 }
-}
-
-@media (max-width: 768px) {
 .process.container {
     width: 100%;
 }
@@ -712,6 +717,15 @@ h2{
 .process__left h3 {
     font-size: 24px;
     text-align: center;
+}
+.audiencias .imgdesk{
+    display: none;
+}
+.audiencias .imgmov{
+    display: block;
+}
+.social-table td{
+    padding: 14px 15px;
 }
 
 /* PUBLICIDAD DIGITAL / PRINT MOVIL */
