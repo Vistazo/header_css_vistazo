@@ -10,16 +10,19 @@ body {
   font-family: 'Zalando Sans', sans-serif;
 }
 
-.section-title.enfoque{
+.section-title.enfoque,
+.section-title.hogar{
     text-transform: none;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.section-title.enfoque .title2{
+.section-title.enfoque .title2,
+.section-title.hogar .title2{
     display: flex;
     align-items: center;
     gap: 20px;
+
 }
 
 /* Titulo Bloque */
@@ -133,6 +136,7 @@ body {
     display: flex;
     gap: 8px;
     align-items: center;
+    margin-bottom: 7px;
 }
 .sect-date .article-section .section {
     background: var(--bg-gray);
@@ -300,6 +304,10 @@ body {
 @media (max-width: 767px) {
 .section-title.enfoque .title2{
     gap: 10px;
+    justify-content: flex-end;
+}
+.section-title.enfoque .title2 img{
+    width: 45%;
 }
 .section-title p {
     font-size: 11px;
@@ -322,12 +330,16 @@ body {
     align-items: center;
     flex-direction: column;
 }
-.notas-lista .noticias {
+.notas-lista .noticias,
+.cuatro-notas .noticias,
+.listado-seis-notas .noticias {
     display: grid;
     grid-template-columns: 1fr;
     gap: 30px;
 }
-.notas-lista .multimedia{
+.notas-lista .multimedia,
+.cuatro-notas .multimedia,
+.listado-seis-notas .multimedia{
     height: 110px !important;
     overflow: hidden;
 }
