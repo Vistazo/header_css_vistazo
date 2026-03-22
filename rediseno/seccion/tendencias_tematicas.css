@@ -14,7 +14,7 @@ body {
     display: none;
 }
 .article-topics-portlet article.categoryListItem.categoryPageItem a{
-    font-size: 40px;
+    font-size: 13px;
     line-height: 16px;
     font-weight: 500;
 }
@@ -85,7 +85,7 @@ body {
     position: relative;
 }
 .listado_notas .multimedia img{
-    top: 100% !important;
+    top: 50% !important;
     transform: translateY(-50%);
 }
 
@@ -175,7 +175,7 @@ body {
   }
 }
 
-@media (width: 768px) {
+@media (max-width: 768px) {
 .listado_notas .media_block {
     width: 180px;
     min-width: 180px;
