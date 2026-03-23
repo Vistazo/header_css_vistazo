@@ -6,6 +6,10 @@ body {
     font-family: 'Zalando Sans', sans-serif;
 }
 
+.col-md-8{
+    padding-right: 2rem;
+}
+
 .article-topics-portlet {
     margin-top: 3rem;
     margin-bottom: 2rem;
@@ -105,28 +109,32 @@ body {
 
 /* ======== DESTACADAS ======== */
 .mas-destacados{
-  margin-top: 2rem;
+    margin-top: 0.5rem;
+}
+.section-title.destacados{
+    margin-bottom: 0;
+    margin-top: 3rem;
 }
 .mas-destacados .R_TIT {
-  display: flex;
-  gap: 20px;
+    display: flex;
+    gap: 35px;
+    border-bottom: 1px solid (var(--gray));
+    padding: 20px 0;
 }
 .mas-destacados .headline a{
   color: #000;
   text-decoration: none;
 }
 .mas-destacados .headline h2 {
-  font-size: 14px;
+    font-size: 16px;
+    font-weight: 500;
 }
 .mas-destacados .r_numeracion {
   font-size: 18px;
+  font-weight: 500;
   color: var(--red);
 }
-.mas-destacados article {
-  border-bottom: 1px solid var(--gray);
-  padding: 16px 0;
-}
-.mas-destacados article:nth-child(5){
+.mas-destacados .R_TIT:nth-child(5){
   border-bottom: 1px solid transparent;
 }
 
@@ -151,6 +159,7 @@ body {
     font-size: 14px;
     font-weight: 600;
     border-radius: 5px;
+    cursor: pointer;
 }
 .listado_notas .carrusel ul {
     display: flex;
@@ -171,19 +180,13 @@ body {
   }
 }
 
-@media (max-width: 768px) {
-.listado_notas .media_block {
-    width: 180px;
-    min-width: 180px;
-    flex-shrink: 0;
-}
-.listado_notas article .IMG_SEC_TIT_SUB{
-    gap: 25px;
+@media (max-width: 767px) {
+.col-md-8{
     padding-right: 0;
 }
+.listado_notas .media_block{
+    gap: 20px;
 }
-
-@media (max-width: 767px) {
 .listado_notas .headline h2{
     font-size: 14px;
 }
@@ -191,20 +194,13 @@ body {
     font-size: 13px;
     line-height: 1.2;
 }
-.listado_notas .media_block {
-    width: 180px;
-    min-width: 180px;
-    flex-shrink: 0;
-}
-.listado_notas article.article{
-    padding: 0px 0 25px 0;
-}
-.listado_notas article .IMG_SEC_TIT_SUB{
-    gap: 25px;
-    padding-right: 0;
-}
-.listado_notas article.article:nth-child(8){
+.listado_notas article:nth-child(8){
     border-bottom: 1px solid transparent;
+}
+.iter-content-wrapper.iter-droppable-zone .row>* {
+    padding-right: 4%;
+    padding-left: 4%;
+    margin-top: 0;
 }
 }
 
