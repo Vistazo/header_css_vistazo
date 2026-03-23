@@ -5,11 +5,9 @@
 body {
     font-family: 'Zalando Sans', sans-serif;
 }
-
 .col-md-8{
     padding-right: 2rem;
 }
-
 .article-topics-portlet {
     margin-top: 3rem;
     margin-bottom: 2rem;
@@ -118,7 +116,7 @@ body {
 .mas-destacados .R_TIT {
     display: flex;
     gap: 35px;
-    border-bottom: 1px solid (var(--gray));
+    border-bottom: 1px solid var(--gray);
     padding: 20px 0;
 }
 .mas-destacados .headline a{
