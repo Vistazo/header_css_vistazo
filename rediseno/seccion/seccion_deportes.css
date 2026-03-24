@@ -10,6 +10,11 @@ body {
   font-family: 'Zalando Sans', sans-serif;
 }
 
+#col-33-33-33-top-three-col,
+#col-60-40-top-two-col{
+  padding-left: 2rem;
+}
+
 .tit_sec{
   margin-top: 3rem;
   margin-bottom: 2rem;
