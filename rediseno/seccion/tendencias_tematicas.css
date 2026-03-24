@@ -8,36 +8,6 @@ body {
 .col-md-8{
     padding-right: 2rem;
 }
-.article-topics-portlet {
-    margin-top: 3rem;
-    margin-bottom: 2rem;
-}
-.article-topics-portlet span.categoryListItemPosition {
-    display: none;
-}
-.article-topics-portlet article.categoryListItem.categoryPageItem a{
-    font-size: 13px;
-    line-height: 16px;
-    font-weight: 500;
-}
-.article-topics-portlet article.categoryListItem.categoryPageItem{
-    position: relative;
-    padding-bottom: 13px;
-    font-size: 13px;
-    line-height: 16px;
-    border-bottom: 1px solid var(--gray);
-    font-weight: 700;
-}
-.article-topics-portlet article.categoryListItem.categoryPageItem::after{
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    transform: translateY(60%);
-    height: 4px;
-    width: 30px;
-    background: var(--red);
-}
 
 /* ======== LISTADO DE NOTAS ======== */
 .listado_notas article.article {
@@ -75,7 +45,8 @@ body {
 }
 
 /* Titulo del Bloque*/
-.section-title {
+.section-title,
+.title-tag .article-topics-portlet {
     position: relative;
     font-size: 13px;
     line-height: 16px;
@@ -84,7 +55,8 @@ body {
     font-weight: 600;
     margin-bottom: 36px;
 }
-.section-title .title {
+.section-title .title,
+.title-tag .portlet-msg-alert {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -94,7 +66,8 @@ body {
     font-weight: 600;
     margin-bottom: 15px;
 }
-.section-title::after {
+.section-title::after,
+.title-tag .portlet-msg-alert::after {
     content: "";
     position: absolute;
     left: 0;
@@ -108,6 +81,10 @@ body {
 /* ======== DESTACADAS ======== */
 .mas-destacados{
     margin-top: 0.5rem;
+}
+.iter-rankingtab-mostrecent-hd, 
+.iter-rankingtab-mostviewed-hd {
+    display: none;
 }
 .section-title.destacados{
     margin-bottom: 0;
@@ -126,6 +103,7 @@ body {
 .mas-destacados .headline h2 {
     font-size: 16px;
     font-weight: 500;
+    margin: 0;
 }
 .mas-destacados .r_numeracion {
   font-size: 18px;
