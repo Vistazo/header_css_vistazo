@@ -46,7 +46,7 @@ body {
 
 /* Titulo del Bloque*/
 .section-title,
-.title-tag .article-topics-portlet {
+.title-tag.article-topics-portlet {
     position: relative;
     font-size: 13px;
     line-height: 16px;

@@ -18,6 +18,7 @@ body {
   font-size: 40px;
   line-height: 16px;
   font-weight: 500;
+  letter-spacing: -2px;
 }
 .tit_sec .titlesec {
   position: relative;
@@ -323,53 +324,39 @@ body {
 
 /* ======== DESTACADAS ======== */
 .mas-destacados{
-  margin-top: 2rem;
+    margin-top: 0.5rem;
+}
+.iter-rankingtab-mostrecent-hd {
+    display: none;
+}
+.section-title.destacados{
+    margin-bottom: 0;
+    margin-top: 3rem;
 }
 .mas-destacados .R_TIT {
-  display: flex;
-  gap: 20px;
+    display: flex;
+    gap: 35px;
+    border-bottom: 1px solid var(--gray);
+    padding: 20px 0;
 }
 .mas-destacados .headline a{
   color: #000;
   text-decoration: none;
 }
 .mas-destacados .headline h2 {
-  font-size: 14px;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
 }
 .mas-destacados .r_numeracion {
   font-size: 18px;
+  font-weight: 500;
   color: var(--red);
 }
-.mas-destacados article {
-  border-bottom: 1px solid var(--gray);
-  padding: 16px 0;
-}
-.mas-destacados article:nth-child(5){
+.mas-destacados .R_TIT:nth-child(5){
   border-bottom: 1px solid transparent;
 }
-.mas-destacados .teaser-viewer-title {
-  position: relative;
-  padding-bottom: 13px;
-  font-size: 13px;
-  line-height: 16px;
-  border-bottom: 1px solid var(--gray);
-  font-weight: 700;
-}
-.mas-destacados .teaser-viewer-title::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  transform: translateY(60%);
-  height: 4px;
-  width: 30px;
-  background: var(--red);
-}
-.mas-destacados span{
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
+
 @media (min-width: 768px) and (max-width: 991px) {
   .mas-destacados .R_TIT {
       gap: 10px;
