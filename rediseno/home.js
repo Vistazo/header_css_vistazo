@@ -1,7 +1,37 @@
 // Variable compartida
 let _revistasData = null;
 let _revistasPromise = null;
+const REVISTAS_DATA_URL = 'https://vzheaders.netlify.app/rediseno/revistas.json';
 const REVISTAS_STORAGE_KEY = 'revistasDataCache';
+const REVISTAS_STORAGE_HASH_KEY = 'revistasDataCacheHash';
+const REVISTAS_STORAGE_SYNC_KEY = 'revistasDataCacheLastSync';
+const REVISTAS_SYNC_INTERVAL_MS = 10 * 60 * 1000;
+let _syncInProgress = false;
+
+function hashString(value) {
+    let hash = 5381;
+    for (let i = 0; i < value.length; i++) {
+        hash = (hash * 33) ^ value.charCodeAt(i);
+    }
+    return (hash >>> 0).toString(16);
+}
+
+function shouldSyncCache() {
+    try {
+        const lastSync = Number(localStorage.getItem(REVISTAS_STORAGE_SYNC_KEY) || 0);
+        return Date.now() - lastSync > REVISTAS_SYNC_INTERVAL_MS;
+    } catch (_) {
+        return true;
+    }
+}
+
+function markCacheSync() {
+    try {
+        localStorage.setItem(REVISTAS_STORAGE_SYNC_KEY, String(Date.now()));
+    } catch (_) {
+        // Ignora errores de almacenamiento (modo privado/cuota)
+    }
+}
 
 function getRevistasFromStorage() {
     try {
@@ -17,15 +47,63 @@ function getRevistasFromStorage() {
 function setRevistasToStorage(data) {
     try {
         localStorage.setItem(REVISTAS_STORAGE_KEY, JSON.stringify(data));
+        markCacheSync();
     } catch (_) {
         // Ignora errores de almacenamiento (modo privado/cuota)
     }
+}
+
+function normalizeRevistasPayload(payload) {
+    if (Array.isArray(payload)) return payload;
+    if (payload && Array.isArray(payload.data)) return payload.data;
+    return [];
+}
+
+function fetchRevistasData() {
+    if (_revistasPromise) return _revistasPromise;
+
+    _revistasPromise = fetch(REVISTAS_DATA_URL)
+        .then(r => r.text())
+        .then(rawText => {
+            const payload = JSON.parse(rawText);
+            const freshData = normalizeRevistasPayload(payload);
+            const nextHash = hashString(rawText);
+            const prevHash = localStorage.getItem(REVISTAS_STORAGE_HASH_KEY);
+
+            _revistasData = freshData;
+            if (nextHash !== prevHash || !getRevistasFromStorage()) {
+                setRevistasToStorage(freshData);
+                localStorage.setItem(REVISTAS_STORAGE_HASH_KEY, nextHash);
+            } else {
+                markCacheSync();
+            }
+
+            return freshData;
+        })
+        .catch(err => {
+            console.error('Error cargando revistas:', err);
+            return getRevistasFromStorage() || [];
+        })
+        .finally(() => {
+            _revistasPromise = null;
+        });
+
+    return _revistasPromise;
+}
+
+function syncRevistasInBackground() {
+    if (_syncInProgress || !shouldSyncCache()) return;
+    _syncInProgress = true;
+    fetchRevistasData().finally(() => {
+        _syncInProgress = false;
+    });
 }
 
 // Carga el script UNA sola vez y ejecuta callback cuando esté listo
 function cargarRevistas(callback) {
     if (_revistasData) {
         callback(_revistasData);
+        syncRevistasInBackground();
         return;
     }
 
@@ -33,6 +111,7 @@ function cargarRevistas(callback) {
     if (storageData) {
         _revistasData = storageData;
         callback(_revistasData);
+        syncRevistasInBackground();
         return;
     }
 
@@ -41,28 +120,8 @@ function cargarRevistas(callback) {
         return;
     }
 
-    _revistasPromise = fetch('https://vzheaders.netlify.app/rediseno/revistas.js')
-        .then(r => r.text())
-        .then(jsText => {
-            // Extrae slidesData sin declararlo en scope global
-            const fn = new Function(`
-                ${jsText.replace('const slidesData', 'var slidesData')}
-                return slidesData;
-            `);
-            _revistasData = fn();
-            setRevistasToStorage(_revistasData);
-            return _revistasData;
-        })
-        .catch(err => {
-            console.error('Error cargando revistas:', err);
-            return null;
-        })
-        .finally(() => {
-            _revistasPromise = null;
-        });
-
-    _revistasPromise.then(data => {
-        if (data) callback(data);
+    fetchRevistasData().then(data => {
+        callback(data || []);
     });
 }
 

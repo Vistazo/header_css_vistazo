@@ -78,8 +78,14 @@
     { label: 'Estadio',  href: '#estadio' },
   ];
 
-  const revistasDataUrl = 'https://vzheaders.netlify.app/rediseno/revistas.js';
+  const revistasDataUrl = 'https://vzheaders.netlify.app/rediseno/revistas.json';
   let magazineImagesCache = null;
+  let magazineImagesPromise = null;
+  let magazineSyncInProgress = false;
+  const REVISTAS_STORAGE_KEY = 'revistasDataCache';
+  const REVISTAS_STORAGE_HASH_KEY = 'revistasDataCacheHash';
+  const REVISTAS_STORAGE_SYNC_KEY = 'revistasDataCacheLastSync';
+  const REVISTAS_SYNC_INTERVAL_MS = 10 * 60 * 1000;
 
   const copyrightText = 'Prohibida la reproducción total, parcial y traducción a cualquier idioma, sin autorización escrita de su titular, de todos los contenidos de Vistazo.com.';
 
@@ -93,9 +99,100 @@
       }));
   }
 
+  function hashString(value) {
+    let hash = 5381;
+    for (let i = 0; i < value.length; i++) {
+      hash = (hash * 33) ^ value.charCodeAt(i);
+    }
+    return (hash >>> 0).toString(16);
+  }
+
+  function markCacheSync() {
+    try {
+      localStorage.setItem(REVISTAS_STORAGE_SYNC_KEY, String(Date.now()));
+    } catch (_) {
+      // Ignora errores de almacenamiento
+    }
+  }
+
+  function shouldSyncCache() {
+    try {
+      const lastSync = Number(localStorage.getItem(REVISTAS_STORAGE_SYNC_KEY) || 0);
+      return Date.now() - lastSync > REVISTAS_SYNC_INTERVAL_MS;
+    } catch (_) {
+      return true;
+    }
+  }
+
+  function getSlidesFromStorage() {
+    try {
+      const cached = localStorage.getItem(REVISTAS_STORAGE_KEY);
+      if (!cached) return null;
+      const parsed = JSON.parse(cached);
+      return Array.isArray(parsed) ? parsed : null;
+    } catch (_) {
+      return null;
+    }
+  }
+
+  function setSlidesToStorage(data, hash) {
+    try {
+      localStorage.setItem(REVISTAS_STORAGE_KEY, JSON.stringify(data));
+      if (hash) {
+        localStorage.setItem(REVISTAS_STORAGE_HASH_KEY, hash);
+      }
+      markCacheSync();
+    } catch (_) {
+      // Ignora errores de almacenamiento
+    }
+  }
+
+  function normalizeRevistasPayload(payload) {
+    if (Array.isArray(payload)) return payload;
+    if (payload && Array.isArray(payload.data)) return payload.data;
+    return [];
+  }
+
+  function fetchSlidesData() {
+    if (magazineImagesPromise) return magazineImagesPromise;
+
+    magazineImagesPromise = fetch(revistasDataUrl)
+      .then(r => r.text())
+      .then(rawText => {
+        const payload = JSON.parse(rawText);
+        const slidesData = normalizeRevistasPayload(payload);
+
+        const nextHash = hashString(rawText);
+        const prevHash = localStorage.getItem(REVISTAS_STORAGE_HASH_KEY);
+
+        if (nextHash !== prevHash || !getSlidesFromStorage()) {
+          setSlidesToStorage(slidesData, nextHash);
+        } else {
+          markCacheSync();
+        }
+
+        return slidesData;
+      })
+      .catch(() => getSlidesFromStorage() || [])
+      .finally(() => {
+        magazineImagesPromise = null;
+      });
+
+    return magazineImagesPromise;
+  }
+
+  function syncSlidesInBackground() {
+    if (magazineSyncInProgress || !shouldSyncCache()) return;
+    magazineSyncInProgress = true;
+    fetchSlidesData().finally(() => {
+      magazineSyncInProgress = false;
+    });
+  }
+
   function loadMagazineImages(callback) {
     if (magazineImagesCache) {
       callback(magazineImagesCache);
+      syncSlidesInBackground();
       return;
     }
 
@@ -108,14 +205,17 @@
       return;
     }
 
-    fetch(revistasDataUrl)
-      .then(r => r.text())
-      .then(jsText => {
-        const fn = new Function(`
-          ${jsText.replace('const slidesData', 'var slidesData')}
-          return slidesData;
-        `);
-        const slidesData = fn();
+    const storageSlides = getSlidesFromStorage();
+    if (storageSlides) {
+      const images = getSlidesImagesFromData(storageSlides);
+      magazineImagesCache = images;
+      callback(images);
+      syncSlidesInBackground();
+      return;
+    }
+
+    fetchSlidesData()
+      .then(slidesData => {
         const images = getSlidesImagesFromData(slidesData);
         magazineImagesCache = images;
         callback(images);
