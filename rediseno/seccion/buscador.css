@@ -7,18 +7,6 @@
     --bg-gray: #F3F5F8;
 }
 
-.r_publicidad {
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.05), rgba(150, 150, 150, 0.1));
-    background-image: repeating-linear-gradient(45deg,
-            /* Ángulo de las líneas */
-            rgba(0, 0, 0, 0.05) 0px, rgba(0, 0, 0, 0.05) 5px, rgba(255, 255, 255, 0) 5px, rgba(255, 255, 255, 0) 10px);
-    background-size: 200% 200%;
-    animation: diagonal-lines 8s linear infinite;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 10px 0;
-}
 
 .input-buscador {
     display: flex;
