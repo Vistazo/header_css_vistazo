@@ -2,3 +2,13 @@
   for = "/*.js"
   [headers.values]
     Access-Control-Allow-Origin = "*"
+
+[[headers]]
+  for = "/**/*.js"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+
+[[headers]]
+  for = "/**/*.json"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
