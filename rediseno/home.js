@@ -1,5 +1,26 @@
 // Variable compartida
 let _revistasData = null;
+let _revistasPromise = null;
+const REVISTAS_STORAGE_KEY = 'revistasDataCache';
+
+function getRevistasFromStorage() {
+    try {
+        const cached = localStorage.getItem(REVISTAS_STORAGE_KEY);
+        if (!cached) return null;
+        const parsed = JSON.parse(cached);
+        return Array.isArray(parsed) ? parsed : null;
+    } catch (_) {
+        return null;
+    }
+}
+
+function setRevistasToStorage(data) {
+    try {
+        localStorage.setItem(REVISTAS_STORAGE_KEY, JSON.stringify(data));
+    } catch (_) {
+        // Ignora errores de almacenamiento (modo privado/cuota)
+    }
+}
 
 // Carga el script UNA sola vez y ejecuta callback cuando esté listo
 function cargarRevistas(callback) {
@@ -8,7 +29,19 @@ function cargarRevistas(callback) {
         return;
     }
 
-    fetch('https://vzheaders.netlify.app/rediseno/revistas.js')
+    const storageData = getRevistasFromStorage();
+    if (storageData) {
+        _revistasData = storageData;
+        callback(_revistasData);
+        return;
+    }
+
+    if (_revistasPromise) {
+        _revistasPromise.then(callback);
+        return;
+    }
+
+    _revistasPromise = fetch('https://vzheaders.netlify.app/rediseno/revistas.js')
         .then(r => r.text())
         .then(jsText => {
             // Extrae slidesData sin declararlo en scope global
@@ -17,9 +50,20 @@ function cargarRevistas(callback) {
                 return slidesData;
             `);
             _revistasData = fn();
-            callback(_revistasData);
+            setRevistasToStorage(_revistasData);
+            return _revistasData;
         })
-        .catch(err => console.error('Error cargando revistas:', err));
+        .catch(err => {
+            console.error('Error cargando revistas:', err);
+            return null;
+        })
+        .finally(() => {
+            _revistasPromise = null;
+        });
+
+    _revistasPromise.then(data => {
+        if (data) callback(data);
+    });
 }
 
 /* ── Función 1: apertura (primer elemento) ── */
