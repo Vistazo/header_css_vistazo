@@ -7,6 +7,20 @@
     --bg-gray: #F3F5F8;
 }
 
+@keyframes sb-pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: .4;
+        transform: scale(.7);
+    }
+}
+
 /* APERTURA */
 
 .parent-nav.lst.cf {
@@ -59,7 +73,6 @@
     border-radius: 50%;
     display: inline-block;
 }
-
 
 .apertura-principal .headline h2 {
     font-size: 34px;
@@ -1092,6 +1105,12 @@
     padding: 0 24px 36px 24px;
 }
 
+.bloque-hogar .sect-date .article-section .section{
+    background: none;
+    padding: 0;
+
+}
+
 .bloque-hogar .media_block {
     display: grid;
     grid-template-columns: 3fr 1fr;
@@ -1478,6 +1497,7 @@
     .bloque-hogar .sect-date {
         align-items: flex-start;
         flex-direction: column;
+        margin-bottom: 12px;
     }
 
     .bloque-sostenibilidad .sos-uno .headline h2 {
@@ -1509,6 +1529,12 @@
 @media (max-width: 767px) {
     .bloque-uno .noticias .inf2 {
         display: none;
+    }
+
+      .bloque-hogar .sect-date {
+        align-items: flex-start;
+        flex-direction: column;
+        margin-bottom: 12px;
     }
 
     .mas-destacados .teaser-viewer-title {
