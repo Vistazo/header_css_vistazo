@@ -17,6 +17,12 @@ body {
 }
 
 
+.bloque-uno .tag_envivo {
+    padding: 5px 10px;
+     font-size: 12px;
+}
+
+
 .tag_envivo {
     background: var(--red);
     color: #fff;

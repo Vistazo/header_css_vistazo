@@ -509,21 +509,6 @@
 }
 
 
-.tag_envivo {
-    display: inline-flex;
-    gap: 8px;
-    margin-bottom: 20px;
-    color: var(--red);
-    text-transform: uppercase;
-    font-weight: 500;
-}
-
-.tag_envivo img {
-    animation: parpadeo 1s infinite;
-}
-
-
-
 /* NOTA ESPECIAL */
 
 .nota-especial:before {
