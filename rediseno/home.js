@@ -230,7 +230,6 @@ function initVideosSwiper() {
 
                     div.addEventListener("click", () => {
                         player.src = `https://www.dailymotion.com/embed/video/${video.id}?autoplay=1`;
-                        window.scrollTo({ top: 0, behavior: "smooth" });
                     });
 
                     carousel.appendChild(div);
@@ -240,6 +239,26 @@ function initVideosSwiper() {
                 carousel.innerHTML = "<p>Error al cargar videos.</p>";
                 console.error(err);
         });
+
+
+        new Swiper('.carousel-container', {
+            slidesPerView: 1,
+            spaceBetween: 16,
+            observer: true,          // 👈 recalcula si el DOM cambia
+            observeParents: true,    // 👈 recalcula si el padre cambia
+            observeSlideChildren: true,
+            pagination: {
+                el: '.swiper-videos-pagination',
+                clickable: true,
+                dynamicBullets: true,
+            },
+            breakpoints: {
+                640: { slidesPerView: 2, spaceBetween: 20 },
+                1024: { slidesPerView: 4, spaceBetween: 24 },
+                1280: { slidesPerView: 4, spaceBetween: 24 },
+            }
+        });
+
 }
 
 /* ── Init ── */
