@@ -198,8 +198,56 @@ function initRevistasSwiper() {
     });
 }
 
+
+/* ── Función 2: swiper completo ── */
+function initVideosSwiper() {
+        const playlistId = "x9si9u";
+        const player = document.getElementById("mainVideoPlayer");
+        const carousel = document.getElementById("videoCarousel");
+
+        fetch(`https://api.dailymotion.com/playlist/${playlistId}/videos?fields=id,title,thumbnail_240_url,duration&limit=12`)
+            .then(res => res.json())
+            .then(data => {
+                if (!data.list || data.list.length === 0) {
+                    carousel.innerHTML = "<p>No hay videos disponibles.</p>";
+                    return;
+                }
+
+                const firstVideo = data.list[0];
+                player.src = `https://www.dailymotion.com/embed/video/${firstVideo.id}?autoplay=1`;
+
+                data.list.forEach(video => {
+                    const durationMin = Math.floor(video.duration / 60);
+                    const durationSec = String(video.duration % 60).padStart(2, '0');
+
+                    const div = document.createElement("div");
+                    div.className = "video-card swiper-slide";
+                    div.innerHTML = `
+                                        <img src="${video.thumbnail_240_url}" alt="${video.title}">
+                                        <div class="title">${video.title}</div>
+                                        <div class="duration">⏱ ${durationMin}:${durationSec}</div>
+                                    `;
+
+                    div.addEventListener("click", () => {
+                        player.src = `https://www.dailymotion.com/embed/video/${video.id}?autoplay=1`;
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                    });
+
+                    carousel.appendChild(div);
+                });
+            })
+            .catch(err => {
+                carousel.innerHTML = "<p>Error al cargar videos.</p>";
+                console.error(err);
+        });
+}
+
 /* ── Init ── */
-setTimeout(() => aperturaRevista(), 500);
+setTimeout(() => {
+    aperturaRevista();
+}, 500);
+
+
 
 // Carga Swiper CSS + JS solo al hacer scroll
 (function () {
@@ -216,6 +264,8 @@ setTimeout(() => aperturaRevista(), 500);
         const script = document.createElement('script');
         script.src = 'https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js';
         script.onload = () => initRevistasSwiper();
+        script.onload = () => initVideosSwiper();
+
         document.body.appendChild(script);
     }
     window.addEventListener('scroll', loadSwiperAndInit, { once: true, passive: true });
