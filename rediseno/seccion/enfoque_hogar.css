@@ -140,11 +140,14 @@ body {
     gap: 8px;
     align-items: center;
     margin-bottom: 7px;
+    margin-top: 5px;
 }
 .sect-date .article-section .section {
     background: var(--bg-gray);
     padding: 8px;
     font-size: 13px;
+    display: block;
+    margin-top: 10px;
 }
 .sect-date .date {
     display: flex;

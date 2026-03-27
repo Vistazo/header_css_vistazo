@@ -110,7 +110,7 @@ body {
   font-weight: 500;
   color: var(--red);
 }
-.mas-destacados .R_TIT:nth-child(5){
+.mas-destacados .R_TIT.last{
   border-bottom: 1px solid transparent;
 }
 
