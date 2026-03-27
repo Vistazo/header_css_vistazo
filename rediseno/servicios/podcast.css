@@ -76,7 +76,6 @@ body {
     border-radius: 50%;
     display: inline-block;
 }
-
 .microvistazos h1{
     font-size: 28px;
 }
@@ -160,7 +159,6 @@ body {
     flex-wrap: nowrap;
     gap: 20px;
     margin-top: 3rem;
-    
 }
 .listado_notas .prev-button,
 .listado_notas .next-button{
@@ -185,7 +183,6 @@ body {
     color:  var(--red);
     text-decoration: underline;
 }
-
 
 @media (max-width: 768px) {
 .podcast{

@@ -215,14 +215,11 @@ body {
 }
 
 /* Listado de 4 notas */
-.cuatro-notas {
-    border-bottom: 1px solid var(--gray);
-    padding-bottom: 36px;
-}
 .cuatro-notas .noticias {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 24px;
+    padding-bottom: 36px;
 }
 .cuatro-notas .sect-date {
     margin: 6px 0;
@@ -257,6 +254,7 @@ body {
 
 .row.patrocinada{
     border-bottom: 1px solid var(--gray);
+    border-top: 1px solid var(--gray);
     padding: 36px 0;
 }
 .nota-patrocinada .media_block {
