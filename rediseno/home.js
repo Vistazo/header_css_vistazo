@@ -223,13 +223,13 @@ function initVideosSwiper() {
                 const div = document.createElement("div");
                 div.className = "video-card swiper-slide";
                 div.innerHTML = `
-                                        <img src="${video.thumbnail_240_url}" alt="${video.title}">
-                                        <div class="title">${video.title}</div>
-                                        <div class="duration">
-                                            <img width="28" height="28" src="https://codigomarret.online/upload/img/iconplayvideo.svg" alt="Duración">
-                                            ${durationMin}:${durationSec}
-                                        </div>
-                                    `;
+                    <img class="video-thumbnail" src="${video.thumbnail_240_url}" alt="${video.title}">
+                    <div class="title">${video.title}</div>
+                    <div class="duration">
+                        <img width="28" height="28" src="https://codigomarret.online/upload/img/iconplayvideo.svg" alt="Duración">
+                        ${durationMin}:${durationSec}
+                    </div>
+                `;
 
                 div.addEventListener("click", () => {
                     player.src = `https://www.dailymotion.com/embed/video/${video.id}?autoplay=1`;
