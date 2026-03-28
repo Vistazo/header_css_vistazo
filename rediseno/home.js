@@ -201,63 +201,63 @@ function initRevistasSwiper() {
 
 /* ── Función 2: swiper completo ── */
 function initVideosSwiper() {
-        const playlistId = "x9si9u";
-        const player = document.getElementById("mainVideoPlayer");
-        const carousel = document.getElementById("videoCarousel");
+    const playlistId = "x9si9u";
+    const player = document.getElementById("mainVideoPlayer");
+    const carousel = document.getElementById("videoCarousel");
 
-        fetch(`https://api.dailymotion.com/playlist/${playlistId}/videos?fields=id,title,thumbnail_240_url,duration&limit=12`)
-            .then(res => res.json())
-            .then(data => {
-                if (!data.list || data.list.length === 0) {
-                    carousel.innerHTML = "<p>No hay videos disponibles.</p>";
-                    return;
-                }
+    fetch(`https://api.dailymotion.com/playlist/${playlistId}/videos?fields=id,title,thumbnail_240_url,duration&limit=12`)
+        .then(res => res.json())
+        .then(data => {
+            if (!data.list || data.list.length === 0) {
+                carousel.innerHTML = "<p>No hay videos disponibles.</p>";
+                return;
+            }
 
-                const firstVideo = data.list[0];
-                player.src = `https://www.dailymotion.com/embed/video/${firstVideo.id}?autoplay=1`;
+            const firstVideo = data.list[0];
+            player.src = `https://www.dailymotion.com/embed/video/${firstVideo.id}?autoplay=1`;
 
-                data.list.forEach(video => {
-                    const durationMin = Math.floor(video.duration / 60);
-                    const durationSec = String(video.duration % 60).padStart(2, '0');
+            data.list.forEach(video => {
+                const durationMin = Math.floor(video.duration / 60);
+                const durationSec = String(video.duration % 60).padStart(2, '0');
 
-                    const div = document.createElement("div");
-                    div.className = "video-card swiper-slide";
-                    div.innerHTML = `
+                const div = document.createElement("div");
+                div.className = "video-card swiper-slide";
+                div.innerHTML = `
                                         <img src="${video.thumbnail_240_url}" alt="${video.title}">
                                         <div class="title">${video.title}</div>
                                         <div class="duration">⏱ ${durationMin}:${durationSec}</div>
                                     `;
 
-                    div.addEventListener("click", () => {
-                        player.src = `https://www.dailymotion.com/embed/video/${video.id}?autoplay=1`;
-                    });
-
-                    carousel.appendChild(div);
+                div.addEventListener("click", () => {
+                    player.src = `https://www.dailymotion.com/embed/video/${video.id}?autoplay=1`;
                 });
-            })
-            .catch(err => {
-                carousel.innerHTML = "<p>Error al cargar videos.</p>";
-                console.error(err);
+
+                carousel.appendChild(div);
+            });
+        })
+        .catch(err => {
+            carousel.innerHTML = "<p>Error al cargar videos.</p>";
+            console.error(err);
         });
 
 
-        new Swiper('.carousel-container', {
-            slidesPerView: 1,
-            spaceBetween: 16,
-            observer: true,          // 👈 recalcula si el DOM cambia
-            observeParents: true,    // 👈 recalcula si el padre cambia
-            observeSlideChildren: true,
-            pagination: {
-                el: '.swiper-videos-pagination',
-                clickable: true,
-                dynamicBullets: true,
-            },
-            breakpoints: {
-                640: { slidesPerView: 2, spaceBetween: 20 },
-                1024: { slidesPerView: 4, spaceBetween: 24 },
-                1280: { slidesPerView: 4, spaceBetween: 24 },
-            }
-        });
+    new Swiper('.carousel-container', {
+        slidesPerView: 1,
+        spaceBetween: 16,
+        observer: true,          // 👈 recalcula si el DOM cambia
+        observeParents: true,    // 👈 recalcula si el padre cambia
+        observeSlideChildren: true,
+        pagination: {
+            el: '.swiper-videos-pagination',
+            clickable: true,
+            dynamicBullets: true,
+        },
+        breakpoints: {
+            640: { slidesPerView: 2, spaceBetween: 20 },
+            1024: { slidesPerView: 3, spaceBetween: 24 },
+            1280: { slidesPerView: 3, spaceBetween: 24 },
+        }
+    });
 
 }
 
@@ -282,8 +282,10 @@ setTimeout(() => {
 
         const script = document.createElement('script');
         script.src = 'https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js';
-        script.onload = () => initRevistasSwiper();
-        script.onload = () => initVideosSwiper();
+        script.onload = () => {
+            initRevistasSwiper();
+            initVideosSwiper();
+        }
 
         document.body.appendChild(script);
     }

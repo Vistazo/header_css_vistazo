@@ -1105,7 +1105,7 @@
     padding: 0 24px 36px 24px;
 }
 
-.bloque-hogar .sect-date .article-section .section{
+.bloque-hogar .sect-date .article-section .section {
     background: none;
     padding: 0;
 
@@ -1331,6 +1331,58 @@
 } */
 
 
+
+/* BLOQUE VIDEOS */
+
+.bloque-videos {
+    background: #111111;
+    margin-bottom: 52px;
+}
+
+.bloque-videos .title {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #fff;
+    margin: 16px 0;
+}
+
+.bloque-videos #videoCarousel {
+    padding-bottom: 30px;
+}
+
+.bloque-videos #videoCarousel img {
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+
+.bloque-videos #videoCarousel .video-card {
+    cursor: pointer;
+}
+
+.bloque-videos #videoCarousel .duration {
+    color: #fff;
+}
+
+.bloque-videos #videoCarousel .swiper-pagination-bullet {
+    background: var(--gray) !important;
+    width: 10px !important;
+    height: 10px !important;
+}
+
+.bloque-videos #videoCarousel .swiper-pagination-bullet-active {
+    background: var(--red) !important;
+}
+
+.bloque-videos .video-player {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16 / 9;
+    margin-bottom: 20px;
+}
+
+
+
 @media (max-width: 1279px) {
     .bloque-actualidad .media_block {
         grid-template-columns: 2fr 1fr;
@@ -1400,7 +1452,7 @@
         align-items: flex-start;
     }
 
-    .apertura-principal .headline h2{
+    .apertura-principal .headline h2 {
         font-size: 24px;
     }
 
@@ -1531,7 +1583,7 @@
         display: none;
     }
 
-      .bloque-hogar .sect-date {
+    .bloque-hogar .sect-date {
         align-items: flex-start;
         flex-direction: column;
         margin-bottom: 12px;
