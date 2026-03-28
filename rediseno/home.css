@@ -1784,6 +1784,18 @@
         border-bottom: 1px solid var(--gray);
     }
 
+    .bloque-servicios .col-33-33-33-top-one-col .sect-date{
+        margin: 8px 0;
+    }
+
+    .bloque-servicios .col-33-33-33-top-two-col .sect-date {
+        margin: 8px 0;
+    }
+
+    .bloque-servicios  .col-33-33-33-top-three-col .sect-date {
+        margin: 8px 0;
+    }
+
     .bloque-sostenibilidad .sos-uno {
         margin-bottom: 24px;
     }
