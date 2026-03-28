@@ -245,10 +245,10 @@ function initVideosSwiper() {
 
 
     new Swiper('.carousel-container', {
-        slidesPerView: 1,
+        slidesPerView: 1.5,
         spaceBetween: 16,
-        observer: true,          // 👈 recalcula si el DOM cambia
-        observeParents: true,    // 👈 recalcula si el padre cambia
+        observer: true,
+        observeParents: true,
         observeSlideChildren: true,
         pagination: {
             el: '.swiper-videos-pagination',
@@ -256,7 +256,7 @@ function initVideosSwiper() {
             dynamicBullets: true,
         },
         breakpoints: {
-            640: { slidesPerView: 2, spaceBetween: 20 },
+            640: { slidesPerView: 2.5, spaceBetween: 20 },
             1024: { slidesPerView: 3, spaceBetween: 24 },
             1280: { slidesPerView: 3, spaceBetween: 24 },
         }

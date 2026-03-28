@@ -1349,7 +1349,7 @@
 }
 
 .bloque-videos #videoCarousel {
-    padding-bottom: 30px;
+    padding-bottom: 50px;
 }
 
 .bloque-videos #videoCarousel .video-thumbnail {
@@ -1397,7 +1397,13 @@
     height: 28px;
 }
 
+.bloque-videos .section-title a {
+    color: #fff;
+}
 
+.bloque-videos .section-title a svg path {
+    fill: #fff;
+}
 
 @media (max-width: 1279px) {
     .bloque-actualidad .media_block {
@@ -1597,6 +1603,14 @@
 @media (max-width: 767px) {
     .bloque-uno .noticias .inf2 {
         display: none;
+    }
+
+    .bloque-videos {
+        padding: 18px;
+    }
+
+    .bloque-videos .title {
+        font-size: 16px;
     }
 
     .bloque-hogar .sect-date {
