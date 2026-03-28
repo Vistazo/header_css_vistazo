@@ -225,7 +225,10 @@ function initVideosSwiper() {
                 div.innerHTML = `
                                         <img src="${video.thumbnail_240_url}" alt="${video.title}">
                                         <div class="title">${video.title}</div>
-                                        <div class="duration">⏱ ${durationMin}:${durationSec}</div>
+                                        <div class="duration">
+                                            <img width="28" height="28" src="https://codigomarret.online/upload/img/iconplayvideo.svg" alt="Duración">
+                                            ${durationMin}:${durationSec}
+                                        </div>
                                     `;
 
                 div.addEventListener("click", () => {
