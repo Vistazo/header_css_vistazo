@@ -167,6 +167,12 @@ body {
 }
 
 @media (max-width: 767px) {
+.tit_sec,
+#col-60-40-top-one-col,
+#col-60-40-top-two-col {
+    padding: 0 1rem;
+}
+
 .listado-seis-notas .noticias {
     display: grid;
     grid-template-columns: 1fr;
