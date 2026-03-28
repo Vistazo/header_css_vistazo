@@ -296,8 +296,8 @@
      INIT — requestIdleCallback para no bloquear
   ============================================= */
   function initFooter() {
-    renderContact();
-    renderSocial();
+    // renderContact();
+    // renderSocial();
     renderNav();
     renderMagazine();
   }
