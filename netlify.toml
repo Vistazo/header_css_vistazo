@@ -12,3 +12,9 @@
   for = "/**/*.json"
   [headers.values]
     Access-Control-Allow-Origin = "*"
+
+[[redirects]]
+  from = "/api/headervistazo"
+  to = "https://backoffice.bmcodigo.com/api/v1/headervistazo"
+  status = 200
+  force = true

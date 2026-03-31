@@ -31,7 +31,7 @@
        Se consume desde API externa con la misma estructura
        que el antiguo SIDEBAR_ITEMS.
     ═══════════════════════════════════════════ */
-    var SIDEBAR_API_URL = 'https://backoffice.bmcodigo.com/api/v1/headervistazo';
+    var SIDEBAR_API_URL = '/api/headervistazo';
 
     /* ═══════════════════════════════════════════
        ARRAY 3 — SECONDARY NAV (secondary-nav)
