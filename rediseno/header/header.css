@@ -581,7 +581,7 @@ body {
 /* BLOQUE ESTA PASANDO */
 
 
-.esta-pasando {
+.esta-pasando:not(:empty) {
     background: var(--bone);
     padding: 14px 36px;
     display: flex;
