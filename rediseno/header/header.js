@@ -31,7 +31,7 @@
        Se consume desde API externa con la misma estructura
        que el antiguo SIDEBAR_ITEMS.
     ═══════════════════════════════════════════ */
-    var SIDEBAR_API_URL = '/api/headervistazo';
+    var SIDEBAR_API_URL = 'https://vzheaders.netlify.app/api/headervistazo';
 
     /* ═══════════════════════════════════════════
        ARRAY 3 — SECONDARY NAV (secondary-nav)
