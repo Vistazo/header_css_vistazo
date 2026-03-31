@@ -27,79 +27,11 @@
     ];
 
     /* ═══════════════════════════════════════════
-       ARRAY 2 — SIDEBAR NAV (sidebar__nav)
-       Soporta sub-menús mediante la propiedad children.
-       Propiedades:
-         label      → texto visible
-         href       → URL del enlace
-         live       → (opcional) true activa el badge animado "En VIVO"
-         children   → (opcional) array de { label, href } para sub-menú desplegable
+       DATA SOURCE — SIDEBAR NAV (sidebar__nav)
+       Se consume desde API externa con la misma estructura
+       que el antiguo SIDEBAR_ITEMS.
     ═══════════════════════════════════════════ */
-    var SIDEBAR_ITEMS = [
-        // { label: 'En Vivo',          href: '#', live: true },
-        { label: 'Últimas Noticias', href: '#' },
-        {
-            label: 'Actualidad', href: '/actualidad',
-            children: [
-                { label: 'Nacional', href: '/actualidad/nacional' },
-                { label: 'Internacional', href: '/actualidad/internacional' }
-            ]
-        },
-        {
-            label: 'Política', href: '/politica',
-            children: [
-                { label: 'Nacional', href: '/politica/nacional' },
-                { label: 'Internacional', href: '/politica/internacional' }
-            ]
-        },
-
-
-        // { label: 'Seguridad', href: '#' },
-        // { label: 'Mundo', href: '#' },
-        // { label: 'Investigación', href: '#' },
-        { label: 'Opinión', href: '/opinion' },
-        {
-            label: 'Estilo de vida', href: '/estilo-de-vida',
-            children: [
-                { label: 'Salud', href: '/estilo-de-vida/salud' },
-                { label: 'Sostenibilidad', href: '/estilo-de-vida/sostenibilidad' },
-                { label: 'Tecnología', href: '/estilo-de-vida/tecnologia' },
-                { label: 'Cultura', href: '/estilo-de-vida/cultura' },
-                { label: 'Tendencias', href: '/estilo-de-vida/tendencias' },
-
-            ]
-        },
-        { label: 'Deportes', href: '/deportes' },
-
-        {
-            label: 'Hogar', href: '/hogar',
-            children: [
-                { label: 'Entretenimiento', href: '/hogar/entretenimiento' },
-                { label: 'Bienestar', href: '/hogar/bienestar' },
-                { label: 'Cocina', href: '/hogar/cocina' },
-                { label: 'Personajes', href: '/hogar/personajes' },
-                { label: 'Empresarial', href: '/hogar/empresarial' },
-            ]
-        },
-
-        {
-            label: 'Enfoque', href: '/enfoque',
-            children: [
-                { label: 'Calidad Educativa', href: '/enfoque/calidad-educativa' },
-                { label: 'Economía', href: '/portafolio/economia' },
-                { label: 'Empresas', href: '/portafolio/empresas' },
-                { label: '500 Mayores Empresas', href: '/portafolio/500-mayores-empresas' },
-                { label: 'Bolsa de empleo', href: '/portafolio/bolsa-de-empleo' },
-            ]
-        },
-
-        { label: 'Eventos', href: '/eventos' },  
-        { label: 'Patrocinado', href: '/patrocinado' },
-        { label: 'Podcast', href: '/podcast' },
-        { label: 'Réplicas', href: '/replica/pedido-de-replica-de-xavier-jordan-mendoza-AJ7812637' },
-
-
-    ];
+    var SIDEBAR_API_URL = 'https://backoffice.bmcodigo.com/api/v1/headervistazo';
 
     /* ═══════════════════════════════════════════
        ARRAY 3 — SECONDARY NAV (secondary-nav)
@@ -110,7 +42,7 @@
     ═══════════════════════════════════════════ */
     var SECONDARY_ITEMS = [
         { label: 'Eventos', href: '/eventos' },
-        { label: 'Patrocinado', href: '/patrocinado' },,
+        { label: 'Patrocinado', href: '/patrocinado' },
         { label: 'Podcast', href: '/podcast' },
         // { label: 'Videos', href: '#' },
         { label: '500 Mejores Empresas', href: '/portafolio/500-mayores-empresas' },
@@ -199,6 +131,32 @@
         ul.innerHTML = html;
     }
 
+    function loadSidebarNavFromApi() {
+        var request = new XMLHttpRequest();
+
+        request.open('GET', SIDEBAR_API_URL, true);
+        request.onreadystatechange = function () {
+            if (request.readyState !== 4) return;
+
+            if (request.status >= 200 && request.status < 300) {
+                try {
+                    var parsed = JSON.parse(request.responseText);
+                    if (Array.isArray(parsed)) {
+                        buildSidebarNav(parsed);
+                        return;
+                    }
+                } catch (e) {
+                    console.error('Error parseando menú sidebar:', e);
+                }
+            }
+
+            console.error('No se pudo cargar el menú sidebar desde API.');
+            buildSidebarNav([]);
+        };
+
+        request.send();
+    }
+
     /* ═══════════════════════════════════════════
        SIDEBAR — open / close / focus trap
     ═══════════════════════════════════════════ */
@@ -266,7 +224,7 @@
 
     /* ── Init ── */
     buildRnavLinks(RNAV_ITEMS);
-    buildSidebarNav(SIDEBAR_ITEMS);
+    loadSidebarNavFromApi();
     buildSecondaryNav(SECONDARY_ITEMS);
 
     btnOpen.addEventListener('click', openSidebar);
