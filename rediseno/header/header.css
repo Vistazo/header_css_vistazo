@@ -581,7 +581,7 @@ body {
 /* BLOQUE ESTA PASANDO */
 
 
-.esta-pasando:not(:empty) {
+.esta-pasando .R_TIT_EP {
     background: var(--bone);
     padding: 14px 36px;
     display: flex;
@@ -617,7 +617,7 @@ body {
     animation: sb-pulse 1.4s ease infinite;
 }
 
-.esta-pasando .noticias {
+.esta-pasando .text_block  {
     border-left: 1px solid #333;
     padding-left: 20px;
 }
@@ -768,13 +768,13 @@ body {
         display: none;
     }
 
-    .esta-pasando {
+    .esta-pasando .R_TIT_EP{
         flex-direction: column;
         align-items: flex-start;
         gap: 8px;
     }
 
-    .esta-pasando .noticias {
+    .esta-pasando .text_block  {
         border-left: none;
         padding-left: 0;
     }
@@ -793,7 +793,7 @@ body {
         gap: 8px;
     }
 
-    .esta-pasando {
+    .esta-pasando .R_TIT_EP{
         padding: 14px 12px;
     }
 
