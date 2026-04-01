@@ -7,6 +7,10 @@
     --bg-gray: #F3F5F8;
 }
 
+.col-60-40-top-one-col {
+    margin-bottom: 36px;
+}
+
 
 .input-buscador {
     display: flex;
