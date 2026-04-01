@@ -2,51 +2,25 @@
     'use strict';
 
     /* ═══════════════════════════════════════════
-       ARRAY 1 — PRIMARY NAV (rnav-links)
-       Solo enlaces planos, sin sub-menú.
-       Propiedades:
-         label   → texto visible
-         href    → URL del enlace
-         live    → (opcional) true activa el badge animado "En VIVO"
+       DATA SOURCE — PRIMARY NAV (rnav-links)
+       Se consume desde API externa con estructura:
+       [{ label: string, href: string, live?: boolean }]
     ═══════════════════════════════════════════ */
-    var RNAV_ITEMS = [
-        // { label: 'En Vivo',          href: '#', live: false },
-        { label: 'Últimas Noticias', href: '#' },
-        { label: 'Actualidad', href: '/actualidad' },
-        { label: 'Política', href: '/politica' },
-        // { label: 'Seguridad',        href: '#' },
-        // { label: 'Mundo', href: '/actualidad/internacional' },
-        // { label: 'Investigación',    href: '#' },
-        { label: 'Opinión', href: '/opinion' },
-        { label: 'Estilo de vida', href: '/estilo-de-vida' },
-        { label: 'Deportes', href: '/deportes' },
-        // { label: 'Tendencias', href: '/estilo-de-vida/tendencias' },
-        // { label: 'Entretenimiento',  href: '#' },
-        { label: 'Enfoque', href: '/enfoque' },
-        { label: 'Hogar', href: '/hogar' },
-    ];
+    var RNAV_API_URL = 'https://backoffice.bmcodigo.com/api/v1/header-principal';
 
     /* ═══════════════════════════════════════════
        DATA SOURCE — SIDEBAR NAV (sidebar__nav)
        Se consume desde API externa con la misma estructura
        que el antiguo SIDEBAR_ITEMS.
     ═══════════════════════════════════════════ */
-    var SIDEBAR_API_URL = 'https://vzheaders.netlify.app/api/headervistazo';
+    var SIDEBAR_API_URL = 'https://backoffice.bmcodigo.com/api/v1/header-sidebar';
 
     /* ═══════════════════════════════════════════
-       ARRAY 3 — SECONDARY NAV (secondary-nav)
-       Solo enlaces planos.
-       Propiedades:
-         label  → texto visible
-         href   → URL del enlace
+       DATA SOURCE — SECONDARY NAV (secondary-nav)
+       Se consume desde API externa con estructura:
+       [{ label: string, href: string }]
     ═══════════════════════════════════════════ */
-    var SECONDARY_ITEMS = [
-        { label: 'Eventos', href: '/eventos' },
-        { label: 'Patrocinado', href: '/patrocinado' },
-        { label: 'Podcast', href: '/podcast' },
-        // { label: 'Videos', href: '#' },
-        { label: '500 Mejores Empresas', href: '/portafolio/500-mayores-empresas' },
-    ];
+    var SECONDARY_API_URL = 'https://backoffice.bmcodigo.com/api/v1/header-secundario';
 
     /* ─── SVG: flecha sub-menú ─── */
     var ARROW_SVG =
@@ -75,6 +49,32 @@
         container.innerHTML = html;
     }
 
+    function loadRnavFromApi() {
+        var request = new XMLHttpRequest();
+
+        request.open('GET', RNAV_API_URL, true);
+        request.onreadystatechange = function () {
+            if (request.readyState !== 4) return;
+
+            if (request.status >= 200 && request.status < 300) {
+                try {
+                    var parsed = JSON.parse(request.responseText);
+                    if (Array.isArray(parsed)) {
+                        buildRnavLinks(parsed);
+                        return;
+                    }
+                } catch (e) {
+                    console.error('Error parseando menú principal:', e);
+                }
+            }
+
+            console.error('No se pudo cargar el menú principal desde API.');
+            buildRnavLinks([]);
+        };
+
+        request.send();
+    }
+
     /* ═══════════════════════════════════════════
        RENDER — secondary-nav
     ═══════════════════════════════════════════ */
@@ -87,6 +87,32 @@
             html += '<a href="' + item.href + '">' + item.label + '</a>';
         });
         nav.innerHTML = html;
+    }
+
+    function loadSecondaryNavFromApi() {
+        var request = new XMLHttpRequest();
+
+        request.open('GET', SECONDARY_API_URL, true);
+        request.onreadystatechange = function () {
+            if (request.readyState !== 4) return;
+
+            if (request.status >= 200 && request.status < 300) {
+                try {
+                    var parsed = JSON.parse(request.responseText);
+                    if (Array.isArray(parsed)) {
+                        buildSecondaryNav(parsed);
+                        return;
+                    }
+                } catch (e) {
+                    console.error('Error parseando menú secundario:', e);
+                }
+            }
+
+            console.error('No se pudo cargar el menú secundario desde API.');
+            buildSecondaryNav([]);
+        };
+
+        request.send();
     }
 
     /* ═══════════════════════════════════════════
@@ -223,9 +249,9 @@
     }
 
     /* ── Init ── */
-    buildRnavLinks(RNAV_ITEMS);
+    loadRnavFromApi();
     loadSidebarNavFromApi();
-    buildSecondaryNav(SECONDARY_ITEMS);
+    loadSecondaryNavFromApi();
 
     btnOpen.addEventListener('click', openSidebar);
     btnClose.addEventListener('click', closeSidebar);

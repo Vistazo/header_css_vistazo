@@ -1,7 +1,7 @@
 // Variable compartida
 let _revistasData = null;
 let _revistasPromise = null;
-const REVISTAS_DATA_URL = 'https://vzheaders.netlify.app/rediseno/revistas.json';
+const REVISTAS_DATA_URL = 'https://backoffice.bmcodigo.com/api/v1/revistas';
 const REVISTAS_STORAGE_KEY = 'revistasDataCache';
 const REVISTAS_STORAGE_HASH_KEY = 'revistasDataCacheHash';
 const REVISTAS_STORAGE_SYNC_KEY = 'revistasDataCacheLastSync';
