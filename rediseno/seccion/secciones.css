@@ -271,6 +271,13 @@ body {
 }
 }
 
+@media (max-width: 767px) {
+  .noticias_list {
+    margin-bottom: 36px;
+  }
+}
+
+
 /* ======== DESTACADAS ======== */
 .mas-destacados{
     margin-top: 0.5rem;
