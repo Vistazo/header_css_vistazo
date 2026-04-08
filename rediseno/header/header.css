@@ -19,7 +19,7 @@ body {
 
 .bloque-uno .tag_envivo {
     padding: 5px 10px;
-     font-size: 12px;
+    font-size: 12px;
 }
 
 
@@ -116,10 +116,15 @@ body {
 }
 
 .rbtn-login svg {
-    display: none;
+    display: block;
     width: 24px;
     height: 24px;
 }
+
+.rbtn-login span {
+    display: none;
+}
+
 
 .nav-fondo {
     background: #fff;
@@ -617,7 +622,7 @@ body {
     animation: sb-pulse 1.4s ease infinite;
 }
 
-.esta-pasando .text_block  {
+.esta-pasando .text_block {
     border-left: 1px solid #333;
     padding-left: 20px;
 }
@@ -768,13 +773,13 @@ body {
         display: none;
     }
 
-    .esta-pasando .R_TIT_EP{
+    .esta-pasando .R_TIT_EP {
         flex-direction: column;
         align-items: flex-start;
         gap: 8px;
     }
 
-    .esta-pasando .text_block  {
+    .esta-pasando .text_block {
         border-left: none;
         padding-left: 0;
     }
@@ -793,7 +798,7 @@ body {
         gap: 8px;
     }
 
-    .esta-pasando .R_TIT_EP{
+    .esta-pasando .R_TIT_EP {
         padding: 14px 12px;
     }
 
@@ -810,13 +815,7 @@ body {
         width: 102px;
     }
 
-    .rbtn-login svg {
-        display: block;
-    }
 
-    .rbtn-login span {
-        display: none;
-    }
 
     .primary-nav {
         padding: 16px 12px;
