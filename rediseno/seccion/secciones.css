@@ -154,14 +154,11 @@ body {
   text-decoration: none;
 }
 .noticias_list article{
-  padding-right: 5rem;
+  padding-right: 3rem;
 }
 .noticias_list .R_IMG_SEC_DATE_TIT{
   padding: 20px 0;
   border-bottom: 1px solid var(--gray);
-}
-.noticias_list .R_IMG_SEC_DATE_TIT:last-child {
-  border-bottom: none;
 }
 .noticias_list .media_block {
   display: grid;
@@ -241,8 +238,11 @@ body {
 .noticias_list .carrusel ul .nav-page-selected{
     color:  var(--red);
     text-decoration: underline;
+    background: none !important;
 }
-
+.carrusel .prev-button.disable-button{
+    opacity: initial !important;
+}
 .container, .container-fluid, .container-lg, 
 .container-md, .container-sm, .container-xl, .container-xxl {
     padding-right: var(--bs-gutter-x, .75rem);
