@@ -9,6 +9,9 @@
 body {
   font-family: 'Zalando Sans', sans-serif;
 }
+div#iter-content-wrapper {
+    margin-top: 25px;
+}
 
 /* Categoria*/
 .sect-date {
@@ -314,7 +317,8 @@ body {
     margin-bottom: 36px;
   }
   .section-title .title.principal{
-  font-size: 30px;
+    font-size: 30px;
+    margin-bottom: 20px;
   }
 
 }
