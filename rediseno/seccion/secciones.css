@@ -79,6 +79,9 @@ body {
     margin: 1rem 0 0.8rem 0;
 }
 
+.title.principal svg{
+  display: none;
+}
 /* ======== NOTA PRINCIPAL ======== */
 /* Título del artículo */
 .principal_notas .headline {
@@ -146,7 +149,7 @@ body {
 }
 .listado_notas .subheadline h3 {
   font-size: 14px;
-  color: #555555;
+  color: #555555 !important;
 }
 
 /* ============= ARTÍCULO LISTA ================= */
@@ -274,7 +277,9 @@ body {
 }
 
 @media (max-width: 768px) {
-
+  .sect-date .date{
+    font-size: 10px;
+  }
   .listado_notas .media_block{
     gap: 22px;
   }
