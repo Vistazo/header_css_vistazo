@@ -166,6 +166,7 @@ body {
 .nota-principal.hogar .sect-date .date::before,
 .notas-lista.hogar .sect-date .date::before,
 .nota-patrocinada.hogar .sect-date .date::before,
+.cuatro-notas.hogar .sect-date .date::before,
 .listado-not-seccion.hogar .sect-date .date::before,
 .listado-seis-notas.hogar .sect-date .date::before{
     background-color: #9e22f3;

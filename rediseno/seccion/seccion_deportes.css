@@ -49,7 +49,7 @@ div#iter-content-wrapper {
     transform: translateY(60%);
     height: 4px;
     width: 30px;
-    background: var(--red);
+    background: #1c0487;
 }
 .tit_sec .titlesec p{
   font-size: 13px;
@@ -81,7 +81,7 @@ div#iter-content-wrapper {
     content: "";
     width: 8px;
     height: 8px;
-    background-color: var(--red);
+    background-color: #1c0487;
     border-radius: 50%;
     display: inline-block;
 }
@@ -327,7 +327,7 @@ div#iter-content-wrapper {
     transform: translateY(60%);
     height: 4px;
     width: 30px;
-    background: var(--red);
+    background: #1c0487;
 }
 
 @media (max-width: 767px) {
@@ -378,7 +378,7 @@ div#iter-content-wrapper {
 .mas-destacados .r_numeracion {
   font-size: 18px;
   font-weight: 500;
-  color: var(--red);
+  color: #1c0487;
 }
 .mas-destacados .R_TIT:nth-child(5){
   border-bottom: 1px solid transparent;
