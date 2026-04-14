@@ -5,6 +5,8 @@
     --light: #f5f3ee;
     --bone: #F3F2ED;
     --bg-gray: #F3F5F8;
+    --verde: #419644;
+    --purple-light: #F3F5F8;
 }
 
 @keyframes sb-pulse {
@@ -1095,13 +1097,13 @@
 
 .titulo-hogar {
     /* margin-bottom: 36px; */
-    background: var(--bone);
+    background: var(--purple-light);
     padding: 36px 24px;
 }
 
 .bloque-hogar {
     margin-bottom: 52px;
-    background: var(--bone);
+    background: var(--purple-light);
     padding: 0 24px 36px 24px;
 }
 
@@ -1144,7 +1146,7 @@
 /* BLOQUE SERVICIOS */
 
 .bloque-servicios {
-    margin-bottom: 52px;
+    margin-bottom: 82px;
 }
 
 .bloque-servicios .headline h2 {
@@ -1161,6 +1163,14 @@
 
 
 /* BLOQUE SOSTENIBILIDAD */
+
+.titulo-sos .section-title::after {
+    background: var(--verde);
+}
+
+.bloque-sostenibilidad .sect-date .date::before {
+    background-color: var(--verde);
+}
 
 .bloque-sostenibilidad {
     margin-bottom: 52px;
@@ -1211,6 +1221,11 @@
 
 .bloque-sostenibilidad .autor-nombre {
     font-size: 13px;
+}
+
+.bloque-sostenibilidad .sos-tres {
+    border-top: 1px solid var(--gray);
+    padding-top: 24px;
 }
 
 .bloque-sostenibilidad .sos-tres .headline h2 {
@@ -1784,7 +1799,7 @@
         border-bottom: 1px solid var(--gray);
     }
 
-    .bloque-servicios .col-33-33-33-top-one-col .sect-date{
+    .bloque-servicios .col-33-33-33-top-one-col .sect-date {
         margin: 8px 0;
     }
 
@@ -1792,7 +1807,7 @@
         margin: 8px 0;
     }
 
-    .bloque-servicios  .col-33-33-33-top-three-col .sect-date {
+    .bloque-servicios .col-33-33-33-top-three-col .sect-date {
         margin: 8px 0;
     }
 
