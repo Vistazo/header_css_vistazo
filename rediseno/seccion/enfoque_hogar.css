@@ -163,6 +163,14 @@ body {
     border-radius: 50%;
     display: inline-block;
 }
+.nota-principal.hogar .sect-date .date::before,
+.notas-lista.hogar .sect-date .date::before,
+.nota-patrocinada.hogar .sect-date .date::before,
+.listado-not-seccion.hogar .sect-date .date::before,
+.listado-seis-notas.hogar .sect-date .date::before{
+    background-color: #9e22f3;
+}
+
 .nota-principal .headline h2 {
     font-size: 40px;
     font-weight: 500;
@@ -207,14 +215,6 @@ body {
     align-items: center;
     gap: 8px;
     font-size: 13px;
-}
-.notas-lista .noticias .date::before {
-    content: "";
-    width: 8px;
-    height: 8px;
-    background-color: var(--red);
-    border-radius: 50%;
-    display: inline-block;
 }
 
 /* Listado de 4 notas */
