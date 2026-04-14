@@ -1,13 +1,15 @@
 body {
   font-family: 'Zalando Sans', sans-serif;
 }
-.container{
+.m-b{
     width:90%;
     max-width:1200px;
     margin:auto;
     padding:60px 0;
 }
-
+div#iter-content-wrapper {
+    margin-top: 0px;
+}
 .iter-footer-wrapper {
     padding: 0;
     margin: 0;

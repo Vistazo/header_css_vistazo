@@ -7,6 +7,9 @@ body {
     font-family: "Zalando Sans", sans-serif;
     background-color: #f3f2ed !important;
 }
+div#iter-content-wrapper {
+    margin-top: 0px;
+}
 
 #main-content{
     margin-bottom: 4rem;
