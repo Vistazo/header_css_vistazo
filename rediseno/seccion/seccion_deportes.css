@@ -9,6 +9,9 @@
 body {
   font-family: 'Zalando Sans', sans-serif;
 }
+div#iter-content-wrapper {
+    margin-top: 20px;
+}
 
 #col-33-33-33-top-three-col,
 #col-60-40-top-two-col{

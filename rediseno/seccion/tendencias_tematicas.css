@@ -8,6 +8,9 @@ body {
 .col-md-8{
     padding-right: 2rem;
 }
+div#iter-content-wrapper {
+    margin-top: 20px;
+}
 
 /* ======== LISTADO DE NOTAS ======== */
 .listado_notas article.article {
