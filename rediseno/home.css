@@ -81,6 +81,10 @@
     font-size: 34px;
 }
 
+.apertura-principal .headline h2::first-line {
+    color: var(--red)
+} 
+
 .apertura-principal .autor-nombre {
     padding: 16px 0;
 }
@@ -156,6 +160,10 @@
 
 .bloque-uno .headline h2 {
     font-size: 16px;
+}
+
+.bloque-uno .headline h2::first-line{
+    color: var(--red);
 }
 
 .bloque-uno .noticias article:nth-child(1) .media_block {
@@ -396,6 +404,10 @@
     font-size: 24px;
 }
 
+.investigacion-principal .headline h2::first-line {
+    color: var(--red);
+}
+
 .investigacion-principal .autor-nombre {
     padding: 16px 0;
     font-size: 13px;
@@ -531,6 +543,10 @@
     margin: 0;
 }
 
+.bloque-actualidad .noticias .headline h2::first-line {
+    color: var(--red);
+}
+
 .bloque-actualidad .act-nac .noticias article:nth-child(1),
 .bloque-actualidad .act-inter .noticias article:nth-child(1) {
     padding-bottom: 16px;
@@ -590,6 +606,10 @@
     margin: 0;
 }
 
+.bloque-mundo .col-33-33-33-top-one-col .headline h2::first-line {
+    color: var(--red);
+}
+
 .bloque-mundo .col-33-33-33-top-one-col .article-section {
     display: none;
 }
@@ -601,6 +621,10 @@
 .bloque-mundo .col-33-33-33-top-two-col .headline h2 {
     font-size: 20px;
     margin: 0;
+}
+
+.bloque-mundo .col-33-33-33-top-two-col .headline h2::first-line {
+    color: var(--red);
 }
 
 
@@ -840,7 +864,10 @@
     font-size: 20px;
 }
 
-
+.bloque-deportes .depo-dos .headline h2::first-line,
+.bloque-deportes .depo-uno .headline h2::first-line {
+    color: var(--red);
+}
 
 .bloque-deportes .depo-tres .headline h2 {
     font-size: 16px;
@@ -1526,7 +1553,7 @@
     .titulo-hogar .men-hogar {
         align-items: flex-start;
         flex-direction: column;
-        gap: 10px;
+        gap: 20px;
     }
 
     .apertura-principal .headline h2 {
