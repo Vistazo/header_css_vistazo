@@ -1099,8 +1099,21 @@
 .titulo-hogar {
     /* margin-bottom: 36px; */
     background: var(--purple-light);
-    padding: 36px 24px;
+    padding: 36px 36px 48px 36px;
 }
+
+.titulo-hogar .men-hogar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.titulo-hogar .sec-hog {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
 
 .bloque-hogar {
     margin-bottom: 52px;
@@ -1497,6 +1510,23 @@
     .car-main {
         flex-direction: column;
         align-items: flex-start;
+    }
+
+    .titulo-hogar .sec-hog {
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        width: 100%;
+    }
+
+    .titulo-hogar .sec-hog a {
+        flex: 0 0 auto; /* evita que se encojan */
+    }
+
+    .titulo-hogar .men-hogar {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
     }
 
     .apertura-principal .headline h2 {
