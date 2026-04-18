@@ -13,9 +13,11 @@ body {
 #col-60-40-top-two-col{
     padding-left: 2rem;
 }
+div#iter-content-wrapper {
+    margin-top: 20px;
+}
 
 .tit_sec{
-  margin-top: 3rem;
   margin-bottom: 2rem;
 }
 .tit_sec .titlesec span{

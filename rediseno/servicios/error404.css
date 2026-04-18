@@ -1,0 +1,166 @@
+:root {
+    --gray: #d4d4d4;
+    --red: #cc1114;
+    --bg-gray: #f3f5f8;
+}
+body {
+    font-family: "Zalando Sans", sans-serif;
+}
+.nav-fondo {
+    display: none;
+}
+
+.hero {
+    height: 420px;
+    margin-top: -1px;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding-left: 10%;
+    background: url(https://codigomarret.online/upload/img/error404.webp) center / cover no-repeat;
+}
+
+.hero-content {
+    max-width: 500px;
+}
+
+.error {
+    background: #ffffff;
+    padding: 7px 15px;
+    font-size: 13px;
+    font-weight: 400;
+    border-radius: 3px;
+    color: black;
+    font-family: "Geist Mono", monospace;
+}
+
+.hero h1 {
+    font-size: 40px;
+    font-weight: 500;
+    margin-top: 15px;
+    line-height: 1.2;
+}
+
+.hero p {
+    margin-top: 16px;
+    font-weight: 400;
+    color: #bbb;
+    font-size: 15px;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 10px 18px;
+    margin-right: 10px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.btn.red {
+    background: var(--red);
+    color: white;
+}
+
+.btn.dark {
+    background: #222;
+    color: white;
+}
+
+/* SECCIONES */
+.secciones {
+    padding: 50px 10%;
+}
+
+/* Titulo del Bloque*/
+.section-title {
+    position: relative;
+    font-size: 13px;
+    line-height: 16px;
+    border-bottom: 1px solid var(--gray);
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 36px;
+}
+.section-title .title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    line-height: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.section-title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: translateY(60%);
+    height: 4px;
+    width: 30px;
+    background: var(--red);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background: #e9ecef;
+    padding: 20px;
+    border-radius: 0px;
+    text-decoration: none;
+    color: #333;
+    display: block;
+    transition: all 0.2s ease;
+    border: none;
+}
+
+.card:hover {
+    background: #dde1e5;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card h4 {
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 55px;
+        height: auto;
+        text-align: center;
+        background-position: 67%;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+    .btn.red {
+        margin-bottom: 1.1rem;
+    }
+}
