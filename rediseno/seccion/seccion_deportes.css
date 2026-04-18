@@ -27,7 +27,7 @@ div#iter-content-wrapper {
 }
 
 .tit_sec{
-  margin-top: 3rem;
+  margin-top: 0.5rem;
   margin-bottom: 2rem;
 }
 .tit_sec .titlesec span{
@@ -104,6 +104,7 @@ div#iter-content-wrapper {
 /* Solo la primera línea visual en rojo */
 .nota_principal .headline h2::first-line {
   color: #C8102E;
+  color: #1c0487;
 }
 .nota_principal .autor-nombre,
 .listado_notas .autor-nombre{
@@ -194,7 +195,7 @@ div#iter-content-wrapper {
 /* Solo la primera línea visual en rojo */
 .cuatro_notas .headline h2::first-line {
   color: #C8102E;
-  display: none;
+  color: #1c0487;
 }
 .cuatro_notas .multimedia img {
   width: 100%;
@@ -270,7 +271,7 @@ div#iter-content-wrapper {
   margin-top: 1.5rem;
 }
 .list_not .noticias{
-  display: grid;
+  display: grid !important;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
 }
@@ -289,9 +290,11 @@ div#iter-content-wrapper {
   margin: 10px 0 6px 0;
   color: #1a1a1a !important;
 }
-.list_not .sect-date{
+.list_not .sect-date,
+.cuatro_notas .sect-date,
+.nota_principal .sect-date{
   margin-bottom: 0px;
-  margin-top: 12px;
+  margin-top: 7px;
 }
 .list_not article{
   padding-bottom: 20px;
@@ -330,7 +333,68 @@ div#iter-content-wrapper {
     background: #1c0487;
 }
 
+/* PAGINADOR */
+.list_not .carrusel{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 20px;
+    margin-top: 3rem;
+}
+.list_not .carrusel ul li {
+    cursor: pointer;
+    padding: 0 5px;
+}
+.list_not .prev-button,
+.list_not .next-button{
+    background: var(--red);
+    padding: 0.5rem;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.list_not .carrusel ul {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+.carrusel ul .nav-page-selected{
+    color:  #1c0487
+    text-decoration: underline;
+    background: none !important;
+}
+.carrusel .prev-button.disable-button{
+    opacity: initial !important;
+}
+.container, .container-fluid, .container-lg, 
+.container-md, .container-sm, .container-xl, .container-xxl {
+    padding-right: var(--bs-gutter-x, .75rem);
+    padding-left: var(--bs-gutter-x, .75rem);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (max-width: 991px) {
+  .list_not .nav-button ul {
+      gap: 10px;
+  }
+  .list_not .nav-button {
+      gap: 12px;
+      justify-content: center;
+  }
+  .list_not .next-button,
+  .list_not .prev-button {
+      font-size: 12px;
+  }
+}
+
 @media (max-width: 767px) {
+.list_not .nav-button ul li {
+  padding: 0;
+}
 .list_not{
   border-bottom: 1px solid var(--gray);
 }
