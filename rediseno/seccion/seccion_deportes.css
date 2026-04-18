@@ -348,7 +348,7 @@ div#iter-content-wrapper {
 }
 .list_not .prev-button,
 .list_not .next-button{
-    background: var(--red);
+    background: #1c0487;
     padding: 0.5rem;
     color: white;
     font-size: 14px;
