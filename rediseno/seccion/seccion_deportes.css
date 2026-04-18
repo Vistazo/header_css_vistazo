@@ -362,7 +362,7 @@ div#iter-content-wrapper {
     gap: 25px;
 }
 .carrusel ul .nav-page-selected{
-    color:  #1c0487
+    color:  #1c0487;
     text-decoration: underline;
     background: none !important;
 }
