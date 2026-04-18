@@ -1,0 +1,103 @@
+div#iter-content-wrapper {
+    margin-top: 20px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #222;
+}
+.banner_header_mov img{
+    width: 100%;
+    height: auto;
+}
+.banner_header_desk img{
+    width: 100%;
+    height: auto;
+}
+.banner_header_mov{
+    display: none;
+}
+
+
+/* HISTORIA */
+.historia {
+  background: #f4f4f4;
+  padding: 60px 20px;
+}
+
+.container-historia {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+}
+
+/* TEXTO */
+.historia-texto h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.historia-texto span {
+  display: block;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.historia-texto p {
+  font-size: 14px;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+/* GRID */
+.historia-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  display: block;
+}
+
+.card span {
+  position: absolute;
+  top: 140px;
+  left: 10px;
+  color: #fff;
+  font-size: 12px;
+}
+
+.card p {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: #fff;
+  font-size: 14px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+.banner_header_desk{
+    display: none;
+}
+
+
+
+  .historia-grid {
+    grid-template-columns: 1fr;
+  }
+}
