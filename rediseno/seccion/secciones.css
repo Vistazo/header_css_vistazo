@@ -75,6 +75,16 @@ div#iter-content-wrapper {
     width: 30px;
     background: var(--red);
 }
+
+.style-sostenibilidad .section-title::after {
+  background: #419644;
+}
+
+
+.style-sostenibilidad .sect-date .date::before{
+  background-color: #419644;
+}
+
 .section-title p{
     font-size: 13px;
     line-height: 16px;

@@ -825,6 +825,12 @@
     background: var(--bg-gray);
 }
 
+.titulo-deportes .section-title::after {
+    background: #1c0487;
+}
+
+
+
 .titulo-deportes .section-title {
     margin-bottom: 16px;
 
@@ -850,12 +856,13 @@
     margin-bottom: 16px;
 }
 
+.bloque-deportes .depo-uno .date::before,
 .bloque-deportes .depo-dos .date::before,
 .bloque-deportes .depo-tres .date::before {
     content: "";
     width: 8px;
     height: 8px;
-    background-color: var(--red);
+    background-color: #1c0487;
     border-radius: 50%;
     display: inline-block;
 }
@@ -866,7 +873,7 @@
 
 .bloque-deportes .depo-dos .headline h2::first-line,
 .bloque-deportes .depo-uno .headline h2::first-line {
-    color: var(--red);
+    color: #1c0487;
 }
 
 .bloque-deportes .depo-tres .headline h2 {
