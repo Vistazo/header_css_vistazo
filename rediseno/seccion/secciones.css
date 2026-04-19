@@ -85,6 +85,10 @@ div#iter-content-wrapper {
   background-color: #419644;
 }
 
+.style-sostenibilidad .principal_notas .headline h2::first-line {
+  color: #419644;
+}
+
 .section-title p{
     font-size: 13px;
     line-height: 16px;
