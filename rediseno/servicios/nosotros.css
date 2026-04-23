@@ -10,7 +10,12 @@
   --red: #CC1114;
 
   --radius:  4px;
+  --radius-lg: 8px;
   --max-w:   1100px;
+}
+
+.nav-fondo{
+  display: none;
 }
 
 div#iter-content-wrapper {
@@ -307,12 +312,498 @@ body {
 }
 
 
+/* ---------- Contenedor base ---------- */
+    .section {
+      padding: 3rem 1.5rem;
+    }
+
+    .section--muted {
+      background-color: var(--color-bg-alt);
+    }
+
+    .section__inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+
+    /* ---------- Cabecera genérica ---------- */
+    .section__header {
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--color-divider);
+      margin-bottom: 2.5rem;
+    }
+
+    .section__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 2.2vw, 1.75rem);
+      font-weight: 700;
+      margin: 0 0 0.75rem 0;
+      letter-spacing: -0.01em;
+      line-height: 1.25;
+    }
+
+    .section__accent {
+      display: block;
+      width: 56px;
+      height: 3px;
+      background-color: var(--color-accent);
+      border: 0;
+      margin: 0;
+    }
+
+    /* ============================================================
+       SECCIÓN 1 — Equipo (con slider)
+       ============================================================ */
+    .team__header {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 3rem;
+      align-items: start;
+      margin-bottom: 3rem;
+    }
+
+    .team__heading {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 2.2vw, 1.75rem);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1.25;
+    }
+
+    .team__accent {
+      display: block;
+      width: 56px;
+      height: 3px;
+      background-color: var(--color-accent);
+      border: 0;
+      margin: 0.75rem 0 0 0;
+    }
+
+    .team__intro {
+      margin: 0;
+      color: var(--color-text-muted);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      text-align: right;
+    }
+
+    /* ----- Slider ----- */
+    .slider {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slider__track {
+      display: flex;
+      transition: transform 0.6s var(--ease);
+      will-change: transform;
+    }
+
+    .slider__slide {
+      flex: 0 0 100%;
+      min-width: 0;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+
+    /* Miembros */
+    .member {
+      text-align: center;
+    }
+
+    .member__photo {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 1.25rem auto;
+      background-color: var(--color-bg-alt);
+    }
+
+    .member__name {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 0 0 0.25rem 0;
+      color: var(--color-text);
+    }
+
+    .member__role {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 0.875rem;
+      color: var(--color-text-soft);
+      margin: 0;
+    }
+
+    /* Paginación por puntos */
+    .dots {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 2.5rem;
+      padding: 0;
+      list-style: none;
+    }
+
+    .dots__item {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--color-dot);
+      border: 0;
+      padding: 0;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .dots__item:hover {
+      background-color: var(--color-accent-hover);
+      transform: scale(1.2);
+    }
+
+    .dots__item:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 3px;
+    }
+
+    .dots__item[aria-selected="true"] {
+      background-color: var(--color-accent);
+    }
+
+    /* ============================================================
+       SECCIÓN 2 — Publicaciones y Plataformas
+       ============================================================ */
+    .platforms-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .platform-card {
+      background-color: var(--color-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-card);
+      text-align: center;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .platform-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06),
+                  0 10px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .platform-card__media {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: var(--radius);
+      margin-bottom: 1.5rem;
+      background-color: var(--color-bg-alt);
+    }
+
+    .platform-card__title {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin: 0 0 0.75rem 0;
+      color: var(--color-text);
+    }
+
+    .platform-card__text {
+      font-size: 0.875rem;
+      line-height: 1.6;
+      color: var(--color-text-muted);
+      margin: 0;
+    }
+
+    /* ============================================================
+       Responsive
+       ============================================================ */
+    @media (max-width: 900px) {
+      .team__header {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+
+      .team__intro {
+        text-align: left;
+      }
+
+      .slider__slide {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem 1rem;
+      }
+
+      .platforms-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .section {
+        padding: 2rem 1.25rem;
+      }
+
+      .slider__slide {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .member__photo {
+        width: 120px;
+        height: 120px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .slider__track {
+        transition: none;
+      }
+    }
+    
+/*------------------------------------------*/
+
+/* ---------- Contenedor base ---------- */
+    .equipo_pub .section {
+      padding: 3rem 1.5rem;
+    }
+
+    .equipo_pub .section--muted {
+      background-color: var(--color-bg-alt);
+    }
+
+    .equipo_pub .section__inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+
+    /* ---------- Cabecera genérica ---------- */
+    .equipo_pub .section__header {
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--color-divider);
+      margin-bottom: 2.5rem;
+    }
+
+    .equipo_pub .section__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 2.2vw, 1.75rem);
+      font-weight: 700;
+      margin: 0 0 0.75rem 0;
+      letter-spacing: -0.01em;
+      line-height: 1.25;
+    }
+
+    .equipo_pub .section__accent {
+      display: block;
+      width: 56px;
+      height: 3px;
+      background-color: var(--color-accent);
+      border: 0;
+      margin: 0;
+    }
+
+    /* ============================================================
+       SECCIÓN 1 — Equipo (con slider)
+       ============================================================ */
+    .equipo_pub .team__header {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 3rem;
+      align-items: start;
+      margin-bottom: 3rem;
+    }
+
+    .equipo_pub .team__heading {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 2.2vw, 1.75rem);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1.25;
+    }
+
+    .equipo_pub .team__accent {
+      display: block;
+      width: 56px;
+      height: 3px;
+      background-color: var(--color-accent);
+      border: 0;
+      margin: 0.75rem 0 0 0;
+    }
+
+    .equipo_pub .team__intro {
+      margin: 0;
+      color: var(--color-text-muted);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      text-align: right;
+    }
+
+    /* ----- Slider ----- */
+    .equipo_pub .slider {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .equipo_pub .slider__track {
+      display: flex;
+      transition: transform 0.6s var(--ease);
+      will-change: transform;
+    }
+
+    .equipo_pub .slider__slide {
+      flex: 0 0 100%;
+      min-width: 0;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+
+    /* Miembros */
+    .equipo_pub .member {
+      text-align: center;
+    }
+
+    .equipo_pub .member__photo {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 1.25rem auto;
+      background-color: var(--color-bg-alt);
+    }
+
+    .equipo_pub .member__name {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 0 0 0.25rem 0;
+      color: var(--color-text);
+    }
+
+    .equipo_pub .member__role {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 0.875rem;
+      color: var(--color-text-soft);
+      margin: 0;
+    }
+
+    /* Paginación por puntos */
+    .equipo_pub .dots {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 2.5rem;
+      padding: 0;
+      list-style: none;
+    }
+
+    .equipo_pub .dots__item {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--color-dot);
+      border: 0;
+      padding: 0;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .equipo_pub .dots__item:hover {
+      background-color: var(--color-accent-hover);
+      transform: scale(1.2);
+    }
+
+    .equipo_pub .dots__item:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 3px;
+    }
+
+    .equipo_pub .dots__item[aria-selected="true"] {
+      background-color: var(--color-accent);
+    }
+
+    /* ============================================================
+       SECCIÓN 2 — Publicaciones y Plataformas
+       ============================================================ */
+    .equipo_pub .platforms-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .equipo_pub .platform-card {
+      background-color: var(--color-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-card);
+      text-align: center;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .equipo_pub .platform-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06),
+                  0 10px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .equipo_pub .platform-card__media {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: var(--radius);
+      margin-bottom: 1.5rem;
+      background-color: var(--color-bg-alt);
+    }
+
+    .equipo_pub .platform-card__title {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin: 0 0 0.75rem 0;
+      color: var(--color-text);
+    }
+
+    .equipo_pub .platform-card__text {
+      font-size: 0.875rem;
+      line-height: 1.6;
+      color: var(--color-text-muted);
+      margin: 0;
+    }
+
+   
+
 /* RESPONSIVE */
 @media (max-width: 900px) {
   .bloque_text .content-grid,
   .bloque_text .research-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+  .equipo_pub .team__header {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .equipo_pub .team__intro {
+    text-align: left;
+  }
+
+  .equipo_pub .slider__slide {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 1rem;
+  }
+
+  .equipo_pub .platforms-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -321,9 +812,9 @@ body {
     grid-template-columns: 1fr;
   }
 
-.banner_header_desk{
-    display: none;
-}
+  .banner_header_desk{
+      display: none;
+  }
   .historia-grid {
     grid-template-columns: 1fr;
   }
@@ -342,4 +833,23 @@ body {
     flex-direction: column;
     gap: 1rem;
   }
+  .equipo_pub .section {
+    padding: 2rem 1.25rem;
+  }
+
+  .equipo_pub .slider__slide {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .equipo_pub .member__photo {
+    width: 120px;
+    height: 120px;
+  }
 }
+
+@media (prefers-reduced-motion: reduce) {
+      .equipo_pub .slider__track {
+        transition: none;
+}
+    }
