@@ -1,3 +1,25 @@
+:root {
+  --color-text:         #1a1a1a;
+  --color-text-muted:   #4a4a4a;
+  --color-bg:           #ffffff;
+  --color-bg-alt:       #f1f2f4;   /* fondo gris claro sección 2 */
+  --color-card-bg:      #f3f4f6;
+  --color-accent:       #c8102e;   /* rojo editorial */
+  --color-accent-hover: #a50d25;
+  --color-divider:      #e5e7eb;
+  --gray: #D4D4D4;
+  --red: #CC1114;
+
+  --radius:  4px;
+  --max-w:   1100px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 div#iter-content-wrapper {
     margin-top: 20px;
 }
@@ -16,6 +38,10 @@ body {
 }
 .banner_header_mov{
     display: none;
+}
+
+.card{
+    border: none !important;
 }
 
 /* HISTORIA */
@@ -92,7 +118,7 @@ body {
 
 /* ---------- Contenedor base ---------- */
 .bloque_text .section {
-  padding: 3rem 1.5rem;
+  padding: 60px 20px;
 }
 
 .bloque_text .section--muted {
@@ -101,7 +127,7 @@ body {
 
 .bloque_text .section__inner {
   max-width: var(--max-w);
-  margin: 0 auto;
+  margin: auto;
 }
 
 /* ---------- Cabecera con acento rojo ---------- */
@@ -111,21 +137,41 @@ body {
   margin-bottom: 2.5rem;
 }
 
-.bloque_text .section__title {
-  font-family: var(--font-display);
-  font-size: clamp(1.5rem, 2.5vw, 2rem);
-  font-weight: 700;
-  margin: 0 0 0.75rem 0;
-  letter-spacing: -0.01em;
+/* Titulo del Bloque*/
+.section-title {
+    position: relative;
+    font-size: 13px;
+    line-height: 16px;
+    border-bottom: 1px solid var(--gray);
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 15px;
+    letter-spacing: -0.01em;
 }
-
-.bloque_text .section__accent {
-  display: block;
-  width: 56px;
-  height: 3px;
-  background-color: var(--color-accent);
-  border: 0;
-  margin: 0;
+.section-title .title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    line-height: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.section-title .title.principal{
+  font-size: 40px;
+  text-transform: capitalize;
+  margin-bottom: 24px;
+}
+.section-title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: translateY(60%);
+    height: 4px;
+    width: 30px;
+    background: var(--red);
 }
 
 .bloque_text .content-grid {
