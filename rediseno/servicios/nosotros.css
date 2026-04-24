@@ -17,6 +17,10 @@
 .nav-fondo{
   display: none;
 }
+.nav {
+  display: flex;
+  justify-content: space-evenly;
+}
 
 div#iter-content-wrapper {
     margin-top: 20px;
@@ -367,7 +371,6 @@ body {
 
 .equipo_pub .team__heading {
   margin: 0;
-  font-family: var(--font-display);
   font-size: clamp(1.4rem, 2.2vw, 1.75rem);
   font-weight: 700;
   letter-spacing: -0.01em;
@@ -418,7 +421,6 @@ body {
 }
 
 .equipo_pub .member__name {
-  font-family: var(--font-body);
   font-size: 1rem;
   font-weight: 600;
   margin: 0 0 0.25rem 0;
@@ -426,7 +428,6 @@ body {
 }
 
 .equipo_pub .member__role {
-  font-family: var(--font-display);
   font-style: italic;
   font-weight: 400;
   font-size: 0.875rem;
@@ -504,7 +505,6 @@ body {
 }
 
 .equipo_pub .platform-card__title {
-  font-family: var(--font-display);
   font-size: 1.1rem;
   font-weight: 700;
   margin: 0 0 0.75rem 0;
@@ -539,42 +539,57 @@ body {
 }
 
 .contact-item {
-  display: grid;
-  grid-template-columns: 48px 1fr;
-  gap: 1.25rem;
-  align-items: center;
+    display: flex;
+    gap: 20px;
+    padding: 18px 0;
+    border-bottom: 1px solid #ddd;
+    align-items: flex-start;
 }
-
-.contact-item__icon {
-  width: 48px;
-  height: 48px;
-  border: 1px solid var(--color-icon-border);
-  border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-text);
-  flex-shrink: 0;
+.icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #6e6e6c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
 }
-
-.contact-item__icon svg {
-  width: 20px;
-  height: 20px;
-  stroke-width: 1.75;
+.icon.telefono{
+    background-image: url("https://codigomarret.online/upload/img/telefono.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.icon.calendario{
+    background-image: url("https://codigomarret.online/upload/img/calendario.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.icon.email{
+    background-image: url("https://codigomarret.online/upload/img/email.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.icon.ubicacion{
+    background-image: url("https://codigomarret.online/upload/img/ubicacion.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.contact-item p {
+    margin: 4px 0 0 0;
+    color: #666;
+    font-size: 14px;
 }
 
 .contact-item__body {
   min-width: 0;
 }
 
-.contact-item__label {
-  display: block;
-  font-family: var(--font-display);
-  font-style: italic;
-  font-weight: 400;
-  font-size: 0.875rem;
-  color: var(--color-text-soft);
-  margin: 0 0 0.25rem 0;
+.contact__label {
+    display: block;
+    font-weight: 400;
+    font-size: 14px;
+    margin: 0 0 0.25rem 0;
 }
 
 .contact-item__value {
