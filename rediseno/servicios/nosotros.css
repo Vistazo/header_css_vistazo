@@ -123,7 +123,7 @@ body {
   background-color: var(--color-bg-alt);
 }
 
-.bloque_text .section__inner {
+.section__inner {
   max-width: var(--max-w);
   margin: auto;
 }
@@ -315,7 +315,7 @@ body {
 
 /*------------------------------------------*/
 /* ---------- Equipo y Publicaciones ---------- */
-.equipo_pub .section {
+.section {
   padding: 3rem 1.5rem;
 }
 
@@ -652,7 +652,7 @@ body {
 }
 
 @media (max-width: 560px) {
-  .bloque_text .section {
+  .section {
     padding: 2rem 1.25rem;
   }
 
@@ -664,9 +664,6 @@ body {
     flex-direction: column;
     gap: 1rem;
   }
-  .equipo_pub .section {
-    padding: 2rem 1.25rem;
-  }
 
   .equipo_pub .slider__slide {
     grid-template-columns: 1fr;
@@ -676,9 +673,6 @@ body {
   .equipo_pub .member__photo {
     width: 120px;
     height: 120px;
-  }
-  .section {
-    padding: 2rem 1.25rem;
   }
 
   .contact-item {
