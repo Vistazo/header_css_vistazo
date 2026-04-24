@@ -1,49 +1,108 @@
+/*   VARIABLES GLOBALES */
 :root {
+  /* Colores */
   --color-text:         #1a1a1a;
   --color-text-muted:   #4a4a4a;
+  --color-text-soft:    #6b7280;         /* ← faltaba */
   --color-bg:           #ffffff;
-  --color-bg-alt:       #f1f2f4;   /* fondo gris claro sección 2 */
+  --color-bg-alt:       #f1f2f4;
   --color-card-bg:      #f3f4f6;
-  --color-accent:       #c8102e;   /* rojo editorial */
+  --color-divider:      #D4D4D4;
+  --color-accent:       #c8102e;         /* rojo editorial unificado */
   --color-accent-hover: #a50d25;
-  --gray: #D4D4D4;
-  --red: #CC1114;
 
-  --radius:  4px;
+  /* Tipografía */
+  --font-body: 'Zalando Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  /* Geometría */
+  --radius:    4px;
   --radius-lg: 8px;
-  --max-w:   1100px;
+  --max-w:     1100px;
+
+  /* Sombras */
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.04),
+                 0 2px 6px rgba(0, 0, 0, 0.05);  /* ← faltaba */
+
+  /* Animación */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);        /* ← faltaba */
 }
 
-.nav-fondo{
-  display: none;
+/*   BASE  */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+.nav-fondo { display: none; }
+
 .nav {
   display: flex;
   justify-content: space-evenly;
 }
 
-div#iter-content-wrapper {
-    margin-top: 20px;
+#iter-content-wrapper { margin-top: 20px; }
+
+/*   BANNER */
+.banner_header_mov,
+.banner_header_desk { line-height: 0; }
+
+.banner_header_mov img,
+.banner_header_desk img {
+  width: 100%;
+  height: auto;
 }
 
-body {
-  font-family: 'Zalando Sans', sans-serif;
-  color: #222;
-}
-.banner_header_mov img{
-    width: 100%;
-    height: auto;
-}
-.banner_header_desk img{
-    width: 100%;
-    height: auto;
-}
-.banner_header_mov{
-    display: none;
+.banner_header_mov { display: none; }
+
+/* Override al framework: quita borde que el tema añade a .card */
+.bloque_historia .card,
+.bloque_text .card,
+.equipo_pub .platform-card { border: none; }
+
+/*  TITULO DE BLOQUE (reutilizable) */
+.section-title {
+  position: relative;
+  font-size: 13px;
+  line-height: 16px;
+  border-bottom: 1px solid var(--color-divider);
+  font-weight: 600;
+  margin-bottom: 15px;
+  letter-spacing: -0.01em;
 }
 
-.card{
-    border: none !important;
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform: translateY(60%);
+  width: 30px;
+  height: 4px;
+  background: var(--color-accent);
+}
+
+.section-title .title,
+.section-title-equipo .title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 28px;
+  line-height: 30px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.section-title .title.principal,
+.section-title-equipo .title.principal {
+  font-size: 40px;
+  text-transform: capitalize;
+  margin-bottom: 24px;
 }
 
 /* HISTORIA */
@@ -53,14 +112,13 @@ body {
 }
 
 .bloque_historia .container-historia {
-  max-width: 1100px;
+  max-width: var(--max-w);
   margin: auto;
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 40px;
 }
 
-/* BLOQUE TRES TEXTOS */
 .bloque_historia .historia-texto h2 {
   font-size: 36px;
   margin-bottom: 10px;
@@ -74,11 +132,10 @@ body {
 
 .bloque_historia .historia-texto p {
   font-size: 14px;
-  margin-bottom: 15px;
   line-height: 1.6;
+  margin-bottom: 15px;
 }
 
-/* GRID */
 .bloque_historia .historia-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -95,84 +152,30 @@ body {
   display: block;
 }
 
-.bloque_historia .card span {
-  position: absolute;
-  top: 140px;
-  left: 10px;
-  color: #fff;
-  font-size: 12px;
-}
-
+.bloque_historia .card span,
 .bloque_historia .card p {
   position: absolute;
-  bottom: 10px;
   left: 10px;
   color: #fff;
-  font-size: 14px;
 }
 
-/* BLOQUE TRES Y CUATRO TEXTOS*/
+.bloque_historia .card span { top: 140px; font-size: 12px; }
+.bloque_historia .card p    { bottom: 10px; font-size: 14px; }
 
-.bloque_text img {
-  max-width: 100%;
-  display: block;
-}
+/* BLOQUE TEXT (Independencia / Investigación) */
+.bloque_text img { max-width: 100%; display: block; }
 
-/* ---------- Contenedor base ---------- */
-.bloque_text .section {
-  padding: 85px 20px 60px;
-}
-
-.bloque_text .section--muted {
-  background-color: var(--color-bg-alt);
-}
+.bloque_text .section { padding: 85px 20px 60px; }
+.bloque_text .section--muted { background-color: var(--color-bg-alt); }
 
 .section__inner {
   max-width: var(--max-w);
   margin: auto;
 }
 
-/* ---------- Cabecera con acento rojo ---------- */
 .bloque_text .section__header {
   padding-bottom: 1rem;
   margin-bottom: 2.5rem;
-}
-
-/* Titulo del Bloque*/
-.section-title {
-  position: relative;
-  font-size: 13px;
-  line-height: 16px;
-  border-bottom: 1px solid var(--gray);
-  font-weight: 600;
-  margin-bottom: 15px;
-  letter-spacing: -0.01em;
-}
-.section-title .title,
-.section-title-equipo .title {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 28px;
-  line-height: 30px;
-  font-weight: 500;
-  margin-bottom: 15px;
-}
-.section-title .title.principal,
-.section-title-equipo .title.principal{
-  font-size: 40px;
-  text-transform: capitalize;
-  margin-bottom: 24px;
-}
-.section-title::after{
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  transform: translateY(60%);
-  height: 4px;
-  width: 30px;
-  background: var(--red);
 }
 
 .bloque_text .content-grid {
@@ -182,23 +185,21 @@ body {
   align-items: start;
 }
 
-.bloque_text .prose__block + .bloque_text .prose__block {
-  margin-top: 2rem;
-}
+/* FIX: antes era ".bloque_text .prose__block + .bloque_text .prose__block"
+   lo cual no seleccionaba nada. El + busca hermanos directos. */
+.bloque_text .prose__block + .prose__block { margin-top: 2rem; }
 
 .bloque_text .prose__heading {
   font-size: 1.25rem;
   font-weight: 700;
   margin: 0 0 0.75rem 0;
-  color: var(--color-text);
 }
 
 .bloque_text .prose__text {
-  margin: 0;
   color: var(--color-text-muted);
   font-size: 0.95rem;
   line-height: 1.5;
-  margin-bottom: 2rem;
+  margin: 0 0 2rem 0;
 }
 
 /* Tarjetas laterales */
@@ -221,9 +222,9 @@ body {
 .bloque_text .card__icon {
   width: 28px;
   height: 28px;
-  color: var(--color-text);
   margin-top: 2px;
   flex-shrink: 0;
+  color: var(--color-text);
 }
 
 .bloque_text .card__title {
@@ -231,7 +232,6 @@ body {
   font-weight: 700;
   letter-spacing: 0.05em;
   margin: 0 0 0.4rem 0;
-  color: var(--color-text);
 }
 
 .bloque_text .card__text {
@@ -241,6 +241,7 @@ body {
   margin: 0;
 }
 
+/* Galería investigación */
 .bloque_text .research-grid {
   display: grid;
   grid-template-columns: 1fr 1.4fr;
@@ -249,10 +250,10 @@ body {
 }
 
 .bloque_text .research__text {
-  margin: 0;
   color: var(--color-text-muted);
   font-size: 0.95rem;
   line-height: 1.7;
+  margin: 0;
 }
 
 .bloque_text .research__gallery {
@@ -265,8 +266,8 @@ body {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  filter: grayscale(100%) contrast(1.05);
   border-radius: 2px;
+  filter: grayscale(100%) contrast(1.05);
   transition: filter 0.3s ease, transform 0.3s ease;
 }
 
@@ -275,20 +276,19 @@ body {
   transform: translateY(-2px);
 }
 
-/* CTA inferior */
+/* CTA */
 .bloque_text .cta-bar {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 1.5rem;
-  flex-wrap: wrap;
   margin-top: 2.5rem;
 }
 
 .bloque_text .cta-bar__text {
   font-size: 1.1rem;
   font-weight: 600;
-  color: var(--color-text);
   margin: 0;
 }
 
@@ -317,76 +317,68 @@ body {
   outline-offset: 3px;
 }
 
-/*------------------------------------------*/
-/* ---------- Equipo y Publicaciones ---------- */
-.section {
-  padding: 3rem 1.5rem;
-}
+/* EQUIPO Y PUBLICACIONES */
+.section { padding: 3rem 1.5rem; }
 
-.equipo_pub .section.section--muted{
-    padding: 3rem 0;
-}
+.equipo_pub .section.section--muted { padding: 3rem 0; }
+
 .equipo_pub .section__inner,
-.equipo_pub .section.section--muted{
+.equipo_pub .section.section--muted {
   max-width: var(--max-w);
   margin: 0 auto;
 }
-.equipo_pub .section__inner-equipo{
+
+.equipo_pub .section__inner-equipo {
   background-color: var(--color-bg-alt);
   padding: 3rem 3.5rem;
   border-radius: 15px;
 }
 
-.equipo_pub .team__header{
+/* FIX: .team__header estaba declarado dos veces con propiedades que se
+   pisaban entre sí. Fusionado en una sola regla. */
+.equipo_pub .team__header {
   position: relative;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3rem;
+  align-items: start;
+  padding-bottom: 15px;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid var(--color-divider);
   font-size: 13px;
   line-height: 16px;
-  border-bottom: 1px solid var(--gray);
   font-weight: 600;
-  margin-bottom: 15px;
   letter-spacing: -0.01em;
 }
-.equipo_pub .team__header::after{
+
+.equipo_pub .team__header::after {
   content: "";
   position: absolute;
   left: 0;
   bottom: 0;
   transform: translateY(60%);
-  height: 4px;
   width: 30px;
-  background: var(--red);
-}
-
- 
-/* ============================================================
-    SECCIÓN 1 — Equipo (con slider)
-    ============================================================ */
-.equipo_pub .team__header {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 3rem;
-  align-items: start;
-  margin-bottom: 3rem;
+  height: 4px;
+  background: var(--color-accent);
 }
 
 .equipo_pub .team__heading {
   margin: 0;
   font-size: clamp(1.4rem, 2.2vw, 1.75rem);
   font-weight: 700;
-  letter-spacing: -0.01em;
   line-height: 1.25;
+  letter-spacing: -0.01em;
 }
 
 .equipo_pub .team__intro {
   margin: 0;
   color: var(--color-text-muted);
   font-size: 15px;
-  font-weight: 400;
   line-height: 1.3;
   text-align: right;
 }
 
-/* ----- Slider ----- */
+/* Slider */
 .equipo_pub .slider {
   position: relative;
   overflow: hidden;
@@ -407,9 +399,7 @@ body {
 }
 
 /* Miembros */
-.equipo_pub .member {
-  text-align: center;
-}
+.equipo_pub .member { text-align: center; }
 
 .equipo_pub .member__photo {
   width: 130px;
@@ -424,18 +414,16 @@ body {
   font-size: 1rem;
   font-weight: 600;
   margin: 0 0 0.25rem 0;
-  color: var(--color-text);
 }
 
 .equipo_pub .member__role {
   font-style: italic;
-  font-weight: 400;
   font-size: 0.875rem;
   color: var(--color-text-soft);
   margin: 0;
 }
 
-/* Paginación por puntos */
+/* Paginación */
 .equipo_pub .dots {
   display: flex;
   justify-content: center;
@@ -448,13 +436,13 @@ body {
 .equipo_pub .dots__item {
   width: 12px;
   height: 12px;
-  border-radius: 50%;
-  background-color: #D4D4D4;
-  border: 0;
+  margin: 3px;
   padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background-color: var(--color-divider);
   cursor: pointer;
   transition: background-color 0.2s ease, transform 0.2s ease;
-  margin: 3px;
 }
 
 .equipo_pub .dots__item:hover {
@@ -471,13 +459,12 @@ body {
   background-color: var(--color-accent);
 }
 
-/* ============================================================
-    SECCIÓN 2 — Publicaciones y Plataformas
-    ============================================================ */
+/* Plataformas */
 .equipo_pub .platforms-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
+  margin-top: 2.5rem;
 }
 
 .equipo_pub .platform-card {
@@ -505,22 +492,19 @@ body {
 }
 
 .equipo_pub .platform-card__title {
-  font-size: 1.1rem;
-  font-weight: 700;
+  font-size: 21px;
+  font-weight: 500;
   margin: 0 0 0.75rem 0;
-  color: var(--color-text);
 }
 
 .equipo_pub .platform-card__text {
-  font-size: 0.875rem;
+  font-size: 14px;
   line-height: 1.6;
   color: var(--color-text-muted);
   margin: 0;
 }
 
-/* ============================================================
-    SECCIÓN — Servicio al Cliente
-    ============================================================ */
+/* SERVICIO AL CLIENTE */
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -529,84 +513,65 @@ body {
   margin-top: 3.5rem;
 }
 
-/* ----- Lista de contactos ----- */
 .contact-list {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
 }
 
 .contact-item {
   display: flex;
+  align-items: flex-start;
   gap: 20px;
   padding: 20px 0;
   border-bottom: 1px solid #ddd;
-  align-items: flex-start;
-}
-.contact-item:nth-child(4n){
-  border-bottom: 1px solid transparent;
-}
-.icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 1px solid #6e6e6c;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-}
-.icon.telefono{
-    background-image: url("https://codigomarret.online/upload/img/telefono.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-}
-.icon.calendario{
-    background-image: url("https://codigomarret.online/upload/img/calendario.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-}
-.icon.email{
-    background-image: url("https://codigomarret.online/upload/img/email.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-}
-.icon.ubicacion{
-    background-image: url("https://codigomarret.online/upload/img/ubicacion.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-}
-.contact-item p {
-    margin: 4px 0 0 0;
-    color: #666;
-    font-size: 14px;
 }
 
-.contact-item__body {
-  min-width: 0;
+.contact-item:last-child { border-bottom: 0; }
+
+.contact-item p {
+  margin: 4px 0 0 0;
+  color: #666;
+  font-size: 14px;
 }
+
+/* Iconos con SVG remoto */
+.icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #6e6e6c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.icon.telefono   { background-image: url("https://codigomarret.online/upload/img/telefono.svg"); }
+.icon.calendario { background-image: url("https://codigomarret.online/upload/img/calendario.svg"); }
+.icon.email      { background-image: url("https://codigomarret.online/upload/img/email.svg"); }
+.icon.ubicacion  { background-image: url("https://codigomarret.online/upload/img/ubicacion.svg"); }
+
+.contact-item__body { min-width: 0; }
 
 .contact__label {
-    display: block;
-    font-weight: 400;
-    font-size: 14px;
-    margin: 0 0 0.25rem 0;
+  display: block;
+  font-size: 14px;
+  margin: 0 0 0.25rem 0;
 }
 
 .contact-item__value {
   display: block;
   font-size: 0.95rem;
-  font-weight: 400;
-  color: var(--color-text);
-  margin: 0;
   line-height: 1.4;
   word-break: break-word;
+  margin: 0;
 }
 
-/* ----- Mapa ----- */
+/* Mapa */
 .map {
   position: relative;
   width: 100%;
@@ -623,61 +588,42 @@ body {
   display: block;
 }
 
-
 /* RESPONSIVE */
 @media (max-width: 900px) {
   .bloque_text .content-grid,
-  .bloque_text .research-grid {
+  .bloque_text .research-grid,
+  .equipo_pub .team__header,
+  .contact-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-  .equipo_pub .team__header {
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
-  }
 
-  .equipo_pub .team__intro {
-    text-align: left;
-  }
+  .equipo_pub .team__intro { text-align: left; }
 
   .equipo_pub .slider__slide {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem 1rem;
   }
 
-  .equipo_pub .platforms-grid {
-    grid-template-columns: 1fr;
-  }
-  .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  .map {
-    aspect-ratio: 16 / 10;
-  }
+  .equipo_pub .platforms-grid { grid-template-columns: 1fr; }
+
+  .map { aspect-ratio: 16 / 10; }
 }
 
 @media (max-width: 768px) {
-  .container {
-    grid-template-columns: 1fr;
-  }
+  .bloque_historia .container-historia,
+  .bloque_historia .historia-grid { grid-template-columns: 1fr; }
 
-  .banner_header_desk{
-    display: none;
-  }
-  .historia-grid {
-    grid-template-columns: 1fr;
-  }
+  .banner_header_desk { display: none; }
+  .banner_header_mov  { display: block; }
 }
 
 @media (max-width: 560px) {
-  .section {
-    padding: 2rem 1.25rem;
-  }
+  .section { padding: 2rem 1.25rem; }
 
-  .bloque_text .research__gallery {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .equipo_pub .section__inner-equipo { padding: 2rem 1.5rem; }
+
+  .bloque_text .research__gallery { grid-template-columns: repeat(2, 1fr); }
 
   .bloque_text .cta-bar {
     flex-direction: column;
@@ -694,24 +640,21 @@ body {
     height: 120px;
   }
 
-  .contact-item {
-    grid-template-columns: 40px 1fr;
-    gap: 1rem;
-  }
-
-  .contact-item__icon {
-    width: 40px;
-    height: 40px;
-  }
-
-  .contact-item__icon svg {
-    width: 18px;
-    height: 18px;
+  /* FIX: antes se usaban selectores que no correspondían al HTML real.
+     Ahora sí apuntan al ícono real (.icon). */
+  .contact-item { gap: 14px; }
+  .icon {
+    width: 36px;
+    height: 36px;
+    background-size: 18px 18px;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .equipo_pub .slider__track {
+  .equipo_pub .slider__track,
+  .bloque_text .research__gallery img,
+  .equipo_pub .platform-card,
+  .bloque_text .btn {
     transition: none;
-}
+  }
 }
