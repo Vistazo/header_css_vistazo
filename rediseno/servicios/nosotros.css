@@ -319,7 +319,8 @@ body {
   padding: 3rem 1.5rem;
 }
 
-.equipo_pub .section__inner {
+.equipo_pub .section__inner,
+.equipo_pub .section.section--muted{
   max-width: var(--max-w);
   margin: 0 auto;
 }
