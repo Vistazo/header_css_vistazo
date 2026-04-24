@@ -17,7 +17,7 @@
   /* Geometría */
   --radius:    4px;
   --radius-lg: 8px;
-  --max-w:     1100px;
+  --max-w:     1200px;
 
   /* Sombras */
   --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.04),
@@ -50,7 +50,7 @@ body {
 
 /*   BANNER */
 .banner_header_mov,
-.banner_header_desk { line-height: 0; }
+.banner_header_desk { line-height: 0; margin-top: -1px; }
 
 .banner_header_mov img,
 .banner_header_desk img {
@@ -180,14 +180,14 @@ body {
 
 .bloque_text .content-grid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: 3rem;
+  grid-template-columns: 1.7fr 1fr;
+  gap: 9rem;
   align-items: start;
 }
 
 /* FIX: antes era ".bloque_text .prose__block + .bloque_text .prose__block"
    lo cual no seleccionaba nada. El + busca hermanos directos. */
-.bloque_text .prose__block + .prose__block { margin-top: 2rem; }
+.bloque_text .prose__block + .prose__block { margin-top: 1rem; }
 
 .bloque_text .prose__heading {
   font-size: 1.25rem;
@@ -206,7 +206,7 @@ body {
 .bloque_text .cards {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 2.2rem;
 }
 
 .bloque_text .card {
@@ -373,6 +373,7 @@ body {
 .equipo_pub .team__intro {
   margin: 0;
   color: var(--color-text-muted);
+  font-weight: 400;
   font-size: 15px;
   line-height: 1.3;
   text-align: right;
@@ -417,7 +418,6 @@ body {
 }
 
 .equipo_pub .member__role {
-  font-style: italic;
   font-size: 0.875rem;
   color: var(--color-text-soft);
   margin: 0;
@@ -513,7 +513,7 @@ body {
   margin-top: 3.5rem;
 }
 
-.contact-list {
+.ubi .contact-list {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -523,9 +523,11 @@ body {
   display: flex;
   align-items: flex-start;
   gap: 20px;
-  padding: 20px 0;
+  padding: 24px 0;
   border-bottom: 1px solid #ddd;
 }
+
+.contact-item:first-child { padding: 0 0 24px 0; }
 
 .contact-item:last-child { border-bottom: 0; }
 
