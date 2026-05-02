@@ -13,6 +13,10 @@
 
 /* BLOQUE ESPECIAL */
 
+.apertura-art-formulario {
+    margin-bottom: 52px;
+}
+
 .bloque-contenido-eventos {
     margin-bottom: 52px;
 }
@@ -73,6 +77,9 @@
 
 .bloque-contenido-eventos .sect-date {
     margin: 6px 0;
+    display: flex;
+    gap: 8px;
+    align-items: center;
 }
 
 .sect-date .section {
@@ -98,4 +105,279 @@
     /* rojo */
     border-radius: 50%;
     display: inline-block;
+}
+
+
+.section-title {
+    position: relative;
+    padding-bottom: 15px;
+    font-size: 13px;
+    line-height: 16px;
+    border-bottom: 1px solid var(--gray);
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 36px;
+}
+
+.section-title .text_ {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: translateY(60%);
+    height: 4px;
+    width: 30px;
+    background: var(--red);
+}
+
+/* BLOQUE eventos */
+.seccion-eventos {
+    border-radius: 4px;
+}
+
+.seccion-eventos #pages-a7b1708932ef11f1bd4e020017097938 {
+    max-width: 640px;
+    border-radius: 4px;
+    border: 0.5px solid #ddd;
+    padding: 28px 24px;
+}
+
+.seccion-eventos .blocksfields {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.seccion-eventos .field_form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.seccion-eventos .campo_obligatorio {
+    display: none;
+}
+
+.seccion-eventos .label_ant {
+    font-size: 13px;
+    font-weight: 500;
+    color: #555;
+}
+
+.seccion-eventos .label_pos {
+    display: none;
+}
+
+.seccion-eventos .field_elem[type="text"],
+.seccion-eventos .field_elem[type="date"],
+.seccion-eventos .field_elem[type="email"],
+.seccion-eventos textarea.field_elem {
+    width: 100%;
+    box-sizing: border-box;
+    border: 0.5px solid #ccc;
+    border-radius: 4px;
+    padding: 9px 12px;
+    font-size: 14px;
+    color: #1a1a1a;
+    background: #fff;
+    outline: none;
+    font-family: var(--font-sans);
+    transition: border-color 0.15s;
+}
+
+.seccion-eventos .field_elem[type="text"]:focus,
+.seccion-eventos .field_elem[type="date"]:focus,
+.seccion-eventos textarea.field_elem:focus {
+    border-color: #c0392b;
+    box-shadow: 0 0 0 2px rgba(192, 57, 43, 0.12);
+}
+
+.seccion-eventos textarea.field_elem {
+    resize: vertical;
+    min-height: 110px;
+    line-height: 1.6;
+}
+
+.seccion-eventos .field_elem[type="file"] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px 12px;
+    border: 1px dashed #ccc;
+    border-radius: 6px;
+    background: #fafafa;
+    font-size: 13px;
+    color: #888;
+    cursor: pointer;
+}
+
+.seccion-eventos .btts_forms {
+    margin-top: 6px;
+}
+
+.seccion-eventos .btts_forms input[type="submit"] {
+    width: 100%;
+    background: var(--red);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 12px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    letter-spacing: 0.02em;
+    transition: background 0.15s;
+}
+
+.seccion-eventos .btts_forms input[type="submit"]:hover {
+    background: #a10c0f;
+}
+
+.seccion-eventos .tab {
+    display: none !important;
+}
+
+.seccion-eventos .element_form .radio_option {
+    display: flex;
+    gap: 11px;
+}
+
+
+.ui-dialog.dialog_error {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 360px !important;
+    margin: 40px auto;
+    border-radius: 4px !important;
+    box-shadow: none !important;
+    background: #fff;
+    overflow: hidden;
+    z-index: 99999999999999 !important;
+}
+
+.dialog_error .ui-dialog-titlebar {
+    background: #111 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.dialog_error .ui-dialog-title {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    flex: 1;
+}
+
+.dialog_error .ui-dialog-titlebar-close {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    color: #fff !important;
+    cursor: pointer;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px !important;
+}
+
+.dialog_error .ui-dialog-titlebar-close:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+}
+
+.dialog_error .ui-icon-closethick {
+    background-image: none !important;
+    position: relative;
+}
+
+.dialog_error .ui-icon-closethick::before,
+.dialog_error .ui-icon-closethick::after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 1.5px;
+    background: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.dialog_error .ui-icon-closethick::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.dialog_error .ui-button-text {
+    display: none;
+}
+
+.dialog_error .error.ui-dialog-content {
+    padding: 28px 24px 24px !important;
+    text-align: center;
+    height: auto !important;
+}
+
+.dialog_error .label_error {
+    font-size: 18px;
+    font-weight: 500;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+}
+
+.dialog_error .btts_error {
+    display: flex;
+    justify-content: center;
+}
+
+.dialog_error .btt_repetir {
+    background: #111;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 9px 32px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: var(--font-sans);
+    transition: background 0.15s;
+}
+
+.dialog_error .btt_repetir:hover {
+    background: #252525;
+}
+
+.dialog_error .ui-resizable-handle {
+    display: none;
+}
+
+
+
+@media (max-width: 767px) {
+    .bloque-contenido-eventos .noticias {
+        grid-template-columns: 1fr 1fr;
+    }
+
+     .dialog_error .ui-dialog {
+        width: 90% !important;
+    }
+
+    .bloque-contenido-eventos .headline h2 {
+        font-size: 14px;
+    }
+
+    .sect-date .date {
+        font-size: 11px;
+    }
 }
