@@ -187,7 +187,7 @@ body {
 
 /* FIX: antes era ".bloque_text .prose__block + .bloque_text .prose__block"
    lo cual no seleccionaba nada. El + busca hermanos directos. */
-.bloque_text .prose__block + .prose__block { margin-top: 1rem; }
+.bloque_text .prose__block + .prose__block { margin-top: 3rem; }
 
 .bloque_text .prose__heading {
   font-size: 1.25rem;
