@@ -1,0 +1,115 @@
+(function () {
+  var API_URL = "https://backoffice.bmcodigo.com/api/letters";
+  var AUTH_TOKEN = "Bearer 593def28586a963662c1d24d651e535b0bc3d01cc96bb9644930e1966f651eff";
+
+  var mountNode = document.querySelector(".main-form-letter");
+
+  if (!mountNode) {
+    return;
+  }
+
+  mountNode.innerHTML = [
+    '<form id="letterForm">',
+    '  <h2>Enviar Carta</h2>',
+    '',
+    '  <label>Titulo</label><br/>',
+    '  <input type="text" name="title" class="field_elem" required /><br/><br/>',
+    '',
+    '  <label>Contenido</label><br/>',
+    '  <textarea name="content" rows="6" class="field_elem" required></textarea><br/><br/>',
+    '',
+    '  <label>Nombre del autor</label><br/>',
+    '  <input type="text" name="authorName" class="field_elem" required /><br/><br/>',
+    '',
+    '  <label>Ubicacion del autor</label><br/>',
+    '  <input type="text" name="authorLocation" class="field_elem" required /><br/><br/>',
+    '',
+    '  <label>Email del autor</label><br/>',
+    '  <input type="email" name="authorEmail" class="field_elem" required /><br/><br/>',
+    '',
+    '  <label>Categoria</label><br/>',
+    '  <input type="text" name="category" class="field_elem" required /><br/><br/>',
+    '',
+    '  <label>PDF URL</label><br/>',
+    '  <input type="url" name="pdfUrl" class="field_elem" required /><br/><br/>',
+    '  <div class="btts_forms"> <input type="submit" value="Enviar"> </div>',
+    '</form>',
+    '<div id="modalOverlay" class="modal-overlay">',
+    '  <div id="modalContent" class="modal-content">',
+    '    <h3 class="modal-title" id="modalTitle"></h3>',
+    '    <p class="modal-message" id="modalMessage"></p>',
+    '    <button class="modal-button" id="modalCloseBtn">Cerrar</button>',
+    '  </div>',
+    '</div>'
+  ].join("\n");
+
+  var form = document.getElementById("letterForm");
+  var modalOverlay = document.getElementById("modalOverlay");
+  var modalContent = document.getElementById("modalContent");
+  var modalTitle = document.getElementById("modalTitle");
+  var modalMessage = document.getElementById("modalMessage");
+  var modalCloseBtn = document.getElementById("modalCloseBtn");
+
+  function showModal(isSuccess, title, message) {
+    modalTitle.textContent = title;
+    modalMessage.textContent = message;
+    modalContent.classList.remove("success", "error");
+    modalContent.classList.add(isSuccess ? "success" : "error");
+    modalOverlay.classList.add("active");
+  }
+
+  function closeModal() {
+    modalOverlay.classList.remove("active");
+  }
+
+  modalCloseBtn.addEventListener("click", closeModal);
+  modalOverlay.addEventListener("click", function (event) {
+    if (event.target === modalOverlay) {
+      closeModal();
+    }
+  });
+
+  form.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    var payload = {
+      title: form.title.value.trim(),
+      content: form.content.value.trim(),
+      authorName: form.authorName.value.trim(),
+      authorLocation: form.authorLocation.value.trim(),
+      authorEmail: form.authorEmail.value.trim(),
+      category: form.category.value.trim(),
+      pdfUrl: form.pdfUrl.value.trim(),
+      status: "pending"
+    };
+
+    try {
+      var response = await fetch(API_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": AUTH_TOKEN
+        },
+        body: JSON.stringify(payload)
+      });
+
+      var responseText = await response.text();
+      var parsedResponse;
+
+      try {
+        parsedResponse = JSON.parse(responseText);
+      } catch (e) {
+        parsedResponse = responseText;
+      }
+
+      if (response.ok) {
+        showModal(true, "Éxito", "Tu carta ha sido enviada correctamente.");
+        form.reset();
+      } else {
+        showModal(false, "Error", "Hubo un problema al enviar tu carta. Estado: " + response.status);
+      }
+    } catch (error) {
+      showModal(false, "Error", "Ocurrió un error: " + error.message);
+    }
+  });
+})();
