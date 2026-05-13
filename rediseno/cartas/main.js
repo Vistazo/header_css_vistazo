@@ -12,7 +12,6 @@
 
   mountNode.innerHTML = [
     '<form id="letterForm">',
-    '  <h2>Enviar Carta</h2>',
     '',
     '  <label class="label_ant">Título</label><br/>',
     '  <input type="text" name="title" class="field_elem" required /><br/><br/>',
@@ -34,7 +33,7 @@
     // '  <label class="label_ant">Categoria</label><br/>',
     // '  <input type="text" name="category" class="field_elem" required /><br/><br/>',
     // '',
-    '  <label class="label_ant">Subir PDF (desde tu PC)</label><br/>',
+    '  <label class="label_ant">Subir PDF (Opcional)</label><br/>',
     '  <input type="file" name="pdfFile" class="field_elem" accept="application/pdf,.pdf" required /><br/>',
     '  <small id="pdfUploadStatus"></small><br/><br/>',
     '',
@@ -43,7 +42,7 @@
     '</form>',
     '<div id="modalOverlay" class="modal-overlay">',
     '  <div id="modalContent" class="modal-content">',
-    '    <h3 class="modal-title" id="modalTitle"></h3>',
+    // '    <h3 class="modal-title" id="modalTitle"></h3>',
     '    <p class="modal-message" id="modalMessage"></p>',
     '    <button class="modal-button" id="modalCloseBtn">Cerrar</button>',
     '  </div>',
