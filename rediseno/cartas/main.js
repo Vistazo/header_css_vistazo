@@ -1,5 +1,7 @@
 (function () {
   var API_URL = "https://backoffice.bmcodigo.com/api/letters";
+  var UPLOAD_API_URL = "https://backoffice.bmcodigo.com/api/public/upload";
+  var BASE_DOMAIN = "https://backoffice.bmcodigo.com";
   var AUTH_TOKEN = "Bearer 593def28586a963662c1d24d651e535b0bc3d01cc96bb9644930e1966f651eff";
 
   var mountNode = document.querySelector(".main-form-letter");
@@ -12,26 +14,31 @@
     '<form id="letterForm">',
     '  <h2>Enviar Carta</h2>',
     '',
-    '  <label>Titulo</label><br/>',
+    '  <label class="label_ant">Título</label><br/>',
     '  <input type="text" name="title" class="field_elem" required /><br/><br/>',
     '',
-    '  <label>Contenido</label><br/>',
+    '  <label class="label_ant">Contenido de la carta</label><br/>',
     '  <textarea name="content" rows="6" class="field_elem" required></textarea><br/><br/>',
     '',
-    '  <label>Nombre del autor</label><br/>',
+    '  <label class="label_ant">Autor de la carta</label><br/>',
     '  <input type="text" name="authorName" class="field_elem" required /><br/><br/>',
     '',
-    '  <label>Ubicacion del autor</label><br/>',
+    '  <label class="label_ant">Ubicación</label><br/>',
     '  <input type="text" name="authorLocation" class="field_elem" required /><br/><br/>',
     '',
-    '  <label>Email del autor</label><br/>',
+    '  <label class="label_ant">Email</label><br/>',
     '  <input type="email" name="authorEmail" class="field_elem" required /><br/><br/>',
+    '  <label class="label_ant">Fecha de publicación</label><br/>',
+    '  <input type="date" name="publishDate" class="field_elem" required /><br/><br/>',
+    // '',
+    // '  <label class="label_ant">Categoria</label><br/>',
+    // '  <input type="text" name="category" class="field_elem" required /><br/><br/>',
+    // '',
+    '  <label class="label_ant">Subir PDF (desde tu PC)</label><br/>',
+    '  <input type="file" name="pdfFile" class="field_elem" accept="application/pdf,.pdf" required /><br/>',
+    '  <small id="pdfUploadStatus"></small><br/><br/>',
     '',
-    '  <label>Categoria</label><br/>',
-    '  <input type="text" name="category" class="field_elem" required /><br/><br/>',
-    '',
-    '  <label>PDF URL</label><br/>',
-    '  <input type="url" name="pdfUrl" class="field_elem" required /><br/><br/>',
+    '  <input type="hidden" name="pdfUrl" />',
     '  <div class="btts_forms"> <input type="submit" value="Enviar"> </div>',
     '</form>',
     '<div id="modalOverlay" class="modal-overlay">',
@@ -49,6 +56,10 @@
   var modalTitle = document.getElementById("modalTitle");
   var modalMessage = document.getElementById("modalMessage");
   var modalCloseBtn = document.getElementById("modalCloseBtn");
+  var pdfFileInput = form.elements.pdfFile;
+  var pdfUrlInput = form.elements.pdfUrl;
+  var pdfUploadStatus = document.getElementById("pdfUploadStatus");
+  var submitButton = form.querySelector('input[type="submit"]');
 
   function showModal(isSuccess, title, message) {
     modalTitle.textContent = title;
@@ -62,6 +73,48 @@
     modalOverlay.classList.remove("active");
   }
 
+  function formatPublishDateToUtcFromEcuador(dateValue) {
+    var parts = (dateValue || "").split("-");
+
+    if (parts.length !== 3) {
+      return "";
+    }
+
+    var year = Number(parts[0]);
+    var month = Number(parts[1]);
+    var day = Number(parts[2]);
+
+    if (!year || !month || !day) {
+      return "";
+    }
+
+    // Ecuador is UTC-5; midnight in Ecuador equals 05:00:00.000Z.
+    var ecuatorUtcHour = 5;
+    return new Date(Date.UTC(year, month - 1, day, ecuatorUtcHour, 0, 0, 0)).toISOString();
+  }
+
+  async function uploadPdfFile(file) {
+    var formData = new FormData();
+    formData.append("file", file);
+
+    var uploadResponse = await fetch(UPLOAD_API_URL, {
+      method: "POST",
+      headers: {
+        "Authorization": AUTH_TOKEN
+      },
+      body: formData
+    });
+
+    var uploadResult = await uploadResponse.json();
+
+    if (!uploadResponse.ok || !uploadResult.success || !uploadResult.file || !uploadResult.file.filePath) {
+      var apiMessage = uploadResult && uploadResult.message ? uploadResult.message : "No se pudo subir el PDF.";
+      throw new Error(apiMessage);
+    }
+
+    return uploadResult.file.filePath;
+  }
+
   modalCloseBtn.addEventListener("click", closeModal);
   modalOverlay.addEventListener("click", function (event) {
     if (event.target === modalOverlay) {
@@ -69,8 +122,38 @@
     }
   });
 
+  pdfFileInput.addEventListener("change", async function () {
+    var selectedFile = pdfFileInput.files && pdfFileInput.files[0];
+
+    pdfUrlInput.value = "";
+
+    if (!selectedFile) {
+      pdfUploadStatus.textContent = "";
+      return;
+    }
+
+    submitButton.disabled = true;
+    pdfUploadStatus.textContent = "Subiendo PDF...";
+
+    try {
+      var uploadedFilePath = await uploadPdfFile(selectedFile);
+      pdfUrlInput.value = BASE_DOMAIN + uploadedFilePath;
+      pdfUploadStatus.textContent = "PDF subido correctamente.";
+    } catch (error) {
+      pdfUploadStatus.textContent = "Error al subir PDF: " + error.message;
+      showModal(false, "Error", "No se pudo subir el PDF. " + error.message);
+    } finally {
+      submitButton.disabled = false;
+    }
+  });
+
   form.addEventListener("submit", async function (event) {
     event.preventDefault();
+
+    if (!pdfUrlInput.value.trim()) {
+      showModal(false, "Error", "Debes subir un PDF antes de enviar la carta.");
+      return;
+    }
 
     var payload = {
       title: form.title.value.trim(),
@@ -78,8 +161,9 @@
       authorName: form.authorName.value.trim(),
       authorLocation: form.authorLocation.value.trim(),
       authorEmail: form.authorEmail.value.trim(),
-      category: form.category.value.trim(),
-      pdfUrl: form.pdfUrl.value.trim(),
+      publishDate: formatPublishDateToUtcFromEcuador(form.publishDate.value),
+      // category: form.category.value.trim(),
+      pdfUrl: pdfUrlInput.value.trim(),
       status: "pending"
     };
 
