@@ -10,6 +10,9 @@ https://vzheaders.netlify.app/heades/carrusel_columna.css
 
 https://vzheaders.netlify.app/heades/rediseno.css
 
+https://header-css-vistazo.vercel.app/mascotas2024/mascotas2024.js
+https://header-css-vistazo.vercel.app/mascotas2024/mascotas2024.css
+
 
 
 
