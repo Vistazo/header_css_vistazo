@@ -83,7 +83,7 @@
 
 .apertura-principal .headline h2::first-line {
     color: var(--red)
-} 
+}
 
 .apertura-principal .autor-nombre {
     padding: 16px 0;
@@ -162,7 +162,7 @@
     font-size: 16px;
 }
 
-.bloque-uno .headline h2::first-line{
+.bloque-uno .headline h2::first-line {
     color: var(--red);
 }
 
@@ -628,7 +628,7 @@
 }
 
 
-.bloque-mundo .subheadline, 
+.bloque-mundo .subheadline,
 .bloque-mundo .autor-nombre {
     display: none;
 }
@@ -1266,7 +1266,7 @@
 
 .bloque-sostenibilidad .sos-dos .media_block {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 4fr 1fr;
     column-gap: 24px;
 }
 
@@ -1494,6 +1494,8 @@
     .bloque-hogar .media_block {
         grid-template-columns: 2fr 1fr;
     }
+
+
 }
 
 
@@ -1542,6 +1544,14 @@
     .bloque-sostenibilidad .sos-tres .headline h2 {
         font-size: 16px;
     }
+
+    .bloque-sostenibilidad .sos-uno .subheadline h3 {
+        font-size: 14px;
+    }
+
+    .bloque-sostenibilidad .sos-dos .headline h2 {
+        font-size: 14px;
+    }
 }
 
 
@@ -1559,7 +1569,8 @@
     }
 
     .titulo-hogar .sec-hog a {
-        flex: 0 0 auto; /* evita que se encojan */
+        flex: 0 0 auto;
+        /* evita que se encojan */
     }
 
     .titulo-hogar .men-hogar {
@@ -1677,7 +1688,7 @@
     }
 
     .bloque-sostenibilidad .sos-dos .media_block {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 2fr 1fr;
     }
 
     .bloque-sostenibilidad .sos-uno .subheadline h3 {

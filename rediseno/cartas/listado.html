@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>listado</title>
+  <style>
+    /* BLOQUE CARTAS */
+
+    .bloque-cartas {
+      margin-bottom: 52px;
+    }
+
+    .bloque-cartas .headline h2 {
+      font-size: 24px;
+    }
+
+    .bloque-cartas .noticias {
+      display: flex;
+      gap: 24px;
+    }
+
+    .bloque-cartas .noticias .article {
+      padding: 32px;
+      background: #F3F5F8;
+    }
+
+    .bloque-cartas .text {
+      font-size: 14px;
+    }
+
+    .bloque-cartas .avatar-group {
+      display: flex;
+      align-items: center;
+    }
+
+    .bloque-cartas .avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 3px solid white;
+      overflow: hidden;
+      margin-left: -15px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s ease;
+    }
+
+    .bloque-cartas .avatar:first-child {
+      margin-left: 0;
+    }
+
+    .bloque-cartas .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .car-main {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      margin-bottom: 36px;
+      justify-content: space-between;
+    }
+
+    .car-main .ava-tex {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .car-main .b-texto p {
+      margin-bottom: 0;
+      font-size: 20px;
+      color: var(--dark);
+    }
+
+    .car-main .b-boton a {
+      padding: 8px 16px;
+      background: var(--red);
+      color: var(--light);
+      font-size: 14px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <div class="seccion-listado-cartas bloque-cartas">
+    <!-- pintar el listado de cartas -->
+  </div>
+
+
+  <script src="./listado.js"></script>
+</body>
+
+</html>
