@@ -951,7 +951,7 @@
 }
 
 .bloque-eventodelmes {
-    background: var(--bone);
+    background: #F3F5F8;
     padding: 36px;
     margin: 50px 0;
 }
@@ -1007,7 +1007,7 @@
 
 .bloque-cartas .noticias .article {
     padding: 32px;
-    background: var(--bone);
+    background: #F3F5F8;
 }
 
 .bloque-cartas .text {
