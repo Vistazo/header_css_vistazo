@@ -1,8 +1,14 @@
 (function () {
   var API_URL = "https://backoffice.bmcodigo.com/api/letters";
   var UPLOAD_API_URL = "https://backoffice.bmcodigo.com/api/public/upload";
+  var AUTH_API_URL = "https://backoffice.bmcodigo.com/api/public/auth/token";
   var BASE_DOMAIN = "https://backoffice.bmcodigo.com";
-  var AUTH_TOKEN = "Bearer 593def28586a963662c1d24d651e535b0bc3d01cc96bb9644930e1966f651eff";
+  var AUTH_CREDENTIALS = {
+    email: "eriveraec@gmail.com",
+    password: "123456",
+    name: "Mi Sitio Web"
+  };
+  var authToken = "";
 
   var mountNode = document.querySelector(".main-form-letter");
 
@@ -61,7 +67,9 @@
   var submitButton = form.querySelector('input[type="submit"]');
 
   function showModal(isSuccess, title, message) {
-    modalTitle.textContent = title;
+    if (modalTitle) {
+      modalTitle.textContent = title;
+    }
     modalMessage.textContent = message;
     modalContent.classList.remove("success", "error");
     modalContent.classList.add(isSuccess ? "success" : "error");
@@ -93,13 +101,14 @@
   }
 
   async function uploadPdfFile(file) {
+    var token = await getAuthToken();
     var formData = new FormData();
     formData.append("file", file);
 
     var uploadResponse = await fetch(UPLOAD_API_URL, {
       method: "POST",
       headers: {
-        "Authorization": AUTH_TOKEN
+        "Authorization": token
       },
       body: formData
     });
@@ -112,6 +121,30 @@
     }
 
     return uploadResult.file.filePath;
+  }
+
+  async function getAuthToken() {
+    if (authToken) {
+      return authToken;
+    }
+
+    var tokenResponse = await fetch(AUTH_API_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(AUTH_CREDENTIALS)
+    });
+
+    var tokenResult = await tokenResponse.json();
+
+    if (!tokenResponse.ok || !tokenResult || !tokenResult.token) {
+      var authErrorMessage = tokenResult && tokenResult.message ? tokenResult.message : "No se pudo obtener el token de autenticacion.";
+      throw new Error(authErrorMessage);
+    }
+
+    authToken = "Bearer " + tokenResult.token;
+    return authToken;
   }
 
   modalCloseBtn.addEventListener("click", closeModal);
@@ -167,11 +200,12 @@
     };
 
     try {
+      var token = await getAuthToken();
       var response = await fetch(API_URL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": AUTH_TOKEN
+          "Authorization": token
         },
         body: JSON.stringify(payload)
       });
