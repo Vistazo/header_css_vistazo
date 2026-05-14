@@ -628,6 +628,11 @@
 }
 
 
+.bloque-mundo .subheadline, 
+.bloque-mundo .autor-nombre {
+    display: none;
+}
+
 .bloque-mundo .col-33-33-33-top-two-col .noticias article:nth-child(1),
 .bloque-mundo .col-33-33-33-top-three-col .noticias article:nth-child(1) {
     padding-bottom: 16px;
