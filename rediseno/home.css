@@ -322,16 +322,21 @@
 
 .slide-btn {
     display: block;
-    background: #d60000;
-    color: #ffffff;
+    width: 100%;
+    background: var(--red);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
     text-align: center;
-    padding: 12px 16px;
-    margin-top: 16px;
+    padding: 10px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    transition: background 0.2s;
+    pointer-events: all;
     text-decoration: none;
-    font-weight: 700;
-    font-size: 14px;
-    border-radius: 4px;
-    transition: background 0.2s ease;
 }
 
 .slide-btn:hover {
