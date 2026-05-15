@@ -146,7 +146,7 @@ function aperturaRevista() {
                         <div class="slide-title">${item.title}</div>
                         <div class="slide-edition">${item.edition}</div>
                         <hr/>
-                        <a href="${item.link}" class="slide-btn">Suscríbete por ${precioMensual} /mes</a>
+                        <a href="${item.link}" class="slide-btn" target="_blank" rel="noopener noreferrer">Suscríbete por ${precioMensual} /mes</a>
                     </div>
                 </div>
             `;
