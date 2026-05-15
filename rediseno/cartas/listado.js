@@ -8,6 +8,7 @@
     name: "Mi Sitio Web"
   };
   var authToken = "";
+  var swiperInstance = null;
 
   var mountNode = document.querySelector(".seccion-listado-cartas");
 
@@ -69,12 +70,17 @@
     });
 
     if (!approvedLetters.length) {
-      mountNode.innerHTML = '<section class="noticias"></section>';
+      mountNode.innerHTML = [
+        '<div class="noticias-swiper swiper noticias">',
+        '  <div class="swiper-wrapper"></div>',
+        '</div>'
+      ].join("\n");
       return;
     }
 
     mountNode.innerHTML = [
-      '<section class="noticias">',
+      '<div class="noticias-swiper swiper noticias">',
+      '  <div class="swiper-wrapper">',
       approvedLetters.map(function (letter) {
         var title = escapeHtml(letter.title);
         var content = escapeHtml(letter.content);
@@ -84,7 +90,7 @@
         var articleId = escapeHtml(letter.id || "");
 
         return [
-          '<article class="article element full-access norestricted" iteridart="' + articleId + '">',
+          '<article class="swiper-slide article element full-access norestricted" iteridart="' + articleId + '">',
           '  <div class="R_HOME_CARTAS odd n1">',
           '    <div class="media_block">',
           '      <div class="text_block">',
@@ -114,12 +120,22 @@
           '</article>'
         ].join("\n");
       }).join("\n"),
-      '</section>'
+      '  </div>',
+      '  <div class="swiper-button-prev"></div>',
+      '  <div class="swiper-button-next"></div>',
+      '  <div class="swiper-pagination"></div>',
+      '</div>'
     ].join("\n");
+
+    setTimeout(initSwiper, 500);
   }
 
   async function loadLetters() {
-    mountNode.innerHTML = '<section class="noticias"></section>';
+    mountNode.innerHTML = [
+      '<div class="noticias-swiper swiper noticias">',
+      '  <div class="swiper-wrapper"></div>',
+      '</div>'
+    ].join("\n");
 
     try {
       var token = await getAuthToken();
@@ -143,7 +159,39 @@
     }
   }
 
-  loadLetters();
+  function initSwiper() {
+    if (typeof Swiper === "undefined") {
+      return;
+    }
 
- 
+    if (swiperInstance && typeof swiperInstance.destroy === "function") {
+      swiperInstance.destroy(true, true);
+    }
+
+    swiperInstance = new Swiper(".noticias-swiper", {
+      slidesPerView: 1,
+      spaceBetween: 24,
+      pagination: {
+        el: ".noticias-swiper .swiper-pagination",
+        clickable: true
+      },
+      navigation: {
+        nextEl: ".noticias-swiper .swiper-button-next",
+        prevEl: ".noticias-swiper .swiper-button-prev"
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 1
+        },
+        768: {
+          slidesPerView: 2
+        },
+        1024: {
+          slidesPerView: 3
+        }
+      }
+    });
+  }
+
+  setTimeout(loadLetters, 500);
 })();

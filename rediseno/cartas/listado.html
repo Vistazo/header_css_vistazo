@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>listado</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
   <style>
     /* BLOQUE CARTAS */
 
@@ -17,8 +18,15 @@
     }
 
     .bloque-cartas .noticias {
-      display: flex;
-      gap: 24px;
+      width: 100%;
+    }
+
+    .bloque-cartas .noticias .swiper-wrapper {
+      align-items: stretch;
+    }
+
+    .bloque-cartas .noticias .swiper-slide {
+      height: auto;
     }
 
     .bloque-cartas .noticias .article {
@@ -94,7 +102,9 @@
   </div>
 
 
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
   <script src="./listado.js"></script>
+  <script src="https://vzheaders.netlify.app/rediseno/cartas/listado.js"></script>
 </body>
 
 </html>
