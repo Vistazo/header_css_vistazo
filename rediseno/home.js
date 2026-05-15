@@ -129,11 +129,9 @@ function cargarRevistas(callback) {
 function aperturaRevista() {
     const track = document.getElementById('track');
     cargarRevistas(function (data) {
-        const item = data[0];
+        const item = data;
 
-        // Calcular precio mensual a partir del precio anual
-        // Si tu objeto ya trae el precio mensual, úsalo directo y elimina este cálculo
-        const precioMensual = calcularPrecioMensual(item.price);
+        const precioMensual = item.priceMonthly || calcularPrecioMensual(item.price);
 
         track.innerHTML = `
             <div class="slide">
@@ -145,11 +143,11 @@ function aperturaRevista() {
                     <div class="slide-edition">${item.edition}</div>
                     <hr/>
                     <a href="${item.link}" class="slide-btn">Suscríbete por ${precioMensual} /mes</a>
-                    <div class="slide-dots" aria-label="Indicadores de revista">
-                        <span class="slide-dot"></span>
-                        <span class="slide-dot"></span>
-                        <span class="slide-dot active"></span>
-                        <span class="slide-dot"></span>
+                    <div class="dots" aria-label="Indicadores de revista">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
                     </div>
                 </div>
             </div>
@@ -158,7 +156,6 @@ function aperturaRevista() {
 }
 
 function calcularPrecioMensual(precioAnual) {
-    // Extrae el número del string ($98/AÑO → 98)
     const match = String(precioAnual).match(/[\d.,]+/);
     if (!match) return precioAnual;
     const numero = parseFloat(match[0].replace(',', '.'));
