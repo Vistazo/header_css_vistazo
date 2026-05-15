@@ -129,30 +129,145 @@ function cargarRevistas(callback) {
 function aperturaRevista() {
     const track = document.getElementById('track');
     cargarRevistas(function (data) {
-        const item = data;
+        if (!data || data.length === 0) {
+            track.innerHTML = '<p>No hay revistas disponibles.</p>';
+            return;
+        }
 
-        const precioMensual = item.priceMonthly || calcularPrecioMensual(item.price);
-
-        track.innerHTML = `
-            <div class="slide">
-                <div class="cover">
-                    <img class="cover-img" src="${item.img}" alt="${item.title}">
-                </div>
-                <div class="slide-info">
-                    <div class="slide-title">${item.title}</div>
-                    <div class="slide-edition">${item.edition}</div>
-                    <hr/>
-                    <a href="${item.link}" class="slide-btn">Suscríbete por ${precioMensual} /mes</a>
-                    <div class="dots" aria-label="Indicadores de revista">
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot active"></span>
-                        <span class="dot"></span>
+        // Construir los slides
+        const slidesHTML = data.map(function (item) {
+            const precioMensual = item.priceMonthly || calcularPrecioMensual(item.price);
+            return `
+                <div class="slide">
+                    <div class="cover">
+                        <img class="cover-img" src="${item.img}" alt="${item.title}">
+                    </div>
+                    <div class="slide-info">
+                        <div class="slide-title">${item.title}</div>
+                        <div class="slide-edition">${item.edition}</div>
+                        <hr/>
+                        <a href="${item.link}" class="slide-btn">Suscríbete por ${precioMensual} /mes</a>
                     </div>
                 </div>
-            </div>
-        `;
+            `;
+        }).join('');
+
+        // Construir los dots según la cantidad real de revistas
+        const dotsHTML = data.map(function (_, index) {
+            return `<span class="dot${index === 0 ? ' active' : ''}" data-index="${index}"></span>`;
+        }).join('');
+
+        // Insertar todo en el DOM
+        track.innerHTML = slidesHTML;
+
+        // Insertar los dots después del track (o donde corresponda en tu HTML)
+        let dotsContainer = document.querySelector('.slider-wrapper .dots');
+        if (!dotsContainer) {
+            dotsContainer = document.createElement('div');
+            dotsContainer.className = 'dots';
+            track.parentNode.parentNode.appendChild(dotsContainer);
+        }
+        dotsContainer.innerHTML = dotsHTML;
+
+        // Inicializar el carrusel
+        initCarrusel(track, dotsContainer, data.length);
     });
+}
+
+function initCarrusel(track, dotsContainer, totalSlides) {
+    let currentIndex = 0;
+    let startX = 0;
+    let currentX = 0;
+    let isDragging = false;
+    let trackWidth = 0;
+
+    const clip = track.parentNode; // .slider-clip
+
+    function updateTrackWidth() {
+        trackWidth = clip.offsetWidth;
+    }
+
+    function goToSlide(index) {
+        if (index < 0) index = 0;
+        if (index >= totalSlides) index = totalSlides - 1;
+        currentIndex = index;
+        track.style.transition = 'transform 0.4s ease';
+        track.style.transform = `translateX(${-currentIndex * 100}%)`;
+        updateDots();
+    }
+
+    function updateDots() {
+        const dots = dotsContainer.querySelectorAll('.dot');
+        dots.forEach(function (dot, i) {
+            dot.classList.toggle('active', i === currentIndex);
+        });
+    }
+
+    // Click en los dots
+    dotsContainer.addEventListener('click', function (e) {
+        if (e.target.classList.contains('dot')) {
+            const index = parseInt(e.target.getAttribute('data-index'), 10);
+            goToSlide(index);
+        }
+    });
+
+    // Soporte para drag/swipe con mouse
+    clip.addEventListener('mousedown', function (e) {
+        isDragging = true;
+        startX = e.clientX;
+        track.style.transition = 'none';
+        clip.classList.add('dragging');
+    });
+
+    document.addEventListener('mousemove', function (e) {
+        if (!isDragging) return;
+        currentX = e.clientX - startX;
+        track.style.transform = `translateX(calc(${-currentIndex * 100}% + ${currentX}px))`;
+    });
+
+    document.addEventListener('mouseup', function () {
+        if (!isDragging) return;
+        isDragging = false;
+        clip.classList.remove('dragging');
+        handleDragEnd();
+    });
+
+    // Soporte para touch (móvil)
+    clip.addEventListener('touchstart', function (e) {
+        isDragging = true;
+        startX = e.touches[0].clientX;
+        track.style.transition = 'none';
+    }, { passive: true });
+
+    clip.addEventListener('touchmove', function (e) {
+        if (!isDragging) return;
+        currentX = e.touches[0].clientX - startX;
+        track.style.transform = `translateX(calc(${-currentIndex * 100}% + ${currentX}px))`;
+    }, { passive: true });
+
+    clip.addEventListener('touchend', function () {
+        if (!isDragging) return;
+        isDragging = false;
+        handleDragEnd();
+    });
+
+    function handleDragEnd() {
+        updateTrackWidth();
+        const threshold = trackWidth * 0.2; // 20% del ancho para cambiar de slide
+
+        if (currentX < -threshold && currentIndex < totalSlides - 1) {
+            goToSlide(currentIndex + 1);
+        } else if (currentX > threshold && currentIndex > 0) {
+            goToSlide(currentIndex - 1);
+        } else {
+            goToSlide(currentIndex);
+        }
+        currentX = 0;
+    }
+
+    // Actualizar al redimensionar
+    window.addEventListener('resize', updateTrackWidth);
+    updateTrackWidth();
 }
 
 function calcularPrecioMensual(precioAnual) {
