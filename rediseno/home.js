@@ -130,21 +130,41 @@ function aperturaRevista() {
     const track = document.getElementById('track');
     cargarRevistas(function (data) {
         const item = data[0];
+
+        // Calcular precio mensual a partir del precio anual
+        // Si tu objeto ya trae el precio mensual, úsalo directo y elimina este cálculo
+        const precioMensual = calcularPrecioMensual(item.price);
+
         track.innerHTML = `
             <div class="slide">
                 <div class="cover">
                     <img class="cover-img" src="${item.img}" alt="${item.title}">
                 </div>
                 <div class="slide-info">
-                   <div class="slide-title">${item.title}</div>
+                    <div class="slide-title">${item.title}</div>
                     <div class="slide-edition">${item.edition}</div>
                     <hr/>
-                   <a href="${item.link}" class="slide-btn">${item.price}</a>
-                    <a href="${item.link}" class="slide-btn">Suscribirse ahora</a>
+                    <a href="${item.link}" class="slide-btn">Suscríbete por ${precioMensual} /mes</a>
+                    <div class="slide-dots" aria-label="Indicadores de revista">
+                        <span class="slide-dot"></span>
+                        <span class="slide-dot"></span>
+                        <span class="slide-dot active"></span>
+                        <span class="slide-dot"></span>
+                    </div>
                 </div>
             </div>
         `;
     });
+}
+
+function calcularPrecioMensual(precioAnual) {
+    // Extrae el número del string ($98/AÑO → 98)
+    const match = String(precioAnual).match(/[\d.,]+/);
+    if (!match) return precioAnual;
+    const numero = parseFloat(match[0].replace(',', '.'));
+    if (isNaN(numero)) return precioAnual;
+    const mensual = (numero / 12).toFixed(2).replace('.', ',');
+    return `$${mensual}`;
 }
 
 /* ── Función 2: swiper completo ── */
