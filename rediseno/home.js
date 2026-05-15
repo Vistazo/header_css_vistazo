@@ -136,12 +136,11 @@ function aperturaRevista() {
                     <img class="cover-img" src="${item.img}" alt="${item.title}">
                 </div>
                 <div class="slide-info">
-                   <!-- <div class="slide-title">${item.title}</div> -->
-                    <!-- <div class="slide-edition">${item.edition}</div> -->
+                   <div class="slide-title">${item.title}</div>
+                    <div class="slide-edition">${item.edition}</div>
                     <hr/>
-                   <!-- <a href="${item.link}" class="slide-btn">${item.price}</a> -->
+                   <a href="${item.link}" class="slide-btn">${item.price}</a>
                     <a href="${item.link}" class="slide-btn">Suscribirse ahora</a>
-
                 </div>
             </div>
         `;
