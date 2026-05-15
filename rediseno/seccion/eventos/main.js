@@ -1,5 +1,5 @@
 (function () {
-  const PROXY_EVENTS_URL = "http://localhost:3001/events";
+  const PROXY_EVENTS_URL = "https://backoffice.bmcodigo.com/api/events";
   const ECUADOR_TIMEZONE = "America/Guayaquil";
 
   const portada = document.querySelector(".item-portada");
