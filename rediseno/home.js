@@ -457,10 +457,220 @@ function initPatrocinadoSwiper() {
   });
 }
 
+/* ── Función 4: swiper cartas ── */
+let _cartasAuthToken = "";
+let _cartasSwiperInstance = null;
+const CARTAS_API_URL = "https://backoffice.bmcodigo.com/api/letters";
+const CARTAS_AUTH_API_URL =
+  "https://backoffice.bmcodigo.com/api/public/auth/token";
+const CARTAS_AUTH_CREDENTIALS = {
+  email: "eriveraec@gmail.com",
+  password: "123456",
+  name: "Mi Sitio Web",
+};
+
+function escapeCartasHtml(value) {
+  return String(value == null ? "" : value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/\"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function formatCartasPublishDate(dateValue) {
+  const date = new Date(dateValue);
+
+  if (Number.isNaN(date.getTime())) {
+    return "";
+  }
+
+  return new Intl.DateTimeFormat("es-ES", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    timeZone: "UTC",
+  }).format(date);
+}
+
+async function getCartasAuthToken() {
+  if (_cartasAuthToken) {
+    return _cartasAuthToken;
+  }
+
+  const tokenResponse = await fetch(CARTAS_AUTH_API_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(CARTAS_AUTH_CREDENTIALS),
+  });
+
+  const tokenResult = await tokenResponse.json();
+
+  if (!tokenResponse.ok || !tokenResult || !tokenResult.token) {
+    const authErrorMessage =
+      tokenResult && tokenResult.message
+        ? tokenResult.message
+        : "No se pudo obtener el token de autenticacion.";
+    throw new Error(authErrorMessage);
+  }
+
+  _cartasAuthToken = `Bearer ${tokenResult.token}`;
+  return _cartasAuthToken;
+}
+
+function renderCartas(letters, mountNode) {
+  const approvedLetters = (letters || []).filter(function (letter) {
+    return letter && letter.status === "approved";
+  });
+
+  if (!approvedLetters.length) {
+    mountNode.innerHTML = [
+      '<div class="noticias-swiper swiper noticias">',
+      '  <div class="swiper-wrapper"></div>',
+      '</div>',
+    ].join("\n");
+    return;
+  }
+
+  mountNode.innerHTML = [
+    '<div class="noticias-swiper swiper noticias">',
+    '  <div class="swiper-wrapper">',
+    approvedLetters
+      .map(function (letter) {
+        const title = escapeCartasHtml(letter.title);
+        const content = escapeCartasHtml(letter.content);
+        const authorName = escapeCartasHtml(letter.authorName);
+        const publishDate = escapeCartasHtml(
+          formatCartasPublishDate(letter.publishDate),
+        );
+        const articleId = escapeCartasHtml(letter.id || "");
+
+        return [
+          '<article class="swiper-slide article " iteridart="' +
+            articleId +
+            '">',
+          '  <div class="R_HOME_CARTAS">',
+          '    <div class="media_block">',
+          '      <div class="text_block">',
+          '        <div class="headline">',
+          '          ',
+          '            <h2>' + title + '</h2>',
+          '          ',
+          '        </div>',
+          '        <div class="text_block2">',
+          '          <div class="text">',
+          '            <div class="text-wrapper">',
+          '              <p>' + content + '</p>',
+          '            </div>',
+          '          </div>',
+          '        </div>',
+          '        <div class="sect-date">',
+          '          <div class="inf2">',
+          '            <ul>',
+          '              <li class="author">' + authorName + '</li>',
+          '              <li class="" itemprop="datePublished"> ' +
+            publishDate +
+            " </li>",
+          '            </ul>',
+          '          </div>',
+          '        </div>',
+          '      </div>',
+          '    </div>',
+          '  </div>',
+          '</article>',
+        ].join("\n");
+      })
+      .join("\n"),
+    '  </div>',
+    '  <div class="swiper-pagination"></div>',
+    '</div>',
+  ].join("\n");
+
+  setTimeout(initCartasSwiperInstance, 500);
+}
+
+async function loadCartas() {
+  const mountNode = document.querySelector(".seccion-listado-cartas");
+  if (!mountNode) {
+    return;
+  }
+
+  mountNode.innerHTML = [
+    '<div class="noticias-swiper swiper noticias">',
+    '  <div class="swiper-wrapper"></div>',
+    '</div>',
+  ].join("\n");
+
+  try {
+    const token = await getCartasAuthToken();
+    const response = await fetch(CARTAS_API_URL, {
+      method: "GET",
+      headers: {
+        Authorization: token,
+      },
+    });
+
+    const result = await response.json();
+
+    if (!response.ok) {
+      throw new Error(
+        result && result.message
+          ? result.message
+          : "No se pudieron cargar las cartas.",
+      );
+    }
+
+    renderCartas(result.letters || [], mountNode);
+  } catch (error) {
+    mountNode.innerHTML = '<section class="noticias"></section>';
+    console.error("Error al cargar las cartas:", error);
+  }
+}
+
+function initCartasSwiperInstance() {
+  if (typeof Swiper === "undefined") {
+    return;
+  }
+
+  if (_cartasSwiperInstance && typeof _cartasSwiperInstance.destroy === "function") {
+    _cartasSwiperInstance.destroy(true, true);
+  }
+
+  _cartasSwiperInstance = new Swiper(".noticias-swiper", {
+    slidesPerView: 1,
+    spaceBetween: 24,
+    pagination: {
+      el: ".noticias-swiper .swiper-pagination",
+      clickable: true,
+      dynamicBullets: true,
+    },
+    navigation: {
+      nextEl: ".noticias-swiper .swiper-button-next",
+      prevEl: ".noticias-swiper .swiper-button-prev",
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 1,
+      },
+      768: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      },
+    },
+  });
+}
+
+function initCartasSwiper() {
+  loadCartas();
+}
+
 /* ── Init ── */
 setTimeout(() => {
   aperturaRevista();
-  initPatrocinadoSwiper();
 }, 500);
 
 // Carga Swiper CSS + JS solo al hacer scroll
@@ -480,6 +690,8 @@ setTimeout(() => {
     script.onload = () => {
       initRevistasSwiper();
       initVideosSwiper();
+      initPatrocinadoSwiper();
+      initCartasSwiper();
     };
 
     document.body.appendChild(script);
