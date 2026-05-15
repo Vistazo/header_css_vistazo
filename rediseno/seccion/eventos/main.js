@@ -1,5 +1,11 @@
 (function () {
-  const PROXY_EVENTS_URL = "https://backoffice.bmcodigo.com/api/events";
+  const AUTH_API_URL = "https://backoffice.bmcodigo.com/api/public/auth/token";
+  const EVENTS_API_URL = "https://backoffice.bmcodigo.com/api/events";
+  const AUTH_CREDENTIALS = {
+    email: "eriveraec@gmail.com",
+    password: "123456",
+    name: "Mi Sitio Web",
+  };
   const ECUADOR_TIMEZONE = "America/Guayaquil";
 
   const portada = document.querySelector(".item-portada");
@@ -40,8 +46,35 @@
     return true;
   }
 
-  async function getEvents() {
-    const response = await fetch(PROXY_EVENTS_URL);
+  async function getToken() {
+    const response = await fetch(AUTH_API_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(AUTH_CREDENTIALS),
+    });
+
+    if (!response.ok) {
+      throw new Error(`Error obteniendo token: ${response.status}`);
+    }
+
+    const data = await response.json();
+    const token = data?.token || data?.accessToken || data?.data?.token || null;
+
+    if (!token) {
+      throw new Error("No se encontró token en la respuesta de autenticación");
+    }
+
+    return token;
+  }
+
+  async function getEvents(token) {
+    const response = await fetch(EVENTS_API_URL, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
 
     if (!response.ok) {
       throw new Error(`Error obteniendo eventos: ${response.status}`);
@@ -147,7 +180,8 @@
 
   async function init() {
     try {
-      const data = await getEvents();
+      const token = await getToken();
+      const data = await getEvents(token);
       const event = data?.events?.[0];
 
       if (!event) {
