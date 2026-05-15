@@ -1044,6 +1044,28 @@
     align-items: center;
 }
 
+.bloque-cartas .noticias {
+  width: 100%;
+}
+
+.bloque-cartas .noticias .swiper-wrapper {
+  align-items: stretch;
+}
+
+.bloque-cartas .noticias .swiper-slide {
+  height: auto;
+}
+
+.bloque-cartas .swiper-pagination-bullet {
+    background: var(--red);
+    height: 10px;
+    width: 10px;
+}
+
+.bloque-cartas .swiper-wrapper {
+    padding-bottom: 50px;
+}
+
 .bloque-cartas .avatar {
     width: 60px;
     height: 60px;

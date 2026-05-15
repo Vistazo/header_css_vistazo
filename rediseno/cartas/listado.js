@@ -90,14 +90,14 @@
         var articleId = escapeHtml(letter.id || "");
 
         return [
-          '<article class="swiper-slide article element full-access norestricted" iteridart="' + articleId + '">',
-          '  <div class="R_HOME_CARTAS odd n1">',
+          '<article class="swiper-slide article " iteridart="' + articleId + '">',
+          '  <div class="R_HOME_CARTAS">',
           '    <div class="media_block">',
           '      <div class="text_block">',
           '        <div class="headline">',
-          '          <a href="/cartas/' + slug + '" title="">',
+          '          ',
           '            <h2>' + title + '</h2>',
-          '          </a>',
+          '          ',
           '        </div>',
           '        <div class="text_block2">',
           '          <div class="text">',
@@ -109,8 +109,8 @@
           '        <div class="sect-date">',
           '          <div class="inf2">',
           '            <ul>',
-          '              <li class="date" itemprop="datePublished"> ' + publishDate + ' </li>',
           '              <li class="author">' + authorName + '</li>',
+          '              <li class="" itemprop="datePublished"> ' + publishDate + ' </li>',
           '            </ul>',
           '          </div>',
           '        </div>',
@@ -121,8 +121,8 @@
         ].join("\n");
       }).join("\n"),
       '  </div>',
-      '  <div class="swiper-button-prev"></div>',
-      '  <div class="swiper-button-next"></div>',
+      // '  <div class="swiper-button-prev"></div>',
+      // '  <div class="swiper-button-next"></div>',
       '  <div class="swiper-pagination"></div>',
       '</div>'
     ].join("\n");
@@ -173,7 +173,8 @@
       spaceBetween: 24,
       pagination: {
         el: ".noticias-swiper .swiper-pagination",
-        clickable: true
+        clickable: true,
+        dynamicBullets: true
       },
       navigation: {
         nextEl: ".noticias-swiper .swiper-button-next",
