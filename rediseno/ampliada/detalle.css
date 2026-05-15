@@ -13,6 +13,13 @@
     align-items: center;
 }
 
+.section-date-preferida {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
 
 .sect-date .article-section .section {
     background: var(--bg-gray);
@@ -591,8 +598,14 @@
         flex-direction: column;
         align-items: flex-start;
     }
+
     .autor-container {
         gap: 18px;
+    }
+
+    .section-date-preferida {
+        align-items: flex-start;
+        flex-direction: column;
     }
 
 }
