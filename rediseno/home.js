@@ -395,6 +395,40 @@ function initVideosSwiper() {
 
 }
 
+/* ── Función 3: swiper patrocinado ── */
+function initPatrocinadoSwiper() {
+    const patrocinadoList = document.querySelector('.patrocidado-lista');
+    if (!patrocinadoList) return;
+
+    const noticias = patrocinadoList.querySelector('.noticias');
+    if (!noticias) return;
+
+    // Evita inicializar dos veces
+    if (patrocinadoList.classList.contains('swiper-initialized')) return;
+
+    patrocinadoList.classList.add('swiper', 'swiper-patrocinado');
+    noticias.classList.add('swiper-wrapper');
+
+    const articles = noticias.querySelectorAll('.article.element');
+    articles.forEach(article => article.classList.add('swiper-slide'));
+
+    new Swiper('.swiper-patrocinado', {
+        slidesPerView: 1,
+        spaceBetween: 16,
+        observer: true,
+        observeParents: true,
+        observeSlideChildren: true,
+        pagination: {
+            el: '.swiper-patrocinado-pagination',
+            clickable: true,
+        },
+        breakpoints: {
+            640: { slidesPerView: 2, spaceBetween: 20 },
+            1024: { slidesPerView: 3, spaceBetween: 24 },
+        }
+    });
+}
+
 /* ── Init ── */
 setTimeout(() => {
     aperturaRevista();
