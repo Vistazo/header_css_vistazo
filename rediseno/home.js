@@ -412,6 +412,13 @@ function initPatrocinadoSwiper() {
     const articles = noticias.querySelectorAll('.article.element');
     articles.forEach(article => article.classList.add('swiper-slide'));
 
+    let pagination = patrocinadoList.querySelector('.swiper-patrocinado-pagination');
+    if (!pagination) {
+        pagination = document.createElement('div');
+        pagination.className = 'swiper-patrocinado-pagination';
+        noticias.insertAdjacentElement('afterend', pagination);
+    }
+
     new Swiper('.swiper-patrocinado', {
         slidesPerView: 1,
         spaceBetween: 16,
