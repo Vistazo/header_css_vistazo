@@ -229,7 +229,8 @@
 
 .slider-clip {
     overflow: hidden;
-    /* cursor: grab; */
+    pointer-events: all;
+    user-select: none; /* evita que se seleccione texto al arrastrar */
 }
 
 .slider-clip.dragging {
