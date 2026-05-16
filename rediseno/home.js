@@ -452,7 +452,7 @@ function initPatrocinadoSwiper() {
     },
     breakpoints: {
       640: { slidesPerView: 2, spaceBetween: 20 },
-      1024: { slidesPerView: 3, spaceBetween: 24 },
+      1024: { slidesPerView: 4, spaceBetween: 24 },
     },
   });
 }
