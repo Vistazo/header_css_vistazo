@@ -62,7 +62,7 @@ div#iter-content-wrapper {
     background: var(--red);
 }
 .section-title.hogar::after {
-    background: #a020f0;
+    background: #BF2BBF;
 }
 .section-title p{
     font-size: 13px;
@@ -88,12 +88,12 @@ div#iter-content-wrapper {
 
 /* Hover */
 .menu-categorias .nav-link:hover {
-  color: #a020f0;
+  color: #BF2BBF;
 }
 
 /* Activo */
 .menu-categorias .nav-link.active {
-  color: #a020f0;
+  color: #BF2BBF;
 }
 
 /* Línea inferior activa */
@@ -104,7 +104,7 @@ div#iter-content-wrapper {
   bottom: 0;
   width: 100%;
   height: 3px;
-  background: #a020f0;
+  background: #BF2BBF;
   border-radius: 2px;
 }
 
@@ -172,7 +172,7 @@ div#iter-content-wrapper {
 .cuatro-notas.hogar .sect-date .date::before,
 .listado-not-seccion.hogar .sect-date .date::before,
 .listado-seis-notas.hogar .sect-date .date::before{
-    background-color: #9e22f3;
+    background-color: #BF2BBF;
 }
 
 .nota-principal .headline h2 {
