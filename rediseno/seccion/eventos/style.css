@@ -1,15 +1,14 @@
 :root {
-    --gray: #D4D4D4;
-    --red: #CC1114;
+    --gray: #d4d4d4;
+    --red: #cc1114;
     --dark: #111;
     --light: #f5f3ee;
-    --bone: #F3F2ED;
-    --bg-gray: #F3F5F8;
+    --bone: #f3f2ed;
+    --bg-gray: #f3f5f8;
     --verde: #419644;
-    --purple-light: #F3F5F8;
+    --purple-light: #f3f5f8;
     --purple: #bf2bbf;
 }
-
 
 /* BLOQUE ESPECIAL */
 
@@ -26,8 +25,7 @@
 }
 
 .bloque-contenido-eventos .col-30-70-top-one-col .htmlcontainer-portlet {
-    background: #E8F0F6;
-
+    background: #e8f0f6;
 }
 
 .bloque-contenido-eventos .es-head p {
@@ -47,7 +45,7 @@
     align-items: center;
     gap: 17px;
     justify-content: center;
-    border-bottom: 2px solid #0F5D9C;
+    border-bottom: 2px solid #0f5d9c;
 }
 
 .bloque-contenido-eventos .es-fot p {
@@ -107,7 +105,6 @@
     display: inline-block;
 }
 
-
 .section-title {
     position: relative;
     padding-bottom: 15px;
@@ -146,8 +143,7 @@
     align-items: flex-end;
     overflow: hidden;
     border: 1px solid #e6e6e6;
-    background: #000;
-    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    background: #9b9b9b;
 }
 
 .item-portada__bg {
@@ -162,7 +158,12 @@
 .item-portada__overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(90deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.35) 55%, rgba(0,0,0,0) 100%);
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.75) 0%,
+        rgba(0, 0, 0, 0.35) 55%,
+        rgba(0, 0, 0, 0) 100%
+    );
 }
 
 .item-portada__content {
@@ -330,7 +331,6 @@
     gap: 11px;
 }
 
-
 .ui-dialog.dialog_error {
     position: fixed !important;
     top: 50% !important;
@@ -388,7 +388,7 @@
 
 .dialog_error .ui-icon-closethick::before,
 .dialog_error .ui-icon-closethick::after {
-    content: '';
+    content: "";
     position: absolute;
     width: 12px;
     height: 1.5px;
@@ -445,7 +445,6 @@
     display: none;
 }
 
-
 /* cintillo  conteo */
 
 .cintillo-conteo {
@@ -459,6 +458,7 @@
     gap: 30px;
     flex-wrap: wrap;
     margin-bottom: 52px;
+    height: 81px;
 }
 
 .cintillo-conteo .mensaje {
@@ -516,7 +516,39 @@
     display: block;
     font-size: 1.5rem;
     font-weight: bold;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Courier New", Courier, monospace;
+}
+
+/*sponsors*/
+.eve-sponsors {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    justify-content: space-around;
+    gap: 5rem;
+}
+
+.eve-s-title {
+    font-size: 24px;
+    font-weight: 500px;
+    text-align: center;
+}
+
+.eve-s-desc {
+    font-size: 16px;
+    font-weight: 400px;
+    text-align: center;
+}
+
+.eve-sponsors img {
+    width: 100%;
+}
+
+@media (max-width: 991px) {
+    .cintillo-conteo {
+        height: 149px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -527,10 +559,17 @@
     }
 }
 
-
 @media (max-width: 767px) {
     .bloque-contenido-eventos .noticias {
         grid-template-columns: 1fr 1fr;
+    }
+
+    .cintillo-conteo .conteo-wrapper {
+        flex-direction: column;
+    }
+
+    .cintillo-conteo {
+        height: 202px;
     }
 
     .dialog_error .ui-dialog {

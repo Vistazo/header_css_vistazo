@@ -10,6 +10,7 @@
 
   const portada = document.querySelector(".item-portada");
   const conteo = document.querySelector(".cintillo-conteo");
+  const sponsorsContainer = document.querySelector(".eve-sponsors");
 
   const selector = (key) => conteo.querySelector(`[data-count="${key}"]`);
 
@@ -78,6 +79,20 @@
 
     if (!response.ok) {
       throw new Error(`Error obteniendo eventos: ${response.status}`);
+    }
+
+    return response.json();
+  }
+
+  async function getSponsors(token, eventId) {
+    const response = await fetch(`${EVENTS_API_URL}/${eventId}/sponsors`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error(`Error obteniendo sponsors: ${response.status}`);
     }
 
     return response.json();
@@ -165,7 +180,7 @@
     subtitle.className = "item-portada__subtitle";
     subtitle.textContent = event.subtitle || "";
 
-    meta.appendChild(badge);
+    // meta.appendChild(badge);
     meta.appendChild(metaText);
     content.appendChild(meta);
     content.appendChild(title);
@@ -178,25 +193,55 @@
     portada.hidden = false;
   }
 
+  function renderSponsors(sponsors = []) {
+    if (!sponsorsContainer) {
+      return;
+    }
+
+    sponsorsContainer.innerHTML = "";
+
+    const fragment = document.createDocumentFragment();
+
+    sponsors.forEach((sponsor) => {
+      if (!sponsor?.logo) {
+        return;
+      }
+
+      const img = document.createElement("img");
+      img.src = sponsor.logo;
+      img.alt = sponsor.name || "Sponsor";
+      img.loading = "lazy";
+      img.decoding = "async";
+      fragment.appendChild(img);
+    });
+
+    sponsorsContainer.appendChild(fragment);
+  }
+
   async function init() {
     try {
       const token = await getToken();
       const data = await getEvents(token);
-      const event = data?.events?.[0];
+      const event = data?.events?.find((item) => item?.isActive === true);
 
       if (!event) {
         portada.hidden = true;
         conteo.hidden = true;
+        if (sponsorsContainer) {
+          sponsorsContainer.innerHTML = "";
+        }
         return;
       }
 
-      const startMs = toEcuadorMs(event.startDate);
       const endMs = toEcuadorMs(event.endDate);
       const nowMs = getNowInEcuadorMs();
 
-      if (nowMs < startMs || nowMs > endMs) {
+      if (nowMs > endMs) {
         portada.hidden = true;
         conteo.hidden = true;
+        if (sponsorsContainer) {
+          sponsorsContainer.innerHTML = "";
+        }
         return;
       }
 
@@ -204,11 +249,24 @@
       buildCountdownUI();
       conteo.hidden = false;
 
+      try {
+        const sponsorsData = await getSponsors(token, event.id);
+        renderSponsors(sponsorsData?.sponsors || []);
+      } catch (sponsorError) {
+        console.error(sponsorError);
+        if (sponsorsContainer) {
+          sponsorsContainer.innerHTML = "";
+        }
+      }
+
       const tick = () => {
         const ok = actualizarConteo(endMs);
         if (!ok) {
           portada.hidden = true;
           conteo.hidden = true;
+          if (sponsorsContainer) {
+            sponsorsContainer.innerHTML = "";
+          }
         }
       };
 
@@ -218,6 +276,9 @@
       console.error(error);
       portada.hidden = true;
       conteo.hidden = true;
+      if (sponsorsContainer) {
+        sponsorsContainer.innerHTML = "";
+      }
     }
   }
 
