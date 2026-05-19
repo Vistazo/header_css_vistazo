@@ -19,7 +19,8 @@
   let speakersSwiperInstance = null;
   let swiperAssetsPromise = null;
 
-  const expoVisibilityTargets = [".bg-grey-expo", ".apertura-art-formulario"];
+  const expoVisibilityTargets = [".bg-grey-expo", ".bloque-patrocinadores"];
+  const aperturaColSelector = ".apertura-art-formulario #col-50-50";
 
   const selector = (key) => conteo.querySelector(`[data-count="${key}"]`);
 
@@ -28,6 +29,33 @@
       document.querySelectorAll(target).forEach((element) => {
         element.style.display = isHidden ? "none" : "";
       });
+    });
+  }
+
+  function setAperturaColState(isVisible, isLoading = false) {
+    document.querySelectorAll(aperturaColSelector).forEach((element) => {
+      element.style.display = isVisible ? "block" : "none";
+
+      const existingLoading = element.querySelector(".eventos-loading");
+
+      if (isLoading) {
+        element.setAttribute("aria-busy", "true");
+
+        if (!existingLoading) {
+          const loading = document.createElement("div");
+          loading.className = "eventos-loading";
+          loading.textContent = "Cargando...";
+          element.prepend(loading);
+        }
+
+        return;
+      }
+
+      element.removeAttribute("aria-busy");
+
+      if (existingLoading) {
+        existingLoading.remove();
+      }
     });
   }
 
@@ -435,6 +463,8 @@
 
   async function init() {
     try {
+      setAperturaColState(true, true);
+
       const token = await getToken();
       const data = await getEvents(token);
       const event = data?.events?.find((item) => item?.isActive === true);
@@ -442,6 +472,7 @@
       if (!event) {
         portada.hidden = true;
         conteo.hidden = true;
+        setAperturaColState(false, false);
         setExpoSectionsHidden(true);
         if (sponsorsContainer) {
           sponsorsContainer.innerHTML = "";
@@ -455,6 +486,7 @@
       if (nowMs > endMs) {
         portada.hidden = true;
         conteo.hidden = true;
+        setAperturaColState(false, false);
         setExpoSectionsHidden(true);
         if (sponsorsContainer) {
           sponsorsContainer.innerHTML = "";
@@ -462,6 +494,7 @@
         return;
       }
 
+      setAperturaColState(true, false);
       setExpoSectionsHidden(false);
       renderEvent(event);
       buildCountdownUI();
@@ -494,6 +527,7 @@
         if (!ok) {
           portada.hidden = true;
           conteo.hidden = true;
+          setAperturaColState(false, false);
           setExpoSectionsHidden(true);
           if (sponsorsContainer) {
             sponsorsContainer.innerHTML = "";
@@ -507,6 +541,7 @@
       console.error(error);
       portada.hidden = true;
       conteo.hidden = true;
+      setAperturaColState(false, false);
       setExpoSectionsHidden(true);
       if (sponsorsContainer) {
         sponsorsContainer.innerHTML = "";
