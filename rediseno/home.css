@@ -11,6 +11,7 @@
 }
 
 @keyframes sb-pulse {
+
     0%,
     100% {
         opacity: 1;
@@ -41,7 +42,7 @@
     gap: 24px;
 }
 
-.apertura-principal .media_block > * {
+.apertura-principal .media_block>* {
     flex: 1 1 300px;
 }
 
@@ -92,13 +93,13 @@
 
 .apertura-principal .teaser-related-list article {
     position: relative;
-    padding-left: 2%;
+    /* padding-left: 2%; */
 }
 
 .apertura-principal .teaser-related-list article::before {
     content: "";
     position: absolute;
-    left: 0;
+    left: 20;
     top: 8px;
     width: 16px;
     height: 16px;
@@ -107,6 +108,7 @@
     background-repeat: no-repeat;
     background-position: center;
 }
+
 .apertura-principal .teaser-related-list article a:hover {
     color: #000 !important;
 }
@@ -117,21 +119,23 @@
     color: #000;
 }
 
-.apertura-principal .relatedContent .related-item-wrapper h2 {
-
-}
-
 .apertura-principal .relatedContent {
     background: transparent !important;
     padding: 0 !important;
     border-radius: 0 !important;
+    margin-top: 24px;
 }
 
 .apertura-principal .relatedContent .related-item-wrapper a {
-    font-size: 14px !important;
     font-weight: 500 !important;
     font-family: 'Zalando Sans' !important;
     text-decoration: none !important;
+    padding-left: 30px;
+}
+
+.apertura-principal .relatedContent .related-item-wrapper h2 {
+    font-size: 14px !important;
+
 }
 
 
@@ -266,7 +270,8 @@
 .slider-clip {
     overflow: hidden;
     pointer-events: all;
-    user-select: none; /* evita que se seleccione texto al arrastrar */
+    user-select: none;
+    /* evita que se seleccione texto al arrastrar */
 }
 
 .slider-clip.dragging {
@@ -1558,6 +1563,7 @@
 }
 
 @media (max-width: 991px) {
+
     .bloque-uno .noticias article:nth-child(1) .media_block,
     .bloque-uno .noticias article:nth-child(2) .media_block,
     .bloque-uno .noticias article:nth-child(3) .media_block,
@@ -1607,6 +1613,18 @@
 
     .bloque-sostenibilidad .sos-dos .headline h2 {
         font-size: 14px;
+    }
+
+    .masrecientesforce h2 {
+        font-size: 12px;
+    }
+
+    .apertura-principal .headline h2 {
+        font-size: 18px;
+    }
+
+    .apertura-principal .autor-nombre {
+        padding: 8px 0;
     }
 }
 
