@@ -12,6 +12,7 @@
   };
   const ECUADOR_TIMEZONE = "America/Guayaquil";
 
+  const allSection = document.querySelector(".all-section");
   const portada = document.querySelector(".item-portada");
   const conteo = document.querySelector(".cintillo-conteo");
   const sponsorsContainer = document.querySelector(".eve-sponsors");
@@ -20,43 +21,51 @@
   let speakersSwiperInstance = null;
   let swiperAssetsPromise = null;
 
-  const expoVisibilityTargets = [".bg-grey-expo", ".bloque-patrocinadores"];
   const aperturaColSelector = ".apertura-art-formulario #col-50-50";
+  const loadingClassName = "is-loading";
 
   const selector = (key) => conteo.querySelector(`[data-count="${key}"]`);
 
-  function setExpoSectionsHidden(isHidden) {
-    expoVisibilityTargets.forEach((target) => {
-      document.querySelectorAll(target).forEach((element) => {
-        element.style.display = isHidden ? "none" : "";
-      });
-    });
+  function ensureGlobalLoading() {
+    if (!allSection) {
+      return null;
+    }
+
+    let loading = allSection.querySelector(".eventos-loading");
+
+    if (!loading) {
+      loading = document.createElement("div");
+      loading.className = "eventos-loading";
+      loading.setAttribute("role", "status");
+      loading.setAttribute("aria-live", "polite");
+      loading.innerHTML = `
+        <span class="eventos-loading__spinner" aria-hidden="true"></span>
+        <span>Cargando...</span>
+      `;
+      allSection.prepend(loading);
+    }
+
+    return loading;
   }
 
-  function setAperturaColState(isVisible, isLoading = false) {
+  function setAllSectionState(isVisible, isLoading = false) {
+    if (!allSection) {
+      return;
+    }
+
+    allSection.hidden = !isVisible;
+    allSection.classList.toggle(loadingClassName, isLoading);
+
+    const loading = ensureGlobalLoading();
+
+    if (loading) {
+      loading.hidden = !isLoading;
+    }
+  }
+
+  function setAperturaColState(isVisible) {
     document.querySelectorAll(aperturaColSelector).forEach((element) => {
       element.style.display = isVisible ? "block" : "none";
-
-      const existingLoading = element.querySelector(".eventos-loading");
-
-      if (isLoading) {
-        element.setAttribute("aria-busy", "true");
-
-        if (!existingLoading) {
-          const loading = document.createElement("div");
-          loading.className = "eventos-loading";
-          loading.textContent = "Cargando...";
-          element.prepend(loading);
-        }
-
-        return;
-      }
-
-      element.removeAttribute("aria-busy");
-
-      if (existingLoading) {
-        existingLoading.remove();
-      }
     });
   }
 
@@ -543,17 +552,14 @@
 
   async function init() {
     try {
-      setAperturaColState(true, true);
+      setAllSectionState(true, true);
 
       const token = await getToken();
       const data = await getEvents(token);
       const event = data?.events?.find((item) => item?.isActive === true);
 
       if (!event) {
-        portada.hidden = true;
-        conteo.hidden = true;
-        setAperturaColState(false, false);
-        setExpoSectionsHidden(true);
+        setAllSectionState(false, false);
         if (sponsorsContainer) {
           sponsorsContainer.innerHTML = "";
         }
@@ -564,18 +570,15 @@
       const nowMs = getNowInEcuadorMs();
 
       if (nowMs > endMs) {
-        portada.hidden = true;
-        conteo.hidden = true;
-        setAperturaColState(false, false);
-        setExpoSectionsHidden(true);
+        setAllSectionState(false, false);
         if (sponsorsContainer) {
           sponsorsContainer.innerHTML = "";
         }
         return;
       }
 
-      setAperturaColState(true, false);
-      setExpoSectionsHidden(false);
+      setAllSectionState(true, false);
+      setAperturaColState(true);
       renderEvent(event);
       buildEventFormUI();
       buildCountdownUI();
@@ -606,10 +609,7 @@
       const tick = () => {
         const ok = actualizarConteo(endMs);
         if (!ok) {
-          portada.hidden = true;
-          conteo.hidden = true;
-          setAperturaColState(false, false);
-          setExpoSectionsHidden(true);
+          setAllSectionState(false, false);
           if (sponsorsContainer) {
             sponsorsContainer.innerHTML = "";
           }
@@ -620,10 +620,7 @@
       setInterval(tick, 1000);
     } catch (error) {
       console.error(error);
-      portada.hidden = true;
-      conteo.hidden = true;
-      setAperturaColState(false, false);
-      setExpoSectionsHidden(true);
+      setAllSectionState(false, false);
       if (sponsorsContainer) {
         sponsorsContainer.innerHTML = "";
       }

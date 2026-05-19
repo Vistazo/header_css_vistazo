@@ -10,6 +10,48 @@
     --purple: #bf2bbf;
 }
 
+.all-section.is-loading {
+    min-height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.all-section.is-loading > :not(.eventos-loading) {
+    display: none !important;
+}
+
+.eventos-loading {
+    width: 100%;
+    min-height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.eventos-loading[hidden] {
+    display: none !important;
+}
+
+.eventos-loading__spinner {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 3px solid rgba(17, 17, 17, 0.15);
+    border-top-color: var(--red);
+    animation: eventos-spin 0.8s linear infinite;
+}
+
+@keyframes eventos-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 /* BLOQUE ESPECIAL */
 
 .apertura-art-formulario {
@@ -52,6 +94,12 @@
     font-size: 14px;
     text-align: center;
     margin-bottom: 0;
+}
+
+.bloque-formulario-eventos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
 }
 
 .bloque-contenido-eventos .es-fot img {
@@ -308,7 +356,7 @@
     opacity: 1;
 }
 
-.bg-grey-expo {
+.bloque-patrocinadores-eventos {
     background: #F3F2ED;
     margin-bottom: 52px;
 }

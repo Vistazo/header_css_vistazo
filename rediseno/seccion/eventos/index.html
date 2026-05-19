@@ -1,39 +1,64 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Eventos</title>
-    </head>
-    <link rel="stylesheet" href="./style.css" />
-    <body>
-        <div class="item-portada"></div>
-        <div class="item-form"></div>
 
-        <div class="cintillo-conteo"></div>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eventos</title>
+</head>
+<link rel="stylesheet" href="./style.css" />
 
-        
+<body>
 
-        <h2 class="eve-s-title">Patrocinadores Oficiales del Evento</h2>
 
-        <p class="eve-s-desc">
-            Agradecemos la confianza y el apoyo de las empresas e instituciones
-            líderes que hacen posible Ecuador 2030: Diseñando el Futuro
-            Económico. Su respaldo es clave para impulsar el debate y la visión
-            estratégica en el país.
-        </p>
-        <div class="eve-sponsors">
-            <!--sponsors-->
+    <div class="all-section">
+
+        <!-- Formulario -->
+        <div class="bloque-formulario-eventos">
+            <div class="item-portada"></div>
+            <div class="item-form"></div>
         </div>
 
-        <section class="eve-speakers-section">
-            <h2 class="eve-s-title">Speakers</h2>
-            <p class="eve-s-desc">
-                Conoce a los ponentes que forman parte de la agenda del evento.
-            </p>
-            <div class="eve-speakers"></div>
-        </section>
+        <!-- Cintillo -->
+        <div class="bloque-cintillo-eventos">
+            <div class="cintillo-conteo"></div>
+        </div>
 
-        <script src="./main.js"></script>
-    </body>
+        <!-- Patrocinadores -->
+        <div class="bloque-patrocinadores-eventos">
+
+            <h2 class="eve-s-title">Patrocinadores Oficiales del Evento</h2>
+
+            <p class="eve-s-desc">
+                Agradecemos la confianza y el apoyo de las empresas e instituciones
+                líderes que hacen posible Ecuador 2030: Diseñando el Futuro
+                Económico. Su respaldo es clave para impulsar el debate y la visión
+                estratégica en el país.
+            </p>
+            <div class="eve-sponsors"></div>
+        </div>
+
+        <!-- Expositores -->
+        <div class="bloque-patrocinadores-eventos">
+            <div class="eve-speakers-section container">
+                <div class="section-title">
+                    <div class="text_"> Expositores destacados
+                        <svg width="5" height="8" viewBox="0 0 5 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M3.06667 3.76917L0 0.702501L0.7025 0L4.47167 3.76917L0.7025 7.53834L0 6.83584L3.06667 3.76917Z"
+                                fill="#111111"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="eve-speakers"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="./main.js"></script>
+</body>
+
 </html>
