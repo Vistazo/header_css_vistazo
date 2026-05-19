@@ -19,7 +19,17 @@
   let speakersSwiperInstance = null;
   let swiperAssetsPromise = null;
 
+  const expoVisibilityTargets = [".bg-grey-expo", ".apertura-art-formulario"];
+
   const selector = (key) => conteo.querySelector(`[data-count="${key}"]`);
+
+  function setExpoSectionsHidden(isHidden) {
+    expoVisibilityTargets.forEach((target) => {
+      document.querySelectorAll(target).forEach((element) => {
+        element.style.display = isHidden ? "none" : "";
+      });
+    });
+  }
 
   function getNowInEcuadorMs() {
     return new Date(
@@ -432,6 +442,7 @@
       if (!event) {
         portada.hidden = true;
         conteo.hidden = true;
+        setExpoSectionsHidden(true);
         if (sponsorsContainer) {
           sponsorsContainer.innerHTML = "";
         }
@@ -444,12 +455,14 @@
       if (nowMs > endMs) {
         portada.hidden = true;
         conteo.hidden = true;
+        setExpoSectionsHidden(true);
         if (sponsorsContainer) {
           sponsorsContainer.innerHTML = "";
         }
         return;
       }
 
+      setExpoSectionsHidden(false);
       renderEvent(event);
       buildCountdownUI();
       conteo.hidden = false;
@@ -481,6 +494,7 @@
         if (!ok) {
           portada.hidden = true;
           conteo.hidden = true;
+          setExpoSectionsHidden(true);
           if (sponsorsContainer) {
             sponsorsContainer.innerHTML = "";
           }
@@ -493,6 +507,7 @@
       console.error(error);
       portada.hidden = true;
       conteo.hidden = true;
+      setExpoSectionsHidden(true);
       if (sponsorsContainer) {
         sponsorsContainer.innerHTML = "";
       }
