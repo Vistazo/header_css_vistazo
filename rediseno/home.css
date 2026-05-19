@@ -75,7 +75,8 @@
 }
 
 .apertura-principal .headline h2 {
-    font-size: 34px;
+    font-size: 24px;
+    text-decoration: underline;
 }
 
 .apertura-principal .headline h2::first-line {
@@ -84,11 +85,55 @@
 
 .apertura-principal .autor-nombre {
     padding: 16px 0;
+    font-size: 13px;
+    color: #000;
 }
+
+
+.apertura-principal .teaser-related-list article {
+    position: relative;
+    padding-left: 2%;
+}
+
+.apertura-principal .teaser-related-list article::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 16px;
+    height: 16px;
+    background-image: url("https://backoffice.bmcodigo.com/uploads/images/6a8bc699-2338-4385-a788-06846681417f-1779153533435.webp");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.apertura-principal .teaser-related-list article a:hover {
+    color: #000 !important;
+}
+
 
 .apertura-principal .subheadline h3 {
     font-size: 14px;
+    color: #000;
 }
+
+.apertura-principal .relatedContent .related-item-wrapper h2 {
+
+}
+
+.apertura-principal .relatedContent {
+    background: transparent !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+}
+
+.apertura-principal .relatedContent .related-item-wrapper a {
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    font-family: 'Zalando Sans' !important;
+    text-decoration: none !important;
+}
+
 
 .mas-destacados .R_TIT {
     display: flex;
