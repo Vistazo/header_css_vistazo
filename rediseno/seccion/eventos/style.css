@@ -137,7 +137,7 @@
 
 .item-portada {
     position: relative;
-    min-height: 560px;
+    /* min-height: 560px; */
     color: #fff;
     display: flex;
     align-items: flex-end;
