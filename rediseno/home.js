@@ -290,7 +290,7 @@ function calcularPrecioMensual(precioAnual) {
   if (!match) return precioAnual;
   const numero = parseFloat(match[0].replace(",", "."));
   if (isNaN(numero)) return precioAnual;
-  const mensual = (numero / 12).toFixed(2).replace(".", ",");
+  const mensual = (numero).toFixed(2).replace(".", ",");
   return `$${mensual}`;
 }
 
