@@ -42,6 +42,10 @@
     gap: 24px;
 }
 
+.apertura-principal.mm {
+    margin-bottom: 52px;
+}
+
 .apertura-principal .media_block>* {
     flex: 1 1 300px;
 }
@@ -1626,6 +1630,10 @@
     .apertura-principal .autor-nombre {
         padding: 8px 0;
     }
+
+    .apertura-principal .relatedContent .related-item-wrapper h2 {
+        font-size: 12px !important;
+    }
 }
 
 @media (max-width: 991px) {
@@ -1653,7 +1661,7 @@
     }
 
     .apertura-principal .headline h2 {
-        font-size: 24px;
+        font-size: 18px;
     }
 
     .car-main .ava-tex {
