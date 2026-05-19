@@ -1,0 +1,214 @@
+##----scroll-infinito_mobile----
+#set($sort = "createdate")
+#set($criteria= "desc")
+## #set($art_next = $articleToolbox.getSiblingArticle($sort, $criteria, "next"))
+#set($sectionID = "#printAssignedSectionID_v1")
+## #set($templateId = $iterVelocityTools.getVelocityVariable("template_id")) 
+## CONTENIDOS
+#set($dateMask = "EEEE, d MMMM yyyy - HH:mm")
+#set($canonicalUrl = $articleToolbox.getArticleViewer('canonical'))
+
+##+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+##+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+#set ($arrayListContenidos = [])
+
+#set ($element = {})
+#set ($temp = $element.put("name","Text"))
+#set ($temp = $element.put("type","paragraph"))
+#set ($temp = $element.put("cssclass","texto"))
+#set ($temp = $element.put("tag","div"))
+#set($temp = $arrayListContenidos.add($element))
+
+#set ($element = {})
+#set ($temp = $element.put("name","Lead"))
+#set ($temp = $element.put("type","text"))
+#set ($temp = $element.put("cssclass","lead destacado"))
+#set ($temp = $element.put("tag","div"))
+#set($temp = $arrayListContenidos.add($element))
+
+#set ($element = {})
+#set ($temp = $element.put("name","Image_Text"))
+#set ($temp = $element.put("type","image"))
+#set ($temp = $element.put("cssclass","img lateral"))
+#set ($temp = $element.put("tag","div"))
+#set($temp = $arrayListContenidos.add($element))
+
+#set ($element = {})
+#set ($temp = $element.put("name","Youtube_Text"))
+#set ($temp = $element.put("type","youtube"))
+#set ($temp = $element.put("cssclass","youtube_video"))
+#set ($temp = $element.put("tag","div"))
+#set($temp = $arrayListContenidos.add($element))
+
+#set ($element = {})
+#set ($temp = $element.put("name","Mowplayer_Text"))
+#set ($temp = $element.put("type","mowplayer"))
+#set ($temp = $element.put("cssclass","mowplayer_video"))
+#set ($temp = $element.put("tag","div"))
+#set($temp = $arrayListContenidos.add($element))
+
+#set ($element = {})
+#set ($temp = $element.put("name","Multimedia_Text"))
+#set ($temp = $element.put("type","multimedia"))
+#set ($temp = $element.put("cssclass","jwplayer_video"))
+#set ($temp = $element.put("tag","div"))
+#set($temp = $arrayListContenidos.add($element))
+
+#set ($element = {})
+#set ($temp = $element.put("name","Image_Text_GIF"))
+#set ($temp = $element.put("type","image"))
+#set ($temp = $element.put("cssclass","imagen"))
+#set ($temp = $element.put("tag","div"))
+#set($temp = $arrayListContenidos.add($element))
+
+#set ($element = {})
+#set ($temp = $element.put("name","Facebook_Text"))
+#set ($temp = $element.put("type","html"))
+#set ($temp = $element.put("cssclass","facebook_text"))
+#set ($temp = $element.put("tag","div"))
+#set($temp = $arrayListContenidos.add($element))
+
+#set ($element = {})
+#set ($temp = $element.put("name","Twitter_Text"))
+#set ($temp = $element.put("type","twitter"))
+#set ($temp = $element.put("cssclass","twitter_text"))
+#set ($temp = $element.put("tag","div"))
+#set($temp = $arrayListContenidos.add($element))
+#set ($element = {})
+
+#set ($element = {})
+#set ($temp = $element.put("name","H2"))
+#set ($temp = $element.put("type","text"))
+#set ($temp = $element.put("cssclass","h2vistazo"))
+#set ($temp = $element.put("tag","h2"))
+#set($temp = $arrayListContenidos.add($element))
+#set ($element = {})
+
+#set ($element = {})
+#set ($temp = $element.put("name","Cita"))
+#set ($temp = $element.put("type","text"))
+#set ($temp = $element.put("cssclass","Citavistazo"))
+#set ($temp = $element.put("tag","div"))
+#set($temp = $arrayListContenidos.add($element))
+#set ($element = {})
+
+
+#set ($element = {})
+#set ($temp = $element.put("name","bullet"))
+#set ($temp = $element.put("type","text"))
+#set ($temp = $element.put("cssclass","bulletvistazo"))
+#set ($temp = $element.put("tag","li"))
+#set($temp = $arrayListContenidos.add($element))
+#set ($element = {})
+
+
+#set ($temp = $element.put("name","HTML_Text"))
+#set ($temp = $element.put("type","html"))
+#set ($temp = $element.put("cssclass","html_text"))
+#set ($temp = $element.put("tag","div"))
+#set($temp = $arrayListContenidos.add($element))
+
+<div id="$reserved-article-id.data" class="template-infinity detail mobile" id-section="$sectionID" teaseritemposition="$iterVelocityTools.getVelocityVariable("teaseritemposition")">
+
+	##MARCA PAYWALL
+	#getAcAssignedCatMain_v1($hmMain,"Vtz_Classification")
+	#set($classif = "")
+	#if($hmMain && $hmMain.size() > 0)
+		#foreach ($elem in $hmMain)
+			#set($classif = $elem.name)
+		#end
+	#end
+	#set($article_is_restricted = $articleToolbox.article_is_restricted())
+	#if ($article_is_restricted)
+	    #foreach($product in $articleToolbox.getProductList())
+		#set($prod = $product.get("name"))
+	    #end
+	#else
+	    #set($prod = "")
+	#end  
+	<div class="paywall" data-suscription="$!prod" data-classification="$!classif"></div>
+	
+	#set($BrandedContent = {})
+	#getAcAssignedExtendedAllCat_v1($BrandedContent "Branded_Content")
+
+	<div class="metadatos">#*
+	*##set($metas ="")#*
+	*##set($hmTemas = {})#*
+	*##getAcAssignedCatExtended_v1($hmTemas "Topic")#*
+	*##set($hmGeografico = {})#*
+	*##getAcAssignedCatExtended_v1($hmGeografico "Location")#*
+	*##set($hmPersonajes = {})#*
+	*##getAcAssignedCatExtended_v1($hmPersonajes "People")#*
+	*##set($hmAutores = {})#*
+	*##getAcAssignedCatExtended_v1($hmAutores "Vtz_Author")#*
+	*##if($hmTemas && $hmTemas.size() > 0)	#*
+		*##foreach ($elem in $hmTemas)#*
+			*#<div class="keywords" value="$elem.name" id="$elem.id" data-voc-name="topics" data-voc-id="102924553"/>#*
+			*##set($metas = $metas + $elem.name + ",")#*
+		*##end#*
+		*##set($metasIndex = $metas.length())#*
+		*##set($metasIndex = $metasIndex - 1)#*
+		*##set($metas = $metas.substring(0,$metasIndex))#*
+	*##end#*
+	*##if($hmGeografico && $hmGeografico.size() > 0)#*
+		*##foreach ($elem in $hmGeografico)#*
+			*#<div class="keywords" value="$elem.name" id="$elem.id" data-voc-name="location" data-voc-id="102922353"/>#*
+		*##end#*
+	*##end#*
+	*##if($hmPersonajes && $hmPersonajes.size() > 0)#*
+		*##foreach ($elem in $hmPersonajes)#*
+			*#<div class="keywords" value="$elem.name" id="$elem.id" data-voc-name="people" data-voc-id="102924555"/>#*
+		*##end#*
+	*##end#*
+	*##if($hmAutores && $hmAutores.size() > 0)#*	
+		*##foreach ($elem in $hmAutores)#*
+			*#<div class="keywords" value="$elem.name" id="$elem.id" data-voc-name="author" data-voc-id="102924559"/>#*
+		*##end#*
+	*##end#*
+	*#</div>
+	<script>
+		var group_id = $request.theme-display.scope-group-id;
+		var id_art_infinity = $reserved-article-id.data;
+		VI_Articulo = '$reserved-article-id.data';
+		VI_Tag = '$metas';
+		#if($iterVelocityTools.getVelocityVariable("teaseritemposition") == 1)
+			var teaser_first = true;
+			var n_noticia = 1;
+			idart_view = $reserved-article-id.data;
+		#else
+			var teaser_first = false;
+			var n_noticia = n_noticia + 1;
+		#end
+		console.log("+++ teaseritemposition:  $iterVelocityTools.getVelocityVariable("teaseritemposition")");
+		console.log("+++ n_noticia: " + n_noticia);
+	</script>
+	<div class="canonical hidden"></div>
+	<div class="left-block">
+		## PUBLI
+		<div class="publi desktop">$!iterVelocityTools.getAdContainer("scroll_Inread")</div>
+
+        ##seccion
+        #set($topcontent = "section")
+        #if($topcontent == "section")
+			<div class="article-section">
+				<a class="section" href="#printURLAssignedSection_v1">#printAssignedSection_v1</a>
+			</div>
+        #end
+	    ##HEADLINE
+		##<h1 class="headline titulo_nota" itemprop="headline" canonicalUrl="$articleToolbox.getArticleViewer('canonical')" idart="$reserved-article-id.data" metric="on">#getTeaserTitle_v1</h1>
+		<h1 class="headline titulo_nota" itemprop="headline" canonicalUrl="$articleToolbox.getArticleViewer('canonical')" idart="$reserved-article-id.data" metric="on">$articleToolbox.getTag(null,'Headline').data</h1>
+        ##SUBHEADLINE
+        #if($articleToolbox.getTag(null,'Subheadline').data)
+            <h2 class="subheadline artit font-2 medium" itemprop="description">#getTeaserSubheadline_v1</h2>
+        #end
+
+
+	</div>
+</div>
+
+
+##+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
