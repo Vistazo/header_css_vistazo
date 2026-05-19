@@ -2019,7 +2019,7 @@
         display: flex;
         flex-direction: column;
 
-        background: var(--bone);
+        background: #F3F5F8;
     }
 
     .bloque-sostenibilidad .sos-uno .media_block .text_block {
