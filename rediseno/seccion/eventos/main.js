@@ -16,6 +16,7 @@
   const conteo = document.querySelector(".cintillo-conteo");
   const sponsorsContainer = document.querySelector(".eve-sponsors");
   const speakersContainer = document.querySelector(".eve-speakers");
+  const formContainer = document.querySelector(".item-form");
   let speakersSwiperInstance = null;
   let swiperAssetsPromise = null;
 
@@ -203,6 +204,85 @@
           </div>
         </div>
       </div>
+    `;
+  }
+
+  function buildEventFormUI() {
+    if (!formContainer) {
+      return;
+    }
+
+    formContainer.innerHTML = `
+      <form id="060d0483463711f1bd4e020017097938" action="/user-portlet/FormReceiver?formid=060d0483463711f1bd4e020017097938" method="POST" class="seccion-eventos" data-navigation="" data-usecaptcha="false" data-oklbl="OK " data-cancellbl="Cancelar" data-errormsg="Algún campo es incorrecto" novalidate="">
+        <div id="pages-060d0483463711f1bd4e020017097938">
+          <div id="page-060d0483463711f1bd4e020017097938-1" class="field_form" name="XYZ_DEFAULT_TAB_NAME_ZYX">
+            <div id="textheader-1" class="tab" style="display:none;">
+              <span class="number">1</span>
+              <div class="text"></div>
+            </div>
+            <div id="block-1" class="blocksfields">
+              <div id="field_060d0483463711f1bd4e020017097938_060e1ced463711f1bd4e020017097938" class="field_form ">
+                <div class="campo_obligatorio">&nbsp;<div class="text_obligatorio"></div></div>
+                <div class="label_ant">Nombre completos</div>
+                <div class="element_form">
+                  <input id="060d0483463711f1bd4e020017097938_060e1ced463711f1bd4e020017097938" name="nombrecompleto" type="text" value="" id_modal="060d0483463711f1bd4e020017097938_060e1ced463711f1bd4e020017097938_mod" confirmado="true" title="" placeholder="" tabindex="060d0483463711f1bd4e02001709793811000" class="field_elem" required="">
+                </div>
+                <div class="label_pos"></div>
+              </div>
+              <div id="field_060d0483463711f1bd4e020017097938_060f23d7463711f1bd4e020017097938" class="field_form ">
+                <div class="campo_obligatorio">&nbsp;<div class="text_obligatorio"></div></div>
+                <div class="label_ant">Email Corporativo</div>
+                <div class="element_form">
+                  <input id="060d0483463711f1bd4e020017097938_060f23d7463711f1bd4e020017097938" name="emailcorp" type="email" value="" id_modal="060d0483463711f1bd4e020017097938_060f23d7463711f1bd4e020017097938_mod" confirmado="true" title="" placeholder="" tabindex="060d0483463711f1bd4e02001709793812000" class="field_elem" required="">
+                </div>
+                <div class="label_pos"></div>
+              </div>
+              <div id="field_060d0483463711f1bd4e020017097938_060fb1e7463711f1bd4e020017097938" class="field_form ">
+                <div class="campo_obligatorio">&nbsp;<div class="text_obligatorio"></div></div>
+                <div class="label_ant">Teléfono de Contacto</div>
+                <div class="element_form">
+                  <input id="060d0483463711f1bd4e020017097938_060fb1e7463711f1bd4e020017097938" name="telefono" type="text" value="" id_modal="060d0483463711f1bd4e020017097938_060fb1e7463711f1bd4e020017097938_mod" confirmado="true" title="" placeholder="" tabindex="060d0483463711f1bd4e02001709793813000" class="field_elem" required="">
+                </div>
+                <div class="label_pos"></div>
+              </div>
+              <div id="field_060d0483463711f1bd4e020017097938_06106030463711f1bd4e020017097938" class="field_form ">
+                <div class="campo_obligatorio">&nbsp;<div class="text_obligatorio"></div></div>
+                <div class="label_ant">Cargo / Puesto</div>
+                <div class="element_form">
+                  <input id="060d0483463711f1bd4e020017097938_06106030463711f1bd4e020017097938" name="cargo" type="text" value="" id_modal="060d0483463711f1bd4e020017097938_06106030463711f1bd4e020017097938_mod" confirmado="true" title="" placeholder="" tabindex="060d0483463711f1bd4e02001709793814000" class="field_elem" required="">
+                </div>
+                <div class="label_pos"></div>
+              </div>
+              <div id="field_060d0483463711f1bd4e020017097938_e3cc29f9463711f1bd4e020017097938" class="field_form ">
+                <div class="campo_obligatorio">&nbsp;<div class="text_obligatorio"></div></div>
+                <div class="label_ant">Empresa / Institución</div>
+                <div class="element_form">
+                  <input id="060d0483463711f1bd4e020017097938_e3cc29f9463711f1bd4e020017097938" name="Empresa" type="text" value="" id_modal="060d0483463711f1bd4e020017097938_e3cc29f9463711f1bd4e020017097938_mod" confirmado="true" title="" placeholder="" tabindex="060d0483463711f1bd4e02001709793815000" class="field_elem" required="">
+                </div>
+                <div class="label_pos"></div>
+              </div>
+              <div id="field_060d0483463711f1bd4e020017097938_1862216f463811f1bd4e020017097938" class="field_form ">
+                <div class="campo_obligatorio">&nbsp;<div class="text_obligatorio"></div></div>
+                <div class="label_ant">¿Asistirá Presencial o Virtual?</div>
+                <div class="element_form">
+                  <div class="radio_option">
+                    <input type="radio" name="asistira" id="060d0483463711f1bd4e020017097938_1862216f463811f1bd4e020017097938-1" title="" tabindex="NaN" class="field_elem" required="" value="presencial">
+                    <div class="radiobutton_label">Presencial</div>
+                  </div>
+                  <div class="radio_option">
+                    <input type="radio" name="asistira" id="060d0483463711f1bd4e020017097938_1862216f463811f1bd4e020017097938-2" title="" tabindex="NaN" class="field_elem" required="" value="virtual">
+                    <div class="radiobutton_label">Virtual</div>
+                  </div>
+                </div>
+                <div class="label_pos"></div>
+              </div>
+            </div>
+            <div class="btts_forms">
+              <input type="submit" value="Registrarse">
+            </div>
+          </div>
+        </div>
+      </form>
     `;
   }
 
@@ -497,6 +577,7 @@
       setAperturaColState(true, false);
       setExpoSectionsHidden(false);
       renderEvent(event);
+      buildEventFormUI();
       buildCountdownUI();
       conteo.hidden = false;
 
