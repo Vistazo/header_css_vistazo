@@ -1,6 +1,10 @@
 (function () {
   const AUTH_API_URL = "https://backoffice.bmcodigo.com/api/public/auth/token";
   const EVENTS_API_URL = "https://backoffice.bmcodigo.com/api/events";
+  const SPEAKERS_API_URL =
+    "https://backoffice.bmcodigo.com/api/events/cmp445dee005p10yhyt8yscxg/speakers";
+  const SWIPER_CSS_URL = "https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css";
+  const SWIPER_JS_URL = "https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js";
   const AUTH_CREDENTIALS = {
     email: "eriveraec@gmail.com",
     password: "123456",
@@ -11,6 +15,9 @@
   const portada = document.querySelector(".item-portada");
   const conteo = document.querySelector(".cintillo-conteo");
   const sponsorsContainer = document.querySelector(".eve-sponsors");
+  const speakersContainer = document.querySelector(".eve-speakers");
+  let speakersSwiperInstance = null;
+  let swiperAssetsPromise = null;
 
   const selector = (key) => conteo.querySelector(`[data-count="${key}"]`);
 
@@ -93,6 +100,20 @@
 
     if (!response.ok) {
       throw new Error(`Error obteniendo sponsors: ${response.status}`);
+    }
+
+    return response.json();
+  }
+
+  async function getSpeakers(token) {
+    const response = await fetch(SPEAKERS_API_URL, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error(`Error obteniendo speakers: ${response.status}`);
     }
 
     return response.json();
@@ -218,6 +239,190 @@
     sponsorsContainer.appendChild(fragment);
   }
 
+  function ensureSwiperAssets() {
+    if (typeof window.Swiper !== "undefined") {
+      return Promise.resolve();
+    }
+
+    if (swiperAssetsPromise) {
+      return swiperAssetsPromise;
+    }
+
+    swiperAssetsPromise = new Promise((resolve, reject) => {
+      const existingCss = document.querySelector(`link[href="${SWIPER_CSS_URL}"]`);
+
+      if (!existingCss) {
+        const link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.href = SWIPER_CSS_URL;
+        document.head.appendChild(link);
+      }
+
+      const existingScript = document.querySelector(`script[src="${SWIPER_JS_URL}"]`);
+
+      const finish = () => {
+        if (typeof window.Swiper === "undefined") {
+          reject(new Error("No se pudo cargar Swiper"));
+          return;
+        }
+
+        resolve();
+      };
+
+      if (existingScript) {
+        if (typeof window.Swiper !== "undefined") {
+          finish();
+          return;
+        }
+
+        existingScript.addEventListener("load", finish, { once: true });
+        existingScript.addEventListener("error", () => reject(new Error("No se pudo cargar Swiper")), { once: true });
+        return;
+      }
+
+      const script = document.createElement("script");
+      script.src = SWIPER_JS_URL;
+      script.onload = finish;
+      script.onerror = () => reject(new Error("No se pudo cargar Swiper"));
+      document.body.appendChild(script);
+    });
+
+    return swiperAssetsPromise;
+  }
+
+  function createSocialLink(href, label, text) {
+    const link = document.createElement("a");
+    link.href = href;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.className = "speaker-card__social-link";
+    link.setAttribute("aria-label", label);
+    link.textContent = text;
+    return link;
+  }
+
+  function renderSpeakers(speakers = []) {
+    if (!speakersContainer) {
+      return;
+    }
+
+    speakersContainer.innerHTML = "";
+
+    const swiper = document.createElement("div");
+    swiper.className = "eve-speakers-swiper swiper";
+
+    const wrapper = document.createElement("div");
+    wrapper.className = "swiper-wrapper";
+
+    speakers.forEach((speaker) => {
+      if (!speaker) {
+        return;
+      }
+
+      const slide = document.createElement("div");
+      slide.className = "swiper-slide";
+
+      const card = document.createElement("article");
+      card.className = "speaker-card";
+
+      const avatarWrap = document.createElement("div");
+      avatarWrap.className = "speaker-card__avatar";
+
+      const avatar = document.createElement("img");
+      avatar.src = speaker.avatar || "";
+      avatar.alt = speaker.name || "Speaker";
+      avatar.loading = "lazy";
+      avatar.decoding = "async";
+      avatarWrap.appendChild(avatar);
+
+      const body = document.createElement("div");
+      body.className = "speaker-card__body";
+
+      const name = document.createElement("h3");
+      name.className = "speaker-card__name";
+      name.textContent = speaker.name || "";
+
+      const role = document.createElement("p");
+      role.className = "speaker-card__role";
+      role.textContent = speaker.role || "";
+
+      const socials = document.createElement("div");
+      socials.className = "speaker-card__socials";
+
+      if (speaker.twitter) {
+        socials.appendChild(
+          createSocialLink(speaker.twitter, `${speaker.name || "Speaker"} en X`, "X")
+        );
+      }
+
+      if (speaker.linkedin) {
+        socials.appendChild(
+          createSocialLink(
+            speaker.linkedin,
+            `${speaker.name || "Speaker"} en LinkedIn`,
+            "in"
+          )
+        );
+      }
+
+      if (speaker.instagram) {
+        socials.appendChild(
+          createSocialLink(
+            speaker.instagram,
+            `${speaker.name || "Speaker"} en Instagram`,
+            "ig"
+          )
+        );
+      }
+
+      body.appendChild(name);
+      body.appendChild(role);
+      body.appendChild(socials);
+
+      card.appendChild(avatarWrap);
+      card.appendChild(body);
+      slide.appendChild(card);
+      wrapper.appendChild(slide);
+    });
+
+    const pagination = document.createElement("div");
+    pagination.className = "swiper-pagination eve-speakers-pagination";
+
+    swiper.appendChild(wrapper);
+    swiper.appendChild(pagination);
+    speakersContainer.appendChild(swiper);
+  }
+
+  async function initSpeakersSwiper() {
+    if (!speakersContainer) {
+      return;
+    }
+
+    await ensureSwiperAssets();
+
+    if (speakersSwiperInstance && typeof speakersSwiperInstance.destroy === "function") {
+      speakersSwiperInstance.destroy(true, true);
+    }
+
+    speakersSwiperInstance = new window.Swiper(".eve-speakers-swiper", {
+      slidesPerView: 1,
+      spaceBetween: 16,
+      observer: true,
+      observeParents: true,
+      observeSlideChildren: true,
+      pagination: {
+        el: ".eve-speakers-pagination",
+        clickable: true,
+        dynamicBullets: true,
+      },
+      breakpoints: {
+        640: { slidesPerView: 2, spaceBetween: 20 },
+        1024: { slidesPerView: 3, spaceBetween: 24 },
+        1280: { slidesPerView: 4, spaceBetween: 24 },
+      },
+    });
+  }
+
   async function init() {
     try {
       const token = await getToken();
@@ -259,6 +464,18 @@
         }
       }
 
+      try {
+        const speakersData = await getSpeakers(token);
+        renderSpeakers(speakersData?.speakers || []);
+    
+        await initSpeakersSwiper();
+      } catch (speakerError) {
+        console.error(speakerError);
+        if (speakersContainer) {
+          speakersContainer.innerHTML = "";
+        }
+      }
+
       const tick = () => {
         const ok = actualizarConteo(endMs);
         if (!ok) {
@@ -278,6 +495,9 @@
       conteo.hidden = true;
       if (sponsorsContainer) {
         sponsorsContainer.innerHTML = "";
+      }
+      if (speakersContainer) {
+        speakersContainer.innerHTML = "";
       }
     }
   }
