@@ -75,8 +75,90 @@ body {
     transition: 0.3s;
 }
 
-.primary-nav .rnav-links a:hover {
+/* .primary-nav .rnav-links a:hover {
     color: #CC1114;
+} */
+
+.rnav-links .rnav-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+    padding: 10px 0;
+}
+
+.rnav-links .rnav-link:hover {
+    color: #CC1114;
+}
+
+.rnav-item {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+.rnav-item--submenu .rnav-link__caret {
+    width: 6px;
+    height: 6px;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    transform: rotate(45deg) translateY(-1px);
+    transition: transform 0.2s ease;
+    opacity: 0.9;
+}
+
+.rnav-item--submenu:hover .rnav-link__caret,
+.rnav-item--submenu:focus-within .rnav-link__caret {
+    transform: rotate(225deg) translateY(1px);
+}
+
+.rnav-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 220px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    background: #111;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 4px;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(8px);
+    transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s ease;
+    z-index: 20;
+}
+
+.rnav-item--submenu:hover .rnav-dropdown,
+.rnav-item--submenu:focus-within .rnav-dropdown {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.rnav-dropdown__link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    line-height: 1.25;
+    padding: 10px 12px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    white-space: normal;
+}
+
+.rnav-dropdown__link:hover {
+    color: #fff;
+    background: #1a1a1a
 }
 
 .primary-nav .rnav-right {
@@ -182,7 +264,7 @@ body {
 }
 
 .rnav-links {
-    overflow: auto;
+    overflow: visible;
     gap: 24px;
     white-space: nowrap;
     display: flex;

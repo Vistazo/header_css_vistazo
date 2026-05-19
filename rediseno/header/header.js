@@ -1,12 +1,12 @@
 (function () {
     'use strict';
 
-    /* ═══════════════════════════════════════════
-       DATA SOURCE — PRIMARY NAV (rnav-links)
-       Se consume desde API externa con estructura:
-       [{ label: string, href: string, live?: boolean }]
-    ═══════════════════════════════════════════ */
-    var RNAV_API_URL = 'https://backoffice.bmcodigo.com/api/v1/header-principal';
+     /* ═══════════════════════════════════════════
+         DATA SOURCE — PRIMARY NAV (rnav-links)
+         Se consume desde API externa con estructura:
+         [{ label: string, href: string, live?: boolean, children?: [...] }]
+     ═══════════════════════════════════════════ */
+     var RNAV_API_URL = 'https://backoffice.bmcodigo.com/api/v1/header-principal-2';
 
     /* ═══════════════════════════════════════════
        DATA SOURCE — SIDEBAR NAV (sidebar__nav)
@@ -28,9 +28,28 @@
         '<path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>' +
         '</svg>';
 
+    function escapeHtml(value) {
+        return String(value == null ? '' : value).replace(/[&<>"]|'/g, function (character) {
+            switch (character) {
+                case '&': return '&amp;';
+                case '<': return '&lt;';
+                case '>': return '&gt;';
+                case '"': return '&quot;';
+                case "'": return '&#39;';
+                default: return character;
+            }
+        });
+    }
+
+    function buildRnavLinkLabel(item) {
+        return item.live
+            ? '<span class="sidebar__live-badge">' + escapeHtml(item.label) + '</span>'
+            : escapeHtml(item.label);
+    }
+
     /* ═══════════════════════════════════════════
        RENDER — rnav-links (primary nav desktop)
-       Solo enlaces planos; badge para item live.
+       Enlaces planos y dropdown por hover/focus para items con children.
     ═══════════════════════════════════════════ */
     function buildRnavLinks(items) {
         var container = document.getElementById('rnavLinks');
@@ -39,10 +58,29 @@
         var html = '';
 
         items.forEach(function (item) {
-            html += '<a href="' + item.href + '">';
-            html += item.live
-                ? '<span class="sidebar__live-badge">' + item.label + '</span>'
-                : item.label;
+            var hasChildren = Array.isArray(item.children) && item.children.length > 0;
+
+            if (hasChildren) {
+                html += '<div class="rnav-item rnav-item--submenu">';
+                html += '<a class="rnav-link" href="' + escapeHtml(item.href) + '">';
+                html += buildRnavLinkLabel(item);
+                html += '<span class="rnav-link__caret" aria-hidden="true"></span>';
+                html += '</a>';
+                html += '<div class="rnav-dropdown" role="menu">';
+
+                item.children.forEach(function (child) {
+                    html += '<a class="rnav-dropdown__link" href="' + escapeHtml(child.href) + '">';
+                    html += escapeHtml(child.label);
+                    html += '</a>';
+                });
+
+                html += '</div>';
+                html += '</div>';
+                return;
+            }
+
+            html += '<a class="rnav-link" href="' + escapeHtml(item.href) + '">';
+            html += buildRnavLinkLabel(item);
             html += '</a>';
         });
 
