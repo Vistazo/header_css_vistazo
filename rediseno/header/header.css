@@ -124,7 +124,7 @@ body {
 
 .rnav-item--submenu:hover .rnav-link__caret,
 .rnav-item--submenu:focus-within .rnav-link__caret {
-    transform: rotate(225deg) translateY(1px);
+    transform: rotate(225deg) translateY(-1px);
 }
 
 .rnav-dropdown {
@@ -136,7 +136,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 4px;
-    background: #111;
+    background: #000;
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 4px;
     box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28);
@@ -169,7 +169,7 @@ body {
 
 .rnav-dropdown__link:hover {
     color: #fff;
-    background: #1a1a1a
+    background: #111
 }
 
 .primary-nav .rnav-right {
