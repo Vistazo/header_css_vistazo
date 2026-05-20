@@ -1337,6 +1337,9 @@
 .bloque-sostenibilidad .sos-uno .headline h2 {
     font-size: 24px;
 }
+.bloque-sostenibilidad .sos-uno .headline a {
+    text-decoration: underline;
+}
 
 .bloque-sostenibilidad .sos-uno .subheadline h3 {
     font-size: 16px;
