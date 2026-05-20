@@ -5,7 +5,7 @@ const REVISTAS_DATA_URL = "https://backoffice.bmcodigo.com/api/v1/revistas";
 const REVISTAS_STORAGE_KEY = "revistasDataCache";
 const REVISTAS_STORAGE_HASH_KEY = "revistasDataCacheHash";
 const REVISTAS_STORAGE_SYNC_KEY = "revistasDataCacheLastSync";
-const REVISTAS_SYNC_INTERVAL_MS = 10 * 60 * 1000;
+const REVISTAS_CACHE_TTL_MS = 15 * 60 * 1000;
 let _syncInProgress = false;
 
 function hashString(value) {
@@ -16,15 +16,16 @@ function hashString(value) {
   return (hash >>> 0).toString(16);
 }
 
-function shouldSyncCache() {
+function cacheAge() {
   try {
-    const lastSync = Number(
-      localStorage.getItem(REVISTAS_STORAGE_SYNC_KEY) || 0,
-    );
-    return Date.now() - lastSync > REVISTAS_SYNC_INTERVAL_MS;
+    return Date.now() - Number(localStorage.getItem(REVISTAS_STORAGE_SYNC_KEY) || 0);
   } catch (_) {
-    return true;
+    return Infinity;
   }
+}
+
+function shouldSyncCache() {
+  return cacheAge() > REVISTAS_CACHE_TTL_MS;
 }
 
 function markCacheSync() {
@@ -37,6 +38,7 @@ function markCacheSync() {
 
 function getRevistasFromStorage() {
   try {
+    if (cacheAge() > REVISTAS_CACHE_TTL_MS) return null;
     const cached = localStorage.getItem(REVISTAS_STORAGE_KEY);
     if (!cached) return null;
     const parsed = JSON.parse(cached);
