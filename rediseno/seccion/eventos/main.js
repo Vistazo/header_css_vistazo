@@ -752,7 +752,7 @@
 
       const token = await getToken();
       const data = await getEvents(token);
-      const event = data?.events?.find((item) => item?.isActive === true);
+      const event = data?.events?.find((item) => item?.status === "published");
 
       console.log("Evento encontrado:", event);
 
