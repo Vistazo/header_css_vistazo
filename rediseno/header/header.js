@@ -130,7 +130,10 @@
     function loadSecondaryNavFromApi() {
         var request = new XMLHttpRequest();
 
+        //Token lleva esta en el header de autorización, pero la API no lo valida actualmente. Se deja por si en el futuro se requiere autenticación.
+        let token = "465fb9d558c23515d37c7d3a63d59e2543e2ebaac7d7c81e4ae24c33b942f4ac"
         request.open('GET', SECONDARY_API_URL, true);
+        request.setRequestHeader('Authorization', 'Bearer ' + token);
         request.onreadystatechange = function () {
             if (request.readyState !== 4) return;
 
