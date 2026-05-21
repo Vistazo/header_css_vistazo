@@ -48,6 +48,7 @@
 
 .bloque-patrocinadores-eventos {
     padding: 0 12px;
+    margin-bottom: 52px;
 }
 
 
@@ -458,7 +459,7 @@
 
 .agenda-item__time-range {
     font-size: 15px;
-    font-weight: 700;
+    font-weight: 500;
     letter-spacing: 0.01em;
 }
 
@@ -487,7 +488,7 @@
     font-size: 15px;
     line-height: 1.2;
     color: #111;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 .agenda-item__speaker-role {
@@ -509,7 +510,7 @@
     line-height: 1.25;
     color: #111;
     text-transform: uppercase;
-    font-weight: 800;
+    font-weight: 500;
 }
 
 .agenda-item__description {
@@ -628,7 +629,7 @@
 
 @media (max-width: 767px) {
     .section-agenda {
-        padding: 48px 12px
+        padding: 48px 0px
     }
 
     .agenda-shell {
@@ -677,9 +678,9 @@
 
 
 @media (max-width: 640px) {
-    /* .item-portada {
-        min-height: 300px;
-    } */
+    .item-portada {
+        min-height: 460px;
+    }
 
     .item-portada__content {
         padding: 20px;
@@ -1061,5 +1062,6 @@
 @media (max-width: 480px) {
     body {
         padding: 16px 0 !important;
+        padding-top: calc(var(--vz-barra-blanca) + var(--vz-barra-negra)) !important;
     }
 }

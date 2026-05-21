@@ -192,7 +192,7 @@
   function buildCountdownUI() {
     conteo.innerHTML = `
       <span class="mensaje">¡Asegura tu cupo! El tiempo se agota</span>
-      <a href="#" class="btn-agenda">Ver agenda</a>
+      <a href="#agenda-ancla" class="btn-agenda">Ver agenda</a>
       <div class="conteo-wrapper">
         <span class="texto-faltan">Faltan:</span>
         <div class="timer-grid">
@@ -292,7 +292,7 @@
           <h2 class="agenda-title">Detalle las horas, paneles y conferencias magistrales que impulsarán el debate económico del país.</h2>
         </div>
         <div class="agenda-list"></div>
-        <div class="agenda-footer"><a href="#" class="btn-agenda">Registrarse</a></div>
+        <div class="agenda-footer"><a href="#form-ancla" class="btn-agenda">Registrarse</a></div>
       </div>
     `;
 
