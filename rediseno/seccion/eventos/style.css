@@ -744,6 +744,9 @@
 .seccion-eventos .field_elem[type="text"],
 .seccion-eventos .field_elem[type="date"],
 .seccion-eventos .field_elem[type="email"],
+.seccion-eventos .field_elem[type="tel"],
+.seccion-eventos select.field_elem,
+.seccion-eventos .field_elem,
 .seccion-eventos textarea.field_elem {
     width: 100%;
     box-sizing: border-box;
@@ -760,6 +763,9 @@
 
 .seccion-eventos .field_elem[type="text"]:focus,
 .seccion-eventos .field_elem[type="date"]:focus,
+.seccion-eventos .field_elem[type="email"]:focus,
+.seccion-eventos .field_elem[type="tel"]:focus,
+.seccion-eventos .field_elem:focus,
 .seccion-eventos textarea.field_elem:focus {
     border-color: #c0392b;
     box-shadow: 0 0 0 2px rgba(192, 57, 43, 0.12);
@@ -926,6 +932,104 @@
 
 .dialog_error .ui-resizable-handle {
     display: none;
+}
+
+.eventos-toast {
+    position: fixed;
+    left: 50%;
+    bottom: 24px;
+    transform: translate(-50%, 20px);
+    width: min(92vw, 420px);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 10000;
+    transition: transform 0.28s ease, opacity 0.28s ease;
+}
+
+.eventos-toast.is-visible {
+    transform: translate(-50%, 0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.eventos-toast__bar {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 16px;
+    border-radius: 14px;
+    background: rgba(17, 17, 17, 0.96);
+    color: #fff;
+    box-shadow: 0 16px 40px rgba(17, 17, 17, 0.22);
+    border-left: 4px solid #cc1114;
+    backdrop-filter: blur(8px);
+}
+
+.eventos-toast[data-type="success"] .eventos-toast__bar {
+    border-left-color: #419644;
+}
+
+.eventos-toast[data-type="error"] .eventos-toast__bar {
+    border-left-color: #cc1114;
+}
+
+.eventos-toast__content {
+    flex: 1;
+    min-width: 0;
+}
+
+.eventos-toast__title {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.eventos-toast .label_error {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.45;
+    font-weight: 500;
+    color: #fff;
+}
+
+.eventos-toast__close {
+    flex: 0 0 auto;
+    min-width: 52px;
+    height: 36px;
+    padding: 0 14px;
+    border: 0;
+    border-radius: 999px;
+    background: #fff;
+    color: #111;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.eventos-toast__close:hover {
+    transform: translateY(-1px);
+    background: #f1f1f1;
+}
+
+@media (max-width: 480px) {
+    .eventos-toast {
+        bottom: 14px;
+    }
+
+    .eventos-toast__bar {
+        padding: 12px 14px;
+        gap: 12px;
+    }
+
+    .eventos-toast__close {
+        min-width: 48px;
+        height: 34px;
+    }
 }
 
 /* cintillo  conteo */

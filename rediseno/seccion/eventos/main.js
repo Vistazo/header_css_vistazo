@@ -1,6 +1,7 @@
 (function () {
   const AUTH_API_URL = "https://backoffice.bmcodigo.com/api/public/auth/token";
   const EVENTS_API_URL = "https://backoffice.bmcodigo.com/api/events";
+  const EVENT_REGISTRATION_API_URL = "https://backoffice.bmcodigo.com/api/public/events";
   const SWIPER_CSS_URL = "https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css";
   const SWIPER_JS_URL = "https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js";
   const AUTH_CREDENTIALS = {
@@ -20,6 +21,8 @@
   const agendaContainer = document.querySelector(".section-agenda");
   let speakersSwiperInstance = null;
   let swiperAssetsPromise = null;
+  let registrationModal = null;
+  let registrationForm = null;
 
   const aperturaColSelector = ".apertura-art-formulario #col-50-50";
   const loadingClassName = "is-loading";
@@ -217,6 +220,102 @@
     `;
   }
 
+  function getRegistrationEndpoint(slug) {
+    if (!slug) {
+      return null;
+    }
+
+    return `${EVENT_REGISTRATION_API_URL}/${encodeURIComponent(slug)}/register`;
+  }
+
+  function normalizeModality(value) {
+    return value === "virtual" ? "virtual" : "presencial";
+  }
+
+  function ensureRegistrationModal() {
+    if (registrationModal) {
+      return registrationModal;
+    }
+
+    registrationModal = document.createElement("div");
+    registrationModal.className = "eventos-toast";
+    registrationModal.setAttribute("role", "status");
+    registrationModal.setAttribute("aria-live", "polite");
+    registrationModal.setAttribute("aria-atomic", "true");
+    registrationModal.style.display = "none";
+
+    registrationModal.innerHTML = `
+      <div class="eventos-toast__bar">
+        <div class="eventos-toast__content">
+          <span class="eventos-toast__title">Registro</span>
+          <div class="label_error"></div>
+        </div>
+        <button type="button" class="eventos-toast__close" aria-label="Cerrar">
+          OK
+        </button>
+      </div>
+    `;
+
+    document.body.appendChild(registrationModal);
+
+    const closeButton = registrationModal.querySelector(".eventos-toast__close");
+    let hideTimer = null;
+
+    const closeModal = () => {
+      if (hideTimer) {
+        window.clearTimeout(hideTimer);
+        hideTimer = null;
+      }
+
+      registrationModal.classList.remove("is-visible");
+      registrationModal.style.display = "none";
+      registrationModal.dataset.resetForm = "false";
+    };
+
+    closeButton.addEventListener("click", closeModal);
+
+    registrationModal.addEventListener("transitionend", () => {
+      if (!registrationModal.classList.contains("is-visible")) {
+        registrationModal.style.display = "none";
+      }
+    });
+
+    registrationModal._scheduleHide = (shouldReset) => {
+      if (hideTimer) {
+        window.clearTimeout(hideTimer);
+      }
+
+      hideTimer = window.setTimeout(() => {
+        if (shouldReset && registrationForm) {
+          registrationForm.reset();
+        }
+
+        closeModal();
+      }, 3500);
+    };
+
+    return registrationModal;
+  }
+
+  function showRegistrationModal(message, shouldResetForm = false, type = "success") {
+    const modal = ensureRegistrationModal();
+    const label = modal.querySelector(".label_error");
+    const title = modal.querySelector(".eventos-toast__title");
+
+    label.textContent = message || "";
+    title.textContent = type === "error" ? "Error" : "Registro";
+    modal.dataset.type = type === "error" ? "error" : "success";
+    modal.dataset.resetForm = shouldResetForm ? "true" : "false";
+    modal.style.display = "block";
+    requestAnimationFrame(() => {
+      modal.classList.add("is-visible");
+    });
+
+    if (typeof modal._scheduleHide === "function") {
+      modal._scheduleHide(shouldResetForm);
+    }
+  }
+
   function ensureAgendaLoading() {
     if (!agendaContainer) {
       return null;
@@ -411,13 +510,15 @@
     list.appendChild(fragment);
   }
 
-  function buildEventFormUI() {
+  function buildEventFormUI(event) {
     if (!formContainer) {
       return;
     }
 
+    const registrationEndpoint = getRegistrationEndpoint(event?.slug);
+
     formContainer.innerHTML = `
-      <form id="060d0483463711f1bd4e020017097938" action="/user-portlet/FormReceiver?formid=060d0483463711f1bd4e020017097938" method="POST" class="seccion-eventos" data-navigation="" data-usecaptcha="false" data-oklbl="OK " data-cancellbl="Cancelar" data-errormsg="Algún campo es incorrecto" novalidate="">
+      <form id="060d0483463711f1bd4e020017097938" action="${registrationEndpoint || "#"}" method="POST" class="seccion-eventos" data-navigation="" data-usecaptcha="false" data-oklbl="OK " data-cancellbl="Cancelar" data-errormsg="Algún campo es incorrecto" novalidate="">
         <div id="pages-060d0483463711f1bd4e020017097938">
           <div id="page-060d0483463711f1bd4e020017097938-1" class="field_form" name="XYZ_DEFAULT_TAB_NAME_ZYX">
             <div id="textheader-1" class="tab" style="display:none;">
@@ -427,17 +528,17 @@
             <div id="block-1" class="blocksfields">
               <div id="field_060d0483463711f1bd4e020017097938_060e1ced463711f1bd4e020017097938" class="field_form ">
                 <div class="campo_obligatorio">&nbsp;<div class="text_obligatorio"></div></div>
-                <div class="label_ant">Nombre completos</div>
+                <div class="label_ant">Nombre completo</div>
                 <div class="element_form">
-                  <input id="060d0483463711f1bd4e020017097938_060e1ced463711f1bd4e020017097938" name="nombrecompleto" type="text" value="" id_modal="060d0483463711f1bd4e020017097938_060e1ced463711f1bd4e020017097938_mod" confirmado="true" title="" placeholder="" tabindex="060d0483463711f1bd4e02001709793811000" class="field_elem" required="">
+                  <input id="060d0483463711f1bd4e020017097938_060e1ced463711f1bd4e020017097938" name="name" type="text" value="" id_modal="060d0483463711f1bd4e020017097938_060e1ced463711f1bd4e020017097938_mod" confirmado="true" title="" placeholder="" tabindex="060d0483463711f1bd4e02001709793811000" class="field_elem" required="">
                 </div>
                 <div class="label_pos"></div>
               </div>
               <div id="field_060d0483463711f1bd4e020017097938_060f23d7463711f1bd4e020017097938" class="field_form ">
                 <div class="campo_obligatorio">&nbsp;<div class="text_obligatorio"></div></div>
-                <div class="label_ant">Email Corporativo</div>
+                <div class="label_ant">Email corporativo</div>
                 <div class="element_form">
-                  <input id="060d0483463711f1bd4e020017097938_060f23d7463711f1bd4e020017097938" name="emailcorp" type="email" value="" id_modal="060d0483463711f1bd4e020017097938_060f23d7463711f1bd4e020017097938_mod" confirmado="true" title="" placeholder="" tabindex="060d0483463711f1bd4e02001709793812000" class="field_elem" required="">
+                  <input id="060d0483463711f1bd4e020017097938_060f23d7463711f1bd4e020017097938" name="email" type="email" value="" id_modal="060d0483463711f1bd4e020017097938_060f23d7463711f1bd4e020017097938_mod" confirmado="true" title="" placeholder="" tabindex="060d0483463711f1bd4e02001709793812000" class="field_elem" required="">
                 </div>
                 <div class="label_pos"></div>
               </div>
@@ -445,7 +546,7 @@
                 <div class="campo_obligatorio">&nbsp;<div class="text_obligatorio"></div></div>
                 <div class="label_ant">Teléfono de Contacto</div>
                 <div class="element_form">
-                  <input id="060d0483463711f1bd4e020017097938_060fb1e7463711f1bd4e020017097938" name="telefono" type="text" value="" id_modal="060d0483463711f1bd4e020017097938_060fb1e7463711f1bd4e020017097938_mod" confirmado="true" title="" placeholder="" tabindex="060d0483463711f1bd4e02001709793813000" class="field_elem" required="">
+                  <input id="060d0483463711f1bd4e020017097938_060fb1e7463711f1bd4e020017097938" name="phone" type="text" value="" id_modal="060d0483463711f1bd4e020017097938_060fb1e7463711f1bd4e020017097938_mod" confirmado="true" title="" placeholder="" tabindex="060d0483463711f1bd4e02001709793813000" class="field_elem" required="">
                 </div>
                 <div class="label_pos"></div>
               </div>
@@ -453,7 +554,7 @@
                 <div class="campo_obligatorio">&nbsp;<div class="text_obligatorio"></div></div>
                 <div class="label_ant">Cargo / Puesto</div>
                 <div class="element_form">
-                  <input id="060d0483463711f1bd4e020017097938_06106030463711f1bd4e020017097938" name="cargo" type="text" value="" id_modal="060d0483463711f1bd4e020017097938_06106030463711f1bd4e020017097938_mod" confirmado="true" title="" placeholder="" tabindex="060d0483463711f1bd4e02001709793814000" class="field_elem" required="">
+                  <input id="060d0483463711f1bd4e020017097938_06106030463711f1bd4e020017097938" name="role" type="text" value="" id_modal="060d0483463711f1bd4e020017097938_06106030463711f1bd4e020017097938_mod" confirmado="true" title="" placeholder="" tabindex="060d0483463711f1bd4e02001709793814000" class="field_elem" required="">
                 </div>
                 <div class="label_pos"></div>
               </div>
@@ -461,22 +562,18 @@
                 <div class="campo_obligatorio">&nbsp;<div class="text_obligatorio"></div></div>
                 <div class="label_ant">Empresa / Institución</div>
                 <div class="element_form">
-                  <input id="060d0483463711f1bd4e020017097938_e3cc29f9463711f1bd4e020017097938" name="Empresa" type="text" value="" id_modal="060d0483463711f1bd4e020017097938_e3cc29f9463711f1bd4e020017097938_mod" confirmado="true" title="" placeholder="" tabindex="060d0483463711f1bd4e02001709793815000" class="field_elem" required="">
+                  <input id="060d0483463711f1bd4e020017097938_e3cc29f9463711f1bd4e020017097938" name="company" type="text" value="" id_modal="060d0483463711f1bd4e020017097938_e3cc29f9463711f1bd4e020017097938_mod" confirmado="true" title="" placeholder="" tabindex="060d0483463711f1bd4e02001709793815000" class="field_elem" required="">
                 </div>
                 <div class="label_pos"></div>
               </div>
               <div id="field_060d0483463711f1bd4e020017097938_1862216f463811f1bd4e020017097938" class="field_form ">
                 <div class="campo_obligatorio">&nbsp;<div class="text_obligatorio"></div></div>
-                <div class="label_ant">¿Asistirá Presencial o Virtual?</div>
+                <div class="label_ant">Modalidad de asistencia</div>
                 <div class="element_form">
-                  <div class="radio_option">
-                    <input type="radio" name="asistira" id="060d0483463711f1bd4e020017097938_1862216f463811f1bd4e020017097938-1" title="" tabindex="NaN" class="field_elem" required="" value="presencial">
-                    <div class="radiobutton_label">Presencial</div>
-                  </div>
-                  <div class="radio_option">
-                    <input type="radio" name="asistira" id="060d0483463711f1bd4e020017097938_1862216f463811f1bd4e020017097938-2" title="" tabindex="NaN" class="field_elem" required="" value="virtual">
-                    <div class="radiobutton_label">Virtual</div>
-                  </div>
+                  <select id="060d0483463711f1bd4e020017097938_1862216f463811f1bd4e020017097938" name="modality" class="field_elem" required="">
+                    <option value="presencial" selected>Presencial</option>
+                    <option value="virtual">Virtual</option>
+                  </select>
                 </div>
                 <div class="label_pos"></div>
               </div>
@@ -488,6 +585,76 @@
         </div>
       </form>
     `;
+
+    registrationForm = formContainer.querySelector("form");
+
+    if (!registrationForm) {
+      return;
+    }
+
+    registrationForm.addEventListener("submit", async (submitEvent) => {
+      submitEvent.preventDefault();
+
+      if (!event?.slug || !event?.userId) {
+        showRegistrationModal("No se pudo identificar el evento para registrar.", false, "error");
+        return;
+      }
+
+      if (!registrationEndpoint) {
+        showRegistrationModal("No se encontró la ruta de registro del evento.", false, "error");
+        return;
+      }
+
+      const submitButton = registrationForm.querySelector('input[type="submit"]');
+      const payload = {
+        userId: event.userId,
+        name: registrationForm.elements.name.value.trim(),
+        email: registrationForm.elements.email.value.trim(),
+        phone: registrationForm.elements.phone.value.trim(),
+        role: registrationForm.elements.role.value.trim(),
+        company: registrationForm.elements.company.value.trim(),
+        modality: normalizeModality(registrationForm.elements.modality.value)
+      };
+
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.value = "Registrando...";
+      }
+
+      try {
+        const response = await fetch(registrationEndpoint, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(payload)
+        });
+
+        const responseText = await response.text();
+        let responseData = null;
+
+        try {
+          responseData = responseText ? JSON.parse(responseText) : null;
+        } catch (parseError) {
+          responseData = null;
+        }
+
+        const message = responseData?.message || (response.ok ? "Registro exitoso" : "No se pudo completar el registro");
+
+        if (!response.ok || responseData?.success === false) {
+          throw new Error(message);
+        }
+
+        showRegistrationModal(message, true, "success");
+      } catch (error) {
+        showRegistrationModal(error.message || "No se pudo completar el registro.", false, "error");
+      } finally {
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.value = "Registrarse";
+        }
+      }
+    });
   }
 
   function renderEvent(event) {
@@ -768,7 +935,7 @@
       setAllSectionState(true, false);
       setAperturaColState(true);
       renderEvent(event);
-      buildEventFormUI();
+      buildEventFormUI(event);
       buildCountdownUI();
       conteo.hidden = false;
 
