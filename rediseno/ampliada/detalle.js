@@ -47,6 +47,15 @@ function mostrarInstruccionesPermiso() {
 // Llamar automáticamente a la función al cargar la página
 solicitarPermisoNotificaciones();
 
+// Mover relacionadas debajo de la imagen
+document.addEventListener('DOMContentLoaded', function () {
+    const relacionadas = document.querySelector('.r_relacionadas');
+    const imagenBlock = document.querySelector('.R_AUTOR_IMG_REDES .mt-2');
+    if (relacionadas && imagenBlock) {
+        imagenBlock.insertAdjacentElement('afterend', relacionadas);
+    }
+});
+
 
 
 // Activar notificaciones asi la pagina las tenga desactivadas

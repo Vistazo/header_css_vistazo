@@ -1,38 +1,42 @@
-##----R_SEC_DATE_TIT_AU_SUB_IMG----
-#set($BrandedContent = {})
-#getAcAssignedExtendedAllCat_v1($BrandedContent "Branded_Content")
+##----R_AVA_TIT_TXT_AU----
 #set($sectionID = "#printAssignedSectionID_v1")
 #set ($varColorIter = $!iterVelocityTools.getVariable($sectionID , "color"))
-#set ($topcontent = $!iterVelocityTools.getVariable($sectionID , "printTopcontainer"))
+#set ($topcontent = "section")
 #set ($info = $!iterVelocityTools.getVariable("0" , "printInfo"))
-#set ($date = $!iterVelocityTools.getVariable("0" , "date"))
+#set ($date = "dd/MM/yyyy - HH:mm")
 #set ($hasImages = $articleToolbox.getNumImageTags("TeaserImage", "true"))
-
-#set ($vocabulary = $!iterVelocityTools.getVariable($sectionID , "vocabulary"))
-
 #set ($position = $!iterVelocityTools.getVelocityVariable("teaseritemposition"))
 #set ($last = $!iterVelocityTools.getVelocityVariable("lastteaseritempos"))
-
-#set($seccion = "#printTopcontainer_v1($!topcontent $!varColorIter $!vocabulary)")
-#set($seccion = $seccion.replaceAll('<div class="article-section" itemprop="articleSection">', '<h3 class="article-section" itemprop="articleSection">'))
-#set($seccion = $seccion.replaceAll('</div>', '</h3>'))
-
-#set($multimediaContent = "#getMultimediaIcon_v1('crop_500x490','','','','','', '', '100%', true)")
-#set($multimediaContent = $multimediaContent.replaceAll("<img", "<img loading=\"lazy\""))
-#set($dateMask = "EEEE, d MMMM yyyy - HH:mm")
-
-#set($hmAutores = {})
-#getAcAssignedCatExtended_v1($hmAutores "Vtz_Author")
-
-#if($BrandedContent.size() > 0)
-	#set($enVivo = $BrandedContent.get(0).name)
-#end
-
 
 #if( $!iterVelocityTools.getVelocityVariable("oddteaseritempos") == true)
 	#set ($oddeven = "odd" )
 #else
 	#set ($oddeven = "even" )
+#end
+
+##======================================================================
+## RECUPERAR AUTOR Y SU IMAGEN — CON FALLBACKS PARA NO QUEDAR EN BLANCO
+##======================================================================
+#set($hmAutores = {})
+#getAcAssignedCatExtended_v1($hmAutores "Vtz_Author")
+#set($hmAutor = $hmAutores.get(0))
+
+## 1) Intentar el artículo instrumental del autor
+#set($articuloInstrumental = $aboutCategoryArticles.getArticle($hmAutor.id))
+#set($imgAuthor = "")
+#if($articuloInstrumental && $articuloInstrumental != "")
+	## 2) Intentar el crop 300x300
+	#set($imgAuthor = $!articuloInstrumental.getImageTag("Image","0","crop_300x300","","","","","true","",""))
+
+	## 3) Si el crop 300x300 no existe, intentar crop estándar
+	#if(!$imgAuthor || $imgAuthor == "")
+		#set($imgAuthor = $!articuloInstrumental.getImageTag("Image","0","","","","","","true","",""))
+	#end
+
+	## 4) Como último intento, probar con "TeaserImage" en lugar de "Image"
+	#if(!$imgAuthor || $imgAuthor == "")
+		#set($imgAuthor = $!articuloInstrumental.getImageTag("TeaserImage","0","","","","","","true","",""))
+	#end
 #end
 
 #if( $!iterVelocityTools.getVelocityVariable("lastteaseritempos") == true && $position > 1 )
@@ -45,65 +49,49 @@
 	#set($templateClass = "no-media")
 #end
 
-<div class="R_SEC_DATE_TIT_AU_SUB_IMG $!oddeven n$!position $!last">
-
+<div class="R_AVA_TIT_TXT_AU $!oddeven n$!position $!last">
 	<div class="media_block">
-
+		<div class="multimedia">
+			#set($defaultImage = "https://codigomarret.online/upload/img/logo-vis.png")
+			#if($imgAuthor && $imgAuthor != "")
+				<div class="image_author" style="width: 48px">$!imgAuthor</div>
+			#else
+				<img width="48px" height="48px" src="$defaultImage"
+					alt="Autor: $!hmAutor.name" loading="lazy" decoding="async" />
+			#end
+		</div>
 		<div class="text_block $!templateClass">
-
-			<div class="">
-				#if($topcontent && $topcontent.data != "")
-
-				#if($BrandedContent && $BrandedContent.size() > 0)
-					#foreach ($elem in $BrandedContent)
-						#if($elem.name == "En vivo")
-							<div class="tag_envivo"> <img width="18" height="18" src="https://codigomarret.online/upload/img/envivopunto.svg"> <span>En vivo</span> </div>
-						#end
-					#end
-				#end
-				
-
-				<div class="sect-date"> 
-					$seccion
-
-					##FECHA	
-					<div class="inf2">
-						#printInfo_v1($info "-" $date)
-					</div>
-					##<div class="r-fecha">#printDate_v1($dateMask)</div>
-				
-				</div>
-
-					##HEADTITLE TIT		
-					<div class="headline">
-						<a href="#printAcUrl_v1"><h2>#getTeaserTitle_v1</h2></a>
-					</div>
-
-					##AUTOR NOMBRE
-					<div class="autor-nombre">Por: $!hmAutores.get(0).name</div>
-
-					##SUBHEADLINE SUB
-					<div class="subheadline">
-						<h3 style="color:$!varColorIter">#getTeaserSubheadline_v1(false)</h3>
-					</div>
-
-				#end
+			##HEADTITLE TIT
+			<div class="headline">
+				<a href="#printAcUrl_v1"><h2>#getTeaserTitle_v1</h2></a>
 			</div>
 
-		</div><!-- block2 -->
+			##INF2 ()
+			#*<div class="inf2">
+				#printInfo_v1($info "-" $date)
+			</div>*#
+			<div class="text_block2">
+				##TEXT TXT
+				#set ($totalSize = 250)
+				<div class="text">
+					#getTeaserText_v1($totalSize)
+				</div> <!-- Fin div text -->
+			</div><!-- text-block2 -->
 
+			##AUTOR NOMBRE
+			<div class="autor-nombre">Por: $!hmAutor.name</div>
 
-		#if($hasImages > 0)
-		
-			##MULTIMEDIA IMG
-			<div class="multimedia w-100" >
-
-				$multimediaContent
-
-			</div> <!-- multimedia -->
-		#end
-
-
-	</div><!-- block1 -->
-
+			##======================================================
+			## DEBUG TEMPORAL — quitar después de diagnosticar
+			## Comenta o borra este bloque cuando ya funcione
+			##======================================================
+			<!--
+			DEBUG R_AVA_TIT_TXT_AU posición $!position
+			- autor.id: $!hmAutor.id
+			- autor.name: $!hmAutor.name
+			- articuloInstrumental existe: #if($articuloInstrumental && $articuloInstrumental != "")SÍ#{else}NO#end
+			- imgAuthor vacío: #if(!$imgAuthor || $imgAuthor == "")SÍ#{else}NO#end
+			-->
+		</div><!-- text-block -->
+	</div>
 </div>

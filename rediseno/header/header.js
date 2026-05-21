@@ -20,7 +20,7 @@
        Se consume desde API externa con estructura:
        [{ label: string, href: string }]
     ═══════════════════════════════════════════ */
-    var SECONDARY_API_URL = 'https://backoffice.bmcodigo.com/api/v1/header-secundario';
+    var SECONDARY_API_URL = 'https://backoffice.bmcodigo.com/api/public/topics';
 
     /* ─── SVG: flecha sub-menú ─── */
     var ARROW_SVG =
