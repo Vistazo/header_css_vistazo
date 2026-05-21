@@ -140,10 +140,10 @@
             if (request.status >= 200 && request.status < 300) {
                 try {
                     var parsed = JSON.parse(request.responseText);
-                    if (Array.isArray(parsed)) {
-                        buildSecondaryNav(parsed);
-                        return;
-                    }
+                    // La API devuelve { data: [...] }
+                    var items = Array.isArray(parsed) ? parsed : (parsed.data || []);
+                    buildSecondaryNav(items);
+                    return;
                 } catch (e) {
                     console.error('Error parseando menú secundario:', e);
                 }
