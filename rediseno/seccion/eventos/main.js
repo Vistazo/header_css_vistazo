@@ -1,8 +1,6 @@
 (function () {
   const AUTH_API_URL = "https://backoffice.bmcodigo.com/api/public/auth/token";
   const EVENTS_API_URL = "https://backoffice.bmcodigo.com/api/events";
-  const SPEAKERS_API_URL =
-    "https://backoffice.bmcodigo.com/api/events/cmp445dee005p10yhyt8yscxg/speakers";
   const SWIPER_CSS_URL = "https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css";
   const SWIPER_JS_URL = "https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js";
   const AUTH_CREDENTIALS = {
@@ -11,6 +9,7 @@
     name: "Mi Sitio Web",
   };
   const ECUADOR_TIMEZONE = "America/Guayaquil";
+  const AGENDA_API_URL = "https://backoffice.bmcodigo.com/api/events";
 
   const allSection = document.querySelector(".all-section");
   const portada = document.querySelector(".item-portada");
@@ -18,6 +17,7 @@
   const sponsorsContainer = document.querySelector(".eve-sponsors");
   const speakersContainer = document.querySelector(".eve-speakers");
   const formContainer = document.querySelector(".item-form");
+  const agendaContainer = document.querySelector(".section-agenda");
   let speakersSwiperInstance = null;
   let swiperAssetsPromise = null;
 
@@ -150,11 +150,12 @@
       throw new Error(`Error obteniendo sponsors: ${response.status}`);
     }
 
-    return response.json();
+    const data = await response.json();
+    return data;
   }
 
-  async function getSpeakers(token) {
-    const response = await fetch(SPEAKERS_API_URL, {
+  async function getSpeakers(token, eventId) {
+    const response = await fetch(`${EVENTS_API_URL}/${eventId}/speakers`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -214,6 +215,200 @@
         </div>
       </div>
     `;
+  }
+
+  function ensureAgendaLoading() {
+    if (!agendaContainer) {
+      return null;
+    }
+
+    let loading = agendaContainer.querySelector(".agenda-loading");
+
+    if (!loading) {
+      loading = document.createElement("div");
+      loading.className = "agenda-loading";
+      loading.setAttribute("role", "status");
+      loading.setAttribute("aria-live", "polite");
+      loading.innerHTML = `
+        <span class="agenda-loading__spinner" aria-hidden="true"></span>
+        <span>Cargando agenda...</span>
+      `;
+      agendaContainer.appendChild(loading);
+    }
+
+    return loading;
+  }
+
+  function setAgendaState(isVisible, isLoading = false) {
+    if (!agendaContainer) {
+      return;
+    }
+
+    agendaContainer.hidden = !isVisible;
+    agendaContainer.classList.toggle("is-loading", isLoading);
+
+    const loading = agendaContainer.querySelector(".agenda-loading") || (isLoading ? ensureAgendaLoading() : null);
+
+    if (loading) {
+      loading.hidden = !isLoading;
+
+      if (!isLoading && loading.parentElement) {
+        loading.parentElement.removeChild(loading);
+      }
+    }
+  }
+
+  async function getAgenda(token, eventId) {
+    const response = await fetch(`${AGENDA_API_URL}/${eventId}/agenda`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error(`Error obteniendo agenda: ${response.status}`);
+    }
+
+    return response.json();
+  }
+
+  function formatAgendaTime(value) {
+    if (!value) {
+      return "--:--";
+    }
+
+    return value;
+  }
+
+  function renderAgenda(items = []) {
+    if (!agendaContainer) {
+      return;
+    }
+
+    agendaContainer.innerHTML = `
+      <div class="agenda-shell">
+        <div class="agenda-header">
+          <p class="agenda-kicker">Agenda Completa: La Jornada Estratégica</p>
+          <h2 class="agenda-title">Detalle las horas, paneles y conferencias magistrales que impulsarán el debate económico del país.</h2>
+        </div>
+        <div class="agenda-list"></div>
+        <div class="agenda-footer"><a href="#" class="btn-agenda">Registrarse</a></div>
+      </div>
+    `;
+
+    const list = agendaContainer.querySelector(".agenda-list");
+    const fragment = document.createDocumentFragment();
+
+    items
+      .slice()
+      .sort((a, b) => (a.order ?? 0) - (b.order ?? 0))
+      .forEach((item) => {
+        if (!item) {
+          return;
+        }
+
+        const card = document.createElement("article");
+        card.className = "agenda-item";
+
+        const time = document.createElement("div");
+        time.className = "agenda-item__time";
+        time.innerHTML = `
+          <span class="agenda-item__time-range">${formatAgendaTime(item.startTime)} - ${formatAgendaTime(item.endTime)}</span>
+        `;
+
+        const speaker = document.createElement("div");
+        speaker.className = "agenda-item__speaker";
+
+        const speakerAvatar = document.createElement("img");
+        speakerAvatar.className = "agenda-item__avatar";
+        speakerAvatar.src = item.speakerAvatar || "";
+        speakerAvatar.alt = item.speakerName || "Ponente";
+        speakerAvatar.loading = "lazy";
+        speakerAvatar.decoding = "async";
+
+        const speakerText = document.createElement("div");
+        speakerText.className = "agenda-item__speaker-text";
+
+        const speakerName = document.createElement("h3");
+        speakerName.className = "agenda-item__speaker-name";
+        speakerName.textContent = item.speakerName || "";
+
+        const speakerRole = document.createElement("p");
+        speakerRole.className = "agenda-item__speaker-role";
+        speakerRole.textContent = [item.speakerRole, item.speakerCompany].filter(Boolean).join(" / ");
+
+        speakerText.appendChild(speakerName);
+        speakerText.appendChild(speakerRole);
+        speaker.appendChild(speakerAvatar);
+        speaker.appendChild(speakerText);
+
+        const content = document.createElement("div");
+        content.className = "agenda-item__content";
+
+        const title = document.createElement("h4");
+        title.className = "agenda-item__title";
+        title.textContent = item.title || "";
+
+        const description = document.createElement("p");
+        description.className = "agenda-item__description";
+        description.textContent = item.description || "";
+
+        content.appendChild(title);
+        content.appendChild(description);
+
+        const actions = document.createElement("div");
+        actions.className = "agenda-item__actions";
+
+        if (item.downloadUrl) {
+          const download = document.createElement("a");
+          download.className = "agenda-item__download";
+          download.href = item.downloadUrl;
+          download.target = "_blank";
+          download.rel = "noopener noreferrer";
+          download.innerHTML = `
+            <span>Descargar material</span>
+            <span class="agenda-item__download-icon" aria-hidden="true">
+            <img src="https://backoffice.bmcodigo.com/uploads/images/aed76f06-234c-4da0-96b8-ac600eb7f413-1779319506149.webp" alt="Icono de descarga" loading="lazy" decoding="async">
+            </span>
+          `;
+          actions.appendChild(download);
+        }
+
+        if (item.videoUrl) {
+          const video = document.createElement("a");
+          video.className = "agenda-item__video";
+          video.href = item.videoUrl;
+          video.target = "_blank";
+          video.rel = "noopener noreferrer";
+          video.setAttribute("aria-label", `Ver video de ${item.title || "la agenda"}`);
+
+          const videoIcon = document.createElement("img");
+          videoIcon.src = "https://backoffice.bmcodigo.com/uploads/images/e0664494-ef81-47fd-b7c5-b93a58b5a13a-1779319506155.webp";
+          videoIcon.alt = "";
+          videoIcon.setAttribute("aria-hidden", "true");
+          videoIcon.loading = "lazy";
+          videoIcon.decoding = "async";
+          video.appendChild(videoIcon);
+
+          actions.appendChild(video);
+        }
+
+        card.appendChild(time);
+        card.appendChild(speaker);
+        card.appendChild(content);
+        card.appendChild(actions);
+        fragment.appendChild(card);
+      });
+
+    if (!items.length) {
+      const empty = document.createElement("p");
+      empty.className = "agenda-empty";
+      empty.textContent = "La agenda aún no tiene actividades publicadas.";
+      list.appendChild(empty);
+      return;
+    }
+
+    list.appendChild(fragment);
   }
 
   function buildEventFormUI() {
@@ -553,24 +748,17 @@
   async function init() {
     try {
       setAllSectionState(true, true);
+      setAgendaState(true, true);
 
       const token = await getToken();
       const data = await getEvents(token);
       const event = data?.events?.find((item) => item?.isActive === true);
 
+      console.log("Evento encontrado:", event);
+
       if (!event) {
         setAllSectionState(false, false);
-        if (sponsorsContainer) {
-          sponsorsContainer.innerHTML = "";
-        }
-        return;
-      }
-
-      const endMs = toEcuadorMs(event.endDate);
-      const nowMs = getNowInEcuadorMs();
-
-      if (nowMs > endMs) {
-        setAllSectionState(false, false);
+        setAgendaState(false, false);
         if (sponsorsContainer) {
           sponsorsContainer.innerHTML = "";
         }
@@ -585,6 +773,18 @@
       conteo.hidden = false;
 
       try {
+        const agendaData = await getAgenda(token, event.id);
+        renderAgenda(agendaData?.items || []);
+        setAgendaState(true, false);
+      } catch (agendaError) {
+        console.error(agendaError);
+        if (agendaContainer) {
+          agendaContainer.innerHTML = "";
+          agendaContainer.hidden = true;
+        }
+      }
+
+      try {
         const sponsorsData = await getSponsors(token, event.id);
         renderSponsors(sponsorsData?.sponsors || []);
       } catch (sponsorError) {
@@ -595,7 +795,7 @@
       }
 
       try {
-        const speakersData = await getSpeakers(token);
+        const speakersData = await getSpeakers(token, event.id);
         renderSpeakers(speakersData?.speakers || []);
     
         await initSpeakersSwiper();
@@ -607,13 +807,8 @@
       }
 
       const tick = () => {
-        const ok = actualizarConteo(endMs);
-        if (!ok) {
-          setAllSectionState(false, false);
-          if (sponsorsContainer) {
-            sponsorsContainer.innerHTML = "";
-          }
-        }
+        const endMs = toEcuadorMs(event.endDate);
+        actualizarConteo(endMs);
       };
 
       tick();
@@ -621,6 +816,7 @@
     } catch (error) {
       console.error(error);
       setAllSectionState(false, false);
+      setAgendaState(false, false);
       if (sponsorsContainer) {
         sponsorsContainer.innerHTML = "";
       }
