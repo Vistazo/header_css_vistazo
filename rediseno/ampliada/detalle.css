@@ -374,6 +374,15 @@
     font-size: 24px;
 }
 
+.ly-lbp .R_SEC_DATE_TIT_SUB .subheadline {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+}
+
+.ly-lbp .R_SEC_DATE_TIT_SUB .headline {
+    margin-bottom: 10px;
+}
+
 .masnoticias-derecha .headline h2,
 .masnoticias-izq-dos .headline h2 {
     font-size: 16px;
@@ -767,6 +776,15 @@
     .autor-social-footer {
         flex-direction: column;
         align-items: normal;
+    }
+
+    .ly-lbp .first-block:before {
+        background: transparent;
+
+    }
+
+    .ly-lbp .footer-right {
+        margin: auto;
     }
 
     .masnoticias-izq {
