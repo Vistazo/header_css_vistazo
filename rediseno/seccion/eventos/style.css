@@ -937,7 +937,7 @@
 .eventos-toast {
     position: fixed;
     left: 50%;
-    bottom: 24px;
+    top: 134px;
     transform: translate(-50%, 20px);
     width: min(92vw, 420px);
     opacity: 0;
@@ -961,16 +961,16 @@
     background: rgba(17, 17, 17, 0.96);
     color: #fff;
     box-shadow: 0 16px 40px rgba(17, 17, 17, 0.22);
-    border-left: 4px solid #cc1114;
+    /* border-left: 4px solid #cc1114; */
     backdrop-filter: blur(8px);
 }
 
 .eventos-toast[data-type="success"] .eventos-toast__bar {
-    border-left-color: #419644;
+    background: #419644;
 }
 
 .eventos-toast[data-type="error"] .eventos-toast__bar {
-    border-left-color: #cc1114;
+    background: #cc1114;
 }
 
 .eventos-toast__content {
@@ -979,7 +979,7 @@
 }
 
 .eventos-toast__title {
-    display: block;
+    display: none;
     margin-bottom: 4px;
     font-size: 12px;
     font-weight: 700;
