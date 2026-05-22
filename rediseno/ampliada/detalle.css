@@ -337,14 +337,40 @@
     /* Espacio adicional para evitar superposición con la línea */
 }
 
-.v3 {
+.ly-lbp .primer-bloque {
+    max-width: 800px;
+    margin: auto;
+}
+
+.ly-lbp .masrecientesforce .section-title {
+    margin-top: 70px;
+}
+
+.ly-lbp .tag_envivo {
+    margin-top: 52px;
+}
+
+.ly-lbp .first-block:before {
+    content: "";
+    pointer-events: none;
+    width: 200%;
+    height: 800px;
+    background: #F3F2ED;
+    position: absolute;
+    top: -80px;
+    padding: 0;
+    left: -100%;
+    z-index: -1;
+}
+
+.ly-lbp .v3 {
     background: #fff !important;
     padding: 20px !important;
     position: relative !important;
     /* Posicionamiento relativo para la línea general */
 }
 
-.r_item_post {
+.ly-lbp .r_item_post {
     position: relative !important;
     /* Importante para el posicionamiento de la línea */
     padding-left: 20px !important;
