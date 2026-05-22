@@ -294,6 +294,9 @@ div#iter-content-wrapper {
 }
 
 @media (max-width: 768px) {
+  div#iter-content-wrapper {
+    margin-top: 40px;
+  }
   .sect-date .date{
     font-size: 10px;
   }
