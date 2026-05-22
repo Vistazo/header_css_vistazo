@@ -1,0 +1,40 @@
+:root {
+    --gray: #D4D4D4;
+    --red: #CC1114;
+    --dark: #111;
+    --light: #f5f3ee;
+    --bone: #F3F2ED;
+    --bg-gray: #F3F5F8;
+}
+body {
+  font-family: 'Zalando Sans', sans-serif;
+}
+
+/* HEADER */
+.header{
+    height:600px;
+    background:url("https://backoffice.bmcodigo.com/uploads/images/04c3ff3b-a47f-48fd-800c-9e5d9b3779fc-1779479330579.webp") center/cover no-repeat;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    position: relative;
+    padding-left: 4rem;
+    padding-bottom: 4rem;
+}
+.header-overlay{
+    position:relative;
+    color:white;
+    max-width:700px;
+}
+.header h1 {
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.header p {
+    font-size: 16px;
+    font-weight: 400;
+    opacity: 0.9;
+    line-height: 1.2;
+}
+
