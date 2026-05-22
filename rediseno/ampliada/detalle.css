@@ -342,13 +342,18 @@
     margin: auto;
 }
 
+
+
 .ly-lbp .masrecientesforce .section-title {
     margin-top: 70px;
 }
 
-/* .ly-lbp .tag_envivo {
-    margin-top: 52px;
-} */
+.ly-lbp .tag_envivo {
+        background: transparent !important;
+        color: var(--red) !important;
+}
+
+
 
 .ly-lbp .first-block:before {
     content: "";
@@ -686,6 +691,11 @@
 
     .r_relacionadas h2 {
         font-size: 14px !important;
+    }
+
+    .r_html_post iframe {
+        width: 100% !important;
+        min-width: auto !important;
     }
 
     .cutline-byline {
