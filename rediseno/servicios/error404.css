@@ -5,9 +5,15 @@
 }
 body {
     font-family: "Zalando Sans", sans-serif;
+    padding-top: 0 !important;
 }
+
 .nav-fondo {
     display: none;
+}
+
+div#iter-content-wrapper {
+    margin-top: 0;
 }
 
 .hero {
