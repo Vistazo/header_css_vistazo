@@ -11,6 +11,9 @@ body {
 .nav-fondo {
     display: none;
 }
+.primary-nav {
+    position: inherit !important;
+}
 
 div#iter-content-wrapper {
     margin-top: 0;
