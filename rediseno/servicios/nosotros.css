@@ -39,7 +39,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.nav-fondo { display: none; }
+.nav-fondo {
+    display: none;
+}
+.primary-nav {
+    position: inherit !important;
+}
+
+div#iter-content-wrapper {
+    margin-top: 0;
+}
 
 .nav {
   display: flex;

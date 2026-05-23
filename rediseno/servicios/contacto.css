@@ -7,11 +7,15 @@ body {
     font-family: "Zalando Sans", sans-serif;
     background-color: #f3f2ed !important;
 }
-.nav-fondo{
+.nav-fondo {
     display: none;
 }
-.iter-header-wrapper{
-    margin-bottom: 4rem;
+.primary-nav {
+    position: inherit !important;
+}
+
+div#iter-content-wrapper {
+    margin-top: 0;
 }
 #main-content{
     margin-bottom: 4rem;
