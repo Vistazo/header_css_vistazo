@@ -339,12 +339,3 @@ div#iter-content-wrapper {
   }
 
 }
-
-.rh_seccion::after {
-  content: "";
-  display: block;
-  width: 30px;
-  height: 4px;
-  background: #BF2BBF;
-  margin-top: 8px;
-}
