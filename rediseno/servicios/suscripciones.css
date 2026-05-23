@@ -5,9 +5,20 @@
 }
 body {
   font-family: 'Zalando Sans', sans-serif;
+   padding-top: 0 !important;
 }
 .row>*{
     padding: 0;
+}
+.nav-fondo {
+    display: none;
+}
+.primary-nav {
+    position: inherit !important;
+}
+
+div#iter-content-wrapper {
+    margin-top: 0;
 }
 
 /* HEADER */
@@ -192,7 +203,7 @@ body {
   letter-spacing: -0.01em;
 }
 
-.faq-item:first-child{
+.faq-item:nth-child(1){
     border-bottom: 1px solid var(--color-divider);
 }
 
