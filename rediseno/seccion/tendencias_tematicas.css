@@ -49,7 +49,7 @@ div#iter-content-wrapper {
 
 /* Titulo del Bloque*/
 .section-title,
-.article-topics-portlet article.categoryListItem.categoryPageItem {
+.categoryList {
     position: relative;
     font-size: 13px;
     line-height: 16px;
