@@ -196,12 +196,15 @@ div#iter-content-wrapper {
 .listado_notas article:nth-child(8){
     border-bottom: 1px solid transparent;
 }
+    .iter-content-wrapper.iter-droppable-zone .row>* {
+        padding-right: 3%;
+        padding-left: 3%;
+    }
 }
 
 @media (max-width: 480px) {
     body {
-        padding: 0 !important;
+        padding-left: 0;
+        padding-right: 0;
     }
 }
-
-
