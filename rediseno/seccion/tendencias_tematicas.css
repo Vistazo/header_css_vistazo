@@ -73,6 +73,7 @@ div#iter-content-wrapper {
 }
 
 .section-title::after,
+.categoryList::after,
 .title-tag .article-topics-portlet article.categoryListItem.categoryPageItem::after {
     content: "";
     position: absolute;
