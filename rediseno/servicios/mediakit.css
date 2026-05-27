@@ -45,6 +45,9 @@ div#iter-content-wrapper {
     padding: 0 2rem;
     line-height: 1.2;
 }
+.date {
+    text-transform: none;
+} 
 
 /* EDITORIAL */
 .editorial.movil{

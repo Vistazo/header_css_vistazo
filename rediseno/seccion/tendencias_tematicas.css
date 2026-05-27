@@ -49,7 +49,7 @@ div#iter-content-wrapper {
 
 /* Titulo del Bloque*/
 .section-title,
-.title-tag.article-topics-portlet {
+.article-topics-portlet article.categoryListItem.categoryPageItem {
     position: relative;
     font-size: 13px;
     line-height: 16px;
@@ -59,7 +59,8 @@ div#iter-content-wrapper {
     margin-bottom: 36px;
 }
 .section-title .title,
-.title-tag .portlet-msg-alert {
+.title-tag .portlet-msg-alert,
+.article-topics-portlet article.categoryListItem.categoryPageItem a {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -68,10 +69,11 @@ div#iter-content-wrapper {
     text-transform: uppercase;
     font-weight: 600;
     margin-bottom: 15px;
+    color: #0d0c0c;
 }
 .section-title::after,
-.title-tag .portlet-msg-alert::after {
-    content: "";
+.title-tag .article-topics-portlet::after {
+    content: " ";
     position: absolute;
     left: 0;
     bottom: 0;
