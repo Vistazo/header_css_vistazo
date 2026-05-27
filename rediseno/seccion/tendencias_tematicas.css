@@ -68,12 +68,13 @@ div#iter-content-wrapper {
     line-height: 16px;
     text-transform: uppercase;
     font-weight: 600;
-    margin-bottom: 15px;
+    margin-bottom: 15px !important;
     color: #0d0c0c;
 }
+
 .section-title::after,
-.title-tag .article-topics-portlet::after {
-    content: " ";
+.title-tag .article-topics-portlet article.categoryListItem.categoryPageItem::after {
+    content: "";
     position: absolute;
     left: 0;
     bottom: 0;
@@ -81,6 +82,12 @@ div#iter-content-wrapper {
     height: 4px;
     width: 30px;
     background: var(--red);
+}
+
+.article-topics-portlet article.categoryListItem.categoryPageItem {
+    background-color: transparent !important;
+    padding: 0 !important;
+    clip-path: none !important;
 }
 
 /* ======== DESTACADAS ======== */
