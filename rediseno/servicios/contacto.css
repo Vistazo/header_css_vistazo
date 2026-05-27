@@ -251,7 +251,7 @@ div#iter-content-wrapper {
 
 @media(max-width:768px){
     .areas {
-        padding: 3.5rem 0px 10px;
+        padding: 3.5rem 0px 10px !important;
     }
     .header-contacto{
         background-position: right;
@@ -269,10 +269,6 @@ div#iter-content-wrapper {
 
     .faq-answer p{
         font-size:16px;
-    }
-    .iter-content-wrapper.iter-droppable-zone .row>*{
-        padding-right: 7%;
-        padding-left: 7%;
     }
     .container{
         padding-right: var(--bs-gutter-x, .75rem);
