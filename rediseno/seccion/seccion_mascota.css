@@ -84,6 +84,8 @@ div#iter-content-wrapper {
   padding: 5px 0;
   position: relative;
   transition: color 0.3s ease;
+    font-weight: bold;
+    font-size: 16px;
 }
 
 /* Hover */
