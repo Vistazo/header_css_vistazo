@@ -1680,9 +1680,8 @@
 
 .ultimos-videos-dots {
     position: relative !important;
-    display: flex !important;
-    justify-content: center;
-    gap: 8px;
+    display: block !important;
+    text-align: center !important;
     margin-top: 20px;
     bottom: auto !important;
     left: auto !important;
