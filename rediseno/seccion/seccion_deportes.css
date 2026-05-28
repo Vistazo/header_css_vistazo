@@ -28,6 +28,7 @@ div#iter-content-wrapper {
 
 .tit_sec{
   margin-bottom: 2rem;
+  margin-top: 2rem;
 }
 .tit_sec .titlesec span{
   font-size: 40px;
@@ -55,6 +56,10 @@ div#iter-content-wrapper {
   line-height: 16px;
   font-weight: 400;
   margin: 1.2rem 0 0 0;
+}
+
+.row.r02{
+    margin-top: 1.5rem;
 }
 
 /* ======== NOTA PRINCIPAL ======== */
@@ -155,6 +160,9 @@ div#iter-content-wrapper {
     padding: 10px 0 25px 0;
     margin-bottom: 25px;
   }
+  .row.r02{
+    margin-top: -1.5rem;
+}
 }
 
 @media (width: 768px) {
