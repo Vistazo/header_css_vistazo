@@ -1571,6 +1571,159 @@
     fill: #fff;
 }
 
+/* ── Últimos videos ── */
+.ultimos-videos-container {
+    background: var(--dark);
+    padding: 24px 20px 32px;
+}
+
+.ultimos-videos-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.ultimos-videos-title {
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+}
+
+.ultimos-videos-line {
+    flex: 1;
+    height: 2px;
+    background: var(--red);
+}
+
+.ultimos-videos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.ultimos-videos-card {
+    cursor: pointer;
+}
+
+.ultimos-videos-thumb {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.ultimos-videos-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.ultimos-videos-card:hover .ultimos-videos-thumb img {
+    transform: scale(1.04);
+}
+
+.ultimos-videos-play-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.25);
+    transition: background 0.2s;
+}
+
+.ultimos-videos-card:hover .ultimos-videos-play-overlay {
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.ultimos-videos-play-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 16px;
+    padding-left: 3px;
+}
+
+.ultimos-videos-card-title {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.35;
+    margin: 0 0 8px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.ultimos-videos-meta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #fff;
+    font-size: 13px;
+}
+
+.ultimos-videos-play-icon {
+    font-size: 11px;
+}
+
+.ultimos-videos-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.ultimos-videos-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--gray);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.2s;
+}
+
+.ultimos-videos-dot.active {
+    background: var(--red);
+}
+
+/* móvil: scroll horizontal */
+@media (max-width: 768px) {
+    .ultimos-videos-grid {
+        grid-template-columns: unset;
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 16px;
+        scrollbar-width: none;
+    }
+
+    .ultimos-videos-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .ultimos-videos-card {
+        flex: 0 0 80%;
+        scroll-snap-align: start;
+    }
+}
+
 /* ── Modal video ── */
 .video-modal-overlay {
     display: none;

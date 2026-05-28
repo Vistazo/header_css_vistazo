@@ -703,6 +703,132 @@ function initCartasSwiper() {
   loadCartas();
 }
 
+/* ── Función: últimos videos ── */
+function initUltimosVideos() {
+  const grid = document.getElementById("ultimosVideosGrid");
+  const dotsContainer = document.getElementById("ultimosVideosDots");
+  if (!grid || !dotsContainer) return;
+
+  const playlistId = "x9si9u";
+
+  const overlay = document.createElement("div");
+  overlay.className = "video-modal-overlay";
+  overlay.innerHTML =
+    '<div class="video-modal-inner">' +
+      '<button class="video-modal-close" aria-label="Cerrar">&#x2715;</button>' +
+      '<iframe id="ultimosModalPlayer" src="about:blank" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen></iframe>' +
+    "</div>";
+  document.body.appendChild(overlay);
+
+  const modalPlayer = overlay.querySelector("#ultimosModalPlayer");
+
+  function openModal(videoId) {
+    modalPlayer.src =
+      "https://www.dailymotion.com/embed/video/" +
+      videoId +
+      "?autoplay=1&queue-enable=false&sharing-enable=false";
+    overlay.classList.add("active");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeModal() {
+    overlay.classList.remove("active");
+    modalPlayer.src = "about:blank";
+    document.body.style.overflow = "";
+  }
+
+  overlay.querySelector(".video-modal-close").addEventListener("click", closeModal);
+  overlay.addEventListener("click", (e) => { if (e.target === overlay) closeModal(); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeModal(); });
+
+  function formatDuration(seconds) {
+    const min = Math.floor(seconds / 60);
+    const sec = String(seconds % 60).padStart(2, "0");
+    return min + ":" + sec;
+  }
+
+  function buildDots(count) {
+    dotsContainer.innerHTML = "";
+    for (let i = 0; i < count; i++) {
+      const dot = document.createElement("button");
+      dot.className = "ultimos-videos-dot" + (i === 0 ? " active" : "");
+      dot.setAttribute("aria-label", "Ir al video " + (i + 1));
+      dot.addEventListener("click", () => {
+        const cards = grid.querySelectorAll(".ultimos-videos-card");
+        if (cards[i]) {
+          cards[i].scrollIntoView({ behavior: "smooth", inline: "start", block: "nearest" });
+          setActiveDot(i);
+        }
+      });
+      dotsContainer.appendChild(dot);
+    }
+  }
+
+  function setActiveDot(index) {
+    dotsContainer.querySelectorAll(".ultimos-videos-dot").forEach((d, i) => {
+      d.classList.toggle("active", i === index);
+    });
+  }
+
+  let ticking = false;
+  grid.addEventListener("scroll", () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        const cards = grid.querySelectorAll(".ultimos-videos-card");
+        let closestIndex = 0;
+        let closestDistance = Infinity;
+        cards.forEach((card, i) => {
+          const distance = Math.abs(card.offsetLeft - grid.scrollLeft);
+          if (distance < closestDistance) {
+            closestDistance = distance;
+            closestIndex = i;
+          }
+        });
+        setActiveDot(closestIndex);
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+
+  fetch(
+    "https://api.dailymotion.com/playlist/" +
+      playlistId +
+      "/videos?fields=id,title,thumbnail_720_url,thumbnail_480_url,thumbnail_240_url,duration&limit=3",
+  )
+    .then((res) => res.json())
+    .then((data) => {
+      if (!data.list || data.list.length === 0) {
+        grid.innerHTML = '<p class="ultimos-videos-empty">No hay videos disponibles.</p>';
+        return;
+      }
+      data.list.forEach((video) => {
+        const img = video.thumbnail_720_url || video.thumbnail_480_url || video.thumbnail_240_url;
+        const card = document.createElement("article");
+        card.className = "ultimos-videos-card";
+        card.innerHTML =
+          '<div class="ultimos-videos-thumb">' +
+            '<img src="' + img + '" alt="' + video.title + '" loading="lazy">' +
+            '<div class="ultimos-videos-play-overlay">' +
+              '<div class="ultimos-videos-play-btn">&#9654;</div>' +
+            "</div>" +
+          "</div>" +
+          '<h3 class="ultimos-videos-card-title">' + video.title + "</h3>" +
+          '<div class="ultimos-videos-meta">' +
+            '<span class="ultimos-videos-play-icon">&#9654;</span>' +
+            "<span>" + formatDuration(video.duration) + "</span>" +
+          "</div>";
+        card.addEventListener("click", () => openModal(video.id));
+        grid.appendChild(card);
+      });
+      buildDots(data.list.length);
+    })
+    .catch((err) => {
+      grid.innerHTML = '<p class="ultimos-videos-error">Error al cargar videos.</p>';
+      console.error(err);
+    });
+}
+
 /* ── Init ── */
 setTimeout(() => {
   aperturaRevista();
@@ -727,6 +853,7 @@ setTimeout(() => {
       initVideosSwiper();
       initPatrocinadoSwiper();
       initCartasSwiper();
+      initUltimosVideos();
     };
 
     document.body.appendChild(script);
