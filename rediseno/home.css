@@ -1681,7 +1681,7 @@
 }
 
 .ultimos-videos-dots {
-    display: flex;
+    display: none;
     justify-content: center;
     gap: 8px;
     margin-top: 20px;
@@ -1720,6 +1720,10 @@
     .ultimos-videos-card {
         flex: 0 0 80%;
         scroll-snap-align: start;
+    }
+
+    .ultimos-videos-dots {
+        display: flex;
     }
 }
 
