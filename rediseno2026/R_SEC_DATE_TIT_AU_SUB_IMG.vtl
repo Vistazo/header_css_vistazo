@@ -1,42 +1,38 @@
-##----R_AVA_TIT_TXT_AU----
+##----R_SEC_DATE_TIT_SUB_IMG----
+#set($BrandedContent = {})
+#getAcAssignedExtendedAllCat_v1($BrandedContent "Branded_Content")
 #set($sectionID = "#printAssignedSectionID_v1")
 #set ($varColorIter = $!iterVelocityTools.getVariable($sectionID , "color"))
-#set ($topcontent = "section")
+#set ($topcontent = $!iterVelocityTools.getVariable($sectionID , "printTopcontainer"))
 #set ($info = $!iterVelocityTools.getVariable("0" , "printInfo"))
-#set ($date = "dd/MM/yyyy - HH:mm")
+#set ($date = $!iterVelocityTools.getVariable("0" , "date"))
 #set ($hasImages = $articleToolbox.getNumImageTags("TeaserImage", "true"))
+
+#set ($vocabulary = $!iterVelocityTools.getVariable($sectionID , "vocabulary"))
+
 #set ($position = $!iterVelocityTools.getVelocityVariable("teaseritemposition"))
 #set ($last = $!iterVelocityTools.getVelocityVariable("lastteaseritempos"))
+
+#set($seccion = "#printTopcontainer_v1($!topcontent $!varColorIter $!vocabulary)")
+#set($seccion = $seccion.replaceAll('<div class="article-section" itemprop="articleSection">', '<h3 class="article-section" itemprop="articleSection">'))
+#set($seccion = $seccion.replaceAll('</div>', '</h3>'))
+
+#set($multimediaContent = "#getMultimediaIcon_v1('crop_500x490','','','','','', '', '100%', true)")
+#set($multimediaContent = $multimediaContent.replaceAll("<img", "<img loading=\"lazy\""))
+#set($dateMask = "EEEE, d MMMM yyyy - HH:mm")
+
+#set($hmAutores = {})
+#getAcAssignedCatExtended_v1($hmAutores "Vtz_Author")
+
+#if($BrandedContent.size() > 0)
+	#set($enVivo = $BrandedContent.get(0).name)
+#end
+
 
 #if( $!iterVelocityTools.getVelocityVariable("oddteaseritempos") == true)
 	#set ($oddeven = "odd" )
 #else
 	#set ($oddeven = "even" )
-#end
-
-##======================================================================
-## RECUPERAR AUTOR Y SU IMAGEN — CON FALLBACKS PARA NO QUEDAR EN BLANCO
-##======================================================================
-#set($hmAutores = {})
-#getAcAssignedCatExtended_v1($hmAutores "Vtz_Author")
-#set($hmAutor = $hmAutores.get(0))
-
-## 1) Intentar el artículo instrumental del autor
-#set($articuloInstrumental = $aboutCategoryArticles.getArticle($hmAutor.id))
-#set($imgAuthor = "")
-#if($articuloInstrumental && $articuloInstrumental != "")
-	## 2) Intentar el crop 300x300
-	#set($imgAuthor = $!articuloInstrumental.getImageTag("Image","0","crop_300x300","","","","","true","",""))
-
-	## 3) Si el crop 300x300 no existe, intentar crop estándar
-	#if(!$imgAuthor || $imgAuthor == "")
-		#set($imgAuthor = $!articuloInstrumental.getImageTag("Image","0","","","","","","true","",""))
-	#end
-
-	## 4) Como último intento, probar con "TeaserImage" en lugar de "Image"
-	#if(!$imgAuthor || $imgAuthor == "")
-		#set($imgAuthor = $!articuloInstrumental.getImageTag("TeaserImage","0","","","","","","true","",""))
-	#end
 #end
 
 #if( $!iterVelocityTools.getVelocityVariable("lastteaseritempos") == true && $position > 1 )
@@ -49,49 +45,136 @@
 	#set($templateClass = "no-media")
 #end
 
-<div class="R_AVA_TIT_TXT_AU $!oddeven n$!position $!last">
+<div class="R_SEC_DATE_TIT_AU_SUB_IMG $!oddeven n$!position $!last">
+<script type="application/ld+json"></script>
+<script type="aplicación/ld+json">
+	{
+		"@context": "http://schema.org",
+		"@type": "PáginaColección",
+		"description": "Portal digital de la primera revista del Ecuador especializada en análisis de temas políticos y periodismo investigativo. | Vistazo",
+		"url": "https://www.vistazo.com/",
+		"inLanguage": "son",
+		"name": "Vistazo",
+		"editor": {
+		"@id": "https://www.vistazo.com"
+		},
+		"titular de derechos de autor": {
+		"@id": "https://www.vistazo.com"
+		},
+		"organización fuente": {
+		"@id": "https://www.vistazo.com/"
+		},
+		"copyrightAño": 2025
+	}
+	</script>
 	<div class="media_block">
-		<div class="multimedia">
-			#set($defaultImage = "https://codigomarret.online/upload/img/logo-vis.png")
-			#if($imgAuthor && $imgAuthor != "")
-				<div class="image_author" style="width: 48px">$!imgAuthor</div>
-			#else
-				<img width="48px" height="48px" src="$defaultImage"
-					alt="Autor: $!hmAutor.name" loading="lazy" decoding="async" />
-			#end
-		</div>
+
 		<div class="text_block $!templateClass">
-			##HEADTITLE TIT
-			<div class="headline">
-				<a href="#printAcUrl_v1"><h2>#getTeaserTitle_v1</h2></a>
+            ##SECTION INF1
+			<div class="">
+				#if($topcontent && $topcontent.data != "")
+
+				<div class="sect-date"> 
+					$seccion
+
+					##FECHA	
+					<div class="inf2">
+						#printInfo_v1($info "-" $date)
+					</div>
+					##<div class="r-fecha">#printDate_v1($dateMask)</div>
+				</div>
+
+                ##HEADTITLE TIT		
+                <div class="headline">
+                    <a href="#printAcUrl_v1"><h2>#getTeaserTitle_v1</h2></a>
+                </div>
+
+                ##SUBHEADLINE SUB
+                <div class="subheadline">
+                    <h3 style="color:$!varColorIter">#getTeaserSubheadline_v1(false)</h3>
+                </div>
+                
+                ##PARA EN VIVO
+					#*#if($enVivo)
+						<div class="text-center" style="display:flex; align-self:start; margin-top:10px;">
+							<div class="border_envivo text-center" 
+								style="width: 100px; border: 1px solid #fa1404; border-radius: 2px; cursor: pointer; background-color:#fa1404;
+								height:26px; display:flex; justify-content: center; align-items:center">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="25px" height="25px">
+									<circle cx="24" cy="24" r="6" fill="#FFF" />
+									<path fill="#FFF" d="M17.09,16.789L14.321,13.9C11.663,16.448,10,20.027,10,24s1.663,7.552,4.321,10.1l2.769-2.889 C15.19,29.389,14,26.833,14,24C14,21.167,15.19,18.61,17.09,16.789z" />
+									<path fill="#FFF" d="M33.679,13.9l-2.769,2.889C32.81,18.611,34,21.167,34,24c0,2.833-1.19,5.389-3.09,7.211l2.769,2.889 C36.337,31.552,38,27.973,38,24S36.337,16.448,33.679,13.9z" />
+									<g>
+										<path fill="#FFF" d="M11.561,11.021l-2.779-2.9C4.605,12.125,2,17.757,2,24s2.605,11.875,6.782,15.879l2.779-2.9 C8.142,33.701,6,29.1,6,24S8.142,14.299,11.561,11.021z" />
+										<path fill="#FFF" d="M39.218,8.121l-2.779,2.9C39.858,14.299,42,18.9,42,24s-2.142,9.701-5.561,12.979l2.779,2.9 C43.395,35.875,46,30.243,46,24S43.395,12.125,39.218,8.121z" />
+									</g>
+								</svg>
+								<span style="font-size: 12px; font-weight: bold; color: #FFF; text-transform: uppercase; letter-spacing: 1px;">$enVivo</span>
+							</div>
+						</div>
+					#end*#
+				#end
 			</div>
+		</div><!-- block2 -->
 
-			##INF2 ()
-			#*<div class="inf2">
-				#printInfo_v1($info "-" $date)
-			</div>*#
-			<div class="text_block2">
-				##TEXT TXT
-				#set ($totalSize = 250)
-				<div class="text">
-					#getTeaserText_v1($totalSize)
-				</div> <!-- Fin div text -->
-			</div><!-- text-block2 -->
+	#if($hasImages > 0)
+		
+		##MULTIMEDIA IMG
+			<div class="multimedia w-100" >
 
-			##AUTOR NOMBRE
-			<div class="autor-nombre">Por: $!hmAutor.name</div>
+				#getMultimediaIcon_v1("crop_301x187","","","","","", "", "100%", true)
 
-			##======================================================
-			## DEBUG TEMPORAL — quitar después de diagnosticar
-			## Comenta o borra este bloque cuando ya funcione
-			##======================================================
-			<!--
-			DEBUG R_AVA_TIT_TXT_AU posición $!position
-			- autor.id: $!hmAutor.id
-			- autor.name: $!hmAutor.name
-			- articuloInstrumental existe: #if($articuloInstrumental && $articuloInstrumental != "")SÍ#{else}NO#end
-			- imgAuthor vacío: #if(!$imgAuthor || $imgAuthor == "")SÍ#{else}NO#end
-			-->
-		</div><!-- text-block -->
-	</div>
+			</div> <!-- multimedia -->
+		#end
+
+	</div><!-- block1 -->
+
+    <script type="application/javascript">
+  var url_actual = window.location.href;
+  var titulo = document.querySelector('h1').innerText;
+  var descripcion = document.querySelector('h2').innerText;
+  var articleBody = document.querySelector('.lead destacado') ? document.querySelector('.lead destacado').innerText : '';
+  var articleSection = document.querySelector('.breadcrumb') ? document.querySelector('.breadcrumb').innerText : '';
+  var datePublished = document.querySelector('.date') ? document.querySelector('.date').innerText : '';
+  var dateModified = document.querySelector('.date') ? document.querySelector('.date').innerText : '';
+  var imageElement = document.querySelector('.lazyloaded') ? document.querySelector('.lazyloaded') : '';
+  var image = imageElement ? imageElement.src : '';
+  
+  var newsArticle = {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": url_actual
+    },
+    "headline": titulo,
+    "description": descripcion,
+    "url": url_actual,
+    "articleSection": articleSection, // Usar 'articleSection' en lugar de 'titulo' aquí
+    "inLanguage": "es",
+    "datePublished": datePublished,
+    "dateModified": dateModified,
+    "author": {
+      "@type": "Person",
+      "name": "EFE y Redacción",
+      "url": "https://www.vistazo.com/cronologia/-/meta/efe-y-redaccion"
+    },
+    "image": {
+      "@type": "ImageObject",
+      "url": image
+    },
+    "articleBody": articleBody,
+    "publisher": {
+      "@type": "Organization",
+      "name": "Vistazo",
+      "logo": {
+        "@type": "ImageObject",
+        "url": image
+      }
+    }
+  };
+
+  console.log(newsArticle);
+  document.querySelector('script[type="application/ld+json"]').innerText = JSON.stringify(newsArticle);
+</script>
 </div>

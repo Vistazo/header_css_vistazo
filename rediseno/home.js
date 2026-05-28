@@ -356,6 +356,39 @@ function initVideosSwiper() {
   const player = document.getElementById("mainVideoPlayer");
   const carousel = document.getElementById("videoCarousel");
 
+  // Crear modal una sola vez
+  const overlay = document.createElement("div");
+  overlay.className = "video-modal-overlay";
+  overlay.innerHTML = `
+    <div class="video-modal-inner">
+      <button class="video-modal-close" aria-label="Cerrar">&#x2715;</button>
+      <iframe id="modalVideoPlayer" src="about:blank" allow="autoplay; fullscreen" allowfullscreen></iframe>
+    </div>
+  `;
+  document.body.appendChild(overlay);
+
+  const modalPlayer = overlay.querySelector("#modalVideoPlayer");
+
+  function openModal(videoId) {
+    modalPlayer.src = `https://www.dailymotion.com/embed/video/${videoId}?autoplay=1`;
+    overlay.classList.add("active");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeModal() {
+    overlay.classList.remove("active");
+    modalPlayer.src = "about:blank";
+    document.body.style.overflow = "";
+  }
+
+  overlay.querySelector(".video-modal-close").addEventListener("click", closeModal);
+  overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) closeModal();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeModal();
+  });
+
   fetch(
     `https://api.dailymotion.com/playlist/${playlistId}/videos?fields=id,title,thumbnail_240_url,duration&limit=12`,
   )
@@ -385,7 +418,7 @@ function initVideosSwiper() {
                 `;
 
         div.addEventListener("click", () => {
-          player.src = `https://www.dailymotion.com/embed/video/${video.id}?autoplay=1`;
+          openModal(video.id);
         });
 
         carousel.appendChild(div);
@@ -409,8 +442,8 @@ function initVideosSwiper() {
     },
     breakpoints: {
       640: { slidesPerView: 2.5, spaceBetween: 20 },
-      1024: { slidesPerView: 3, spaceBetween: 24 },
-      1280: { slidesPerView: 3, spaceBetween: 24 },
+      1024: { slidesPerView: 6, spaceBetween: 24 },
+      1280: { slidesPerView: 6, spaceBetween: 24 },
     },
   });
 }
