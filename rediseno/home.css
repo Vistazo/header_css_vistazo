@@ -1594,14 +1594,12 @@
 .ultimos-videos-line {
     width: 100%;
     height: 2px;
-    background: var(--red);
+    background: linear-gradient(to right, var(--red) 40px, rgba(255, 255, 255, 0.25) 40px);
     display: block;
 }
 
 .ultimos-videos-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    overflow: hidden;
 }
 
 .ultimos-videos-card {
@@ -1681,50 +1679,17 @@
 }
 
 .ultimos-videos-dots {
-    display: none;
-    justify-content: center;
-    gap: 8px;
     margin-top: 20px;
 }
 
-.ultimos-videos-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: var(--gray);
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    transition: background 0.2s;
+.ultimos-videos-dots .swiper-pagination-bullet {
+    background: rgba(255, 255, 255, 0.5) !important;
+    width: 10px !important;
+    height: 10px !important;
 }
 
-.ultimos-videos-dot.active {
-    background: var(--red);
-}
-
-/* móvil: scroll horizontal */
-@media (max-width: 768px) {
-    .ultimos-videos-grid {
-        grid-template-columns: unset;
-        display: flex;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        gap: 16px;
-        scrollbar-width: none;
-    }
-
-    .ultimos-videos-grid::-webkit-scrollbar {
-        display: none;
-    }
-
-    .ultimos-videos-card {
-        flex: 0 0 80%;
-        scroll-snap-align: start;
-    }
-
-    .ultimos-videos-dots {
-        display: flex;
-    }
+.ultimos-videos-dots .swiper-pagination-bullet-active {
+    background: var(--red) !important;
 }
 
 /* ── Modal video ── */

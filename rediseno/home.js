@@ -704,13 +704,24 @@ function initCartasSwiper() {
 }
 
 /* ── Función: últimos videos ── */
+/* ── Función: últimos videos ── */
 function initUltimosVideos() {
-  const grid = document.getElementById("ultimosVideosGrid");
-  const dotsContainer = document.getElementById("ultimosVideosDots");
-  if (!grid || !dotsContainer) return;
+  const gridEl = document.getElementById("ultimosVideosGrid");
+  const dotsEl = document.getElementById("ultimosVideosDots");
+  if (!gridEl || !dotsEl) return;
 
   const playlistId = "x9si9u";
 
+  // Montar estructura Swiper en el contenedor existente
+  gridEl.classList.add("swiper", "ultimos-videos-swiper");
+  const wrapper = document.createElement("div");
+  wrapper.className = "swiper-wrapper";
+  gridEl.appendChild(wrapper);
+
+  // Usar dotsEl como paginación Swiper
+  dotsEl.className = "ultimos-videos-dots swiper-pagination";
+
+  // Modal
   const overlay = document.createElement("div");
   overlay.className = "video-modal-overlay";
   overlay.innerHTML =
@@ -747,50 +758,6 @@ function initUltimosVideos() {
     return min + ":" + sec;
   }
 
-  function buildDots(count) {
-    dotsContainer.innerHTML = "";
-    for (let i = 0; i < count; i++) {
-      const dot = document.createElement("button");
-      dot.className = "ultimos-videos-dot" + (i === 0 ? " active" : "");
-      dot.setAttribute("aria-label", "Ir al video " + (i + 1));
-      dot.addEventListener("click", () => {
-        const cards = grid.querySelectorAll(".ultimos-videos-card");
-        if (cards[i]) {
-          cards[i].scrollIntoView({ behavior: "smooth", inline: "start", block: "nearest" });
-          setActiveDot(i);
-        }
-      });
-      dotsContainer.appendChild(dot);
-    }
-  }
-
-  function setActiveDot(index) {
-    dotsContainer.querySelectorAll(".ultimos-videos-dot").forEach((d, i) => {
-      d.classList.toggle("active", i === index);
-    });
-  }
-
-  let ticking = false;
-  grid.addEventListener("scroll", () => {
-    if (!ticking) {
-      window.requestAnimationFrame(() => {
-        const cards = grid.querySelectorAll(".ultimos-videos-card");
-        let closestIndex = 0;
-        let closestDistance = Infinity;
-        cards.forEach((card, i) => {
-          const distance = Math.abs(card.offsetLeft - grid.scrollLeft);
-          if (distance < closestDistance) {
-            closestDistance = distance;
-            closestIndex = i;
-          }
-        });
-        setActiveDot(closestIndex);
-        ticking = false;
-      });
-      ticking = true;
-    }
-  });
-
   fetch(
     "https://api.dailymotion.com/playlist/" +
       playlistId +
@@ -799,11 +766,15 @@ function initUltimosVideos() {
     .then((res) => res.json())
     .then((data) => {
       if (!data.list || data.list.length === 0) {
-        grid.innerHTML = '<p class="ultimos-videos-empty">No hay videos disponibles.</p>';
+        gridEl.innerHTML = '<p class="ultimos-videos-empty">No hay videos disponibles.</p>';
         return;
       }
+
       data.list.forEach((video) => {
         const img = video.thumbnail_720_url || video.thumbnail_480_url || video.thumbnail_240_url;
+        const slide = document.createElement("div");
+        slide.className = "swiper-slide";
+
         const card = document.createElement("article");
         card.className = "ultimos-videos-card";
         card.innerHTML =
@@ -818,13 +789,28 @@ function initUltimosVideos() {
             '<span class="ultimos-videos-play-icon">&#9654;</span>' +
             "<span>" + formatDuration(video.duration) + "</span>" +
           "</div>";
+
         card.addEventListener("click", () => openModal(video.id));
-        grid.appendChild(card);
+        slide.appendChild(card);
+        wrapper.appendChild(slide);
       });
-      buildDots(data.list.length);
+
+      new Swiper(".ultimos-videos-swiper", {
+        slidesPerView: 1.2,
+        spaceBetween: 16,
+        pagination: {
+          el: dotsEl,
+          clickable: true,
+          dynamicBullets: true,
+        },
+        breakpoints: {
+          640: { slidesPerView: 2, spaceBetween: 20 },
+          1024: { slidesPerView: 3, spaceBetween: 24 },
+        },
+      });
     })
     .catch((err) => {
-      grid.innerHTML = '<p class="ultimos-videos-error">Error al cargar videos.</p>';
+      gridEl.innerHTML = '<p class="ultimos-videos-error">Error al cargar videos.</p>';
       console.error(err);
     });
 }
