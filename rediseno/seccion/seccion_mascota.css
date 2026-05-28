@@ -13,6 +13,11 @@ div#iter-content-wrapper {
     margin-top: 50px;
 }
 
+/* Ocultar el bloque de patrocinado*/
+.patrocinada .linea{
+    display: none;
+}
+
 .section-title.enfoque,
 .section-title.hogar{
     text-transform: none;
@@ -78,7 +83,7 @@ div#iter-content-wrapper {
 }
 
 .menu-categorias .nav-link {
-  color: black;
+  color: #293e82;
   font-size: 14px;
   font-weight: 400;
   padding: 5px 0;
@@ -110,9 +115,6 @@ div#iter-content-wrapper {
   border-radius: 2px;
 }
 
-.menu-categorias .nav-link {
-  opacity: 0.7;
-}
 
 .menu-categorias .nav-link.active,
 .menu-categorias .nav-link:hover {

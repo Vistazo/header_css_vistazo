@@ -13,6 +13,11 @@ div#iter-content-wrapper {
     margin-top: 50px;
 }
 
+/* Ocultar el bloque de patrocinado*/
+.patrocinada .linea{
+    display: none;
+}
+
 .section-title.enfoque,
 .section-title.hogar{
     text-transform: none;
@@ -289,6 +294,13 @@ div#iter-content-wrapper {
     padding-bottom: 16px;
     margin-bottom: 16px;
     border-bottom: 1px solid var(--gray);
+}
+.listado-not-seccion .headline{
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: 75px;
 }
 .listado-not-seccion .headline h2 {
     font-size: 16px;
