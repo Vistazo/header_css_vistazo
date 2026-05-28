@@ -794,7 +794,7 @@ function initUltimosVideos() {
   fetch(
     "https://api.dailymotion.com/playlist/" +
       playlistId +
-      "/videos?fields=id,title,thumbnail_720_url,thumbnail_480_url,thumbnail_240_url,duration&limit=3",
+      "/videos?fields=id,title,thumbnail_720_url,thumbnail_480_url,thumbnail_240_url,duration&limit=6",
   )
     .then((res) => res.json())
     .then((data) => {
