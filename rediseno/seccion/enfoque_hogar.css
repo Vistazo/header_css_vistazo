@@ -12,15 +12,22 @@ body {
 div#iter-content-wrapper {
     margin-top: 50px;
 }
-.section-title.enfoque .title2,
-.section-title.hogar .title2{
-    display: none !important;
-}
 
 /* Ocultar el bloque de patrocinado*/
 .patrocinada .linea{
     display: none;
 }
+
+/*Título principal*/
+.tit-principal .section-title .title{
+    font-size: 26px;
+    font-weight: bolder;
+}
+.tit-principal img{
+    width: 60%;
+}
+/*Título principal*/
+
 
 .section-title.enfoque,
 .section-title.hogar{
@@ -32,6 +39,7 @@ div#iter-content-wrapper {
 .section-title.enfoque .title2{
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     gap: 20px;
 }
 .section-title.hogar .title2 {
