@@ -670,3 +670,10 @@ div#iter-content-wrapper {
     transition: none;
   }
 }
+
+@media (max-width: 480px) {
+    body {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}

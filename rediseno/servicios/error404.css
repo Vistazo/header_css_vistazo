@@ -173,3 +173,10 @@ div#iter-content-wrapper {
         margin-bottom: 1.1rem;
     }
 }
+
+@media (max-width: 480px) {
+    body {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}

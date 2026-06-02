@@ -454,3 +454,10 @@ div#iter-content-wrapper {
     font-size: 14px;
 }
 }
+
+@media (max-width: 480px) {
+    body {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
