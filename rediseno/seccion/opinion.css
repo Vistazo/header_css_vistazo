@@ -20,6 +20,12 @@
 
 .listado3x1 h2 {
     font-size: 24px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: 80px;
+    margin-bottom: 16px;
 }
 
 .listado3x1 .text p {
@@ -30,8 +36,6 @@
     display: flex;
     align-items: center;
     gap: 20px;
-
-
 }
 
 .listado3x1 .multimedia .audetails {
@@ -42,6 +46,14 @@
     border-radius: 50%;
 }
 
+.listado3x1 .text{
+    min-height: 85px;
+    margin-bottom: 16px;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
 
 
 /* 1x5 */
