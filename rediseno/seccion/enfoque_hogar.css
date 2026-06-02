@@ -22,6 +22,7 @@ div#iter-content-wrapper {
 .tit-principal .section-title .title{
     font-size: 26px;
     font-weight: bolder;
+    text-transform: none;
 }
 .tit-principal img{
     width: 60%;
