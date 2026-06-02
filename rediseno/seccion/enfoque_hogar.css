@@ -14,8 +14,9 @@ div#iter-content-wrapper {
 }
 .section-title.enfoque .title2,
 .section-title.hogar .title2{
-    display: none;
+    display: none !important;
 }
+
 /* Ocultar el bloque de patrocinado*/
 .patrocinada .linea{
     display: none;
