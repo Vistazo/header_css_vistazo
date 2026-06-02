@@ -7,6 +7,14 @@
     --bg-gray: #F3F5F8;
 }
 
+div#iter-content-wrapper {
+    margin-top: 40px;
+}
+
+.container{
+    padding-right: var(--bs-gutter-x, .75rem);
+    padding-left: var(--bs-gutter-x, .75rem);
+}
 
 .listado3x1 {
     margin-bottom: 52px;
@@ -193,6 +201,14 @@
 
     .listado3x1 h2 {
         font-size: 16px;
+        -webkit-line-clamp: 2;
+        min-height: auto;
+    }
+    .listado3x1 .text {
+        min-height: auto;
+    }
+    .mas-destacados{
+        margin-top: 3rem;
     }
 }
 
