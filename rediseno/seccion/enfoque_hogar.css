@@ -12,7 +12,8 @@ body {
 div#iter-content-wrapper {
     margin-top: 50px;
 }
-.title2{
+.section-title.enfoque .title2,
+.section-title.hogar .title2{
     display: none;
 }
 /* Ocultar el bloque de patrocinado*/
