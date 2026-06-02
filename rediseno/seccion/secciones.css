@@ -88,9 +88,16 @@ div#iter-content-wrapper {
   background-color: #419644;
 }
 
+.style-sostenibilidad .noticias_list .carrusel ul .nav-page-selected,
 .style-sostenibilidad .principal_notas .headline h2::first-line {
   color: #419644;
 }
+
+.style-sostenibilidad .noticias_list .prev-button, 
+.style-sostenibilidad .noticias_list .next-button {
+    background: #419644;
+}
+
 
 .section-title p{
     font-size: 13px;
