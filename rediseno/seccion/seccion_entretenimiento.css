@@ -113,10 +113,10 @@ div#iter-content-wrapper {
   color: inherit;
 }
 .principal_notas .headline h2 {
-  font-size: 22px;
+  font-size: 26px;
   font-weight: 700;
-  line-height: 1.1;
-  margin: 10px 0 6px 0;
+  line-height: 1.2;
+  margin: 17px 0 12px 0;
   color: var(--dark);
 }
 /* Solo la primera línea visual en rojo */
@@ -136,9 +136,9 @@ div#iter-content-wrapper {
 }
 .principal_notas .subheadline h3,
 .principal_notas .subheadline p {
-  font-size: 13px;
+  font-size: 15px;
   color: #555555;
-  line-height: 1.5;
+  line-height: 1.6;
   margin: 0;
   font-weight: 400;
 }
@@ -340,6 +340,14 @@ div#iter-content-wrapper {
   .section-title .title.principal{
     font-size: 30px;
     margin-bottom: 20px;
+  }
+  .principal_notas .headline h2{
+    font-size: 24px;
+    line-height: 1.1;
+  }
+  .principal_notas .subheadline h3, .principal_notas .subheadline p{
+    font-size: 14px;
+    line-height: 1.4;
   }
 
 }
