@@ -12,7 +12,7 @@ body {
 div#iter-content-wrapper {
     margin-top: 20px;
 }
-.text-center{
+.border_envivo{
   display: none;
 }
 
@@ -274,7 +274,7 @@ div#iter-content-wrapper {
   padding-top: 1.2rem;
 }
 .sect-date .article-section .section{
-      font-size: 11px;
+      font-size: 10px;
 }
 }
 @media (width: 768px) {
