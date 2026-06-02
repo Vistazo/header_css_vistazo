@@ -13,6 +13,9 @@ div#iter-content-wrapper {
     margin-top: 50px;
 }
 
+.principal_notas .sect-date{
+  margin-bottom: 1.1rem;
+}
 /* Categoria*/
 .sect-date {
     display: flex;
@@ -89,8 +92,6 @@ div#iter-content-wrapper {
   color: #419644;
 }
 
-
-
 .section-title p{
     font-size: 13px;
     line-height: 16px;
@@ -135,7 +136,7 @@ div#iter-content-wrapper {
 .principal_notas .subheadline h3,
 .principal_notas .subheadline p {
   font-size: 15px;
-  color: #555555;
+  color: #555555 !important;
   line-height: 1.6;
   margin: 0;
   font-weight: 400;
@@ -143,9 +144,9 @@ div#iter-content-wrapper {
 
 /* ================= LISTADO DE NOTAS DER ================ */
 .listado_notas article{
-  padding-bottom: 20px;
+  padding-bottom: 17px;
   border-bottom: 1px solid  var(--gray);
-  padding-top: 20px;
+  padding-top: 17px;
 }
 .listado_notas article:last-child {
   border-bottom: none;
