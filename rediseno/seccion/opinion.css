@@ -55,7 +55,7 @@ div#iter-content-wrapper {
 }
 
 .listado3x1 .text{
-    min-height: 85px;
+    min-height: 80px;
     margin-bottom: 16px;
     display: -webkit-box;
     -webkit-line-clamp: 4;
