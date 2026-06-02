@@ -15,6 +15,9 @@ div#iter-content-wrapper {
 .border_envivo{
   display: none;
 }
+.text-center {
+    display: none !important;
+}
 
 #col-33-33-33-top-three-col,
 #col-60-40-top-two-col{
