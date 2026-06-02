@@ -151,9 +151,9 @@ div#iter-content-wrapper {
 
 /* ================= LISTADO DE NOTAS DER ================ */
 .listado_notas article{
-  padding-bottom: 17px;
+  padding-bottom: 20px;
   border-bottom: 1px solid  var(--gray);
-  padding-top: 17px;
+  padding-top: 20px;
 }
 .listado_notas article:last-child {
   border-bottom: none;
