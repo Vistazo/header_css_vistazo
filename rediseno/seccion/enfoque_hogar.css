@@ -20,9 +20,9 @@ div#iter-content-wrapper {
 
 /*Título principal*/
 .tit-principal .section-title .title{
-    font-size: 26px;
-    font-weight: bolder;
-    text-transform: none;
+    font-weight: 600;
+    font-size: 40px;
+    text-transform: capitalize;
 }
 .tit-principal img{
     width: 60%;
