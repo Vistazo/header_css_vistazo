@@ -213,7 +213,6 @@ div#iter-content-wrapper {
 .cuatro_notas article{
   padding-bottom: 20px;
   border-bottom: 1px solid #D4D4D4;
-  padding-top: 5px;
 }
 .cuatro_notas article .n1,
 .cuatro_notas article .n2{
@@ -246,6 +245,13 @@ div#iter-content-wrapper {
 }
 .listado_notas .sect-date{
     margin-bottom: 0px;
+}
+.listado_notas .sect-date h3{
+  margin-bottom: 0;
+}
+.listado_notas .sect-date .article-section .section{
+    display: flex;
+    align-items: center;
 }
 .listado_notas article{
   padding-bottom: 20px;
