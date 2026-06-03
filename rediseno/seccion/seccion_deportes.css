@@ -176,7 +176,7 @@ div#iter-content-wrapper {
   }
 
   .tabla-posiciones{
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
   }
 
   /*.nota_principal .multimedia {
@@ -191,7 +191,7 @@ div#iter-content-wrapper {
 
   .nota_principal article {
     border-bottom: 1px solid var(--gray);
-    padding: 10px 0 25px 0;
+    padding: 1.5rem 0 25px 0;
     margin-bottom: 25px;
   }
 
