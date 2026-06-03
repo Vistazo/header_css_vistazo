@@ -2227,3 +2227,7 @@
         padding: 20px 12px;
     }
 }
+
+.sectionName {
+    display: none;
+}
