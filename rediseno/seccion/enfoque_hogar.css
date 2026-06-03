@@ -339,7 +339,7 @@ div#iter-content-wrapper {
 
 /* RESPONSIVE */
 @media (max-width: 767px) {
-    .tit-principal .section-title .title{
+      .tit-principal .section-title .title{
         font-size: 25px;
         line-height: 16px;
         font-weight: 500;
@@ -446,16 +446,13 @@ div#iter-content-wrapper {
         margin-right: auto;
         margin-left: auto;
     }
-    .sect-date .article-section .section{
-        margin-top: 0px;
-    }
     .cuatro-notas .sect-date{
         margin: 0 0 6px 0;
         align-items: flex-start;
     }
     .sect-date .article-section .section{
         font-size: 11px;
-    }
+    }    
     .sect-date .date{
         font-size: 10px;
     }
