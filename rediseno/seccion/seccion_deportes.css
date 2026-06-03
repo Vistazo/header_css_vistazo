@@ -505,6 +505,11 @@ div#iter-content-wrapper {
     margin-top: 1.5rem;
     margin-bottom: 1rem;
   }
+  .list_not article:nth-child(9), 
+  .list_not article:nth-child(10){
+    border-bottom: 1px solid transparent;
+  }
+
 }
 
 /* ======== DESTACADAS ======== */
