@@ -369,7 +369,7 @@ div#iter-content-wrapper {
     }
     .nota-principal .media_block {
         display: flex;
-        gap: 17px;
+        gap: 10px;
         align-items: center;
         flex-direction: column;
     }
@@ -419,7 +419,7 @@ div#iter-content-wrapper {
         margin-top: 2rem;
     }
     .listado-not-seccion .text_block {
-        margin-top: 20px;
+        margin: 20px 0;
     }
     .listado-seis-notas .multimedia,
     .listado-seis-notas .text_block{
@@ -450,8 +450,32 @@ div#iter-content-wrapper {
         margin: 0 0 6px 0;
         align-items: flex-start;
     }
+    .listado-seis-notas .article-section .section,
+    .cuatro-notas .article-section .section {
+        background: var(--bg-gray);
+        padding: 10px;
+        font-size: 13px;
+        display: inline-flex;
+    }
+    .listado-seis-notas .date,
+    .cuatro-notas .date{
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 13px;
+    }
+    .listado-seis-notas .date::before,
+    .cuatro-notas .date::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        background-color: var(--red);
+        border-radius: 50%;
+        display: inline-block;
+    }
+
     .sect-date .article-section .section{
-        font-size: 11px;
+        font-size: 14px;
     }    
     .sect-date .date{
         font-size: 10px;
