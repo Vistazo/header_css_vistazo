@@ -1367,7 +1367,8 @@
 }
 
 .bloque-sostenibilidad .sos-dos .noticias article:nth-child(1),
-.bloque-sostenibilidad .sos-dos .noticias article:nth-child(2) {
+.bloque-sostenibilidad .sos-dos .noticias article:nth-child(2),
+.bloque-sostenibilidad .sos-dos .noticias article:nth-child(3) {
     padding-bottom: 16px;
     margin-bottom: 16px;
     border-bottom: 1px solid var(--gray);
