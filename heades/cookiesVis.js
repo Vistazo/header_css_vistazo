@@ -23,6 +23,7 @@ function checkCookie() {
 checkCookie();
 function setCookie(cname, cvalue, exdays) {
   const d = new Date();
+  // Se multiplica por 356 para que la cookie dure aproximadamente un año, ya que algunos navegadores no permiten cookies con una duración superior a 2 años.
   d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1e3 * 356);
   let expires = "expires=" + d.toUTCString();
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";

@@ -5,7 +5,10 @@ const REVISTAS_DATA_URL = "https://backoffice.bmcodigo.com/api/v1/revistas";
 const REVISTAS_STORAGE_KEY = "revistasDataCache";
 const REVISTAS_STORAGE_HASH_KEY = "revistasDataCacheHash";
 const REVISTAS_STORAGE_SYNC_KEY = "revistasDataCacheLastSync";
-const REVISTAS_CACHE_TTL_MS = 15 * 60 * 1000;
+const REVISTAS_CACHE_TTL_MS = 1 * 60 * 1000;
+
+// Fuerza consulta a la API en cada carga de página
+try { localStorage.removeItem(REVISTAS_STORAGE_SYNC_KEY); } catch (_) {}
 let _syncInProgress = false;
 
 function hashString(value) {
