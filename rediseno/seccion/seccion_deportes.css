@@ -168,7 +168,10 @@ div#iter-content-wrapper {
   }
   .row.r02{
     margin-top: -1.5rem;
-}
+  }
+  .tabla-posiciones{
+    margin-bottom: 2.5rem;
+  }
 }
 
 @media (width: 768px) {
@@ -272,21 +275,25 @@ div#iter-content-wrapper {
 }
 
 @media (max-width: 767px) {
-.listado_notas article:nth-child(1){
-  border-top: 1px solid #D4D4D4;
-  padding-top: 1.2rem;
+  .listado_notas article:nth-child(1){
+    border-top: 1px solid #D4D4D4;
+    padding-top: 1.2rem;
+  }
+  .sect-date .article-section .section{
+        font-size: 9px;
+  }
+  .tit_sec{
+        margin-top: 1rem;
+  }
 }
-.sect-date .article-section .section{
-      font-size: 11px;
-}
-}
+
 @media (width: 768px) {
-.listado_notas{
-  padding-left: 20px;
-}
-.listado_notas .headline h2 {
-    font-size: 12px;
-}
+  .listado_notas{
+    padding-left: 20px;
+  }
+  .listado_notas .headline h2 {
+      font-size: 12px;
+  }
 }
 
 /* ======== LISTADO DE 9 NOTAS ======== */
@@ -426,7 +433,7 @@ div#iter-content-wrapper {
     font-size: 14px;
 }
 .list_not .inf2 ul li {
-    font-size: 10px;    
+    font-size: 8px;    
 }
 .list_not article:nth-child(7){
   border-bottom: 1px solid var(--gray);
