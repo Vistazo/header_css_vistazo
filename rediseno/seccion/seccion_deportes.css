@@ -175,6 +175,10 @@ div#iter-content-wrapper {
     font-size: 14px;
   }
 
+  .tabla-posiciones{
+    margin-bottom: 1.5rem;
+  }
+
   /*.nota_principal .multimedia {
     height: 290px;
     overflow: hidden;
