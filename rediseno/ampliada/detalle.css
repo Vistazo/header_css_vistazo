@@ -267,16 +267,16 @@
 
 .R_TABOOLA_TAGS .temas {
     display: flex;
-    align-items: center;
     gap: 12px;
     margin-bottom: 36px;
+    flex-wrap: wrap;
 }
 
 .R_TABOOLA_TAGS .temas .item_tema a {
-    background: var(--red);
+     background: var(--red);
     padding: 8px;
     font-size: 13px;
-    display: block;
+    display: ruby-text;
     color: #ffffff;
     border-radius: 4px;
 }

@@ -355,10 +355,10 @@ div#iter-content-wrapper {
     }
 
     .tit-principal .section-title .title{
-        font-size: 25px;
+        font-size: 30px;
         line-height: 16px;
-        font-weight: 500;
-        letter-spacing: -2px;
+        font-weight: 600;
+        /*letter-spacing: -1px;*/
     }
     .section-title.enfoque .title2{
         gap: 10px;
