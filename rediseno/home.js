@@ -833,7 +833,7 @@ function initUltimosVideos() {
       ".lea-tambien-label{font-size:10px;font-weight:700;color:#111;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px;}",
       ".lea-tambien-body{display:flex;gap:12px;align-items:flex-start;}",
       ".lea-tambien-text{flex:1;min-width:0;}",
-      ".lea-tambien-title{font-size:14px;font-weight:600;color:#111;text-decoration:none;line-height:1.4;display:block;}",
+      ".lea-tambien-title{font-family:'Zalando Sans',sans-serif;font-size:16px;font-weight:500;color:#111;text-decoration:none;line-height:1;display:block;}",
       ".lea-tambien-title:hover{color:#111;}",
       ".lea-tambien-first{color:#e60000;}",
       ".lea-tambien-title:hover .lea-tambien-first{color:#b30000;}",
