@@ -833,8 +833,10 @@ function initUltimosVideos() {
       ".lea-tambien-label{font-size:10px;font-weight:700;color:#111;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px;}",
       ".lea-tambien-body{display:flex;gap:12px;align-items:flex-start;}",
       ".lea-tambien-text{flex:1;min-width:0;}",
-      ".lea-tambien-title{font-size:14px;font-weight:600;color:#e60000;text-decoration:none;line-height:1.4;display:block;}",
-      ".lea-tambien-title:hover{color:#b30000;}",
+      ".lea-tambien-title{font-size:14px;font-weight:600;color:#111;text-decoration:none;line-height:1.4;display:block;}",
+      ".lea-tambien-title:hover{color:#111;}",
+      ".lea-tambien-first{color:#e60000;}",
+      ".lea-tambien-title:hover .lea-tambien-first{color:#b30000;}",
       ".lea-tambien-date{font-size:12px;color:#555;margin-top:5px;display:block;}",
       ".lea-tambien-thumb{flex-shrink:0;width:80px;height:60px;overflow:hidden;background:#ddd;}",
       ".lea-tambien-thumb img{width:100%;height:100%;object-fit:cover;display:block;}",
@@ -858,11 +860,15 @@ function initUltimosVideos() {
   function buildLeaTambienCard(href, title, date) {
     var card = document.createElement("div");
     card.className = "lea-tambien-card";
+    var spaceIdx = title.indexOf(" ");
+    var titleHtml = spaceIdx > -1
+      ? '<span class="lea-tambien-first">' + title.slice(0, spaceIdx) + "</span>" + title.slice(spaceIdx)
+      : '<span class="lea-tambien-first">' + title + "</span>";
     card.innerHTML =
       '<div class="lea-tambien-label">LEA TAMBIÉN</div>' +
       '<div class="lea-tambien-body">' +
         '<div class="lea-tambien-text">' +
-          '<a class="lea-tambien-title" href="' + href + '">' + title + "</a>" +
+          '<a class="lea-tambien-title" href="' + href + '">' + titleHtml + "</a>" +
           '<span class="lea-tambien-date">' + date + "</span>" +
         "</div>" +
       "</div>";
