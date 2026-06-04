@@ -911,7 +911,8 @@ function initUltimosVideos() {
       if (!link) return;
 
       var href = link.href;
-      var title = link.textContent.trim();
+      var title = p.textContent.trim().replace(LABEL_RE, "").trim();
+      if (!title) title = link.textContent.trim().replace(LABEL_RE, "").trim();
       var date = extractDateFromUrl(href);
       var card = buildLeaTambienCard(href, title, date);
 
