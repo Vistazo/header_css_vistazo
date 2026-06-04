@@ -827,13 +827,13 @@ function initUltimosVideos() {
     const s = document.createElement("style");
     s.id = "lea-tambien-styles";
     s.textContent = [
-      ".lea-tambien-card{border-left:3px solid #e60000;background:#f5f5f5;padding:10px 14px;margin:18px 0;display:block;}",
-      ".lea-tambien-label{font-size:10px;font-weight:700;color:#e60000;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px;}",
+      ".lea-tambien-card{border-left:3px solid #111;background:#F3F2ED;padding:10px 14px;margin:18px 0;display:block;}",
+      ".lea-tambien-label{font-size:10px;font-weight:700;color:#111;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px;}",
       ".lea-tambien-body{display:flex;gap:12px;align-items:flex-start;}",
       ".lea-tambien-text{flex:1;min-width:0;}",
-      ".lea-tambien-title{font-size:14px;font-weight:600;color:#111;text-decoration:none;line-height:1.4;display:block;}",
-      ".lea-tambien-title:hover{color:#e60000;}",
-      ".lea-tambien-date{font-size:12px;color:#888;margin-top:5px;display:block;}",
+      ".lea-tambien-title{font-size:14px;font-weight:600;color:#e60000;text-decoration:none;line-height:1.4;display:block;}",
+      ".lea-tambien-title:hover{color:#b30000;}",
+      ".lea-tambien-date{font-size:12px;color:#555;margin-top:5px;display:block;}",
       ".lea-tambien-thumb{flex-shrink:0;width:80px;height:60px;overflow:hidden;background:#ddd;}",
       ".lea-tambien-thumb img{width:100%;height:100%;object-fit:cover;display:block;}",
     ].join("");
