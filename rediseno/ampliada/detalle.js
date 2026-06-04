@@ -101,13 +101,13 @@ document.addEventListener('DOMContentLoaded', function () {
     card.className = "lea-tambien-card";
     var spaceIdx = title.indexOf(" ");
     var titleHtml = spaceIdx > -1
-      ? '<span class="lea-tambien-first">' + title.slice(0, spaceIdx) + "</span>" + title.slice(spaceIdx)
-      : '<span class="lea-tambien-first">' + title + "</span>";
+      ? '<span style="color:#e60000">' + title.slice(0, spaceIdx) + "</span>" + title.slice(spaceIdx)
+      : '<span style="color:#e60000">' + title + "</span>";
     card.innerHTML =
       '<div class="lea-tambien-label">LEA TAMBIÉN</div>' +
       '<div class="lea-tambien-body">' +
         '<div class="lea-tambien-text">' +
-          '<a class="lea-tambien-title" href="' + href + '">' + titleHtml + "</a>" +
+          '<a class="lea-tambien-title" href="' + href + '" style="color:#111;text-decoration:none;">' + titleHtml + "</a>" +
           '<span class="lea-tambien-date">' + date + "</span>" +
         "</div>" +
       "</div>";
