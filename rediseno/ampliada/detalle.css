@@ -640,37 +640,21 @@
 }
 
 
-ul:has(.r_bulletvistazo),
-ol:has(.r_bulletvistazo) {
-    counter-reset: bulletvistazo;
-    list-style: none;
-    padding-left: 0;
-}
-
 .r_bulletvistazo {
     display: flex;
-    align-items: flex-start;
-    gap: 10px;
+    align-items: center;
+    gap: 8px;
     font-size: 16px;
-    counter-increment: bulletvistazo;
-    margin-bottom: 12px;
 }
 
 .r_bulletvistazo::before {
-    content: counter(bulletvistazo);
-    min-width: 28px;
-    width: 28px;
-    height: 28px;
-    background-color: #CC1114;
-    border-radius: 4px;
-    color: #fff;
-    font-size: 13px;
-    font-weight: 700;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    content: "";
+    width: 8px;
+    height: 8px;
+    background-color: var(--red);
+    border-radius: 50%;
+    display: inline-block;
     flex-shrink: 0;
-    line-height: 1;
 }
 
 .r_citavistazo {
