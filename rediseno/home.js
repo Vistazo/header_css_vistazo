@@ -820,7 +820,9 @@ function initUltimosVideos() {
 
 /* ── Función: tarjetas "Lea también" / "REVISE TAMBIÉN" ── */
 (function () {
-  const LABEL_RE = /^(REVISE\s+TAMBIÉN|LEA\s+TAMBIÉN|Lea\s+también)\s*:?\s*/i;
+  // LEA TAMBIEN, LEA
+  const LABEL_RE = /^(REVISE\s+TAMBIÉN|LEA\s+TAMBIÉN|Lea\s+también|LEA\s+TAMBIEN|Lea\s+tambien)\s*:?\s*/i;
+  
 
   function injectLeaTambienStyles() {
     if (document.getElementById("lea-tambien-styles")) return;
