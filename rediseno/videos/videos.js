@@ -3,8 +3,9 @@
 
   /* ── Configuración ── */
   var PLAYLIST_ID  = "x9si9u";   // ID de la playlist en Dailymotion
-  var LIMIT_LATEST = 7;           // 1 destacado + 6 en lista
-  var LIMIT_POP    = 4;           // Videos más vistos
+  // 1 destacado + 6 lista + 4 sidebar = 11 en un solo fetch (sin repetidos)
+  var LIMIT_LATEST = 11;
+  var LIMIT_POP    = 4;           // Videos más vistos (sort=visited, diferentes)
 
   var DM_FIELDS = "id,title,description,thumbnail_720_url,thumbnail_480_url,thumbnail_240_url,created_time,duration,channel";
 
@@ -156,7 +157,8 @@
       .replace(/"/g, "&quot;");
   }
 
-  /* ── Fetch: últimos videos ── */
+  /* ── Fetch único: reparte sin repetidos ── */
+  // [0] → destacado | [1-6] → lista | [7-10] → sidebar MÁS VIDEOS
   fetch(
     "https://api.dailymotion.com/playlist/" + PLAYLIST_ID +
     "/videos?fields=" + DM_FIELDS +
@@ -166,10 +168,11 @@
     .then(function (data) {
       if (!data.list || !data.list.length) return;
       renderFeatured(data.list[0]);
-      renderList(data.list.slice(1));
+      renderList(data.list.slice(1, 7));
+      renderMasVideos(data.list.slice(7));
     })
     .catch(function (err) {
-      console.error("[vz-videos] Error cargando últimos videos:", err);
+      console.error("[vz-videos] Error cargando videos:", err);
     });
 
   /* ── Render: MÁS VIDEOS (sidebar) ── */
@@ -207,19 +210,5 @@
       console.error("[vz-videos] Error cargando videos populares:", err);
     });
 
-  /* ── Fetch: MÁS VIDEOS sidebar (últimos 4) ── */
-  fetch(
-    "https://api.dailymotion.com/playlist/" + PLAYLIST_ID +
-    "/videos?fields=id,title,thumbnail_480_url,thumbnail_240_url,created_time" +
-    "&limit=4&sort=recent"
-  )
-    .then(function (r) { return r.json(); })
-    .then(function (data) {
-      if (!data.list || !data.list.length) return;
-      renderMasVideos(data.list);
-    })
-    .catch(function (err) {
-      console.error("[vz-videos] Error cargando MÁS VIDEOS:", err);
-    });
 
 })();
