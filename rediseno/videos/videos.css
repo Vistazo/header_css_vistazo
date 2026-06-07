@@ -294,6 +294,86 @@
   color: #888;
 }
 
+/* ── MÁS VIDEOS (sidebar) ── */
+.vz-mas-videos {
+  font-family: 'Zalando Sans', sans-serif;
+  width: 100%;
+}
+
+.vz-mas-videos-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #111;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.vz-mas-videos-badge {
+  display: inline-block;
+  width: 10px;
+  height: 14px;
+  background: #e60000;
+  flex-shrink: 0;
+}
+
+.vz-mas-videos-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.vz-mas-videos-list li {
+  display: flex;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid #e8e8e8;
+  cursor: pointer;
+  align-items: flex-start;
+}
+
+.vz-mas-videos-list li:hover .vz-mv-title {
+  color: #e60000;
+}
+
+.vz-mv-thumb {
+  flex-shrink: 0;
+  width: 72px;
+  height: 50px;
+  overflow: hidden;
+  background: #111;
+}
+
+.vz-mv-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.vz-mv-title {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: #111;
+  margin: 0 0 4px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: color 0.15s;
+}
+
+.vz-mv-date {
+  font-size: 11px;
+  color: #888;
+}
+
 /* ── Modal ── */
 .vz-video-modal {
   display: none;

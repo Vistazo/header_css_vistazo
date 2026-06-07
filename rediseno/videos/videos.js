@@ -172,6 +172,26 @@
       console.error("[vz-videos] Error cargando últimos videos:", err);
     });
 
+  /* ── Render: MÁS VIDEOS (sidebar) ── */
+  function renderMasVideos(videos) {
+    var el = document.getElementById("vz-mas-videos-list");
+    if (!el) return;
+    videos.forEach(function (video) {
+      var img = video.thumbnail_480_url || video.thumbnail_240_url;
+      var li = document.createElement("li");
+      li.innerHTML =
+        '<div class="vz-mv-thumb">' +
+          '<img src="' + img + '" alt="' + escHtml(video.title) + '" loading="lazy">' +
+        '</div>' +
+        '<div>' +
+          '<p class="vz-mv-title">' + escHtml(video.title) + '</p>' +
+          '<span class="vz-mv-date">' + formatDate(video.created_time) + '</span>' +
+        '</div>';
+      li.addEventListener("click", function () { openModal(video.id); });
+      el.appendChild(li);
+    });
+  }
+
   /* ── Fetch: más reproducciones ── */
   fetch(
     "https://api.dailymotion.com/playlist/" + PLAYLIST_ID +
@@ -185,6 +205,21 @@
     })
     .catch(function (err) {
       console.error("[vz-videos] Error cargando videos populares:", err);
+    });
+
+  /* ── Fetch: MÁS VIDEOS sidebar (últimos 4) ── */
+  fetch(
+    "https://api.dailymotion.com/playlist/" + PLAYLIST_ID +
+    "/videos?fields=id,title,thumbnail_480_url,thumbnail_240_url,created_time" +
+    "&limit=4&sort=recent"
+  )
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      if (!data.list || !data.list.length) return;
+      renderMasVideos(data.list);
+    })
+    .catch(function (err) {
+      console.error("[vz-videos] Error cargando MÁS VIDEOS:", err);
     });
 
 })();
