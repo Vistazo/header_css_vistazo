@@ -88,6 +88,14 @@
     border-top: 2px solid var(--red);
 }
 
+.r_te-puede-interesar {
+    font-family: 'Zalando Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #444;
+    margin: 0 0 14px;
+}
+
 .r_relacionadas article {
     display: flex;
     align-items: center;

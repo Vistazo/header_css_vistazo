@@ -52,6 +52,13 @@ document.addEventListener('DOMContentLoaded', function () {
     const relacionadas = document.querySelector('.r_relacionadas');
     const imagenBlock = document.querySelector('.R_AUTOR_IMG_REDES .mt-2');
     if (relacionadas && imagenBlock) {
+        const relatedContent = relacionadas.querySelector('.relatedContent');
+        if (relatedContent && !relatedContent.querySelector('.r_te-puede-interesar')) {
+            const label = document.createElement('p');
+            label.className = 'r_te-puede-interesar';
+            label.textContent = 'Te puede interesar:';
+            relatedContent.insertBefore(label, relatedContent.firstChild);
+        }
         imagenBlock.insertAdjacentElement('afterend', relacionadas);
     }
 });
