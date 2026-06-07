@@ -1,0 +1,41 @@
+<!-- ── Widget: Sección Videos Dailymotion ── -->
+<!-- Pegar donde quieras que aparezca la sección de videos -->
+<link rel="stylesheet" href="videos.css">
+<section id="vz-section-videos" class="vz-section-videos">
+
+  <!-- Encabezado -->
+  <div class="vz-videos-header">
+    <div class="vz-videos-header-top">
+      <h2 class="vz-videos-heading">Vídeos</h2>
+      <hr class="vz-videos-heading-line">
+    </div>
+    <p class="vz-videos-subtitle">Contenido multimedia de último momento</p>
+  </div>
+
+  <!-- Video destacado -->
+  <div id="vz-featured-video" class="vz-featured-video"></div>
+
+  <!-- Lista de últimos videos -->
+  <ul id="vz-videos-list" class="vz-videos-list"></ul>
+
+  <!-- Más reproducciones -->
+  <div class="vz-populares-header">
+    <span>VIDEOS CON MÁS REPRODUCCIONES</span>
+    <span class="vz-populares-arrow">›</span>
+  </div>
+  <ul id="vz-videos-populares" class="vz-videos-populares"></ul>
+
+</section>
+
+<!-- Modal reproductor -->
+<div id="vz-video-modal" class="vz-video-modal" role="dialog" aria-modal="true" aria-label="Reproductor de video">
+  <div class="vz-video-modal-box">
+    <button class="vz-video-modal-close" aria-label="Cerrar">&#x2715;</button>
+    <div class="vz-video-modal-player">
+      <iframe id="vz-video-player" src="about:blank" frameborder="0"
+        allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+        allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+<script src="videos.js" defer></script>
