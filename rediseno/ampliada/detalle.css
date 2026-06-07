@@ -607,7 +607,7 @@
     background: var(--red);
     color: #fff;
     padding: 5px 12px;
-    border-radius: 20px;
+    border-radius: 4px;
     font-weight: 700;
     font-size: 13px;
     white-space: nowrap;
