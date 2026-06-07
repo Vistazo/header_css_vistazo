@@ -47,7 +47,7 @@ function mostrarInstruccionesPermiso() {
 // Llamar automáticamente a la función al cargar la página
 solicitarPermisoNotificaciones();
 
-// Reformatear fechas del live blog: "2026/06/07 16:23" → badge "16:23 PM" + "7 junio 2026"
+// Reformatear fechas del live blog: "2026/06/07 16:23" → pill "16:23 PM" + pill "7 junio 2026"
 (function () {
     var MESES = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
 
@@ -57,11 +57,11 @@ solicitarPermisoNotificaciones();
             var m = raw.match(/(\d{4})[\/\-](\d{2})[\/\-](\d{2})\s+(\d{2}):(\d{2})/);
             if (!m) return;
 
-            var hours   = parseInt(m[4], 10);
-            var minutes = parseInt(m[5], 10);
-            var day     = parseInt(m[3], 10);
+            var hours    = parseInt(m[4], 10);
+            var minutes  = parseInt(m[5], 10);
+            var day      = parseInt(m[3], 10);
             var monthIdx = parseInt(m[2], 10) - 1;
-            var year    = m[1];
+            var year     = m[1];
 
             var ampm    = hours >= 12 ? 'PM' : 'AM';
             var timeStr = hours.toString().padStart(2, '0') + ':' + minutes.toString().padStart(2, '0') + ' ' + ampm;
@@ -76,13 +76,20 @@ solicitarPermisoNotificaciones();
 
     function init() {
         reformatDates();
-        // Observar contenido del live blog que se carga dinámicamente
-        var observer = new MutationObserver(function (mutations) {
-            var hasNew = mutations.some(function (m) { return m.addedNodes.length > 0; });
-            if (hasNew) reformatDates();
-        });
-        var container = document.querySelector('.R_LIVE_BLOG_POST') || document.body;
-        observer.observe(container, { childList: true, subtree: true });
+
+        // Reintentos cada 400ms hasta 6s por si el contenido carga dinámicamente
+        var attempts = 0;
+        var interval = setInterval(function () {
+            reformatDates();
+            if (++attempts >= 15) clearInterval(interval);
+        }, 400);
+
+        // MutationObserver como respaldo continuo
+        new MutationObserver(function (mutations) {
+            if (mutations.some(function (m) { return m.addedNodes.length > 0; })) {
+                reformatDates();
+            }
+        }).observe(document.body, { childList: true, subtree: true });
     }
 
     if (document.readyState === 'loading') {

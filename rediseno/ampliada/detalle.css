@@ -606,16 +606,20 @@
 .r_time_post {
     background: var(--red);
     color: #fff;
-    padding: 4px 8px;
-    border-radius: 3px;
+    padding: 5px 12px;
+    border-radius: 20px;
     font-weight: 700;
     font-size: 13px;
     white-space: nowrap;
 }
 
 .r_dateonly_post {
-    color: #666;
+    background: #ebebeb;
+    color: #444;
+    padding: 5px 12px;
+    border-radius: 20px;
     font-size: 13px;
+    white-space: nowrap;
 }
 
 .r_content_post {
