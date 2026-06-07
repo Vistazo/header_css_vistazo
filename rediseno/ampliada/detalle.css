@@ -614,10 +614,10 @@
 }
 
 .r_dateonly_post {
-    background: #ebebeb;
+    background: #f0f0f0;
     color: #444;
-    padding: 5px 12px;
-    border-radius: 20px;
+    padding: 5px 10px;
+    border-radius: 4px;
     font-size: 13px;
     white-space: nowrap;
 }
