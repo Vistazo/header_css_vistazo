@@ -619,9 +619,7 @@
 }
 
 .r_content_post {
-    background: #fff;
-    border: 1px solid #e2e2e2;
-    padding: 16px;
+    margin-top: 6px;
 }
 
 .r_headline_post {

@@ -64,8 +64,7 @@ solicitarPermisoNotificaciones();
             var year = m[1];
 
             var ampm = hours >= 12 ? 'PM' : 'AM';
-            var h12 = hours % 12 || 12;
-            var timeStr = h12 + ':' + minutes.toString().padStart(2, '0') + ' ' + ampm;
+            var timeStr = hours.toString().padStart(2, '0') + ':' + minutes.toString().padStart(2, '0') + ' ' + ampm;
             var dateStr = day + ' ' + MESES[monthIdx] + ' ' + year;
 
             el.innerHTML =
