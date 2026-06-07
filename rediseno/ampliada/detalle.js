@@ -47,36 +47,48 @@ function mostrarInstruccionesPermiso() {
 // Llamar automáticamente a la función al cargar la página
 solicitarPermisoNotificaciones();
 
-// Reformatear fechas del live blog: "2026/06/07 16:23" → "4:23 PM  7 junio 2026"
+// Reformatear fechas del live blog: "2026/06/07 16:23" → badge "16:23 PM" + "7 junio 2026"
 (function () {
     var MESES = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
 
     function reformatDates() {
-        document.querySelectorAll('.r_date_post[data-date]').forEach(function (el) {
+        document.querySelectorAll('.r_date_post[data-date]:not([data-reformed])').forEach(function (el) {
             var raw = el.getAttribute('data-date');
             var m = raw.match(/(\d{4})[\/\-](\d{2})[\/\-](\d{2})\s+(\d{2}):(\d{2})/);
             if (!m) return;
 
-            var hours = parseInt(m[4], 10);
+            var hours   = parseInt(m[4], 10);
             var minutes = parseInt(m[5], 10);
-            var day = parseInt(m[3], 10);
+            var day     = parseInt(m[3], 10);
             var monthIdx = parseInt(m[2], 10) - 1;
-            var year = m[1];
+            var year    = m[1];
 
-            var ampm = hours >= 12 ? 'PM' : 'AM';
+            var ampm    = hours >= 12 ? 'PM' : 'AM';
             var timeStr = hours.toString().padStart(2, '0') + ':' + minutes.toString().padStart(2, '0') + ' ' + ampm;
             var dateStr = day + ' ' + MESES[monthIdx] + ' ' + year;
 
             el.innerHTML =
                 '<span class="r_time_post">' + timeStr + '</span>' +
                 '<span class="r_dateonly_post">' + dateStr + '</span>';
+            el.setAttribute('data-reformed', '1');
         });
     }
 
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', reformatDates);
-    } else {
+    function init() {
         reformatDates();
+        // Observar contenido del live blog que se carga dinámicamente
+        var observer = new MutationObserver(function (mutations) {
+            var hasNew = mutations.some(function (m) { return m.addedNodes.length > 0; });
+            if (hasNew) reformatDates();
+        });
+        var container = document.querySelector('.R_LIVE_BLOG_POST') || document.body;
+        observer.observe(container, { childList: true, subtree: true });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
     }
 })();
 
