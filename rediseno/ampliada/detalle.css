@@ -591,7 +591,7 @@
     /* Espacio adicional para contenido */
     /* separacion arriba y abajo */
     padding-top: 10px !important;
-    padding-bottom: 10px !important;
+    padding-bottom: 15px !important;
 }
 
 .r_date_post {
