@@ -709,7 +709,7 @@
 
 .r_bulletvistazo {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 8px;
     font-size: 16px;
 }
@@ -722,6 +722,7 @@
     border-radius: 50%;
     display: inline-block;
     flex-shrink: 0;
+    margin-top: 6px;
 }
 
 .r_citavistazo {
