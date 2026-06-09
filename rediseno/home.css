@@ -1593,7 +1593,24 @@
     text-decoration: none;
     cursor: pointer;
 }
-
+.ultimos-videos-title,
+.ultimos-videos-title:link,
+.ultimos-videos-title:visited,
+.ultimos-videos-title:hover,
+.ultimos-videos-title:active,
+.ultimos-videos-title:focus {
+    color: inherit !important;
+    text-decoration: none !important;
+    opacity: 1 !important;
+    transition: none !important;
+}
+.ultimos-videos-title:hover {
+    color: inherit !important;
+    opacity: 1 !important;
+    filter: none !important;
+    transform: none !important;
+    text-decoration: none !important;
+}
 .ultimos-videos-line {
     width: 100%;
     height: 2px;
