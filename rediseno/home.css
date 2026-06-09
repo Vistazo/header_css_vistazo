@@ -1590,6 +1590,11 @@
     letter-spacing: 0.08em;
     display: block;
     margin-bottom: 8px;
+    text-decoration: none;
+    cursor: pointer;
+}
+.ultimos-videos-title:hover {
+    opacity: 0.8;
 }
 
 .ultimos-videos-line {
