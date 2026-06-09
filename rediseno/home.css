@@ -1594,7 +1594,11 @@
     cursor: pointer;
 }
 .ultimos-videos-title:hover {
-    opacity: 0.8;
+    color: inherit !important;
+    opacity: 1 !important;
+    filter: none !important;
+    transform: none !important;
+    text-decoration: none !important;
 }
 
 .ultimos-videos-line {
