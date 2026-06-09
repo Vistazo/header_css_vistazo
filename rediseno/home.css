@@ -1599,13 +1599,13 @@
 .ultimos-videos-title:hover,
 .ultimos-videos-title:active,
 .ultimos-videos-title:focus {
-    color: inherit !important;
+    color: #FFFFFF !important;
     text-decoration: none !important;
     opacity: 1 !important;
     transition: none !important;
 }
 .ultimos-videos-title:hover {
-    color: inherit !important;
+    color: #FFFFFF !important;
     opacity: 1 !important;
     filter: none !important;
     transform: none !important;
