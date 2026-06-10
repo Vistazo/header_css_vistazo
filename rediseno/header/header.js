@@ -289,10 +289,33 @@
         }
     }
 
+    /* ═══════════════════════════════════════════
+       BANNER — Mundial 2026
+       Se inserta después del iter-header-wrapper.
+    ═══════════════════════════════════════════ */
+    function buildBanner() {
+        var header = document.getElementById('iter-header-wrapper');
+        if (!header) return;
+
+        var banner = document.createElement('a');
+        banner.href = 'https://www.vistazo.com/deportes/mundial-2026';
+        banner.className = 'r-banner-mundial';
+        banner.setAttribute('aria-label', 'Todo lo que debes saber antes del Mundial 2026');
+
+        banner.innerHTML =
+            '<picture>' +
+            '<source media="(max-width: 767px)" srcset="https://backoffice.bmcodigo.com/uploads/images/5d5d4d10-afb4-40df-acec-499ebc78c836-1781108661862.webp">' +
+            '<img src="https://backoffice.bmcodigo.com/uploads/images/007322d3-bf1f-4e6f-b594-cacab77df1f6-1781113528135.webp" alt="Todo lo que debes saber antes del Mundial 2026">' +
+            '</picture>';
+
+        header.insertAdjacentElement('afterend', banner);
+    }
+
     /* ── Init ── */
     loadRnavFromApi();
     loadSidebarNavFromApi();
     loadSecondaryNavFromApi();
+    buildBanner();
 
     btnOpen.addEventListener('click', openSidebar);
     btnClose.addEventListener('click', closeSidebar);

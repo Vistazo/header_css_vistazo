@@ -971,3 +971,16 @@ body {
         gap: 8px;
     }
 }
+
+/* ── Banner Mundial 2026 ── */
+.r-banner-mundial {
+    display: block;
+    width: 100%;
+    line-height: 0;
+}
+
+.r-banner-mundial img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
