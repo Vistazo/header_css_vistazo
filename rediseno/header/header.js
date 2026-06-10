@@ -304,7 +304,7 @@
 
         banner.innerHTML =
             '<picture>' +
-            '<source media="(max-width: 767px)" srcset="https://backoffice.bmcodigo.com/uploads/images/5d5d4d10-afb4-40df-acec-499ebc78c836-1781108661862.webp">' +
+            '<source media="(max-width: 767px)" srcset="https://backoffice.bmcodigo.com/uploads/images/fe33c36d-b755-41a5-ae43-8d442b48e410-1781114643204.webp">' +
             '<img src="https://backoffice.bmcodigo.com/uploads/images/007322d3-bf1f-4e6f-b594-cacab77df1f6-1781113528135.webp" alt="Todo lo que debes saber antes del Mundial 2026">' +
             '</picture>';
 
@@ -315,7 +315,7 @@
     loadRnavFromApi();
     loadSidebarNavFromApi();
     loadSecondaryNavFromApi();
-    buildBanner();
+    // buildBanner();
 
     btnOpen.addEventListener('click', openSidebar);
     btnClose.addEventListener('click', closeSidebar);
