@@ -304,8 +304,8 @@
 
         banner.innerHTML =
             '<picture>' +
-            '<source media="(max-width: 767px)" srcset="https://backoffice.bmcodigo.com/uploads/images/a5eb711c-0d59-43c1-a344-b42fcb5edba1-1781117695869.webp">' +
-            '<img src="https://backoffice.bmcodigo.com/uploads/images/1c00776b-28af-44bc-b418-2c1f733b4cc1-1781120341956.webp" alt="Todo lo que debes saber antes del Mundial 2026">' +
+            '<source media="(max-width: 767px)" srcset="https://codigomarret.online/upload/img/delgadito_abajo_web_1.png">' +
+            '<img src="https://codigomarret.online/upload/img/delgadito_1_web_1440_x_200_px_1.png" alt="Todo lo que debes saber antes del Mundial 2026">' +
             '</picture>';
 
         header.insertAdjacentElement('afterend', banner);
