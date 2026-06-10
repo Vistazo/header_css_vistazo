@@ -304,8 +304,8 @@
 
         banner.innerHTML =
             '<picture>' +
-            '<source media="(max-width: 767px)" srcset="https://backoffice.bmcodigo.com/uploads/images/fe33c36d-b755-41a5-ae43-8d442b48e410-1781114643204.webp">' +
-            '<img src="https://backoffice.bmcodigo.com/uploads/images/007322d3-bf1f-4e6f-b594-cacab77df1f6-1781113528135.webp" alt="Todo lo que debes saber antes del Mundial 2026">' +
+            '<source media="(max-width: 767px)" srcset="https://backoffice.bmcodigo.com/uploads/images/a5eb711c-0d59-43c1-a344-b42fcb5edba1-1781117695869.webp">' +
+            '<img src="https://backoffice.bmcodigo.com/uploads/images/6dc4ebe6-a155-486d-949d-d9972de3cd80-1781117690101.webp" alt="Todo lo que debes saber antes del Mundial 2026">' +
             '</picture>';
 
         header.insertAdjacentElement('afterend', banner);
@@ -315,7 +315,7 @@
     loadRnavFromApi();
     loadSidebarNavFromApi();
     loadSecondaryNavFromApi();
-    // buildBanner();
+    buildBanner();
 
     btnOpen.addEventListener('click', openSidebar);
     btnClose.addEventListener('click', closeSidebar);
