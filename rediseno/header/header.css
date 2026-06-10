@@ -8,7 +8,7 @@
 
     /* Alturas del header fijo. Cambia aquí si quieres ajustar el alto. */
     --vz-barra-blanca: 50px;
-    --vz-barra-negra: 70px;
+    --vz-barra-negra: 90px;
 }
 
 body {
