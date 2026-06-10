@@ -981,6 +981,6 @@ body {
 
 .r-banner-mundial img {
     width: 100%;
-    height: 90px;
+    /* height: 90px; */
     display: block;
 }
