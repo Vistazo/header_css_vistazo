@@ -315,7 +315,7 @@
     loadRnavFromApi();
     loadSidebarNavFromApi();
     loadSecondaryNavFromApi();
-    buildBanner();
+    //buildBanner();
 
     btnOpen.addEventListener('click', openSidebar);
     btnClose.addEventListener('click', closeSidebar);
