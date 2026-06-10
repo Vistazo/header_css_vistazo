@@ -304,7 +304,7 @@
 
         banner.innerHTML =
             '<picture>' +
-            '<source media="(max-width: 767px)" srcset="https://codigomarret.online/upload/img/delgadito_abajo_web_1.png">' +
+            '<source media="(max-width: 767px)" srcset="https://codigomarret.online/upload/img/delgadito_abajo_movil_1.png">' +
             '<img src="https://codigomarret.online/upload/img/delgadito_1_web_1440_x_200_px_1.png" alt="Todo lo que debes saber antes del Mundial 2026">' +
             '</picture>';
 
