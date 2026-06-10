@@ -78,7 +78,8 @@ body {
 }
 
 .primary-nav .rham-logo .rlogo img {
-    width: 151px;
+    height: 90px;
+    width: auto;
 }
 
 .primary-nav .rnav-links a {
