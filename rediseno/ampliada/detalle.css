@@ -603,6 +603,26 @@
     font-size: 13px;
 }
 
+
+.ly-lbp .r_date_post {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.ly-lbp .r_date_post .r_hora_post {
+    background: #CC1114;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.ly-lbp .r_date_post .r_fecha_post {
+    background: #F3F5F8;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
 .r_time_post {
     background: var(--red);
     color: #fff;
