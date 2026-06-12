@@ -714,6 +714,11 @@ body {
     gap: 20px;
 }
 
+.esta-pasando .noticias{
+    margin-left: -16px;
+    margin-right: -16px;
+}
+
 .esta-pasando h2 {
     font-size: 14px;
     font-weight: 500;
