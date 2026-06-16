@@ -772,13 +772,23 @@
     content: "";
     pointer-events: none;
     width: 200%;
-    height: 700px;
+    height: 800px;
     background: #111111;
     position: absolute;
     top: -80px;
     padding: 0;
     left: -100%;
     z-index: -1;
+}
+
+.bloque-detalle .text::first-letter {
+    color: #c00000;
+    font-size: 70px;
+    font-family: Georgia, serif;
+    font-weight: bold;
+    line-height: 0.8;
+    margin-right: 6px;
+    margin-top: 4px;
 }
 
 .nota-especial .left-block .date {
