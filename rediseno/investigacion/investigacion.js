@@ -6,10 +6,7 @@
        del cuerpo del artículo.
     ═══════════════════════════════════════════ */
     function applyDropCap() {
-        var articleBody = document.querySelector('.text.resizable[itemprop="articleBody"]');
-        if (!articleBody) return;
-
-        var firstParagraph = articleBody.querySelector('.paragraph.texto p');
+        var firstParagraph = document.querySelector('.text_detail .paragraph.texto p.p_0');
         if (!firstParagraph || firstParagraph.classList.contains('vz-dropcap')) return;
 
         firstParagraph.classList.add('vz-dropcap');

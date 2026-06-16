@@ -1,12 +1,14 @@
 /* ═══════════════════════════════════════════
    DROP CAP — primera letra del primer párrafo
+   p_0 es siempre el primer párrafo del cuerpo.
 ═══════════════════════════════════════════ */
+.text_detail .paragraph.texto p.p_0::first-letter,
 .vz-dropcap::first-letter {
-    float: left;
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size: 4.6em;
-    line-height: 0.78;
-    font-weight: 800;
-    color: #CC1114;
-    padding: 4px 10px 0 0;
+    float: left !important;
+    font-family: Georgia, 'Times New Roman', serif !important;
+    font-size: 4.6em !important;
+    line-height: 0.78 !important;
+    font-weight: 800 !important;
+    color: #CC1114 !important;
+    padding: 4px 10px 0 0 !important;
 }
