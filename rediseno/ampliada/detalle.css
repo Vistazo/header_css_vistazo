@@ -314,7 +314,7 @@
 }
 
 .R_TABOOLA_TAGS .temas .item_tema a {
-     background: var(--red);
+    background: var(--red);
     padding: 8px;
     font-size: 13px;
     display: ruby-text;
@@ -772,7 +772,7 @@
     content: "";
     pointer-events: none;
     width: 200%;
-    height: 800px;
+    height: 300px;
     background: #111111;
     position: absolute;
     top: -80px;
@@ -790,6 +790,7 @@
     margin-right: 6px;
     margin-top: 4px;
 }
+
 
 .nota-especial .left-block .date {
     display: none;
@@ -877,6 +878,14 @@
         align-items: normal;
     }
 
+    .bloque-detalle .mas-recientes.v2 {
+        display: none;
+    }
+
+    .portlet-boundary.portlet-static-end.menu-portlet.v2 {
+        display: none;
+    }
+
     .ly-lbp .first-block:before {
         background: transparent;
 
@@ -927,7 +936,7 @@
         justify-content: center;
     }
 
-    .canal_whatsapp_movil > a:not(.vtz-wsp-card):not(.vtz-google-btn) {
+    .canal_whatsapp_movil>a:not(.vtz-wsp-card):not(.vtz-google-btn) {
         width: 100%;
         justify-content: center;
     }
