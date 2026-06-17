@@ -6,7 +6,12 @@
     --bone: #F3F2ED;
     --bg-gray: #F3F5F8;
 }
-
+body {
+  font-family: 'Zalando Sans', sans-serif;
+}
+div#iter-content-wrapper {
+    margin-top: 50px;
+}
 
 .section-title {
     position: relative;
@@ -52,6 +57,7 @@
 
 .info-autor .IMGINST_TITINST .media_block{
     width: 185px;
+    margin-bottom: 0 !important;
 }
 
 .info-autor .media_block img {
@@ -63,7 +69,7 @@
 }
 
 .info-autor .headline{
-    font-size: 28px;
+    font-size: 40px;
     font-weight: 500;
 }
 
@@ -92,6 +98,11 @@
 }
 
 .cronologia .r_headline h2 {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.cronologia .headline{
     font-size: 16px;
     font-weight: 500;
 }
