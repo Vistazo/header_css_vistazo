@@ -73,13 +73,13 @@ div#iter-content-wrapper {
     font-weight: 500;
 }
 
-.sect-date .article-section .section {
+.article-section .section {
     background: var(--bg-gray);
     padding: 8px;
     font-size: 13px;
 }
 
-.sect-date .date {
+.date {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -87,7 +87,7 @@ div#iter-content-wrapper {
     margin-bottom: 15px;
 }
 
-.sect-date .date::before {
+.date::before {
     content: "";
     width: 8px;
     height: 8px;
@@ -106,3 +106,4 @@ div#iter-content-wrapper {
     font-size: 16px;
     font-weight: 500;
 }
+
