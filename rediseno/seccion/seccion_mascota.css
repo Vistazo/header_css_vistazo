@@ -80,6 +80,7 @@ div#iter-content-wrapper {
 .menu-categorias .nav {
   gap: 20px;
   white-space: nowrap;
+  height: 40px;
 }
 
 .menu-categorias .nav-link {
