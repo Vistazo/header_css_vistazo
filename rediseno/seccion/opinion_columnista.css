@@ -137,7 +137,7 @@ div#iter-content-wrapper {
 
 .cronologia .article:last-child {
     padding-bottom: 24px;
-    margin-bottom: 24px;
+    margin-bottom: 60px;
     border-bottom: none;
 }
 
@@ -146,6 +146,7 @@ div#iter-content-wrapper {
     gap: 30px;
     align-items: center;
     justify-content: center;
+    margin-bottom: 3rem;
 }
 
 .cronologia .nav-button ul {
@@ -182,6 +183,9 @@ div#iter-content-wrapper {
     }
     .cronologia .headline h2 {
         font-size: 18px;
+    }
+    .info-autor {
+        padding: 20px;
     }
 
     .cronologia{
