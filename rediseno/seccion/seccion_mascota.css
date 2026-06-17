@@ -98,12 +98,16 @@ div#iter-content-wrapper {
   color: #f3cc2a;
 }
 
+
 /* Activo */
+/*
 .menu-categorias .nav-link.active {
   color: #f3cc2a;
 }
+  */
 
 /* Línea inferior activa */
+/*
 .menu-categorias .nav-link.active::after {
   content: "";
   position: absolute;
@@ -114,7 +118,7 @@ div#iter-content-wrapper {
   background: #f3cc2a;
   border-radius: 2px;
 }
-
+*/
 
 .menu-categorias .nav-link.active,
 .menu-categorias .nav-link:hover {
@@ -287,7 +291,7 @@ div#iter-content-wrapper {
 
 /* Listado subseccion */
 .row.listado{
-    margin: 70px 0 36px;
+    margin: 40px 0 40px;
 }
 .listado-not-seccion .noticias article:nth-child(1) {
     padding-bottom: 16px;
