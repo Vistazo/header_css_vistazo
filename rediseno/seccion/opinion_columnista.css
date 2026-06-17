@@ -135,10 +135,62 @@ div#iter-content-wrapper {
     font-weight: 400;
 }
 
+.cronologia .article:last-child {
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+    border-bottom: none;
+}
+
+.cronologia .nav-button {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.cronologia .nav-button ul {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.cronologia .nav-button ul li {
+    cursor: pointer;
+    padding: 0 5px;
+}
+
+.cronologia .next-button,
+.cronologia .prev-button {
+    padding: 8px 10px;
+    border-radius: 4px;
+    background: var(--red);
+    font-size: 14px;
+    color: #fff;
+    cursor: pointer;
+
+}
+
+.cronologia .nav-page-selected {
+    color: var(--red);
+    text-decoration: underline;
+}
+
 /* RESPONSIVE */
 @media (max-width: 767px) {
+    .info-autor .headline {
+        font-size: 22px;
+    }
+    .cronologia .headline h2 {
+        font-size: 18px;
+    }
 
     .cronologia{
         padding-right: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 0;
     }
 }
