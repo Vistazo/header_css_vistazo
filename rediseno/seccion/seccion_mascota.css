@@ -96,6 +96,7 @@ div#iter-content-wrapper {
 /* Hover */
 .menu-categorias .nav-link:hover {
   color: #f3cc2a;
+  border-bottom: 2px solid #f3cc2a;
 }
 
 
