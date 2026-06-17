@@ -97,13 +97,31 @@ div#iter-content-wrapper {
     display: inline-block;
 }
 
-.cronologia .r_headline h2 {
-    font-size: 16px;
+.cronologia article{
+    margin-bottom: 2rem;
+}
+
+.cronologia .headline h2 {
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.text_read_more{
+    background: var(--red);
+    width: 15%;
+    padding: 7px;
+    border-radius: 30px;
+    text-align: center;
+}
+
+.text_read_more a{
+    color: white;
+    font-size: 15px;
     font-weight: 500;
 }
 
-.cronologia .headline{
-    font-size: 16px;
-    font-weight: 500;
+.text_block2 p{
+    font-size: 14px;
+    font-weight: 400;
 }
-
