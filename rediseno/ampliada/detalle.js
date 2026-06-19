@@ -221,34 +221,59 @@ document.addEventListener('DOMContentLoaded', function () {
       .catch(function () {});
   }
 
-  function transformLeaTambien() {
+  function transformParagraph(p) {
+    if (!p.isConnected || !LABEL_RE.test(p.textContent.trim())) return;
+    var link = p.querySelector("a[href]");
+    if (!link) return;
+
+    var href = link.href;
+    var title = p.textContent.trim().replace(LABEL_RE, "").trim();
+    if (!title) title = link.textContent.trim().replace(LABEL_RE, "").trim();
+    var date = extractDateFromUrl(href);
+    var card = buildLeaTambienCard(href, title, date);
+
+    p.parentNode.replaceChild(card, p);
+
+    try {
+      if (new URL(href).hostname === window.location.hostname) {
+        enrichLeaTambienCard(card, href);
+      }
+    } catch (_) {}
+  }
+
+  function transformLeaTambien(root) {
     injectLeaTambienStyles();
-    var paragraphs = document.querySelectorAll("p");
-    paragraphs.forEach(function (p) {
-      if (!LABEL_RE.test(p.textContent.trim())) return;
-      var link = p.querySelector("a[href]");
-      if (!link) return;
+    (root || document).querySelectorAll("p").forEach(transformParagraph);
+  }
 
-      var href = link.href;
-      var title = p.textContent.trim().replace(LABEL_RE, "").trim();
-      if (!title) title = link.textContent.trim().replace(LABEL_RE, "").trim();
-      var date = extractDateFromUrl(href);
-      var card = buildLeaTambienCard(href, title, date);
-
-      p.parentNode.replaceChild(card, p);
-
-      try {
-        if (new URL(href).hostname === window.location.hostname) {
-          enrichLeaTambienCard(card, href);
-        }
-      } catch (_) {}
+  /* Algunos "LEA TAMBIÉN" se renderizan después de DOMContentLoaded
+     (carga asíncrona del cuerpo del artículo), por eso se observan
+     los párrafos que se agreguen más tarde. */
+  function observeNewParagraphs() {
+    var observer = new MutationObserver(function (mutations) {
+      mutations.forEach(function (mutation) {
+        mutation.addedNodes.forEach(function (node) {
+          if (node.nodeType !== 1) return;
+          if (node.tagName === "P") {
+            transformParagraph(node);
+          } else if (node.querySelectorAll) {
+            node.querySelectorAll("p").forEach(transformParagraph);
+          }
+        });
+      });
     });
+    observer.observe(document.body, { childList: true, subtree: true });
+  }
+
+  function init() {
+    transformLeaTambien(document);
+    observeNewParagraphs();
   }
 
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", transformLeaTambien);
+    document.addEventListener("DOMContentLoaded", init);
   } else {
-    transformLeaTambien();
+    init();
   }
 })();
 
