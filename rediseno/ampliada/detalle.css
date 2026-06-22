@@ -13,6 +13,11 @@
     align-items: center;
 }
 
+.r_enumeration::before {
+    content: attr(data-num) ". ";
+    font-weight: bold;
+}
+
 .section-date-preferida {
     display: flex;
     gap: 20px;
