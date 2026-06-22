@@ -301,16 +301,18 @@ async function activarNotificaciones() {
 }
 
 
-let contador = 0;
+setTimeout(() => {
+  let contador = 0;
 
-document.querySelectorAll('.r_enumeration').forEach(item => {
-    const prev = item.previousElementSibling;
-
-    if (!prev || !prev.classList.contains('r_enumeration')) {
-        contador = 1; // inicia nuevo bloque
-    } else {
-        contador++;
-    }
-
-    item.setAttribute('data-num', contador);
-});
+  document.querySelectorAll('.r_enumeration').forEach(item => {
+      const prev = item.previousElementSibling;
+  
+      if (!prev || !prev.classList.contains('r_enumeration')) {
+          contador = 1; // inicia nuevo bloque
+      } else {
+          contador++;
+      }
+  
+      item.setAttribute('data-num', contador);
+  });
+}, 1000); 
