@@ -13,9 +13,29 @@
     align-items: center;
 }
 
+.text_detail .text.resizable {
+    counter-reset: r-enum;
+}
+
+.r_enumeration {
+    counter-increment: r-enum;
+    list-style: none;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin: 0;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--gray);
+}
+
 .r_enumeration::before {
-    content: attr(data-num) ". ";
-    font-weight: bold;
+    content: counter(r-enum, decimal-leading-zero);
+    flex-shrink: 0;
+    min-width: 38px;
+    font-size: 26px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--red);
 }
 
 .section-date-preferida {
