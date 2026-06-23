@@ -13,29 +13,32 @@
     align-items: center;
 }
 
-.text_detail .text.resizable {
-    counter-reset: r-enum;
-}
-
 .r_enumeration {
-    counter-increment: r-enum;
     list-style: none;
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
+    position: relative;
+    display: block;
     margin: 0;
-    padding: 18px 0;
-    border-bottom: 1px solid var(--gray);
+    padding: 18px 0 18px 36px;
+    border-left: 3px solid #0d6efd;
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 .r_enumeration::before {
-    content: counter(r-enum, decimal-leading-zero);
-    flex-shrink: 0;
-    min-width: 38px;
-    font-size: 26px;
-    font-weight: 800;
-    line-height: 1.2;
-    color: var(--red);
+    content: attr(data-num);
+    position: absolute;
+    left: -17px;
+    top: 18px;
+    width: 34px;
+    height: 34px;
+    background: var(--red);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .section-date-preferida {
