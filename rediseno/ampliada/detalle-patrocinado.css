@@ -81,7 +81,7 @@
 }
 
 .R_SEC_DATE_TIT_SUB .subheadline {
-    padding-top: 16px;
+    /* padding-top: 16px; */
     padding-bottom: 16px;
     border-bottom: 1px solid var(--gray);
     border-top: 1px solid var(--gray);
@@ -397,6 +397,10 @@
 
 /* LIVE BLOG POSTING */
 
+.primer-bloque.patrocinado_ {
+    background: #EDECE6;
+}
+
 .portlet-boundary.R_LIVE_BLOG_POST {
     font-family: Arial, sans-serif;
     color: #333;
@@ -449,7 +453,9 @@
 }
 
 .ly-lbp .R_SEC_DATE_TIT_SUB .headline {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 4px solid #CC1114;
+    padding-bottom: 20px;
 }
 
 .masnoticias-derecha .headline h2,
