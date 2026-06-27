@@ -50,9 +50,12 @@
 
 
 .sect-date .article-section .section {
-    background: var(--bg-gray);
+    background: #111111;
+    color: #fff;
     padding: 8px;
     font-size: 13px;
+    margin-bottom: 24px;
+    display:block;
 }
 
 .sect-date .date {
@@ -233,9 +236,10 @@
 
 .autor-social-footer {
     display: flex;
-    align-items: center;
     justify-content: space-between;
     margin-bottom: 20px;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .canal_whatsapp_movil {
@@ -399,6 +403,21 @@
 
 .primer-bloque.patrocinado_ {
     background: #EDECE6;
+    padding: 52px 0;
+}
+
+.con-pat {
+    display: flex;
+    align-items: center;
+    margin-bottom: 65px;
+    gap: 8px;
+    padding: 0 12px;
+}
+
+.con-pat span {
+    font-size: 13px;
+    line-height: 16px;
+    font-family: monospace;
 }
 
 .portlet-boundary.R_LIVE_BLOG_POST {
@@ -887,6 +906,12 @@
     }
 }
 
+
+@media (max-width: 1200px) {
+    .headline.titulo_nota {
+        font-size: 28px;
+    }
+}
 
 @media (max-width: 991px) {
     .second-block .autor-container {
