@@ -59,7 +59,7 @@ div#iter-content-wrapper {
     padding: 8px;
     font-size: 13px;
     margin-bottom: 24px;
-    display:block;
+    display: block;
 }
 
 .sect-date .date {
@@ -1051,5 +1051,13 @@ div#iter-content-wrapper {
 
     .second-block .vtz-google-btn span {
         font-size: 12px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .primer-bloque.patrocinado_ {
+        margin-right: -16px;
+        margin-left: -16px;
     }
 }
