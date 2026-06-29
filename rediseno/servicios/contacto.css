@@ -26,7 +26,7 @@ div#iter-content-wrapper {
     height: 245px;
     display: flex;
     align-items: center;
-    background-image: url(https://codigomarret.online/upload/img/contacto.webp);
+    background-image: url(https://backoffice.bmcodigo.com/uploads/images/7a3e69f3-dfd1-4d28-bb55-89832381a189-1782763657226.webp);
     background-size: cover;
     background-position: center;
     color: #fff;
@@ -189,7 +189,7 @@ div#iter-content-wrapper {
         height: 260px;
         display: flex;
         align-items: center;
-        background-image:linear-gradient(to right, rgba(0,0,0,0.95) 3%, rgba(0,0,0,0.7) 16%, rgba(0,0,0,0) 30%), url("https://codigomarret.online/upload/img/contacto_mov.webp");
+        background-image:linear-gradient(to right, rgba(0,0,0,0.95) 3%, rgba(0,0,0,0.7) 16%, rgba(0,0,0,0) 30%), url("https://backoffice.bmcodigo.com/uploads/images/7a3e69f3-dfd1-4d28-bb55-89832381a189-1782763657226.webp");
         color: #fff;
         background-repeat: no-repeat;
         background-size: cover;
