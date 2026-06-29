@@ -7,6 +7,14 @@
     --bg-gray: #F3F5F8;
 }
 
+/* Subsecciones de Tendencias: color magenta heredado de la sección padre */
+body:has(a.section[href*="/bienestar"]),
+body:has(a.section[href*="/tecnologia"]),
+body:has(a.section[href*="/mascotas"]),
+body:has(a.section[href*="/cocina"]) {
+    --red: #BF2BBF;
+}
+
 .sect-date {
     display: flex;
     gap: 8px;
