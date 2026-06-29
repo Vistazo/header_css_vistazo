@@ -10,9 +10,13 @@
 /* Subsecciones de Tendencias: color magenta heredado de la sección padre */
 body:has(a.section[href*="/bienestar"]),
 body:has(a.section[href*="/tecnologia"]),
-body:has(a.section[href*="/mascotas"]),
 body:has(a.section[href*="/cocina"]) {
     --red: #BF2BBF;
+}
+
+/* Mascotas y sus subsecciones: color amarillo propio */
+body:has(a.section[href*="/mascotas"]) {
+    --red: #F3CC2A;
 }
 
 .sect-date {
