@@ -7,6 +7,10 @@
     --bg-gray: #F3F5F8;
 }
 
+div#iter-content-wrapper {
+    margin-top: 0;
+}
+
 .sect-date {
     display: flex;
     gap: 8px;
