@@ -221,6 +221,13 @@ div#iter-content-wrapper {
     border-bottom: none;
 }
 
+mark {
+  background: #fff2a8;
+  color: inherit;
+  padding: 0 .2em;
+  line-height: 1.6;
+}
+
 .arrow{
     transition:0.3s;
     font-size:18px;
