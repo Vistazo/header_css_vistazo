@@ -330,6 +330,7 @@ setTimeout(() => {
             '.vtz-pdf-btn,header,nav,footer,#iter-nav-wrapper,.header-top-bar,.canal_whatsapp_movil,.r_relacionadas,.mas-recientes,.vtz-wsp-card,.vtz-google-news-btn,.vtz-google-btn,.r-social-icons,.ultimas-noticias,.mn-lbp,.am-lbp-footer,[class*="publicidad"],[class*="banner"],[id*="banner"],[id*="ads"],[class*="taboola"]{display:none!important;}' +
             'body,html{background:#fff!important;}' +
             '#iter-content-wrapper,#col-main,.primer-bloque{width:100%!important;max-width:100%!important;float:none!important;}' +
+            'img{max-width:100%!important;height:auto!important;display:block!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}' +
             '}';
         document.head.appendChild(style);
 
@@ -341,7 +342,15 @@ setTimeout(() => {
             '<polyline points="14 2 14 8 20 8"/>' +
             '<line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/>' +
             '</svg> Descargar PDF';
-        btn.addEventListener('click', function () { window.print(); });
+        btn.addEventListener('click', function () {
+            // Forzar carga de imágenes lazy antes de imprimir
+            document.querySelectorAll('img[loading="lazy"], img[data-src]').forEach(function (img) {
+                if (img.dataset.src) img.src = img.dataset.src;
+                img.loading = 'eager';
+            });
+            // Pequeña pausa para que las imágenes carguen
+            setTimeout(function () { window.print(); }, 400);
+        });
 
         // Inserta después del titular
         var anchor = document.querySelector('.R_PATROCINIO_TITLE .subheadline, .R_SEC_DATE_TIT_SUB .subheadline, .R_PATROCINIO_TITLE .headline, .R_SEC_DATE_TIT_SUB .headline');
