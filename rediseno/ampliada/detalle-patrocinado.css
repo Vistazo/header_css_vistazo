@@ -423,10 +423,6 @@ div#iter-content-wrapper {
 
 /* LIVE BLOG POSTING */
 
-.primer-bloque.patrocinado_ {
-    background: #EDECE6;
-    padding: 0 0 52px 0;
-}
 
 .portlet-boundary.R_LIVE_BLOG_POST {
     font-family: Arial, sans-serif;
@@ -479,12 +475,6 @@ div#iter-content-wrapper {
     border-top: 1px solid transparent;
 }
 
-.ly-lbp .R_SEC_DATE_TIT_SUB .headline,
-.ly-lbp .R_PATROCINIO_TITLE .headline {
-    margin-bottom: 20px;
-    border-bottom: 3px solid #CC1114;
-    padding-bottom: 16px;
-}
 
 .masnoticias-derecha .headline h2,
 .masnoticias-izq-dos .headline h2 {
