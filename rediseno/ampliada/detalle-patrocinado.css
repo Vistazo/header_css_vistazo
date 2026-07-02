@@ -421,6 +421,18 @@ div#iter-content-wrapper {
 }
 
 
+.primer-bloque.patrocinado_ {
+    background: #EDECE6;
+    padding: 0 0 52px 0;
+}
+
+.ly-lbp .R_SEC_DATE_TIT_SUB .headline,
+.ly-lbp .R_PATROCINIO_TITLE .headline {
+    margin-bottom: 20px;
+    border-bottom: 3px solid #CC1114;
+    padding-bottom: 16px;
+}
+
 /* LIVE BLOG POSTING */
 
 
