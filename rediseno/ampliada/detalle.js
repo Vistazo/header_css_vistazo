@@ -326,7 +326,11 @@ setTimeout(() => {
         style.textContent =
             '.vtz-pdf-btn{display:inline-flex;align-items:center;gap:8px;background:#CC1114;color:#fff;border:none;padding:10px 20px;font-family:"Zalando Sans",sans-serif;font-size:13px;font-weight:600;cursor:pointer;border-radius:4px;margin:20px 0;}' +
             '.vtz-pdf-btn:hover{background:#a50e10;}' +
-            '@media print{.vtz-pdf-btn,.canal_whatsapp_movil,.r_relacionadas,.mas-recientes,.portlet-boundary:not(.R_PATROCINIO_TITLE):not(.R_SEC_DATE_TIT_SUB):not(.bloque-detalle){display:none!important;}header,nav,footer,#iter-nav-wrapper,.header-top-bar{display:none!important;}}';
+            '@media print{' +
+            '.vtz-pdf-btn,header,nav,footer,#iter-nav-wrapper,.header-top-bar,.canal_whatsapp_movil,.r_relacionadas,.mas-recientes,.vtz-wsp-card,.vtz-google-news-btn,.vtz-google-btn,.r-social-icons,.ultimas-noticias,.mn-lbp,.am-lbp-footer,[class*="publicidad"],[class*="banner"],[id*="banner"],[id*="ads"],[class*="taboola"]{display:none!important;}' +
+            'body,html{background:#fff!important;}' +
+            '#iter-content-wrapper,#col-main,.primer-bloque{width:100%!important;max-width:100%!important;float:none!important;}' +
+            '}';
         document.head.appendChild(style);
 
         var btn = document.createElement('button');
