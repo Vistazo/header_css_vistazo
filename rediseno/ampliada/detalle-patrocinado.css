@@ -426,6 +426,12 @@ div#iter-content-wrapper {
     padding: 0 0 52px 0;
 }
 
+.header-patrocinios {
+    padding: 14px 0;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--gray);
+}
+
 .ly-lbp .R_SEC_DATE_TIT_SUB .headline,
 .ly-lbp .R_PATROCINIO_TITLE .headline {
     margin-bottom: 20px;
