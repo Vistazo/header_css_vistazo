@@ -1,0 +1,412 @@
+##----R_LIVE_BLOG_POST ----
+<div class="R_LIVE_BLOG_POST v3">
+
+	#set ($LivePost= $!articleToolbox.getTag(null, 'LBP_Headline'))
+	#set( $reversedList = [] )
+
+
+	#foreach( $itm in $LivePost.getSiblings() )
+		#set ($portalBeanLocator = $portal.getClass().forName('com.liferay.portal.kernel.bean.PortalBeanLocatorUtil'))
+		#set ($dateFormatFactory = $portalBeanLocator.locate('com.liferay.portal.kernel.util.DateFormatFactoryUtil'))
+		#set ($indexFormat = $dateFormatFactory.getSimpleDateFormat('dd/MM/yyyy HH:mm'))
+		
+		#set ($indexFormatSoloFecha = $dateFormatFactory.getSimpleDateFormat('dd/MM/yyyy'))
+		#set ($indexFormatSoloHora  = $dateFormatFactory.getSimpleDateFormat('hh:mm a'))
+
+		#set ($dResultado      = $indexFormat.parse("$itm.LBP_Date.data"))
+		#set ($soloFecha       = $indexFormatSoloFecha.format($dResultado))
+		#set ($soloHora        = $indexFormatSoloHora.format($dResultado))
+
+		#set ($temp = $itm.put("FECHA_POST", $soloFecha))
+		#set ($temp = $itm.put("HORA_POST",  $soloHora))
+		#set ($temp = $itm.put("DATE_POST",  $dResultado))
+		#set ($temp = $reversedList.add(0, $itm))
+	#end
+
+	#foreach($post in $sortTool.sort($reversedList, 'DATE_POST:desc'))
+
+
+#set ($soloFecha = $post.FECHA_POST)
+#set ($soloHora  = $post.HORA_POST)
+		#set ($PostDate= $post.LBP_Date)
+		#set ($PostText= $post.LBP_Text)
+		#set ($PostchildrenTags = $articleToolbox.getChildrenTags($post))
+
+		<div class="r_item_post p_$velocityCount">
+			<div class="r_item_line">
+                <div class="r_point_post"></div>
+                <div class="r_vertical-line"></div> <!-- Línea vertical entre los puntos -->
+            </div>
+			<div class="r_item_content">
+				<div class="r_date_post" data-date="$!PostDate.data">
+				  <div class="r_hora_post">$!soloHora</div>
+    <div class="r_fecha_post">$!soloFecha</div>
+				
+				</div>
+				<div class="r_content_post">
+					<div class="r_headline_post">$!post.data</div>
+					<div class="r_text_post">$!PostText.data</div>
+				#foreach ($el in $PostchildrenTags)
+					#if($el.name == "LBP_HTML")
+						<div class="r_html_post">$el.data</div>
+					#end
+
+					#if($el.name == "LBP_Image")
+						<div class="r_image_post">
+						    $!articleToolbox.getImageTag("$el.name","$el.Milenium.data","crop_650_350_PodHea","","","","false","$!post.data","$!post.data","100%")
+						</div>
+					#end
+					#if($el.name == "LBP_Multimedia")
+						<div class="r_multimedia_post">
+						#if($el.Extension.data && $el.Extension.data == "mp3")
+							<audio controls width="$widthMultimedia" height="$heightMultimedia">
+								<source src="$el.Document.data" type="audio/mpeg">
+							</audio>
+						#elseif ($el.Extension.data && $el.Extension.data == "mp4")
+							<video id="multimediaPlayer$!{reserved-article-id.data}${velocityCount}" poster="$!el.Preview.data" controls width="640" height="360">
+								<source src="$!el.Document.data" type="video/mp4">
+								Tu navegador no soporta el vÃ­deo de HTML5
+							</video>
+						#end
+						</div>
+					#end
+					#if($el.name == "LBP_Youtube")
+						<div class="r_youtube_post">
+								$el.data
+							##<iframe allowfullscreen="" frameborder="0" height="360"  width="640" src="//www.youtube.com/embed/?wmode=transparent&controls=2&showinfo=0&theme=light"></iframe>
+						</div>
+					#end
+				#end
+					<hr class="r_linea_hr"/>
+					<div class="r_social-icons">
+						<a href="https://facebook.com/sharer/sharer.php?u=#siteUrl()#printAcCanonicalUrl_v1()" target="_blank">
+							<img src="https://codigomarret.online/upload/img/facebook.svg" alt="Facebook">
+						</a>
+						<a href="https://api.whatsapp.com/send?text=#siteUrl()#printAcCanonicalUrl_v1()" target="_blank">
+							<img src="https://codigomarret.online/upload/img/icons8-whatsapp.svg" alt="WhatsApp">
+						</a>
+						<a href="https://twitter.com/intent/tweet?text=#siteUrl()#printAcCanonicalUrl_v1()" target="_blank">
+							<img src="https://codigomarret.online/upload/img/icons8-twitterx.svg" alt="Twitter">
+			            </a>
+			        </div>
+				</div>
+			</div>
+		</div>
+
+	#end
+</div>
+
+
+## JSON +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#set($TituloEsc = $htmlUtil.escape($!Headline.data))
+#set($TituloEsc = $TituloEsc.replaceAll("\n", ""))
+#set($DescEsc = $htmlUtil.escape($!subHeadline.data))
+#set($DescEsc = $TituloEsc.replaceAll("\n", ""))
+#set ($tempSubheadline = "#getTeaserSubheadline_v1(false)")
+#if($tempSubheadline && $tempSubheadline != "")
+	#set($Texto = $tempSubheadline )
+#else
+	#set($Texto = "#getTeaserText_v1(200)" )
+#end
+#set($Texto = $Texto.replaceAll("<.*?>","") )
+#set($Texto = $Texto.trim() )
+#set($TextoEsc = $htmlUtil.escape($Texto))
+#set($shareUrl = "#siteUrl()#printAcCanonicalUrl_v1()")
+#set($shareUrl = $shareUrl.replaceAll("http:","https:"))
+#set($hmAutores = {})
+#getAcAssignedExtendedAllCat_v1($hmAutores "Ecv_Author")
+#if($hmAutores.size() > 0)
+	#set($hmAutor = $hmAutores.get(0))
+	#set($autor = $hmAutores.get(0).name)
+#end
+##set($formtLocal = "#printDate_v1('yyyy-MM-dd HH:mm:ssXXX')" )
+
+#set($dateDi = "#printDate_v1('yyyy-MM-dd')")
+#set($dateHor = "#printDate_v1('HH:mm:ssXXX')")
+
+#set($dateDi = $dateDi.trim())
+#set($dateHor = $dateHor.trim())
+
+#set($formtLocal = "$dateDi T $dateHor" )
+#set($formtLocal = $formtLocal.replaceAll(" ", ""))
+
+##separador
+##set($toLocal = "#printDateTo_v1('yyyy-MM-dd HH:mm:ssXXX')" )
+
+#set($dateDiTo = "#printDateTo_v1('yyyy-MM-dd')")
+#set($dateHorTo = "#printDateTo_v1('HH:mm:ssXXX')")
+
+#set($dateDiTo = $dateDiTo.trim())
+#set($dateHorTo = $dateHorTo.trim())
+
+#set($toLocal = "$dateDiTo T $dateHorTo" )
+#set($toLocal = $toLocal.replaceAll(" ", ""))
+
+<script type="application/ld+json">
+{
+	"@context": "https://schema.org/",
+	"@type": "LiveBlogPosting",
+	"publisher": {
+		"@type": "Organization",
+		"name": "Vistazo",
+		"url": "https://www.vistazo.com/",
+		"sameAs": [
+			"https://www.facebook.com/revistavistazo",
+			"https://www.instagram.com/revistavistazo.ec/",
+			"https://x.com/vistazo",
+			"https://www.youtube.com/@RevistaVistazoENSA"
+		],
+		"@id": "#PublisherOrg",
+		"logo": {
+			"@type": "ImageObject",
+			"url": "$ogimage"
+			}
+	},
+	"url": "$shareUrl",
+	"description": "$TextoEsc",
+	"headline" : "$TituloEsc",#*
+*##if($hmAutores.size() > 0)#*
+	*#"author": {
+		"@type": "PERSON",
+		"name": "$!autor",
+		"url":"#metadataUrl_v1('metadatos')$hmAutor.friendlyname"
+	},#*
+*##end#*	
+	*#"about": {
+		"@type": "Event",
+		"name": "$DescEsc",
+		"description": "$TextoEsc",
+		"startDate": "$!formtLocal.trim()",
+		"endDate": "$!toLocal.trim()",
+		"location": {
+			"@type": "Place",
+			"name": "Ecuador",
+			"address": {
+				"@type": "PostalAddress",
+				"addressCountry": "Ecuador"
+			}
+		},
+		"eventAttendanceMode": "OnlineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+		"offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/OnlineOnly",
+      "price": "0.00",
+      "priceCurrency": "USD",
+      "validFrom": "$!formtLocal.trim()",
+      "url": "$shareUrl"
+    },
+		"image": {
+      "@type": "ImageObject",
+      "url": "https://www.vistazo.com/base-portlet/webrsrc/ctxvar/14b17260-9afe-4609-8631-132f57aa5209.png",
+      "width": "32",
+      "height": "32"
+    },
+		"organizer": {
+      "@type": "Organization",
+      "name": "Vistazo",
+      "url": "https://www.vistazo.com/"
+    },
+    "performer": {
+      "@type": "Organization",
+      "name": "Vistazo",
+      "url": "https://www.vistazo.com/"
+    }
+	},
+	"dateModified" : "$!formtLocal.trim()",
+	"coverageStartTime": "$!formtLocal.trim()",
+	"coverageEndTime": "$!toLocal.trim()",
+	"name": "Vistazo",
+	"liveBlogUpdate": [#*
+*##foreach($post in $sortTool.sort($reversedList, 'DATE_POST:desc'))#*
+	*##set ($PostDate = $post.LBP_Date.data)#*
+	*##set ($PostText = $!post.LBP_Text.data.replaceAll('"', "'"))#*
+	*##set ($PostText = $PostText.replaceAll("<.*?>","") )#*
+	*##set ($PostText = $PostText.trim() )#*
+	*##set ($PostText = $htmlUtil.escape($PostText))#*
+	*##set ($PostTitulo = $post.data.replaceAll('"', "'"))#*
+	*##set ($indexFormat = $dateFormatFactory.getSimpleDateFormat('dd/MM/yyyy HH:mm'))#*
+	*##set ($datePostFormat = $indexFormat.parse($PostDate))#*
+	*##set ($date_F = $dateTool.format("yyyy-MM-dd'T'HH:mm:ssZ",$datePostFormat))#* 
+
+	*##set ($PostchildrenTags = $articleToolbox.getChildrenTags($post))#*
+	*##if($velocityCount != "1")#*
+	*#,#*
+	*##end#*
+		*#{
+			"@type": "BlogPosting",
+			"headline": "$PostTitulo",
+			"url": "$shareUrl#$velocityCount",
+			"@id": "#$velocityCount",
+			"mainEntityOfPage": {
+				"@type": "WebPage"
+			},
+			"datePublished": "$date_F",
+			"dateModified": "$date_F",
+			"articleBody": "$PostText",#*
+		*##foreach ($el in $PostchildrenTags)#*
+			*##if($el.name == "LBP_Image")#*
+			*#"image": {
+				"@type": "ImageObject",
+				"url": "$!articleToolbox.getImageURL("$el.name","$el.Milenium.data","crop_650_350_PodHea")"
+			},#*
+			*##end#*
+		*##end#*
+	*##if($hmAutores.size() > 0)#*			
+			*#"author": {
+				"@type": "PERSON",
+				"name": "$autor"
+			},#*
+	*##end#*
+			*#"publisher": {
+				"name": "Vistazo",
+				"@type": "Organization",
+				"@id": "#PublisherOrg"
+			}
+		}#*
+*##end
+	]
+}
+</script>
+
+
+#set($Texto = $Texto.replaceAll("<.*?>","") )
+#set($Texto = $Texto.trim() )
+#set($TextoEsc = $htmlUtil.escape($Texto))
+
+
+#set($TituloEsc = $htmlUtil.escape($!Headline.data))
+#set($TituloEsc = $TituloEsc.replaceAll("\n", ""))
+
+#set($text = "")
+#set($Texto = $articleToolbox.getTag2(null, 'Text', 200, '', ''))
+#set($text = $!Texto.data)
+#set($text = $text.replace("<p>"," "))
+#set($text = $text.replace("</p>"," "))
+
+#set($text = $text.replace('"',''))
+#set($text = $text.replace("<br />",""))
+
+#set($text = $text.replace("&lt;","<")) #set($text=$text.replace("&gt;",">"))
+
+#set($text = $text.replace("<br />",""))
+#set($text = $text.replace("<strong>",""))
+#set($text = $text.replace("</strong>",""))
+#set($text = $text.trim())
+#set($text = $text.replaceAll("<.*?>","") )
+#set($textfor = $htmlUtil.escape($text))
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "$!articleToolbox.getArticleViewer("canonical")"
+    },
+  "headline": "$TituloEsc",
+  "description": "$TextoEsc",
+  "articleSection": "#printAssignedSection_v1",
+  "articleBody": "$textfor",
+  "datePublished": "$formtLocal",
+  "dateModified": "$formtLocal",
+  "author": {
+    "@type": "Person",
+    "name": "$autor",
+    "url": "#metadataUrl_v1("metadatos")$hmAutor.friendlyname"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Vistazo",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "$!iterVelocityTools.getVariable("0","favicon")",
+      "width": 32,
+      "height": 32
+    }
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "$ogimage",
+    "width": 1200,
+    "height": 600
+  }
+}
+</script>
+
+
+<script>
+
+	var version = "4";
+	var dateServer = "<?php echo date("d/m/Y H:i:s");?>";
+	function timeAgo(date_str) {
+		var date = getDate(date_str);
+		var now  = getDate(dateServer);
+		var ms = now.getTime() - date.getTime();
+		var seconds = Math.floor(ms / 1000);
+		var minutes = Math.floor(seconds / 60);
+		var hours = Math.floor(minutes / 60);
+		var days = Math.floor(hours / 24);
+		var months = Math.floor(days / 30);
+		var years = Math.floor(months / 12);
+		if(ms < 0){
+			return date_str;
+		}
+		if (ms === 0) {
+			return "Hace un momento";
+		}
+		if (seconds < 60) {
+			return "Hace " + seconds + " segundos";
+		}
+		if (minutes < 60) {
+			return "Hace " + minutes + " minutos";
+		}
+		if (hours < 6) {
+			return "Hace " + hours + " horas";
+		}
+		if (hours => 24) {
+			return date_str;
+		}
+	}
+
+	function getDate (date_str){
+		let dateTimeString = date_str;
+		const [dateString, timeString] = dateTimeString.split(' ');
+		const [day, month, year] = dateString.split('/');
+		const [hour, minute] = timeString.split(':');
+		var d = new Date(+year, +month - 1, +day, +hour, +minute);
+		return d;
+	}
+
+
+	function changeDatehora (){
+		document.querySelectorAll('.r_date_post').forEach(el => {
+
+			const text = el.textContent.trim();
+			const [date, time] = text.split(" ");
+
+			el.innerHTML = `
+				<span class="time">${time}</span>
+				<span class="date">${date}</span>
+			`;
+
+		});
+
+	}
+
+	setTimeout(() => {
+		changeDatehora();
+	}, 500);
+
+
+	//jQuery(document).ready(function() {
+		//$('.date_post').each(function(){
+		//	var fecha_fin = timeAgo(this.innerText);
+		//	this.innerText = fecha_fin;
+		
+		
+		//});
+});
+
+</script>
