@@ -4,24 +4,14 @@
     var ARROW_NEXT =
         '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>';
 
-    function perView() {
-        return window.innerWidth >= 768 ? 3 : 1;
-    }
-
     function initCarousel(portlet) {
-        var section = portlet.querySelector('.noticias');
-        if (!section) return;
+        var track = portlet.querySelector('.noticias');
+        if (!track) return;
 
-        var articles = Array.from(section.querySelectorAll('article'));
-        if (articles.length <= perView()) return;
+        var articles = track.querySelectorAll('article');
+        if (articles.length <= 1) return;
 
-        // Envolver en contenedor con overflow hidden
-        var wrapper = document.createElement('div');
-        wrapper.className = 'carousel-wrapper';
-        section.parentNode.insertBefore(wrapper, section);
-        wrapper.appendChild(section);
-
-        // Crear botones
+        // Botones
         var controls = document.createElement('div');
         controls.className = 'carousel-controls';
 
@@ -37,42 +27,29 @@
 
         controls.appendChild(prevBtn);
         controls.appendChild(nextBtn);
-        wrapper.insertAdjacentElement('afterend', controls);
-
-        var current = 0;
-
-        function gap() {
-            return 24;
-        }
+        track.insertAdjacentElement('afterend', controls);
 
         function slideWidth() {
-            return articles[0] ? articles[0].offsetWidth + gap() : 0;
+            var first = track.querySelector('article');
+            return first ? first.offsetWidth + 24 : 300;
         }
 
-        function maxIndex() {
-            return Math.max(0, articles.length - perView());
-        }
-
-        function update() {
-            section.style.transform = 'translateX(-' + (current * slideWidth()) + 'px)';
-            prevBtn.disabled = current <= 0;
-            nextBtn.disabled = current >= maxIndex();
+        function updateBtns() {
+            prevBtn.disabled = track.scrollLeft <= 4;
+            nextBtn.disabled = track.scrollLeft + track.offsetWidth >= track.scrollWidth - 4;
         }
 
         prevBtn.addEventListener('click', function () {
-            if (current > 0) { current--; update(); }
+            track.scrollBy({ left: -slideWidth(), behavior: 'smooth' });
         });
 
         nextBtn.addEventListener('click', function () {
-            if (current < maxIndex()) { current++; update(); }
+            track.scrollBy({ left: slideWidth(), behavior: 'smooth' });
         });
 
-        window.addEventListener('resize', function () {
-            current = Math.min(current, maxIndex());
-            update();
-        });
-
-        update();
+        track.addEventListener('scroll', updateBtns, { passive: true });
+        window.addEventListener('resize', updateBtns);
+        updateBtns();
     }
 
     function init() {
