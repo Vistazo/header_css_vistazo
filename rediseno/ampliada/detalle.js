@@ -306,13 +306,52 @@ setTimeout(() => {
 
   document.querySelectorAll('.r_enumeration').forEach(item => {
       const prev = item.previousElementSibling;
-  
+
       if (!prev || !prev.classList.contains('r_enumeration')) {
           contador = 1; // inicia nuevo bloque
       } else {
           contador++;
       }
-  
+
       item.setAttribute('data-num', contador);
   });
-}, 1000); 
+}, 1000);
+
+// Botón PDF — solo visible en vtz-vp.milenium.cloud
+(function () {
+    if (window.location.hostname !== 'vtz-vp.milenium.cloud') return;
+
+    function injectPdfButton() {
+        var style = document.createElement('style');
+        style.textContent =
+            '.vtz-pdf-btn{display:inline-flex;align-items:center;gap:8px;background:#CC1114;color:#fff;border:none;padding:10px 20px;font-family:"Zalando Sans",sans-serif;font-size:13px;font-weight:600;cursor:pointer;border-radius:4px;margin:20px 0;}' +
+            '.vtz-pdf-btn:hover{background:#a50e10;}' +
+            '@media print{.vtz-pdf-btn,.canal_whatsapp_movil,.r_relacionadas,.mas-recientes,.portlet-boundary:not(.R_PATROCINIO_TITLE):not(.R_SEC_DATE_TIT_SUB):not(.bloque-detalle){display:none!important;}header,nav,footer,#iter-nav-wrapper,.header-top-bar{display:none!important;}}';
+        document.head.appendChild(style);
+
+        var btn = document.createElement('button');
+        btn.className = 'vtz-pdf-btn';
+        btn.innerHTML =
+            '<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">' +
+            '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>' +
+            '<polyline points="14 2 14 8 20 8"/>' +
+            '<line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/>' +
+            '</svg> Descargar PDF';
+        btn.addEventListener('click', function () { window.print(); });
+
+        // Inserta después del titular
+        var anchor = document.querySelector('.R_PATROCINIO_TITLE .subheadline, .R_SEC_DATE_TIT_SUB .subheadline, .R_PATROCINIO_TITLE .headline, .R_SEC_DATE_TIT_SUB .headline');
+        if (anchor) {
+            anchor.insertAdjacentElement('afterend', btn);
+        } else {
+            var fallback = document.querySelector('.text_detail, .primer-bloque');
+            if (fallback) fallback.prepend(btn);
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', injectPdfButton);
+    } else {
+        injectPdfButton();
+    }
+}());
