@@ -26,11 +26,13 @@ div#iter-content-wrapper {
   font-weight: 500;
   letter-spacing: -2px;
 }
+
 .tit_sec .titlesec {
   position: relative;
   padding-bottom: 13px;
   border-bottom: 1px solid var(--gray);
 }
+
 .tit_sec .titlesec::after {
     content: "";
     position: absolute;
@@ -41,6 +43,7 @@ div#iter-content-wrapper {
     width: 30px;
     background: var(--red);
 }
+
 .tit_sec .titlesec p{
   font-size: 13px;
   line-height: 16px;
@@ -59,6 +62,7 @@ div#iter-content-wrapper {
     font-weight: 600;
     margin-bottom: 36px;
 }
+
 .section-title .title {
     display: flex;
     align-items: center;
@@ -68,6 +72,7 @@ div#iter-content-wrapper {
     text-transform: uppercase;
     font-weight: 600;
 }
+
 .section-title::after {
     content: "";
     position: absolute;
@@ -112,6 +117,7 @@ div#iter-content-wrapper {
 /* Listado 6 Notas — Carrusel */
 .listado-seis-notas {
     position: relative;
+    overflow: hidden;
 }
 .listado-seis-notas .noticias {
     display: flex !important;
