@@ -11,6 +11,9 @@
         var total = articles.length;
         if (total <= 1) return;
 
+        // Eliminar puntitos pre-existentes del HTML del servidor
+        portlet.querySelectorAll('.carousel-dots').forEach(function (el) { el.remove(); });
+
         var stops = Math.max(1, total - perView() + 1);
 
         // Contenedor de puntitos
