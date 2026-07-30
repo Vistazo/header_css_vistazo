@@ -47,12 +47,14 @@
 #set($childrenTags = $articleToolbox.getChildrenTags(null))
 #set($contadorParrafos = 1)
 #set($canonicalUrl = $articleToolbox.getArticleViewer("canonical"))
+## Obtener artículos relacionados una sola vez para evitar error de Protecmedia
+#set($articlesRelacionados = $articleToolbox.getRelatedArticles("metadata", 4))
 
 <!DOCTYPE html>
-<html amp>
+<html amp lang="es">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,minimal-ui">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>$!titulo</title>
     <meta property="og:title" content="$!escapeTool.html($!articleToolbox.getTag(null,'Headline').data)">
@@ -78,51 +80,86 @@
 
     <!-- ====== ESTILOS ====== -->
     <style amp-custom>
-      html{font-size:16px;}
-      .amp-content{max-width:100%;font-family:sans-serif,Arial;font-size:15px;}
-      .simp-head{background:#000;height:48px;margin-bottom:10px;padding:5px 0;position:relative;}
-      .logo_cab{background:url('/base-portlet/webrsrc/renderer/4e1a9f06734d0ca437ae1e716395f9f0.png') no-repeat center/contain;display:block;height:48px;margin:auto;width:190px;}
-      .amp-bc-wrap{margin:6px 16px 0;}
-      .amp-bc-link{display:inline-block;text-transform:uppercase;font-size:12px;font-weight:700;letter-spacing:.02em;color:#1a73e8;background:#eef4ff;padding:4px 8px;border-radius:6px;text-decoration:none;}
-      h1.amp-title{font-family:'Crete Round',serif;font-weight:700;line-height:1.1;font-size:28px;margin:8px 16px 10px;}
-      @media (min-width:390px){h1.amp-title{font-size:32px}}
-      @media (min-width:480px){h1.amp-title{font-size:36px}}
-      .amp-toptitle{font-size:19px;margin:5px 16px;text-align:center;}
-      .amp-leadin{margin:0 16px 10px;}
-      .amp-leadin p{margin:0;color:#333;font-size:16px;}
-      .hero{position:relative;margin:8px 16px 10px;border-radius:12px;overflow:hidden;}
-      .live-pill{position:absolute;top:10px;left:10px;padding:6px 10px;font-size:12px;font-weight:700;color:#fff;background:#ff2d2d;border-radius:999px;display:flex;align-items:center;gap:6px;z-index:2;}
-      .live-pill .dot{width:8px;height:8px;border-radius:50%;background:#fff;}
-      figure{margin:0;}
-      figure amp-img{width:100%;height:auto;}
-      figure.hero figcaption{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,.6) 80%);color:#fff;font-size:.8rem;padding:28px 12px 8px;}
-      .meta-row{display:flex;align-items:center;gap:10px;font-size:12px;color:#555;margin:6px 16px 12px;}
-      .meta-dot{width:4px;height:4px;border-radius:50%;background:#bbb;}
-      .share-row{display:flex;gap:8px;margin:10px 16px 14px;}
-      .share-row amp-social-share{width:32px;height:32px;border-radius:8px;}
-      .share-row amp-social-share[type="twitter"]{background-color:#111;}
-      .amp-art-body{padding:0 16px;line-height:1.5rem;color:#000;}
-      .paragraph p,.paragraph .h2{font-size:18px;line-height:26px;color:#222;margin:12px 0;}
-      .paragraph.h2{margin-top:16px;}
-      .ladillo{background:#f7f7f7;border-left:4px solid #bc2111;padding:10px 12px;margin:14px 0;}
-      .destacado{background:#edecec;border-top:3px solid #bc2111;margin:8px 0;padding:10px;}
-      .hamburger_wrapper{padding:5px;z-index:10;position:absolute;top:10px;right:15px;}
-      #hamburger{width:26px;height:35px;position:relative;cursor:pointer}
-      #hamburger span{position:absolute;height:5px;width:100%;background:#BDBDBD;border-radius:9px;left:0;transition:.5s}
-      #hamburger span:nth-child(1){top:0}
-      #hamburger span:nth-child(2){top:9px}
-      #hamburger span:nth-child(3){top:18px}
-      #hamburger.close span:nth-child(1){transform:rotate(45deg)}
-      #hamburger.close span:nth-child(2){width:0;opacity:0;transition:.1s}
-      #hamburger.close span:nth-child(3){transform:rotate(-45deg)}
-      #nav-menu{transform:translateX(-100vw);opacity:0;transition:transform .5s ease,opacity .2s}
-      #nav-menu.now-active{transform:translateX(0);opacity:1;background:#eaeaea}
-      .nav-list{padding:10px;list-style:none;font-size:1em;margin:0 10px;}
-      .nav-list li{margin:10px 5px;}
-      .nav-list a{color:#000;text-decoration:none;}
+      :root{--vistazo-red:#d71920;--vistazo-black:#111;--vistazo-gray:#666;--vistazo-border:#e5e5e5;--vistazo-background:#f5f5f5}
+      *{box-sizing:border-box}
+      html{font-size:16px}
+      body{margin:0;background:var(--vistazo-background);color:var(--vistazo-black);font-family:Arial,Helvetica,sans-serif}
+      .amp-content{width:100%;max-width:100%;font-family:Arial,Helvetica,sans-serif}
+      .simp-head{position:sticky;top:0;z-index:100;height:64px;margin:0;padding:0 16px;background:#fff;border-bottom:1px solid var(--vistazo-border);box-shadow:0 2px 10px rgba(0,0,0,.04)}
+      .simp-head::after{position:absolute;right:0;bottom:-1px;left:0;height:3px;background:var(--vistazo-red);content:""}
+      .title{display:flex;height:100%;align-items:center;justify-content:center}
+      .logo_cab{display:block;width:170px;height:42px;margin:0;background:url('/base-portlet/webrsrc/renderer/4e1a9f06734d0ca437ae1e716395f9f0.png') no-repeat center/contain}
+      .hamburger_wrapper{position:absolute;top:18px;left:16px;padding:0;z-index:110}
+      #hamburger{position:relative;width:28px;height:24px;cursor:pointer}
+      #hamburger span{position:absolute;left:0;width:100%;height:3px;border-radius:0;background:#111;transition:transform .25s ease,opacity .25s ease,top .25s ease}
+      #hamburger span:nth-child(1){top:1px}
+      #hamburger span:nth-child(2){top:10px}
+      #hamburger span:nth-child(3){top:19px}
+      #hamburger.close span:nth-child(1){top:10px;transform:rotate(45deg)}
+      #hamburger.close span:nth-child(2){opacity:0}
+      #hamburger.close span:nth-child(3){top:10px;transform:rotate(-45deg)}
+      #nav-menu{position:fixed;top:64px;left:0;width:min(77vw,280px);height:calc(100vh - 64px);overflow-y:auto;background:#fff;border-right:1px solid #e5e5e5;box-shadow:8px 0 24px rgba(0,0,0,.18);opacity:0;transform:translateX(-105%);transition:transform .3s ease,opacity .2s ease;z-index:105}
+      #nav-menu.now-active{opacity:1;transform:translateX(0)}
+      .nav-inner{padding:12px 0 18px}
+      .nav-accent{width:30px;height:4px;margin:0 0 20px 16px;background:var(--vistazo-red)}
+      .nav-list{margin:0;padding:0;list-style:none}
+      .nav-list>li{margin:0}
+      .nav-link{display:block;padding:11px 19px;color:#222;font-size:15px;font-weight:400;line-height:1.35;text-decoration:none}
+      .nav-link:hover,.nav-link:focus{color:var(--vistazo-red)}
+      .nav-accordion{margin:0;padding:0}
+      .nav-accordion section{border:0}
+      .nav-accordion section>header{display:flex;min-height:43px;margin:0;padding:0;background:#fff;border:0;align-items:stretch;font-family:Arial,Helvetica,sans-serif;font-weight:400}
+      .nav-accordion section>header:focus{outline:0}
+      .nav-parent-link{display:flex;flex:1;padding:11px 19px;align-items:center;color:#222;font-size:15px;line-height:1.35;text-decoration:none}
+      .nav-arrow{position:relative;display:flex;width:49px;border-left:1px solid #e7e7e7;align-items:center;justify-content:center}
+      .nav-arrow::before{width:7px;height:7px;border-right:2px solid #999;border-bottom:2px solid #999;content:"";transform:rotate(45deg) translate(-1px,-1px);transition:transform .2s ease}
+      .nav-accordion section[expanded]>header{background:#f4f4f4;border-left:3px solid var(--vistazo-red)}
+      .nav-accordion section[expanded]>header .nav-parent-link{padding-left:16px;color:var(--vistazo-red)}
+      .nav-accordion section[expanded]>header .nav-arrow::before{border-color:#e76b6b;transform:rotate(225deg) translate(-1px,-1px)}
+      .nav-submenu{padding:3px 0 7px;background:#fff}
+      .nav-submenu a{display:block;padding:10px 20px 10px 35px;color:#666;font-size:14px;line-height:1.35;text-decoration:none}
+      .nav-submenu a:hover,.nav-submenu a:focus{color:var(--vistazo-red)}
+      .nav-divider{height:1px;margin:8px 16px;background:#e4e4e4}
+      article{width:100%;max-width:760px;margin:0 auto;padding:22px 0 40px;background:#fff}
+      .amp-bc-wrap{margin:0 20px 14px}
+      .amp-bc-link{display:inline-block;padding:0 0 5px;border-bottom:3px solid var(--vistazo-red);border-radius:0;background:transparent;color:var(--vistazo-red);font-size:13px;font-weight:800;letter-spacing:.04em;text-decoration:none;text-transform:uppercase}
+      .amp-toptitle{margin:0 20px 8px;color:var(--vistazo-red);font-size:17px;font-weight:700;line-height:1.35;text-align:left}
+      h1.amp-title{margin:0 20px 16px;color:#101010;font-family:'Crete Round',Georgia,serif;font-size:34px;font-weight:700;letter-spacing:-.02em;line-height:1.08}
+      .amp-leadin{margin:0 20px 18px}
+      .amp-leadin p{margin:0;color:#444;font-family:Georgia,'Times New Roman',serif;font-size:19px;line-height:1.45}
+      .hero{position:relative;margin:20px 0 12px;overflow:hidden;border-radius:0;background:#eee}
+      .live-pill{position:absolute;top:10px;left:10px;padding:6px 10px;font-size:12px;font-weight:700;color:#fff;background:#ff2d2d;border-radius:999px;display:flex;align-items:center;gap:6px;z-index:2}
+      .live-pill .dot{width:8px;height:8px;border-radius:50%;background:#fff}
+      figure{margin:0}
+      figure amp-img{width:100%;height:auto}
+      figure.hero figcaption,figure figcaption{position:static;padding:8px 20px 0;background:transparent;color:#777;font-size:12px;line-height:1.45}
+      .meta-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:18px 20px 12px;color:#666;font-size:13px}
+      .amp-author{color:#222;font-weight:700}
+      .meta-dot{width:4px;height:4px;border-radius:50%;background:var(--vistazo-red)}
+      .share-row{display:flex;gap:8px;margin:8px 20px 22px;padding-bottom:18px;border-bottom:1px solid var(--vistazo-border)}
+      .share-row amp-social-share{width:36px;height:36px;border-radius:50%}
+      .share-row amp-social-share[type="twitter"]{background-color:#111}
+      .amp-art-body{padding:0 20px;line-height:1.5rem;color:#000}
+      .paragraph p,.paragraph .h2{margin:0 0 22px;color:#252525;font-family:Georgia,'Times New Roman',serif;font-size:19px;line-height:1.72}
+      .paragraph.h2 p,.paragraph p.h2{margin-top:34px;color:#111;font-family:Arial,Helvetica,sans-serif;font-size:25px;font-weight:800;line-height:1.25}
+      .paragraph a{color:#b81218;font-weight:600;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+      .paragraph blockquote{margin:28px 0;padding:4px 0 4px 20px;border-left:4px solid var(--vistazo-red);color:#333;font-family:Georgia,serif;font-size:21px;font-style:italic;line-height:1.55}
+      .ladillo{background:#f7f7f7;border-left:4px solid #bc2111;padding:10px 12px;margin:14px 0}
+      .destacado{background:#edecec;border-top:3px solid #bc2111;margin:8px 0;padding:10px}
+      .inline-related{margin:28px 0;padding:18px 0;border-top:4px solid var(--vistazo-red);border-bottom:1px solid var(--vistazo-border)}
+      .inline-related-label{display:block;margin-bottom:8px;color:var(--vistazo-red);font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+      .inline-related a{color:#111;font-family:Arial,Helvetica,sans-serif;font-size:18px;font-weight:800;line-height:1.35;text-decoration:none}
+      .amp-related{margin:40px 20px 0;padding-top:18px;border-top:5px solid var(--vistazo-red)}
+      .amp-related>.amp-related-tit{margin-bottom:12px;color:#111;font-size:22px;font-weight:800}
+      .amp-related ul{margin:0;padding:0;list-style:none}
+      .amp-related li{margin:0;border-bottom:1px solid var(--vistazo-border)}
+      .amp-related li a{display:block;padding:15px 0;color:#151515;font-size:17px;font-weight:700;line-height:1.35;text-decoration:none}
+      .ad-container{display:flex;min-height:120px;margin:20px auto;align-items:center;justify-content:center;overflow:hidden;background:#fafafa}
+      @media (min-width:768px){body{padding:24px 0}article{border:1px solid #ececec}h1.amp-title{font-size:46px}.amp-leadin p{font-size:21px}.amp-art-body{padding-right:48px;padding-left:48px}.amp-bc-wrap,h1.amp-title,.amp-toptitle,.amp-leadin,.meta-row,.share-row{margin-right:48px;margin-left:48px}}
     </style>
 
     <!-- Componentes AMP que usas -->
+    <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
     <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
     <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
     <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
@@ -138,14 +175,14 @@
     <!-- JSON-LD -->
     <script type="application/ld+json">
       {
-        "@context":"http://schema.org",
+        "@context":"https://schema.org",
         "@type":"NewsArticle",
         "headline":"$!escapeTool.html($!articleToolbox.getTag(null,'Headline').data)",
         "datePublished":"$!reserved-article-modified-date.getData()",
         "dateModified":"$!reserved-article-modified-date.getData()",
         "mainEntityOfPage":"$!articleToolbox.getArticleViewer('canonical')",
         "url":"$!articleToolbox.getArticleViewer('canonical')",
-        "author":["$autor"],
+        "author":{"@type":"Person","name":"$!escapeTool.html($autor)"},
         "description":"$!escapeTool.html($!articleToolbox.getTag(null,'Subheadline').data)",
         "publisher":{
           "@type":"Organization",
@@ -165,22 +202,91 @@
             <span></span><span></span><span></span>
           </div>
         </div>
-        <div id="nav-menu">
-          <ul class="nav-list">
-            <li><a href="/actualidad">ACTUALIDAD</a></li>
-            <li><a href="/politica">POLÍTICA</a></li>
-            <li><a href="/opinion">OPINION</a></li>
-            <li><a href="/estilo-de-vida">ESTILO DE VIDA</a></li>
-            <li><a href="/estilo-de-vida/salud">SALUD</a></li>
-            <li><a href="/estilo-de-vida/ambiente">AMBIENTE</a></li>
-            <li><a href="/estilo-de-vida/ciencia">CIENCIA</a></li>
-            <li><a href="/estilo-de-vida/tecnologia">TECNOLOGÍA</a></li>
-            <li><a href="/deportes">ESTADIO</a></li>
-            <li><a href="/enfoque">ENFOQUE</a></li>
-            <li><a href="/hogar">HOGAR</a></li>
-            <li><a href="/portafolio">PORTAFOLIO</a></li>
-          </ul>
-        </div>
+        <nav id="nav-menu" aria-label="Menú principal">
+          <div class="nav-inner">
+            <div class="nav-accent"></div>
+            <ul class="nav-list">
+              <li><a class="nav-link" href="https://www.vistazo.com/ultimasnoticias">Últimas Noticias</a></li>
+              <li><a class="nav-link" href="/actualidad">Actualidad</a></li>
+              <li><a class="nav-link" href="/politica">Política</a></li>
+              <li><a class="nav-link" href="/seguridad">Seguridad</a></li>
+              <li><a class="nav-link" href="/mundo">Mundo</a></li>
+              <li><a class="nav-link" href="/opinion">Opinión</a></li>
+            </ul>
+
+            <amp-accordion class="nav-accordion" animate disable-session-states>
+              <section>
+                <header>
+                  <a class="nav-parent-link" href="/tendencias">Tendencias</a>
+                  <span class="nav-arrow" aria-hidden="true"></span>
+                </header>
+                <div class="nav-submenu">
+                  <a href="/tendencias/bienestar">Bienestar</a>
+                  <a href="/tendencias/tecnologia">Tecnología</a>
+                  <a href="/tendencias/mascotas">Mascotas</a>
+                  <a href="/tendencias/cocina">Cocina</a>
+                </div>
+              </section>
+              <section>
+                <header>
+                  <a class="nav-parent-link" href="/deportes">Deportes</a>
+                  <span class="nav-arrow" aria-hidden="true"></span>
+                </header>
+                <div class="nav-submenu">
+                  <a href="/deportes/mundial-2026">Mundial 2026</a>
+                </div>
+              </section>
+              <section>
+                <header>
+                  <a class="nav-parent-link" href="/entretenimiento">Entretenimiento</a>
+                  <span class="nav-arrow" aria-hidden="true"></span>
+                </header>
+                <div class="nav-submenu">
+                  <a href="/entretenimiento/gente">Gente</a>
+                </div>
+              </section>
+              <section>
+                <header>
+                  <a class="nav-parent-link" href="/negocios">Negocios</a>
+                  <span class="nav-arrow" aria-hidden="true"></span>
+                </header>
+                <div class="nav-submenu">
+                  <a href="/negocios/economia">Economía</a>
+                  <a href="/negocios/sectores">Sectores</a>
+                  <a href="/negocios/empresas">Empresas</a>
+                  <a href="/portafolio/500-mayores-empresas">500 Mayores Empresas</a>
+                </div>
+              </section>
+            </amp-accordion>
+
+            <ul class="nav-list">
+              <li><a class="nav-link" href="/sostenibilidad">Sostenibilidad</a></li>
+            </ul>
+
+            <amp-accordion class="nav-accordion" animate disable-session-states>
+              <section>
+                <header>
+                  <a class="nav-parent-link" href="/servicios">Servicios</a>
+                  <span class="nav-arrow" aria-hidden="true"></span>
+                </header>
+                <div class="nav-submenu">
+                  <a href="/servicios/horoscopo">Horóscopo</a>
+                  <a href="/servicios/clima">Clima</a>
+                  <a href="/servicios/bolsa-de-empleo">Bolsa de Empleo</a>
+                </div>
+              </section>
+            </amp-accordion>
+
+            <ul class="nav-list">
+              <li><a class="nav-link" href="/eventos">Eventos</a></li>
+              <li><a class="nav-link" href="/entretenimiento/cultura">Cultura</a></li>
+              <li><a class="nav-link" href="/especial-vistazo">Especiales</a></li>
+              <li><a class="nav-link" href="/podcast">Pódcast</a></li>
+              <li><a class="nav-link" href="https://suscripciones.vistazo.com/">Suscripciones</a></li>
+              <li><a class="nav-link" href="/patrocinado">Patrocinado</a></li>
+            </ul>
+          </div>
+        </nav>
       </header>
 
       <article>
@@ -326,6 +432,20 @@
                             <amp-ad width="300" height="250" type="doubleclick" data-slot="/21839199781/vistazo_amp/middle"></amp-ad>
                           </div>
                           <amp-brid-player data-partner="19581" autoplay data-player="40864" data-carousel="16729" layout="responsive" width="540" height="300"></amp-brid-player>
+                        #elseif($contadorParrafos == 3)
+                          <p class="parrafo n$contadorParrafos">$!parrafo</p>
+                          #if($articlesRelacionados && $articlesRelacionados.size() > 0)
+                            #set($relacionadaInline = $articlesRelacionados.get(0))
+                            <aside class="inline-related">
+                              <span class="inline-related-label">También puedes leer</span>
+                              <a href="$relacionadaInline.reserved-article-url.data"
+                                 target="_self"
+                                 data-vars-related-position="paragraph-3"
+                                 data-vars-related-title="$!escapeTool.html($relacionadaInline.Headline.data)">
+                                $relacionadaInline.Headline.data
+                              </a>
+                            </aside>
+                          #end
                         #elseif($contadorParrafos == 4)
                           <p class="parrafo n$contadorParrafos">$!parrafo</p>
                           <div style="display:flex;justify-content:center;align-items:center;">
@@ -483,13 +603,24 @@
           #end
         </div>
 
-        #set($articlesrelacionados = $articleToolbox.getRelatedArticles("metadata", 2))
-        #if($articlesrelacionados.size() > 0)
+        #if($articlesRelacionados && $articlesRelacionados.size() > 1)
           <div class="amp-related">
             <div class="amp-related-tit">Te puede interesar</div>
             <ul>
-              #foreach($relacionada in $articlesrelacionados)
-                <li class="amp-related-tit amp-rel-item"><a href="$relacionada.reserved-article-url.data" target="_self">$relacionada.Headline.data</a></li>
+              #set($indiceRelacionado = 0)
+              #foreach($relacionada in $articlesRelacionados)
+                ## El primer relacionado ya se mostró dentro del artículo
+                #if($indiceRelacionado > 0)
+                  <li class="amp-related-tit amp-rel-item">
+                    <a href="$relacionada.reserved-article-url.data"
+                       target="_self"
+                       data-vars-related-position="article-end"
+                       data-vars-related-title="$!escapeTool.html($relacionada.Headline.data)">
+                      $relacionada.Headline.data
+                    </a>
+                  </li>
+                #end
+                #set($indiceRelacionado = $indiceRelacionado + 1)
               #end
             </ul>
           </div>
@@ -500,18 +631,65 @@
         <script type="application/json">{"vars":{"aid":"adops-vistazo"}}</script>
       </amp-analytics>
 
-	<amp-analytics type="gtag" data-credentials="include">
-	  <script type="application/json">
-	  {
-	    "vars": {
-	      "gtag_id": "G-Z9ZDG6FEG4",
-	      "config": {
-		"G-Z9ZDG6FEG4": { "groups": "default" }
-	      }
-	    }
-	  }
-	  </script>
-	</amp-analytics>
+        <amp-analytics type="gtag" data-credentials="include">
+          <script type="application/json">
+          {
+            "vars": {
+              "gtag_id": "G-Z9ZDG6FEG4",
+              "config": {
+                "G-Z9ZDG6FEG4": { "groups": "default" }
+              }
+            },
+            "triggers": {
+              "scroll25": {
+                "on": "scroll",
+                "scrollSpec": { "verticalBoundaries": [25] },
+                "request": "event",
+                "vars": {
+                  "event_name": "article_scroll",
+                  "percent_scrolled": "25",
+                  "article_title": "$!escapeTool.html($titulo)",
+                  "article_section": "$!escapeTool.html($section)"
+                }
+              },
+              "scroll50": {
+                "on": "scroll",
+                "scrollSpec": { "verticalBoundaries": [50] },
+                "request": "event",
+                "vars": {
+                  "event_name": "article_scroll",
+                  "percent_scrolled": "50",
+                  "article_title": "$!escapeTool.html($titulo)",
+                  "article_section": "$!escapeTool.html($section)"
+                }
+              },
+              "scroll90": {
+                "on": "scroll",
+                "scrollSpec": { "verticalBoundaries": [90] },
+                "request": "event",
+                "vars": {
+                  "event_name": "article_scroll",
+                  "percent_scrolled": "90",
+                  "article_title": "$!escapeTool.html($titulo)",
+                  "article_section": "$!escapeTool.html($section)"
+                }
+              },
+              "relatedClick": {
+                "on": "click",
+                "selector": ".inline-related a, .amp-related a",
+                "request": "event",
+                "vars": {
+                  "event_name": "related_article_click",
+                  "related_position": "${relatedPosition}",
+                  "related_title": "${relatedTitle}",
+                  "article_title": "$!escapeTool.html($titulo)",
+                  "article_section": "$!escapeTool.html($section)"
+                }
+              }
+            }
+          }
+          </script>
+        </amp-analytics>
 
 
     </main>
