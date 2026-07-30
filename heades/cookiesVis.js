@@ -1,35 +1,29 @@
 /* ─── Banner cookie (esquina inferior derecha) ─── */
 var stringHtml = `
-<div id="cookieNotice" class="cookie-overlay p-4" style="display:block;">
-  <div class="title-wrap" style="font-weight:bold;font-size:20px;">
-    <h4><img src="https://estadisticas.ecuavisa.com/sites/gestor/Banner/cookies.svg" alt="cookies">Aviso de política de cookies</h4>
-  </div>
-  <div class="content-wrap">
-    <div class="msg-wrap">
-      <p>Vistazo utiliza cookies propias y de terceros para fines analíticos anónimos, guardar las preferencias que selecciones y para el funcionamiento general de la página.<br><br>
-      Puedes aceptar todas las cookies pulsando el botón "Aceptar" o configurarlas o rechazar su uso pulsando el botón "Configurar".</p>
-      <p style="margin-top:10px;"><a style="color:#115cfa;" href="https://www.vistazo.com/politicas-privacidad" target="_blank">Políticas de privacidad</a></p>
-      <p style="margin-top:10px;"><a style="color:#115cfa;" href="https://www.vistazo.com/politicas-de-cookies" target="_blank">Políticas de cookies</a></p>
-      <div class="btn-wrap">
-        <button class="btnRechazar" id="configurar">Configurar</button>
-        <button class="btnAceptar" id="aceptarcookies" onclick="acceptCookieConsent();">Aceptar</button>
-      </div>
-    </div>
+<div id="cookieNotice" class="vtz-cookie-banner" style="display:block;">
+  <img class="vtz-cookie-banner__logo" src="https://codigomarret.online/upload/img/logovistazo.png" alt="Vistazo">
+  <p class="vtz-cookie-banner__text">
+    Utilizamos cookies propias y de terceros para mejorar tu experiencia y analizar el tráfico.
+    <a href="https://www.vistazo.com/politicas-de-cookies" target="_blank">Más información</a>
+  </p>
+  <div class="vtz-cookie-banner__btns">
+    <button class="vtz-cookie-banner__btn" id="configurar">Configurar</button>
+    <button class="vtz-cookie-banner__btn vtz-cookie-banner__btn--accept" id="aceptarcookies" onclick="acceptCookieConsent();">Aceptar</button>
   </div>
 </div>
 
 <div id="vtzCookieOverlay" style="display:none;">
   <div class="vtzcookie-modal">
-    <span class="vtzcookie-icon">🍪</span>
-    <strong class="vtzcookie-title">Aviso de política de cookies</strong>
-    <p class="vtzcookie-desc">Para continuar navegando en Vistazo necesitas aceptar nuestra política de cookies.</p>
+    <img class="vtzcookie-logo" src="https://codigomarret.online/upload/img/logovistazo.png" alt="Vistazo">
+    <strong class="vtzcookie-title">Política de cookies</strong>
+    <p class="vtzcookie-desc">Para continuar leyendo el contenido de Vistazo necesitas aceptar nuestra política de cookies.</p>
     <div class="vtzcookie-links">
-      <a href="https://www.vistazo.com/politicas-privacidad" target="_blank">Políticas de privacidad</a>
-      <a href="https://www.vistazo.com/politicas-de-cookies" target="_blank">Políticas de cookies</a>
+      <a href="https://www.vistazo.com/politicas-privacidad" target="_blank">Privacidad</a>
+      <a href="https://www.vistazo.com/politicas-de-cookies" target="_blank">Cookies</a>
     </div>
     <div class="vtzcookie-btns">
-      <button onclick="declineCookieConsent()">Rechazar</button>
-      <button class="accept" onclick="acceptCookieConsent()">Aceptar todo</button>
+      <button onclick="declineCookieConsent()">Volver al inicio</button>
+      <button class="accept" onclick="acceptCookieConsent()">Aceptar y continuar</button>
     </div>
   </div>
 </div>
@@ -69,17 +63,20 @@ function getCookie(cname) {
 
 /* ─── Validación 6 meses ─── */
 var SIX_MONTHS_MS = 180 * 24 * 60 * 60 * 1000;
+var VTZ_COOKIE      = "vtz_consent";
+var VTZ_TS_KEY      = "vtz_consent_ts";
+var VTZ_DECLINED    = "vtz_consent_declined";
 
 function isConsentValid() {
-    var ts = localStorage.getItem("vtzCookieConsentTs");
+    var ts = localStorage.getItem(VTZ_TS_KEY);
     // Si el consentimiento tiene más de 6 meses, limpiar y re-pedir
     if (ts && (Date.now() - parseInt(ts, 10)) > SIX_MONTHS_MS) {
-        localStorage.removeItem("vtzCookieConsentTs");
-        localStorage.removeItem("noCookiesVistazo");
-        deleteCookie("user_cookie_consent");
+        localStorage.removeItem(VTZ_TS_KEY);
+        localStorage.removeItem(VTZ_DECLINED);
+        deleteCookie(VTZ_COOKIE);
         return false;
     }
-    return !!(getCookie("user_cookie_consent") || localStorage.getItem("noCookiesVistazo"));
+    return !!(getCookie(VTZ_COOKIE) || localStorage.getItem(VTZ_DECLINED));
 }
 
 /* ─── Mostrar / ocultar banner ─── */
@@ -91,33 +88,37 @@ checkCookie();
 
 /* ─── Aceptar ─── */
 function acceptCookieConsent() {
-    deleteCookie("user_cookie_consent");
-    setCookie("user_cookie_consent", 1, 180); // 6 meses
-    localStorage.setItem("vtzCookieConsentTs", Date.now().toString());
+    deleteCookie(VTZ_COOKIE);
+    setCookie(VTZ_COOKIE, 1, 180); // 6 meses
+    localStorage.setItem(VTZ_TS_KEY, Date.now().toString());
     document.getElementById("cookieNotice").style.display = "none";
     document.getElementById("vtzCookieOverlay").style.display = "none";
     document.body.style.overflow = "";
 }
 
-/* ─── Rechazar ─── */
+/* ─── Rechazar en overlay → volver al inicio ─── */
+var _cookieScrollTriggered = false;
+
 function declineCookieConsent() {
-    document.getElementById("cookieNotice").style.display = "none";
     document.getElementById("vtzCookieOverlay").style.display = "none";
     document.body.style.overflow = "";
-    localStorage.setItem("noCookiesVistazo", "true");
-    localStorage.setItem("vtzCookieConsentTs", Date.now().toString());
+    // Re-mostrar el banner para que pueda aceptar después
+    document.getElementById("cookieNotice").style.display = "block";
+    // Resetear para que el overlay vuelva a aparecer si scrollea al 50% de nuevo
+    _cookieScrollTriggered = false;
+    // Llevar al inicio de la página
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 /* ─── Overlay bloqueante al 50% de scroll ─── */
 (function () {
     if (isLikelyBot()) return;
-    var triggered = false;
     window.addEventListener('scroll', function () {
-        if (triggered || isConsentValid()) return;
+        if (_cookieScrollTriggered || isConsentValid()) return;
         var scrolled = window.scrollY || document.documentElement.scrollTop;
         var total = document.documentElement.scrollHeight - window.innerHeight;
         if (total > 0 && (scrolled / total) >= 0.5) {
-            triggered = true;
+            _cookieScrollTriggered = true;
             document.getElementById("cookieNotice").style.display = "none";
             document.getElementById("vtzCookieOverlay").style.display = "flex";
             document.body.style.overflow = "hidden";
@@ -161,8 +162,8 @@ var actionsCofigCookies = {
     },
     editarItems: function (index, value) {
         for (var i = 0; i < this.opciones.length; i++) { this.opciones[i][index] = value; }
-        if (localStorage.getItem("dataAcceptCookiesVistazo")) {
-            localStorage.setItem("dataAcceptCookiesVistazo", JSON.stringify(this.opciones));
+        if (localStorage.getItem("vtz_prefs")) {
+            localStorage.setItem("vtz_prefs", JSON.stringify(this.opciones));
         }
         this.listItems();
         return true;
@@ -170,14 +171,14 @@ var actionsCofigCookies = {
     editarItemsIndex: function (index, value, id) {
         for (var i = 0; i < this.opciones.length; i++) { this.opciones[i][index] = false; }
         this.opciones[id][index] = value;
-        if (localStorage.getItem("dataAcceptCookiesVistazo")) {
-            localStorage.setItem("dataAcceptCookiesVistazo", JSON.stringify(this.opciones));
+        if (localStorage.getItem("vtz_prefs")) {
+            localStorage.setItem("vtz_prefs", JSON.stringify(this.opciones));
         }
         this.listItems();
         return true;
     },
     guardarItems: function () {
-        localStorage.setItem("dataAcceptCookiesVistazo", JSON.stringify(this.opciones));
+        localStorage.setItem("vtz_prefs", JSON.stringify(this.opciones));
         return true;
     },
     HTMLConfig: function () {
@@ -223,7 +224,7 @@ var actionsCofigCookies = {
     listItems: function () {
         var el = document.getElementById("items-modal");
         if (!el) return;
-        var lista = JSON.parse(localStorage.getItem("dataAcceptCookiesVistazo")) || this.opciones;
+        var lista = JSON.parse(localStorage.getItem("vtz_prefs")) || this.opciones;
         this.opciones = lista;
         el.innerHTML = lista.map(this.optionsHTML).join("");
     },
