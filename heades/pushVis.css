@@ -1,6 +1,7 @@
 /* === Banner inferior notificaciones push === */
 .vtz-push-banner{position:fixed;bottom:1.25rem;right:1.25rem;background:#fff;z-index:2050;border-radius:8px;border-top:3px solid #CC1114;padding:20px 20px 18px;box-shadow:0 4px 28px rgba(0,0,0,.18);max-width:340px;width:calc(100% - 2rem);font-family:'Zalando Sans',Arial,sans-serif}
 .vtz-push-banner__logo{display:block;height:22px;width:auto;margin-bottom:12px}
+.vtz-push-banner__title{display:block;font-size:14px;font-weight:700;color:#111;margin:0 0 6px}
 .vtz-push-banner__text{font-size:13px;color:#444;line-height:1.55;margin:0 0 14px}
 .vtz-push-banner__btns{display:flex;gap:8px}
 .vtz-push-banner__btn{flex:1;padding:10px 8px;border:1.5px solid #111;border-radius:4px;font-size:12px;font-weight:700;cursor:pointer;background:#fff;color:#111;text-transform:uppercase;letter-spacing:.5px;transition:opacity .15s;font-family:'Zalando Sans',Arial,sans-serif}
