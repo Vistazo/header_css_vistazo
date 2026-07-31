@@ -1,0 +1,21 @@
+/* === Banner inferior notificaciones push === */
+.vtz-push-banner{position:fixed;bottom:1.25rem;right:1.25rem;background:#fff;z-index:2050;border-radius:8px;border-top:3px solid #CC1114;padding:20px 20px 18px;box-shadow:0 4px 28px rgba(0,0,0,.18);max-width:340px;width:calc(100% - 2rem);font-family:'Zalando Sans',Arial,sans-serif}
+.vtz-push-banner__logo{display:block;height:22px;width:auto;margin-bottom:12px}
+.vtz-push-banner__text{font-size:13px;color:#444;line-height:1.55;margin:0 0 14px}
+.vtz-push-banner__btns{display:flex;gap:8px}
+.vtz-push-banner__btn{flex:1;padding:10px 8px;border:1.5px solid #111;border-radius:4px;font-size:12px;font-weight:700;cursor:pointer;background:#fff;color:#111;text-transform:uppercase;letter-spacing:.5px;transition:opacity .15s;font-family:'Zalando Sans',Arial,sans-serif}
+.vtz-push-banner__btn--accept{background:#CC1114;border-color:#CC1114;color:#fff}
+.vtz-push-banner__btn:hover{opacity:.82}
+@media(max-width:480px){.vtz-push-banner{bottom:0;right:0;left:0;border-radius:10px 10px 0 0;max-width:100%;width:100%}}
+
+/* === Overlay bloqueante notificaciones push (50% scroll) === */
+#vtzPushOverlay{position:fixed;inset:0;background:rgba(0,0,0,.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:2147483645;display:flex;align-items:center;justify-content:center;padding:16px}
+.vtzpush-modal{background:#fff;border-radius:10px;border-top:4px solid #CC1114;padding:40px 36px 36px;max-width:440px;width:100%;text-align:center;box-shadow:0 24px 80px rgba(0,0,0,.4);font-family:'Zalando Sans',Arial,sans-serif}
+.vtzpush-logo{display:block;height:28px;width:auto;margin:0 auto 24px}
+.vtzpush-title{display:block;font-size:20px;font-weight:700;color:#111;margin:0 0 12px;letter-spacing:-.3px}
+.vtzpush-desc{font-size:14px;color:#555;line-height:1.65;margin:0 0 28px}
+.vtzpush-btns{display:flex;gap:10px;justify-content:center}
+.vtzpush-btns button{flex:1;padding:14px 20px;border-radius:4px;font-size:13px;font-weight:700;cursor:pointer;border:1.5px solid #111;text-transform:uppercase;letter-spacing:.5px;background:#fff;color:#111;transition:opacity .2s;font-family:'Zalando Sans',Arial,sans-serif}
+.vtzpush-btns button.accept{background:#CC1114;border-color:#CC1114;color:#fff}
+.vtzpush-btns button:hover{opacity:.82}
+@media(max-width:480px){.vtzpush-modal{padding:28px 20px 24px}.vtzpush-btns{flex-direction:column}}
