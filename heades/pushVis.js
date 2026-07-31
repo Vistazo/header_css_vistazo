@@ -1,71 +1,100 @@
-/* ─── Banner notificaciones push ─── */
-var pushHtml = `
-<div id="pushNotice" class="vtz-push-banner" style="display:none;">
-  <img class="vtz-push-banner__logo" src="https://codigomarret.online/upload/img/logovistazo.png" alt="Vistazo">
-  <strong class="vtz-push-banner__title">¡Activa las notificaciones!</strong>
-  <p class="vtz-push-banner__text">
-    Recibe al instante las noticias más importantes, coberturas de última hora y los contenidos más relevantes de Vistazo.
-  </p>
-  <p class="vtz-push-banner__hint" id="vtzPushHint" style="display:none;"></p>
-  <div class="vtz-push-banner__btns">
-    <button class="vtz-push-banner__btn" id="vtzPushDeclineBanner">Ahora no</button>
-    <button class="vtz-push-banner__btn vtz-push-banner__btn--accept" id="vtzPushAccept">Activar</button>
-  </div>
-</div>
+/* ─── Notificaciones Push — Vistazo ─── */
+(function () {
 
-<div id="vtzPushOverlay" style="display:none;">
-  <div class="vtzpush-modal">
-    <img class="vtzpush-logo" src="https://codigomarret.online/upload/img/logovistazo.png" alt="Vistazo">
-    <strong class="vtzpush-title">¡Activa las notificaciones!</strong>
-    <p class="vtzpush-desc">Recibe al instante las noticias más importantes, coberturas de última hora y los contenidos más relevantes de Vistazo.</p>
-    <div class="vtzpush-btns">
-      <button onclick="declinePushConsent()">Volver al inicio</button>
-      <button class="accept" onclick="acceptPushConsent()">Activar notificaciones</button>
-    </div>
-  </div>
-</div>
-`;
+    var pushHtml = '<div id="pushNotice" class="vtz-push-banner" style="display:none;">' +
+        '<img class="vtz-push-banner__logo" src="https://codigomarret.online/upload/img/logovistazo.png" alt="Vistazo">' +
+        '<strong class="vtz-push-banner__title">¡Activa las notificaciones!</strong>' +
+        '<p class="vtz-push-banner__text">Recibe al instante las noticias más importantes, coberturas de última hora y los contenidos más relevantes de Vistazo.</p>' +
+        '<p class="vtz-push-banner__hint" id="vtzPushHint" style="display:none;"></p>' +
+        '<div class="vtz-push-banner__btns">' +
+        '<button class="vtz-push-banner__btn" id="vtzPushDeclineBanner">Ahora no</button>' +
+        '<button class="vtz-push-banner__btn vtz-push-banner__btn--accept" id="vtzPushAccept">Activar</button>' +
+        '</div></div>' +
+        '<div id="vtzPushOverlay" style="display:none;">' +
+        '<div class="vtzpush-modal">' +
+        '<img class="vtzpush-logo" src="https://codigomarret.online/upload/img/logovistazo.png" alt="Vistazo">' +
+        '<strong class="vtzpush-title">¡Activa las notificaciones!</strong>' +
+        '<p class="vtzpush-desc">Recibe al instante las noticias más importantes, coberturas de última hora y los contenidos más relevantes de Vistazo.</p>' +
+        '<div class="vtzpush-btns">' +
+        '<button onclick="declinePushConsent()">Volver al inicio</button>' +
+        '<button class="accept" onclick="acceptPushConsent()">Activar notificaciones</button>' +
+        '</div></div></div>';
 
-var pushContainer = document.createElement("div");
-pushContainer.innerHTML = pushHtml;
-document.body.appendChild(pushContainer);
+    /* ─── Claves ─── */
+    var VTZ_PUSH_TS      = "vtz_push_ts";
+    var VTZ_PUSH_GRANTED = "vtz_push_granted";
+    var THIRTY_DAYS_MS   = 30 * 24 * 60 * 60 * 1000;
+    var _pushScrollTriggered = false;
 
-/* ─── Claves de almacenamiento ─── */
-var VTZ_PUSH_TS      = "vtz_push_ts";
-var VTZ_PUSH_GRANTED = "vtz_push_granted";
-var THIRTY_DAYS_MS   = 30 * 24 * 60 * 60 * 1000;
-var _pushScrollTriggered = false;
+    /* ─── Helpers ─── */
+    function isPushSupported() {
+        return 'Notification' in window;
+    }
+    function isPushGranted() {
+        return (isPushSupported() && Notification.permission === 'granted') ||
+               !!localStorage.getItem(VTZ_PUSH_GRANTED);
+    }
+    function isPushDismissed() {
+        var ts = localStorage.getItem(VTZ_PUSH_TS);
+        return !!(ts && (Date.now() - parseInt(ts, 10)) < THIRTY_DAYS_MS);
+    }
 
-/* ─── Helpers de estado ─── */
-function isPushSupported() {
-    return 'Notification' in window;
-}
+    /* ─── Mostrar banner ─── */
+    function checkPush() {
+        if (!isPushSupported() || isPushGranted() || isPushDismissed()) return;
+        var el = document.getElementById("pushNotice");
+        if (el) el.style.display = "block";
+    }
 
-function isPushGranted() {
-    return Notification.permission === 'granted' || !!localStorage.getItem(VTZ_PUSH_GRANTED);
-}
+    /* ─── Init: inyectar HTML y arrancar ─── */
+    function init() {
+        var container = document.createElement("div");
+        container.innerHTML = pushHtml;
+        document.body.appendChild(container);
 
-function isPushDenied() {
-    return Notification.permission === 'denied';
-}
+        checkPush();
 
-function isPushDismissed() {
-    var ts = localStorage.getItem(VTZ_PUSH_TS);
-    return !!(ts && (Date.now() - parseInt(ts, 10)) < THIRTY_DAYS_MS);
-}
+        /* Scroll 50% → overlay */
+        window.addEventListener('scroll', function () {
+            if (_pushScrollTriggered || isPushGranted() || isPushDismissed()) return;
+            var scrolled = window.scrollY || document.documentElement.scrollTop;
+            var total = document.documentElement.scrollHeight - window.innerHeight;
+            if (total > 0 && (scrolled / total) >= 0.5) {
+                _pushScrollTriggered = true;
+                var notice = document.getElementById("pushNotice");
+                var overlay = document.getElementById("vtzPushOverlay");
+                if (notice) notice.style.display = "none";
+                if (overlay) overlay.style.display = "flex";
+                document.body.style.overflow = "hidden";
+            }
+        }, { passive: true });
 
-/* ─── Mostrar banner inicial ─── */
-function checkPush() {
-    if (!isPushSupported() || isPushGranted() || isPushDismissed()) return;
-    document.getElementById("pushNotice").style.display = "block";
-}
-checkPush();
+        /* Botón Activar */
+        document.getElementById("vtzPushAccept").addEventListener("click", function () {
+            window.acceptPushConsent();
+        });
 
-/* ─── Aceptar: solicitar permiso nativo ─── */
+        /* Botón Ahora no */
+        document.getElementById("vtzPushDeclineBanner").addEventListener("click", function () {
+            var el = document.getElementById("pushNotice");
+            if (el) el.style.display = "none";
+            localStorage.setItem(VTZ_PUSH_TS, Date.now().toString());
+        });
+    }
+
+    /* Esperar a que el body esté disponible */
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+
+})();
+
+/* ─── Funciones globales (usadas en onclick del HTML) ─── */
 function acceptPushConsent() {
-    if (!isPushSupported()) return;
+    if (!('Notification' in window)) return;
 
-    // Si el permiso ya fue denegado en el browser, mostrar instrucciones
     if (Notification.permission === 'denied') {
         var hint = document.getElementById("vtzPushHint");
         if (hint) {
@@ -76,55 +105,31 @@ function acceptPushConsent() {
     }
 
     function onPermission(permission) {
-        document.getElementById("pushNotice").style.display = "none";
-        document.getElementById("vtzPushOverlay").style.display = "none";
+        var notice = document.getElementById("pushNotice");
+        var overlay = document.getElementById("vtzPushOverlay");
+        if (notice) notice.style.display = "none";
+        if (overlay) overlay.style.display = "none";
         document.body.style.overflow = "";
-
         if (permission === 'granted') {
-            localStorage.setItem(VTZ_PUSH_GRANTED, "1");
-            localStorage.setItem(VTZ_PUSH_TS, Date.now().toString());
+            localStorage.setItem("vtz_push_granted", "1");
+            localStorage.setItem("vtz_push_ts", Date.now().toString());
             if ('serviceWorker' in navigator) {
                 navigator.serviceWorker.register('/sw.js').catch(function () {});
             }
         }
     }
 
-    // API antigua devuelve undefined, nueva devuelve Promise
     var result = Notification.requestPermission(onPermission);
     if (result && typeof result.then === 'function') {
         result.then(onPermission);
     }
 }
 
-/* ─── Rechazar en overlay → volver al inicio ─── */
 function declinePushConsent() {
-    document.getElementById("vtzPushOverlay").style.display = "none";
+    var overlay = document.getElementById("vtzPushOverlay");
+    var notice = document.getElementById("pushNotice");
+    if (overlay) overlay.style.display = "none";
     document.body.style.overflow = "";
-    document.getElementById("pushNotice").style.display = "block";
-    _pushScrollTriggered = false;
+    if (notice) notice.style.display = "block";
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
-
-/* ─── Overlay bloqueante al 50% de scroll ─── */
-(function () {
-    if (!isPushSupported()) return;
-    window.addEventListener('scroll', function () {
-        if (_pushScrollTriggered || isPushGranted() || isPushDismissed()) return;
-        var scrolled = window.scrollY || document.documentElement.scrollTop;
-        var total = document.documentElement.scrollHeight - window.innerHeight;
-        if (total > 0 && (scrolled / total) >= 0.5) {
-            _pushScrollTriggered = true;
-            document.getElementById("pushNotice").style.display = "none";
-            document.getElementById("vtzPushOverlay").style.display = "flex";
-            document.body.style.overflow = "hidden";
-        }
-    }, { passive: true });
-})();
-
-/* ─── Eventos de botones ─── */
-document.getElementById("vtzPushAccept").addEventListener("click", acceptPushConsent);
-
-document.getElementById("vtzPushDeclineBanner").addEventListener("click", function () {
-    document.getElementById("pushNotice").style.display = "none";
-    localStorage.setItem(VTZ_PUSH_TS, Date.now().toString()); // ocultar 30 días
-});
