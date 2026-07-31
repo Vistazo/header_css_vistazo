@@ -2,9 +2,9 @@
 var pushHtml = `
 <div id="pushNotice" class="vtz-push-banner" style="display:none;">
   <img class="vtz-push-banner__logo" src="https://codigomarret.online/upload/img/logovistazo.png" alt="Vistazo">
-  <strong class="vtz-push-banner__title">¡Entérate primero!</strong>
+  <strong class="vtz-push-banner__title">¡Activa las notificaciones!</strong>
   <p class="vtz-push-banner__text">
-    Activa las notificaciones y sé el primero en conocer lo último en noticias.
+    Recibe al instante las noticias más importantes, coberturas de última hora y los contenidos más relevantes de Vistazo.
   </p>
   <div class="vtz-push-banner__btns">
     <button class="vtz-push-banner__btn" id="vtzPushDeclineBanner">Ahora no</button>
@@ -15,8 +15,8 @@ var pushHtml = `
 <div id="vtzPushOverlay" style="display:none;">
   <div class="vtzpush-modal">
     <img class="vtzpush-logo" src="https://codigomarret.online/upload/img/logovistazo.png" alt="Vistazo">
-    <strong class="vtzpush-title">¡No te pierdas nada!</strong>
-    <p class="vtzpush-desc">Activa las notificaciones de Vistazo y sé el primero en enterarte de las últimas noticias.</p>
+    <strong class="vtzpush-title">¡Activa las notificaciones!</strong>
+    <p class="vtzpush-desc">Recibe al instante las noticias más importantes, coberturas de última hora y los contenidos más relevantes de Vistazo.</p>
     <div class="vtzpush-btns">
       <button onclick="declinePushConsent()">Volver al inicio</button>
       <button class="accept" onclick="acceptPushConsent()">Activar notificaciones</button>
