@@ -54,21 +54,6 @@
 
         checkPush();
 
-        /* Scroll 50% → overlay */
-        window.addEventListener('scroll', function () {
-            if (_pushScrollTriggered || isPushGranted() || isPushDismissed()) return;
-            var scrolled = window.scrollY || document.documentElement.scrollTop;
-            var total = document.documentElement.scrollHeight - window.innerHeight;
-            if (total > 0 && (scrolled / total) >= 0.5) {
-                _pushScrollTriggered = true;
-                var notice = document.getElementById("pushNotice");
-                var overlay = document.getElementById("vtzPushOverlay");
-                if (notice) notice.style.display = "none";
-                if (overlay) overlay.style.display = "flex";
-                document.body.style.overflow = "hidden";
-            }
-        }, { passive: true });
-
         /* Botón Activar */
         document.getElementById("vtzPushAccept").addEventListener("click", function () {
             window.acceptPushConsent();
