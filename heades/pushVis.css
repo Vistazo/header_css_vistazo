@@ -3,6 +3,7 @@
 .vtz-push-banner__logo{display:block;height:22px;width:auto;margin-bottom:12px}
 .vtz-push-banner__title{display:block;font-size:14px;font-weight:700;color:#111;margin:0 0 6px}
 .vtz-push-banner__text{font-size:13px;color:#444;line-height:1.55;margin:0 0 14px}
+.vtz-push-banner__hint{font-size:12px;color:#CC1114;line-height:1.5;margin:0 0 12px;background:#fff5f5;border-left:3px solid #CC1114;padding:8px 10px;border-radius:0 4px 4px 0}
 .vtz-push-banner__btns{display:flex;gap:8px}
 .vtz-push-banner__btn{flex:1;padding:10px 8px;border:1.5px solid #111;border-radius:4px;font-size:12px;font-weight:700;cursor:pointer;background:#fff;color:#111;text-transform:uppercase;letter-spacing:.5px;transition:opacity .15s;font-family:'Zalando Sans',Arial,sans-serif}
 .vtz-push-banner__btn--accept{background:#CC1114;border-color:#CC1114;color:#fff}

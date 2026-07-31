@@ -6,6 +6,7 @@ var pushHtml = `
   <p class="vtz-push-banner__text">
     Recibe al instante las noticias más importantes, coberturas de última hora y los contenidos más relevantes de Vistazo.
   </p>
+  <p class="vtz-push-banner__hint" id="vtzPushHint" style="display:none;"></p>
   <div class="vtz-push-banner__btns">
     <button class="vtz-push-banner__btn" id="vtzPushDeclineBanner">Ahora no</button>
     <button class="vtz-push-banner__btn vtz-push-banner__btn--accept" id="vtzPushAccept">Activar</button>
@@ -55,7 +56,7 @@ function isPushDismissed() {
 
 /* ─── Mostrar banner inicial ─── */
 function checkPush() {
-    if (!isPushSupported() || isPushGranted() || isPushDenied() || isPushDismissed()) return;
+    if (!isPushSupported() || isPushGranted() || isPushDismissed()) return;
     document.getElementById("pushNotice").style.display = "block";
 }
 checkPush();
@@ -63,6 +64,16 @@ checkPush();
 /* ─── Aceptar: solicitar permiso nativo ─── */
 function acceptPushConsent() {
     if (!isPushSupported()) return;
+
+    // Si el permiso ya fue denegado en el browser, mostrar instrucciones
+    if (Notification.permission === 'denied') {
+        var hint = document.getElementById("vtzPushHint");
+        if (hint) {
+            hint.innerHTML = '🔒 Haz clic en el candado de la barra de dirección → <strong>Permisos del sitio</strong> → <strong>Notificaciones</strong> → Permitir. Luego recarga la página.';
+            hint.style.display = "block";
+        }
+        return;
+    }
 
     function onPermission(permission) {
         document.getElementById("pushNotice").style.display = "none";
@@ -98,7 +109,7 @@ function declinePushConsent() {
 (function () {
     if (!isPushSupported()) return;
     window.addEventListener('scroll', function () {
-        if (_pushScrollTriggered || isPushGranted() || isPushDenied() || isPushDismissed()) return;
+        if (_pushScrollTriggered || isPushGranted() || isPushDismissed()) return;
         var scrolled = window.scrollY || document.documentElement.scrollTop;
         var total = document.documentElement.scrollHeight - window.innerHeight;
         if (total > 0 && (scrolled / total) >= 0.5) {
