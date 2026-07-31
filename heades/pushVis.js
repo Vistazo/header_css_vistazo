@@ -53,30 +53,9 @@ function isPushDismissed() {
     return !!(ts && (Date.now() - parseInt(ts, 10)) < THIRTY_DAYS_MS);
 }
 
-/* ─── Verifica que ya aceptó cookies ─── */
-function hasCookieConsent() {
-    return document.cookie.indexOf('vtz_consent=') !== -1 ||
-           !!localStorage.getItem('vtz_consent_ts');
-}
-
 /* ─── Mostrar banner inicial ─── */
 function checkPush() {
     if (!isPushSupported() || isPushGranted() || isPushDenied() || isPushDismissed()) return;
-
-    if (!hasCookieConsent()) {
-        // Esperar a que acepten las cookies y recién ahí mostrar el push
-        var cookieBanner = document.getElementById('cookieNotice');
-        if (!cookieBanner) return;
-        var obs = new MutationObserver(function () {
-            if (hasCookieConsent()) {
-                obs.disconnect();
-                setTimeout(checkPush, 800);
-            }
-        });
-        obs.observe(cookieBanner, { attributes: true, attributeFilter: ['style'] });
-        return;
-    }
-
     document.getElementById("pushNotice").style.display = "block";
 }
 checkPush();
@@ -119,7 +98,7 @@ function declinePushConsent() {
 (function () {
     if (!isPushSupported()) return;
     window.addEventListener('scroll', function () {
-        if (_pushScrollTriggered || !hasCookieConsent() || isPushGranted() || isPushDenied() || isPushDismissed()) return;
+        if (_pushScrollTriggered || isPushGranted() || isPushDenied() || isPushDismissed()) return;
         var scrolled = window.scrollY || document.documentElement.scrollTop;
         var total = document.documentElement.scrollHeight - window.innerHeight;
         if (total > 0 && (scrolled / total) >= 0.5) {
