@@ -912,13 +912,14 @@ function initUltimosVideos() {
     injectLeaTambienStyles();
     var paragraphs = document.querySelectorAll("p");
     paragraphs.forEach(function (p) {
-      if (!LABEL_RE.test(p.textContent.trim())) return;
+      var cleanText = p.textContent.replace(/​/g, '').trim();
+      if (!LABEL_RE.test(cleanText)) return;
       var link = p.querySelector("a[href]");
       if (!link) return;
 
       var href = link.href;
-      var title = p.textContent.trim().replace(LABEL_RE, "").trim();
-      if (!title) title = link.textContent.trim().replace(LABEL_RE, "").trim();
+      var title = cleanText.replace(LABEL_RE, "").trim();
+      if (!title) title = link.textContent.replace(/​/g, '').trim().replace(LABEL_RE, "").trim();
       var date = extractDateFromUrl(href);
       var card = buildLeaTambienCard(href, title, date);
 
