@@ -54,7 +54,7 @@ body {
    BARRA PRIMARIA (negra, logo + menú): FIJA, debajo de la blanca
 ═══════════════════════════════════════════════════════════════ */
 .primary-nav {
-    position: fixed;
+    /* position: fixed; */
     top: var(--vz-barra-blanca);
     /* ← antes era 0, ahora va debajo de la blanca */
     left: 0;
