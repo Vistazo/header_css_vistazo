@@ -356,6 +356,9 @@ div#iter-content-wrapper {
     font-size: 14px;
     line-height: 1.4;
   }
+  .sect-date .article-section .section{
+        font-size: 11px;
+  }
 
 }
 
