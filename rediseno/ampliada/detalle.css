@@ -990,6 +990,7 @@ body:has(a.section[href*="/sostenibilidad"]) {
         flex-direction: column;
         gap: 22px;
         align-items: flex-start;
+        margin-top: 60px; 
     }
 
     .vtz-wsp-card {
@@ -1023,6 +1024,10 @@ body:has(a.section[href*="/sostenibilidad"]) {
         margin-bottom: 24px;
         font-size: 13px;
     }
+    .R_AUTOR_IMG_REDES_ESPECIALES .cutline-byline {
+        color: #ffff;
+    }
+
 }
 
 
