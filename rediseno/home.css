@@ -450,7 +450,8 @@
 .bg-investigacion {
     background: var(--bone);
     padding: 36px;
-    margin: 50px 0;
+    /*margin: 50px 0;*/
+    margin: 25px 0;
 }
 
 .investigacion-principal {
@@ -2248,4 +2249,14 @@
 
 .sectionName {
     display: none;
+}
+
+/* PRUEBAS PUBLICIAD CENTER - 13-08-2026*/
+@media (min-width: 992px) {
+    #center1_ad, #Center2_ad, #Center3_ad {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 250px;
+    }
 }
