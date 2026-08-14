@@ -92,18 +92,17 @@ div#iter-content-wrapper {
 
 
 /* ======== LISTADO DE NOTAS ======== */
-.sect-date {
-  margin-bottom: 0;
-}
-
-.sect-date h3 {
-  margin-bottom: 0;
-}
 
 .sect-date .article-section .section {
     background: var(--bg-gray);
     padding: 8px;
     font-size: 13px;
+}
+.sect-date {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 0.5rem;
 }
 .sect-date .date {
     display: flex;
