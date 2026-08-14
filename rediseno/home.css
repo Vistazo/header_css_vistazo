@@ -650,9 +650,9 @@
 
 /* BLOQUE MUNDO */
 
-.titulo-mundo {
+/*.titulo-mundo {
     margin-top: 72px;
-}
+}*/
 
 .bloque-mundo {
     margin-bottom: 52px;
@@ -2255,7 +2255,11 @@
 .bloque-actualidad{
     margin-top: 30px;
 }
-
+.titulo-mundo,
+.center2-home,
+.center3-home {
+    margin-top: 30px;
+}
 @media (min-width: 992px) {
     #center1_ad, #Center2_ad, #Center3_ad, #top1_ad {
         display: flex;
