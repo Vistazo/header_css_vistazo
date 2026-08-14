@@ -92,19 +92,6 @@ div#iter-content-wrapper {
 
 
 /* ======== LISTADO DE NOTAS ======== */
-.headline a {
-  text-decoration: none !important;
-  color: inherit;
-}
-
-.headline h2 {
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1.1;
-  margin: 15px 0 0 0;
-  color: #1a1a1a !important;
-}
-
 .sect-date {
   margin-bottom: 0;
 }
@@ -114,8 +101,23 @@ div#iter-content-wrapper {
 }
 
 .sect-date .article-section .section {
-  display: flex;
-  align-items: center;
+    background: var(--bg-gray);
+    padding: 8px;
+    font-size: 13px;
+}
+.sect-date .date {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+}
+.sect-date .date::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background-color: var(--red);
+    border-radius: 50%;
+    display: inline-block;
 }
 
 article {
@@ -144,12 +146,6 @@ article:nth-child(1) {
 
   .tit_sec {
     margin-top: 1rem;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  .headline h2 {
-    font-size: 12px;
   }
 }
 
