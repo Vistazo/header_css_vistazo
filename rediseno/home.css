@@ -2264,8 +2264,9 @@
 .center3-home{
     margin-bottom: 30px;
 }
+
 @media (min-width: 992px) {
-    #center1_ad, #Center2_ad, #Center3_ad, #top1_ad {
+    #center1_ad, #Center2_ad, #Center3_ad, #top1_ad, #Leader1-home {
         display: flex;
         justify-content: center;
         align-items: center;
