@@ -2268,9 +2268,11 @@
 
 @media (min-width: 992px) {
     #center1_ad, #Center2_ad, #Center3_ad, #top1_ad, #leader1_ad{
+        width: 100%;
+        height: auto;        /* en lugar de 250px */
+        min-height: unset;   /* por si hay un min-height heredado */
         display: flex;
         justify-content: center;
         align-items: center;
-        min-height: 250px;
     }
 }
