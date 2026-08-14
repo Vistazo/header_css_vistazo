@@ -2258,7 +2258,8 @@
 }
 .titulo-mundo,
 .center2-home,
-.center3-home {
+.center3-home,
+.Leader1-home {
     margin-top: 30px;
 }
 .center3-home{
@@ -2266,7 +2267,7 @@
 }
 
 @media (min-width: 992px) {
-    #center1_ad, #Center2_ad, #Center3_ad, #top1_ad, #Leader1-home {
+    #center1_ad, #Center2_ad, #Center3_ad, #top1_ad, #leader1_ad{
         display: flex;
         justify-content: center;
         align-items: center;
