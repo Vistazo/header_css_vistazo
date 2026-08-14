@@ -2260,6 +2260,9 @@
 .center3-home {
     margin-top: 30px;
 }
+.center3-home{
+    margin-bottom: 30px;
+}
 @media (min-width: 992px) {
     #center1_ad, #Center2_ad, #Center3_ad, #top1_ad {
         display: flex;
