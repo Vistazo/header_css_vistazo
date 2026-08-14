@@ -368,3 +368,27 @@ div#iter-content-wrapper {
         padding-right: 0;
     }
 }
+
+/* PUBLICIDAD SECCION */
+.box1{
+  margin-top: 3rem;
+}
+.top1-seccion,
+.center3{
+  margin-top: 2rem;
+}
+@media (min-width: 992px) {
+    #top1_ad {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #box1_ad {
+      width: 100%;
+      height: auto;
+      min-height: unset;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+}
