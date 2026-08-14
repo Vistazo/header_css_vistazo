@@ -117,7 +117,6 @@
     color: #000 !important;
 }
 
-
 .apertura-principal .subheadline h3 {
     font-size: 15px;
     color: #000;
@@ -139,9 +138,11 @@
 
 .apertura-principal .relatedContent .related-item-wrapper h2 {
     font-size: 15px !important;
-
 }
 
+.apertura-principal .relatedContent .related-item-wrapper .rel{
+    display: flex;
+}
 
 .mas-destacados .R_TIT {
     display: flex;
