@@ -561,15 +561,7 @@ body:has(a.section[href*="/sostenibilidad"]) {
         color: #111;
         line-height: 1;
     }
-    .R_TABOOLA_TAGS .temas{
-        align-items: center;
-    }
-    .item_tema{
-        display: flex;
-        align-items: center;
-    }
-       
-
+  
 }
 
 
@@ -581,8 +573,6 @@ body:has(a.section[href*="/sostenibilidad"]) {
     background: transparent !important;
     color: var(--red) !important;
 }
-
-
 
 .ly-lbp .first-block:before {
     content: "";
@@ -612,7 +602,6 @@ body:has(a.section[href*="/sostenibilidad"]) {
     margin-left: 10px !important;
     /* Asegurar espacio para la línea vertical */
 }
-
 
 .r_point_post {
     position: absolute !important;
@@ -784,7 +773,6 @@ body:has(a.section[href*="/sostenibilidad"]) {
     opacity: 0;
 }
 
-
 .r_bulletvistazo {
     display: flex;
     align-items: flex-start;
@@ -823,9 +811,7 @@ body:has(a.section[href*="/sostenibilidad"]) {
     background-repeat: no-repeat;
 }
 
-
 /* NOTA ESPECIAL */
-
 .nota-especial:before {
     content: "";
     pointer-events: none;
@@ -848,7 +834,6 @@ body:has(a.section[href*="/sostenibilidad"]) {
     margin-right: 6px;
     margin-top: 4px;
 }
-
 
 .nota-especial .left-block .date {
     display: none;
@@ -881,9 +866,6 @@ body:has(a.section[href*="/sostenibilidad"]) {
     border-top: none;
 }
 
-
-
-
 .styles_contentLayout2__R_In6:before {
     content: "";
     position: absolute;
@@ -911,7 +893,6 @@ body:has(a.section[href*="/sostenibilidad"]) {
     }
 }
 
-
 @media (max-width: 991px) {
     .second-block .autor-container {
         flex-direction: column;
@@ -928,7 +909,6 @@ body:has(a.section[href*="/sostenibilidad"]) {
     }
 
 }
-
 
 @media (max-width: 767px) {
     .autor-social-footer {
@@ -963,7 +943,6 @@ body:has(a.section[href*="/sostenibilidad"]) {
         margin-bottom: 16px;
         padding-bottom: 16px;
     }
-
 
     .am-lbp-footer .col-60-40-top-one-col {
         grid-template-columns: 1fr;
@@ -1039,6 +1018,13 @@ body:has(a.section[href*="/sostenibilidad"]) {
     }
     .R_AUTOR_IMG_REDES_ESPECIALES .cutline-byline {
         color: #ffff;
+    }
+    .R_TABOOLA_TAGS .temas{
+        align-items: center;
+    }
+    .R_TABOOLA_TAGS .item_tema {
+        display: flex;
+        align-items: center;
     }
 
 }
