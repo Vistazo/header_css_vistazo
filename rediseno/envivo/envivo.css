@@ -12,24 +12,20 @@ body {
 div#iter-content-wrapper {
     margin-top: 50px;
 }
-
-.bloque-envivo{
-    padding: 2rem 1rem;
+.row>*{
+  padding: 0;
 }
-.titulo{
-    border-bottom: 1px solid #d5cdcd;
-    padding-bottom: 10px;
-    font-family: Verdana, Geneva, sans-serif;
-    font-weight: bold;
-}
-
-.col-40-60-top-one-col{
+.col-md-5{
     background: #f5f1f1;
-    padding: 0;
 }
-.col-40-60-top-two-col{
-    padding: 0;
+
+@media (min-width: 768px) {
+    .col-md-7, 
+    .col-md-5{
+        padding: 0;
+    }
 }
+
 .texto-envivo{
     padding: 3rem 3rem;
     text-align: center;
@@ -37,7 +33,12 @@ div#iter-content-wrapper {
 .envivo{
     font-family: Verdana, Geneva, sans-serif;
 }
-
+.titulo{
+    border-bottom: 1px solid #d5cdcd;
+    padding-bottom: 10px;
+    font-family: Verdana, Geneva, sans-serif;
+    font-weight: bold;
+}
 
 /***************************************************************/
 
