@@ -1053,7 +1053,7 @@ body:has(a.section[href*="/sostenibilidad"]) {
 
 .Center3Display,   /* OJO CORREGIR ESPACIO EN BLANCO*/
 .Center2Display{
-    display: none;
+    display: none !important;
 }
 
 @media (min-width: 992px) {
