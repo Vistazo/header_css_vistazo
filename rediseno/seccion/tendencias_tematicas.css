@@ -185,13 +185,16 @@ div#iter-content-wrapper {
 }
 .listado_notas .media_block{
     gap: 20px;
+    grid-template-columns: 1.5fr 2fr;
 }
 .listado_notas .headline h2{
-    font-size: 14px;
+    font-size: 15px;
+    font-weight: 500;
 }
-.listado_notas .subheadline h3 {
+.listado_notas .subheadline{
     font-size: 13px;
-    line-height: 1.2;
+    line-height: 1.4;
+    font-weight: 400;
 }
 .listado_notas article:nth-child(8){
     border-bottom: 1px solid transparent;
