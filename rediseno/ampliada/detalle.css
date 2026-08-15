@@ -333,9 +333,9 @@ body:has(a.section[href*="/sostenibilidad"]) {
     color: #111;
 }
 
-.text_detail {
+/*.text_detail {
     margin-top: 70px;
-}
+}*/
 
 
 .text_detail a[rel="nofollow"] {
@@ -1038,5 +1038,31 @@ body:has(a.section[href*="/sostenibilidad"]) {
 
     .second-block .vtz-google-btn span {
         font-size: 12px;
+    }
+}
+
+
+
+/*   publicidad   */
+.text_detail {
+    margin-top: 30px;
+}
+#Center3_ad{
+    margin-top: 2rem;
+}
+
+.Center3Display,   /* OJO CORREGIR ESPACIO EN BLANCO*/
+.Center2Display{
+    display: none;
+}
+
+@media (min-width: 992px) {
+    #leader1_ad, #center1_ad, #Center2_ad, #Center3_ad {
+        width: 100%;
+        height: auto;
+        min-height: unset;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }

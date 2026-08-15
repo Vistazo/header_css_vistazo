@@ -18,6 +18,9 @@ div#iter-content-wrapper {
 .col-md-5{
     background: #f5f1f1;
 }
+.col-md-8{
+  padding-right: 3rem;
+}
 
 @media (min-width: 768px) {
     .col-md-7, 
@@ -26,21 +29,27 @@ div#iter-content-wrapper {
     }
 }
 
-.texto-envivo{
-    padding: 3rem 3rem;
-    text-align: center;
-}
-.envivo{
-    font-family: Verdana, Geneva, sans-serif;
-}
 .titulo{
     border-bottom: 1px solid #d5cdcd;
     padding-bottom: 10px;
     font-family: Verdana, Geneva, sans-serif;
     font-weight: bold;
 }
+.texto-envivo{
+    padding: 3rem 3rem;
+    text-align: center;
+}
+.texto-envivo h2{
+    padding: 3rem 3rem;
+    text-align: center;
+}
+.envivo{
+    font-family: Verdana, Geneva, sans-serif;
+    font-weight: bolder;
+    font-size: 13px;
+}
 
-/***************************************************************/
+/***************************NOTAS************************************/
 
 .container, .container-fluid, .container-lg, .container-md,
 .container-sm, .container-xl, .container-xxl {
