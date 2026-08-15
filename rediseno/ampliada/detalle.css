@@ -360,7 +360,12 @@ body:has(a.section[href*="/sostenibilidad"]) {
     gap: 12px;
     margin-bottom: 36px;
     flex-wrap: wrap;
+     align-items: center;
+}
 
+.R_TABOOLA_TAGS .item_tema {
+    display: flex;
+    align-items: center;
 }
 
 .R_TABOOLA_TAGS .temas .item_tema a {
@@ -1019,13 +1024,6 @@ body:has(a.section[href*="/sostenibilidad"]) {
     .R_AUTOR_IMG_REDES_ESPECIALES .cutline-byline {
         color: #ffff;
     }
-    .R_TABOOLA_TAGS .temas{
-        align-items: center;
-    }
-    .R_TABOOLA_TAGS .item_tema {
-        display: flex;
-        align-items: center;
-    }
 
 }
 
@@ -1054,19 +1052,15 @@ body:has(a.section[href*="/sostenibilidad"]) {
 .Center2Display{
     display: none !important;
 }
-#gpt-passback{
-  text-align: center;
-}
 .p_3{
   margin-top: 30px;
 }
 
-
-    #leader1_ad, #center1_ad, #Center2_ad, #Center3_ad {
-        width: 100%;
-        height: auto;
-        min-height: unset;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+#leader1_ad, #center1_ad, #Center2_ad, #Center3_ad {
+    width: 100%;
+    height: auto;
+    min-height: unset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
