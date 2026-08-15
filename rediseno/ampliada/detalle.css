@@ -360,6 +360,7 @@ body:has(a.section[href*="/sostenibilidad"]) {
     gap: 12px;
     margin-bottom: 36px;
     flex-wrap: wrap;
+
 }
 
 .R_TABOOLA_TAGS .temas .item_tema a {
@@ -560,6 +561,14 @@ body:has(a.section[href*="/sostenibilidad"]) {
         color: #111;
         line-height: 1;
     }
+    .R_TABOOLA_TAGS .temas{
+        align-items: center;
+    }
+    .item_tema{
+        display: flex;
+        align-items: center;
+    }
+       
 
 }
 
