@@ -7,6 +7,10 @@
     --bg-gray: #F3F5F8;
 }
 
+div#iter-content-wrapper {
+    margin-top: 20px;
+}
+
 /* Subsecciones de Tendencias: color magenta heredado de la sección padre */
 body:has(a.section[href*="/bienestar"]),
 body:has(a.section[href*="/tecnologia"]),
@@ -1055,8 +1059,14 @@ body:has(a.section[href*="/sostenibilidad"]) {
 .Center2Display{
     display: none !important;
 }
+#gpt-passback{
+  text-align: center;
+}
+.p_3{
+  margin-top: 30px;
+}
 
-@media (min-width: 992px) {
+
     #leader1_ad, #center1_ad, #Center2_ad, #Center3_ad {
         width: 100%;
         height: auto;
@@ -1065,4 +1075,3 @@ body:has(a.section[href*="/sostenibilidad"]) {
         justify-content: center;
         align-items: center;
     }
-}
