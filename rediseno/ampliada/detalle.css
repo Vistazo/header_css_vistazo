@@ -1060,3 +1060,11 @@ body:has(a.section[href*="/sostenibilidad"]) {
     justify-content: center;
     align-items: center;
 }
+
+#center1_ad{
+    margin-bottom: 1rem;
+}
+
+#Center2_ad{
+    margin-top: 1.5rem;
+}
