@@ -49,6 +49,21 @@ div#iter-content-wrapper {
     font-size: 13px;
 }
 
+@media (max-width: 767px) {
+  .texto-envivo {
+      padding: 2.5rem 1rem;
+  }
+  .texto-envivo h2{
+    padding: 0;
+  }
+  .iter-content-wrapper.iter-droppable-zone .row>* {
+    padding-right: 0%;
+    padding-left: 0%;
+  }
+  .bloque_iframe{
+    height: 250px !important;
+  }
+}
 /***************************NOTAS************************************/
 
 .container, .container-fluid, .container-lg, .container-md,
@@ -98,7 +113,6 @@ div#iter-content-wrapper {
 .row.r02 {
   margin-top: 1.5rem;
 }
-
 
 
 /* ======== LISTADO DE NOTAS ======== */
