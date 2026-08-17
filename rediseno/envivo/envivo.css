@@ -60,7 +60,7 @@ div#iter-content-wrapper {
     padding-right: 0%;
     padding-left: 0%;
   }
-  .bloque_iframe{
+  .bloque_iframe iframe{
     height: 250px !important;
   }
 }
