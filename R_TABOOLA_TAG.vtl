@@ -1,0 +1,48 @@
+##----R_TABOOLA_TAGS----
+#set($sort = "createdate")
+#set($criteria= "desc")
+#set($art_next = $articleToolbox.getSiblingArticle($sort, $criteria, "next"))
+#set($sectionID = "#printAssignedSectionID_v1")
+#set($templateId = $iterVelocityTools.getVelocityVariable("template_id")) 
+## CONTENIDOS
+#set($dateMask = "EEEE, d MMMM yyyy - HH:mm")
+#set($canonicalUrl = $articleToolbox.getArticleViewer('canonical'))
+#set($hmTemas = {})
+#getAcAssignedCatExtended_v1($hmTemas "Topic")
+#set($hmGeografico = {})
+#getAcAssignedCatExtended_v1($hmGeografico "Location")
+#set($hmPersonajes = {})
+#getAcAssignedCatExtended_v1($hmPersonajes "Vtz_Personajes")
+#set($hmAutores = {})
+#getAcAssignedCatExtended_v1($hmAutores "Vtz_Author")
+
+
+<div class="R_TABOOLA_TAGS">
+	## TAGS
+	#set($hmTemas = {})
+	#getAcAssignedCatExtended_v1($hmTemas "Topic")
+	<div class="temas" temas="$hmTemas.size()">
+	#if($hmTemas.size() > 0)
+		<div class="temas_head">Tags:</div>
+	#end
+	#if($hmTemas && $hmTemas.size() > 0)
+		#foreach ($elem in $hmTemas)
+			<div class="item_tema t_$hmTemas.size() keywords"><a href="/cronologia/-/meta/$elem.friendlyname">$elem.name</a></div>
+		#end
+	#end
+	#if($hmGeografico && $hmGeografico.size() > 0)
+		#foreach ($elem in $hmGeografico)
+			<div class="item_tema t_$hmPersonajes.size() keywords"><a href="/cronologia/-/meta/$elem.friendlyname">$elem.name</a></div>
+		#end
+	#end
+	#if($hmPersonajes && $hmPersonajes.size() > 0)
+		#foreach ($elem in $hmPersonajes)
+			<div class="item_tema t_$hmPersonajes.size() keywords"><a href="/cronologia/-/meta/$elem.friendlyname">$elem.name</a></div>
+		#end
+	#end
+	</div>
+
+    ## PUBLI TABOOLA
+    <div class="publi desktop">$!iterVelocityTools.getAdContainer("Taboola")</div>
+</div>
+<div class="cl"></div>

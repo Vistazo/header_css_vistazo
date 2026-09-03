@@ -1,0 +1,315 @@
+##----R_TEXT----dateMask
+#set($sort = "createdate")
+#set($criteria= "desc")
+## #set($art_next = $articleToolbox.getSiblingArticle($sort, $criteria, "next"))
+#set($sectionID = "#printAssignedSectionID_v1")
+## #set($templateId = $iterVelocityTools.getVelocityVariable("template_id")) 
+## CONTENIDOS
+#set($dateMask = "EEEE, d MMMM yyyy - HH:mm")
+#set($canonicalUrl = $articleToolbox.getArticleViewer('canonical'))
+#set($hmTemas = {})
+#getAcAssignedCatExtended_v1($hmTemas "Topic")
+#set($hmGeografico = {})
+#getAcAssignedCatExtended_v1($hmGeografico "Location")
+#set($hmPersonajes = {})
+##getAcAssignedCatExtended_v1($hmPersonajes "People")
+#getAcAssignedCatExtended_v1($hmPersonajes "Vtz_Personajes")
+#set($hmAutores = {})
+#getAcAssignedCatExtended_v1($hmAutores "Vtz_Author")
+
+
+##+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#set ($arrayListContenidos = [])
+
+#set ($element = {})
+#set ($temp = $element.put("name","Text"))
+#set ($temp = $element.put("type","paragraph"))
+#set ($temp = $element.put("cssclass","texto"))
+#set ($temp = $element.put("tag","div"))
+#set($temp = $arrayListContenidos.add($element))
+
+#set ($element = {})
+#set ($temp = $element.put("name","Lead"))
+#set ($temp = $element.put("type","text"))
+#set ($temp = $element.put("cssclass","lead destacado"))
+#set ($temp = $element.put("tag","div"))
+#set($temp = $arrayListContenidos.add($element))
+
+#set ($element = {})
+#set ($temp = $element.put("name","Image_Text"))
+#set ($temp = $element.put("type","image"))
+#set ($temp = $element.put("cssclass","img lateral"))
+#set ($temp = $element.put("tag","div"))
+#set($temp = $arrayListContenidos.add($element))
+
+#set ($element = {})
+#set ($temp = $element.put("name","Youtube_Text"))
+#set ($temp = $element.put("type","youtube"))
+#set ($temp = $element.put("cssclass","youtube_video"))
+#set ($temp = $element.put("tag","div"))
+#set($temp = $arrayListContenidos.add($element))
+
+#set ($element = {})
+#set ($temp = $element.put("name","Mowplayer_Text"))
+#set ($temp = $element.put("type","mowplayer"))
+#set ($temp = $element.put("cssclass","mowplayer_video"))
+#set ($temp = $element.put("tag","div"))
+#set($temp = $arrayListContenidos.add($element))
+
+#set ($element = {})
+#set ($temp = $element.put("name","Multimedia_Text"))
+#set ($temp = $element.put("type","multimedia"))
+#set ($temp = $element.put("cssclass","jwplayer_video"))
+#set ($temp = $element.put("tag","div"))
+#set($temp = $arrayListContenidos.add($element))
+
+#set ($element = {})
+#set ($temp = $element.put("name","Image_Text_GIF"))
+#set ($temp = $element.put("type","image"))
+#set ($temp = $element.put("cssclass","imagen"))
+#set ($temp = $element.put("tag","div"))
+#set($temp = $arrayListContenidos.add($element))
+
+#set ($element = {})
+#set ($temp = $element.put("name","Facebook_Text"))
+#set ($temp = $element.put("type","html"))
+#set ($temp = $element.put("cssclass","facebook_text"))
+#set ($temp = $element.put("tag","div"))
+#set($temp = $arrayListContenidos.add($element))
+
+#set ($element = {})
+#set ($temp = $element.put("name","Twitter_Text"))
+#set ($temp = $element.put("type","twitter"))
+#set ($temp = $element.put("cssclass","twitter_text"))
+#set ($temp = $element.put("tag","div"))
+#set($temp = $arrayListContenidos.add($element))
+#set ($element = {})
+
+#set ($element = {})
+#set ($temp = $element.put("name","H2"))
+#set ($temp = $element.put("type","text"))
+#set ($temp = $element.put("cssclass","h2vistazo"))
+#set ($temp = $element.put("tag","h2"))
+#set($temp = $arrayListContenidos.add($element))
+#set ($element = {})
+
+#set ($element = {})
+#set ($temp = $element.put("name","Cita"))
+#set ($temp = $element.put("type","text"))
+#set ($temp = $element.put("cssclass","r_citavistazo"))
+#set ($temp = $element.put("tag","div"))
+#set($temp = $arrayListContenidos.add($element))
+#set ($element = {})
+
+#set ($element = {})
+#set ($temp = $element.put("name","bullet"))
+#set ($temp = $element.put("type","text"))
+#set ($temp = $element.put("cssclass","r_bulletvistazo"))
+#set ($temp = $element.put("tag","li"))
+#set($temp = $arrayListContenidos.add($element))
+#set ($element = {})
+
+#set ($element = {})
+#set ($temp = $element.put("name","enumeration"))
+#set ($temp = $element.put("type","text"))
+#set ($temp = $element.put("cssclass","r_enumeration"))
+#set ($temp = $element.put("tag","li"))
+#set($temp = $arrayListContenidos.add($element))
+#set ($element = {})
+
+#set ($element = {})
+#set ($temp = $element.put("name","resaltador"))
+#set ($temp = $element.put("type","text"))
+#set ($temp = $element.put("cssclass","r_resaltador"))
+#set ($temp = $element.put("tag","mark"))
+#set($temp = $arrayListContenidos.add($element))
+#set ($element = {})
+
+#set ($element = {})
+#set ($temp = $element.put("name","ConteSubrayado"))
+#set ($temp = $element.put("type","text"))
+#set ($temp = $element.put("cssclass","contenido_subrayado"))
+#set ($temp = $element.put("tag","p"))
+#set($temp = $arrayListContenidos.add($element))
+#set ($element = {})
+
+
+#set ($temp = $element.put("name","HTML_Text"))
+#set ($temp = $element.put("type","html"))
+#set ($temp = $element.put("cssclass","html_text"))
+#set ($temp = $element.put("tag","div"))
+#set($temp = $arrayListContenidos.add($element))
+
+#set($fulltext = "#printHTMLContentArticle_v1_ecuavisa($arrayListContenidos, 'crop_768xfree', '100%', '100%', '495', $adInParagraph)")
+#set($fulltext = $fulltext.replaceAll("<img", "<img loading=\"lazy\""))
+##si incuentras in ifraem le agregamos el atributo loading="lazy"
+#set($fulltext = $fulltext.replaceAll("<iframe", "<iframe loading=\"lazy\""))
+## Verificar si existen las etiquetas <p class="p_1">, <p class="p_2">, <p class="p_3">
+#if($fulltext.contains('<p class="p_1"') && $fulltext.contains('<p class="p_2"') && $fulltext.contains('<p class="p_3"'))
+    ## Insertar el div después de la última <p class="p_3">
+    #set($fulltext = $fulltext.replaceFirst('(?s)(<p class="p_3".*?</p>)', '$1<div align="center" id="center1_ad"> </div>'))
+#end
+
+
+## MAPA DE PUBLICIDAD EN PARRAFOS
+##set ($adInParagraph ={})
+##set ($temp = $adInParagraph.put("2","OraTV"))
+
+
+<div class="text_detail R_TEXT">
+	<style>
+		@keyframes diagonal-lines {
+			0% {
+				background-position: 0 0;
+			}
+			100% {
+				background-position: 0px 0px; /* Mueve las líneas */
+			}
+		}
+
+	</style>
+	<div class="text resizable" itemprop="articleBody">
+		$fulltext
+	</div>
+    
+	## TAGS
+	##set($hmTemas = {})
+	##getAcAssignedCatExtended_v1($hmTemas "Topic")
+	##<div class="temas" temas="$hmTemas.size()">
+	##if($hmTemas.size() > 0)
+	##	<div class="temas_head">Tags:</div>
+	##end
+	##if($hmTemas && $hmTemas.size() > 0)
+	##	#foreach ($elem in $hmTemas)
+	##		<div class="item_tema t_$hmTemas.size() keywords"><a href="/cronologia/-/meta/$elem.friendlyname">$elem.name</a></div>
+	##	#end
+	##end
+	##if($hmGeografico && $hmGeografico.size() > 0)
+	##	#foreach ($elem in $hmGeografico)
+	##		<div class="item_tema t_$hmPersonajes.size() keywords"><a href="/cronologia/-/meta/$elem.friendlyname">$elem.name</a></div>
+	##	#end
+	##end
+
+	##if($hmPersonajes && $hmPersonajes.size() > 0)
+    ## <div class="personaje_vtz">Personaje:</div>
+	##	#foreach ($elem in $hmPersonajes)
+	##		<div class="item_tema t_$hmPersonajes.size() keywords"><a href="/cronologia/-/meta/$elem.friendlyname">$elem.name</a></div>
+	##	#end
+	##end
+	##</div>
+	## PUBLICIDAD 
+
+    ## PUBLI TABOOLA
+    ##<div class="publi desktop">$!iterVelocityTools.getAdContainer("Taboola")</div>
+
+
+</div>
+<div class="cl"></div>
+##+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+##+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#if($iterVelocityTools.getVelocityVariable("teaseritemposition") == 1)
+		#set($TituloEsc = $htmlUtil.escape($!Headline.data))
+		#set($TituloEsc = $TituloEsc.replaceAll("\n", ""))
+		#set ($tempSubheadline = "#getTeaserSubheadline_v1(false)")
+		#if($tempSubheadline && $tempSubheadline != "")
+			#set($Texto = $tempSubheadline )
+		#else
+			#set($Texto = "#getTeaserText_v1(200)" )
+		#end	
+		#set($Texto = $Texto.replaceAll("<.*?>","") )
+		#set($Texto = $Texto.trim() )
+		#set($TextoEsc = $htmlUtil.escape($Texto))	
+		#set($logo = "$iterVelocityTools.getVariable('0','logo_datos')" )
+		#set($logo = $logo.trim() )
+		#set($logo = $htmlUtil.escape($logo))
+		#set($logo = $logo.replaceAll("/","\/") )
+		#set($section = "")
+		#set($section_url = "")
+		#set($ac-sectionDateFrom =  $articleContext.selectNodes('articlectx/sections//section[@from]'))
+		#if($ac-sectionDateFrom && $ac-sectionDateFrom.size() > 0)
+			#foreach ($atrib in $ac-sectionDateFrom.get(0).attributes()  )
+				#if($atrib.name == "name")
+					#set($section = $!atrib.data)
+				#end
+				#if($atrib.name == "url")
+					#set($section_url = $!atrib.data)
+				#end
+				
+			#end
+		#end
+		## ***************AUTOR ********************
+		#set($autorfinal = "")
+		#if($hmAutores.size() > 0)
+			#set($hmAutor = $hmAutores.get(0))
+			#set($autorfinal = $hmAutor.name)
+		#end
+		#if($autorfinal == "")
+			#set($autorfinal = "El Correo Gallego")
+		#end
+		#set($ac-url = $articleContext.selectNodes('articlectx/url'))
+		#set($xml-url = $ac-url.get(0).text)
+		#set($url_actual = $!xml-url )
+
+		#set($dateDi = "#printDate_v1('yyyy-MM-dd')")
+		#set($dateHor = "#printDate_v1('HH:mm:ssXXX')")
+
+		#set($dateDi = $dateDi.trim())
+		#set($dateHor = $dateHor.trim())
+
+		#set($formtLocal = "$dateDi T $dateHor" )
+
+		#set($formtLocal = $formtLocal.replaceAll(" ", ""))
+
+		<script type="application/ld+json">
+		{
+		  "@context": "http://schema.org",
+		  "@type": "NewsArticle",
+		  "mainEntityOfPage": {
+			"@type": "WebPage",
+			"@id": "#organization"
+		  },
+		  "headline": "$TituloEsc",
+		  #if($ogimage != "")
+			"image": [
+			"$ogimage"
+		   ],
+		  #end
+		  "datePublished": "$formtLocal",
+		  "dateModified": "$formtLocal",
+		  "author": {
+			"@type": "Person",
+			"name": "$autorfinal"
+		  },
+		   "publisher": {
+			"@type": "Organization",
+			"name": "EDITORIAL VISTAZO",
+			"logo": {
+			  "@type": "ImageObject",
+			  "url": "$logo"
+			}
+		  },
+		  #if($fullaccess == "false")
+			"isAccessibleForFree": "False",
+			"hasPart":{
+			"@type": "WebPageElement",
+			"isAccessibleForFree": "False",
+			"cssSelector" : ".restricted"
+		  },
+		  #end
+		  "description": "$TextoEsc"
+		}
+		</script>
+		<!-- ITEMS EN PAGINA  fullaccess: $fullaccess -->
+		<meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="#siteUrl()$url_actual" />
+		<meta itemprop="datePublished" content="$dateF">
+		<meta itemprop="dateModified" content="$dateF">
+		<div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+			<meta itemprop="url" content="https://www.vistazo.com/" />
+			<meta itemprop="name" content="Vistazo" />
+			<div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+				<meta itemprop="url" content="$iterVelocityTools.getVariable('0','logo')" />
+				<meta itemprop="width" content="300" />
+				<meta itemprop="height" content="43" />
+			</div>
+		</div>
+#end
