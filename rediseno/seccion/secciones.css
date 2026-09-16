@@ -388,3 +388,7 @@ div#iter-content-wrapper {
       justify-content: center;
       align-items: center;
     }
+
+    .top1_center_publicidad_notas {
+    display: none !important;
+}

@@ -1,0 +1,42 @@
+##----R_LANDING_AUTOR----
+#set($hmAutores = {})
+#getAcAssignedCatExtended_v1($hmAutores "Vtz_Author")
+#set($hmAutor = $hmAutores.get(0))
+#set($articuloInstrumental = $aboutCategoryArticles.getArticle($hmAutor.id))
+#set($imgAuthor = $!articuloInstrumental.getImageTag("Image","0","crop_300x300","","","","","true","",""))
+
+<div class="R_LANDING_AUTOR ficha_author">
+	<div class="section-title"></div>
+	<div class="content_author">
+		#if($imgAuthor && $imgAuthor != "")
+			<div class="image_author" style="width: 150px">$!imgAuthor</div>
+		#end
+		#if($hmAutor && $hmAutor.name != "")
+		<div class="content_info_author"> 
+			<div class="name_author">$!hmAutor.name</div>
+			<div class="info_author">
+				<div class="title_author">$!articuloInstrumental.Headline.data</div>
+				<div class="subtitle_author">$!articuloInstrumental.Subheadline.data</div>
+				<div class="text_author">$!articuloInstrumental.Text.data</div>
+				
+			</div>
+		</div>
+		#end
+	</div>
+	<div class="rrss_author">
+		#if($articuloInstrumental && $articuloInstrumental.Facebook_Text && $articuloInstrumental.Facebook_Text.data != "")
+			<a href="$articuloInstrumental.Facebook_Text.data" target="_blank"><div class="icon_facebook"></div></a>
+		#end
+		#if($articuloInstrumental && $articuloInstrumental.Twitter_Text && $articuloInstrumental.Twitter_Text.data != "")
+			<a href="$articuloInstrumental.Twitter_Text.data" target="_blank"><div class="icon_twitter"></div></a>
+		#end
+		#if($articuloInstrumental && $articuloInstrumental.Instagram_Text && $articuloInstrumental.Instagram_Text.data != "")
+			<a href="$articuloInstrumental.Instagram_Text.data" target="_blank"><div class="icon_instagram"></div></a>
+		#end
+		#if($articuloInstrumental && $articuloInstrumental.Email && $articuloInstrumental.Email.data != "")
+			<a href="mailto:$articuloInstrumental.Email.data" target="_blank"><div class="icon_mail"></div></a>
+		#end
+					
+	</div>
+
+</div>

@@ -1,0 +1,43 @@
+##----APERTURA_SOLO_IMAGEN----
+#set ($hasImages = $articleToolbox.getNumImageTags("TeaserImage", "true"))
+#set ($position = $!iterVelocityTools.getVelocityVariable("teaseritemposition"))
+#set ($last = $!iterVelocityTools.getVelocityVariable("lastteaseritempos"))
+#set($multimediaContent = "#getMultimediaIcon_v1('crop_500x490','','','','','', '', '100%', false)")
+#set($multimediaContent = $multimediaContent.replaceAll("<img", "<img loading=\"eager\" fetchpriority=\"high\""))
+
+#set($hmAutores = {})
+#getAcAssignedCatExtended_v1($hmAutores "Vtz_Author")
+
+#if( $!iterVelocityTools.getVelocityVariable("oddteaseritempos") == true)
+	#set ($oddeven = "odd" )
+#else
+	#set ($oddeven = "even" )
+#end
+
+#if( $!iterVelocityTools.getVelocityVariable("lastteaseritempos") == true && $position > 1 )
+	#set ($last = "last" )
+#else
+	#set ($last = "" )
+#end
+
+#if($hasImages <= 0)
+	#set($templateClass = "no-media")
+#end
+
+<div class="APERTURA_SOLO_IMAGEN $!oddeven n$!position $!last">
+
+	<div class="media_block">
+
+		#if($hasImages > 0)
+		
+			##MULTIMEDIA IMG
+			<div class="multimedia w-100" >
+
+				$multimediaContent
+
+			</div> 
+		#end
+	</div>
+
+</div>
+
