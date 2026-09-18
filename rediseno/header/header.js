@@ -311,11 +311,33 @@
         header.insertAdjacentElement('afterend', banner);
     }
 
+    /* ═══════════════════════════════════════════
+       BIOS — fichas de autor
+       Reemplaza el texto de .text_author en las landings
+       indicadas. La clave es el pathname de la URL.
+    ═══════════════════════════════════════════ */
+    var AUTHOR_BIOS = {
+        '/autores/-/meta/alejandro-perez': 'Editor digital de Vistazo, casa editorial donde colabora desde 2015. Tiene una maestría en Ciencia Política y cubre temas de coyuntura. También ha publicado trabajos en alianza con plataformas regionales como Connectas, Mongabay, Ojó Público y el ICFJ en temas de contratación pública, medio ambiente y crimen organizado.'
+    };
+
+    function overrideAuthorBio() {
+        /* Normaliza el pathname: sin barra final y en minúsculas. */
+        var path = window.location.pathname.toLowerCase().replace(/\/+$/, '');
+        var bio = AUTHOR_BIOS[path];
+        if (!bio) return;
+
+        var target = document.querySelector('.ficha_author .text_author');
+        if (!target) return;
+
+        target.innerHTML = '<p>' + escapeHtml(bio) + '</p>';
+    }
+
     /* ── Init ── */
     loadRnavFromApi();
     loadSidebarNavFromApi();
     loadSecondaryNavFromApi();
     // buildBanner();
+    overrideAuthorBio();
 
     btnOpen.addEventListener('click', openSidebar);
     btnClose.addEventListener('click', closeSidebar);
@@ -327,4 +349,3 @@
     });
 
 }());
-
