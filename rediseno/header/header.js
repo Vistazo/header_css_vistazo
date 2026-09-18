@@ -337,7 +337,13 @@
     loadSidebarNavFromApi();
     loadSecondaryNavFromApi();
     // buildBanner();
-    overrideAuthorBio();
+    /* El <script> del header se carga antes de que el navegador parsee
+       la ficha del autor, asi que hay que esperar al DOM. */
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', overrideAuthorBio);
+    } else {
+        overrideAuthorBio();
+    }
 
     btnOpen.addEventListener('click', openSidebar);
     btnClose.addEventListener('click', closeSidebar);
