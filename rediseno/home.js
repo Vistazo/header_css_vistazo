@@ -452,46 +452,50 @@ function initVideosSwiper() {
 }
 
 /* ── Función 3: swiper patrocinado ── */
+/* Cubre el bloque patrocinado (.patrocidado-lista, con la errata historica)
+   y el de elecciones seccionales (.patrocinado-lista), que comparten diseño. */
 function initPatrocinadoSwiper() {
-  const patrocinadoList = document.querySelector(".patrocidado-lista");
-  if (!patrocinadoList) return;
-
-  const noticias = patrocinadoList.querySelector(".noticias");
-  if (!noticias) return;
-
-  // Evita inicializar dos veces
-  if (patrocinadoList.classList.contains("swiper-initialized")) return;
-
-  patrocinadoList.classList.add("swiper", "swiper-patrocinado");
-  noticias.classList.add("swiper-wrapper");
-
-  const articles = noticias.querySelectorAll(".article.element");
-  articles.forEach((article) => article.classList.add("swiper-slide"));
-
-  let pagination = patrocinadoList.querySelector(
-    ".patrocidado-lista .swiper-pagination",
+  const listas = document.querySelectorAll(
+    ".patrocidado-lista, .patrocinado-lista",
   );
-  if (!pagination) {
-    pagination = document.createElement("div");
-    pagination.className = "swiper-pagination";
-    noticias.insertAdjacentElement("afterend", pagination);
-  }
 
-  new Swiper(".swiper-patrocinado", {
-    slidesPerView: 1,
-    spaceBetween: 16,
-    observer: true,
-    observeParents: true,
-    observeSlideChildren: true,
-    pagination: {
-      el: ".patrocidado-lista .swiper-pagination",
-      clickable: true,
-      dynamicBullets: true,
-    },
-    breakpoints: {
-      640: { slidesPerView: 2, spaceBetween: 20 },
-      1024: { slidesPerView: 4, spaceBetween: 24 },
-    },
+  listas.forEach((lista, indice) => {
+    const noticias = lista.querySelector(".noticias");
+    if (!noticias) return;
+
+    // Evita inicializar dos veces
+    if (lista.classList.contains("swiper-initialized")) return;
+
+    const marca = "swiper-patrocinado-" + indice;
+    lista.classList.add("swiper", "swiper-patrocinado", marca);
+    noticias.classList.add("swiper-wrapper");
+
+    const articles = noticias.querySelectorAll(".article.element");
+    articles.forEach((article) => article.classList.add("swiper-slide"));
+
+    let pagination = lista.querySelector(".swiper-pagination");
+    if (!pagination) {
+      pagination = document.createElement("div");
+      pagination.className = "swiper-pagination";
+      noticias.insertAdjacentElement("afterend", pagination);
+    }
+
+    new Swiper("." + marca, {
+      slidesPerView: 1,
+      spaceBetween: 16,
+      observer: true,
+      observeParents: true,
+      observeSlideChildren: true,
+      pagination: {
+        el: pagination,
+        clickable: true,
+        dynamicBullets: true,
+      },
+      breakpoints: {
+        640: { slidesPerView: 2, spaceBetween: 20 },
+        1024: { slidesPerView: 4, spaceBetween: 24 },
+      },
+    });
   });
 }
 

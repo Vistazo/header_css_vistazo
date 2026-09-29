@@ -982,6 +982,35 @@
     margin-top: 16px;
 }
 
+/* BLOQUE ELECCIONES SECCIONALES
+   Va dentro de un wrapper .bloque-eventodelmes, pero debe verse como el
+   patrocinado: se anulan la caja gris y la grilla imagen-izquierda. */
+
+.bloque-eventodelmes:has(.patrocinado-lista) {
+    background: none;
+    margin: 0 0 52px;
+    padding: 0;
+}
+
+.bloque-eventodelmes .patrocinado-lista .media_block {
+    display: block;
+}
+
+.bloque-eventodelmes .patrocinado-lista .swiper-wrapper {
+    padding-bottom: 30px;
+}
+
+.bloque-eventodelmes .patrocinado-lista .swiper-pagination-bullet {
+    background: var(--red);
+    height: 10px;
+    width: 10px;
+}
+
+.bloque-eventodelmes .patrocinado-lista .headline h2 {
+    font-size: 14px;
+    margin: 16px 0 0;
+}
+
 /* BLOQUE EVENTO DEL MES */
 
 .bloque-eventodelmes .media_block {
