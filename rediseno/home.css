@@ -988,7 +988,7 @@
 
 .bloque-eventodelmes:has(.patrocinado-lista) {
     background: none;
-    margin: 0 0 52px;
+    margin: 40px 0 52px;
     padding: 0;
 }
 
@@ -1006,8 +1006,9 @@
     width: 10px;
 }
 
-.bloque-eventodelmes .patrocinado-lista .headline h2 {
+.bloque-eventodelmes .patrocinado-lista .media_block .headline h2 {
     font-size: 14px;
+    line-height: 1.35;
     margin: 16px 0 0;
 }
 
