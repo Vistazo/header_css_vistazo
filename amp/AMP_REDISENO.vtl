@@ -136,9 +136,13 @@
       .meta-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:18px 20px 12px;color:#666;font-size:13px}
       .amp-author{color:#222;font-weight:700}
       .meta-dot{width:4px;height:4px;border-radius:50%;background:var(--vistazo-red)}
-      .share-row{display:flex;gap:8px;margin:8px 20px 22px;padding-bottom:18px;border-bottom:1px solid var(--vistazo-border)}
-      .share-row amp-social-share{width:36px;height:36px;border-radius:50%}
-      .share-row amp-social-share[type="twitter"]{background-color:#111}
+      .share-row{display:flex;gap:10px;margin:8px 20px 22px;padding-bottom:18px;border-bottom:1px solid var(--vistazo-border)}
+      .share-row amp-social-share{width:40px;height:40px;border:1px solid #e0e0e0;border-radius:50%;background-color:#fff;background-repeat:no-repeat;background-position:center;background-size:18px 18px}
+      .share-row amp-social-share:hover,.share-row amp-social-share:focus{border-color:#111;background-color:#f6f6f6}
+      .share-row amp-social-share[type="facebook"]{background-image:url('data:image/svg+xml;utf8,<svg%20xmlns="http://www.w3.org/2000/svg"%20viewBox="0%200%2024%2024"%20fill="%23111"><path%20d="M18%202h-3a5%205%200%2000-5%205v3H7v4h3v8h4v-8h3l1-4h-4V7a1%201%200%20011-1h3z"/></svg>')}
+      .share-row amp-social-share[type="twitter"]{background-color:#fff;background-image:url('data:image/svg+xml;utf8,<svg%20xmlns="http://www.w3.org/2000/svg"%20viewBox="0%200%2024%2024"%20fill="%23111"><path%20d="M18.244%202.25h3.308l-7.227%208.26%208.502%2011.24H16.17l-5.214-6.817L4.99%2021.75H1.68l7.73-8.835L1.254%202.25H8.08l4.713%206.231zm-1.161%2017.52h1.833L7.084%204.126H5.117z"/></svg>')}
+      .share-row amp-social-share[type="whatsapp"]{background-image:url('data:image/svg+xml;utf8,<svg%20xmlns="http://www.w3.org/2000/svg"%20viewBox="0%200%2024%2024"%20fill="%23111"><path%20d="M12%202a10%2010%200%2000-8.66%2015L2%2022l5.12-1.34A10%2010%200%201012%202zm0%2018.01a8.01%208.01%200%2001-4.08-1.12l-.29-.17-3.04.8.81-2.97-.19-.3A8.01%208.01%200%201112%2020.01z"/><path%20d="M17.47%2014.38c-.3-.15-1.76-.87-2.03-.97s-.47-.15-.67.15-.77.97-.94%201.16-.35.22-.64.08-1.26-.46-2.39-1.48c-.88-.79-1.48-1.76-1.65-2.06s-.02-.46.13-.61c.13-.13.3-.35.45-.52s.2-.3.3-.5.05-.37-.03-.52-.67-1.61-.92-2.21c-.24-.58-.49-.5-.67-.51h-.57c-.2%200-.52.07-.79.37s-1.04%201.02-1.04%202.48%201.07%202.87%201.21%203.07%202.1%203.2%205.08%204.49c.71.3%201.26.49%201.69.62.71.23%201.36.2%201.87.12.57-.08%201.76-.72%202.01-1.41s.25-1.29.17-1.41-.27-.2-.57-.35z"/></svg>')}
+      .share-row amp-social-share[type="email"]{background-image:url('data:image/svg+xml;utf8,<svg%20xmlns="http://www.w3.org/2000/svg"%20viewBox="0%200%2024%2024"%20fill="%23111"><path%20d="M20%204H4a2%202%200%2000-2%202v12a2%202%200%20002%202h16a2%202%200%20002-2V6a2%202%200%2000-2-2zm0%204l-8%205-8-5V6l8%205%208-5v2z"/></svg>')}
       .amp-art-body{padding:0 20px;line-height:1.5rem;color:#000}
       .paragraph p,.paragraph .h2{margin:0 0 22px;color:#252525;font-family:Georgia,'Times New Roman',serif;font-size:19px;line-height:1.72}
       .paragraph.h2 p,.paragraph p.h2{margin-top:34px;color:#111;font-family:Arial,Helvetica,sans-serif;font-size:25px;font-weight:800;line-height:1.25}
@@ -154,6 +158,32 @@
       .amp-related ul{margin:0;padding:0;list-style:none}
       .amp-related li{margin:0;border-bottom:1px solid var(--vistazo-border)}
       .amp-related li a{display:block;padding:15px 0;color:#151515;font-size:17px;font-weight:700;line-height:1.35;text-decoration:none}
+      /* LIVE BLOG (R_LIVE_BLOG_POST) - portado de rediseno/ampliada/detalle.css.
+         Sin !important (AMP lo prohibe en amp-custom) y sin el prefijo .ly-lbp,
+         que en AMP no existe. */
+      .R_LIVE_BLOG_POST{position:relative;margin:24px 0 8px;padding:0 20px 0 32px;background:#fff}
+      .r_item_post{position:relative;margin-left:10px;padding-left:20px}
+      .r_item_line{position:absolute;top:0;left:0;height:100%}
+      .r_point_post{position:absolute;top:0;left:-22px;width:24px;height:24px;background:url('https://codigomarret.online/upload/img/puntorojo1321320192.svg') no-repeat center/contain}
+      .r_vertical-line{position:absolute;top:8px;bottom:0;left:-11px;width:2px;height:calc(100% + 20px);background:#CC1114}
+      .R_LIVE_BLOG_POST .r_item_post:last-of-type .r_vertical-line{opacity:0}
+      .r_item_content{margin-left:15px;padding-top:0}
+      .r_date_post{display:flex;align-items:center;gap:4px;margin-bottom:10px;font-size:13px}
+      .r_date_post .r_hora_post{padding:4px 8px;border-radius:4px;background:#CC1114;color:#fff}
+      .r_date_post .r_fecha_post{padding:4px 8px;border-radius:4px;background:#F3F5F8}
+      .r_content_post{margin-top:6px}
+      .r_headline_post{margin-top:20px;color:#111;font-size:24px;font-weight:700;line-height:1.25}
+      .r_text_post p{margin-top:18px;color:#252525;font-size:17px;line-height:1.6}
+      .R_LIVE_BLOG_POST p a{color:#CC1114;font-weight:700;text-decoration:none}
+      .r_image_post{width:100%;margin:14px 0;overflow:hidden}
+      .r_image_post amp-img{width:100%;height:auto}
+      .r_multimedia_post,.r_youtube_post{margin:14px 0}
+      .r_cita_post{margin:16px 0;padding:4px 0 4px 16px;border-left:4px solid #CC1114;color:#333;font-family:Georgia,serif;font-size:18px;font-style:italic;line-height:1.5}
+      .r_bullet_post span{position:relative;display:block;margin-bottom:8px;padding-left:16px;font-size:16px;line-height:1.55}
+      .r_bullet_post span::before{position:absolute;top:8px;left:0;width:8px;height:8px;border-radius:50%;background:#CC1114;content:""}
+      .r_linea_hr{border:0;border-top:1px solid #ccc;box-shadow:0 2px 5px rgba(0,0,0,.1)}
+      .r_html_post{margin:14px 0}
+      .r_social-icons{display:none}
       .ad-container{display:flex;min-height:120px;margin:20px auto;align-items:center;justify-content:center;overflow:hidden;background:#fafafa}
       @media (min-width:768px){body{padding:24px 0}article{border:1px solid #ececec}h1.amp-title{font-size:46px}.amp-leadin p{font-size:21px}.amp-art-body{padding-right:48px;padding-left:48px}.amp-bc-wrap,h1.amp-title,.amp-toptitle,.amp-leadin,.meta-row,.share-row{margin-right:48px;margin-left:48px}}
     </style>
@@ -170,6 +200,7 @@
     <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
     <script async custom-element="amp-sticky-ad" src="https://cdn.ampproject.org/v0/amp-sticky-ad-1.0.js"></script>
     <script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
+    <script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>
     <script async custom-element="amp-brid-player" src="https://cdn.ampproject.org/v0/amp-brid-player-0.1.js"></script>
 
     <!-- JSON-LD -->
@@ -625,6 +656,171 @@
             </ul>
           </div>
         #end
+
+      ##----R_LIVE_BLOG_POST ----
+      <div class="R_LIVE_BLOG_POST v3">
+
+        #set ($LivePost= $!articleToolbox.getTag(null, 'LBP_Headline'))
+        #set( $reversedList = [] )
+
+
+        #foreach( $itm in $LivePost.getSiblings() )
+          #set ($portalBeanLocator = $portal.getClass().forName('com.liferay.portal.kernel.bean.PortalBeanLocatorUtil'))
+          #set ($dateFormatFactory = $portalBeanLocator.locate('com.liferay.portal.kernel.util.DateFormatFactoryUtil'))
+          ## LBP_Date llega como 'yyyy/MM/dd HH:mm'. Parsearlo con 'dd/MM/yyyy'
+          ## daba 18/04/0007: lenient toma el anio como dia y desborda.
+          ## Se detecta por la posicion de la primera barra para aguantar ambos.
+          #set ($lbRaw = "$!itm.LBP_Date.data")
+          #set ($lbPatron = 'dd/MM/yyyy HH:mm')
+          #if ($lbRaw.indexOf('/') == 4)
+            #set ($lbPatron = 'yyyy/MM/dd HH:mm')
+          #end
+          #set ($indexFormat = $dateFormatFactory.getSimpleDateFormat($lbPatron))
+
+          #set ($indexFormatSoloHora = $dateFormatFactory.getSimpleDateFormat('hh:mm a'))
+          #set ($fmtDia  = $dateFormatFactory.getSimpleDateFormat('d'))
+          #set ($fmtMes  = $dateFormatFactory.getSimpleDateFormat('M'))
+          #set ($fmtAnio = $dateFormatFactory.getSimpleDateFormat('yyyy'))
+          ## Nombre del mes por mapa: no depende del locale de la JVM
+          #set ($lbMeses = {"1":"enero","2":"febrero","3":"marzo","4":"abril","5":"mayo","6":"junio","7":"julio","8":"agosto","9":"septiembre","10":"octubre","11":"noviembre","12":"diciembre"})
+
+          #set ($dResultado = $indexFormat.parse($lbRaw))
+          #set ($lbDia  = $fmtDia.format($dResultado))
+          #set ($lbMes  = $fmtMes.format($dResultado))
+          #set ($lbAnio = $fmtAnio.format($dResultado))
+          #set ($lbMesTxt = $lbMeses.get($lbMes))
+          #if (!$lbMesTxt) #set ($lbMesTxt = $lbMes) #end
+          #set ($soloFecha = "${lbDia} ${lbMesTxt} ${lbAnio}")
+          #set ($soloHora  = $indexFormatSoloHora.format($dResultado))
+
+          #set ($temp = $itm.put("FECHA_POST", $soloFecha))
+          #set ($temp = $itm.put("HORA_POST",  $soloHora))
+          #set ($temp = $itm.put("DATE_POST",  $dResultado))
+          #set ($temp = $reversedList.add(0, $itm))
+        #end
+
+        ##foreach($post in $sortTool.sort($reversedList, 'DATE_POST:desc'))
+              #foreach($post in $sortTool.sort($reversedList, 'DATE_POST:desc'))
+
+
+          #set ($soloFecha = $post.FECHA_POST)
+          #set ($soloHora  = $post.HORA_POST)
+          #set ($PostDate= $post.LBP_Date)
+          #set ($PostText= $post.LBP_Text)
+          #set ($PostCita= $post.LBP_Cita)
+          #set ($PostBullet= $post.LBP_Bullet)
+
+          #set ($PostchildrenTags = $articleToolbox.getChildrenTags($post))
+
+          <div class="r_item_post p_$velocityCount">
+            <div class="r_item_line">
+                      <div class="r_point_post"></div>
+                      <div class="r_vertical-line"></div> <!-- Línea vertical entre los puntos -->
+                  </div>
+            <div class="r_item_content">
+              <div class="r_date_post" data-date="$!PostDate.data">
+                <div class="r_hora_post">$!soloHora</div>
+          <div class="r_fecha_post">$!soloFecha</div>
+              
+              </div>
+              <div class="r_content_post">
+                <div class="r_headline_post">$!post.data</div>
+                <div class="r_text_post">$!PostText.data</div>
+              #foreach ($el in $PostchildrenTags)
+                #if($el.name == "LBP_HTML")
+                  ## El HTML del editor (tuits, embeds) invalida AMP tal cual:
+                  ## mismo saneado que se aplica a HTML_Text mas arriba.
+                  #set($lbpHtml = $!el.data)
+                  #set($lbpHtml = $lbpHtml.replaceAll('!important', ''))
+                  #set($lbpHtml = $lbpHtml.replaceAll('(?is)<script[^>]*>.*?</script>', ''))
+                  #set($lbpHtml = $lbpHtml.replaceAll('(?is)<script[^>]*>', ''))
+                  #set($lbpHtml = $lbpHtml.replaceAll('style=".*?"', ''))
+                  #set($lbpHtml = $lbpHtml.replaceAll('loading="lazy"', ''))
+                  #set($lbpHtml = $lbpHtml.replaceAll('(?i) xml:lang="[^"]*"', ''))
+                  #set($lbpHtml = $lbpHtml.replaceAll('(?i) lang="[^"]*"', ''))
+                  #set($lbpHtml = $lbpHtml.replaceAll('<picture', '<div'))
+                  #set($lbpHtml = $lbpHtml.replaceAll('</picture>', '</div>'))
+                  #set($lbpHtml = $lbpHtml.replaceAll('<source(.*?)>', ''))
+                  #set($lbpHtml = $lbpHtml.replaceAll('<video', '<amp-video layout="responsive" width="640" height="360"'))
+                  #set($lbpHtml = $lbpHtml.replaceAll('</video>', '</amp-video>'))
+                  #set($lbpHtml = $lbpHtml.replaceAll('<iframe', '<amp-iframe'))
+                  #set($lbpHtml = $lbpHtml.replaceAll('</iframe>', '</amp-iframe>'))
+                  #if($lbpHtml.contains('youtube.com') || $lbpHtml.contains('youtu.be'))
+                    #set($lbpHtml = $lbpHtml.replaceAll('(<amp-iframe[^>]*)( allow="[^"]*")([^>]*>)', '$1$3'))
+                    #set($lbpHtml = $lbpHtml.replaceAll('[?]si=[^"]*"', '"'))
+                    #set($lbpHtml = $lbpHtml.replaceAll('<amp-iframe', '<amp-youtube layout="responsive"'))
+                    #set($lbpHtml = $lbpHtml.replaceAll('src="https://www.youtube.com/embed/', 'data-videoid="'))
+                    #set($lbpHtml = $lbpHtml.replaceAll('</amp-iframe>', '</amp-youtube>'))
+                  #end
+                  #set($lbpHtml = $lbpHtml.replaceAll('(<amp-youtube[^>]*?) allowfullscreen(?:="[^"]*")?', '$1'))
+                  #set($lbpHtml = $lbpHtml.replaceAll('(<amp-youtube[^>]*?) allow="[^"]*"', '$1'))
+                  #set($lbpHtml = $lbpHtml.replaceAll('(<amp-youtube[^>]*?) frameborder="[^"]*"', '$1'))
+                  #set($lbpHtml = $lbpHtml.replaceAll('(<amp-iframe[^>]*?) (?:webkit)?allowfullscreen(?:="[^"]*")?', '$1'))
+                  #set($lbpHtml = $lbpHtml.replaceAll('(<amp-iframe[^>]*?) frameborder="[^"]*"', '$1'))
+                  #set($lbpHtml = $lbpHtml.replaceAll('(<amp-iframe(?![^>]*layout=)[^>]*)(>)', '$1 layout="responsive"$2'))
+                  #set($lbpHtml = $lbpHtml.replaceAll('(<amp-iframe(?![^>]*width=)[^>]*)(>)', '$1 width="640"$2'))
+                  #set($lbpHtml = $lbpHtml.replaceAll('(<amp-iframe(?![^>]*height=)[^>]*)(>)', '$1 height="410"$2'))
+                  #set($lbpHtml = $lbpHtml.replaceAll('(<amp-iframe(?![^>]*sandbox=)[^>]*)(>)', '$1 sandbox="allow-scripts allow-same-origin"$2'))
+                  #set($lbpHtml = $lbpHtml.replaceAll('<img(.*?)>', '<amp-img$1></amp-img>'))
+                  #set($lbpHtml = $lbpHtml.replaceAll('(<amp-img(?![^>]*layout=)(?![^>]*width=)(?![^>]*height=))', '$1 layout="responsive" width="640" height="360"'))
+                  <div class="r_html_post">$!lbpHtml</div>
+                #end
+
+                #if($el.name == "LBP_Image")
+                  <div class="r_image_post">
+                      $!articleToolbox.getImageTag("$el.name","$el.Milenium.data","crop_650_350_PodHea","","","","false","$!post.data","$!post.data","100%")
+                  </div>
+                #end
+                #if($el.name == "LBP_Multimedia")
+                  <div class="r_multimedia_post">
+                  #if($el.Extension.data && $el.Extension.data == "mp3")
+                    <amp-audio width="auto" height="50" src="$!el.Document.data"></amp-audio>
+                  #elseif ($el.Extension.data && $el.Extension.data == "mp4")
+                    <amp-video controls layout="responsive" width="640" height="360" poster="$!el.Preview.data">
+                      <source src="$!el.Document.data" type="video/mp4" />
+                    </amp-video>
+                  #end
+                  </div>
+                #end
+                #if($el.name == "LBP_Youtube")
+                  <div class="r_youtube_post">
+                      $el.data
+                    ##<iframe allowfullscreen="" frameborder="0" height="360"  width="640" src="//www.youtube.com/embed/?wmode=transparent&controls=2&showinfo=0&theme=light"></iframe>
+                  </div>
+                #end
+                #if($el.name == "LBP_Cita")
+                  <div class="r_cita_post">
+                    <span></span> ${el.data}
+                  </div>
+                #end
+                #if($el.name == "LBP_Bullet")
+                  <div class="r_bullet_post">
+                    #foreach ($bullet in $el.getSiblings())
+                      <span>${bullet.data}</span>
+                    #end
+                  </div>
+                #end
+              #end
+                <hr class="r_linea_hr"/>
+                <div class="r_social-icons">
+                  <a href="https://facebook.com/sharer/sharer.php?u=#siteUrl()#printAcCanonicalUrl_v1()" target="_blank">
+                    <amp-img src="https://codigomarret.online/upload/img/facebook.svg" alt="Facebook" width="24" height="24"></amp-img>
+                  </a>
+                  <a href="https://api.whatsapp.com/send?text=#siteUrl()#printAcCanonicalUrl_v1()" target="_blank">
+                    <amp-img src="https://codigomarret.online/upload/img/icons8-whatsapp.svg" alt="WhatsApp" width="24" height="24"></amp-img>
+                  </a>
+                  <a href="https://twitter.com/intent/tweet?text=#siteUrl()#printAcCanonicalUrl_v1()" target="_blank">
+                    <amp-img src="https://codigomarret.online/upload/img/icons8-twitterx.svg" alt="Twitter" width="24" height="24"></amp-img>
+                        </a>
+                    </div>
+              </div>
+            </div>
+          </div>
+
+        #end
+      </div>
+
+
       </article>
 
       <amp-analytics type="taboola" id="taboola">

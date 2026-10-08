@@ -3,6 +3,7 @@
 
   /* ── Configuración ── */
   var PLAYLIST_ID  = "x9si9u";   // ID de la playlist en Dailymotion
+  var DM_PLAYER_ID = "x1agjk";   // ID del reproductor; sin el, el embed da 403
   // 1 destacado + 6 lista + 4 sidebar = 11 en un solo fetch (sin repetidos)
   var LIMIT_LATEST = 11;
   var LIMIT_POP    = 4;           // Videos más vistos (sort=visited, diferentes)
@@ -56,8 +57,8 @@
 
   function openModal(videoId) {
     player.src =
-      "https://www.dailymotion.com/embed/video/" + videoId +
-      "?autoplay=1&queue-enable=false&sharing-enable=false&ui-logo=false";
+      "https://geo.dailymotion.com/player/" + DM_PLAYER_ID + ".html?video=" + videoId +
+      "&autoplay=true&queue-enable=false&sharing-enable=false&ui-logo=false";
     modal.classList.add("active");
     document.body.style.overflow = "hidden";
   }

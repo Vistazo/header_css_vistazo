@@ -7,6 +7,14 @@ const REVISTAS_STORAGE_HASH_KEY = "revistasDataCacheHash";
 const REVISTAS_STORAGE_SYNC_KEY = "revistasDataCacheLastSync";
 const REVISTAS_CACHE_TTL_MS = 1 * 60 * 1000;
 
+/* Dailymotion retiro /embed/video/<id>: ahora redirige a geo.dailymotion.com
+   y responde 403. El player nuevo exige el ID del reproductor de la cuenta. */
+const DM_PLAYER_ID = "x1agjk";
+function dmEmbedUrl(videoId, params) {
+  return "https://geo.dailymotion.com/player/" + DM_PLAYER_ID + ".html?video=" +
+    videoId + (params ? "&" + params : "");
+}
+
 // Fuerza consulta a la API en cada carga de página
 try { localStorage.removeItem(REVISTAS_STORAGE_SYNC_KEY); } catch (_) {}
 let _syncInProgress = false;
@@ -373,7 +381,7 @@ function initVideosSwiper() {
   const modalPlayer = overlay.querySelector("#modalVideoPlayer");
 
   function openModal(videoId) {
-    modalPlayer.src = `https://www.dailymotion.com/embed/video/${videoId}?autoplay=1`;
+    modalPlayer.src = dmEmbedUrl(videoId, "autoplay=true");
     overlay.classList.add("active");
     document.body.style.overflow = "hidden";
   }
@@ -403,7 +411,7 @@ function initVideosSwiper() {
       }
 
       const firstVideo = data.list[0];
-      player.src = `https://www.dailymotion.com/embed/video/${firstVideo.id}?autoplay=1`;
+      player.src = dmEmbedUrl(firstVideo.id, "autoplay=true");
 
       data.list.forEach((video) => {
         const durationMin = Math.floor(video.duration / 60);
@@ -741,10 +749,7 @@ function initUltimosVideos() {
   const modalPlayer = overlay.querySelector("#ultimosModalPlayer");
 
   function openModal(videoId) {
-    modalPlayer.src =
-      "https://www.dailymotion.com/embed/video/" +
-      videoId +
-      "?autoplay=1&queue-enable=false&sharing-enable=false";
+    modalPlayer.src = dmEmbedUrl(videoId, "autoplay=true&queue-enable=false&sharing-enable=false");
     overlay.classList.add("active");
     document.body.style.overflow = "hidden";
   }

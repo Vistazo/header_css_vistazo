@@ -166,7 +166,7 @@
                 }
 
                 const firstVideo = data.list[0];
-                player.src = `https://www.dailymotion.com/embed/video/${firstVideo.id}?autoplay=1`;
+                player.src = `https://geo.dailymotion.com/player/x1agjk.html?video=${firstVideo.id}&autoplay=true`;
 
                 data.list.forEach(video => {
                     const durationMin = Math.floor(video.duration / 60);
@@ -181,7 +181,7 @@
           `;
 
                     div.addEventListener("click", () => {
-                        player.src = `https://www.dailymotion.com/embed/video/${video.id}?autoplay=1`;
+                        player.src = `https://geo.dailymotion.com/player/x1agjk.html?video=${video.id}&autoplay=true`;
                         window.scrollTo({ top: 0, behavior: "smooth" });
                     });
 
