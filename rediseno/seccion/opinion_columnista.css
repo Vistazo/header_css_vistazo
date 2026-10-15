@@ -198,3 +198,14 @@ div#iter-content-wrapper {
         padding: 0;
     }
 }
+
+/* ═══════════════════════════════════════════
+   TIPOGRAFIA MOVIL
+   Solo texto de lectura, +2px. Titulares de 20px+,
+   fechas, pastillas de seccion y botones sin tocar.
+═══════════════════════════════════════════ */
+@media (max-width: 767px) {
+    .cronologia .headline h2 {
+        font-size: 20px;
+    }
+}

@@ -392,3 +392,34 @@ div#iter-content-wrapper {
     .top1_center_publicidad_notas {
     display: none !important;
 }
+
+/* ═══════════════════════════════════════════
+   TIPOGRAFIA MOVIL
+   Solo texto de lectura, +2px. Titulares de 20px+,
+   fechas, pastillas de seccion y botones sin tocar.
+═══════════════════════════════════════════ */
+@media (max-width: 767px) {
+    .principal_notas .subheadline h3, .principal_notas .subheadline p {
+        font-size: 16px;
+    }
+
+    .listado_notas .headline h2 {
+        font-size: 18px;
+    }
+
+    .listado_notas .subheadline h3 {
+        font-size: 16px;
+    }
+
+    .noticias_list .headline h2 {
+        font-size: 18px;
+    }
+
+    .mas-destacados .headline h2 {
+        font-size: 18px;
+    }
+
+    .noticias_list .media_block h2 {
+        font-size: 18px;
+    }
+}

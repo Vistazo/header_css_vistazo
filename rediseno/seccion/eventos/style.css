@@ -1169,3 +1169,14 @@
         padding-top: calc(var(--vz-barra-blanca) + var(--vz-barra-negra)) !important;
     }
 }
+
+/* ═══════════════════════════════════════════
+   TIPOGRAFIA MOVIL
+   Solo texto de lectura, +2px. Titulares de 20px+,
+   fechas, pastillas de seccion y botones sin tocar.
+═══════════════════════════════════════════ */
+@media (max-width: 767px) {
+    .bloque-contenido-eventos .headline h2 {
+        font-size: 16px;
+    }
+}

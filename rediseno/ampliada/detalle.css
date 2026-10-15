@@ -1068,3 +1068,57 @@ body:has(a.section[href*="/sostenibilidad"]) {
 #Center2_ad{
     margin-top: 1.5rem;
 }
+
+
+/* ═══════════════════════════════════════════
+   SUBRAYADO ROJO
+   Vivia en heades/rediseno.css, que las notas ya no cargan.
+   Se trae aqui porque detalle.css si se carga en todas.
+═══════════════════════════════════════════ */
+p u {
+    -webkit-text-decoration-color: #fd0f03;
+    text-decoration-color: #fd0f03;
+}
+
+.contenido_subrayado {
+    text-decoration: underline #fd0f03;
+}
+
+/* ═══════════════════════════════════════════
+   TIPOGRAFIA MOVIL
+   Solo texto de lectura, +2px. Titulares de 20px+,
+   fechas, pastillas de seccion y botones sin tocar.
+═══════════════════════════════════════════ */
+@media (max-width: 767px) {
+    .r_relacionadas .teaser-related-list article a {
+        font-size: 18px;
+    }
+
+    .r_te-puede-interesar {
+        font-size: 16px;
+    }
+
+    .ultimas-noticias .media_block h2 {
+        font-size: 18px;
+    }
+
+    .masnoticias-derecha .headline h2, .masnoticias-izq-dos .headline h2 {
+        font-size: 18px;
+    }
+
+    .r_bulletvistazo {
+        font-size: 18px;
+    }
+
+    /* Cuerpo de la nota: heredaba 16px del body del tema, sin regla propia */
+    .text_detail .paragraph.texto p {
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+    /* Cuerpo de cada post del live blog */
+    .r_text_post p {
+        font-size: 18px;
+        line-height: 1.6;
+    }
+}

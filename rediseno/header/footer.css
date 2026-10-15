@@ -466,4 +466,22 @@
          text-align: center;
      }
 
+     /* Tipografia un poco mayor en movil: los tamanios base estan pensados
+        para el footer de escritorio y se quedan chicos en pantalla pequena. */
+     .contact-item__label,
+     .awards-block__title {
+         font-size: 11px;
+     }
+
+     .contact-item__value,
+     .contact-item__value a,
+     .nav-list__item a {
+         font-size: 15px;
+     }
+
+     .footer__bottom {
+         font-size: 12px;
+         line-height: 1.6;
+     }
+
  }

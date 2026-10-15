@@ -230,3 +230,14 @@
         gap: 16px;
     }
 }
+
+/* ═══════════════════════════════════════════
+   TIPOGRAFIA MOVIL
+   Solo texto de lectura, +2px. Titulares de 20px+,
+   fechas, pastillas de seccion y botones sin tocar.
+═══════════════════════════════════════════ */
+@media (max-width: 767px) {
+    .c_003_023 .media_block h2 {
+        font-size: 18px;
+    }
+}

@@ -334,3 +334,25 @@
     }
 }
 
+/* ═══════════════════════════════════════════
+   TIPOGRAFIA MOVIL
+   Solo texto de lectura, +2px. Titulares de 20px+,
+   fechas, pastillas de seccion y botones sin tocar.
+═══════════════════════════════════════════ */
+@media (max-width: 767px) {
+    .content_author .text_author {
+        font-size: 17px;
+    }
+
+    .cronologia .r_headline h2 {
+        font-size: 18px;
+    }
+
+    .cronologia .r_subheadline h3 {
+        font-size: 16px;
+    }
+
+    .noticias-principales h2 {
+        font-size: 16px;
+    }
+}

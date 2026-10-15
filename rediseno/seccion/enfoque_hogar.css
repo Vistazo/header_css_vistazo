@@ -539,3 +539,34 @@ div#iter-content-wrapper {
         padding-right: 0;
     }
 }
+
+/* ═══════════════════════════════════════════
+   TIPOGRAFIA MOVIL
+   Solo texto de lectura, +2px. Titulares de 20px+,
+   fechas, pastillas de seccion y botones sin tocar.
+═══════════════════════════════════════════ */
+@media (max-width: 767px) {
+    .nota-principal .subheadline h3 {
+        font-size: 16px;
+    }
+
+    .notas-lista .noticias .headline h2 {
+        font-size: 18px;
+    }
+
+    .cuatro-notas .headline h2 {
+        font-size: 18px;
+    }
+
+    .nota-patrocinada .media_block .subheadline h3 {
+        font-size: 18px;
+    }
+
+    .listado-not-seccion .headline h2 {
+        font-size: 18px;
+    }
+
+    .listado-seis-notas .headline h2 {
+        font-size: 18px;
+    }
+}

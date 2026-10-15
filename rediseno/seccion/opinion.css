@@ -218,3 +218,30 @@ div#iter-content-wrapper {
         padding-right: 0;
     }
 }
+
+/* ═══════════════════════════════════════════
+   TIPOGRAFIA MOVIL
+   Solo texto de lectura, +2px. Titulares de 20px+,
+   fechas, pastillas de seccion y botones sin tocar.
+═══════════════════════════════════════════ */
+@media (max-width: 767px) {
+    .listado3x1 h2 {
+        font-size: 18px;
+    }
+
+    .listado3x1 .text p {
+        font-size: 15px;
+    }
+
+    .listado1x5 h2 {
+        font-size: 16px;
+    }
+
+    .listado1x5 .text p {
+        font-size: 15px;
+    }
+
+    .mas-destacados .headline h2 {
+        font-size: 16px;
+    }
+}
