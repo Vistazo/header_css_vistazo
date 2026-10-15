@@ -485,4 +485,12 @@ div#iter-content-wrapper {
     .listado-seis-notas .headline h2 {
         font-size: 18px;
     }
+
+    .nota-principal .headline h2 {
+        font-size: 22px;
+    }
+
+    .nota-patrocinada .media_block .headline h2 {
+        font-size: 26px;
+    }
 }

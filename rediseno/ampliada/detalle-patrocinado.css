@@ -1134,4 +1134,8 @@ p u {
         font-size: 18px;
         line-height: 1.6;
     }
+
+    .masnoticias-izq .headline h2 {
+        font-size: 26px;
+    }
 }

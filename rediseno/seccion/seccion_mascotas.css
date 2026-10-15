@@ -363,4 +363,8 @@ div#iter-content-wrapper {
     .noticias_list .media_block h2 {
         font-size: 18px;
     }
+
+    .principal_notas .headline h2 {
+        font-size: 24px;
+    }
 }

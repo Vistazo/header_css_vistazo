@@ -600,4 +600,8 @@ div#iter-content-wrapper {
     .mas-destacados .headline h2 {
         font-size: 18px;
     }
+
+    .nota_principal .headline h2 {
+        font-size: 22px;
+    }
 }
