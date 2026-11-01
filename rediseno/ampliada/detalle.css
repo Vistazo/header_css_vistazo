@@ -1017,7 +1017,7 @@ body:has(a.section[href*="/sostenibilidad"]) {
     }
 
     .cutline-byline {
-        margin-top: 12px;
+        margin-top: 50px;
         margin-bottom: 24px;
         font-size: 13px;
     }
