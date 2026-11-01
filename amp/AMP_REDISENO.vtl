@@ -159,7 +159,7 @@
       .amp-related li{margin:0;border-bottom:1px solid var(--vistazo-border)}
       .amp-related li a{display:block;padding:15px 0;color:#151515;font-size:17px;font-weight:700;line-height:1.35;text-decoration:none}
       /* LIVE BLOG (R_LIVE_BLOG_POST) - portado de rediseno/ampliada/detalle.css.
-         Sin !important (AMP lo prohibe en amp-custom) y sin el prefijo .ly-lbp,
+         Sin calificadores de prioridad (AMP los prohibe) y sin .ly-lbp,
          que en AMP no existe. */
       .R_LIVE_BLOG_POST{position:relative;margin:24px 0 8px;padding:0 20px 0 32px;background:#fff}
       .r_item_post{position:relative;margin-left:10px;padding-left:20px}
@@ -184,6 +184,8 @@
       .r_linea_hr{border:0;border-top:1px solid #ccc;box-shadow:0 2px 5px rgba(0,0,0,.1)}
       .r_html_post{margin:14px 0}
       .r_social-icons{display:none}
+      .ad-center{display:flex;align-items:center;justify-content:center}
+      .logo-text{display:none}
       .ad-container{display:flex;min-height:120px;margin:20px auto;align-items:center;justify-content:center;overflow:hidden;background:#fafafa}
       @media (min-width:768px){body{padding:24px 0}article{border:1px solid #ececec}h1.amp-title{font-size:46px}.amp-leadin p{font-size:21px}.amp-art-body{padding-right:48px;padding-left:48px}.amp-bc-wrap,h1.amp-title,.amp-toptitle,.amp-leadin,.meta-row,.share-row{margin-right:48px;margin-left:48px}}
     </style>
@@ -227,7 +229,7 @@
   <body>
     <main class="amp-content">
       <header class="simp-head">
-        <div class="title"><a href="https://www.vistazo.com/"><div class="logo_cab"><span class="logo-text" style="display:none">Vistazo</span></div></a></div>
+        <div class="title"><a href="https://www.vistazo.com/"><div class="logo_cab"><span class="logo-text">Vistazo</span></div></a></div>
         <div class="hamburger_wrapper">
           <div id="hamburger" tabindex="1" role="button" on="tap:hamburger.toggleClass(class='close'),nav-menu.toggleClass(class='now-active')">
             <span></span><span></span><span></span>
@@ -345,7 +347,42 @@
           #if($isLiveFlag)
             <div class="live-pill"><span class="dot"></span> EN VIVO</div>
           #end
-          $!articleToolbox.getImageTag("Image","0","$recorte","","","", "true", "$!headline_scape", "$!headline_scape")
+          ## Portada: si la nota trae video se muestra el video y la imagen
+          ## queda de poster. Si no, se cae a la imagen de siempre.
+          #set($portadaYt = $!articleToolbox.getTag(null, 'Youtube'))
+          #set($portadaMm = $!articleToolbox.getTag(null, 'Multimedia'))
+          #set($portadaPoster = $!articleToolbox.getImageURL("Image","0","$recorte"))
+
+          #if($portadaYt && $!portadaYt.data && $!portadaYt.data != "")
+            ## El tag puede traer el id pelado o la URL completa del embed.
+            ## Se normaliza a id: se corta todo hasta la ultima barra y el ?query.
+            ## Ojo: Velocity no admite invocar metodos sobre un literal de cadena,
+            ## hay que asignar primero y despues operar sobre la variable.
+            #set($ytId = "$!portadaYt.data")
+            #set($ytId = $ytId.trim())
+            #if($ytId.contains("/"))
+              #set($ytCorte = $ytId.lastIndexOf("/") + 1)
+              #set($ytId = $ytId.substring($ytCorte))
+            #end
+            #if($ytId.contains("?"))
+              #set($ytId = $ytId.substring(0, $ytId.indexOf("?")))
+            #end
+            #if($ytId.contains("&"))
+              #set($ytId = $ytId.substring(0, $ytId.indexOf("&")))
+            #end
+            <amp-youtube data-videoid="$ytId" layout="responsive" width="640" height="360"></amp-youtube>
+          #elseif($portadaMm && $!portadaMm.Document.data && $!portadaMm.Document.data != "")
+            #set($portadaExt = "$!portadaMm.Extension.data")
+            #if($portadaExt == "mp3")
+              <amp-audio width="auto" height="50" src="$!portadaMm.Document.data"></amp-audio>
+            #else
+              <amp-video controls layout="responsive" width="640" height="360" poster="$!portadaPoster">
+                <source src="$!portadaMm.Document.data" type="video/mp4" />
+              </amp-video>
+            #end
+          #else
+            $!articleToolbox.getImageTag("Image","0","$recorte","","","", "true", "$!headline_scape", "$!headline_scape")
+          #end
           <figcaption class="caption" itemprop="description">$!Image.Cutline.data</figcaption>
         </figure>
 
@@ -368,7 +405,7 @@
           </amp-social-share>
         </div>
 
-        <div style="display:flex;justify-content:center;align-items:center;">
+        <div class="ad-center">
           <amp-ad width="320" height="100" type="doubleclick" data-slot="/21839199781/vistazo_amp/top"></amp-ad>
         </div>
 
@@ -400,6 +437,25 @@
                       #set($parrafo = $parrafo.replaceAll('(?is)<script[^>]*cdn\\.ampproject\\.org\\/v0\\.js[^>]*>\\s*</script>', ""))  ## runtime solo en <head>
                       #set($parrafo = $parrafo.replaceAll('(?is)<script[^>]*>.*?</script>', ""))
                       #set($parrafo = $parrafo.replaceAll('(?is)<script[^>]*>', ""))
+
+                      ## --- Saneado AMP comun (errores de Search Console) ---
+                      ## style= es atributo prohibido en AMP (comillas dobles y simples)
+                      #set($parrafo = $parrafo.replaceAll('(?i) style="[^"]*"', ''))
+                      #set($parrafo = $parrafo.replaceAll("(?i) style='[^']*'", ''))
+                      ## <style> solo se permite en el head
+                      #set($parrafo = $parrafo.replaceAll('(?is)<style[^>]*>.*?</style>', ''))
+                      ## la etiqueta font no existe en AMP
+                      #set($parrafo = $parrafo.replaceAll('(?i)</?font[^>]*>', ''))
+                      ## align no esta permitido en div/p/img
+                      #set($parrafo = $parrafo.replaceAll('(?i) align="[^"]*"', ''))
+                      ## SVG: se quita completo; si queda suelto da 'etiqueta secundaria fuera de bloque'
+                      #set($parrafo = $parrafo.replaceAll('(?is)<svg.*?</svg>', ''))
+                      #set($parrafo = $parrafo.replaceAll('(?i)</?(path|rect|circle|ellipse|line|polyline|polygon|g|defs|use|symbol|mask|clippath|lineargradient|radialgradient|stop|tspan)[^>]*>', ''))
+                      ## protocolo invalido en src: AMP exige https
+                      #set($parrafo = $parrafo.replaceAll('src="//', 'src="https://'))
+                      #set($parrafo = $parrafo.replaceAll('src="http://', 'src="https://'))
+                      #set($parrafo = $parrafo.replaceAll("src='//", "src='https://"))
+                      #set($parrafo = $parrafo.replaceAll("src='http://", "src='https://"))
 
                       ## --- Imágenes sueltas a amp-img y asegura layout/dimensiones ---
                       #set($parrafo = $parrafo.replaceAll('<img(.*?)>', '<amp-img$1></amp-img>'))
@@ -459,7 +515,7 @@
                           <amp-ad width="300" height="1" noloading type="teads" data-pid="153198" layout="responsive"></amp-ad>
                         #elseif($contadorParrafos == 2)
                           <p class="parrafo n$contadorParrafos">$!parrafo</p>
-                          <div style="display:flex;justify-content:center;align-items:center;">
+                          <div class="ad-center">
                             <amp-ad width="300" height="250" type="doubleclick" data-slot="/21839199781/vistazo_amp/middle"></amp-ad>
                           </div>
                           <amp-brid-player data-partner="19581" autoplay data-player="40864" data-carousel="16729" layout="responsive" width="540" height="300"></amp-brid-player>
@@ -479,13 +535,13 @@
                           #end
                         #elseif($contadorParrafos == 4)
                           <p class="parrafo n$contadorParrafos">$!parrafo</p>
-                          <div style="display:flex;justify-content:center;align-items:center;">
+                          <div class="ad-center">
                             <amp-ad width="300" height="250" type="doubleclick" data-slot="/21839199781/vistazo_amp/center1"></amp-ad>
                             <amp-ad width="300" height="1" type="doubleclick" data-slot="/21839199781/vistazo_amp/inread"></amp-ad>
                           </div>
                         #elseif($contadorParrafos == 6)
                           <p class="parrafo n$contadorParrafos">$!parrafo</p>
-                          <div style="display:flex;justify-content:center;align-items:center;">
+                          <div class="ad-center">
                             <amp-ad width="320" height="250" type="doubleclick" data-slot="/21839199781/vistazo_amp/middle2"></amp-ad>
                             <amp-ad width="300" height="250" type="doubleclick" data-slot="/21839199781/vistazo_amp/down" data-multi-size="300x50"></amp-ad>
                             <amp-sticky-ad layout="nodisplay">
@@ -603,6 +659,25 @@
                   #set($htmlContent = $htmlContent.replaceAll('(?is)<script[^>]*cdn\\.ampproject\\.org\\/v0\\.js[^>]*>\\s*</script>', ''))
                   #set($htmlContent = $htmlContent.replaceAll('(?is)<script[^>]*>.*?</script>', ''))
                   #set($htmlContent = $htmlContent.replaceAll('(?is)<script[^>]*>', ''))
+
+                  ## --- Saneado AMP comun (errores de Search Console) ---
+                  ## style= es atributo prohibido en AMP (comillas dobles y simples)
+                  #set($htmlContent = $htmlContent.replaceAll('(?i) style="[^"]*"', ''))
+                  #set($htmlContent = $htmlContent.replaceAll("(?i) style='[^']*'", ''))
+                  ## <style> solo se permite en el head
+                  #set($htmlContent = $htmlContent.replaceAll('(?is)<style[^>]*>.*?</style>', ''))
+                  ## la etiqueta font no existe en AMP
+                  #set($htmlContent = $htmlContent.replaceAll('(?i)</?font[^>]*>', ''))
+                  ## align no esta permitido en div/p/img
+                  #set($htmlContent = $htmlContent.replaceAll('(?i) align="[^"]*"', ''))
+                  ## SVG: se quita completo; si queda suelto da 'etiqueta secundaria fuera de bloque'
+                  #set($htmlContent = $htmlContent.replaceAll('(?is)<svg.*?</svg>', ''))
+                  #set($htmlContent = $htmlContent.replaceAll('(?i)</?(path|rect|circle|ellipse|line|polyline|polygon|g|defs|use|symbol|mask|clippath|lineargradient|radialgradient|stop|tspan)[^>]*>', ''))
+                  ## protocolo invalido en src: AMP exige https
+                  #set($htmlContent = $htmlContent.replaceAll('src="//', 'src="https://'))
+                  #set($htmlContent = $htmlContent.replaceAll('src="http://', 'src="https://'))
+                  #set($htmlContent = $htmlContent.replaceAll("src='//", "src='https://"))
+                  #set($htmlContent = $htmlContent.replaceAll("src='http://", "src='https://"))
 
                   ## --- Limpia xml:lang y atributos inválidos ---
                   ##set($htmlContent = $htmlContent.replaceAll('\\sxml:lang="[^"]*"', ''))
@@ -734,6 +809,25 @@
                   #set($lbpHtml = $lbpHtml.replaceAll('!important', ''))
                   #set($lbpHtml = $lbpHtml.replaceAll('(?is)<script[^>]*>.*?</script>', ''))
                   #set($lbpHtml = $lbpHtml.replaceAll('(?is)<script[^>]*>', ''))
+
+                  ## --- Saneado AMP comun (errores de Search Console) ---
+                  ## style= es atributo prohibido en AMP (comillas dobles y simples)
+                  #set($lbpHtml = $lbpHtml.replaceAll('(?i) style="[^"]*"', ''))
+                  #set($lbpHtml = $lbpHtml.replaceAll("(?i) style='[^']*'", ''))
+                  ## <style> solo se permite en el head
+                  #set($lbpHtml = $lbpHtml.replaceAll('(?is)<style[^>]*>.*?</style>', ''))
+                  ## la etiqueta font no existe en AMP
+                  #set($lbpHtml = $lbpHtml.replaceAll('(?i)</?font[^>]*>', ''))
+                  ## align no esta permitido en div/p/img
+                  #set($lbpHtml = $lbpHtml.replaceAll('(?i) align="[^"]*"', ''))
+                  ## SVG: se quita completo; si queda suelto da 'etiqueta secundaria fuera de bloque'
+                  #set($lbpHtml = $lbpHtml.replaceAll('(?is)<svg.*?</svg>', ''))
+                  #set($lbpHtml = $lbpHtml.replaceAll('(?i)</?(path|rect|circle|ellipse|line|polyline|polygon|g|defs|use|symbol|mask|clippath|lineargradient|radialgradient|stop|tspan)[^>]*>', ''))
+                  ## protocolo invalido en src: AMP exige https
+                  #set($lbpHtml = $lbpHtml.replaceAll('src="//', 'src="https://'))
+                  #set($lbpHtml = $lbpHtml.replaceAll('src="http://', 'src="https://'))
+                  #set($lbpHtml = $lbpHtml.replaceAll("src='//", "src='https://"))
+                  #set($lbpHtml = $lbpHtml.replaceAll("src='http://", "src='https://"))
                   #set($lbpHtml = $lbpHtml.replaceAll('style=".*?"', ''))
                   #set($lbpHtml = $lbpHtml.replaceAll('loading="lazy"', ''))
                   #set($lbpHtml = $lbpHtml.replaceAll('(?i) xml:lang="[^"]*"', ''))
@@ -793,14 +887,36 @@
                     <span></span> ${el.data}
                   </div>
                 #end
-                #if($el.name == "LBP_Bullet")
+              #end
+                ## BULLETS. getSiblings() devuelve como maximo 5 elementos,
+                ## tanto desde $el como desde $PostBullet (comprobado en vivo).
+                ## Se recogen las dos fuentes en una lista, sin repetidos, para
+                ## no perder los que una de ellas no traiga. El dedup ademas
+                ## evita el bloque triplicado que salia antes.
+                #set($lbLista = [])
+                #if($PostBullet)
+                  #foreach($lbB in $PostBullet.getSiblings())
+                    #set($lbTexto = "$!lbB.data")
+                    #if($lbTexto != "" && !$lbLista.contains($lbTexto))
+                      #set($lbTmp = $lbLista.add($lbTexto))
+                    #end
+                  #end
+                #end
+                #foreach($lbB in $PostchildrenTags)
+                  #if($lbB.name == "LBP_Bullet")
+                    #set($lbTexto = "$!lbB.data")
+                    #if($lbTexto != "" && !$lbLista.contains($lbTexto))
+                      #set($lbTmp = $lbLista.add($lbTexto))
+                    #end
+                  #end
+                #end
+                #if($lbLista.size() > 0)
                   <div class="r_bullet_post">
-                    #foreach ($bullet in $el.getSiblings())
-                      <span>${bullet.data}</span>
+                    #foreach($lbItem in $lbLista)
+                      <span>$lbItem</span>
                     #end
                   </div>
                 #end
-              #end
                 <hr class="r_linea_hr"/>
                 <div class="r_social-icons">
                   <a href="https://facebook.com/sharer/sharer.php?u=#siteUrl()#printAcCanonicalUrl_v1()" target="_blank">
