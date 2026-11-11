@@ -5,6 +5,9 @@
     --light: #f5f3ee;
     --bone: #F3F2ED;
     --bg-gray: #F3F5F8;
+    --magenta: #BF2BBF;
+    --yellow: #F3CC2A;
+    --green: #419644;
 }
 
 div#iter-content-wrapper {
@@ -15,18 +18,24 @@ div#iter-content-wrapper {
 body:has(a.section[href*="/bienestar"]),
 body:has(a.section[href*="/tecnologia"]),
 body:has(a.section[href*="/cocina"]) {
-    --red: #BF2BBF;
+    --magenta: #BF2BBF;
 }
 
 /* Mascotas y sus subsecciones: color amarillo propio */
 body:has(a.section[href*="/mascotas"]) {
-    --red: #F3CC2A;
+    --yellow: #F3CC2A;
 }
 
 /* Sostenibilidad: color verde propio */
 body:has(a.section[href*="/sostenibilidad"]) {
-    --red: #419644;
+    --green: #419644;
 }
+
+/* Empresas color rojo propio */
+body:has(a.section[href*="/empresas"]) {
+    --red: #CC1114;
+}
+
 
 .sect-date {
     display: flex;
